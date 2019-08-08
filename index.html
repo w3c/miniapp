@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-hans">
 
 <head>
     <meta charset="utf-8" />
@@ -9,7 +9,7 @@
 
     <script class="remove">
         var respecConfig = {
-            specStatus: "ED",
+            specStatus: "unofficial",
 
             shortName: "mini-app",
             noRecTrack: true,
@@ -17,9 +17,46 @@
             edDraftURI: "TBD",
 
             editors: [{
-                name: "TBD",
-                company: "TBD"
-            }],
+        name: "刘观宇",
+        companyURL: "https://www.360.cn/",
+        company: "360"
+
+      }, {
+        name: "TBD",
+        companyURL: "http://www.alibabagroup.com/en/global/home",
+        company: "阿里巴巴"
+
+      }, {
+        name: "TBD",
+        companyURL: "http://www.baidu.com/",
+        company: "百度"
+
+      }, {
+        name: "余枝强",
+        companyURL: 'http://www.huawei.com/',
+        company: "华为"
+
+      }, {
+        name: "Kenny",
+        companyURL: 'http://www.intel.com/',
+        company: "英特尔"
+
+      }, {
+        name: "TBD",
+        companyURL: "http://www.tencent.com/",
+        company: "腾讯"
+
+      }, {
+        name: "TBD",
+        companyURL: 'https://www.mi.com/',
+        company: "小米"
+
+      }, {
+        name: "薛富侨",
+        companyURL: 'https://www.w3.org/',
+        company: "W3C"
+
+      }],
 
             wg: "Chinese Web Interest Group",
             wgURI: "https://www.w3.org/2018/chinese-web-ig/",
@@ -33,17 +70,16 @@
 </head>
 
 <body>
-    <h1>Mini App Standardization White Paper</h1>
     <section id='abstract'>
-        <p>
-            This is required.
-        </p>
-    </section>
-    <section id='sotd'>
-        <p>
-            This is required.
-        </p>
-    </section>
+    <p>
+      此文档描述了 MiniApps 的用例和能力，介绍了其主要的实现原理，并且提出了一些未来的拓展想法与需求以为用户提供更易用丰富的 Web 应用。
+    </p>
+  </section>
+  <section id='sotd'>
+    <p>
+      这是一份进行中的提案草稿。欢迎参加 <a href="https://w3c.github.io/chinese-ig/">W3C Web 中文兴趣组</a>关于 MiniApps 的相关讨论。
+    </p>
+  </section>
 
     <section>
         <h2>Problem Statement</h2>
@@ -56,11 +92,85 @@
         <section>
             <h2>Solutions in the World</h2>
             <section>
-                <h2>Mini Programs</h2>
-            </section>
-            <section>
-                <h2>Quick Apps</h2>
-            </section>
+      <h4>Mini Programs</h4>
+        <p class="note">@Alibaba, Baidu, 360, etc</p>
+
+        <section>
+        <h5>Mini Program on PC</h5>
+        <p class="note">早期草稿，后续会持续添加用例和特性描述</p>
+        <p>PC 小程序还处于早期探索阶段，是运行在PC端浏览器内的一种轻型应用。不同于网页和客户端应用，PC 小程序既有丰富的客户端独有的能力，又不需要安装，支持即开即用。</p>
+        <p>PC 小程序采用标准HTML、CSS、JS开发，和网页编程一样： </p>
+          <dl>
+            <dt>HTML</dt><dd>定义网页的内容<dd>
+            <dt>CSS</dt><dd>规定网页的布局<dd>
+            <dt>JavaScript</dt><dd>对网页行为进行编程<dd>
+          </dl>
+        <p>相对于传统网页应用，PC 小程序提供了与本地系统桌面更好的交互能力，包含：</p>
+        <ul>
+          <li>消息推送<ul>
+            <li>小程序支持向用户推送消息，既支持通过后台配置统一推送，也支持调用api向特定用户push消息。通过统一配置推送的消息有条数限制。</li>
+            <li>消息推送包含桌面消息推送和浏览器侧边栏消息推送两个层面。</li>
+          </ul></li>
+          <li>用户消息 API<ul>
+            <li>小程序支持调用 API 对制定用户推送消息，但对此进行了严格的监管限制以预防滥用。</li>
+            <li>所有的消息必须使用appId和appSecret对消息签名。</li>
+          </ul></li>
+          <li>创建快捷方式<ul>
+            <li>为便于用户使用，提高小程序入口层级，小程序提供创建小程序快捷方式的能力，能够创建浏览器侧边栏快捷方式和桌面快捷方式。</li>
+            <li>仅限用户本身创建快捷方式。</li>
+          </ul></li>
+          <li>可配置窗口样式，包括宽带高度等。</li>
+          <li>开发者可监听当前小程序窗口是否 visible。</li>
+        </ul>
+
+        <p>在现阶段，PC端浏览器小程序开发只支持企业级开发，有十分严格的审核机制，相对于网页应用具有更高的可信任度。</p>
+
+        <p>PC端浏览器小程序支持与浏览器同步的验证登录。</p>
+      </section>
+
+      </section>
+      <section>
+      <h4>Quick Apps</h4>
+        <p class="note">@Xiaomi, Huawei</p>
+        <p>快应用是一种基于手机硬件平台的新型应用形态，无需安装，即点即用，又兼具原生应用体验（性能、系统整合、交互等）。同时，快应用在诞生之初就在开发规范、能力接入、开发者服务等层面实现了手机厂商间的标准化统一，极大的降低开发者的适配成本。</p>
+        <p>与传统应用相比，快应用具备如下特点：</p>
+        <ul>
+          <li>Instant：即点即用，用户无需等待;</li>
+          <li>Everywhere：与手机的使用场景深度整合，入口无处不在（搜索，智能助手，智能推荐，应用市场，浏览器 ……）;</li>
+          <li>Efficient：准前端的开发方式，效率高.</li>
+        </ul>
+
+      <section>
+        <h5>快应用引擎架构示意</h5>
+        <figure>
+      <img alt="快应用引擎架构" src="images/@@.png" width="600">
+      <figcaption>
+        图为快应用引擎架构
+      </figcaption>
+    </figure>
+        <p>上图是快应用的总体框架示意图。最上面是应用形态以及场景入口，中间是快应用引擎，底下是 OS(操作系统) 的基础设施及其硬件。从执行路径层面，有标准的 HTML5 方式支撑通用的 Web 场景（一般通过系统的 Webview 组件或定制的 Webview）， 以及 JS（JavaScript）+Native 的方式，支撑更轻量、更快速的体验。 下面将按 3 个层面方面简要介绍快应用引擎的架构。</p>
+      </section>
+
+      <section>
+      <h5>应用开发（前端框架 + 组件 &amp; API 能力）</h5>
+        <p>快应用的前端设计借鉴并整合了主流前端框架（Vue，React 等）的设计思路：以组件化的方式构建应用，以数据绑定为核心的 MVVM 设计模式，以 V-DOM 的方式提升性能，同时选择了简洁清晰的类 Vue 的模板。同时对布局方面做了相应精简。从新的应用形态、映射原生 UI、能力开放的角度，需要定义一套组件与 API 规范，方便开发这快速开发应用。
+        </p>
+      </section>
+
+      <section>
+      <h5>系统整合（应用管理，卡片 - 嵌入式 SDK，安全机制等等）</h5>
+        <p>快应用作为完整的应用形态，可以与系统深入整合，如同原生应用一样运行，以及和系统交互。快应用目前有两种形态：全屏方式的独立应用形态与嵌入方式的卡片形态。在独立应用的形态下，给用户的体验就像原生的应用程序，有完整的生命周期管理，页面管理，路由等。卡片则是另外一种形态，通过嵌入式 SDK 作为一个独立的局部控件嵌入到系统的各个角落，轻量化的展现动态内容。在安全隔离方面，可通过沙盒机制，进程隔离，权限控制，并结合操作系统层的支持做到较好的安全保障。
+        </p>
+      </section>
+
+      <section>
+      <h5>性能体验 &amp; 新兴场景 （JavaScript 引擎，渲染引擎，端 - 云 - 芯加速，新兴场景）</h5>
+        <p>在交互体验、资源开销和稳定性等方面，快应用通过引入原生渲染路径，进而实现前端开发方式 + 原生渲染与平台能力有效组合。
+        </p>
+        <p>不同于其它的应用层的跨平台框架，快应用植根于手机系统，可实现从芯片 &lt;--> 操作系统 &lt;--> 云的深度整合。端和云的结合以启动性能加速为例，通过云和端的协同渲染，网络链路层的优化可以大大加速快应用启动速度。同时可以整合硬件平台的特有能力，进一步提升体验。例如可以结合手机 AI 芯片，将 NPU 的算力整合到快应用引擎中来，使得 AI 场景（人脸识别、图像超分等）在端侧可以低延时、高性能的执行，同时又有效保护了用户的隐私，并节省带宽。
+        </p>
+      </section>
+      </section>
             <section>
                 <h2>Progressive Web Apps</h2>
                 <p>Web was initially invented as document platform with hyperlinks, but people continued to use the web
@@ -236,6 +346,114 @@
 
     <section>
         <h2>Use Cases and Requirements</h2>
+
+        <p class="note">Note: 介绍标准用例及对应的标准需求<br /> 
+         Editor: 建议每个公司都提供内容，再讨论合并</p>
+    <section>
+      <h3>3D Model Elements</h3>
+      <section>
+        <h4>Background</h4>
+        <p>3D models become more and more popular thanks to its rich details, and combined w/ AR, it will provide a much better user experience than 2D.  The business cases might include online shopping, advertisement, education, etc.  However, current web lacks of a standard and convenient way to deal with 3D model.  In this document, we propose to define a HTML tag to directly handle 3D model, similar to the way we handle audio, video, image w/ corresponding HTML tags.</p>
+      </section>
+      <section>
+        <h4>Use Cases</h4>
+        <section>
+        <h5>360-Degree View</h5>
+        <p>User can view a 3D model in different angles via gestures. And the 3D model can be zoom in/out as well. It can be viewed in full screen, or it can be embedded in a HTML page, shown together with other HTML contents.</p>
+      </section>
+      <section>
+        <h5>View with AR</h5>
+        <p>User can place the 3D model in the real world environment w/ camera. User can specify different location to place the model.</p>
+      </section>
+      </section>
+      <section>
+        <h4><code>xmodel</code> Element</h4>
+        <p>We propose a <code>&lt;xmodel></code> element which specifies a 3D model in the web, and easily powers interactive 3D contents with AR.</p>
+        <pre class="example">
+          &lt;xmodel src="examples/my3d.gltf"  width="320" height="240">&lt;/xmodel>
+          &lt;xmodel src="examples/my3d.gltf"  ar >&lt;/xmodel>
+        </pre>
+
+        <table border="1">
+          <tbody><tr>
+            <th>
+              Attribute
+            </th>
+            <th>
+              Value
+            </th>
+            <th>
+              Description
+            </th>
+            <th>
+              Priority
+            </th>
+          </tr>
+          <tr>
+            <td><code>src</code></td>
+            <td>URL</td>
+            <td>Specify the URL of 3D model The type of 3D format could be glTF or GLB</td>
+            <td>1</td>
+          </tr>
+
+          <tr>
+            <td><code>height</code></td>
+            <td>pixels</td>
+            <td>Set the height of 3D model when view inline</td>
+            <td>1</td>
+          </tr>
+
+          <tr>
+            <td><code>width</code></td>
+            <td>pixels</td>
+            <td>Set the width of 3D model when view inline</td>
+            <td>1</td>
+          </tr>
+
+          <tr>
+            <td><code>ar</code></td>
+            <td>n/a</td>
+            <td>enable the ar mode, which will be full screen with camera on. In this case the attribute width and height will only take effect when exit from the ar mode</td>
+            <td>1</td>
+          </tr>
+
+          <tr>
+            <td><code>live</code></td>
+            <td>n/a</td>
+            <td>enable the live mode. In this mode the orientation of the 3D content will be changed automatically according to the device orientation</td>
+            <td>2</td>
+          </tr>
+
+          <tr>
+            <td><code>poster</code></td>
+            <td>URL</td>
+            <td>Specify an image to be shown while the 3D content is downloading</td>
+            <td>2</td>
+          </tr>
+
+          <tr>
+            <td><code>autoplay</code></td>
+            <td>n/a</td>
+            <td>If this is set and a model has animations, the 1st animation will automatically begin to play</td>
+            <td>2</td>
+          </tr>
+
+          <tr>
+            <td><code>backgroud-color</code></td>
+            <td>CSS color values</td>
+            <td>Set the background color when view inline. Its value is a <a href="https://www.w3.org/TR/css-color-3/#valuea-def-color">CSS color string</a>.</td>
+            <td>2</td>
+          </tr>
+
+          <tr>
+            <td><code>background-image</code></td>
+            <td>URL</td>
+            <td>Set the background image when view inline.</td>
+            <td>2</td>
+          </tr>
+        </tbody></table>
+      </section>
+      </section>
     </section>
 
 
