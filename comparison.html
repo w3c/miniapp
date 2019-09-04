@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>My test page</title>
+  <title>Comparison of APIs in MiniApps, the W3C specs, and PWA.next</title>
   <style>
     body {
       line-height: 1.5;
@@ -54,7 +54,6 @@
             <td class="column3 style9 s">Spec Status</td>
             <td class="column4 style24 s">PWA (PWA.next)</td>
             <td class="column5 style26 s"><a href="https://www.quickapp.cn/" title="">QuickApp(Xiaomi, Huawei)</a></td>
-            <td class="column6 style28 s"><a href="https://mp.weixin.qq.com/cgi-bin/wx" title="">WeChatMiniProgram(Tencent)</a></td>
             <td class="column7 style28 s"><a href="https://docs.alipay.com/mini/developer/" title="">AlipayMiniProgram(Alipay)</a></td>
             <td class="column8 style30 s"><a href="https://smartprogram.baidu.com/developer/index.html" title="">Baidu SmartProgram</a></td>
 
@@ -74,7 +73,6 @@
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">Yes</td>
-            <td class="column6 style17 s">Yes</td>
             <td class="column7 style17 s">Yes</td>
             <td class="column8 style23 s">Yes</td>
 
@@ -94,7 +92,6 @@
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">Yes (Partial)</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style17 s">Yes</td>
             <td class="column7 style17 s">Yes</td>
             <td class="column8 style23 s">Yes</td>
 
@@ -114,7 +111,6 @@
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">Yes (Chrome 67+)</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style23 s">No</td>
 
@@ -134,7 +130,6 @@
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">Yes (Chrome 70+)</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style23 s">No</td>
 
@@ -154,7 +149,6 @@
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">Yes (Chrome 70+)</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style23 s">No</td>
 
@@ -177,8 +171,6 @@
 Providing pure WebAPIs to app developers,Web JS APIs are mapped from Android native APIs and part of standard WebAPIs.<br />
 Template part(with HTML tags)in .ux file mapping to single android native views and combined view components, provided native performance experiences.<br />
 CSS subset: Mapping to attributes of Android View(e.g. position, color)</td>
-            <td class="column6 style23 s">Tencent<br />
-&nbsp;&nbsp;X5 JS Core (based on Mobile Chrome) + WebView</td>
             <td class="column7 style23 s">Native(rendering)<br />
 &nbsp;&nbsp;+ WebView (rendering) + Worker (Data storage and business logic) + V8(use UC<br />
 &nbsp;&nbsp;browsing engine)</td>
@@ -202,8 +194,6 @@ logic：V8/Javascript Core</td>
             <td class="column4 style17 s">.html, .js, .css</td>
             <td class="column5 style23 s">.ux file (template),<br />
 &nbsp;&nbsp;.js, .css</td>
-            <td class="column6 style23 s">.wxml, .js, .wxss<br />
-&nbsp;&nbsp;(css)</td>
             <td class="column7 style17 s">.axml, .js, .acss</td>
             <td class="column8 style23 s">.swan, .js, .css</td>
 
@@ -223,7 +213,6 @@ logic：V8/Javascript Core</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">Yes</td>
-            <td class="column6 style17 s">Yes</td>
             <td class="column7 style17 s">Yes</td>
             <td class="column8 style23 s">Yes</td>
 
@@ -243,7 +232,6 @@ logic：V8/Javascript Core</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">Yes</td>
-            <td class="column6 style17 s">Yes</td>
             <td class="column7 style17 s">Yes</td>
             <td class="column8 style23 s">Yes</td>
 
@@ -263,8 +251,6 @@ logic：V8/Javascript Core</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">Yes</td>
-            <td class="column6 style23 s">Can only be used<br />
-&nbsp;&nbsp;within WeChat</td>
             <td class="column7 style23 s">Can be used within Alibaba's Native Apps including Alipay, Taobao, DingDing, Gaode, ELE.me</td>
             <td class="column8 style23 s">Can be used within Baidu App, and Open Source Union apps, such as IQiyi , Bilibili, Wifi and so on</td>
 
@@ -284,7 +270,6 @@ logic：V8/Javascript Core</td>
             <td class="column3 style17 s">Rec</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">Yes</td>
-            <td class="column6 style17 s">Yes</td>
             <td class="column7 style17 s">Yes</td>
             <td class="column8 style23 s">Yes</td>
 
@@ -305,8 +290,6 @@ logic：V8/Javascript Core</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">Yes</td>
-            <td class="column6 style23 s">Yes (Not support on<br />
-&nbsp;&nbsp;iOS)</td>
             <td class="column7 style23 s">Yes (via A2HS feature<br />
 &nbsp;&nbsp;on Safari)</td>
             <td class="column8 style23 s">Yes</td>
@@ -328,8 +311,6 @@ logic：V8/Javascript Core</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Yes (search within<br />
 &nbsp;&nbsp;system search bar, management apps, app store, browsers, home page etc.)</td>
-            <td class="column6 style23 s">Yes (search within<br />
-&nbsp;&nbsp;Wechat)</td>
             <td class="column7 style23 s">Yes (search within<br />
 &nbsp;&nbsp;Alipay)</td>
             <td class="column8 style23 s">Yes (search with Baidu search engine)</td>
@@ -352,8 +333,6 @@ logic：V8/Javascript Core</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Share(@system.share +<br />
 &nbsp;&nbsp;@service.share)</td>
-            <td class="column6 style23 s">Incentivized sharing<br />
-&nbsp;&nbsp;restriction</td>
             <td class="column7 style17 s">onShareAppMessage</td>
             <td class="column8 style23 s">Yes</td>
 
@@ -376,7 +355,6 @@ logic：V8/Javascript Core</td>
             <td class="column4 style17 s">Yes (WIP)</td>
             <td class="column5 style23 s">Yes (private<br />
 &nbsp;&nbsp;implementation)</td>
-            <td class="column6 style17 s">No and no necessary</td>
             <td class="column7 style17 s">No and no necessary</td>
             <td class="column8 style17 s">No and no necessary</td>
 
@@ -397,7 +375,6 @@ logic：V8/Javascript Core</td>
             <td class="column3 style17 s">WD</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style17 s">No and no necessary</td>
             <td class="column7 style17 s">No and no necessary</td>
             <td class="column8 style17 s">No and no necessary</td>
 
@@ -419,8 +396,6 @@ logic：V8/Javascript Core</td>
             <td class="column3 style17 s">WD</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column6 style23 s">Yes (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">Yes (private<br />
 &nbsp;&nbsp;implementation)</td>
@@ -445,7 +420,6 @@ logic：V8/Javascript Core</td>
             <td class="column4 style25 s">No</td>
             <td class="column5 style23 s">App Info<br />
 &nbsp;&nbsp;(@system.app)</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style17 s">No</td>
 
@@ -466,8 +440,6 @@ logic：V8/Javascript Core</td>
             <td class="column3 style17 s">WD</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">manifest.display.fullscreen</td>
-            <td class="column6 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">Yes (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column8 style23 s">Yes (private<br />
@@ -490,8 +462,6 @@ logic：V8/Javascript Core</td>
             <td class="column3 style17 s">CGR</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style23 s">Tab Bar (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">Tab Bar (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column8 style23 s">Tab Bar (private<br />
@@ -515,8 +485,6 @@ logic：V8/Javascript Core</td>
             <td class="column4 style25 s">No</td>
             <td class="column5 style23 s">Prompt<br />
 &nbsp;&nbsp;(@system.prompt)</td>
-            <td class="column6 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">Popup component</td>
             <td class="column8 style17 s">Popup component</td>
 
@@ -538,8 +506,6 @@ logic：V8/Javascript Core</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Vibration<br />
 &nbsp;&nbsp;(@system.vibrator)</td>
-            <td class="column6 style23 s">Vibration<br />
-&nbsp;&nbsp;(wx.vibrate*)</td>
             <td class="column7 style17 s">my.vibrate*</td>
             <td class="column8 style23 s">swan.vibrateLong<br />
 swan.vibrateShort</td>
@@ -563,8 +529,6 @@ swan.vibrateShort</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Notification<br />
 &nbsp;&nbsp;(@system.notification)</td>
-            <td class="column6 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">Notice (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column8 style23 s">Template Message<br />
@@ -589,8 +553,6 @@ Customer Service Message <br />
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">orientation in JSON<br />
 &nbsp;&nbsp;(Partial)</td>
-            <td class="column6 style23 s">pageOrientation in<br />
-&nbsp;&nbsp;JSON/wx.ondeviceorientationchange(function callback) (Partial)</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style17 s">swan.onDeviceMotionChange</td>
 
@@ -611,7 +573,6 @@ Customer Service Message <br />
             <td class="column3 style17 s">Proposal</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style17 s">No</td>
 
@@ -632,8 +593,6 @@ Customer Service Message <br />
             <td class="column3 style17 s">CR</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style23 s">only Screen<br />
-&nbsp;&nbsp;WakeLock(wx.setKeepScreenOn(Object object))</td>
             <td class="column7 style23 s">only Screen WakeLock<br />
 &nbsp;&nbsp;(my.setKeepScreenOn(OBJECT))</td>
             <td class="column8 style23 s">only Screen WakeLock<br />
@@ -657,8 +616,6 @@ swan.setKeepScreenOn</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Clipboard<br />
 &nbsp;&nbsp;(@system.clipboard)</td>
-            <td class="column6 style23 s">Clipboard (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">my.getClipboard/my.setClipboard</td>
             <td class="column8 style23 s">swan.setClipboardData<br />
 swan.getClipboardData</td>
@@ -682,8 +639,6 @@ swan.getClipboardData</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Clipboard<br />
 &nbsp;&nbsp;(@system.clipboard)</td>
-            <td class="column6 style23 s">Clipboard (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">my.getClipboard/my.setClipboard</td>
             <td class="column8 style23 s">swan.setClipboardData<br />
 swan.getClipboardData</td>
@@ -706,8 +661,6 @@ swan.getClipboardData</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Page Router<br />
 &nbsp;&nbsp;(@system.router)</td>
-            <td class="column6 style23 s">Router (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">Navigator component</td>
             <td class="column8 style23 s">Router (private<br />
 &nbsp;&nbsp;implementation)</td>
@@ -730,8 +683,6 @@ swan.getClipboardData</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Barcode<br />
 &nbsp;&nbsp;(@system.barcode)</td>
-            <td class="column6 style23 s">Barcode (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">Barcode (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column8 style23 s">swan.scanCode<br />
@@ -755,8 +706,6 @@ swan.ai.advancedGeneralIdentify</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">my.watchShake(OBJECT)</td>
             <td class="column8 style23 s">No</td>
 
@@ -778,8 +727,7 @@ swan.ai.advancedGeneralIdentify</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style23 s">wx.onUserCaptureScreen(function<br />
-&nbsp;&nbsp;callback)</td>
+            
             <td class="column7 style17 s">my.onUserCaptureScreen(CALLBACK)</td>
             <td class="column8 style23 s">swan.onUserCaptureScreen</td>
 
@@ -800,7 +748,6 @@ swan.ai.advancedGeneralIdentify</td>
             <td class="column3 style21 s">&nbsp;</td>
             <td class="column4 style21 s">No</td>
             <td class="column5 style21 s">Yes (@system.alarm)</td>
-            <td class="column6 style21 s">No</td>
             <td class="column7 style21 s">No</td>
             <td class="column8 style23 s">No</td>
 
@@ -822,7 +769,6 @@ swan.ai.advancedGeneralIdentify</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Pay (@service.pay)<br />
 &nbsp;&nbsp;(WeChat + Alipay)</td>
-            <td class="column6 style17 s">WeChat Payment</td>
             <td class="column7 style17 s">Alipay</td>
             <td class="column8 style23 s">swan.requestPolymerPayment</td>
 
@@ -844,7 +790,6 @@ swan.ai.advancedGeneralIdentify</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Pay (@service.pay)<br />
 &nbsp;&nbsp;(WeChat + Alipay)</td>
-            <td class="column6 style17 s">WeChat Payment</td>
             <td class="column7 style17 s">Alipay</td>
             <td class="column8 style23 s">swan.requestPolymerPayment</td>
 
@@ -866,7 +811,6 @@ swan.ai.advancedGeneralIdentify</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Pay (@service.pay)<br />
 &nbsp;&nbsp;(WeChat + Alipay)</td>
-            <td class="column6 style17 s">WeChat Payment</td>
             <td class="column7 style17 s">Alipay</td>
             <td class="column8 style23 s">swan.requestPolymerPayment</td>
 
@@ -888,7 +832,6 @@ swan.ai.advancedGeneralIdentify</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Pay (@service.pay)<br />
 &nbsp;&nbsp;(WeChat + Alipay)</td>
-            <td class="column6 style17 s">WeChat Payment</td>
             <td class="column7 style17 s">Alipay</td>
             <td class="column8 style23 s">swan.requestPolymerPayment</td>
 
@@ -910,8 +853,6 @@ swan.ai.advancedGeneralIdentify</td>
             <td class="column3 style17 s">WD</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">Push (@service.push)</td>
-            <td class="column6 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">alipay.open.app.mini.templatemessage.send</td>
             <td class="column8 style23 s">Template Message<br />
 Customer Service Message <br />
@@ -934,8 +875,6 @@ Customer Service Message <br />
             <td class="column3 style17 s">WD</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">Fetch (@system fetch)</td>
-            <td class="column6 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">No (use my.request)</td>
             <td class="column8 style23 s">swan.request</td>
 
@@ -957,8 +896,6 @@ Customer Service Message <br />
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">WebSocket<br />
 &nbsp;&nbsp;(@system.websocketfactory)</td>
-            <td class="column6 style23 s">WebSocket (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">my.connectSocket<br />
 &nbsp;&nbsp;(private implementation)</td>
             <td class="column8 style23 s">swan WebSocket</td>
@@ -980,8 +917,6 @@ Customer Service Message <br />
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style23 s">iBeacon (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">iBeacon (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column8 style23 s">No</td>
@@ -1004,8 +939,6 @@ Customer Service Message <br />
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Storage<br />
 &nbsp;&nbsp;(@system.storage)</td>
-            <td class="column6 style23 s">Data Cache (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">Cache (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column8 style23 s">Cache (private<br />
@@ -1029,8 +962,6 @@ Customer Service Message <br />
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">File (@system.file)<br />
 &nbsp;&nbsp;and File Upload/Download (@system.request)</td>
-            <td class="column6 style23 s">File (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">File (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column8 style23 s">File (private<br />
@@ -1055,8 +986,6 @@ Customer Service Message <br />
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">File (@system.file)<br />
 &nbsp;&nbsp;and File Upload/Download (@system.request)</td>
-            <td class="column6 style23 s">File (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">File (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column8 style23 s">File (private<br />
@@ -1079,7 +1008,6 @@ Customer Service Message <br />
             <td class="column3 style17 s">Proposal</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style17 s">Yes (Partial)</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style17 s">Yes (Partial)</td>
 
@@ -1100,7 +1028,6 @@ Customer Service Message <br />
             <td class="column3 style17 s">ED</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style17 s">No</td>
 
@@ -1122,7 +1049,6 @@ Customer Service Message <br />
             <td class="column4 style17 s">No</td>
             <td class="column5 style23 s">Calendar<br />
 &nbsp;&nbsp;(@system.calendar)</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style23 s">Calendar (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column8 style17 s">No</td>
@@ -1145,8 +1071,6 @@ Customer Service Message <br />
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">picker (private<br />
 &nbsp;&nbsp;implementation)</td>
-            <td class="column6 style23 s">picker (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">my.datePicker(object)</td>
             <td class="column8 style17 s">picker component (mode = date)</td>
 
@@ -1167,8 +1091,6 @@ Customer Service Message <br />
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style23 s">picker (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">my.chooseCity</td>
             <td class="column8 style23 s">picker component(mode = region)</td>
 
@@ -1189,8 +1111,6 @@ Customer Service Message <br />
             <td class="column3 style17 s">WD</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">picker (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column6 style23 s">picker (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style17 s">No</td>
@@ -1213,7 +1133,6 @@ Customer Service Message <br />
             <td class="column3 style17 s">WD</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">&nbsp;</td>
-            <td class="column6 style17 s">&nbsp;</td>
             <td class="column7 style17 s">&nbsp;</td>
             <td class="column8 style17 s">No</td>
 
@@ -1235,7 +1154,6 @@ Customer Service Message <br />
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Sensor<br />
 &nbsp;&nbsp;(sensor.subscribeProximity(OBJECT))</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style17 s">No</td>
 
@@ -1258,7 +1176,6 @@ Customer Service Message <br />
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Sensor<br />
 &nbsp;&nbsp;(sensor.subscribeCompass(OBJECT))</td>
-            <td class="column6 style17 s">wx.onCompassChange(CALLBACK)</td>
             <td class="column7 style17 s">my.onCompassChange/offCompassChange</td>
             <td class="column8 style23 s">swan.onCompassChange<br />
 swan.startCompass<br />
@@ -1283,7 +1200,6 @@ swan.stopCompass</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Sensor<br />
 &nbsp;&nbsp;(sensor.subscribeCompass(OBJECT))</td>
-            <td class="column6 style17 s">wx.onCompassChange(CALLBACK)</td>
             <td class="column7 style17 s">my.onCompassChange/offCompassChange</td>
             <td class="column8 style23 s">swan.onCompassChange<br />
 swan.startCompass<br />
@@ -1307,7 +1223,6 @@ swan.stopCompass</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Sensor<br />
 &nbsp;&nbsp;(sensor.subscribeCompass(OBJECT))</td>
-            <td class="column6 style17 s">wx.onCompassChange(CALLBACK)</td>
             <td class="column7 style17 s">my.onCompassChange/offCompassChange</td>
             <td class="column8 style23 s">swan.onCompassChange<br />
 swan.startCompass<br />
@@ -1331,7 +1246,6 @@ swan.stopCompass</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Sensor<br />
 &nbsp;&nbsp;(sensor.subscribeCompass(OBJECT))</td>
-            <td class="column6 style17 s">wx.onCompassChange(CALLBACK)</td>
             <td class="column7 style17 s">my.onGyroscopeChange/offGyroscopeChange</td>
             <td class="column8 style23 s">swan.onCompassChange<br />
 swan.startCompass<br />
@@ -1356,7 +1270,6 @@ swan.stopCompass</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Sensor<br />
 &nbsp;&nbsp;(sensor.subscribeAccelerometer(OBJECT))</td>
-            <td class="column6 style17 s">wx.onAccelerometerChange(CALLBACK)</td>
             <td class="column7 style17 s">my.onAccelerometerChange/offAccelerometerChange</td>
             <td class="column8 style23 s">swan.onAccelerometerChange<br />
 swan.offAccelerometerChange</td>
@@ -1379,8 +1292,6 @@ swan.offAccelerometerChange</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Geoloaction<br />
 &nbsp;&nbsp;(@system.geolocation)</td>
-            <td class="column6 style23 s">Geolocation (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">Location (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column8 style23 s">swan.getLocation<br />
@@ -1405,8 +1316,6 @@ swan.openLocation</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Sensor<br />
 &nbsp;&nbsp;(@system.sensor)</td>
-            <td class="column6 style23 s">Sensor (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">Yes (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column8 style23 s">Not general</td>
@@ -1429,8 +1338,6 @@ swan.openLocation</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Geoloaction<br />
 &nbsp;&nbsp;(@system.geolocation)</td>
-            <td class="column6 style23 s">Geolocation (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">Location (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column8 style23 s">swan.getLocation<br />
@@ -1454,7 +1361,6 @@ swan.openLocation</td>
             <td class="column3 style17 s">ED</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style17 s">No</td>
 
@@ -1475,7 +1381,6 @@ swan.openLocation</td>
             <td class="column3 style17 s">CGR</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style17 s">No</td>
 
@@ -1497,8 +1402,6 @@ swan.openLocation</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Battery<br />
 &nbsp;&nbsp;(@system.battery)</td>
-            <td class="column6 style23 s">Battery<br />
-&nbsp;&nbsp;(wx.getBatteryInfo*)</td>
             <td class="column7 style17 s">my.getSystemInfo</td>
             <td class="column8 style23 s">swan.getBatteryInfo<br />
 swan.getBatteryInfoSync</td>
@@ -1521,8 +1424,6 @@ swan.getBatteryInfoSync</td>
             <td class="column3 style17 s">CGR</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">&nbsp;</td>
-            <td class="column6 style23 s">NFC (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">&nbsp;</td>
             <td class="column8 style23 s">No</td>
 
@@ -1543,8 +1444,6 @@ swan.getBatteryInfoSync</td>
             <td class="column3 style17 s">CGR</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Bluetooth (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column6 style23 s">Bluetooth (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">Bluetooth (private<br />
 &nbsp;&nbsp;implementation)</td>
@@ -1568,8 +1467,6 @@ swan.getBatteryInfoSync</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style23 s">Device Info<br />
 &nbsp;&nbsp;(@system.device)</td>
-            <td class="column6 style23 s">System Info<br />
-&nbsp;&nbsp;(wx.getSystemInfo*)</td>
             <td class="column7 style17 s">my.getSystemInfo</td>
             <td class="column8 style23 s">swan.getSystemInfo</td>
 
@@ -1592,8 +1489,6 @@ swan.getBatteryInfoSync</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Network Info<br />
 &nbsp;&nbsp;(@system.network)</td>
-            <td class="column6 style23 s">Network (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">Network Status<br />
 &nbsp;&nbsp;(private implementation)</td>
             <td class="column8 style23 s">swan.getNetworkType</td>
@@ -1616,8 +1511,6 @@ swan.getBatteryInfoSync</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style23 s">Screen Brightness<br />
 &nbsp;&nbsp;(@system.brightness)</td>
-            <td class="column6 style23 s">Screen (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">Screen Brightness<br />
 &nbsp;&nbsp;(private implementation)</td>
             <td class="column8 style23 s">swan.setScreenBrightness<br />
@@ -1641,7 +1534,6 @@ swan.getScreenBrightness</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style23 s">System Volume<br />
 &nbsp;&nbsp;(@system.volume)</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style23 s">No</td>
 
@@ -1663,8 +1555,6 @@ swan.getScreenBrightness</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style23 s">App Management<br />
 &nbsp;&nbsp;(@system.package)</td>
-            <td class="column6 style23 s">No and managed by<br />
-&nbsp;&nbsp;WeChat</td>
             <td class="column7 style23 s">No and managed by<br />
 &nbsp;&nbsp;Alipay</td>
             <td class="column8 style23 s">No and managed by<br />
@@ -1688,8 +1578,6 @@ Baidu App</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style23 s">Contact<br />
 &nbsp;&nbsp;(@system.contact)</td>
-            <td class="column6 style23 s">Contact<br />
-&nbsp;&nbsp;(wx.addPhoneContact)</td>
             <td class="column7 style23 s">Contact (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column8 style23 s">swan.addPhoneContact</td>
@@ -1711,7 +1599,6 @@ Baidu App</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">SMS (@system.sms)</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style23 s">No</td>
 
@@ -1732,8 +1619,6 @@ Baidu App</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">Wi-Fi (@system.wifi)</td>
-            <td class="column6 style23 s">Wi-Fi (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style23 s">No</td>
 
@@ -1754,7 +1639,6 @@ Baidu App</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">Yes</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style23 s">No</td>
 
@@ -1775,8 +1659,6 @@ Baidu App</td>
             <td class="column3 style17 s">ED</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">Yes</td>
-            <td class="column6 style23 s">Phone Call<br />
-&nbsp;&nbsp;(wx.makePhoneCall)</td>
             <td class="column7 style17 s">my.makePhoneCall(OBJECT)</td>
             <td class="column8 style23 s">swan.makePhoneCall</td>
 
@@ -1798,7 +1680,6 @@ Baidu App</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">Yes(Partial)</td>
-            <td class="column6 style17 s">Yes(Partial)</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style17 s">Yes(Partial)</td>
 
@@ -1820,8 +1701,6 @@ Baidu App</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Animation Style<br />
 &nbsp;&nbsp;(private implementation)</td>
-            <td class="column6 style23 s">Animation (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">my.createAnimation</td>
             <td class="column8 style23 s">swan.createAnimation</td>
 
@@ -1842,8 +1721,6 @@ Baidu App</td>
             <td class="column3 style17 s">WD</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Canvas (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column6 style23 s">Canvas (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">Canvas (private<br />
 &nbsp;&nbsp;implementation)</td>
@@ -1869,8 +1746,6 @@ Baidu App</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Customized Font<br />
 &nbsp;&nbsp;(private implementation)</td>
-            <td class="column6 style23 s">string<br />
-&nbsp;&nbsp;wx.loadFont(string path)</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style17 s">No</td>
 
@@ -1891,8 +1766,6 @@ Baidu App</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Recording<br />
 &nbsp;&nbsp;(@system.record)</td>
-            <td class="column6 style23 s">Recording (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">No (Disabled by<br />
 &nbsp;&nbsp;Alipay)</td>
             <td class="column8 style23 s">Recording (private<br />
@@ -1916,8 +1789,6 @@ Baidu App</td>
             <td class="column4 style17 s">Yes (Partial)</td>
             <td class="column5 style23 s">Media (@system.media)<br />
 &nbsp;&nbsp;(Take photo/video, pick image/video/file, save to photos album</td>
-            <td class="column6 style23 s">Media (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">Only image (take<br />
 &nbsp;&nbsp;photo, pick image)</td>
             <td class="column8 style23 s">Media (private<br />
@@ -1940,8 +1811,6 @@ Baidu App</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Media (@system.media)<br />
 &nbsp;&nbsp;(Take photo/video, pick image/video/file, save to photos album</td>
-            <td class="column6 style23 s">Media (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">Only image (take<br />
 &nbsp;&nbsp;photo, pick image)</td>
             <td class="column8 style23 s">Media (private<br />
@@ -1964,8 +1833,6 @@ Baidu App</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Media (@system.media)<br />
 &nbsp;&nbsp;(Take photo/video, pick image/video/file, save to photos album</td>
-            <td class="column6 style23 s">Media (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">Only image (take<br />
 &nbsp;&nbsp;photo, pick image)</td>
             <td class="column8 style23 s">Media (private<br />
@@ -1987,8 +1854,6 @@ Baidu App</td>
             <td class="column3 style17 s">WD</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">Audio (@system.audio)</td>
-            <td class="column6 style23 s">Audio (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style23 s">Audio (private<br />
 &nbsp;&nbsp;implementation)</td>
@@ -2009,8 +1874,6 @@ Baidu App</td>
             <td class="column3 style17 s">WD</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column6 style23 s">Video (private<br />
 &nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style23 s">Video (private<br />
@@ -2033,8 +1896,6 @@ Baidu App</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style23 s">Picture Editor<br />
 &nbsp;&nbsp;(@system.image)</td>
-            <td class="column6 style23 s">Image (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style17 s">No</td>
 
@@ -2054,8 +1915,6 @@ Baidu App</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style25 s">No</td>
             <td class="column5 style17 s">Map label</td>
-            <td class="column6 style23 s">Map (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">Map component</td>
             <td class="column8 style17 s">Map component</td>
 
@@ -2077,7 +1936,6 @@ Baidu App</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Cipher<br />
 &nbsp;&nbsp;(@system.cipher)</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style17 s">my.rsa</td>
             <td class="column8 style23 s">No</td>
 
@@ -2100,7 +1958,6 @@ Baidu App</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style23 s">Yes (private<br />
 &nbsp;&nbsp;implementation)</td>
-            <td class="column6 style17 s">Auth (wx.authorize)</td>
             <td class="column7 style17 s">my.getAuthCode</td>
             <td class="column8 style23 s">swan.authorize</td>
 
@@ -2121,8 +1978,6 @@ Baidu App</td>
             <td class="column3 style17 s">WD</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">manifest.permissions</td>
-            <td class="column6 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style23 s">my.showAuthGuide<br />
 &nbsp;&nbsp;(Object)/my.getSetting(OBJECT)</td>
             <td class="column8 style23 s">swan.getSetting</td>
@@ -2144,7 +1999,6 @@ Baidu App</td>
             <td class="column3 style17 s">Proposal</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">Yes (@system.sms)</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style17 s">No</td>
 
@@ -2166,7 +2020,6 @@ Baidu App</td>
             <td class="column3 style17 s">Proposal</td>
             <td class="column4 style17 s">Yes</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style17 s">No</td>
 
@@ -2188,7 +2041,6 @@ Baidu App</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style23 s">Statistics<br />
 &nbsp;&nbsp;(@service.stats)</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style23 s">provided statistcs plan</td>
 
@@ -2210,8 +2062,6 @@ Baidu App</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style23 s">Account<br />
 &nbsp;&nbsp;(@service.account)</td>
-            <td class="column6 style23 s">Account (bject<br />
-&nbsp;&nbsp;wx.getAccountInfoSync())</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style23 s">swan.getEnvInfoSync</td>
 
@@ -2232,8 +2082,6 @@ Baidu App</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style23 s">User Info<br />
-&nbsp;&nbsp;(wx.getUserInfo)</td>
             <td class="column7 style17 s">my.getAuthUserInfo</td>
             <td class="column8 style23 s">swan.getUserInfo</td>
 
@@ -2255,8 +2103,6 @@ Baidu App</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style23 s">Third-party Account<br />
 &nbsp;&nbsp;(QQ + WeChat + Weibo)</td>
-            <td class="column6 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style23 s">No</td>
 
@@ -2277,8 +2123,6 @@ Baidu App</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style23 s">Data Analysis<br />
-&nbsp;&nbsp;(private implementation)</td>
             <td class="column7 style17 s">my.reportAnalytics</td>
             <td class="column8 style23 s">swan.reportAnalytics</td>
 
@@ -2300,7 +2144,6 @@ Baidu App</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style17 s">my.textRiskIdentification(Object)</td>
             <td class="column8 style23 s">swan.ai.textReview</td>
 
@@ -2322,7 +2165,6 @@ Baidu App</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style17 s">No</td>
             <td class="column7 style23 s">Image Content<br />
 &nbsp;&nbsp;Security (private implementation)</td>
             <td class="column8 style23 s">swan.ai.imageAudit</td>
@@ -2345,8 +2187,6 @@ Baidu App</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style23 s">Biometrics<br />
-&nbsp;&nbsp;Authentication (private implementation)</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style23 s">No</td>
 
@@ -2367,8 +2207,6 @@ Baidu App</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style23 s">Biometrics<br />
-&nbsp;&nbsp;Authentication (private implementation)</td>
             <td class="column7 style23 s">Face Authentication<br />
 &nbsp;&nbsp;(private implementation)</td>
             <td class="column8 style23 s">swan.ai.faceMatch<br />
@@ -2391,8 +2229,6 @@ Baidu App</td>
             <td class="column3 style17 s">&nbsp;</td>
             <td class="column4 style17 s">No</td>
             <td class="column5 style17 s">No</td>
-            <td class="column6 style23 s">Performance<br />
-&nbsp;&nbsp;(wx.onMemoryWarning)</td>
             <td class="column7 style17 s">No</td>
             <td class="column8 style23 s">swan.onMemoryWarning</td>
 
