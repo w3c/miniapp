@@ -340,7 +340,7 @@
                     <section id="constructor">
                         <h2>MiniApp Constructor</h2>
                         <p>In order to obtain similar user experiences to native apps, MiniApp resources are usually packaged together. After downloading and installing a MiniApp package, all static page templates/CSS/JavaScript files need to present app pages are already exist on users' machine. These resources are always available without any redundant downloads until next update.</p>
-                        <p>A MiniApp package is a compressed format (e.g. zip) archive, including:
+                        <p>A MiniApp package is a compressed format (e.g. zip) archive, including:</p>
                             <ul>
                                 <li>one configuration document, located at the root directory of the package. The config file should include:</li>
                                     <ul>
@@ -506,7 +506,7 @@
                 <h2>Graphics and Media</h2>
             <section>
                 <h2>3D Model Element</h2>
-                <p>3D models become more and more popular thanks to its rich details, and combined with AR, it will provide a much better user experience than 2D.  The business cases might include online shopping, advertisement, education, etc.  However, current web lacks of a standard and convenient way to deal with 3D model.  In this document, we propose to define a HTML tag to directly handle 3D model, similar to the way we handle audio, video, image with corresponding HTML tags:
+                <p>3D models become more and more popular thanks to its rich details, and combined with AR, it will provide a much better user experience than 2D.  The business cases might include online shopping, advertisement, education, etc.  However, current web lacks of a standard and convenient way to deal with 3D model.  In this document, we propose to define a HTML tag to directly handle 3D model, similar to the way we handle audio, video, image with corresponding HTML tags:</p>
                     <ul>
                         <li>360 view
                             <p>User can view a 3D model in different angles via gestures. And the 3D model can be zoom in/out as well. It can be viewed in full screen, or it can be embedded in a HTML page, shown together w/ other HTML contents.</p>
@@ -514,25 +514,27 @@
                         <li>View with AR
                             <p>User can place the 3D model in the real world environment with camera.  User can specify different location to place the model.</p>
                         </li>
-                    </ul></p>
-                <p>Poposal: A <code>&lt;xmodel></code> Element to specify a 3D model in the web and to power interactive 3D contents with AR.</p>
+                    </ul>
+                <p>Proposal: A <code>&lt;xmodel></code> Element to specify a 3D model in the web and to power interactive 3D contents with AR.</p>
             </section>
 
             <section>
                 <h2>Face Tracking</h2>
-                <p>Face tracking can be used in many 3D scenrio.
-                <ul>
-                        <li>Face Effects in Live Video
-                            <p>Add effects on the face in live video. These effects include full screen filter, face reshape and makeup, 2d sticker, 3d headdress, etc. Most of these effects depend heavily on the real time face tracking from video source.</p>
-                        </li>
-                        <li>Gaming
-                            <p>Game developers can design game strategies based on the tracked face. Like triggering a specific game logic when eye is blinked, or check if the dropping fruit is in the opened mouth.</p>
-                        </li>
-                        <li>Virtual Makeup
-                            <p>Let users try lipsticks, eye shadows, glasses, hats on the product page to help them make the decision.</p>
-                        </li>
-                    </ul>
-                </p>
+                <p>Face tracking can be used in many 3D scenarios.</p>
+                <dl>
+                        <dt>Face Effects in Live Video</dt>
+                        <dd>
+                            Add effects on the face in live video. These effects include full screen filter, face reshape and makeup, 2d sticker, 3d headdress, etc. Most of these effects depend heavily on the real time face tracking from video source.
+                        </dd>
+                        <dt>Gaming</dt>
+                        <dd>
+                            Game developers can design game strategies based on the tracked face. Like triggering a specific game logic when eye is blinked, or check if the dropping fruit is in the opened mouth.
+                          </dd>
+                        <dt>Virtual Makeup</dt>
+                        <dd>
+                          Let users try lipsticks, eye shadows, glasses, hats on the product page to help them make the decision.
+                        </dd>
+                </dl>
                 <p>Poposal: A Face Tracking API use a video element as input and updates face tracking output every frame, which includes:
                     <ul>
                         <li>Bounding box of each face
