@@ -5,22 +5,22 @@
     <meta charset="utf-8" />
     <title>MiniApp Standardization White Paper</title>
 
-    <style type="text/css">
+    <style>
     .two-cols {
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
 
     table {
-    border-collapse:collapse;
+      border-collapse:collapse;
     }
 
     table,th, td {
-        border: 1px solid #666;
+      border: 1px solid #666;
     }
 
     td {
-        padding:2px 15px;
+      padding:2px 15px;
     }
     </style>
 
@@ -342,7 +342,7 @@
                         <p>In order to obtain similar user experiences to native apps, MiniApp resources are usually packaged together. After downloading and installing a MiniApp package, all static page templates/CSS/JavaScript files need to present app pages are already exist on users' machine. These resources are always available without any redundant downloads until next update.</p>
                         <p>A MiniApp package is a compressed format (e.g. zip) archive, including:
                             <ul>
-                                <li>one configuration document, located at the root directory of the package. The config file should include:
+                                <li>one configuration document, located at the root directory of the package. The config file should include:</li>
                                     <ul>
                                         <li>general description of the entire MiniApp.</li>
                                         <li>description of pages and their corresponding paths, for the purpose of page locating and opening.</li>
@@ -350,7 +350,6 @@
                                     <li>one app-level logic file, containing JavaScript codes, deals with app-level lifecycle callbacks.</li>
                                     <li>one or multi page files, containing templates codes for page structor, css codes for page style, and JavaScript codes for page logic.</li>
                                     <li>support digital signature for validation.</li>
-                                </li>
                             </ul>
                             <p>For the purpose of locating a sepecific MiniApp while searching and executing, a MiniApp must have a package name or an ID on the platform. An icon is also required for user recognization.</p>
                     </section>
@@ -422,27 +421,33 @@
                 </section>
                 <section>
                     <h2>MiniApp Landscape</h2>
-                    <p>This section describes a few current mainstream MiniApp or relevant Platforms.</p>
-                    <ul>
-                        <li>Alipay Mini Program
+                    <p>This section describes a few current mainstream MiniApp or relevant platforms.</p>
+                    <dl>
+                        <dt>Alipay Mini Program</dt>
+                        <dd>
                             <p>Alipay Mini Program runs on top of Alipay Native App, which is a hybrid solution of Web and Native. Alipay Mini Program relies on Web technologies as CSS and JavaScript. Meanwhile, it integrates the functionalities of Alipay Native App as payment, credit service, face authentication, etc.</p>
                             <p>Now there have been more than 1,000,000 Mini Programs running on Alipay Native App and 230 million DAU (Daily Active User). The user scenarios include retails, transportation, medical services, etc.</p>
-                        </li>
-                        <li>Baidu Smart Mini Program
+                        </dd>
+                        <dt>Baidu Smart Mini Program</dt>
+                        <dd>
                             <p>Baidu Smart Mini Program refers to an open ecological product that intelligently connects people to information and services, which based on Baidu APP and other partners’ platforms. Through Baidu’s AI abilities, and by understanding all contents in Smart Mini Programs, we connect user and Smart Mini Program accurately. With Baidu’s search and information flow dual engine,  users can achieve an APP-like experience within Smart Mini Programs. As of July 2019, we have 150,000+ Smart Mini Programs and 270 million MAU.</p>
                             <p>Baidu Smart Mini Program is open-sourced within our open source alliance, which has more than 30 cooperators, covered super APPs, mobile OS, car OS, voice-control speakers and TV.</p>
-                        </li>
-                        <li>Quick Apps (Quick App Alliance including Xiaomi and Huawei)
+                        </dd>
+                        <dt>Quick Apps (Quick App Alliance including Xiaomi and Huawei)</dt>
+                        <dd>
                             <p>Quick App is a MiniApp standard developed by 12 top mobile phone manufacturers in the Quick App Alliance, covering over 200 million MAU. Developers can achieve one-time development and run on all hardware vendors' platforms. Quick Apps, which are deeply integrated in the operating system, can be obtained  in multiple scenarios of the mobile phone system, with just one click. By introducing a native rendering path, an effective combination of front-end development and native performance experience is achieved.</p>
                             <p>Quick Apps can run in two forms: Quick App page form like native app page and a widget form that presents informations in the scene. The two are adapted to different user needs, connecting the system and the MiniApp into a whole in multiple forms.</p>
-                        </li>
-                        <li>360 PC MiniApp
+                        </dd>
+                        <dt>360 PC MiniApp</dt>
+                        <dd>
                             <p>MiniApps on PC is still in an early exploration stage. 360 PC MiniApp is a light application running in their PC browser. Compared to the tranditional webpages, it's served with more functionalities and easier interaction with the PC operation system.</p>
                             <p>PC miniapps are only available to those validated as an enterprise account, most of the features are under tough regulartions, so that they can be considered as highly trusted web contents.</p>
-                        </li>
-                        <li>PWAs
+                        </dd>
+                        <dt>PWAs</dt>
+                        <dd>
                             <p>PWAs are the latest term to summarize modern web applications. As a counterpart of native apps, a PWAs app looks and feels like a native app, and can be installed to home screen / lanucher / start menu; it can send push notification to re-engage user; it can be used when offline and behaves under poor network condition; it works with devices of wide ranging capabilities and it's still evolving to works with new capabilities defined by open web standards; payment can be made by user inside PWAs apps; and PWAs apps are search-engine-friendly and work perfectly with hyper-links. PWAs are successful on both the technical aspect and business aspect (widely adopted by many web sites, esp. consumer facing ones).</p>
-                        </li>
+                        </dd>
+                    </dl>
                 </section> 
         </section>
         <section>
@@ -479,13 +484,12 @@
             <section>
             <h2>MiniApp Widgets</h2>
                 <p>Like Android widgets or apple dashboard, users can directly get information and/or finish their task by a MiniApp widget without opening any web or app pages. A MiniApp widget can be displayed in a environment outside of web browsers, such as desktop or dashboard.</p>
-                <p>Poposal: 
+                <p>Proposal:</p>
                     <ul>
-                        <li>A MiniApp widget can be displayed within a host environment, which could be either webview or a native app page.  The host environment loads a widget with its corresponging URI path, which describes package and widget page. </li>
+                        <li>A MiniApp widget can be displayed within a host environment, which could be either webview or a native app page.  The host environment loads a widget with its corresponging URI path, which describes package and widget page.</li>
                         <li>A MiniApp widget can access local data or data from server.  Meanwhile, a MiniApp widget can communicate with MiniApp in same package.</li>
                         <li>A MiniApp widget should be interactive, meaning that it should be responsive to any user behaviors/interactions. A MiniApp widget should have the ability to open a web or app page.</li>
                     </ul>
-                    </p>
             </section>
             </section>
 
