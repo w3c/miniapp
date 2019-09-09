@@ -554,22 +554,19 @@
             </section>
 
             <section>
-                <h2>Low-level AR APIs based on ARCore and ARKit</h2>
-                <p>There are a few AR APIs in MiniApps we would migrate to the Web, as they help to provide better AR experience in gaming, 3d model preview, interactive ads.</p>
-                <p>Proposal: Provide low-level AR APIs based on ARCore and ARKit, which includes:</p>
-                <ul><li>Camera view matrix for world tracking
-                <p>Provide the 4x4 view matrix of the spatial location and orientation of the mobile phone, which can be used to update the camera matrix in their 3D virtual world in real time by developers. Thereby the position of the real world can be correlated with the position of the object in the virtual world.</p>
-                        </li>
-                        <li>Plane detection and tracking
-                            <p>Detect planes in the real world and track these planes in real-time. Provide the 4x4 transform matrix which represents the center position and orientation of each plane. It can be used for placing 3D virtual object on the ground/desktop.</p>
-                        </li>
-                        <li>Anchor
-                            <p>Anchor defines a fixed position and orientation in the real world. Developers can create an anchor from a 4x4 transform matrix, which can be got by hit test. This matrix will be updated each frame to ensure that the virtual object corresponding to the matrix can be fixed in one position and direction in the real scene.</p>
-                        </li>
-                        <li>Hit test
-                            <p>Get a 4x4 transform matrix representing a position and orientation in the real world space corresponding to the screen position to implement functions such as clicking and placing virtual objects.</p>
-                        </li>
-                    </ul></p>
+              <h2>Low level AR APIs based on ARCore and ARKit</h2>
+              <p>There are a few AR APIs in MiniApps we would migrate to the Web, as they help to provide better AR experience in gaming, 3d model preview, interactive ads.</p>
+              <p>Proposal: Provide low-level AR APIs based on ARCore and ARKit, which includes:</p>
+              <dl>
+              <dt>Camera view matrix for world tracking</dt>
+              <dd>Provide the 4x4 view matrix of the spatial location and orientation of the mobile phone, which can be used to update the camera matrix in their 3D virtual world in real time by developers. Thereby the position of the real world can be correlated with the position of the object in the virtual world.</dd>
+              <dt>Plane detection and tracking</dt>
+              <dd>Detect planes in the real world and track these planes in real-time. Provide the 4x4 transform matrix which represents the center position and orientation of each plane. It can be used for placing 3D virtual object on the ground/desktop.</dd>
+              <dt>Anchor</dt>
+              <dd>Anchor defines a fixed position and orientation in the real world. Developers can create an anchor from a 4x4 transform matrix, which can be got by hit test. This matrix will be updated each frame to ensure that the virtual object corresponding to the matrix can be fixed in one position and direction in the real scene.</dd>
+              <dt>Hit test</dt>
+              <dd>Get a 4x4 transform matrix representing a position and orientation in the real world space corresponding to the screen position to implement functions such as clicking and placing virtual objects.</dd>
+              </dl>
                 <figure>
                     <img alt="Better support for AR" src="images/ar_support.png" width="600">
                     <figcaption>
