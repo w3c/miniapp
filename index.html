@@ -28,9 +28,13 @@
 
     <script class="remove">
         var respecConfig = {
-            specStatus: "unofficial",
+            specStatus: "ED",
+            previousPublishDate: "2019-09-12",
+            previousMaturity: "WD",
+            copyrightStart: "2019",
+            edDraftURI: "https://w3c.github.io/mini-app-white-paper/",
 
-            shortName: "mini-app",
+            shortName: "mini-app-white-paper",
             noRecTrack: true,
             copyrightStart: "2019",
 
@@ -106,7 +110,7 @@
 <body>
     <section id='abstract'>
         <p>
-        This document introduces a new format for mobile application, named MiniApp, which is a very popular hybrid solution relies on Web technologies but also integrates with capabilities of Native Apps.
+        This document introduces a new format for mobile application, named MiniApp, which is a very popular hybrid solution relying on Web technologies but also integrates with capabilities of Native Apps.
         </p>
     </section>
     <section id='sotd'>
@@ -305,37 +309,37 @@
                     <h2>Core Features</h2>
                     <section>
                         <h2>Separate the View Layer from the Logic Layer</h2>
-                        <p>In a miniapp, the view layer is usually isolated from the logic layer.</p>
+                        <p>In a miniapp, the view layer is usually separated from the logic layer.</p>
                         <figure>
                           <img alt="logic layer and view layer" src="images/logic_view.png" width="400">
                           <figcaption>
                             General Architecture of MiniApp
                           </figcaption>
                         </figure>
-                        <p>View Layer is responsible for rendering MiniApp pages, including Web components rendering and native components rendering, which can be seen as a hybrid rendering. For example, Web components rendering can be handled by WebView. Since some components rendering cannot be supported by WebView or due to its performance limitation, MiniApp relies on some native components, such as map, video, etc.</p>
-                        <p>Logic Layer is implemented by JS Worker. Worker is responsible for MiniApp’s event processing, API calling and life circle management.</p>
-                        <p>Extended native capabilities are provided by Native App or OS, such as payment, file processing, scanning, phone call, etc. These capabilities are called through API. When a MiniApp calls a native API, it transfers the API calling to Extended Native Capabilities for further processing via JS Bridge, and obtains the result from Extended Native Capabilities via JS Bridge.</p>
+                        <p>The View Layer is responsible for rendering MiniApp pages, including Web components rendering and native components rendering, which can be considered as hybrid rendering. For example, Web components rendering can be handled by WebView, but some of the Web components rendering aren't supported by WebView or have performance limitation, MiniApp also relies on some native components, such as map, video, etc.</p>
+                        <p>Logic Layer is implemented with JS Worker. The Worker is responsible for MiniApp’s event processing, API calling and lifecycle management.</p>
+                        <p>Extended native capabilities usually come from the hosting Native App or OS, including payment, file processing, scanning, phone call, etc. These capabilities are called through certain APIs. When a Mini App calls a native API, it transfers the API calling to Extended Native Capabilities for further processing via JS Bridge, and obtains the result from Extended Native Capabilities via JS Bridge.</p>
                         <figure>
                           <img alt="data flow of MiniApp when an API is called" src="images/data_flow.png" width="600">
                           <figcaption>
                             Data flow of MiniApp when an API is called
                           </figcaption>
                         </figure>
-                        <p>Worker establishes connection with each render, transferring the need-to-be-rendered data to render for further processing.</p>
-                        <p>If an event is triggered by one component in a MiniApp page, this page’s render will send the event to worker for further processing. At the same time, the render can receive the data sent from worker for re-rendering the MiniApp page.</p>
-                        <p>The rendering can be considered as stateless, and all the states are stored in the worker.</p>
+                        <p>Worker establishes connection for each Render, transferring the need-to-be-rendered data to render for further processing.</p>
+                        <p>If an event is triggered by a component in a MiniApp page, this page’s Render will send the event to worker for further processing. At the same time, the Render will wait for the data sent from worker to re-render the MiniApp page.</p>
+                        <p>The rendering can be considered as stateless, and all the states will be stored in the worker.</p>
                         <p>The benefits of separating the View Layer and the Logic Layer include:</p>
                         <ul>
-                            <li>Convenient for data sharing and interaction among multiple MiniApp pages.</li>
-                            <li>Same context within a life circle of MiniApp can provide a similar coding experience for the developers with native app development background.</li>
-                            <li>Separation and parallel implementation of render and JS worker can prevent the situation where a JS execution impacts or slows down the page rendering, which can help enhance the performance of rendering.</li>
+                            <li>Very handy for data sharing and interaction among multiple MiniApp pages.</li>
+                            <li>Having the same context within a lifecycle of MiniApp can provide a similar coding experience for those developers coming from native app developement background.</li>
+                            <li>Separation and parallel implementation of Render and JS worker can prevent the situation where a JS execution impacts or slows down the page rendering, which can help enhance the performance of rendering.</li>
                         </ul>
                     </section>
                     <section id="api_and_component">
                         <h2>Rich APIs and Components</h2>
-                        <p>MiniApp platform provides many components to developers to build complex UI, including basic components like View, Form, Image, and high-level complex component like Maps.</p>
-                        <p>MiniApp vender also offers a number of APIs for developers to get access to capabilities of the Web and the native, including basic APIs such as UI display APIs, Image API, and those complex ones like Account API, Map API, Payment API.</p>
-                        <p>APIs are usually used with components. When user clicks certain component on MiniApp page, it will call the related API to implement user’s command and refresh the current MiniApp page if needed.</p>
+                        <p>MiniApp platform provides many components to help developers build a fancy UI, including basic components like View, Form, Image, and high-level component like Maps.</p>
+                        <p>MiniApp venders also offer a number of APIs for developers to get access to capabilities of both the Web and the native, including basic APIs such as UI display APIs, Image API, and those advanced ones like Account API, Map API, Payment API.</p>
+                        <p>APIs usually work together with components. When user clicks certain component on a MiniApp page, it will call the related API to complete user’s interaction and refresh the current MiniApp page if needed.</p>
                     </section>
                     <section id="constructor">
                         <h2>MiniApp Constructor</h2>
@@ -375,6 +379,7 @@
                         </figure>
 
                         <p>One of the goals of the widget is to let the user forget the traditional app concept and truly meet the user's needs in the form of service. So in addition to all app invocation paths, widgets can also be triggered by different methods on different scenarios, such as text keywords, voice analysis, picture recognition, scan code, event intent.</p>
+                        <p>Note: Widget is implemented by Quick App in China market.</p>
                     </section>
                     <section>
                         <h2>Single-Instance, Multi-Entries</h2>
@@ -420,7 +425,7 @@
                     </section>
                 </section>
                 <section>
-                    <h2>MiniApp Landscape</h2>
+                    <h2>MiniApp Market</h2>
                     <p>This section describes a few current mainstream MiniApp or relevant platforms.</p>
                     <dl>
                         <dt>Alipay Mini Program</dt>
@@ -464,12 +469,12 @@
                         Rendering results coming from both the Web and the Native
                     </figcaption>
                 </figure>
-                <p>Proposal: WebView to provide a standardized API to help integrate the native rendering result into WebView rendering result.</p>
+                <p>Proposal: Mini App needs a standardized API to help integrate the native rendering result into Web rendering result.</p>
             </section>
             <section>
             <h2>Transition Animation</h2>
                 <p>MiniApp would like to provide transition animation during page switching so that users can have similar experience as when they are using a Native App, but it's almost impossible to do that now.</p>
-                <p>Proposal: WebView to expose an API to call add transition animation during MiniApp page switching.</p>
+                <p>Proposal: Mini App needs an API to call add transition animation during MiniApp page switching.</p>
             </section>
             <section>
             <h2>Standardise the Package Constructor of MiniApp</h2>
@@ -479,7 +484,7 @@
             <section>
             <h2>Standardise the navigation to a MiniApp page</h2>
                 <p>For a hot page in a MiniApp, it may be referenced in another MiniApp, and it is expected to be accurately evoked when the user visits.</p>
-                <p>Poposal: Define a standardized protocol (URI scheme) to access MiniApp.</p>
+                <p>Proposal: Define a standardized protocol (URI scheme) to access MiniApp.</p>
             </section>
             <section>
             <h2>MiniApp Widgets</h2>
@@ -554,22 +559,19 @@
             </section>
 
             <section>
-                <h2>Low-level AR APIs based on ARCore and ARKit</h2>
-                <p>There are a few AR APIs in MiniApps we would migrate to the Web, as they help to provide better AR experience in gaming, 3d model preview, interactive ads.</p>
-                <p>Proposal: Provide low-level AR APIs based on ARCore and ARKit, which includes:</p>
-                <ul><li>Camera view matrix for world tracking
-                <p>Provide the 4x4 view matrix of the spatial location and orientation of the mobile phone, which can be used to update the camera matrix in their 3D virtual world in real time by developers. Thereby the position of the real world can be correlated with the position of the object in the virtual world.</p>
-                        </li>
-                        <li>Plane detection and tracking
-                            <p>Detect planes in the real world and track these planes in real-time. Provide the 4x4 transform matrix which represents the center position and orientation of each plane. It can be used for placing 3D virtual object on the ground/desktop.</p>
-                        </li>
-                        <li>Anchor
-                            <p>Anchor defines a fixed position and orientation in the real world. Developers can create an anchor from a 4x4 transform matrix, which can be got by hit test. This matrix will be updated each frame to ensure that the virtual object corresponding to the matrix can be fixed in one position and direction in the real scene.</p>
-                        </li>
-                        <li>Hit test
-                            <p>Get a 4x4 transform matrix representing a position and orientation in the real world space corresponding to the screen position to implement functions such as clicking and placing virtual objects.</p>
-                        </li>
-                    </ul></p>
+              <h2>Low level AR APIs based on ARCore and ARKit</h2>
+              <p>There are a few AR APIs in MiniApps we would migrate to the Web, as they help to provide better AR experience in gaming, 3d model preview, interactive ads.</p>
+              <p>Proposal: Provide low-level AR APIs based on ARCore and ARKit, which includes:</p>
+              <dl>
+              <dt>Camera view matrix for world tracking</dt>
+              <dd>Provide the 4x4 view matrix of the spatial location and orientation of the mobile phone, which can be used to update the camera matrix in their 3D virtual world in real time by developers. Thereby the position of the real world can be correlated with the position of the object in the virtual world.</dd>
+              <dt>Plane detection and tracking</dt>
+              <dd>Detect planes in the real world and track these planes in real-time. Provide the 4x4 transform matrix which represents the center position and orientation of each plane. It can be used for placing 3D virtual object on the ground/desktop.</dd>
+              <dt>Anchor</dt>
+              <dd>Anchor defines a fixed position and orientation in the real world. Developers can create an anchor from a 4x4 transform matrix, which can be got by hit test. This matrix will be updated each frame to ensure that the virtual object corresponding to the matrix can be fixed in one position and direction in the real scene.</dd>
+              <dt>Hit test</dt>
+              <dd>Get a 4x4 transform matrix representing a position and orientation in the real world space corresponding to the screen position to implement functions such as clicking and placing virtual objects.</dd>
+              </dl>
                 <figure>
                     <img alt="Better support for AR" src="images/ar_support.png" width="600">
                     <figcaption>
@@ -600,32 +602,28 @@
                         <td>permission on every usage</td>
                         <td>Contacts, file-apis, add to home screen, photo picker, phone call</td> 
                       </tr><tr>
-                        <td>request password</td>
-                        <td>Payment</td> 
-                      </tr><tr>
                         <td>Validate with token</td>
                         <td>Push</td> 
                       </tr><tr>
                         <td>Callback/messaging</td>
                         <td>Password-free Payment</td> 
+                      </tr><tr>
+                        <td>request password</td>
+                        <td>Payment</td> 
                       </tr>
                     </tbody></table>
             </section>
 
             <section>
                 <h2>Way Forward in W3C</h2>
-                <p>To meet the use cases and requirements of MiniApps, and make the Web standards better support the MiniApp, we hope to include the following work in W3C:</p><ul>
-                        <li>set up a group to coordinate the MiniApp related standardization in W3C as well as to collaborate with other related W3C groups.
-                        </li>
-                        <li>explore innovation of user agent and  enrich the Web.
+                <p>To meet the use cases and requirements of MiniApps, make the Web standards better support the MiniApp, and explore innovation of user agent and  enrich the Web, we hope to set up a group and include the following work in W3C:</p><ul>
+                        <li>coordinate the MiniApp related standardization in W3C as well as to collaborate with other related W3C groups.
                         </li>
                         <li>horizontal review (security, privacy, i18n and a11y).
                         </li>
                     </ul>
 
-                    <p>In details, the following technical work has been discussed:</p><ul>
-                        <li>further review the gap between current MiniApp APIs and Web APIs, complete the gap analysis.
-                        </li>
+                    <p>In details, the following technical work shall be studied further:</p><ul>
                         <li>draft a roadmap for MiniApp standards based on the use cases and requirements selected by the group.
                         </li>
                         <li>develop specifications for  features among current vendors. Target features include but not limited to:
@@ -640,6 +638,7 @@
                         </li>
                         <li>design future Web APIs to be useful for both web and MiniApp environments.</li>
                     </ul>
+                 <p>Note: the further gap between current MiniApp APIs and Web APIs will be analyzed in parallel.</p>
             </section>
 
             <section>
@@ -653,15 +652,15 @@
                       <tr>
                         <td>小程序</td>
                         <td>Mini Program</td> 
-                        <td>one format of MiniApp running within Native Apps</td> 
+                        <td>One format of MiniApp running within Native Apps.</td> 
                       </tr><tr>
                         <td>快应用</td>
                         <td>Quick App</td>
-                        <td>a MiniApp standard developed by 12 mobile phone manufacturers in Quick App alliances</td> 
+                        <td>A MiniApp standard developed by 12 mobile phone manufacturers in Quick App alliances.</td> 
                       </tr><tr>
                         <td>渲染环境</td>
                         <td>rendering view</td>
-                        <td>native view or webView</td>
+                        <td>Native view or WebView.</td>
                       </tr>
                       <tr>
                         <td>负一屏</td>
@@ -680,7 +679,7 @@
         Gap Analysis
       </h2>
       <p>
-        Please look at <a href="comparison.html">the comparison table of APIs in MiniApps, the W3C specs, and PWA.next</a>.
+        Please look at <a href="comparison.html">the comparison table of APIs in MiniApps, W3C specs, and PWAs.</a>.
       </p>
     </section>
 
@@ -689,7 +688,7 @@
         Acknowledgments
       </h2>
       <p>
-        Many thanks to Guanyu Liu (360), He Du (Xiaomi), Hongguang Dong (Xiaomi), Xiaoqian Wu (W3C), Yi Shen (Baidu), Yefeng Xia (China Mobile) who also contribute to this document.
+        Many thanks to Guanyu Liu (360), He Du (Xiaomi), Hongguang Dong (Xiaomi), Xiaoqian Wu (W3C), Yi Shen (Baidu), Yefeng Xia (China Mobile) who also contributed to this document.
       </p>
     </section>
 </body>
