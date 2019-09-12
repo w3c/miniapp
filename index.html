@@ -305,37 +305,37 @@
                     <h2>Core Features</h2>
                     <section>
                         <h2>Separate the View Layer from the Logic Layer</h2>
-                        <p>In a miniapp, the view layer is usually isolated from the logic layer.</p>
+                        <p>In a miniapp, the view layer is usually separated from the logic layer.</p>
                         <figure>
                           <img alt="logic layer and view layer" src="images/logic_view.png" width="400">
                           <figcaption>
                             General Architecture of MiniApp
                           </figcaption>
                         </figure>
-                        <p>View Layer is responsible for rendering MiniApp pages, including Web components rendering and native components rendering, which can be seen as a hybrid rendering. For example, Web components rendering can be handled by WebView. Since some components rendering cannot be supported by WebView or due to its performance limitation, MiniApp relies on some native components, such as map, video, etc.</p>
-                        <p>Logic Layer is implemented by JS Worker. Worker is responsible for MiniApp’s event processing, API calling and life circle management.</p>
-                        <p>Extended native capabilities are provided by Native App or OS, such as payment, file processing, scanning, phone call, etc. These capabilities are called through API. When a MiniApp calls a native API, it transfers the API calling to Extended Native Capabilities for further processing via JS Bridge, and obtains the result from Extended Native Capabilities via JS Bridge.</p>
+                        <p>The View Layer is responsible for rendering MiniApp pages, including Web components rendering and native components rendering, which can be considered as hybrid rendering. For example, Web components rendering can be handled by WebView, but some of the Web components rendering aren't supported by WebView or have performance limitation, MiniApp also relies on some native components, such as map, video, etc.</p>
+                        <p>Logic Layer is implemented with JS Worker. The Worker is responsible for MiniApp’s event processing, API calling and lifecycle management.</p>
+                        <p>Extended native capabilities usually come from the hosting Native App or OS, including payment, file processing, scanning, phone call, etc. These capabilities are called through certain APIs. When a Mini App calls a native API, it transfers the API calling to Extended Native Capabilities for further processing via JS Bridge, and obtains the result from Extended Native Capabilities via JS Bridge.</p>
                         <figure>
                           <img alt="data flow of MiniApp when an API is called" src="images/data_flow.png" width="600">
                           <figcaption>
                             Data flow of MiniApp when an API is called
                           </figcaption>
                         </figure>
-                        <p>Worker establishes connection with each render, transferring the need-to-be-rendered data to render for further processing.</p>
-                        <p>If an event is triggered by one component in a MiniApp page, this page’s render will send the event to worker for further processing. At the same time, the render can receive the data sent from worker for re-rendering the MiniApp page.</p>
-                        <p>The rendering can be considered as stateless, and all the states are stored in the worker.</p>
+                        <p>Worker establishes connection for each Render, transferring the need-to-be-rendered data to render for further processing.</p>
+                        <p>If an event is triggered by a component in a MiniApp page, this page’s Render will send the event to worker for further processing. At the same time, the Render will wait for the data sent from worker to re-render the MiniApp page.</p>
+                        <p>The rendering can be considered as stateless, and all the states will be stored in the worker.</p>
                         <p>The benefits of separating the View Layer and the Logic Layer include:</p>
                         <ul>
-                            <li>Convenient for data sharing and interaction among multiple MiniApp pages.</li>
-                            <li>Same context within a life circle of MiniApp can provide a similar coding experience for the developers with native app development background.</li>
-                            <li>Separation and parallel implementation of render and JS worker can prevent the situation where a JS execution impacts or slows down the page rendering, which can help enhance the performance of rendering.</li>
+                            <li>Very handy for data sharing and interaction among multiple MiniApp pages.</li>
+                            <li>Having the same context within a lifecycle of MiniApp can provide a similar coding experience for those developers coming from native app developement background.</li>
+                            <li>Separation and parallel implementation of Render and JS worker can prevent the situation where a JS execution impacts or slows down the page rendering, which can help enhance the performance of rendering.</li>
                         </ul>
                     </section>
                     <section id="api_and_component">
                         <h2>Rich APIs and Components</h2>
-                        <p>MiniApp platform provides many components to developers to build complex UI, including basic components like View, Form, Image, and high-level complex component like Maps.</p>
-                        <p>MiniApp vender also offers a number of APIs for developers to get access to capabilities of the Web and the native, including basic APIs such as UI display APIs, Image API, and those complex ones like Account API, Map API, Payment API.</p>
-                        <p>APIs are usually used with components. When user clicks certain component on MiniApp page, it will call the related API to implement user’s command and refresh the current MiniApp page if needed.</p>
+                        <p>MiniApp platform provides many components to help developers build a fancy UI, including basic components like View, Form, Image, and high-level component like Maps.</p>
+                        <p>MiniApp venders also offer a number of APIs for developers to get access to capabilities of both the Web and the native, including basic APIs such as UI display APIs, Image API, and those advanced ones like Account API, Map API, Payment API.</p>
+                        <p>APIs usually work together with components. When user clicks certain component on a MiniApp page, it will call the related API to complete user’s interaction and refresh the current MiniApp page if needed.</p>
                     </section>
                     <section id="constructor">
                         <h2>MiniApp Constructor</h2>
