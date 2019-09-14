@@ -334,12 +334,14 @@
                             <li>Having the same context within a lifecycle of MiniApp can provide a similar coding experience for those developers coming from native app developement background.</li>
                             <li>Separation and parallel implementation of Render and JS worker can prevent the situation where a JS execution impacts or slows down the page rendering, which can help enhance the performance of rendering.</li>
                         </ul>
+                        <p>MiniApp often provides an independent WebView or part of the Native View for each page, which makes it possible to get direct access to a secondary page.</p>
                     </section>
                     <section id="api_and_component">
                         <h2>Rich APIs and Components</h2>
                         <p>MiniApp platform provides many components to help developers build a fancy UI, including basic components like View, Form, Image, and high-level component like Maps.</p>
-                        <p>MiniApp venders also offer a number of APIs for developers to get access to capabilities of both the Web and the native, including basic APIs such as UI display APIs, Image API, and those advanced ones like Account API, Map API, Payment API.</p>
-                        <p>APIs usually work together with components. When user clicks certain component on a MiniApp page, it will call the related API to complete user’s interaction and refresh the current MiniApp page if needed.</p>
+                        <p>MiniApp venders also offer a number of APIs for developers to get access to capabilities of both the Web and the native, including basic APIs such as UI display APIs, Image API, and those advanced ones like Account API, Map API, Payment API. Sometimes developers may want to provide interactions similar to the Native Apps, MiniApps have events like refresh-while-scrolling-down, slide-down-to-the-bottom.</p>
+                        <p>APIs usually work together with components. When user clicks certain component on a MiniApp page, it will call the related API to complete user’s interaction and refresh the current MiniApp page if needed. Together, these APIs and Components can provide features that are not ready in the Web yet, or offer hooks to allow developers to improve their Web apps.</p>
+                        <p>MiniApp also support Web Component APIs, so developers can easily reuse the elements in their apps.</p> 
                     </section>
                     <section id="constructor">
                         <h2>MiniApp Constructor</h2>
@@ -688,7 +690,7 @@
         Acknowledgments
       </h2>
       <p>
-        Many thanks to Guanyu Liu (360), He Du (Xiaomi), Hongguang Dong (Xiaomi), Xiaoqian Wu (W3C), Yi Shen (Baidu), Yefeng Xia (China Mobile) who also contributed to this document.
+        Many thanks to Guanyu Liu (360), He Du (Xiaomi), Hongguang Dong (Xiaomi), Xiaoqian Wu (W3C), Yi Shen (Baidu), Yefeng Xia (China Mobile), An Wang(Uni-App) who also contributed to this document.
       </p>
     </section>
 </body>
