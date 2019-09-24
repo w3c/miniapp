@@ -1,2249 +1,1447 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Comparison of APIs in MiniApps, W3C specs, and PWAs</title>
   <style>
     body {
-      line-height: 1.5;
-      color: black;
-      max-width: 90%;
-      margin: 0 auto;
+      margin: 0;
+      font-family: sans-serif;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      display: flex;
+      flex-direction: column;
+      padding: 1em;
+      align-items: center;
     }
-    .center {
-      text-align: center;
+
+    h1 {
+      color: #005A9C;
+      font-weight: bold;
+      margin: 0 0 .1em;
+      font-size: 160%;
     }
-    .table-wrapper {
-      overflow-x: scroll;
-      border: 2px solid red;
-    }
+
     table {
       border-collapse: collapse;
+      width: 100%;
+      background: #fff;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      position: relative;
     }
-    tr {
-      border-bottom: 1px solid #ddd;
+
+    td {
+      padding: 0.4em 0.4em;
+      text-align: left;
+      border-right: 1px solid rgba(17, 101, 145, 0.4);
+      border-left: 1px solid rgba(17, 101, 145, 0.4);
     }
-    th, td {
-      min-width: 200px;
+
+    tr:last-child td {
+      border-bottom: 1px solid rgba(17, 101, 145, 0.4);
     }
-    table, th, td {
-      padding: 0.25em;
-      border: 1px solid black;
+
+    td.err {
+      background-color: #e992b9;
+      color: #fff;
+      font-size: 0.5em;
+      text-align: center;
+      line-height: 1;
+    }
+
+    th {
+      font-weight: bold;
+      color: #fff;
+      white-space: nowrap;
+      text-align: center;
+      padding-top: 1.0em;
+      padding-bottom: 1.0em;
+      top:0;
+      background-color: #034575;
+      position: sticky;
+      min-width: 120px;
+    }
+
+    tbody tr:nth-child(2n-1) {
+      background-color: #fafafa;
+      transition: all .125s ease-in-out;
+    }
+
+    tbody tr:hover {
+      background-color: rgba(17, 101, 145, 0.95);
+      color: #fff;
+    }
+
+    .c5, .c6, .c7 {
+      width: 25vw;
+    }
+
+    .search {
+      text-align: left;
+      margin: 1rem;
+      position: absolute;
+      top: -0.1rem;
+      left: 0rem;
+      z-index: 1000;
+      background-color: transparent;
+      display: inline-block;
+    }
+
+    input[type=search] {
+      border: 1px solid rgba(17, 101, 145, 0.4);
+      padding: 0.5em 0.5em;
+      width: 120px;
+      font-size: 16px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    a[href] {
+      color: #034575;
+      text-decoration: none;
+      border-bottom: 1px solid #707070;
+      padding: 0 1px 0;
+      margin: 0 -1px 0;
+    }
+
+    a:visited {
+      border-bottom-color: #BBB;
+    }
+
+    a[href]:focus,
+    a[href]:hover {
+      background: #f8f8f8;
+      background: rgba(75%, 75%, 75%, .25);
+      border-bottom-width: 2px;
+      margin-bottom: -2px;
+    }
+
+    th a[href] {
+      color: #ffffff;
+      text-decoration: none;
+      border-bottom: 1px solid #ffffff;
+    }
+
+    th a:visited {
+      border-bottom-color: #eee;
+    }
+
+    th a[href]:focus,
+    th a[href]:hover {
+      background: #f8f8f8;
+      background: rgba(75%, 75%, 75%, .25);
+      border-bottom-width: 2px;
+      margin-bottom: -2px;
+    }
+
+    tbody tr:hover a {
+      color: #fff;
+      border-bottom: 1px solid #ffffff;
+    }
+
+    tbody tr:hover a:visited {
+      border-bottom-color: #fff;
+    }
+
+    tbody tr:hover a[href]:focus,
+    tbody tr:hover a[href]:hover {
+      border-bottom: 2px solid #fff;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     }
   </style>
-  </head>
-
-  <body>
-    <h2 class="center">Comparison of APIs in MiniApps, W3C specs, and PWAs</h2>
-    <p class="center">Please slide right for more information.</p>
-    <div class="table-wrapper">
-    <table>
-        <col class="col0">
-        <col class="col1">
-        <col class="col2">
-        <col class="col3">
-        <col class="col4">
-        <col class="col5">
-        <!-- <col class="col6"> -->
-        <col class="col7">
-        <col class="col8">
-        <tbody>
-          <tr class="row0">
-            <td class="column0 style1 s">Category</td>
-            <td class="column1 style9 s">Features/Standards</td>
-            <td class="column2 style9 s">W3C Spec</td>
-            <td class="column3 style9 s">Spec Status</td>
-            <td class="column4 style24 s">PWA (PWA.next)</td>
-            <td class="column5 style26 s"><a href="https://www.quickapp.cn/" title="">QuickApp (Xiaomi, Huawei)</a></td>
-            <td class="column7 style28 s"><a href="https://docs.alipay.com/mini/developer/" title="">Alipay Mini Program (Alipay)</a></td>
-            <td class="column8 style30 s"><a href="https://smartprogram.baidu.com/developer/index.html" title="">Baidu Smart Mini Program</a></td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row1">
-            <td class="column0 style2 s">OS</td>
-            <td class="column1 style10 s">Android</td>
-            <td class="column2 style17 s">&nbsp;</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">Yes</td>
-            <td class="column7 style17 s">Yes</td>
-            <td class="column8 style23 s">Yes</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row2">
-            <td class="column0 style3 s">OS</td>
-            <td class="column1 style10 s">iOS</td>
-            <td class="column2 style17 s">&nbsp;</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">Yes (Partial)</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">Yes</td>
-            <td class="column8 style23 s">Yes</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row3">
-            <td class="column0 style3 s">OS</td>
-            <td class="column1 style10 s">Chrome OS</td>
-            <td class="column2 style17 s">&nbsp;</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">Yes (Chrome 67+)</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style23 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row4">
-            <td class="column0 style3 s">OS</td>
-            <td class="column1 style10 s">Windows</td>
-            <td class="column2 style17 s">&nbsp;</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">Yes (Chrome 70+)</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style23 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row5">
-            <td class="column0 style3 s">OS</td>
-            <td class="column1 style10 s">Linux</td>
-            <td class="column2 style17 s">&nbsp;</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">Yes (Chrome 70+)</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style23 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row6">
-            <td class="column0 style4 s">Engine</td>
-            <td class="column1 style10 s">Engine</td>
-            <td class="column2 style17 s">&nbsp;</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">Browser Engines</td>
-            <td class="column5 style23 s">No Chromium layout engine but with V8 engine, more lightweight.<br />
-Providing pure WebAPIs to app developers,Web JS APIs are mapped from Android native APIs and part of standard WebAPIs.<br />
-Template part(with HTML tags)in .ux file mapping to single android native views and combined view components, provided native performance experiences.<br />
-CSS subset: Mapping to attributes of Android View(e.g. position, color)</td>
-            <td class="column7 style23 s">Native(rendering)<br />
-&nbsp;&nbsp;+ WebView (rendering) + Worker (Data storage and business logic) + V8(use UC<br />
-&nbsp;&nbsp;browsing engine)</td>
-            <td class="column8 style23 s">rendering：Native+WebView<br />
-logic：V8/Javascript Core</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row7">
-            <td class="column0 style5 s">File format</td>
-            <td class="column1 style10 s">Page</td>
-            <td class="column2 style17 s">&nbsp;</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">.html, .js, .css</td>
-            <td class="column5 style23 s">.ux file (template),<br />
-&nbsp;&nbsp;.js, .css</td>
-            <td class="column7 style17 s">.axml, .js, .acss</td>
-            <td class="column8 style23 s">.swan, .js, .css</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row8">
-            <td class="column0 style5 s">ES6</td>
-            <td class="column1 style10 s">ES6</td>
-            <td class="column2 style17 s">&nbsp;</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">Yes</td>
-            <td class="column7 style17 s">Yes</td>
-            <td class="column8 style23 s">Yes</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row9">
-            <td class="column0 style5 s">Release</td>
-            <td class="column1 style10 s">Audit</td>
-            <td class="column2 style17 s">&nbsp;</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">Yes</td>
-            <td class="column7 style17 s">Yes</td>
-            <td class="column8 style23 s">Yes</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row10">
-            <td class="column0 style5 s">Release</td>
-            <td class="column1 style10 s">App store integration</td>
-            <td class="column2 style17 s">&nbsp;</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">Yes</td>
-            <td class="column7 style23 s">Can be used within Alibaba's Native Apps including Alipay, Taobao, DingDing, Gaode, ELE.me</td>
-            <td class="column8 style23 s">Can be used within Baidu App, and Open Source Union apps, such as IQiyi , Bilibili, Wifi and so on</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row11">
-            <td class="column0 style5 s">Modular</td>
-            <td class="column1 style10 s">Customized Component</td>
-            <td class="column2 style18 s"><a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements" title="">Custom Elements</a></td>
-            <td class="column3 style17 s">Rec</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">Yes</td>
-            <td class="column7 style17 s">Yes</td>
-            <td class="column8 style23 s">Yes</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row12">
-            <td class="column0 style6 s">Add to home<br />
-&nbsp;&nbsp;screen</td>
-            <td class="column1 style10 s">Add to home screen</td>
-            <td class="column2 style17 s">&nbsp;</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">Yes</td>
-            <td class="column7 style23 s">Yes (via A2HS feature<br />
-&nbsp;&nbsp;on Safari)</td>
-            <td class="column8 style23 s">Yes</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row13">
-            <td class="column0 style5 s">Discoverable</td>
-            <td class="column1 style10 s">Discoverable</td>
-            <td class="column2 style17 s">&nbsp;</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Yes (search within<br />
-&nbsp;&nbsp;system search bar, management apps, app store, browsers, home page etc.)</td>
-            <td class="column7 style23 s">Yes (search within<br />
-&nbsp;&nbsp;Alipay)</td>
-            <td class="column8 style23 s">Yes (search with Baidu search engine)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row14">
-            <td class="column0 style6 s">Application<br />
-&nbsp;&nbsp;Lifecycle</td>
-            <td class="column1 style10 s">Web Share</td>
-            <td class="column2 style18 s"><a href="https://wicg.github.io/web-share/" title="">Web Share API</a></td>
-            <td class="column3 style17 s">CGR</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Share(@system.share +<br />
-&nbsp;&nbsp;@service.share)</td>
-            <td class="column7 style17 s">onShareAppMessage</td>
-            <td class="column8 style23 s">Yes</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row15">
-            <td class="column0 style6 s">Application<br />
-&nbsp;&nbsp;Lifecycle</td>
-            <td class="column1 style10 s">Splash screen</td>
-            <td class="column2 style19 s"><a href="https://github.com/w3c/manifest/issues/589#issuecomment-323232119" title="">Splash Screen in<br />
-&nbsp;&nbsp;Manifest(WIP)</a></td>
-            <td class="column3 style17 s">Proposal</td>
-            <td class="column4 style17 s">Yes (WIP)</td>
-            <td class="column5 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column7 style17 s">No and no necessary</td>
-            <td class="column8 style17 s">No and no necessary</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row16">
-            <td class="column0 style6 s">Application<br />
-&nbsp;&nbsp;Lifecycle</td>
-            <td class="column1 style10 s">Service Workers</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/ServiceWorker/" title="">Service Workers Nightly</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">No and no necessary</td>
-            <td class="column8 style17 s">No and no necessary</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row17">
-            <td class="column0 style6 s">Application<br />
-&nbsp;&nbsp;Lifecycle</td>
-            <td class="column1 style10 s">Web App Manifest</td>
-            <td class="column2 style19 s"><a href="https://www.w3.org/TR/appmanifest/" title="">Web<br />
-&nbsp;&nbsp;App Manifest</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column7 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column8 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row18">
-            <td class="column0 style6 s">Application<br />
-&nbsp;&nbsp;Lifecycle</td>
-            <td class="column1 style10 s">App Info</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style25 s">No</td>
-            <td class="column5 style23 s">App Info<br />
-&nbsp;&nbsp;(@system.app)</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style17 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row19">
-            <td class="column0 style6 s">User<br />
-&nbsp;&nbsp;Interaction</td>
-            <td class="column1 style10 s">Fullscreen</td>
-            <td class="column2 style18 s"><a href="https://fullscreen.spec.whatwg.org/" title="">Fullscreen API</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">manifest.display.fullscreen</td>
-            <td class="column7 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column8 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row20">
-            <td class="column0 style6 s">User<br />
-&nbsp;&nbsp;Interaction</td>
-            <td class="column1 style10 s">Badging</td>
-            <td class="column2 style18 s"><a href="https://wicg.github.io/badging/" title="">Badging API</a></td>
-            <td class="column3 style17 s">CGR</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style23 s">Tab Bar (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column8 style23 s">Tab Bar (private<br />
-&nbsp;&nbsp;implementation)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row21">
-            <td class="column0 style6 s">User<br />
-&nbsp;&nbsp;Interaction</td>
-            <td class="column1 style10 s">Prompt</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style25 s">No</td>
-            <td class="column5 style23 s">Prompt<br />
-&nbsp;&nbsp;(@system.prompt)</td>
-            <td class="column7 style17 s">Popup component</td>
-            <td class="column8 style17 s">Popup component</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row22">
-            <td class="column0 style6 s">User<br />
-&nbsp;&nbsp;Interaction</td>
-            <td class="column1 style10 s">Vibration</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/vibration/" title="">Vibration API</a></td>
-            <td class="column3 style17 s">Rec</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Vibration<br />
-&nbsp;&nbsp;(@system.vibrator)</td>
-            <td class="column7 style17 s">my.vibrate*</td>
-            <td class="column8 style23 s">swan.vibrateLong<br />
-swan.vibrateShort</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row23">
-            <td class="column0 style6 s">User<br />
-&nbsp;&nbsp;Interaction</td>
-            <td class="column1 style10 s">Notification</td>
-            <td class="column2 style18 s"><a href="https://notifications.spec.whatwg.org/" title="">Notifications API</a></td>
-            <td class="column3 style23 s">Living<br />
-&nbsp;&nbsp;Standard</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Notification<br />
-&nbsp;&nbsp;(@system.notification)</td>
-            <td class="column7 style23 s">Notice (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column8 style23 s">Template Message<br />
-Customer Service Message <br />
-(private impletmention)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row24">
-            <td class="column0 style6 s">User<br />
-&nbsp;&nbsp;Interaction</td>
-            <td class="column1 style10 s">Screen Orientation</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/screen-orientation/" title="">The Screen Orientation API</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">orientation in JSON<br />
-&nbsp;&nbsp;(Partial)</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style17 s">swan.onDeviceMotionChange</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row25">
-            <td class="column0 style6 s">User<br />
-&nbsp;&nbsp;Interaction</td>
-            <td class="column1 style10 s">User Idle Detection</td>
-            <td class="column2 style18 s"><a href="https://github.com/inexorabletash/idle-detection" title="">User Idle Detection</a></td>
-            <td class="column3 style17 s">Proposal</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style17 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row26">
-            <td class="column0 style6 s">User<br />
-&nbsp;&nbsp;Interaction</td>
-            <td class="column1 style10 s">Wake Lock</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/wake-lock/" title="">Wake Lock API</a></td>
-            <td class="column3 style17 s">CR</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style23 s">only Screen WakeLock<br />
-&nbsp;&nbsp;(my.setKeepScreenOn(OBJECT))</td>
-            <td class="column8 style23 s">only Screen WakeLock<br />
-swan.setKeepScreenOn</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row27">
-            <td class="column0 style6 s">User<br />
-&nbsp;&nbsp;Interaction</td>
-            <td class="column1 style10 s">Clipboard</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/clipboard-apis/" title="">Clipboard API and events</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Clipboard<br />
-&nbsp;&nbsp;(@system.clipboard)</td>
-            <td class="column7 style17 s">my.getClipboard/my.setClipboard</td>
-            <td class="column8 style23 s">swan.setClipboardData<br />
-swan.getClipboardData</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row28">
-            <td class="column0 style6 s">User<br />
-&nbsp;&nbsp;Interaction</td>
-            <td class="column1 style11 s">execCommand</td>
-            <td class="column2 style20 s"><a href="https://w3c.github.io/editing/execCommand" title="">execCommand</a></td>
-            <td class="column3 style23 s">Unofficial<br />
-&nbsp;&nbsp;Draft</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Clipboard<br />
-&nbsp;&nbsp;(@system.clipboard)</td>
-            <td class="column7 style17 s">my.getClipboard/my.setClipboard</td>
-            <td class="column8 style23 s">swan.setClipboardData<br />
-swan.getClipboardData</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row29">
-            <td class="column0 style6 s">User<br />
-&nbsp;&nbsp;Interaction</td>
-            <td class="column1 style12 s">History API</td>
-            <td class="column2 style18 s"><a href="https://html.spec.whatwg.org/multipage/history.html#the-history-interface" title="">The History Interface</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Page Router<br />
-&nbsp;&nbsp;(@system.router)</td>
-            <td class="column7 style17 s">Navigator component</td>
-            <td class="column8 style23 s">Router (private<br />
-&nbsp;&nbsp;implementation)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row30">
-            <td class="column0 style6 s">User<br />
-&nbsp;&nbsp;Interaction</td>
-            <td class="column1 style10 s">Barcode</td>
-            <td class="column2 style18 s"><a href="https://wicg.github.io/shape-detection-api/" title="">Accelerated Shape Detection in Images</a></td>
-            <td class="column3 style17 s">ED</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Barcode<br />
-&nbsp;&nbsp;(@system.barcode)</td>
-            <td class="column7 style23 s">Barcode (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column8 style23 s">swan.scanCode<br />
-swan.ai.faceDetect<br />
-swan.ai.advancedGeneralIdentify</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row31">
-            <td class="column0 style6 s">User<br />
-&nbsp;&nbsp;Interaction</td>
-            <td class="column1 style10 s">Shake</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">my.watchShake(OBJECT)</td>
-            <td class="column8 style23 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row32">
-            <td class="column0 style6 s">User<br />
-&nbsp;&nbsp;Interaction</td>
-            <td class="column1 style13 s">User Capture Screen<br />
-&nbsp;&nbsp;Event</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">No</td>
-            
-            <td class="column7 style17 s">my.onUserCaptureScreen(CALLBACK)</td>
-            <td class="column8 style23 s">swan.onUserCaptureScreen</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row33">
-            <td class="column0 style6 s">User<br />
-&nbsp;&nbsp;Interaction</td>
-            <td class="column1 style14 s">Alarms</td>
-            <td class="column2 style21 s">No</td>
-            <td class="column3 style21 s">&nbsp;</td>
-            <td class="column4 style21 s">No</td>
-            <td class="column5 style21 s">Yes (@system.alarm)</td>
-            <td class="column7 style21 s">No</td>
-            <td class="column8 style23 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row34">
-            <td class="column0 style6 s">Payment and<br />
-&nbsp;&nbsp;Services</td>
-            <td class="column1 style10 s">Payment</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/payment-method-basic-card/" title="">Payment Method: Basic Card</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Pay (@service.pay)<br />
-&nbsp;&nbsp;(WeChat + Alipay)</td>
-            <td class="column7 style17 s">Alipay</td>
-            <td class="column8 style23 s">swan.requestPolymerPayment</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row35">
-            <td class="column0 style6 s">Payment and<br />
-&nbsp;&nbsp;Services</td>
-            <td class="column1 style10 s">Payment</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/payment-method-id/" title="">Payment Method Identifiers</a></td>
-            <td class="column3 style17 s">CR</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Pay (@service.pay)<br />
-&nbsp;&nbsp;(WeChat + Alipay)</td>
-            <td class="column7 style17 s">Alipay</td>
-            <td class="column8 style23 s">swan.requestPolymerPayment</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row36">
-            <td class="column0 style6 s">Payment and<br />
-&nbsp;&nbsp;Services</td>
-            <td class="column1 style10 s">Payment</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/payment-handler/" title="">Payment Handler API</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Pay (@service.pay)<br />
-&nbsp;&nbsp;(WeChat + Alipay)</td>
-            <td class="column7 style17 s">Alipay</td>
-            <td class="column8 style23 s">swan.requestPolymerPayment</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row37">
-            <td class="column0 style6 s">Payment and<br />
-&nbsp;&nbsp;Services</td>
-            <td class="column1 style10 s">Payment</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/payment-request/" title="">Payment Request API</a></td>
-            <td class="column3 style17 s">CR</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Pay (@service.pay)<br />
-&nbsp;&nbsp;(WeChat + Alipay)</td>
-            <td class="column7 style17 s">Alipay</td>
-            <td class="column8 style23 s">swan.requestPolymerPayment</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row38">
-            <td class="column0 style6 s">Network and<br />
-&nbsp;&nbsp;Communications</td>
-            <td class="column1 style10 s">Push</td>
-            <td class="column2 style19 s"><a href="https://www.w3.org/TR/push-api/" title="">Push<br />
-&nbsp;&nbsp;API</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">Push (@service.push)</td>
-            <td class="column7 style17 s">alipay.open.app.mini.templatemessage.send</td>
-            <td class="column8 style23 s">Template Message<br />
-Customer Service Message <br />
-(private impletmention)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row39">
-            <td class="column0 style6 s">Network and<br />
-&nbsp;&nbsp;Communications</td>
-            <td class="column1 style10 s">Fetch</td>
-            <td class="column2 style18 s"><a href="https://fetch.spec.whatwg.org/" title="">Fetch</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">Fetch (@system fetch)</td>
-            <td class="column7 style17 s">No (use my.request)</td>
-            <td class="column8 style23 s">swan.request</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row40">
-            <td class="column0 style6 s">Network and<br />
-&nbsp;&nbsp;Communications</td>
-            <td class="column1 style10 s">WebSocket</td>
-            <td class="column2 style18 s"><a href="https://html.spec.whatwg.org/multipage/web-sockets.html#network" title="">Web sockets</a></td>
-            <td class="column3 style17 s">CR</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">WebSocket<br />
-&nbsp;&nbsp;(@system.websocketfactory)</td>
-            <td class="column7 style23 s">my.connectSocket<br />
-&nbsp;&nbsp;(private implementation)</td>
-            <td class="column8 style23 s">swan WebSocket</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row41">
-            <td class="column0 style6 s">Network and<br />
-&nbsp;&nbsp;Communications</td>
-            <td class="column1 style10 s">iBeacon</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style23 s">iBeacon (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column8 style23 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row42">
-            <td class="column0 style6 s">DataStorage<br />
-</td>
-            <td class="column1 style10 s">Web Storage</td>
-            <td class="column2 style18 s"><a href="https://html.spec.whatwg.org/multipage/webstorage.html" title="">Web Storage</a></td>
-            <td class="column3 style17 s">Rec</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Storage<br />
-&nbsp;&nbsp;(@system.storage)</td>
-            <td class="column7 style23 s">Cache (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column8 style23 s">Cache (private<br />
-&nbsp;&nbsp;implementation)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row43">
-            <td class="column0 style6 s">DataStorage<br />
-</td>
-            <td class="column1 style10 s">File API</td>
-            <td class="column2 style18 s"><a href="https://www.w3.org/TR/FileAPI/" title="">File API</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">File (@system.file)<br />
-&nbsp;&nbsp;and File Upload/Download (@system.request)</td>
-            <td class="column7 style23 s">File (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column8 style23 s">File (private<br />
-&nbsp;&nbsp;implementation)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row44">
-            <td class="column0 style6 s">DataStorage<br />
-</td>
-            <td class="column1 style13 s">Native File System<br />
-&nbsp;&nbsp;API</td>
-            <td class="column2 style18 s"><a href="https://wicg.github.io/native-file-system/" title="">Native File System API</a></td>
-            <td class="column3 style17 s">ED</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">File (@system.file)<br />
-&nbsp;&nbsp;and File Upload/Download (@system.request)</td>
-            <td class="column7 style23 s">File (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column8 style23 s">File (private<br />
-&nbsp;&nbsp;implementation)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row45">
-            <td class="column0 style6 s">DataStorage<br />
-</td>
-            <td class="column1 style10 s">File Handling</td>
-            <td class="column2 style22 s"><a href="https://github.com/WICG/file-handling/blob/master/explainer.md" title="">File Handling (Proposal)</a></td>
-            <td class="column3 style17 s">Proposal</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style17 s">Yes (Partial)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row46">
-            <td class="column0 style6 s">DataStorage<br />
-</td>
-            <td class="column1 style10 s">IndexedDB</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/IndexedDB/" title="">Indexed Database API 3.0</a></td>
-            <td class="column3 style17 s">ED</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style17 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row47">
-            <td class="column0 style6 s">Forms<br />
-</td>
-            <td class="column1 style10 s">Calendar</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style23 s">Calendar<br />
-&nbsp;&nbsp;(@system.calendar)</td>
-            <td class="column7 style23 s">Calendar (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column8 style17 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row48">
-            <td class="column0 style6 s">Forms<br />
-</td>
-            <td class="column1 style10 s">Date Picker</td>
-            <td class="column2 style18 s"><a href="https://html.spec.whatwg.org/multipage/input.html#date-state-(type%3Ddate)" title="">Date State</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">picker (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column7 style17 s">my.datePicker(object)</td>
-            <td class="column8 style17 s">picker component (mode = date)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row49">
-            <td class="column0 style6 s">Forms<br />
-</td>
-            <td class="column1 style10 s">City Picker</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">my.chooseCity</td>
-            <td class="column8 style23 s">picker component(mode = region)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row50">
-            <td class="column0 style6 s">Forms<br />
-</td>
-            <td class="column1 style10 s">Color Picker</td>
-            <td class="column2 style18 s"><a href="https://html.spec.whatwg.org/multipage/input.html#color-state-(type%3Dcolor)" title="">Color state</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">picker (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style17 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row51">
-            <td class="column0 style6 s">Sensors and<br />
-&nbsp;&nbsp;Local Interactions</td>
-            <td class="column1 style13 s">Sensor (Ambient<br />
-&nbsp;&nbsp;Light)</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/ambient-light/" title="">Ambient Light Sensor</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">&nbsp;</td>
-            <td class="column7 style17 s">&nbsp;</td>
-            <td class="column8 style17 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row52">
-            <td class="column0 style6 s">Sensors and<br />
-&nbsp;&nbsp;Local Interactions</td>
-            <td class="column1 style10 s">Sensor (Proximity)</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/proximity/" title="">Proximity Sensor</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Sensor<br />
-&nbsp;&nbsp;(sensor.subscribeProximity(OBJECT))</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style17 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row53">
-            <td class="column0 style6 s">Sensors and<br />
-&nbsp;&nbsp;Local Interactions</td>
-            <td class="column1 style13 s">Sensor (Orientation<br />
-&nbsp;&nbsp;Event)</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/deviceorientation/" title="">DeviceOrientation Event</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Sensor<br />
-&nbsp;&nbsp;(sensor.subscribeCompass(OBJECT))</td>
-            <td class="column7 style17 s">my.onCompassChange/offCompassChange</td>
-            <td class="column8 style23 s">swan.onCompassChange<br />
-swan.startCompass<br />
-swan.stopCompass</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row54">
-            <td class="column0 style6 s">Sensors and<br />
-&nbsp;&nbsp;Local Interactions</td>
-            <td class="column1 style13 s">Sensor<br />
-&nbsp;&nbsp;(OrientationSensor)</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/orientation-sensor/" title="">Orientation Sensor</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Sensor<br />
-&nbsp;&nbsp;(sensor.subscribeCompass(OBJECT))</td>
-            <td class="column7 style17 s">my.onCompassChange/offCompassChange</td>
-            <td class="column8 style23 s">swan.onCompassChange<br />
-swan.startCompass<br />
-swan.stopCompass</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row55">
-            <td class="column0 style6 s">Sensors and<br />
-&nbsp;&nbsp;Local Interactions</td>
-            <td class="column1 style10 s">Sensor (Magnetometer)</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/magnetometer/" title="">Magnetometer</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Sensor<br />
-&nbsp;&nbsp;(sensor.subscribeCompass(OBJECT))</td>
-            <td class="column7 style17 s">my.onCompassChange/offCompassChange</td>
-            <td class="column8 style23 s">swan.onCompassChange<br />
-swan.startCompass<br />
-swan.stopCompass</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row56">
-            <td class="column0 style6 s">Sensors and<br />
-&nbsp;&nbsp;Local Interactions</td>
-            <td class="column1 style10 s">Sensor (Gyroscope)</td>
-            <td class="column2 style18 s"><a href="http://w3c.github.io/gyroscope/" title="">Gyroscope</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Sensor<br />
-&nbsp;&nbsp;(sensor.subscribeCompass(OBJECT))</td>
-            <td class="column7 style17 s">my.onGyroscopeChange/offGyroscopeChange</td>
-            <td class="column8 style23 s">swan.onCompassChange<br />
-swan.startCompass<br />
-swan.stopCompass</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row57">
-            <td class="column0 style6 s">Sensors and<br />
-&nbsp;&nbsp;Local Interactions</td>
-            <td class="column1 style13 s">Sensor<br />
-&nbsp;&nbsp;(Accelerometer)</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/accelerometer/" title="">Accelerometer</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Sensor<br />
-&nbsp;&nbsp;(sensor.subscribeAccelerometer(OBJECT))</td>
-            <td class="column7 style17 s">my.onAccelerometerChange/offAccelerometerChange</td>
-            <td class="column8 style23 s">swan.onAccelerometerChange<br />
-swan.offAccelerometerChange</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row58">
-            <td class="column0 style6 s">Sensors and<br />
-&nbsp;&nbsp;Local Interactions</td>
-            <td class="column1 style10 s">Sensor(Geolocation)</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/geolocation-sensor/" title="">Geolocation Sensor</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Geoloaction<br />
-&nbsp;&nbsp;(@system.geolocation)</td>
-            <td class="column7 style23 s">Location (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column8 style23 s">swan.getLocation<br />
-swan.chooseLocation<br />
-swan.openLocation</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row59">
-            <td class="column0 style6 s">Sensors and<br />
-&nbsp;&nbsp;Local Interactions</td>
-            <td class="column1 style10 s">Sensor</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/sensors/" title="">Generic Sensor API</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Sensor<br />
-&nbsp;&nbsp;(@system.sensor)</td>
-            <td class="column7 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column8 style23 s">Not general</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row60">
-            <td class="column0 style6 s">Sensors and<br />
-&nbsp;&nbsp;Local Interactions</td>
-            <td class="column1 style10 s">Geolocation</td>
-            <td class="column2 style18 s"><a href="https://www.w3.org/TR/geolocation-API/" title="">Geolocation API</a></td>
-            <td class="column3 style17 s">Rec</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Geoloaction<br />
-&nbsp;&nbsp;(@system.geolocation)</td>
-            <td class="column7 style23 s">Location (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column8 style23 s">swan.getLocation<br />
-swan.chooseLocation<br />
-swan.openLocation</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row61">
-            <td class="column0 style6 s">Sensors and<br />
-&nbsp;&nbsp;Local Interactions</td>
-            <td class="column1 style10 s">WebHID</td>
-            <td class="column2 style22 s"><a href="https://wicg.github.io/webhid/index.html" title="">WebHID API</a></td>
-            <td class="column3 style17 s">ED</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style17 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row62">
-            <td class="column0 style6 s">Sensors and<br />
-&nbsp;&nbsp;Local Interactions</td>
-            <td class="column1 style10 s">Web Serial</td>
-            <td class="column2 style22 s"><a href="https://wicg.github.io/serial/" title="">Serial API</a></td>
-            <td class="column3 style17 s">CGR</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style17 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row63">
-            <td class="column0 style6 s">SensorsandLocalInteractions<br />
-</td>
-            <td class="column1 style10 s">Battery Status</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/battery/" title="">Battery Status API</a></td>
-            <td class="column3 style17 s">CR</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Battery<br />
-&nbsp;&nbsp;(@system.battery)</td>
-            <td class="column7 style17 s">my.getSystemInfo</td>
-            <td class="column8 style23 s">swan.getBatteryInfo<br />
-swan.getBatteryInfoSync</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row64">
-            <td class="column0 style6 s">SensorsandLocalInteractions<br />
-</td>
-            <td class="column1 style10 s">NFC</td>
-            <td class="column2 style19 s"><a href="https://w3c.github.io/web-nfc/" title="">Web NFC<br />
-&nbsp;&nbsp;API</a></td>
-            <td class="column3 style17 s">CGR</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">&nbsp;</td>
-            <td class="column7 style17 s">&nbsp;</td>
-            <td class="column8 style23 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row65">
-            <td class="column0 style6 s">SensorsandLocalInteractions<br />
-</td>
-            <td class="column1 style10 s">Bluetooth</td>
-            <td class="column2 style18 s"><a href="https://webbluetoothcg.github.io/web-bluetooth/" title="">Web Bluetooth</a></td>
-            <td class="column3 style17 s">CGR</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Bluetooth (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column7 style23 s">Bluetooth (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column8 style23 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row66">
-            <td class="column0 style6 s">SensorsandLocalInteractions<br />
-</td>
-            <td class="column1 style10 s">Device Info</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style23 s">Device Info<br />
-&nbsp;&nbsp;(@system.device)</td>
-            <td class="column7 style17 s">my.getSystemInfo</td>
-            <td class="column8 style23 s">swan.getSystemInfo</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row67">
-            <td class="column0 style6 s">SensorsandLocalInteractions<br />
-</td>
-            <td class="column1 style10 s">Network Information</td>
-            <td class="column2 style19 s"><a href="https://wicg.github.io/netinfo/" title="">Network<br />
-&nbsp;&nbsp;Information API</a></td>
-            <td class="column3 style17 s">CGR</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Network Info<br />
-&nbsp;&nbsp;(@system.network)</td>
-            <td class="column7 style23 s">Network Status<br />
-&nbsp;&nbsp;(private implementation)</td>
-            <td class="column8 style23 s">swan.getNetworkType</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row68">
-            <td class="column0 style6 s">SensorsandLocalInteractions<br />
-</td>
-            <td class="column1 style10 s">Screen Brightness</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style23 s">Screen Brightness<br />
-&nbsp;&nbsp;(@system.brightness)</td>
-            <td class="column7 style23 s">Screen Brightness<br />
-&nbsp;&nbsp;(private implementation)</td>
-            <td class="column8 style23 s">swan.setScreenBrightness<br />
-swan.getScreenBrightness</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row69">
-            <td class="column0 style6 s">SensorsandLocalInteractions<br />
-</td>
-            <td class="column1 style10 s">System Volume</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style23 s">System Volume<br />
-&nbsp;&nbsp;(@system.volume)</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style23 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row70">
-            <td class="column0 style6 s">SensorsandLocalInteractions<br />
-</td>
-            <td class="column1 style10 s">App Management</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style23 s">App Management<br />
-&nbsp;&nbsp;(@system.package)</td>
-            <td class="column7 style23 s">No and managed by<br />
-&nbsp;&nbsp;Alipay</td>
-            <td class="column8 style23 s">No and managed by<br />
-Baidu App</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row71">
-            <td class="column0 style6 s">SensorsandLocalInteractions<br />
-</td>
-            <td class="column1 style10 s">Contact</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style23 s">Contact<br />
-&nbsp;&nbsp;(@system.contact)</td>
-            <td class="column7 style23 s">Contact (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column8 style23 s">swan.addPhoneContact</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row72">
-            <td class="column0 style6 s">SensorsandLocalInteractions<br />
-</td>
-            <td class="column1 style10 s">SMS</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">SMS (@system.sms)</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style23 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row73">
-            <td class="column0 style6 s">SensorsandLocalInteractions<br />
-</td>
-            <td class="column1 style10 s">Wi-Fi</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">Wi-Fi (@system.wifi)</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style23 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row74">
-            <td class="column0 style6 s">SensorsandLocalInteractions<br />
-</td>
-            <td class="column1 style10 s">Card</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">Yes</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style23 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row75">
-            <td class="column0 style6 s">SensorsandLocalInteractions<br />
-</td>
-            <td class="column1 style10 s">Phone Call</td>
-            <td class="column2 style18 s"><a href="https://www.w3.org/2012/sysapps/telephony/" title="">Web Telephony API(No update for 5 years)</a></td>
-            <td class="column3 style17 s">ED</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">Yes</td>
-            <td class="column7 style17 s">my.makePhoneCall(OBJECT)</td>
-            <td class="column8 style23 s">swan.makePhoneCall</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row76">
-            <td class="column0 style6 s">SensorsandLocalInteractions<br />
-</td>
-            <td class="column1 style15 s">Modifying System<br />
-&nbsp;&nbsp;Settings</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">Yes(Partial)</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style17 s">Yes(Partial)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row77">
-            <td class="column0 style6 s">GraphicsandLayout<br />
-</td>
-            <td class="column1 style10 s">Animations</td>
-            <td class="column2 style18 s"><a href="https://drafts.csswg.org/web-animations/" title="">Web Animations</a></td>
-            <td class="column3 style17 s">ED</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Animation Style<br />
-&nbsp;&nbsp;(private implementation)</td>
-            <td class="column7 style17 s">my.createAnimation</td>
-            <td class="column8 style23 s">swan.createAnimation</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row78">
-            <td class="column0 style6 s">GraphicsandLayout<br />
-</td>
-            <td class="column1 style10 s">Canvas</td>
-            <td class="column2 style18 s"><a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element" title="">The canvas element</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Canvas (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column7 style23 s">Canvas (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column8 style23 s">Canvas (private<br />
-&nbsp;&nbsp;implementation)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row79">
-            <td class="column0 style6 s">GraphicsandLayout<br />
-</td>
-            <td class="column1 style10 s">Local Font Access</td>
-            <td class="column2 style19 s"><a href="https://discourse.wicg.io/t/api-to-get-list-of-available-fonts/1197" title="">Local Font Access API<br />
-&nbsp;&nbsp;(Proposal)</a></td>
-            <td class="column3 style17 s">Proposal</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Customized Font<br />
-&nbsp;&nbsp;(private implementation)</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style17 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row80">
-            <td class="column0 style5 s">Media</td>
-            <td class="column1 style10 s">Recording</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/mediacapture-record/" title="">MediaStream Recording</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Recording<br />
-&nbsp;&nbsp;(@system.record)</td>
-            <td class="column7 style23 s">No (Disabled by<br />
-&nbsp;&nbsp;Alipay)</td>
-            <td class="column8 style23 s">Recording (private<br />
-&nbsp;&nbsp;implementation)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row81">
-            <td class="column0 style5 s">Media</td>
-            <td class="column1 style13 s">Media Capture and<br />
-&nbsp;&nbsp;Streams</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/mediacapture-main/" title="">Media Capture and Streams</a></td>
-            <td class="column3 style17 s">CR</td>
-            <td class="column4 style17 s">Yes (Partial)</td>
-            <td class="column5 style23 s">Media (@system.media)<br />
-&nbsp;&nbsp;(Take photo/video, pick image/video/file, save to photos album</td>
-            <td class="column7 style23 s">Only image (take<br />
-&nbsp;&nbsp;photo, pick image)</td>
-            <td class="column8 style23 s">Media (private<br />
-&nbsp;&nbsp;implementation)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row82">
-            <td class="column0 style5 s">Media</td>
-            <td class="column1 style10 s">Media Capture</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/html-media-capture/" title="">HTML Media Capture</a></td>
-            <td class="column3 style17 s">Rec</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Media (@system.media)<br />
-&nbsp;&nbsp;(Take photo/video, pick image/video/file, save to photos album</td>
-            <td class="column7 style23 s">Only image (take<br />
-&nbsp;&nbsp;photo, pick image)</td>
-            <td class="column8 style23 s">Media (private<br />
-&nbsp;&nbsp;implementation)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row83">
-            <td class="column0 style5 s">Media</td>
-            <td class="column1 style10 s">Media Capture Image</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/mediacapture-image/" title="">MediaStream Image Capture</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Media (@system.media)<br />
-&nbsp;&nbsp;(Take photo/video, pick image/video/file, save to photos album</td>
-            <td class="column7 style23 s">Only image (take<br />
-&nbsp;&nbsp;photo, pick image)</td>
-            <td class="column8 style23 s">Media (private<br />
-&nbsp;&nbsp;implementation)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row84">
-            <td class="column0 style5 s">Media</td>
-            <td class="column1 style10 s">Audio</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/html/semantics-embedded-content.html#the-audio-element" title="">Audio</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">Audio (@system.audio)</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style23 s">Audio (private<br />
-&nbsp;&nbsp;implementation)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row85">
-            <td class="column0 style5 s">Media</td>
-            <td class="column1 style10 s">Video</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/html/semantics-embedded-content.html#the-video-element" title="">Video</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style23 s">Video (private<br />
-&nbsp;&nbsp;implementation)</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row86">
-            <td class="column0 style5 s">Media</td>
-            <td class="column1 style10 s">Image Editor</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style23 s">Picture Editor<br />
-&nbsp;&nbsp;(@system.image)</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style17 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row87">
-            <td class="column0 style5 s">Media (TBD)</td>
-            <td class="column1 style10 s">Map</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style25 s">No</td>
-            <td class="column5 style17 s">Map label</td>
-            <td class="column7 style17 s">Map component</td>
-            <td class="column8 style17 s">Map component</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row88">
-            <td class="column0 style6 s">Security and<br />
-&nbsp;&nbsp;Privacy</td>
-            <td class="column1 style10 s">Web Crypto API</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/webcrypto/" title="">Web Cryptography API</a></td>
-            <td class="column3 style17 s">Rec</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Cipher<br />
-&nbsp;&nbsp;(@system.cipher)</td>
-            <td class="column7 style17 s">my.rsa</td>
-            <td class="column8 style23 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row89">
-            <td class="column0 style6 s">Security and<br />
-&nbsp;&nbsp;Privacy</td>
-            <td class="column1 style10 s">Auth</td>
-            <td class="column2 style19 s"><a href="https://www.w3.org/TR/webauthn/" title="">Web<br />
-&nbsp;&nbsp;Authentication</a></td>
-            <td class="column3 style17 s">Rec</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style23 s">Yes (private<br />
-&nbsp;&nbsp;implementation)</td>
-            <td class="column7 style17 s">my.getAuthCode</td>
-            <td class="column8 style23 s">swan.authorize</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row90">
-            <td class="column0 style6 s">Security and<br />
-&nbsp;&nbsp;Privacy</td>
-            <td class="column1 style10 s">Permissions</td>
-            <td class="column2 style18 s"><a href="https://w3c.github.io/permissions/" title="">Permissions</a></td>
-            <td class="column3 style17 s">WD</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">manifest.permissions</td>
-            <td class="column7 style23 s">my.showAuthGuide<br />
-&nbsp;&nbsp;(Object)/my.getSetting(OBJECT)</td>
-            <td class="column8 style23 s">swan.getSetting</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row91">
-            <td class="column0 style6 s">Security and<br />
-&nbsp;&nbsp;Privacy</td>
-            <td class="column1 style10 s">SMS OTP Retriever</td>
-            <td class="column2 style22 s"><a href="https://discourse.wicg.io/t/sms-otp-retrieval/3499" title="">SMS OTP Retriever(Proposal)</a></td>
-            <td class="column3 style17 s">Proposal</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">Yes (@system.sms)</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style17 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row92">
-            <td class="column0 style6 s">Security and<br />
-&nbsp;&nbsp;Privacy</td>
-            <td class="column1 style10 s">Sign up API</td>
-            <td class="column2 style19 s"><a href="https://discourse.wicg.io/t/proposal-sign-up-api-for-web/1844" title="">Sign up with phone number<br />
-&nbsp;&nbsp;API(Proposal)</a></td>
-            <td class="column3 style17 s">Proposal</td>
-            <td class="column4 style17 s">Yes</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style17 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row93">
-            <td class="column0 style6 s">Security and<br />
-&nbsp;&nbsp;Privacy</td>
-            <td class="column1 style10 s">Statistics</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style23 s">Statistics<br />
-&nbsp;&nbsp;(@service.stats)</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style23 s">provided statistcs plan</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row94">
-            <td class="column0 style6 s">Security and<br />
-&nbsp;&nbsp;Privacy</td>
-            <td class="column1 style10 s">Account</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style23 s">Account<br />
-&nbsp;&nbsp;(@service.account)</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style23 s">swan.getEnvInfoSync</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row95">
-            <td class="column0 style6 s">Security and<br />
-&nbsp;&nbsp;Privacy</td>
-            <td class="column1 style10 s">User Info</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">my.getAuthUserInfo</td>
-            <td class="column8 style23 s">swan.getUserInfo</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row96">
-            <td class="column0 style6 s">Security and<br />
-&nbsp;&nbsp;Privacy</td>
-            <td class="column1 style10 s">Third-party Account</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style23 s">Third-party Account<br />
-&nbsp;&nbsp;(QQ + WeChat + Weibo)</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style23 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row97">
-            <td class="column0 style6 s">Security and<br />
-&nbsp;&nbsp;Privacy</td>
-            <td class="column1 style10 s">Data Analysis</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">my.reportAnalytics</td>
-            <td class="column8 style23 s">swan.reportAnalytics</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row98">
-            <td class="column0 style6 s">Security and<br />
-&nbsp;&nbsp;Privacy</td>
-            <td class="column1 style13 s">Text Risk<br />
-&nbsp;&nbsp;Identification</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">my.textRiskIdentification(Object)</td>
-            <td class="column8 style23 s">swan.ai.textReview</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row99">
-            <td class="column0 style6 s">Security and<br />
-&nbsp;&nbsp;Privacy</td>
-            <td class="column1 style13 s">Image Risk<br />
-&nbsp;&nbsp;Identification</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style23 s">Image Content<br />
-&nbsp;&nbsp;Security (private implementation)</td>
-            <td class="column8 style23 s">swan.ai.imageAudit</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row100">
-            <td class="column0 style6 s">Security and<br />
-&nbsp;&nbsp;Privacy</td>
-            <td class="column1 style13 s">Fingerprint<br />
-&nbsp;&nbsp;Authertication</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style23 s">No</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row101">
-            <td class="column0 style6 s">Security and<br />
-&nbsp;&nbsp;Privacy</td>
-            <td class="column1 style10 s">Face Authentication</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style23 s">Face Authentication<br />
-&nbsp;&nbsp;(private implementation)</td>
-            <td class="column8 style23 s">swan.ai.faceMatch<br />
-</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-          <tr class="row102">
-            <td class="column0 style6 s">Performance<br />
-&nbsp;&nbsp;and Turning</td>
-            <td class="column1 style10 s">Memory Warning</td>
-            <td class="column2 style17 s">No</td>
-            <td class="column3 style17 s">&nbsp;</td>
-            <td class="column4 style17 s">No</td>
-            <td class="column5 style17 s">No</td>
-            <td class="column7 style17 s">No</td>
-            <td class="column8 style23 s">swan.onMemoryWarning</td>
-
-
-
-
-
-
-
-
-
-          </tr>
-        </tbody>
+</head>
+
+<body>
+  <h1>Comparison of APIs in MiniApps, W3C specs, and PWAs</h1>
+  <div class="table-wrapper">
+    <div class="search">
+      <span>Search:</span>
+      <input placeholder="NFC" type="search" id="search">
+    </div>
+    <table id="filter">
+      <thead>
+        <tr class="r0">
+          <th class="c0">Category</th>
+          <th class="c1">Features</th>
+          <th class="c2">W3C Spec</th>
+          <th class="c3">Status</th>
+          <th class="c4">PWA.next</th>
+          <th class="c5"><a href="https://www.quickapp.cn/" title="">QuickApp (Xiaomi, Huawei)</a></th>
+          <th class="c6"><a href="https://docs.alipay.com/mini/developer/" title="">Alipay Mini Program</a>
+          </th>
+          <th class="c7"><a href="https://smartprogram.baidu.com/developer/index.html" title="">Baidu Smart Mini
+              Program</a></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="r1">
+          <td class="c0">OS</td>
+          <td class="c1">Android</td>
+          <td class="c2">&nbsp;</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Yes</td>
+          <td class="c6">Yes</td>
+          <td class="c7">Yes</td>
+        </tr>
+        <tr class="r2">
+          <td class="c0">OS</td>
+          <td class="c1">iOS</td>
+          <td class="c2">&nbsp;</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">Yes (Partial)</td>
+          <td class="c5">No</td>
+          <td class="c6">Yes</td>
+          <td class="c7">Yes</td>
+        </tr>
+        <tr class="r3">
+          <td class="c0">OS</td>
+          <td class="c1">Chrome OS</td>
+          <td class="c2">&nbsp;</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">Yes (Chrome 67+)</td>
+          <td class="c5">No</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r4">
+          <td class="c0">OS</td>
+          <td class="c1">Windows</td>
+          <td class="c2">&nbsp;</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">Yes (Chrome 70+)</td>
+          <td class="c5">No</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r5">
+          <td class="c0">OS</td>
+          <td class="c1">Linux</td>
+          <td class="c2">&nbsp;</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">Yes (Chrome 70+)</td>
+          <td class="c5">No</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r6">
+          <td class="c0">Engine</td>
+          <td class="c1">Engine</td>
+          <td class="c2">&nbsp;</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">Browser Engines</td>
+          <td class="c5">No Chromium layout engine but with V8 engine, more lightweight.<br />
+            Providing pure WebAPIs to app developers,Web JS APIs are mapped from Android native APIs and part of
+            standard WebAPIs.<br />
+            Template part(with HTML tags)in .ux file mapping to single android native views and combined view
+            components, provided native performance experiences.<br />
+            CSS subset: Mapping to attributes of Android View(e.g. position, color)</td>
+          <td class="c6">Native(rendering) + WebView (rendering) + Worker (Data storage and business logic) + V8(use UC browsering engine)</td>
+          <td class="c7">Rendering: Native+WebView<br />
+            Logic: V8/Javascript Core</td>
+        </tr>
+        <tr class="r7">
+          <td class="c0">File format</td>
+          <td class="c1">Page</td>
+          <td class="c2">&nbsp;</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">.html, .js, .css</td>
+          <td class="c5">.ux file (template), .js, .css</td>
+          <td class="c6">.axml, .js, .acss</td>
+          <td class="c7">.swan, .js, .css</td>
+        </tr>
+        <tr class="r8">
+          <td class="c0">ES6</td>
+          <td class="c1">ES6</td>
+          <td class="c2">&nbsp;</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Yes</td>
+          <td class="c6">Yes</td>
+          <td class="c7">Yes</td>
+        </tr>
+        <tr class="r9">
+          <td class="c0">Release</td>
+          <td class="c1">Audit</td>
+          <td class="c2">&nbsp;</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">Yes</td>
+          <td class="c6">Yes</td>
+          <td class="c7">Yes</td>
+        </tr>
+        <tr class="r10">
+          <td class="c0">Release</td>
+          <td class="c1">App store integration</td>
+          <td class="c2">&nbsp;</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">Yes</td>
+          <td class="c6">Can be used within Alibaba's Native Apps including Alipay, Taobao, DingDing, Gaode, ELE.me</td>
+          <td class="c7">Can be used within Baidu App and Open Source Union apps, such as iQiyi, Bilibili, Wifi and so on</td>
+        </tr>
+        <tr class="r11">
+          <td class="c0">Modular</td>
+          <td class="c1">Customized Component</td>
+          <td class="c2"><a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements"
+              title="">Custom
+              Elements</a></td>
+          <td class="c3">Rec</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Yes</td>
+          <td class="c6">Yes</td>
+          <td class="c7">Yes</td>
+        </tr>
+        <tr class="r12">
+          <td class="c0">Add to home: 
+            screen</td>
+          <td class="c1">Add to home screen</td>
+          <td class="c2">&nbsp;</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Yes</td>
+          <td class="c6">Yes (via A2HS feature on Safari)</td>
+          <td class="c7">Yes</td>
+        </tr>
+        <tr class="r13">
+          <td class="c0">Discoverable</td>
+          <td class="c1">Discoverable</td>
+          <td class="c2">&nbsp;</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Yes (search within system search bar, management apps, app store, browsers, home page etc.)</td>
+          <td class="c6">Yes (search within Alipay)</td>
+          <td class="c7">Yes (search with Baidu search engine)</td>
+        </tr>
+        <tr class="r14">
+          <td class="c0">Application 
+            Lifecycle</td>
+          <td class="c1">Web Share</td>
+          <td class="c2"><a href="https://wicg.github.io/web-share/" title="">Web Share API</a></td>
+          <td class="c3">CGR</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Share(@system.share + @service.share)</td>
+          <td class="c6">onShareAppMessage</td>
+          <td class="c7">Yes</td>
+        </tr>
+        <tr class="r15">
+          <td class="c0">Application Lifecycle</td>
+          <td class="c1">Splash screen</td>
+          <td class="c2"><a href="https://github.com/w3c/manifest/issues/589#issuecomment-323232119" title="">Splash Screen in Manifest(WIP)</a></td>
+          <td class="c3">Proposal</td>
+          <td class="c4">Yes (WIP)</td>
+          <td class="c5">Yes (private
+            implementation)</td>
+          <td class="c6">No and no necessary</td>
+          <td class="c7">No and no necessary</td>
+        </tr>
+        <tr class="r16">
+          <td class="c0">Application 
+            Lifecycle</td>
+          <td class="c1">Service Workers</td>
+          <td class="c2"><a href="https://w3c.github.io/ServiceWorker/" title="">Service Workers
+              Nightly</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">No</td>
+          <td class="c6">No and no necessary</td>
+          <td class="c7">No and no necessary</td>
+        </tr>
+        <tr class="r17">
+          <td class="c0">Application 
+            Lifecycle</td>
+          <td class="c1">Web App Manifest</td>
+          <td class="c2"><a href="https://www.w3.org/TR/appmanifest/" title="">Web App Manifest</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Yes (private
+            implementation)</td>
+          <td class="c6">Yes (private
+            implementation)</td>
+          <td class="c7">Yes (private
+            implementation)</td>
+        </tr>
+        <tr class="r18">
+          <td class="c0">Application 
+            Lifecycle</td>
+          <td class="c1">App Info</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">App Info (@system.app)</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r19">
+          <td class="c0">User
+            Interaction</td>
+          <td class="c1">Fullscreen</td>
+          <td class="c2"><a href="https://fullscreen.spec.whatwg.org/" title="">Fullscreen API</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">manifest.display.fullscreen</td>
+          <td class="c6">Yes (private
+            implementation)</td>
+          <td class="c7">Yes (private
+            implementation)</td>
+        </tr>
+        <tr class="r20">
+          <td class="c0">User
+            Interaction</td>
+          <td class="c1">Badging</td>
+          <td class="c2"><a href="https://wicg.github.io/badging/" title="">Badging API</a></td>
+          <td class="c3">CGR</td>
+          <td class="c4">Yes</td>
+          <td class="c5">No</td>
+          <td class="c6">Tab Bar (private
+            implementation)</td>
+          <td class="c7">Tab Bar (private
+            implementation)</td>
+        </tr>
+        <tr class="r21">
+          <td class="c0">User
+            Interaction</td>
+          <td class="c1">Prompt</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">Prompt (@system.prompt)</td>
+          <td class="c6">Popup component</td>
+          <td class="c7">Popup component</td>
+        </tr>
+        <tr class="r22">
+          <td class="c0">User
+            Interaction</td>
+          <td class="c1">Vibration</td>
+          <td class="c2"><a href="https://w3c.github.io/vibration/" title="">Vibration API</a></td>
+          <td class="c3">Rec</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Vibration
+            (@system.vibrator)</td>
+          <td class="c6">my.vibrate*</td>
+          <td class="c7">swan.vibrateLong<br />
+            swan.vibrateShort</td>
+        </tr>
+        <tr class="r23">
+          <td class="c0">User
+            Interaction</td>
+          <td class="c1">Notification</td>
+          <td class="c2"><a href="https://notifications.spec.whatwg.org/" title="">Notifications API</a>
+          </td>
+          <td class="c3">Living 
+            Standard</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Notification 
+            (@system.notification)</td>
+          <td class="c6">Notice (private
+            implementation)</td>
+          <td class="c7">Template Message<br />
+            Customer Service Message <br />
+            (private impletmention)</td>
+        </tr>
+        <tr class="r24">
+          <td class="c0">User
+            Interaction</td>
+          <td class="c1">Screen Orientation</td>
+          <td class="c2"><a href="https://w3c.github.io/screen-orientation/" title="">The Screen
+              Orientation API</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">orientation in JSON (Partial)</td>
+          <td class="c6">No</td>
+          <td class="c7">swan.onDeviceMotionChange</td>
+        </tr>
+        <tr class="r25">
+          <td class="c0">User
+            Interaction</td>
+          <td class="c1">User Idle Detection</td>
+          <td class="c2"><a href="https://github.com/inexorabletash/idle-detection" title="">User Idle
+              Detection</a></td>
+          <td class="c3">Proposal</td>
+          <td class="c4">Yes</td>
+          <td class="c5">No</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r26">
+          <td class="c0">User
+            Interaction</td>
+          <td class="c1">Wake Lock</td>
+          <td class="c2"><a href="https://w3c.github.io/wake-lock/" title="">Wake Lock API</a></td>
+          <td class="c3">CR</td>
+          <td class="c4">Yes</td>
+          <td class="c5">No</td>
+          <td class="c6">only Screen WakeLock (my.setKeepScreenOn(OBJECT))</td>
+          <td class="c7">only Screen WakeLock swan.setKeepScreenOn</td>
+        </tr>
+        <tr class="r27">
+          <td class="c0">User
+            Interaction</td>
+          <td class="c1">Clipboard</td>
+          <td class="c2"><a href="https://w3c.github.io/clipboard-apis/" title="">Clipboard API and
+              events</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Clipboard 
+            (@system.clipboard)</td>
+          <td class="c6">my.getClipboard/my.setClipboard</td>
+          <td class="c7">swan.setClipboardData<br />
+            swan.getClipboardData</td>
+        </tr>
+        <tr class="r28">
+          <td class="c0">User
+            Interaction</td>
+          <td class="c1">execCommand</td>
+          <td class="c2"><a href="https://w3c.github.io/editing/execCommand" title="">execCommand</a>
+          </td>
+          <td class="c3">Unofficial Draft</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Clipboard (@system.clipboard)</td>
+          <td class="c6">my.getClipboard/my.setClipboard</td>
+          <td class="c7">swan.setClipboardData<br />
+            swan.getClipboardData</td>
+        </tr>
+        <tr class="r29">
+          <td class="c0">User
+            Interaction</td>
+          <td class="c1">History API</td>
+          <td class="c2"><a href="https://html.spec.whatwg.org/multipage/history.html#the-history-interface"
+              title="">The History Interface</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Page Router (@system.router)</td>
+          <td class="c6">Navigator component</td>
+          <td class="c7">Router (private implementation)</td>
+        </tr>
+        <tr class="r30">
+          <td class="c0">User
+            Interaction</td>
+          <td class="c1">Barcode</td>
+          <td class="c2"><a href="https://wicg.github.io/shape-detection-api/" title="">Accelerated Shape
+              Detection in Images</a></td>
+          <td class="c3">ED</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Barcode (@system.barcode)</td>
+          <td class="c6">Barcode (private
+            implementation)</td>
+          <td class="c7">swan.scanCode<br />
+            swan.ai.faceDetect<br />
+            swan.ai.advancedGeneralIdentify</td>
+        </tr>
+        <tr class="r31">
+          <td class="c0">User
+            Interaction</td>
+          <td class="c1">Shake</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">No</td>
+          <td class="c6">my.watchShake(OBJECT)</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r32">
+          <td class="c0">User
+            Interaction</td>
+          <td class="c1">User Capture Screen Event</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">No</td>
+          <td class="c6">my.onUserCaptureScreen(CALLBACK)</td>
+          <td class="c7">swan.onUserCaptureScreen</td>
+        </tr>
+        <tr class="r33">
+          <td class="c0">User
+            Interaction</td>
+          <td class="c1">Alarms</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">Yes (@system.alarm)</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r34">
+          <td class="c0">Payment and 
+            Services</td>
+          <td class="c1">Payment</td>
+          <td class="c2"><a href="https://w3c.github.io/payment-method-basic-card/" title="">Payment
+              Method: Basic Card</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Pay (@service.pay) (WeChat + Alipay)</td>
+          <td class="c6">Alipay</td>
+          <td class="c7">swan.requestPolymerPayment</td>
+        </tr>
+        <tr class="r35">
+          <td class="c0">Payment and 
+            Services</td>
+          <td class="c1">Payment</td>
+          <td class="c2"><a href="https://w3c.github.io/payment-method-id/" title="">Payment Method
+              Identifiers</a></td>
+          <td class="c3">CR</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Pay (@service.pay) (WeChat + Alipay)</td>
+          <td class="c6">Alipay</td>
+          <td class="c7">swan.requestPolymerPayment</td>
+        </tr>
+        <tr class="r36">
+          <td class="c0">Payment and 
+            Services</td>
+          <td class="c1">Payment</td>
+          <td class="c2"><a href="https://w3c.github.io/payment-handler/" title="">Payment Handler
+              API</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Pay (@service.pay) (WeChat + Alipay)</td>
+          <td class="c6">Alipay</td>
+          <td class="c7">swan.requestPolymerPayment</td>
+        </tr>
+        <tr class="r37">
+          <td class="c0">Payment and 
+            Services</td>
+          <td class="c1">Payment</td>
+          <td class="c2"><a href="https://w3c.github.io/payment-request/" title="">Payment Request
+              API</a></td>
+          <td class="c3">CR</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Pay (@service.pay) 
+            (WeChat + Alipay)</td>
+          <td class="c6">Alipay</td>
+          <td class="c7">swan.requestPolymerPayment</td>
+        </tr>
+        <tr class="r38">
+          <td class="c0">Network and
+            Communications</td>
+          <td class="c1">Push</td>
+          <td class="c2"><a href="https://www.w3.org/TR/push-api/" title="">Push API</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Push (@service.push)</td>
+          <td class="c6">alipay.open.app.mini.templatemessage.send</td>
+          <td class="c7">Template Message<br />
+            Customer Service Message <br />
+            (private impletmention)</td>
+        </tr>
+        <tr class="r39">
+          <td class="c0">Network and
+            Communications</td>
+          <td class="c1">Fetch</td>
+          <td class="c2"><a href="https://fetch.spec.whatwg.org/" title="">Fetch</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Fetch (@system fetch)</td>
+          <td class="c6">No (use my.request)</td>
+          <td class="c7">swan.request</td>
+        </tr>
+        <tr class="r40">
+          <td class="c0">Network and
+            Communications</td>
+          <td class="c1">WebSocket</td>
+          <td class="c2"><a href="https://html.spec.whatwg.org/multipage/web-sockets.html#network" title="">Web
+              sockets</a></td>
+          <td class="c3">CR</td>
+          <td class="c4">Yes</td>
+          <td class="c5">WebSocket (@system.websocketfactory)</td>
+          <td class="c6">my.connectSocket (private implementation)</td>
+          <td class="c7">swan WebSocket</td>
+        </tr>
+        <tr class="r41">
+          <td class="c0">Network and
+            Communications</td>
+          <td class="c1">iBeacon</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">No</td>
+          <td class="c6">iBeacon (private implementation)</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r42">
+          <td class="c0">DataStorage
+          </td>
+          <td class="c1">Web Storage</td>
+          <td class="c2"><a href="https://html.spec.whatwg.org/multipage/webstorage.html" title="">Web
+              Storage</a></td>
+          <td class="c3">Rec</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Storage 
+            (@system.storage)</td>
+          <td class="c6">Cache (private
+            implementation)</td>
+          <td class="c7">Cache (private
+            implementation)</td>
+        </tr>
+        <tr class="r43">
+          <td class="c0">DataStorage
+          </td>
+          <td class="c1">File API</td>
+          <td class="c2"><a href="https://www.w3.org/TR/FileAPI/" title="">File API</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">File (@system.file)
+            and File Upload/Download (@system.request)</td>
+          <td class="c6">File (private
+            implementation)</td>
+          <td class="c7">File (private
+            implementation)</td>
+        </tr>
+        <tr class="r44">
+          <td class="c0">DataStorage
+          </td>
+          <td class="c1">Native File System
+            API</td>
+          <td class="c2"><a href="https://wicg.github.io/native-file-system/" title="">Native File System
+              API</a></td>
+          <td class="c3">ED</td>
+          <td class="c4">Yes</td>
+          <td class="c5">File (@system.file)
+            and File Upload/Download (@system.request)</td>
+          <td class="c6">File (private
+            implementation)</td>
+          <td class="c7">File (private
+            implementation)</td>
+        </tr>
+        <tr class="r45">
+          <td class="c0">DataStorage
+          </td>
+          <td class="c1">File Handling</td>
+          <td class="c2"><a href="https://github.com/WICG/file-handling/blob/master/explainer.md" title="">File Handling (Proposal)</a></td>
+          <td class="c3">Proposal</td>
+          <td class="c4">Yes</td>
+          <td class="c5">No</td>
+          <td class="c6">No</td>
+          <td class="c7">Yes (Partial)</td>
+        </tr>
+        <tr class="r46">
+          <td class="c0">DataStorage
+          </td>
+          <td class="c1">IndexedDB</td>
+          <td class="c2"><a href="https://w3c.github.io/IndexedDB/" title="">Indexed Database API 3.0</a>
+          </td>
+          <td class="c3">ED</td>
+          <td class="c4">Yes</td>
+          <td class="c5">No</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r47">
+          <td class="c0">Forms
+          </td>
+          <td class="c1">Calendar</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">Calendar (@system.calendar)</td>
+          <td class="c6">Calendar (private
+            implementation)</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r48">
+          <td class="c0">Forms
+          </td>
+          <td class="c1">Date Picker</td>
+          <td class="c2"><a href="https://html.spec.whatwg.org/multipage/input.html#date-state-(type%3Ddate)"
+              title="">Date State</a>
+          </td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">picker (private
+            implementation)</td>
+          <td class="c6">my.datePicker(object)</td>
+          <td class="c7">picker component (mode = date)</td>
+        </tr>
+        <tr class="r49">
+          <td class="c0">Forms
+          </td>
+          <td class="c1">City Picker</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">No</td>
+          <td class="c6">my.chooseCity</td>
+          <td class="c7">picker component(mode = region)</td>
+        </tr>
+        <tr class="r50">
+          <td class="c0">Forms
+          </td>
+          <td class="c1">Color Picker</td>
+          <td class="c2"><a href="https://html.spec.whatwg.org/multipage/input.html#color-state-(type%3Dcolor)"
+              title="">Color state</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">picker (private
+            implementation)</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r51">
+          <td class="c0">Sensors and 
+            Local Interactions</td>
+          <td class="c1">Sensor (Ambient Light)</td>
+          <td class="c2"><a href="https://w3c.github.io/ambient-light/" title="">Ambient Light Sensor</a>
+          </td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">&nbsp;</td>
+          <td class="c6">&nbsp;</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r52">
+          <td class="c0">Sensors and 
+            Local Interactions</td>
+          <td class="c1">Sensor (Proximity)</td>
+          <td class="c2"><a href="https://w3c.github.io/proximity/" title="">Proximity Sensor</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Sensor (sensor.subscribeProximity(OBJECT))</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r53">
+          <td class="c0">Sensors and 
+            Local Interactions</td>
+          <td class="c1">Sensor (Orientation Event)</td>
+          <td class="c2"><a href="https://w3c.github.io/deviceorientation/" title="">DeviceOrientation
+              Event</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Sensor (sensor.subscribeCompass(OBJECT))</td>
+          <td class="c6">my.onCompassChange/offCompassChange</td>
+          <td class="c7">swan.onCompassChange<br />
+            swan.startCompass<br />
+            swan.stopCompass</td>
+        </tr>
+        <tr class="r54">
+          <td class="c0">Sensors and 
+            Local Interactions</td>
+          <td class="c1">Sensor (OrientationSensor)</td>
+          <td class="c2"><a href="https://w3c.github.io/orientation-sensor/" title="">Orientation
+              Sensor</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Sensor (sensor.subscribeCompass(OBJECT))</td>
+          <td class="c6">my.onCompassChange/offCompassChange</td>
+          <td class="c7">swan.onCompassChange<br />
+            swan.startCompass<br />
+            swan.stopCompass</td>
+        </tr>
+        <tr class="r55">
+          <td class="c0">Sensors and 
+            Local Interactions</td>
+          <td class="c1">Sensor (Magnetometer)</td>
+          <td class="c2"><a href="https://w3c.github.io/magnetometer/" title="">Magnetometer</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Sensor (sensor.subscribeCompass(OBJECT))</td>
+          <td class="c6">my.onCompassChange/offCompassChange</td>
+          <td class="c7">swan.onCompassChange<br />
+            swan.startCompass<br />
+            swan.stopCompass</td>
+        </tr>
+        <tr class="r56">
+          <td class="c0">Sensors and 
+            Local Interactions</td>
+          <td class="c1">Sensor (Gyroscope)</td>
+          <td class="c2"><a href="http://w3c.github.io/gyroscope/" title="">Gyroscope</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Sensor (sensor.subscribeCompass(OBJECT))</td>
+          <td class="c6">my.onGyroscopeChange/offGyroscopeChange</td>
+          <td class="c7">swan.onCompassChange<br />
+            swan.startCompass<br />
+            swan.stopCompass</td>
+        </tr>
+        <tr class="r57">
+          <td class="c0">Sensors and 
+            Local Interactions</td>
+          <td class="c1">Sensor (Accelerometer)</td>
+          <td class="c2"><a href="https://w3c.github.io/accelerometer/" title="">Accelerometer</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Sensor (sensor.subscribeAccelerometer(OBJECT))</td>
+          <td class="c6">my.onAccelerometerChange/offAccelerometerChange</td>
+          <td class="c7">swan.onAccelerometerChange<br />
+            swan.offAccelerometerChange</td>
+        </tr>
+        <tr class="r58">
+          <td class="c0">Sensors and 
+            Local Interactions</td>
+          <td class="c1">Sensor(Geolocation)</td>
+          <td class="c2"><a href="https://w3c.github.io/geolocation-sensor/" title="">Geolocation
+              Sensor</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Geoloaction (@system.geolocation)</td>
+          <td class="c6">Location (private
+            implementation)</td>
+          <td class="c7">swan.getLocation<br />
+            swan.chooseLocation<br />
+            swan.openLocation</td>
+        </tr>
+        <tr class="r59">
+          <td class="c0">Sensors and 
+            Local Interactions</td>
+          <td class="c1">Sensor</td>
+          <td class="c2"><a href="https://w3c.github.io/sensors/" title="">Generic Sensor API</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Sensor (@system.sensor)</td>
+          <td class="c6">Yes (private
+            implementation)</td>
+          <td class="c7">Not general</td>
+        </tr>
+        <tr class="r60">
+          <td class="c0">Sensors and 
+            Local Interactions</td>
+          <td class="c1">Geolocation</td>
+          <td class="c2"><a href="https://www.w3.org/TR/geolocation-API/" title="">Geolocation API</a>
+          </td>
+          <td class="c3">Rec</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Geoloaction (@system.geolocation)</td>
+          <td class="c6">Location (private
+            implementation)</td>
+          <td class="c7">swan.getLocation<br />
+            swan.chooseLocation<br />
+            swan.openLocation</td>
+        </tr>
+        <tr class="r61">
+          <td class="c0">Sensors and 
+            Local Interactions</td>
+          <td class="c1">WebHID</td>
+          <td class="c2"><a href="https://wicg.github.io/webhid/index.html" title="">WebHID API</a></td>
+          <td class="c3">ED</td>
+          <td class="c4">Yes</td>
+          <td class="c5">No</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r62">
+          <td class="c0">Sensors and 
+            Local Interactions</td>
+          <td class="c1">Web Serial</td>
+          <td class="c2"><a href="https://wicg.github.io/serial/" title="">Serial API</a></td>
+          <td class="c3">CGR</td>
+          <td class="c4">Yes</td>
+          <td class="c5">No</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r63">
+          <td class="c0">Sensors and Local Interactions
+          </td>
+          <td class="c1">Battery Status</td>
+          <td class="c2"><a href="https://w3c.github.io/battery/" title="">Battery Status API</a></td>
+          <td class="c3">CR</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Battery (@system.battery)</td>
+          <td class="c6">my.getSystemInfo</td>
+          <td class="c7">swan.getBatteryInfo<br />
+            swan.getBatteryInfoSync</td>
+        </tr>
+        <tr class="r64">
+          <td class="c0">Sensors and Local Interactions
+          </td>
+          <td class="c1">NFC</td>
+          <td class="c2"><a href="https://w3c.github.io/web-nfc/" title="">Web NFC API</a></td>
+          <td class="c3">CGR</td>
+          <td class="c4">Yes</td>
+          <td class="c5">&nbsp;</td>
+          <td class="c6">&nbsp;</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r65">
+          <td class="c0">Sensors and Local Interactions
+          </td>
+          <td class="c1">Bluetooth</td>
+          <td class="c2"><a href="https://webbluetoothcg.github.io/web-bluetooth/" title="">Web
+              Bluetooth</a></td>
+          <td class="c3">CGR</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Bluetooth (private
+            implementation)</td>
+          <td class="c6">Bluetooth (private
+            implementation)</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r66">
+          <td class="c0">Sensors and Local Interactions
+          </td>
+          <td class="c1">Device Info</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">Device Info (@system.device)</td>
+          <td class="c6">my.getSystemInfo</td>
+          <td class="c7">swan.getSystemInfo</td>
+        </tr>
+        <tr class="r67">
+          <td class="c0">Sensors and Local Interactions
+          </td>
+          <td class="c1">Network Information</td>
+          <td class="c2"><a href="https://wicg.github.io/netinfo/" title="">Network 
+              Information API</a></td>
+          <td class="c3">CGR</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Network Info 
+            (@system.network)</td>
+          <td class="c6">Network Status 
+            (private implementation)</td>
+          <td class="c7">swan.getNetworkType</td </tr>
+        <tr class="r68">
+          <td class="c0">Sensors and Local Interactions
+          </td>
+          <td class="c1">Screen Brightness</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">Screen Brightness 
+            (@system.brightness)</td>
+          <td class="c6">Screen Brightness 
+            (private implementation)</td>
+          <td class="c7">swan.setScreenBrightness<br />
+            swan.getScreenBrightness</td>
+        </tr>
+        <tr class="r69">
+          <td class="c0">Sensors and Local Interactions
+          </td>
+          <td class="c1">System Volume</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">System Volume (@system.volume)</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r70">
+          <td class="c0">Sensors and Local Interactions
+          </td>
+          <td class="c1">App Management</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">App Management 
+            (@system.package)</td>
+          <td class="c6">No and managed by 
+            Alipay</td>
+          <td class="c7">No and managed by 
+            Baidu App</td>
+        </tr>
+        <tr class="r71">
+          <td class="c0">Sensors and Local Interactions
+          </td>
+          <td class="c1">Contact</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">Contact (@system.contact)</td>
+          <td class="c6">Contact (private
+            implementation)</td>
+          <td class="c7">swan.addPhoneContact</td>
+        </tr>
+        <tr class="r72">
+          <td class="c0">Sensors and Local Interactions
+          </td>
+          <td class="c1">SMS</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">SMS (@system.sms)</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r73">
+          <td class="c0">Sensors and Local Interactions
+          </td>
+          <td class="c1">Wi-Fi</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">Wi-Fi (@system.wifi)</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r74">
+          <td class="c0">Sensors and Local Interactions
+          </td>
+          <td class="c1">Card</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">Yes</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r75">
+          <td class="c0">Sensors and Local Interactions
+          </td>
+          <td class="c1">Phone Call</td>
+          <td class="c2"><a href="https://www.w3.org/2012/sysapps/telephony/" title="">Web Telephony
+              API (No update for 5 years)</a></td>
+          <td class="c3">ED</td>
+          <td class="c4">No</td>
+          <td class="c5">Yes</td>
+          <td class="c6">my.makePhoneCall(OBJECT)</td>
+          <td class="c7">swan.makePhoneCall</td>
+        </tr>
+        <tr class="r76">
+          <td class="c0">Sensors and Local Interactions
+          </td>
+          <td class="c1">Modifying System 
+            Settings</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">Yes(Partial)</td>
+          <td class="c6">No</td>
+          <td class="c7">Yes(Partial)</td>
+        </tr>
+        <tr class="r77">
+          <td class="c0">Graphics and Layout
+          </td>
+          <td class="c1">Animations</td>
+          <td class="c2"><a href="https://drafts.csswg.org/web-animations/" title="">Web Animations</a>
+          </td>
+          <td class="c3">ED</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Animation Style 
+            (private implementation)</td>
+          <td class="c6">my.createAnimation</td>
+          <td class="c7">swan.createAnimation</td>
+        </tr>
+        <tr class="r78">
+          <td class="c0">Graphics and Layout: 
+          </td>
+          <td class="c1">Canvas</td>
+          <td class="c2"><a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element" title="">The
+              canvas element</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Canvas (private
+            implementation)</td>
+          <td class="c6">Canvas (private
+            implementation)</td>
+          <td class="c7">Canvas (private
+            implementation)</td>
+        </tr>
+        <tr class="r79">
+          <td class="c0">Graphics and Layout
+          </td>
+          <td class="c1">Local Font Access</td>
+          <td class="c2"><a href="https://discourse.wicg.io/t/api-to-get-list-of-available-fonts/1197" title="">Local
+              Font Access API
+              (Proposal)</a></td>
+          <td class="c3">Proposal</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Customized Font (private implementation)</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r80">
+          <td class="c0">Media</td>
+          <td class="c1">Recording</td>
+          <td class="c2"><a href="https://w3c.github.io/mediacapture-record/" title="">MediaStream
+              Recording</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Recording (@system.record)</td>
+          <td class="c6">No (Disabled by Alipay)</td>
+          <td class="c7">Recording (private
+            implementation)</td>
+        </tr>
+        <tr class="r81">
+          <td class="c0">Media</td>
+          <td class="c1">Media Capture and
+            Streams</td>
+          <td class="c2"><a href="https://w3c.github.io/mediacapture-main/" title="">Media Capture and
+              Streams</a></td>
+          <td class="c3">CR</td>
+          <td class="c4">Yes (Partial)</td>
+          <td class="c5">Media (@system.media) (Take photo/video, pick image/video/file, save to photos album)</td>
+          <td class="c6">Only image (take photo, pick image)</td>
+          <td class="c7">Media (private implementation)</td>
+        </tr>
+        <tr class="r82">
+          <td class="c0">Media</td>
+          <td class="c1">Media Capture</td>
+          <td class="c2"><a href="https://w3c.github.io/html-media-capture/" title="">HTML Media
+              Capture</a></td>
+          <td class="c3">Rec</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Media (@system.media) (Take photo/video, pick image/video/file, save to photos album)</td>
+          <td class="c6">Only image (take photo, pick image)</td>
+          <td class="c7">Media (private implementation)</td>
+        </tr>
+        <tr class="r83">
+          <td class="c0">Media</td>
+          <td class="c1">Media Capture Image</td>
+          <td class="c2"><a href="https://w3c.github.io/mediacapture-image/" title="">MediaStream Image
+              Capture</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Media (@system.media) (Take photo/video, pick image/video/file, save to photos album)</td>
+          <td class="c6">Only image (take photo, pick image)</td>
+          <td class="c7">Media (private implementation)</td>
+        </tr>
+        <tr class="r84">
+          <td class="c0">Media</td>
+          <td class="c1">Audio</td>
+          <td class="c2"><a href="https://w3c.github.io/html/semantics-embedded-content.html#the-audio-element"
+              title="">Audio</a>
+          </td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Audio (@system.audio)</td>
+          <td class="c6">No</td>
+          <td class="c7">Audio (private implementation)</td>
+        </tr>
+        <tr class="r85">
+          <td class="c0">Media</td>
+          <td class="c1">Video</td>
+          <td class="c2"><a href="https://w3c.github.io/html/semantics-embedded-content.html#the-video-element"
+              title="">Video</a>
+          </td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Yes (private implementation)</td>
+          <td class="c6">No</td>
+          <td class="c7">Video (private implementation)</td>
+        </tr>
+        <tr class="r86">
+          <td class="c0">Media</td>
+          <td class="c1">Image Editor</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">Picture Editor 
+            (@system.image)</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r87">
+          <td class="c0">Media (TBD)</td>
+          <td class="c1">Map</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">Map label</td>
+          <td class="c6">Map component</td>
+          <td class="c7">Map component</td>
+        </tr>
+        <tr class="r88">
+          <td class="c0">Security and Privacy</td>
+          <td class="c1">Web Crypto API</td>
+          <td class="c2"><a href="https://w3c.github.io/webcrypto/" title="">Web Cryptography API</a>
+          </td>
+          <td class="c3">Rec</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Cipher 
+            (@system.cipher)</td>
+          <td class="c6">my.rsa</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r89">
+          <td class="c0">Security and
+            Privacy</td>
+          <td class="c1">Auth</td>
+          <td class="c2"><a href="https://www.w3.org/TR/webauthn/" title="">Web Authentication</a></td>
+          <td class="c3">Rec</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Yes (private
+            implementation)</td>
+          <td class="c6">my.getAuthCode</td>
+          <td class="c7">swan.authorize</td>
+        </tr>
+        <tr class="r90">
+          <td class="c0">Security and
+            Privacy</td>
+          <td class="c1">Permissions</td>
+          <td class="c2"><a href="https://w3c.github.io/permissions/" title="">Permissions</a></td>
+          <td class="c3">WD</td>
+          <td class="c4">Yes</td>
+          <td class="c5">manifest.permissions</td>
+          <td class="c6">my.showAuthGuide 
+            (Object)/my.getSetting(OBJECT)</td>
+          <td class="c7">swan.getSetting</td>
+        </tr>
+        <tr class="r91">
+          <td class="c0">Security and
+            Privacy</td>
+          <td class="c1">SMS OTP Retriever</td>
+          <td class="c2"><a href="https://discourse.wicg.io/t/sms-otp-retrieval/3499" title="">SMS OTP
+              Retriever(Proposal)</a></td>
+          <td class="c3">Proposal</td>
+          <td class="c4">Yes</td>
+          <td class="c5">Yes (@system.sms)</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r92">
+          <td class="c0">Security and
+            Privacy</td>
+          <td class="c1">Sign up API</td>
+          <td class="c2"><a href="https://discourse.wicg.io/t/proposal-sign-up-api-for-web/1844" title="">Sign up with
+              phone number: 
+              API(Proposal)</a></td>
+          <td class="c3">Proposal</td>
+          <td class="c4">Yes</td>
+          <td class="c5">No</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r93">
+          <td class="c0">Security and
+            Privacy</td>
+          <td class="c1">Statistics</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">Statistics (@service.stats)</td>
+          <td class="c6">No</td>
+          <td class="c7">provided statistcs plan</td>
+        </tr>
+        <tr class="r94">
+          <td class="c0">Security and
+            Privacy</td>
+          <td class="c1">Account</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">Account (@service.account)</td>
+          <td class="c6">No</td>
+          <td class="c7">swan.getEnvInfoSync</td>
+        </tr>
+        <tr class="r95">
+          <td class="c0">Security and
+            Privacy</td>
+          <td class="c1">User Info</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">No</td>
+          <td class="c6">my.getAuthUserInfo</td>
+          <td class="c7">swan.getUserInfo</td>
+        </tr>
+        <tr class="r96">
+          <td class="c0">Security and
+            Privacy</td>
+          <td class="c1">Third-party Account</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">Third-party Account (QQ + WeChat + Weibo)</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r97">
+          <td class="c0">Security and
+            Privacy</td>
+          <td class="c1">Data Analysis</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">No</td>
+          <td class="c6">my.reportAnalytics</td>
+          <td class="c7">swan.reportAnalytics</td>
+        </tr>
+        <tr class="r98">
+          <td class="c0">Security and
+            Privacy</td>
+          <td class="c1">Text Risk 
+            Identification</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">No</td>
+          <td class="c6">my.textRiskIdentification (Object)</td>
+          <td class="c7">swan.ai.textReview</td>
+        </tr>
+        <tr class="r99">
+          <td class="c0">Security and
+            Privacy</td>
+          <td class="c1">Image Risk 
+            Identification</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">No</td>
+          <td class="c6">Image Content 
+            Security (private implementation)</td>
+          <td class="c7">swan.ai.imageAudit</td>
+        </tr>
+        <tr class="r100">
+          <td class="c0">Security and
+            Privacy</td>
+          <td class="c1">Fingerprint 
+            Authertication</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">No</td>
+          <td class="c6">No</td>
+          <td class="c7">No</td>
+        </tr>
+        <tr class="r101">
+          <td class="c0">Security and
+            Privacy</td>
+          <td class="c1">Face Authentication</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">No</td>
+          <td class="c6">Face Authentication (private implementation)</td>
+          <td class="c7">swan.ai.faceMatch
+          </td>
+        </tr>
+        <tr class="r102">
+          <td class="c0">Performance 
+            and Turning</td>
+          <td class="c1">Memory Warning</td>
+          <td class="c2">No</td>
+          <td class="c3">&nbsp;</td>
+          <td class="c4">No</td>
+          <td class="c5">No</td>
+          <td class="c6">No</td>
+          <td class="c7">swan.onMemoryWarning</td>
+        </tr>
+      </tbody>
     </table>
-  </div>
-  </body>
+    <script>
+      const search = document.getElementById('search')
+      const table = document.getElementById('filter')
+      const trArray = Array.prototype.slice.call(table.querySelectorAll('tbody tr'))
+
+      const filter = event => {
+        const searchTerm = event.target.value.toLowerCase()
+        trArray.forEach(row => {
+          row.classList.add('hidden')
+          const tdArray = Array.prototype.slice.call(row.getElementsByTagName('td'))
+          tdArray.forEach(cell => {
+            if (cell.innerText.toLowerCase().indexOf(searchTerm) > -1) {
+              row.classList.remove('hidden')
+            }
+          })
+        })
+      }
+
+      search.addEventListener('keyup', filter, false)
+    </script>
+</body>
+
 </html>
