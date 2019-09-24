@@ -59,11 +59,9 @@
       padding-top: 1.0em;
       padding-bottom: 1.0em;
       top:0;
-    }
-
-    th {
       background-color: #034575;
       position: sticky;
+      min-width: 120px;
     }
 
     tbody tr:nth-child(2n-1) {
@@ -118,7 +116,7 @@
     a[href]:hover {
       background: #f8f8f8;
       background: rgba(75%, 75%, 75%, .25);
-      border-bottom-width: 3px;
+      border-bottom-width: 2px;
       margin-bottom: -2px;
     }
 
@@ -136,8 +134,22 @@
     th a[href]:hover {
       background: #f8f8f8;
       background: rgba(75%, 75%, 75%, .25);
-      border-bottom-width: 3px;
+      border-bottom-width: 2px;
       margin-bottom: -2px;
+    }
+
+    tbody tr:hover a {
+      color: #fff;
+      border-bottom: 1px solid #ffffff;
+    }
+
+    tbody tr:hover a:visited {
+      border-bottom-color: #fff;
+    }
+
+    tbody tr:hover a[href]:focus,
+    tbody tr:hover a[href]:hover {
+      border-bottom: 2px solid #fff;
     }
 
     ::-webkit-scrollbar {
@@ -161,7 +173,7 @@
       <span>Search:</span>
       <input placeholder="NFC" type="search" id="search">
     </div>
-    <table cellpadding="0" cellspacing="0" border="0" id="filter">
+    <table id="filter">
       <thead>
         <tr class="r0">
           <th class="c0">Category</th>
@@ -232,18 +244,16 @@
           <td class="c1">Engine</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
-          <td class="c4">Brser Engines</td>
+          <td class="c4">Browser Engines</td>
           <td class="c5">No Chromium layout engine but with V8 engine, more lightweight.<br />
             Providing pure WebAPIs to app developers,Web JS APIs are mapped from Android native APIs and part of
             standard WebAPIs.<br />
             Template part(with HTML tags)in .ux file mapping to single android native views and combined view
             components, provided native performance experiences.<br />
             CSS subset: Mapping to attributes of Android View(e.g. position, color)</td>
-          <td class="c6">Native(rendering)<br />
-            + WebView (rendering) + Worker (Data storage and business logic) + V8(use UC<br />
-            brsing engine)</td>
-          <td class="c7">rendering：Native+WebView<br />
-            logic：V8/Javascript Core</td>
+          <td class="c6">Native(rendering) + WebView (rendering) + Worker (Data storage and business logic) + V8(use UC browsering engine)</td>
+          <td class="c7">Rendering: Native+WebView<br />
+            Logic: V8/Javascript Core</td>
         </tr>
         <tr class="r7">
           <td class="c0">File format</td>
@@ -251,8 +261,7 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">.html, .js, .css</td>
-          <td class="c5">.ux file (template),<br />
-            .js, .css</td>
+          <td class="c5">.ux file (template), .js, .css</td>
           <td class="c6">.axml, .js, .acss</td>
           <td class="c7">.swan, .js, .css</td>
         </tr>
@@ -283,10 +292,8 @@
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">Yes</td>
-          <td class="c6">Can be used within Alibaba's Native Apps including Alipay, Taobao, DingDing,
-            Gaode, ELE.me</td>
-          <td class="c7">Can be used within Baidu App, and Open Source Union apps, such as IQiyi ,
-            Bilibili, Wifi and so on</td>
+          <td class="c6">Can be used within Alibaba's Native Apps including Alipay, Taobao, DingDing, Gaode, ELE.me</td>
+          <td class="c7">Can be used within Baidu App and Open Source Union apps, such as iQiyi, Bilibili, Wifi and so on</td>
         </tr>
         <tr class="r11">
           <td class="c0">Modular</td>
@@ -301,15 +308,14 @@
           <td class="c7">Yes</td>
         </tr>
         <tr class="r12">
-          <td class="c0">Add to home<br />
+          <td class="c0">Add to home: 
             screen</td>
           <td class="c1">Add to home screen</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">Yes</td>
           <td class="c5">Yes</td>
-          <td class="c6">Yes (via A2HS feature<br />
-            on Safari)</td>
+          <td class="c6">Yes (via A2HS feature on Safari)</td>
           <td class="c7">Yes</td>
         </tr>
         <tr class="r13">
@@ -318,31 +324,25 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">Yes</td>
-          <td class="c5">Yes (search within<br />
-            system search bar, management apps, app store, brsers, home page etc.)</td>
-          <td class="c6">Yes (search within<br />
-            Alipay)</td>
+          <td class="c5">Yes (search within system search bar, management apps, app store, browsers, home page etc.)</td>
+          <td class="c6">Yes (search within Alipay)</td>
           <td class="c7">Yes (search with Baidu search engine)</td>
         </tr>
         <tr class="r14">
-          <td class="c0">Application<br />
+          <td class="c0">Application 
             Lifecycle</td>
           <td class="c1">Web Share</td>
           <td class="c2"><a href="https://wicg.github.io/web-share/" title="">Web Share API</a></td>
           <td class="c3">CGR</td>
           <td class="c4">Yes</td>
-          <td class="c5">Share(@system.share +<br />
-            @service.share)</td>
+          <td class="c5">Share(@system.share + @service.share)</td>
           <td class="c6">onShareAppMessage</td>
           <td class="c7">Yes</td>
         </tr>
         <tr class="r15">
-          <td class="c0">Application<br />
-            Lifecycle</td>
+          <td class="c0">Application Lifecycle</td>
           <td class="c1">Splash screen</td>
-          <td class="c2"><a href="https://github.com/w3c/manifest/issues/589#issuecomment-323232119" title="">Splash
-              Screen in<br />
-              Manifest(WIP)</a></td>
+          <td class="c2"><a href="https://github.com/w3c/manifest/issues/589#issuecomment-323232119" title="">Splash Screen in Manifest(WIP)</a></td>
           <td class="c3">Proposal</td>
           <td class="c4">Yes (WIP)</td>
           <td class="c5">Yes (private
@@ -351,7 +351,7 @@
           <td class="c7">No and no necessary</td>
         </tr>
         <tr class="r16">
-          <td class="c0">Application<br />
+          <td class="c0">Application 
             Lifecycle</td>
           <td class="c1">Service Workers</td>
           <td class="c2"><a href="https://w3c.github.io/ServiceWorker/" title="">Service Workers
@@ -363,11 +363,10 @@
           <td class="c7">No and no necessary</td>
         </tr>
         <tr class="r17">
-          <td class="c0">Application<br />
+          <td class="c0">Application 
             Lifecycle</td>
           <td class="c1">Web App Manifest</td>
-          <td class="c2"><a href="https://www.w3.org/TR/appmanifest/" title="">Web<br />
-              App Manifest</a></td>
+          <td class="c2"><a href="https://www.w3.org/TR/appmanifest/" title="">Web App Manifest</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
           <td class="c5">Yes (private
@@ -378,19 +377,18 @@
             implementation)</td>
         </tr>
         <tr class="r18">
-          <td class="c0">Application<br />
+          <td class="c0">Application 
             Lifecycle</td>
           <td class="c1">App Info</td>
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">App Info<br />
-            (@system.app)</td>
+          <td class="c5">App Info (@system.app)</td>
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
         <tr class="r19">
-          <td class="c0">User<br />
+          <td class="c0">User
             Interaction</td>
           <td class="c1">Fullscreen</td>
           <td class="c2"><a href="https://fullscreen.spec.whatwg.org/" title="">Fullscreen API</a></td>
@@ -403,7 +401,7 @@
             implementation)</td>
         </tr>
         <tr class="r20">
-          <td class="c0">User<br />
+          <td class="c0">User
             Interaction</td>
           <td class="c1">Badging</td>
           <td class="c2"><a href="https://wicg.github.io/badging/" title="">Badging API</a></td>
@@ -416,40 +414,39 @@
             implementation)</td>
         </tr>
         <tr class="r21">
-          <td class="c0">User<br />
+          <td class="c0">User
             Interaction</td>
           <td class="c1">Prompt</td>
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Prompt<br />
-            (@system.prompt)</td>
+          <td class="c5">Prompt (@system.prompt)</td>
           <td class="c6">Popup component</td>
           <td class="c7">Popup component</td>
         </tr>
         <tr class="r22">
-          <td class="c0">User<br />
+          <td class="c0">User
             Interaction</td>
           <td class="c1">Vibration</td>
           <td class="c2"><a href="https://w3c.github.io/vibration/" title="">Vibration API</a></td>
           <td class="c3">Rec</td>
           <td class="c4">Yes</td>
-          <td class="c5">Vibration<br />
+          <td class="c5">Vibration
             (@system.vibrator)</td>
           <td class="c6">my.vibrate*</td>
           <td class="c7">swan.vibrateLong<br />
             swan.vibrateShort</td>
         </tr>
         <tr class="r23">
-          <td class="c0">User<br />
+          <td class="c0">User
             Interaction</td>
           <td class="c1">Notification</td>
           <td class="c2"><a href="https://notifications.spec.whatwg.org/" title="">Notifications API</a>
           </td>
-          <td class="c3">Living<br />
+          <td class="c3">Living 
             Standard</td>
           <td class="c4">Yes</td>
-          <td class="c5">Notification<br />
+          <td class="c5">Notification 
             (@system.notification)</td>
           <td class="c6">Notice (private
             implementation)</td>
@@ -458,20 +455,19 @@
             (private impletmention)</td>
         </tr>
         <tr class="r24">
-          <td class="c0">User<br />
+          <td class="c0">User
             Interaction</td>
           <td class="c1">Screen Orientation</td>
           <td class="c2"><a href="https://w3c.github.io/screen-orientation/" title="">The Screen
               Orientation API</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">orientation in JSON<br />
-            (Partial)</td>
+          <td class="c5">orientation in JSON (Partial)</td>
           <td class="c6">No</td>
           <td class="c7">swan.onDeviceMotionChange</td>
         </tr>
         <tr class="r25">
-          <td class="c0">User<br />
+          <td class="c0">User
             Interaction</td>
           <td class="c1">User Idle Detection</td>
           <td class="c2"><a href="https://github.com/inexorabletash/idle-detection" title="">User Idle
@@ -483,72 +479,64 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r26">
-          <td class="c0">User<br />
+          <td class="c0">User
             Interaction</td>
           <td class="c1">Wake Lock</td>
           <td class="c2"><a href="https://w3c.github.io/wake-lock/" title="">Wake Lock API</a></td>
           <td class="c3">CR</td>
           <td class="c4">Yes</td>
           <td class="c5">No</td>
-          <td class="c6">only Screen WakeLock<br />
-            (my.setKeepScreenOn(OBJECT))</td>
-          <td class="c7">only Screen WakeLock<br />
-            swan.setKeepScreenOn</td>
+          <td class="c6">only Screen WakeLock (my.setKeepScreenOn(OBJECT))</td>
+          <td class="c7">only Screen WakeLock swan.setKeepScreenOn</td>
         </tr>
         <tr class="r27">
-          <td class="c0">User<br />
+          <td class="c0">User
             Interaction</td>
           <td class="c1">Clipboard</td>
           <td class="c2"><a href="https://w3c.github.io/clipboard-apis/" title="">Clipboard API and
               events</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Clipboard<br />
+          <td class="c5">Clipboard 
             (@system.clipboard)</td>
           <td class="c6">my.getClipboard/my.setClipboard</td>
           <td class="c7">swan.setClipboardData<br />
             swan.getClipboardData</td>
         </tr>
         <tr class="r28">
-          <td class="c0">User<br />
+          <td class="c0">User
             Interaction</td>
           <td class="c1">execCommand</td>
           <td class="c2"><a href="https://w3c.github.io/editing/execCommand" title="">execCommand</a>
           </td>
-          <td class="c3">Unofficial<br />
-            Draft</td>
+          <td class="c3">Unofficial Draft</td>
           <td class="c4">Yes</td>
-          <td class="c5">Clipboard<br />
-            (@system.clipboard)</td>
+          <td class="c5">Clipboard (@system.clipboard)</td>
           <td class="c6">my.getClipboard/my.setClipboard</td>
           <td class="c7">swan.setClipboardData<br />
             swan.getClipboardData</td>
         </tr>
         <tr class="r29">
-          <td class="c0">User<br />
+          <td class="c0">User
             Interaction</td>
           <td class="c1">History API</td>
           <td class="c2"><a href="https://html.spec.whatwg.org/multipage/history.html#the-history-interface"
-              title="">The History
-              Interface</a></td>
+              title="">The History Interface</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Page Router<br />
-            (@system.router)</td>
+          <td class="c5">Page Router (@system.router)</td>
           <td class="c6">Navigator component</td>
-          <td class="c7">Router (private
-            implementation)</td>
+          <td class="c7">Router (private implementation)</td>
         </tr>
         <tr class="r30">
-          <td class="c0">User<br />
+          <td class="c0">User
             Interaction</td>
           <td class="c1">Barcode</td>
           <td class="c2"><a href="https://wicg.github.io/shape-detection-api/" title="">Accelerated Shape
               Detection in Images</a></td>
           <td class="c3">ED</td>
           <td class="c4">Yes</td>
-          <td class="c5">Barcode<br />
-            (@system.barcode)</td>
+          <td class="c5">Barcode (@system.barcode)</td>
           <td class="c6">Barcode (private
             implementation)</td>
           <td class="c7">swan.scanCode<br />
@@ -556,7 +544,7 @@
             swan.ai.advancedGeneralIdentify</td>
         </tr>
         <tr class="r31">
-          <td class="c0">User<br />
+          <td class="c0">User
             Interaction</td>
           <td class="c1">Shake</td>
           <td class="c2">No</td>
@@ -567,10 +555,9 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r32">
-          <td class="c0">User<br />
+          <td class="c0">User
             Interaction</td>
-          <td class="c1">User Capture Screen<br />
-            Event</td>
+          <td class="c1">User Capture Screen Event</td>
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
@@ -579,7 +566,7 @@
           <td class="c7">swan.onUserCaptureScreen</td>
         </tr>
         <tr class="r33">
-          <td class="c0">User<br />
+          <td class="c0">User
             Interaction</td>
           <td class="c1">Alarms</td>
           <td class="c2">No</td>
@@ -590,63 +577,59 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r34">
-          <td class="c0">Payment and<br />
+          <td class="c0">Payment and 
             Services</td>
           <td class="c1">Payment</td>
           <td class="c2"><a href="https://w3c.github.io/payment-method-basic-card/" title="">Payment
               Method: Basic Card</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Pay (@service.pay)<br />
-            (WeChat + Alipay)</td>
+          <td class="c5">Pay (@service.pay) (WeChat + Alipay)</td>
           <td class="c6">Alipay</td>
           <td class="c7">swan.requestPolymerPayment</td>
         </tr>
         <tr class="r35">
-          <td class="c0">Payment and<br />
+          <td class="c0">Payment and 
             Services</td>
           <td class="c1">Payment</td>
           <td class="c2"><a href="https://w3c.github.io/payment-method-id/" title="">Payment Method
               Identifiers</a></td>
           <td class="c3">CR</td>
           <td class="c4">Yes</td>
-          <td class="c5">Pay (@service.pay)<br />
-            (WeChat + Alipay)</td>
+          <td class="c5">Pay (@service.pay) (WeChat + Alipay)</td>
           <td class="c6">Alipay</td>
           <td class="c7">swan.requestPolymerPayment</td>
         </tr>
         <tr class="r36">
-          <td class="c0">Payment and<br />
+          <td class="c0">Payment and 
             Services</td>
           <td class="c1">Payment</td>
           <td class="c2"><a href="https://w3c.github.io/payment-handler/" title="">Payment Handler
               API</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Pay (@service.pay)<br />
-            (WeChat + Alipay)</td>
+          <td class="c5">Pay (@service.pay) (WeChat + Alipay)</td>
           <td class="c6">Alipay</td>
           <td class="c7">swan.requestPolymerPayment</td>
         </tr>
         <tr class="r37">
-          <td class="c0">Payment and<br />
+          <td class="c0">Payment and 
             Services</td>
           <td class="c1">Payment</td>
           <td class="c2"><a href="https://w3c.github.io/payment-request/" title="">Payment Request
               API</a></td>
           <td class="c3">CR</td>
           <td class="c4">Yes</td>
-          <td class="c5">Pay (@service.pay)<br />
+          <td class="c5">Pay (@service.pay) 
             (WeChat + Alipay)</td>
           <td class="c6">Alipay</td>
           <td class="c7">swan.requestPolymerPayment</td>
         </tr>
         <tr class="r38">
-          <td class="c0">Network and<br />
+          <td class="c0">Network and
             Communications</td>
           <td class="c1">Push</td>
-          <td class="c2"><a href="https://www.w3.org/TR/push-api/" title="">Push<br />
-              API</a></td>
+          <td class="c2"><a href="https://www.w3.org/TR/push-api/" title="">Push API</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
           <td class="c5">Push (@service.push)</td>
@@ -656,7 +639,7 @@
             (private impletmention)</td>
         </tr>
         <tr class="r39">
-          <td class="c0">Network and<br />
+          <td class="c0">Network and
             Communications</td>
           <td class="c1">Fetch</td>
           <td class="c2"><a href="https://fetch.spec.whatwg.org/" title="">Fetch</a></td>
@@ -667,40 +650,37 @@
           <td class="c7">swan.request</td>
         </tr>
         <tr class="r40">
-          <td class="c0">Network and<br />
+          <td class="c0">Network and
             Communications</td>
           <td class="c1">WebSocket</td>
           <td class="c2"><a href="https://html.spec.whatwg.org/multipage/web-sockets.html#network" title="">Web
               sockets</a></td>
           <td class="c3">CR</td>
           <td class="c4">Yes</td>
-          <td class="c5">WebSocket<br />
-            (@system.websocketfactory)</td>
-          <td class="c6">my.connectSocket<br />
-            (private implementation)</td>
+          <td class="c5">WebSocket (@system.websocketfactory)</td>
+          <td class="c6">my.connectSocket (private implementation)</td>
           <td class="c7">swan WebSocket</td>
         </tr>
         <tr class="r41">
-          <td class="c0">Network and<br />
+          <td class="c0">Network and
             Communications</td>
           <td class="c1">iBeacon</td>
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">iBeacon (private
-            implementation)</td>
+          <td class="c6">iBeacon (private implementation)</td>
           <td class="c7">No</td>
         </tr>
         <tr class="r42">
-          <td class="c0">DataStorage<br />
+          <td class="c0">DataStorage
           </td>
           <td class="c1">Web Storage</td>
           <td class="c2"><a href="https://html.spec.whatwg.org/multipage/webstorage.html" title="">Web
               Storage</a></td>
           <td class="c3">Rec</td>
           <td class="c4">Yes</td>
-          <td class="c5">Storage<br />
+          <td class="c5">Storage 
             (@system.storage)</td>
           <td class="c6">Cache (private
             implementation)</td>
@@ -708,13 +688,13 @@
             implementation)</td>
         </tr>
         <tr class="r43">
-          <td class="c0">DataStorage<br />
+          <td class="c0">DataStorage
           </td>
           <td class="c1">File API</td>
           <td class="c2"><a href="https://www.w3.org/TR/FileAPI/" title="">File API</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">File (@system.file)<br />
+          <td class="c5">File (@system.file)
             and File Upload/Download (@system.request)</td>
           <td class="c6">File (private
             implementation)</td>
@@ -722,15 +702,15 @@
             implementation)</td>
         </tr>
         <tr class="r44">
-          <td class="c0">DataStorage<br />
+          <td class="c0">DataStorage
           </td>
-          <td class="c1">Native File System<br />
+          <td class="c1">Native File System
             API</td>
           <td class="c2"><a href="https://wicg.github.io/native-file-system/" title="">Native File System
               API</a></td>
           <td class="c3">ED</td>
           <td class="c4">Yes</td>
-          <td class="c5">File (@system.file)<br />
+          <td class="c5">File (@system.file)
             and File Upload/Download (@system.request)</td>
           <td class="c6">File (private
             implementation)</td>
@@ -738,12 +718,10 @@
             implementation)</td>
         </tr>
         <tr class="r45">
-          <td class="c0">DataStorage<br />
+          <td class="c0">DataStorage
           </td>
           <td class="c1">File Handling</td>
-          <td class="c2"><a href="https://github.com/WICG/file-handling/blob/master/explainer.md" title="">File
-              Handling
-              (Proposal)</a></td>
+          <td class="c2"><a href="https://github.com/WICG/file-handling/blob/master/explainer.md" title="">File Handling (Proposal)</a></td>
           <td class="c3">Proposal</td>
           <td class="c4">Yes</td>
           <td class="c5">No</td>
@@ -751,7 +729,7 @@
           <td class="c7">Yes (Partial)</td>
         </tr>
         <tr class="r46">
-          <td class="c0">DataStorage<br />
+          <td class="c0">DataStorage
           </td>
           <td class="c1">IndexedDB</td>
           <td class="c2"><a href="https://w3c.github.io/IndexedDB/" title="">Indexed Database API 3.0</a>
@@ -763,20 +741,19 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r47">
-          <td class="c0">Forms<br />
+          <td class="c0">Forms
           </td>
           <td class="c1">Calendar</td>
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Calendar<br />
-            (@system.calendar)</td>
+          <td class="c5">Calendar (@system.calendar)</td>
           <td class="c6">Calendar (private
             implementation)</td>
           <td class="c7">No</td>
         </tr>
         <tr class="r48">
-          <td class="c0">Forms<br />
+          <td class="c0">Forms
           </td>
           <td class="c1">Date Picker</td>
           <td class="c2"><a href="https://html.spec.whatwg.org/multipage/input.html#date-state-(type%3Ddate)"
@@ -790,7 +767,7 @@
           <td class="c7">picker component (mode = date)</td>
         </tr>
         <tr class="r49">
-          <td class="c0">Forms<br />
+          <td class="c0">Forms
           </td>
           <td class="c1">City Picker</td>
           <td class="c2">No</td>
@@ -801,12 +778,11 @@
           <td class="c7">picker component(mode = region)</td>
         </tr>
         <tr class="r50">
-          <td class="c0">Forms<br />
+          <td class="c0">Forms
           </td>
           <td class="c1">Color Picker</td>
           <td class="c2"><a href="https://html.spec.whatwg.org/multipage/input.html#color-state-(type%3Dcolor)"
-              title="">Color
-              state</a></td>
+              title="">Color state</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
           <td class="c5">picker (private
@@ -815,10 +791,9 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r51">
-          <td class="c0">Sensors and<br />
+          <td class="c0">Sensors and 
             Local Interactions</td>
-          <td class="c1">Sensor (Ambient<br />
-            Light)</td>
+          <td class="c1">Sensor (Ambient Light)</td>
           <td class="c2"><a href="https://w3c.github.io/ambient-light/" title="">Ambient Light Sensor</a>
           </td>
           <td class="c3">WD</td>
@@ -828,101 +803,91 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r52">
-          <td class="c0">Sensors and<br />
+          <td class="c0">Sensors and 
             Local Interactions</td>
           <td class="c1">Sensor (Proximity)</td>
           <td class="c2"><a href="https://w3c.github.io/proximity/" title="">Proximity Sensor</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Sensor<br />
-            (sensor.subscribeProximity(OBJECT))</td>
+          <td class="c5">Sensor (sensor.subscribeProximity(OBJECT))</td>
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
         <tr class="r53">
-          <td class="c0">Sensors and<br />
+          <td class="c0">Sensors and 
             Local Interactions</td>
-          <td class="c1">Sensor (Orientation<br />
-            Event)</td>
+          <td class="c1">Sensor (Orientation Event)</td>
           <td class="c2"><a href="https://w3c.github.io/deviceorientation/" title="">DeviceOrientation
               Event</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Sensor<br />
-            (sensor.subscribeCompass(OBJECT))</td>
+          <td class="c5">Sensor (sensor.subscribeCompass(OBJECT))</td>
           <td class="c6">my.onCompassChange/offCompassChange</td>
           <td class="c7">swan.onCompassChange<br />
             swan.startCompass<br />
             swan.stopCompass</td>
         </tr>
         <tr class="r54">
-          <td class="c0">Sensors and<br />
+          <td class="c0">Sensors and 
             Local Interactions</td>
-          <td class="c1">Sensor<br />
-            (OrientationSensor)</td>
+          <td class="c1">Sensor (OrientationSensor)</td>
           <td class="c2"><a href="https://w3c.github.io/orientation-sensor/" title="">Orientation
               Sensor</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Sensor<br />
-            (sensor.subscribeCompass(OBJECT))</td>
+          <td class="c5">Sensor (sensor.subscribeCompass(OBJECT))</td>
           <td class="c6">my.onCompassChange/offCompassChange</td>
           <td class="c7">swan.onCompassChange<br />
             swan.startCompass<br />
             swan.stopCompass</td>
         </tr>
         <tr class="r55">
-          <td class="c0">Sensors and<br />
+          <td class="c0">Sensors and 
             Local Interactions</td>
           <td class="c1">Sensor (Magnetometer)</td>
           <td class="c2"><a href="https://w3c.github.io/magnetometer/" title="">Magnetometer</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Sensor<br />
-            (sensor.subscribeCompass(OBJECT))</td>
+          <td class="c5">Sensor (sensor.subscribeCompass(OBJECT))</td>
           <td class="c6">my.onCompassChange/offCompassChange</td>
           <td class="c7">swan.onCompassChange<br />
             swan.startCompass<br />
             swan.stopCompass</td>
         </tr>
         <tr class="r56">
-          <td class="c0">Sensors and<br />
+          <td class="c0">Sensors and 
             Local Interactions</td>
           <td class="c1">Sensor (Gyroscope)</td>
           <td class="c2"><a href="http://w3c.github.io/gyroscope/" title="">Gyroscope</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Sensor<br />
-            (sensor.subscribeCompass(OBJECT))</td>
+          <td class="c5">Sensor (sensor.subscribeCompass(OBJECT))</td>
           <td class="c6">my.onGyroscopeChange/offGyroscopeChange</td>
           <td class="c7">swan.onCompassChange<br />
             swan.startCompass<br />
             swan.stopCompass</td>
         </tr>
         <tr class="r57">
-          <td class="c0">Sensors and<br />
+          <td class="c0">Sensors and 
             Local Interactions</td>
-          <td class="c1">Sensor<br />
-            (Accelerometer)</td>
+          <td class="c1">Sensor (Accelerometer)</td>
           <td class="c2"><a href="https://w3c.github.io/accelerometer/" title="">Accelerometer</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Sensor<br />
-            (sensor.subscribeAccelerometer(OBJECT))</td>
+          <td class="c5">Sensor (sensor.subscribeAccelerometer(OBJECT))</td>
           <td class="c6">my.onAccelerometerChange/offAccelerometerChange</td>
           <td class="c7">swan.onAccelerometerChange<br />
             swan.offAccelerometerChange</td>
         </tr>
         <tr class="r58">
-          <td class="c0">Sensors and<br />
+          <td class="c0">Sensors and 
             Local Interactions</td>
           <td class="c1">Sensor(Geolocation)</td>
           <td class="c2"><a href="https://w3c.github.io/geolocation-sensor/" title="">Geolocation
               Sensor</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Geoloaction<br />
-            (@system.geolocation)</td>
+          <td class="c5">Geoloaction (@system.geolocation)</td>
           <td class="c6">Location (private
             implementation)</td>
           <td class="c7">swan.getLocation<br />
@@ -930,28 +895,26 @@
             swan.openLocation</td>
         </tr>
         <tr class="r59">
-          <td class="c0">Sensors and<br />
+          <td class="c0">Sensors and 
             Local Interactions</td>
           <td class="c1">Sensor</td>
           <td class="c2"><a href="https://w3c.github.io/sensors/" title="">Generic Sensor API</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Sensor<br />
-            (@system.sensor)</td>
+          <td class="c5">Sensor (@system.sensor)</td>
           <td class="c6">Yes (private
             implementation)</td>
           <td class="c7">Not general</td>
         </tr>
         <tr class="r60">
-          <td class="c0">Sensors and<br />
+          <td class="c0">Sensors and 
             Local Interactions</td>
           <td class="c1">Geolocation</td>
           <td class="c2"><a href="https://www.w3.org/TR/geolocation-API/" title="">Geolocation API</a>
           </td>
           <td class="c3">Rec</td>
           <td class="c4">Yes</td>
-          <td class="c5">Geoloaction<br />
-            (@system.geolocation)</td>
+          <td class="c5">Geoloaction (@system.geolocation)</td>
           <td class="c6">Location (private
             implementation)</td>
           <td class="c7">swan.getLocation<br />
@@ -959,7 +922,7 @@
             swan.openLocation</td>
         </tr>
         <tr class="r61">
-          <td class="c0">Sensors and<br />
+          <td class="c0">Sensors and 
             Local Interactions</td>
           <td class="c1">WebHID</td>
           <td class="c2"><a href="https://wicg.github.io/webhid/index.html" title="">WebHID API</a></td>
@@ -970,7 +933,7 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r62">
-          <td class="c0">Sensors and<br />
+          <td class="c0">Sensors and 
             Local Interactions</td>
           <td class="c1">Web Serial</td>
           <td class="c2"><a href="https://wicg.github.io/serial/" title="">Serial API</a></td>
@@ -981,24 +944,22 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r63">
-          <td class="c0">Sensors and Local Interactions<br />
+          <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">Battery Status</td>
           <td class="c2"><a href="https://w3c.github.io/battery/" title="">Battery Status API</a></td>
           <td class="c3">CR</td>
           <td class="c4">Yes</td>
-          <td class="c5">Battery<br />
-            (@system.battery)</td>
+          <td class="c5">Battery (@system.battery)</td>
           <td class="c6">my.getSystemInfo</td>
           <td class="c7">swan.getBatteryInfo<br />
             swan.getBatteryInfoSync</td>
         </tr>
         <tr class="r64">
-          <td class="c0">Sensors and Local Interactions<br />
+          <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">NFC</td>
-          <td class="c2"><a href="https://w3c.github.io/web-nfc/" title="">Web NFC<br />
-              API</a></td>
+          <td class="c2"><a href="https://w3c.github.io/web-nfc/" title="">Web NFC API</a></td>
           <td class="c3">CGR</td>
           <td class="c4">Yes</td>
           <td class="c5">&nbsp;</td>
@@ -1006,7 +967,7 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r65">
-          <td class="c0">Sensors and Local Interactions<br />
+          <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">Bluetooth</td>
           <td class="c2"><a href="https://webbluetoothcg.github.io/web-bluetooth/" title="">Web
@@ -1020,84 +981,82 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r66">
-          <td class="c0">Sensors and Local Interactions<br />
+          <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">Device Info</td>
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Device Info<br />
-            (@system.device)</td>
+          <td class="c5">Device Info (@system.device)</td>
           <td class="c6">my.getSystemInfo</td>
           <td class="c7">swan.getSystemInfo</td>
         </tr>
         <tr class="r67">
-          <td class="c0">Sensors and Local Interactions<br />
+          <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">Network Information</td>
-          <td class="c2"><a href="https://wicg.github.io/netinfo/" title="">Network<br />
+          <td class="c2"><a href="https://wicg.github.io/netinfo/" title="">Network 
               Information API</a></td>
           <td class="c3">CGR</td>
           <td class="c4">Yes</td>
-          <td class="c5">Network Info<br />
+          <td class="c5">Network Info 
             (@system.network)</td>
-          <td class="c6">Network Status<br />
+          <td class="c6">Network Status 
             (private implementation)</td>
-          <td class="c7">swan.getNetworkType</td </tr> <tr class="r68">
-          <td class="c0">Sensors and Local Interactions<br />
+          <td class="c7">swan.getNetworkType</td </tr>
+        <tr class="r68">
+          <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">Screen Brightness</td>
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Screen Brightness<br />
+          <td class="c5">Screen Brightness 
             (@system.brightness)</td>
-          <td class="c6">Screen Brightness<br />
+          <td class="c6">Screen Brightness 
             (private implementation)</td>
           <td class="c7">swan.setScreenBrightness<br />
             swan.getScreenBrightness</td>
         </tr>
         <tr class="r69">
-          <td class="c0">Sensors and Local Interactions<br />
+          <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">System Volume</td>
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">System Volume<br />
-            (@system.volume)</td>
+          <td class="c5">System Volume (@system.volume)</td>
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
         <tr class="r70">
-          <td class="c0">Sensors and Local Interactions<br />
+          <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">App Management</td>
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">App Management<br />
+          <td class="c5">App Management 
             (@system.package)</td>
-          <td class="c6">No and managed by<br />
+          <td class="c6">No and managed by 
             Alipay</td>
-          <td class="c7">No and managed by<br />
+          <td class="c7">No and managed by 
             Baidu App</td>
         </tr>
         <tr class="r71">
-          <td class="c0">Sensors and Local Interactions<br />
+          <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">Contact</td>
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Contact<br />
-            (@system.contact)</td>
+          <td class="c5">Contact (@system.contact)</td>
           <td class="c6">Contact (private
             implementation)</td>
           <td class="c7">swan.addPhoneContact</td>
         </tr>
         <tr class="r72">
-          <td class="c0">Sensors and Local Interactions<br />
+          <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">SMS</td>
           <td class="c2">No</td>
@@ -1108,7 +1067,7 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r73">
-          <td class="c0">Sensors and Local Interactions<br />
+          <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">Wi-Fi</td>
           <td class="c2">No</td>
@@ -1119,7 +1078,7 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r74">
-          <td class="c0">Sensors and Local Interactions<br />
+          <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">Card</td>
           <td class="c2">No</td>
@@ -1130,11 +1089,11 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r75">
-          <td class="c0">Sensors and Local Interactions<br />
+          <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">Phone Call</td>
           <td class="c2"><a href="https://www.w3.org/2012/sysapps/telephony/" title="">Web Telephony
-              API(No update for 5 years)</a></td>
+              API (No update for 5 years)</a></td>
           <td class="c3">ED</td>
           <td class="c4">No</td>
           <td class="c5">Yes</td>
@@ -1144,7 +1103,7 @@
         <tr class="r76">
           <td class="c0">Sensors and Local Interactions
           </td>
-          <td class="c1">Modifying System<br />
+          <td class="c1">Modifying System 
             Settings</td>
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
@@ -1161,13 +1120,13 @@
           </td>
           <td class="c3">ED</td>
           <td class="c4">Yes</td>
-          <td class="c5">Animation Style<br />
+          <td class="c5">Animation Style 
             (private implementation)</td>
           <td class="c6">my.createAnimation</td>
           <td class="c7">swan.createAnimation</td>
         </tr>
         <tr class="r78">
-          <td class="c0">Graphics and Layout<br />
+          <td class="c0">Graphics and Layout: 
           </td>
           <td class="c1">Canvas</td>
           <td class="c2"><a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element" title="">The
@@ -1182,16 +1141,15 @@
             implementation)</td>
         </tr>
         <tr class="r79">
-          <td class="c0">Graphics and Layout<br />
+          <td class="c0">Graphics and Layout
           </td>
           <td class="c1">Local Font Access</td>
           <td class="c2"><a href="https://discourse.wicg.io/t/api-to-get-list-of-available-fonts/1197" title="">Local
-              Font Access API<br />
+              Font Access API
               (Proposal)</a></td>
           <td class="c3">Proposal</td>
           <td class="c4">Yes</td>
-          <td class="c5">Customized Font<br />
-            (private implementation)</td>
+          <td class="c5">Customized Font (private implementation)</td>
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
@@ -1202,27 +1160,22 @@
               Recording</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Recording<br />
-            (@system.record)</td>
-          <td class="c6">No (Disabled by<br />
-            Alipay)</td>
+          <td class="c5">Recording (@system.record)</td>
+          <td class="c6">No (Disabled by Alipay)</td>
           <td class="c7">Recording (private
             implementation)</td>
         </tr>
         <tr class="r81">
           <td class="c0">Media</td>
-          <td class="c1">Media Capture and<br />
+          <td class="c1">Media Capture and
             Streams</td>
           <td class="c2"><a href="https://w3c.github.io/mediacapture-main/" title="">Media Capture and
               Streams</a></td>
           <td class="c3">CR</td>
           <td class="c4">Yes (Partial)</td>
-          <td class="c5">Media (@system.media)<br />
-            (Take photo/video, pick image/video/file, save to photos album</td>
-          <td class="c6">Only image (take
-            photo, pick image)</td>
-          <td class="c7">Media (private
-            implementation)</td>
+          <td class="c5">Media (@system.media) (Take photo/video, pick image/video/file, save to photos album)</td>
+          <td class="c6">Only image (take photo, pick image)</td>
+          <td class="c7">Media (private implementation)</td>
         </tr>
         <tr class="r82">
           <td class="c0">Media</td>
@@ -1231,12 +1184,9 @@
               Capture</a></td>
           <td class="c3">Rec</td>
           <td class="c4">Yes</td>
-          <td class="c5">Media (@system.media)<br />
-            (Take photo/video, pick image/video/file, save to photos album</td>
-          <td class="c6">Only image (take
-            photo, pick image)</td>
-          <td class="c7">Media (private
-            implementation)</td>
+          <td class="c5">Media (@system.media) (Take photo/video, pick image/video/file, save to photos album)</td>
+          <td class="c6">Only image (take photo, pick image)</td>
+          <td class="c7">Media (private implementation)</td>
         </tr>
         <tr class="r83">
           <td class="c0">Media</td>
@@ -1245,11 +1195,9 @@
               Capture</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Media (@system.media)<br />
-            (Take photo/video, pick image/video/file, save to photos album</td>
+          <td class="c5">Media (@system.media) (Take photo/video, pick image/video/file, save to photos album)</td>
           <td class="c6">Only image (take photo, pick image)</td>
-          <td class="c7">Media (private
-            implementation)</td>
+          <td class="c7">Media (private implementation)</td>
         </tr>
         <tr class="r84">
           <td class="c0">Media</td>
@@ -1261,8 +1209,7 @@
           <td class="c4">Yes</td>
           <td class="c5">Audio (@system.audio)</td>
           <td class="c6">No</td>
-          <td class="c7">Audio (private
-            implementation)</td>
+          <td class="c7">Audio (private implementation)</td>
         </tr>
         <tr class="r85">
           <td class="c0">Media</td>
@@ -1272,11 +1219,9 @@
           </td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Yes (private
-            implementation)</td>
+          <td class="c5">Yes (private implementation)</td>
           <td class="c6">No</td>
-          <td class="c7">Video (private
-            implementation)</td>
+          <td class="c7">Video (private implementation)</td>
         </tr>
         <tr class="r86">
           <td class="c0">Media</td>
@@ -1284,7 +1229,7 @@
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Picture Editor<br />
+          <td class="c5">Picture Editor 
             (@system.image)</td>
           <td class="c6">No</td>
           <td class="c7">No</td>
@@ -1306,7 +1251,7 @@
           </td>
           <td class="c3">Rec</td>
           <td class="c4">Yes</td>
-          <td class="c5">Cipher<br />
+          <td class="c5">Cipher 
             (@system.cipher)</td>
           <td class="c6">my.rsa</td>
           <td class="c7">No</td>
@@ -1315,8 +1260,7 @@
           <td class="c0">Security and
             Privacy</td>
           <td class="c1">Auth</td>
-          <td class="c2"><a href="https://www.w3.org/TR/webauthn/" title="">Web<br />
-              Authentication</a></td>
+          <td class="c2"><a href="https://www.w3.org/TR/webauthn/" title="">Web Authentication</a></td>
           <td class="c3">Rec</td>
           <td class="c4">Yes</td>
           <td class="c5">Yes (private
@@ -1332,7 +1276,7 @@
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
           <td class="c5">manifest.permissions</td>
-          <td class="c6">my.showAuthGuide<br />
+          <td class="c6">my.showAuthGuide 
             (Object)/my.getSetting(OBJECT)</td>
           <td class="c7">swan.getSetting</td>
         </tr>
@@ -1353,7 +1297,7 @@
             Privacy</td>
           <td class="c1">Sign up API</td>
           <td class="c2"><a href="https://discourse.wicg.io/t/proposal-sign-up-api-for-web/1844" title="">Sign up with
-              phone number<br />
+              phone number: 
               API(Proposal)</a></td>
           <td class="c3">Proposal</td>
           <td class="c4">Yes</td>
@@ -1368,8 +1312,7 @@
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Statistics<br />
-            (@service.stats)</td>
+          <td class="c5">Statistics (@service.stats)</td>
           <td class="c6">No</td>
           <td class="c7">provided statistcs plan</td>
         </tr>
@@ -1380,8 +1323,7 @@
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Account<br />
-            (@service.account)</td>
+          <td class="c5">Account (@service.account)</td>
           <td class="c6">No</td>
           <td class="c7">swan.getEnvInfoSync</td>
         </tr>
@@ -1403,8 +1345,7 @@
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Third-party Account<br />
-            (QQ + WeChat + Weibo)</td>
+          <td class="c5">Third-party Account (QQ + WeChat + Weibo)</td>
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
@@ -1422,32 +1363,32 @@
         <tr class="r98">
           <td class="c0">Security and
             Privacy</td>
-          <td class="c1">Text Risk<br />
+          <td class="c1">Text Risk 
             Identification</td>
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">my.textRiskIdentification(Object)</td>
+          <td class="c6">my.textRiskIdentification (Object)</td>
           <td class="c7">swan.ai.textReview</td>
         </tr>
         <tr class="r99">
           <td class="c0">Security and
             Privacy</td>
-          <td class="c1">Image Risk<br />
+          <td class="c1">Image Risk 
             Identification</td>
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">Image Content<br />
+          <td class="c6">Image Content 
             Security (private implementation)</td>
           <td class="c7">swan.ai.imageAudit</td>
         </tr>
         <tr class="r100">
           <td class="c0">Security and
             Privacy</td>
-          <td class="c1">Fingerprint<br />
+          <td class="c1">Fingerprint 
             Authertication</td>
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
@@ -1464,13 +1405,12 @@
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">Face Authentication<br />
-            (private implementation)</td>
-          <td class="c7">swan.ai.faceMatch<br />
+          <td class="c6">Face Authentication (private implementation)</td>
+          <td class="c7">swan.ai.faceMatch
           </td>
         </tr>
         <tr class="r102">
-          <td class="c0">Performance<br />
+          <td class="c0">Performance 
             and Turning</td>
           <td class="c1">Memory Warning</td>
           <td class="c2">No</td>
