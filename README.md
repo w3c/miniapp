@@ -1,1 +1,1 @@
-# Mini App Standardization White Paper
+# Mini App Standardization
