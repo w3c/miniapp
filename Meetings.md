@@ -2,6 +2,9 @@
 
 This document contains links to meeting minutes of the CG.
 
+## 2020
+* [9 Jan 2020](https://www.w3.org/2020/01/09-miniapp-minutes.html)
+
 ## 2019
 
 * [17 Oct 2019](https://www.w3.org/2019/10/17-MiniApp-minutes.html)
