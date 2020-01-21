@@ -2,7 +2,7 @@
 
 * [Specs](https://github.com/w3c/miniapp/tree/gh-pages/specs)
 * [Charter](https://w3c.github.io/miniapp/charter.html)
-* [CG Meetings](https://github.com/w3c/miniapp/blob/gh-pages/Meetings.md)
+* [CG Meetings](https://github.com/w3c/miniapp/blob/gh-pages/Meetings/Meetings.md)
 
 ## Documents
 
