@@ -1,3 +1,3 @@
 # MiniApp Specifications
 
-[placeholder]
+* [URI Scheme](https://w3c.github.io/miniapp/specs/uri/)
