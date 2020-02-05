@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>MiniApp URI Scheme</title>
+
+    <style>
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    table {
+      border-collapse:collapse;
+    }
+
+    table,th, td {
+      border: 1px solid #666;
+    }
+
+    td {
+      padding:2px 15px;
+    }
+    </style>
+
+    <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common"></script>
+
+    <script class="remove">
+        var respecConfig = {
+            specStatus: "CG-DRAFT",
+            copyrightStart: "2020",
+            edDraftURI: "https://w3c.github.io/miniapp/specs/uri/",
+
+            shortName: "miniapp-uri",
+
+            editors: [{
+                name: "Dan Zhou",
+                companyURL: "https://www.baidu.com/",
+                company: "Baidu, Inc"
+              }, {
+                name: "Zhixing Lei",
+                companyURL: "https://www.baidu.com/",
+                company: "Baidu, Inc"
+              }],
+
+            wg: "MiniApps Ecosystem Community Group",
+            wgURI: "https://www.w3.org/community/miniapps/",
+            github: "w3c/miniapp",
+        };
+    </script>
+</head>
+
+<body>
+    <section id='abstract'>
+        <p>
+          本规范定义了 MiniApp URI scheme 的语法，以及解引用 MiniApp URI scheme 的过程。MiniApp URI scheme 语法包含基于 URI 规范之上的 MiniApp URI 具体语法组件的规格说明。实现本规范，能使得 user agent 能够定位 MiniApp 的资源。
+        </p>
+    </section>
+    <section id='sotd'>
+        <p>
+        This is still a work in progress. The proposal is being incubated in the <a href="https://www.w3.org/community/miniapps/">W3C MiniApps Ecosystem Community Group</a>.
+        </p>
+    </section>
+
+    <section class='informative'>
+        <h2>介绍 Introduction</h2>
+        <p>MiniApp URI scheme 是用于唯一对应一个小程序内的具体资源的协议。小程序是运行在 user agent 上的，基于 Web 技术，结合原生应用技术实现的应用。在 [MiniApp package 规范] 中定义了小程序内资源的形式，以及小程序内具体的资源路径和 MiniApp URI scheme 中的 path 映射关系。</p>
+
+        <p>MiniApp URI 的语法章节描述了 URI 的某些语法部件在小程序中的规范与含义，本规范未涉及到的部分，沿用 URI 的规范，不再在本规范中赘述。</p>
+    </section>
+
+    <section class='informative'>
+        <h2>用例 Example of usage</h2>
+        <p>以下是一个 MiniApp URI 的例子</p>
+        <p>miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?k=v#bar</p>
+
+        <section>
+          <h2>用例1：在一个小程序内使用 MiniApp URI</h2>
+            <p>MiniApp URI 的各部分都是可以被访问到的。比如 user agent 可以暴露一个全局的 location 对象，并将以下语法部分存入 location 对象。那么开发者在小程序运行时环境可以通过 JavaScript 访问这个 location 对象。</p>
+
+            <pre class="example js">
+              console.log(location.href); // miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?k=v#bar
+              console.log(location.protocol); // miniapp:
+              console.log(location.origin); // miniapp://foo;version=1.0.1-trial@example.com:8080
+              console.log(location.id); // foo
+              console.log(location.version); // 1.0.1-trial
+              console.log(location.host); // example.com
+              console.log(location.port); // 8080
+              console.log(location.pathname); // /pages/index
+              console.log(location.search); // ?k=v
+              console.log(location.hash); // #bar
+            </pre>
+
+            <p>User agent 也可以实现 URL 接口。那么开发者在小程序运行时环境可以通过访问该对象使用相关的属性和方法。</p>
+
+            <pre class="example js">
+              const url = new URL("miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?k=v#bar")
+              console.log(url.href); // miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?k=v#bar
+              console.log(url.protocol); // miniapp:
+              console.log(url.origin); // miniapp://foo;version=1.0.1-trial@example.com:8080
+              console.log(url.id); // foo
+              console.log(url.version); // 1.0.1-trial
+              console.log(url.host); // example.com
+              console.log(url.port); // 8080
+              console.log(url.pathname); // /pages/index
+              console.log(url.search); // ?k=v
+              console.log(url.hash); // #bar
+            </pre>
+        </section>
+
+        <section>
+        <h2>用例2：在 Web 页面中打开一个小程序</h2>
+        <pre class="example html">
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;a href=&quot;miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?category=book#section-3&quot;&gt;open a MiniApp&lt;/a&gt;
+&lt;/html&gt;
+        </pre>
+
+        <p>在 Web 页面中嵌入一个 href property 为小程序 URI 的 a 标签。当用户点击该链接时，user agent 会接收到该协议，并对该协议解引用，根据协议中的 host，id，version 请求特定的能提供小程序包上传和下载服务的 package server，下载并打开对应的小程序。</p>
+
+        <p>如下流程图，其中 package 为小程序资源包集合，包的内容和结构由 [包规范] 定义；</p>
+
+        <figure id="use-case-2">
+          <span style="text-align:center;"><img src="images/use-case-2.png" alt="TBD" width="600"></span>
+          <figcaption>TBD</figcaption>
+        </figure>
+
+        </section>
+
+        <section>
+          <h2>用例3：在开发环境中访问小程序包</h2>
+          <p>User agent 可提供调试工具，用于开发者将小程序包放置于 user agent 开发环境中。开发者有能力获取该开发中的小程序的唯一 id 和版本号，比如 “foo;version=1.0.1”。开发者可将其拼接为能打开该小程序的 MiniApp URI：</p>
+          <pre>
+            miniapp://foo;version=1.0.1/pages/index?k=v#bar
+          </pre>
+        
+          <p>当 user agent 解引用该 URI 时，会使用某种方式获取到此特定标识为 “foo;version=1.0.1” 的小程序包，并打开和运行。</p>
+  
+          <figure id="use-case-3">
+            <span style="text-align:center;"><img src="images/use-case-3.png" alt="TBD" width="600"></span>
+            <figcaption>TBD</figcaption>
+          </figure>
+  
+          </section>
+
+        </section>
+
+        <!-- <section id="conformance"> -->
+        <section>
+          <h2>标准符合性 Conformance</h2>
+          <p>本规范中的所有内容均为本草案的规范性内容，目前仍在草案阶段，但明确标记为“非规范性”的部分、示例和注释除外。有一类产品可以声明符合此规范，即下文中的 user agent。</p>
+          <p>
+            The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, <em class="rfc2119">OPTIONAL</em>, <em class="rfc2119">RECOMMENDED</em>, <em class="rfc2119">SHOULD</em>, and <em class="rfc2119">SHOULD NOT</em> in this document
+            are to be interpreted as described in [[!RFC2119]].
+          </p>
+        </section>
+
+        <section id="user-agent">
+          <h2>客户端 User agent</h2>
+          <p>小程序对应的 user agent 即实现了本规范的原生客户端。 User agent 能根据本规范制定的规则解析 MiniApp URI 协议，能根据 MiniApp URI 指向唯一的、正确的小程序包的某资源。</p>
+        </section>
+ 
+        <section>
+          <h2>语法</h2>
+          <p>MiniApp URI 语法使用 [[!ABNF]] 定义，引入 [[!RFC3986]] 的 host、port、path-abempty、query、fragment、unreserved。
+          </p>
+          <pre>
+            miniappuri = scheme "://" authority path-abempty ["?" query ] ["#" fragment ]
+
+            scheme     = "miniapp"
+            authority  = id [";version=" version] ["@" host [ ":" port ]]
+            id         = 1*unreserved
+            version    = *unreserved
+          </pre>
+
+          <p>以下是符合本语法规则的 MiniApp URI 示例：</p>
+
+          <ol>
+            <li>miniapp://foo</li>
+            <li>miniapp://foo/pages/index</li>
+            <li>miniapp://foo@example.com</li>
+            <li>miniapp://foo@bar</li>
+            <li>miniapp://foo@example.com/?category=img</li>
+            <li>miniapp://foo;version=1.0.1@example.com/pages/index?category=book#section-3</li>
+            <li>miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?category=book#section-3</li>
+          </ol>
+                        
+          <p>MiniApp URI scheme 的字符串必须要符合在 RFC3986 中声明的 URI 的字符集规则。</p>
+
+          <section>
+            <h2>id</h2>
+            <p>id 是特定的 host 下的小程序逻辑标识符，与 version 共同指向了某个 host 唯一的小程序包。在特定的 host 下，一个 id 对应的小程序可能会存在多个版本。</p>
+            <p>id 为必填项。</p>
+            <p>id 由非保留字符组成，大小写不敏感。</p>
+            <p>host 必须保证 id 的唯一性。</p>
+          </section>
+
+          <section>
+            <h2>version</h2>
+            <p>version 与 id 共同表示了 user agent 下唯一的小程序包。</p>
+            <p>version 为可选项，user agent 可以对 version 制定规则，用于提供版本、开发方式等信息。</p>
+            <p>version 由非保留字符组成，大小写不敏感。</p>
+            <p>多数使用场景下建议 version 为空，由 user agent 及 package provider 进行版本的管理。</p>
+          </section>
+
+          <section>
+            <h2>host 与 port</h2>
+            <p>
+              host 和 port 部分的语义规则和 [[!RFC3986]] 中的 host 与 [[!RFC3986]] 中的 port 一致。
+            </p>
+
+            <p>host 与 port 为可选项，当 host 和 port 为空时，由打开该 URI 的 user agent 决定该以什么方式作为默认行为打开指定 id 的小程序。当 host 有值时，则可以由 user agent 通过网络协议或者文件协议等方式获取小程序包后打开指定 id 的小程序。</p>
+          </section>
+
+          <section>
+            <h2>path</h2>
+            <p>path 表示要打开的小程序资源的路径，可选。在 [包规范] 中定义了资源的形式，如何通过 path 定位到包内具体的资源路径，以及 path 值为空，或者 path 指向的路径不存在时 user agent 的处理。</p>
+
+            <p>path 的语义规则和 [[!RFC3986]] 中的 path 一致。</p>
+          </section>
+
+          <section>
+            <h2>query 与 fragment</h2>
+            <p>query 与 fragment 的定义参见 [[!RFC3986]]。</p>
+          </section>
+
+          </section>
+
+          <section>
+            <h2>解引用 Dereferencing</h2>
+            <p>此节描述了 user agent 如何根据 MiniApp URI 获得相应的小程序包，以及一些错误的处理。</p>
+
+            <p>解引用的规则如下：</p>
+            
+            <ol start=1>
+            <li> user agent 识别 MiniApp URI。如果该 URI 的 scheme 为 ‘miniapp’，则 user agent 认为其是 MiniApp URI，并以本规范中规定的语法规则解析语法部件。 </li>
+            <li> user agent 解析 MiniApp URI 语法部件。User agent 依据上述语法规则，将 MiniApp URI 解析为 id，version， host， port， path， query， fragment 语法部件。如果语法解析失败，user agent  则终止此解引用算法。</li>
+            <li> user agent 将 host 与 port 信息作为获取指定标识的小程序包的来源。host 与小程序包获取方式间的映射关系由 user agent 确定，User agent 需要处理 host 值的不同存在方式：</li>
+            </ol>
+
+            <p>当 host 值非空时，user agent 根据 host 与 port 指定的值确定小程序包的 provider。provider 可以是一种提供小程序包下载服务的 package server，也可以是 user agent 自定义决定对应了某种特殊的获取小程序包的方式。使用 HTTPS 协议作为下载协议的下载过程见下述第7章。</p>
+            
+            <p>当 host 值为空值时，user agent 将会以某种默认方式获取指定 id 的小程序包，可以是从本地路径、默认的远程路径等途径获取。</p>
+            
+            <ol start=4>
+            <li>user agent 将 id 作为特定 host 下的小程序逻辑标识符。在特定的 host 与 port 值对应的服务下，一个指定 id 的小程序可能会存在多个版本。</li>
+            <li>user agent 将 version 作为指定 id 的小程序包的版本信息。User agent 需要处理 version 的不同存在方式：比如</li>
+            </ol>
+            
+            <p>当 version 存在值时，将 version 作为小程序包的版本信息，与 id 共同指向某个 host 唯一的小程序包。</p>
+            <p>当 version 为空值时，将会以小程序包 provider （package server or user agent）自定义提供指定 id 的小程序包，可以是该指定 id 的小程序包的最新版本、或者是默认版本、或者是符合某种映射规则的版本的小程序包。</p>
+            <p>多数使用场景下建议 version 为空，由 user agent 及 package provider 进行版本的管理。</p>
+            
+            <ol start=6>
+            <li>user agent 根据解析到的 provider 的信息及小程序的标识信息（eg. id, version）获取小程序的包。User agent 需要处理provider不同的情况：</li>
+            </ol>
+            
+            <p>当 provider 为 package server 时，user agent 向该服务器发起携带了小程序标识信息的 HTTPS Request；通过处理 package server 返回的 Response body 得到最终的小程序包。</p>
+            <p>当 provider 为 user agent 自定义的方式时，user agent 通过该自定义方式获取指定小程序标识信息的小程序包。</p>
+            
+            <ol start=7>
+            <li>user agent 根据获取小程序包的结果，进行相应的处理：</li>
+            </ol>
+
+            <p>当获取小程序包成功时，则进行接下来的处理。</p>
+            <p>当获取小程序包失败时，则根据失败原因，做出异常处理。例如 user agent 从 host 无法获取到包时，返回错误码与错误信息。</p>
+            
+            <ol start=8>
+            <li>user agent 根据 path、query、fragment 以及 [小程序 Manifest 规范] 中定义的方式定位到对应的小程序资源。</li>
+            </ol>
+
+            <p>user agent MUST 处理解引用过程中任何失败的情况，并给出合适的信息提示。</p>
+            </section>
+
+            <section class='informative'>
+              <h2>使用 HTTPS 协议作为下载小程序包的网络协议</h2>
+              <p>此节描述了以使用 HTTPS 协议作为请求下载小程序包的网络协议的用例场景。</p>
+              <p>接下来以此 URI 为例：</p>
+              <pre>miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?category=book#section-3</pre>
+              <p>解引用步骤如下：</p>
+
+              <ol>
+              <li>如果 URI 不符合 MiniApp URI 语法规则，则 User agent 不做响应或进行异常处理。</li>
+              <li>从 MiniApp URI 中取出 host 与 port，拼接为完整的 HTTPS URL: https://example.com:8080/ </li>
+              <li>以 GET 请求将 id 和 version 作为请求参数。  为 https://example.com:8080/?id=foo&version=1.0.1-trial</li>
+              <li>user agent may 实现 [HTTP] 缓存控件；推荐使用 gzip 作为编码方式（[HTTP] accept-encoding），发送 HTTPS 请求报文。</li>
+              <li>如果接受到请求不是 HTTPS 请求，则返回 [HTTP] 403禁止响应，并终止此请求。</li>
+              <li>如果接受到的请求未通过鉴权，则返回 [HTTP] 403禁止响应，并终止此请求。</li>
+              <li>如果该请求的 HTTP Method 不被支持，则返回 [HTTP] 501 Not Implemented 响应并终止此请求。</li>
+              <li>根据请求 URL 所携带的 query 或者 body， 返回 id 为 “foo”，version 为“1.0.1” 的小程序包。如果找不到，则返回 [HTTP] 404 Not Found 响应。</li>
+              <li>如果成功找到，则以 [HTTP] 200 OK 响应，并将小程序包以 content-type 指定的格式作为响应主体返回。</li>
+              <li>user agent 根据 status 来判断请求是否成功，当 status 为200 时，则继续解析响应体。当 status 不为 200 时，则处理失败异常。</li>
+              <li>建议使用约定的唯一标识字段再次校验包的完整性。</li>
+              <li>对于下载好的小程序包，使用 [小程序 Manifest 规范] 中规定的包格式进行解压缩。</li>
+              </ol>
+              </section>
+
+              <section class='informative'>
+                <h2>安全性考虑 Security Considerations</h2>
+                    <ol>
+                      <li>User agent 需要保证 URI 的正确性，避免 URI 篡改，防止钓鱼攻击</li>
+                      <li>请求过程建议通过UA或者sign签名的方式，进行package server端的鉴权认证</li>
+                      <li>请求过程中，建议通过HMAC的方式进行防重放攻击检查。</li>
+                      <li>请求过程中，建议通过md5或sha1的摘要比对方式，验证包完整性</li>
+                      <li>user agent 解析Response过程中，建议通过加解密方式进行数据包的安全性保护</li>
+                      <li>user agent 本地存储包资源时，需要保证文件的存储安全，防止恶意软件攻击</li>
+                    </ol>
+                </section>
+
+    <section class="appendix">
+      <h2>
+        致谢 Acknowledgments
+      </h2>
+      <p>
+        暂无
+      </p>
+    </section>
+</body>
+
+</html>
