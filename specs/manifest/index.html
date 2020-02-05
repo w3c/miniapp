@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>MiniApp Manifest</title>
+
+    <style>
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    table {
+      border-collapse:collapse;
+    }
+
+    table,th, td {
+      border: 1px solid #666;
+    }
+
+    td {
+      padding:2px 15px;
+    }
+    </style>
+
+    <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common"></script>
+
+    <script class="remove">
+        var respecConfig = {
+            specStatus: "CG-DRAFT",
+            copyrightStart: "2020",
+            edDraftURI: "https://w3c.github.io/miniapp/specs/manifest/",
+
+            shortName: "miniapp-manifest",
+
+            editors: [{
+                name: "Shouren Lan",
+                companyURL: "http://www.huawei.com/",
+                company: "Huawei"
+              }, {
+                name: "Zhiqiang Yu",
+                companyURL: "http://www.huawei.com/",
+                company: "Huawei"
+              }],
+
+            wg: "MiniApps Ecosystem Community Group",
+            wgURI: "https://www.w3.org/community/miniapps/",
+            github: "w3c/miniapp",
+        };
+    </script>
+</head>
+
+<body>
+    <section id='abstract'>
+        <p>
+          本规范定义了基于JSON格式的Manifest文件，使开发者可通过Manifest文件设置MiniApp的基本信息、窗口样式和页面路由等信息。 这里，MiniApp 基本信息包括但不限于MiniApp ID、名称、版本名称、版本号以及最小平台版本等；窗口样式包括但不限于导航栏、标题和窗口背景等；pages用于指定页面路由信息。
+        </p>
+        <p>
+          备注：目前只是列出MiniApp Manifest的一个基础子集，后续会根据不同的场景需求进行渐进式更新和补充。
+        </p>
+    </section>
+    <section id='sotd'>
+        <p>
+        This is still a work in progress. The proposal is being incubated in the <a href="https://www.w3.org/community/miniapps/">W3C MiniApps Ecosystem Community Group</a>.
+        </p>
+    </section>
+
+    <section>
+        <h2>Manifest</h2>
+        <table>
+
+          <thead><tr>
+          <th> 属性 </th>
+          <th> 类型 </th>
+          <th> 必填 </th>
+          <th> 描述
+          </th></tr></thead><tbody>
+          <tr>
+          <td> appID </td>
+          <td> String </td>
+          <td> 是 </td>
+          <td> MiniApp ID标识
+          </td></tr>
+          <tr>
+          <td> appName </td>
+          <td> String </td>
+          <td> 是 </td>
+          <td> MiniApp 名称
+          </td></tr>
+          <tr>
+          <td> versionName </td>
+          <td> String </td>
+          <td> 是 </td>
+          <td> 版本名称
+          </td></tr>
+          <tr>
+          <td> versionCode </td>
+          <td> Integer </td>
+          <td> 是 </td>
+          <td> 版本号
+          </td></tr>
+          <tr>
+          <td> minPlatformVersion </td>
+          <td> Integer </td>
+          <td> 是 </td>
+          <td> 支持最小平台版本
+          </td></tr>
+          <tr>
+          <td> pages </td>
+          <td> Object </td>
+          <td> 是 </td>
+          <td> 路由信息
+          </td></tr>
+          <tr>
+          <td> window </td>
+          <td> Object </td>
+          <td> 否 </td>
+          <td> 窗口设置
+          </td></tr></tbody><tfoot></tfoot></table>
+
+          <section>
+            <h2>标识 appID</h2>
+            <p>
+              appID，MiniApp 唯一标识符，可用于包管理等处，支撑MiniApp版本更新和发布。这里的命名规范采用反域名命名规则，全部使用小写字母，比如com.company.miniapp.
+            </p>
+          </section>
+
+          <section>
+            <h2>名称 appName</h2>
+            <p>
+              appName，直接呈现给用户的名称，用于在桌面图标和MiniApp管理等处显示MiniApp的名称。这里MiniApp名称可由中文、英文、数字及部分特殊符号组成。 长度在4-30个字符之间。
+            </p>
+          </section>
+
+          <section>
+            <h2>版本名称 versionName</h2>
+            <p>
+              versionName 是一个String类型的值，主要用作版本信息的描述。一般格式为：1.0或1.0.0，在版本控制、MiniApp应用与设备兼容性等方面发挥重要作用。
+            </p>
+          </section>
+
+          <section>
+            <h2>版本号 versionCode</h2>
+            <p>
+              versionCode 是一个Integer类型的值，根据版本发布过程进行递增。提高MiniApp的可维护性和安全性，比如：低版本不能覆盖高版本。
+            </p>
+          </section>
+
+          <section>
+            <h2>引擎版本 minPlatformVersion</h2>
+            <p>
+              平台版本，保证MiniApp正常运行所需的平台最小版本支持。
+            </p>
+          </section>
+
+          <section>
+            <h2>页面路由 pages</h2>
+            <p>
+              pages 用于指定 MiniApp 都包含哪些页面，数组中每一项代表一个页面路由。页面路由 = [路径 + 文件名]。备注：数组第一项代表MiniApp初始页面，也叫首页。 MiniApp中新增或删除页面都需在 pages 中进行相应配置，pages中页面路由不需要加文件名后缀，MiniApp引擎会进行自动解析。
+            </p>
+          </section>
+
+          <section>
+            <h2>窗口 window</h2>
+            <p>
+              用于设置MiniApp的导航栏、标题和窗口背景色等表现样式。
+            </p>
+          </section>
+    </section>
+
+    <section>
+        <h2>样例 Example</h2>
+            <pre class="example json">
+              {
+                "appID": "org.w3c.miniapp",
+                "appName": "MiniApp Demo",
+                "versionName": "1.0.0",
+                "versionCode": 1,
+                "description": "A Simple MiniApp Demo",
+                "minPlatformVersion": 100, 
+                "pages": [
+                  "pages/index/index",
+                  "pages/detail/detail"
+                ],
+                "window": {
+                  "navigationBarTextStyle": "black",
+                  "navigationBarTitleText": "Demo",
+                  "navigationBarBackgroundColor": "#f8f8f8",
+                  "backgroundColor": "#ffffff",
+                  "fullScreen": false
+                }
+              }
+            </pre>
+     </section>
+
+    <section class="appendix">
+      <h2>
+        致谢 Acknowledgments
+      </h2>
+      <p>
+        暂无
+      </p>
+    </section>
+</body>
+
+</html>
