@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>MiniApp Lifecycle</title>
+
+    <style>
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    table {
+      border-collapse:collapse;
+    }
+
+    table,th, td {
+      border: 1px solid #666;
+    }
+
+    td {
+      padding:2px 15px;
+    }
+    </style>
+
+    <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common"></script>
+
+    <script class="remove">
+        var respecConfig = {
+            specStatus: "CG-DRAFT",
+            copyrightStart: "2020",
+            edDraftURI: "https://w3c.github.io/miniapp/specs/lifecycle/",
+
+            shortName: "miniapp-lifecycle",
+
+            editors: [{
+                name: "Qing An",
+                companyURL: "http://www.alibabagroup.com/en/global/home",
+                company: "Alibaba"
+              }, {
+                name: "Xia Xu",
+                companyURL: "http://www.alibabagroup.com/en/global/home",
+                company: "Alibaba"
+              }],
+
+            wg: "MiniApps Ecosystem Community Group",
+            wgURI: "https://www.w3.org/community/miniapps/",
+            github: "w3c/miniapp",
+        };
+    </script>
+</head>
+
+<body>
+    <section id='abstract'>
+        <p>
+          TBD
+        </p>
+    </section>
+    <section id='sotd'>
+        <p>
+        This is still a work in progress. The proposal is being incubated in the <a href="https://www.w3.org/community/miniapps/">W3C MiniApps Ecosystem Community Group</a>.
+        </p>
+    </section>
+
+    <section>
+        <h2>Background</h2>
+        <p>Application lifecycle mechanism provides a means to manage the lifecycle events of both global application lifecycle and page lifecycle. Developing MiniApp with knowledge of the application’s and page’s lifecycle state can lead to improved user experiences. MiniApp application lifecycle includes a set of events, with which MiniApp can choose to alter its behavior based on its state.
+        </p>
+    </section>
+
+    <section>
+          <h2>MiniApp Global Application Lifecycle</h2>
+          <p>For each MiniApp, after initialized, it will be either running in the foreground or in the background.</p>
+
+          <p>When user chooses to close the MiniApp by clicking the close button on MiniApp, or go to the mobile phone’s home screen, the MiniApp will not be destroyed immediately, but switch to be running in the background.</p>
+          
+          <p>When user reopens the same MiniApp, MiniApp will switch from running in the background to the foreground.</p>
+          
+          <p>Only when MiniApp runs in the background for more than a specific time duration (e.g. 5 minutes), or occupies too much system resources in the background, then MiniApp will be destroyed.</p>
+          
+          <p>Therefore, MiniApp global application lifecycle contains the following events:</p>
+          
+          <ul>
+          <li>onLaunch: to monitor the callback of MiniApp initialization. It is triggered once the MiniApp initialization is completed, and it is triggered only once. Through this event, developer can obtain the information of the MiniApp, such as URI, source info, etc.</li>
+          <li>onShow: to monitor the callback of MiniApp foreground display. It is triggered once the MiniApp launch is completed, or the MiniApp switches to be running in foreground from background.</li>
+          <li>onHide: to monitor the callback of MiniApp switching to be running in the background. It is triggered once the MiniApp switches to be running from foreground to background.</li>
+          <li>onError: to monitor the callback of MiniApp error. It is triggered once the MiniApp is confronted with script error.</li>
+          </ul>
+       </section>
+
+        <section>
+          <h2>MiniApp Page Lifecycle</h2>
+          <p>The following figure illustrates the MiniApp page lifecycle.</p>
+          <figure id="lifecycle-img">
+            <span style="text-align:center;"><img src="images/lifecycle.png" alt="TBD" width="600"></span>
+            <figcaption>TBD</figcaption>
+          </figure>
+
+          <ul>
+<li>When user firstly opens a MiniApp, the RenderView and Worker will simultaneously start the initialization.</li>
+<li>After Worker is initialized, it runs MiniApp global lifecycle event app.onLaunch and app.onShow to create the MiniApp instance.</li>
+<li>Afterwards，Worker runs MiniApp page lifecycle event page.onLoad and page.onShow event.</li>
+<li>Then Worker sends the initial data to RenderView to start the first render.</li>
+<li>Once first render is completed, RenderView notifies Worker, then Worker runs MiniApp page lifecycle event page.onReady.</li>
+<li>Afterwards, user can interact with MiniApp. RenderView can be triggered to deliver user event to Worker for further processing, then Workers returns result data to RenderView for re-render.</li>
+<li>If MiniApp page switch to be running in the background, Worker runs MiniApp page lifecycle event page.onHide keep alive. If MiniApp page switch to foreground, Woker runs MiniApp page lifecycle event page.onShow.</li>
+<li>If to destroy MiniApp page, Woker runs MiniApp page lifecycle event page.onUnload.</li>
+          </ul>
+
+          <p>MiniApp page lifecycle contains the following events:</p>
+          <ul>
+<li>onLoad: to monitor the callback of MiniApp page loading. It is triggered once the MiniApp page loading is completed.</li>
+<li>onShow: to monitor the callback of MiniApp page display. It is triggered once the MiniApp page display is completed, or the MiniApp page switches to be running in foreground from background.</li>
+<li>onReady: to monitor the callback of MiniApp page’s first rendering. It is triggered once the MiniApp page first rendering is completed.</li>
+<li>onHide: to monitor the callback of MiniApp page switching to be running in the background. It is triggered once the MiniApp page switches to be running from foreground to background.</li>
+<li>onUnload: to monitor the callback of destroying MiniApp page. It is triggered once the MiniApp page is destroyed.</li>
+          </ul>
+        </section>
+
+    <section class="appendix">
+      <h2>
+        Acknowledgments
+      </h2>
+      <p>
+        暂无
+      </p>
+    </section>
+</body>
+
+</html>
