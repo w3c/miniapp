@@ -54,7 +54,7 @@
 <body>
     <section id='abstract'>
         <p>
-          本规范定义了基于JSON格式的Manifest文件，使开发者可通过Manifest文件设置MiniApp的基本信息、窗口样式和页面路由等信息。 这里，MiniApp 基本信息包括但不限于MiniApp ID、名称、版本名称、版本号以及最小平台版本等；窗口样式包括但不限于导航栏、标题和窗口背景等；pages用于指定页面路由信息。
+          本规范定义了基于Json格式的Manifest文件和packaging结构，使开发者可通过Manifest文件设置MiniApp的基本信息、窗口样式和页面路由等信息。 这里，MiniApp 基本信息包括但不限于MiniApp ID、名称、版本名称、版本号以及最小平台版本等；窗口样式window包括但不限于导航栏、标题和窗口背景等；pages用于指定页面路由信息。
         </p>
         <p>
           备注：目前只是列出MiniApp Manifest的一个基础子集，后续会根据不同的场景需求进行渐进式更新和补充。
@@ -76,50 +76,100 @@
           <th> 必填 </th>
           <th> 描述
           </th></tr></thead><tbody>
-          <tr>
-          <td> appID </td>
-          <td> String </td>
-          <td> 是 </td>
-          <td> MiniApp ID标识
-          </td></tr>
-          <tr>
-          <td> appName </td>
-          <td> String </td>
-          <td> 是 </td>
-          <td> MiniApp 名称
-          </td></tr>
-          <tr>
-          <td> versionName </td>
-          <td> String </td>
-          <td> 是 </td>
-          <td> 版本名称
-          </td></tr>
-          <tr>
-          <td> versionCode </td>
-          <td> Integer </td>
-          <td> 是 </td>
-          <td> 版本号
-          </td></tr>
-          <tr>
-          <td> minPlatformVersion </td>
-          <td> Integer </td>
-          <td> 是 </td>
-          <td> 支持最小平台版本
-          </td></tr>
-          <tr>
-          <td> pages </td>
-          <td> Object </td>
-          <td> 是 </td>
-          <td> 路由信息
-          </td></tr>
-          <tr>
-          <td> window </td>
-          <td> Object </td>
-          <td> 否 </td>
-          <td> 窗口设置
-          </td></tr></tbody><tfoot></tfoot></table>
+<tr>
+<td> dir </td>
+<td> String </td>
+<td> 否 </td>
+<td> MiniApp 文本方向
+</td></tr>
+<tr>
+<td> lang </td>
+<td> String </td>
+<td> 否 </td>
+<td> MiniApp 语言
+</td></tr>
+<tr>
+<td> appID </td>
+<td> String </td>
+<td> 是 </td>
+<td> MiniApp ID标识
+</td></tr>
+<tr>
+<td> appName </td>
+<td> String </td>
+<td> 是 </td>
+<td> MiniApp 名称
+</td></tr>
+<tr>
+<td> shortName </td>
+<td> String </td>
+<td> 否 </td>
+<td> MiniApp 名称缩写
+</td></tr>
+<tr>
+<td> description </td>
+<td> String </td>
+<td> 否 </td>
+<td> MiniApp 简介
+</td></tr>
+<tr>
+<td> icon </td>
+<td> Array </td>
+<td> 是 </td>
+<td> MiniApp 图标
+</td></tr>
+<tr>
+<td> versionName </td>
+<td> String </td>
+<td> 是 </td>
+<td> 版本名称
+</td></tr>
+<tr>
+<td> versionCode </td>
+<td> Integer </td>
+<td> 是 </td>
+<td> 版本号
+</td></tr>
+<tr>
+<td> minPlatformVersion </td>
+<td> Integer </td>
+<td> 是 </td>
+<td> 支持最小平台版本
+</td></tr>
+<tr>
+<td> pages </td>
+<td> Object </td>
+<td> 是 </td>
+<td> 路由信息
+</td></tr>
+<tr>
+<td> window </td>
+<td> Object </td>
+<td> 否 </td>
+<td> 窗口设置
+</td></tr>
+<tr>
+<td> widgets </td>
+<td> Object </td>
+<td> 否 </td>
+<td> 卡片配置
+</td></tr></tbody><tfoot></tfoot></table>
+<section>
+            <h2>成员介绍 ManifestDictionary</h2>
+          <section>
+            <h2>方向 dir</h2>
+            <p>
+              dir，指定名称、短名称和描述成员的主文本方向。这里取值类型可分为：ltr和rtl，ltr表示从左到右，rtl表示从右到左。默认值：ltr。
+            </p>
+          </section>
 
           <section>
+            <h2>语言 lang</h2>
+            <p>
+              lang，指定MiniApp的语言标签。这里取值为locales值，详见<a href="#">locales</a>。默认值zh_CN。
+            </p>
+          </section>
+        <section>
             <h2>标识 appID</h2>
             <p>
               appID，MiniApp 唯一标识符，可用于包管理等处，支撑MiniApp版本更新和发布。这里的命名规范采用反域名命名规则，全部使用小写字母，比如com.company.miniapp.
@@ -134,50 +184,177 @@
           </section>
 
           <section>
+            <h2>简称 shortName</h2>
+            <p>
+              shortName，为MiniApp提供简短易读的名称，可在没有足够空间显示MiniApp的全名时使用。
+            </p>
+          </section>
+
+          <section>
+            <h2>简述 description</h2>
+            <p>
+              description，为MiniApp提供简短的描述。
+            </p>
+          </section>
+
+          <section>
+            <h2>图标 icon</h2>
+            <p>
+              icon，MiniApp 应用图标数组。由不同分辨率的图标组成，根据显示设备类型展示不同的图标。
+            </p>
+          </section>
+
+          <section>
             <h2>版本名称 versionName</h2>
             <p>
-              versionName 是一个String类型的值，主要用作版本信息的描述。一般格式为：1.0或1.0.0，在版本控制、MiniApp应用与设备兼容性等方面发挥重要作用。
+              versionName 是一个String类型的值，主要用作版本信息的描述。一般格式为：<code>1.0.0</code>，在版本控制、MiniApp应用与设备兼容性等方面发挥重要作用。
             </p>
           </section>
 
           <section>
             <h2>版本号 versionCode</h2>
             <p>
-              versionCode 是一个Integer类型的值，根据版本发布过程进行递增。提高MiniApp的可维护性和安全性，比如：低版本不能覆盖高版本。
+              versionCode 是一个Integer类型的值，根据版本发布过程进行递增。提高MiniApp的可维护性和安全性，比如：低版本不能覆盖高版本。默认值：<code>1</code>。
             </p>
           </section>
 
           <section>
             <h2>引擎版本 minPlatformVersion</h2>
             <p>
-              平台版本，保证MiniApp正常运行所需的平台最小版本支持。
+              平台版本，保证MiniApp正常运行所需的平台最小版本支持。版本默认类型是整型数值，比如：<code>100</code>。
             </p>
           </section>
 
           <section>
             <h2>页面路由 pages</h2>
             <p>
-              pages 用于指定 MiniApp 都包含哪些页面，数组中每一项代表一个页面路由。页面路由 = [路径 + 文件名]。备注：数组第一项代表MiniApp初始页面，也叫首页。 MiniApp中新增或删除页面都需在 pages 中进行相应配置，pages中页面路由不需要加文件名后缀，MiniApp引擎会进行自动解析。
+              pages 用于指定 MiniApp 都包含哪些页面，数组中每一项代表一个页面路由。页面路由 = <code>[路径 + 文件名]</code>。备注：数组第一项代表MiniApp初始页面，也叫首页。 MiniApp中新增或删除页面都需在 pages 中进行相应配置，pages中页面路由不需要加文件名后缀，MiniApp引擎会进行自动解析。
             </p>
           </section>
 
           <section>
             <h2>窗口 window</h2>
             <p>
-              用于设置MiniApp的导航栏、标题和窗口背景色等表现样式。
+              用于设置MiniApp的导航栏、标题和窗口背景色等表现样式。比如：<code>navigationBarTextStyle</code>、<code>navigationBarTitleText</code>、<code>navigationBarBackgroundColor</code>和<code>fullScreen</code>。
             </p>
           </section>
+
+          <section>
+            <h2>卡片 widgets</h2>
+            <p>
+              widget是MiniApp的一部分。特定地，MiniApp 包中应该可以同时包含 MiniApp Page 和 Widget。Widget作为MiniApp应用程序的一部分，Widget也会和MiniApp主体程序共用部分Manifest字段，比如：<code>dir</code>、<code>lang</code>、<code>appID</code>、<code>appName</code>、<code>shortName</code>、<code>icon</code>、<code>versionName</code>和<code>versionCode</code>。但是Widget也有自己的私有字段，如下表所示：
+            </p>
+
+            <table>
+
+          <thead><tr>
+          <th> 属性 </th>
+          <th> 类型 </th>
+          <th> 必填 </th>
+          <th> 描述
+          </th></tr></thead><tbody>
+<tr>
+<td> name </td>
+<td> String </td>
+<td> 是 </td>
+<td> Widget 名字
+</td></tr>
+<tr>
+<td> path </td>
+<td> String </td>
+<td> 是 </td>
+<td> Widget 对应页面路径
+</td></tr>
+<tr>
+<td> minPlatformVersion </td>
+<td> Integer </td>
+<td> 否 </td>
+<td> 支持最小平台版本
+</td></tr></tbody>
+</table>
+<p>Widget 涉及的 API 与 MiniApp API 有一定差别，会存在不同的最小平台版本支持声明，可通过minPlatformVersion提供支撑的最小平台版本，如不提供则同MiniApp的版本号。</p>
+          </section>
     </section>
+<section>
+            <h2>包结构 Packaging</h2>
+          
+            <p>
+              描述项目配置信息的manifest.json文件，全局逻辑文件app.js，全局样式文件app.css, 多个描述页面的css、xml、js文件，典型示例如下：
+            </p>
+            <figure><img alt="Packaging figure" src="Packaging.png" width="228" height="494"></figure>
+
+            <p>
+              其中common目录下为公用的资源文件和组件文件，如：png，xml，css，js等。页面pages目录下存放各自页面私有的xml，css和js文件。
+            </p>
+
+            <section>
+            <h2>app.js</h2>
+            <p>
+              全局JavaScript逻辑和MiniApp全局应用生命周期管理，这里MiniApp全局应用生命周期详见：<a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle规范</a>。
+            </p>
+          </section>
+
+          <section>
+            <h2>app.css</h2>
+            <p>
+              描述全局样式，作用于MiniApp中的所有页面。
+            </p>
+          </section>
+
+          <section>
+            <h2>manifest.json</h2>
+            <p>
+              manifest.json文件中包含了应用描述、窗口样式和页面路由信息。
+            </p>
+          </section>
+
+          <section>
+            <h2>page xml文件</h2>
+            <p>
+              页面结构文件，可类似HTML文件，通过组件之间的组合构造页面结构。
+            </p>
+          </section>
+
+          <section>
+            <h2>page css文件</h2>
+            <p>
+              页面样式文件，用于描述组件样式，决定组件应该如何显示。页面组件样式会覆盖app.css全局样式文件。
+            </p>
+          </section>
+
+          <section>
+            <h2>page js文件</h2>
+            <p>
+              用来定义页面数据和实现页面生命周期接口，这里MiniApp页面生命周期详见：<a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle规范</a>。
+            </p>
+          </section>
+        </section>
+        <section>
+            <h2>需求依赖 Dependency</h2>
+          
+            <ul>
+              <li>pages路由规范由<a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI 规范</a>指定。
+              </li>
+              <li>app.js用于全局JavaScript逻辑和MiniApp全局应用生命周期管理，MiniApp生命周期由<a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle规范</a>指定。
+              </li>
+              <li>MiniApp Page 和 Widget都遵循MiniApp Packaging规范。
+              </li>
+            </ul>
+          </section>
 
     <section>
         <h2>样例 Example</h2>
             <pre class="example json">
               {
+                "dir": "ltr",
+                "lang": "en_US",
                 "appID": "org.w3c.miniapp",
                 "appName": "MiniApp Demo",
+                "shortName": "MiniApp",
                 "versionName": "1.0.0",
                 "versionCode": 1,
                 "description": "A Simple MiniApp Demo",
+                "icon": "common/xxx.png",
                 "minPlatformVersion": 100, 
                 "pages": [
                   "pages/index/index",
@@ -189,17 +366,23 @@
                   "navigationBarBackgroundColor": "#f8f8f8",
                   "backgroundColor": "#ffffff",
                   "fullScreen": false
+                },
+                "widgets": {
+                  "name": "widget",
+                  "path": "pages/index/index",
+                  "minPlatformVersion": 100
                 }
               }
             </pre>
      </section>
+    </section>
 
     <section class="appendix">
       <h2>
         致谢 Acknowledgments
       </h2>
       <p>
-        暂无
+        本文档参考了<a href="https://www.w3.org/TR/appmanifest">W3C Web App Manifest</a>，<a href="https://smartprogram.baidu.com/docs/develop/fuctionlist/list">百度小程序</a>，<a href="https://www.w3.org/TR/appmanifest">微信小程序</a>，<a href="https://opendocs.alipay.com/mini/framework">支付宝小程序</a>，<a href="https://doc.quickapp.cn/framework/manifest.html">快应用联盟规范</a>，<a href="https://developer.chrome.com/webstore/i18n#localeTable">chromium locales</a>，<a href="https://www.science.co.il/language/Locale-codes.php">Windows Locale Codes</a>，<a href="https://www.w3.org/Member/wiki/MiniApp">MiniApp 规范描述</a>，<a href="https://w3c.github.io/miniapp/specs/widget-req/">MiniApp Widget文件规范</a>，<a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp 生命周期规范</a>，<a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI 规范</a>。感谢这些文档的开源努力。
       </p>
     </section>
 </body>
