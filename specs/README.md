@@ -4,3 +4,4 @@
 * [Lifecycle](https://w3c.github.io/miniapp/specs/lifecycle/)
 * [Manifest](https://w3c.github.io/miniapp/specs/manifest/)
 * [Widget Requirements](https://w3c.github.io/miniapp/specs/widget-req/)
+* [Packaging](https://w3c.github.io/miniapp/specs/packaging/)
