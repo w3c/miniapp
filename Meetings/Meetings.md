@@ -4,6 +4,7 @@ This document contains links to meeting minutes of the CG.
 
 ## 2020
 
+* [13 Feb 2020 TeleConf](https://www.w3.org/2020/02/13-MiniApp-minutes.html)
 * [9 Jan 2020 TeleConf](https://www.w3.org/2020/01/09-miniapp-minutes.html)
 
 ## 2019
