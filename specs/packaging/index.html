@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>MiniApp Packaging</title>
+
+    <style>
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    table {
+      border-collapse:collapse;
+    }
+
+    table,th, td {
+      border: 1px solid #666;
+    }
+
+    td {
+      padding:2px 15px;
+    }
+    </style>
+
+    <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common"></script>
+
+    <script class="remove">
+        var respecConfig = {
+            specStatus: "CG-DRAFT",
+            copyrightStart: "2020",
+            edDraftURI: "https://w3c.github.io/miniapp/specs/packaging/",
+
+            shortName: "miniapp-packaging",
+
+            editors: [{
+                name: "Qing An",
+                companyURL: "http://www.alibabagroup.com/en/global/home",
+                company: "Alibaba"
+              }, {
+                name: "Shouren Lan",
+                companyURL: "http://www.huawei.com/",
+                company: "Huawei"
+              }, {
+                name: "Zhiqiang Y",
+                companyURL: "http://www.huawei.com/",
+                company: "Alibaba"
+              }],
+
+            wg: "MiniApps Ecosystem Community Group",
+            wgURI: "https://www.w3.org/community/miniapps/",
+            github: "w3c/miniapp",
+        };
+    </script>
+</head>
+
+<body>
+    <section id='abstract'>
+        <p>
+          This document specifies a standardized MiniApp packaging constructor to describe MiniApp package uniformly.
+        </p>
+    </section>
+    
+    <section id='sotd'>
+        <p>
+        This is still a work in progress. The proposal is being incubated in the <a href="https://www.w3.org/community/miniapps/">W3C MiniApps Ecosystem Community Group</a>.
+        </p>
+    </section>
+    
+    <section>
+        <h2>Packaging</h2>
+        <p>MiniApp has one app config file to globally describe and configure MiniApp. It is responsible for all MiniApp pages and global data, as well as the management of MiniApp lifecycle.
+        </p>
+        
+        <p>MiniApp contains multiple pages files.</p>
+        
+        <p>One common illustration example as following:</p>
+        
+        <pre class="example">
+                |___app
+                |     |___manifest.json
+                |     |___app.js
+                |     |___app.css
+                |     |___pages
+                |     |       |___page.js
+                |     |       |___page.xml
+                |     |       |___page.json
+                |     |       |___page.css
+                |     |___common
+                |     |       |___component.js
+                |     |       |___component.xml
+                |     |       |___component.css
+                |     |       |___component.json
+                |     |       |___example.png
+        
+        </pre>
+        
+        <h2>app</h2>
+        <p>app manages all MiniApp pages and global data, as well as MiniApp’s lifecycle management. It contains logic (app.js), configuration (manifest.json) and css (app.css).
+        </p>
+        
+        <ul>
+          <li>manifest.json is responsible for global configuration of MiniApp, including: file path of MiniApp pages, window configuration (such as navigator bar, background image and color, page title, etc.) and Tab Bar configuration.</li>
+          <li>app.css is responsible for global css for all MiniApp pages.</li>
+          <li>app.js is responsible for MiniApp lifecycle management, like launch Mini App, show Mini App, hide Mini App.</li>
+        </ul>
+        
+        <h2>page</h2>
+        <p>page represents each of MiniApp pages, responsible for MiniApp page display and user interaction. It contains logic (page.js), configuration (page.json), structure (page.xml) and css (page.css).
+        </p>
+        
+        <ul>
+          <li>page.json is responsible for configuration of each MiniApp page.</li>
+          <li>page.xml is responsible for the structure of each MiniApp page, similar to HTML.</li>
+          <li>page.css is responsible for CSS for each MiniApp page.</li>
+          <li>page.js is responsible for MiniApp page lifecycle management, defined in <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle</a></li>
+        </ul>
+        
+        <h2>common</h2>
+        <p>TBD @Huawei</p>
+        
+    </section>
+
+</body>
+
+</html>
