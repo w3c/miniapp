@@ -2,198 +2,224 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <title>MiniApp Widget Requirements</title>
+  <meta charset="utf-8" />
+  <title>MiniApp Widget Requirements</title>
 
-    <style>
+  <style>
     .two-cols {
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
 
     table {
-      border-collapse:collapse;
+      border-collapse: collapse;
     }
 
-    table,th, td {
+    table,
+    th,
+    td {
       border: 1px solid #666;
     }
 
     td {
-      padding:2px 15px;
+      padding: 2px 15px;
     }
-    </style>
+  </style>
 
-    <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common"></script>
+  <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common"></script>
 
-    <script class="remove">
-        var respecConfig = {
-            specStatus: "CG-DRAFT",
-            copyrightStart: "2020",
-            edDraftURI: "https://w3c.github.io/miniapp/specs/widget-req/",
+  <script class="remove">
+    var respecConfig = {
+      specStatus: "CG-DRAFT",
+      copyrightStart: "2020",
+      edDraftURI: "https://w3c.github.io/miniapp/specs/widget-req/",
 
-            shortName: "miniapp-widget-req",
+      shortName: "miniapp-widget-req",
 
-            editors: [{
-                name: "Yinli Chen",
-                companyURL: "https://www.mi.com/",
-                company: "Xiaomi"
-              }, {
-                name: "Yongqing Dong",
-                companyURL: "https://www.mi.com/",
-                company: "Xiaomi"
-              }, {
-                name: "Bin Guo",
-                companyURL: "https://www.mi.com/",
-                company: "Xiaomi"
-              }, {
-                name: "Xiaowei Jiang",
-                companyURL: "https://www.mi.com/",
-                company: "Xiaomi"
-              }],
+      editors: [{
+        name: "Yinli Chen",
+        companyURL: "https://www.mi.com/",
+        company: "Xiaomi"
+      }, {
+        name: "Yongqing Dong",
+        companyURL: "https://www.mi.com/",
+        company: "Xiaomi"
+      }, {
+        name: "Bin Guo",
+        companyURL: "https://www.mi.com/",
+        company: "Xiaomi"
+      }, {
+        name: "Xiaowei Jiang",
+        companyURL: "https://www.mi.com/",
+        company: "Xiaomi"
+      }],
 
-            wg: "MiniApps Ecosystem Community Group",
-            wgURI: "https://www.w3.org/community/miniapps/",
-            github: "w3c/miniapp",
-        };
-    </script>
+      wg: "MiniApps Ecosystem Community Group",
+      wgURI: "https://www.w3.org/community/miniapps/",
+      github: "w3c/miniapp",
+    };
+  </script>
 </head>
 
 <body>
-    <section id='abstract'>
-        <p>
-          MiniApp widget 是 miniapp 页面的一种特殊形式，与页面不同，Widget 可以仅占用屏幕的一个区域（而不是全部），用于为用户显示关键信息和响应简单的用户操作，例如显示用户所在地的天气，跟踪用户当前的行程状态并提供进一步的操作。</p>
-          <p>在移动操作系统中，Widget 被应用于负一屏、智能助手等场景，某些场景下用户可以订阅和固定显示 Widget，另外一些场景下 Widget 可以根据上下文需求动态地显示和消失。</p>
-          <p>本文档主要描述：定义 Widget 规范需要考虑的需求和依赖的定义。</p>
-    </section>
-    <section id='sotd'>
-        <p>
-        This is still a work in progress. The proposal is being incubated in the <a href="https://www.w3.org/community/miniapps/">W3C MiniApps Ecosystem Community Group</a>.
-        </p>
-    </section>
+  <section id='abstract'>
+    <p>MiniApp Widget 是 MiniApp 页面的一种特殊形式，与页面不同，Widget
+      可以仅占用屏幕的一个区域（而不是全部），用于为用户显示关键信息和响应简单的用户操作，例如显示用户所在地的天气，跟踪用户当前的行程状态并提供进一步的操作。</p>
+    <p>在移动操作系统中，MiniApp Widget 可以被应用于负一屏、智能助手等场景，某些场景下用户可以订阅和固定显示 Widget，另外一些场景下 Widget 可以根据上下文需求动态地显示和消失。</p>
+    <p>由于 MiniApp Widget 是MiniApp的一个组成部分，因此相关的标准部分会在 MiniApp 的其他相关文档中描述，本文档主要描述会专注于定义 MiniApp Widget
+      规范需要考虑的特定需求和对其他部分依赖的描述。</p>
+  </section>
+  <section id='sotd'>
+    <p>
+      This is still a work in progress. The proposal is being incubated in the <a
+        href="https://www.w3.org/community/miniapps/">W3C MiniApps Ecosystem Community Group</a>.
+    </p>
+  </section>
 
+  <section>
+    <h2>需求 Requirement</h2>
     <section>
-        <h2>需求 Requirement</h2>
-        <section>
-          <h2>客户端</h2>
-          MiniApp 对应的 User agent 即实现了本规范的原生客户端。 User agent 能根据本规范制定的规则解析 MiniApp URI 协议，能根据 MiniApp URI 指向唯一的、正确的小程序包的某资源。<br />
-          特定地，在 MiniApp Widget 场景下，User agent有一些特点：
+      <h2>客户端</h2>
+      <p>MiniApp Widget 需要在一个宿主环境中运行，这个环境被称为User agent。MiniApp Widget 的 User agent 在较大程度下与MiniApp的 User agent
+        保持一致，应该满足如下一些需求：</p>
 
-          <ul>
-          <li>User agent 可以通过 MiniApp URI 的形式加载 MiniApp Widget</li>
-          <li>User agent 可以同时加载多个 MiniApp Widget</li>
-        </ul>
-        </section>
-        <section>
-          <h2>包</h2>
-          <p>MiniApp Widget 以一个包的形式分发，客户端将Widget包下载到本地并进行校验后，然后加载 Widget 并显示。包的形式和规范应当与 [[MiniApp 包的形式]] 保持一致。包括不限于文件组织形式、压缩格式、文件后缀名、数字签名等。客户端会以同样的形式对 MiniApp Widget 的包进行校验、安装等过程。</p>
-          <p>特定地，一个 MiniApp 包中应该可以同时包含 MiniApp Page 和 Widget。</p>
-        </section>
-
-        <section>
-          <h2>Manifest 文件</h2>
-          <p>MiniApp Widget 包中需要包含配置文件，开发者可通过Manifest文件设置Widget的基本信息、窗口样式和路由等信息。Widget 的 Manifest 文件应当与[[MiniApp Manifest文件]]的格式保持一致。特定地，在Widget环境中，会有一些变化：</p>
-
-          <dl>
-<dt>widget 描述</dt>
-<dd>Manifest 文件中需要包含widgets字段（类似于pages字段），用于指定 MiniApp 中包含的 widget 和所在文件位置。</dd>
-
-<dt>Manifest文件字段变化</dt>
-<dd>因为widget 的一些特点，Manifest 文件中的一些配置信息，在 Widget 中不会生效。例如 window 的 fullScreen 属性，描述了MiniApp Page是否以全屏形式显示，由于widget并没有对应的形式，因此会忽略这个信息。</dd>
-
-<dt>最小平台版本</dt>
-<dd>因为 Widget 涉及的 API 与 MiniApp API 有一定差别，可能会存在不同的最小平台版本声明。且因为 Widget 是独立加载的，最小平台版本声明可以针对单个widget声明。</dd>
-        </dl>
-        </section>
-
-        <section>
-          <h2>URI</h2>
-          MiniApp Widget 的 URI 规范应该与 <a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI规范</a> 保持一致，以确保：
-
-          <ul>
-            <li>MiniApp Widget 访问到包中的资源形式与 MiniApp Page 保持一致</li>
-            <li>客户端加载 MiniApp Widget 方式与打开 MiniApp Page 的形式保持一致</li>
-          </ul>
-        </section>
-
-<section>
-  <h2>Lifecycle</h2>
-  <p>MiniApp Widget 的生命周期应该与 <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp 的生命周期</a> 保持一致，因为 Widget 的形态和在客户端中运行的形式，会有一些新的生命周期方法需要定义。</p>
-
-  <dl>
-<dt>系统状态变化</dt>
-<dd>当系统语言/窗口大小/Darkmode 等发生变化时，Widget 需要接收到变化后的信息，以改变界面。</dd>
-
-<dt>数据更新</dt>
-<dd>客户端可能会通过传入数据的形式更新 Widget 界面的状态，此时不应该触发 Widget 的重新初始化。</dd>
-</dl>
-</section>
-
-<section>
-  <h2>MiniApp API</h2>
-
-  <p>开发者在 MiniApp Widget 中可以使用的API 应当与 [[MiniApp API]] 尽量保持一致，但有一些 API 需要针对 MiniApp Widget 场景进行调整：</p>
-
-  <ul><li> 不适用于 MiniApp Widget 的 API，例如
-    <ul><li> 具备后台运行能力的 API（持续定位）</li>
-    <li> 因为多个 Widget 会同时显示在一个界面上，会抢占用户资源的 API</li>
-    <li> 推送 API</li>
-    <li> 待补充</li></ul></li>
-    <li> 由客户端提供的 API，例如
-    <ul><li> 获取当前窗口大小的API（视口宽度）</li>
-    <li> 获取当前客户端信息的API</li>
-    <li> 批量预授权的API</li>
-    <li> 特定客户端的拓展API，例如请求客户端更新</li>
-    <li> 待补充</li></ul></li></ul>
-</section>
-
-<section>
-  <h2>MiniApp 组件</h2>
-  <p>开发者在 Widget 中可以使用的API 应当与 [[MiniApp 组件]] 尽量保持一致，但有一些组件需要针对 Widget 场景进行调整：</p>
-  <ul>
-<li>不适用于 Widget 的组件，例如与客户端的操作可能发生滑动冲突的组件</li>
-<li>待补充</li>
-</ul>
-</section>
-
-<section>
-  <h2>MiniApp Widget 和 MiniApp 之间的数据通信</h2>
-  <p>在一定情况下，Widget 需要与 MiniApp 保持一定的数据通信，例如：</p>
-  <ol>
-<li>在 MiniApp 中已经登录，在 Widget 保持同一登录状态</li>
-<li>MiniApp 播放音乐，Widget 获取播放状态以显示播放控件</li>
-</ol>
-
-<dl>
-  <dt>数据通信</dt>
-  <dd>规范应当包含MiniApp Widget 与 MiniApp 之间数据通信的描述。</dd>
-</dl>
-</section>
-
-    </section>
-
-    <section>
-      <h2>参考</h2>
       <ol>
-<li><a href="https://www.w3.org/TR/widgets-reqs/">Requirement For Standardizing Widgets</a></li>
-<li><a href="https://lists.w3.org/Archives/Public/public-webapps/2018OctDec/0011.html">W3C Widget标准废弃说明</a></li>
-<li>[[MiniApp|MiniApp 规范描述]]</li>
-<li>[[MiniApp/manifest|MiniApp Manifest文件规范]]</li>
-<li>[[MiniApp/uri|MiniApp URI 规范]]</li>
-<li>[[MiniApp/lifecycle|MiniApp 生命周期 规范]]</li>
+        <li>MiniApp Widget 的 User agent 应当能根据 <a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI 规范</a>
+          中描述的过程解析 MiniApp URI 并获取 MiniApp 包，该过程应当符合 <a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI
+            规范</a> 中解引用一节描述。</li>
+        <li>User agent 应当能按照 <b><i>[MiniApp Package 规范]</i></b> 的描述解析 MiniApp 包结构。</li>
+        <li>User agent 应当能按照 <a href="https://w3c.github.io/miniapp/specs/manifest/">MiniApp Manifest 规范</a> 的描述解析
+          manifest文件，以加载运行MiniApp Widget。在本文档的Manifest文件一节中描述了一些与 Widget 相关的特定需求。</li>
+        <li>在运行过程中，User agent 应能根据 MiniApp URI 访问 MiniApp 包中的资源文件。</li>
+        <li>在运行过程中，User agent 应能提供必要的接口支持，在本文档的 MiniApp API 一节中描述与Widget相关的特定需求。</li>
+      </ol>
 
+      <p>特定地，在 MiniApp Widget 场景下，由于Widget本身并不占据完整的屏幕空间，User agent 也会有一些特定的需求：</p>
+      <ol>
+        <li>User agent 可以将 MiniApp Widget 与自身界面结合在一起显示，以达到更好的融合体验。</li>
+        <li>为了更好的将 MiniApp Widget 与 User agent 的界面融合，User agent 应当为 MiniApp Widget 提供自身样式的信息，以更好的支持诸如深色模式等需求。</li>
+        <li>User agent 可以同时加载并显示多个 MiniApp Widget，例如在负一屏中同时显示相关的机票 Widget 和打车 Widget。</li>
+      </ol>
+
+    </section>
+
+    <section>
+      <h2>URI</h2>
+      <p>MiniApp Widget 的 URI 规范应该与 <a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI规范</a> 保持一致，以确保：</p>
+
+      <ol>
+        <li>User agent 能以相同的机制获取包含 MiniApp Widget 的 MiniApp 包。</li>
+        <li>User agent 能以与 MiniApp Page 相同的机制定位并加载 MiniApp Widget。</li>
+        <li>MiniApp Widget 访问到包中的资源形式与 MiniApp Page 保持一致。</li>
       </ol>
     </section>
 
+    <section>
+      <h2>包</h2>
+      <p>与 MiniApp 保持一致，MiniApp Widget 同样以包的形式分发，User agent 获取到 MiniApp 包并进行校验后，获取包中包含的Widget信息，并正确地加载和显示。包的形式和规范应当与
+        MiniApp 包的形式 <b><i>[MiniApp Package 规范]</i></b> 保持一致。包括不限于文件组织形式、压缩格式、文件后缀名、数字签名等。User agent 会以同样的形式对 MiniApp
+        Widget 的包进行校验、安装等过程。</p>
+      <p>在 MiniApp Widget 场景下，特定的需求：</p>
 
-    <section class="appendix">
-      <h2>
-        Acknowledgments
-      </h2>
-      <p>
-        暂无
-      </p>
+      <ol>
+        <li>一个 MiniApp 包中应该可以同时包含 MiniApp Page 和 Widget。在某些情况下，MiniApp 希望能在User agent上显示一个 Widget，并在用户点击Widget上的内容时，提供
+          MiniApp Page 作为承载更丰富内容的落地页。</li>
+        <li>一个 MiniApp 包中应该可以只包含Widget，不包含Page。某些MiniApp的提供方只希望在 Widget 上提供最简单的功能，以满足用户的特定需求。</li>
+      </ol>
     </section>
+
+    <section>
+      <h2>Manifest 文件</h2>
+      <p>MiniApp Widget 包中需要包含配置文件，开发者可通过 Manifest 文件设置 Widget 的基本信息、样式和路由等信息。Widget 的 Manifest 文件应当与 MiniApp Manifest
+        文件 的格式保持一致。特定地，在Widget环境中，会有一些变化：</p>
+
+      <b>widget 描述</b>
+      <p>Manifest 文件中需要包含 widgets 字段（类似于pages字段），用于指定 MiniApp 中包含的 widget 的相关信息和配置，应当包含以下：</p>
+      <ol>
+        <li>MiniApp Widget 的名字</li>
+        <li>MiniApp Widget 的文件路径，用于定位 MiniApp Widget 所在的文件</li>
+        <li>最小平台版本，因为 Widget 涉及的 API 与 MiniApp API 有一定差别，可能会存在不同的最小平台版本声明。且因为 Widget 是独立加载的，最小平台版本声明可以针对单个widget声明</li>
+      </ol>
+
+      <b>Manifest文件字段变化</b>
+      <p>因为widget 的一些特点，Manifest 文件中的一些配置信息，在 Widget 中不会生效。例如 window 的 fullScreen 属性，描述了MiniApp
+        Page是否以全屏形式显示，由于widget并没有对应的形式，因此会忽略这个信息。</p>
+    </section>
+
+    <section>
+      <h2>Lifecycle</h2>
+      <p>MiniApp Widget 的生命周期应该与 <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp 的生命周期</a> 保持一致，因为
+        Widget 的形态和在客户端中运行的形式，会有一些新的生命周期方法需要定义。</p>
+      <ol>
+        <li>当系统语言/窗口大小/Darkmode 等发生变化时，Widget 需要接收到变化后的信息，以改变界面。</li>
+        <li>客户端可能会通过传入数据的形式更新 Widget 界面的状态，此时不应该触发 Widget 的重新初始化。</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>MiniApp API</h2>
+      <p>开发者在 MiniApp Widget 中可以使用的API 应当与 <b><i>[MiniApp API 规范]</i></b> 尽量保持一致，但有一些 API 需要针对 MiniApp Widget
+        场景进行调整，本节内容应根据 <b><i>[MiniApp API 规范]</i></b> 内容调整。</p>
+
+      <p>在 Widget 场景下，一些原先在 MiniApp Page 上可以使用的 API 需要调整，例如：</p>
+      <ol>
+        <li> 具备后台持续能力或者被动触发的 API，例如持续定位和推送，因为 Widget 在 User agent 环境中运行，在用户认知上并不作为独立运行的单元存在，这些API易造成用户将 Widget 的调用与
+          User agent 混淆。</li>
+        <li> 会抢占用户注意力，造成用户错误认知的 API，例如打开拍照界面等，由于多个 Widget 可能会同时显示在一个界面上，如果多个 Widget 均直接调用打开界面的 API，会造成用户理解上的错误。</li>
+      </ol>
+
+      <p>User agent 会提供一些适用于Widget的新API，例如：</p>
+      <ol>
+        <li> 获取当前窗口大小的API（视口宽度）</li>
+        <li> 获取当前 User agent 信息的API，以支持 Widget 针对特定的 User agent 进行适配</li>
+        <li> 批量预授权的API，由于 User agent 上可能同时存在多个 MiniApp Widget，出现多个动态获取权限的API会对用户造成困扰，User agent 应提供批量预授权的API</li>
+        <li> 特定客户端的拓展API，例如请求客户端更新以获取到最新版本的Widget</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>MiniApp 组件</h2>
+      <p>开发者在 Widget 中可以使用的API 应当与 <b><i>[MiniApp 组件规范]</i></b> 尽量保持一致，但有一些组件需要针对 Widget 场景进行调整，本节内容应根据 <b><i>[MiniApp
+            组件规范]</i></b> 内容调整。</p>
+      <p>一些组件的行为可能与 User agent 的行为发生冲突，例如：</p>
+      <ol>
+        <li>某些 Widget 中如果包含较长的滚动列表，可能与 User agent 的上下滑动操作发生冲突</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>MiniApp Widget 和 MiniApp 之间的数据通信</h2>
+      <p>在一定情况下，Widget 需要与 MiniApp 保持一定的数据通信，例如：</p>
+      <ol>
+        <li>在 MiniApp 中已经登录，在 Widget 保持同一登录状态</li>
+        <li>MiniApp 播放音乐，Widget 获取播放状态以显示播放控件</li>
+      </ol>
+      <p>因此规范中应包含 MiniApp Widget 与 MiniApp 之间数据通信的描述。</p>
+    </section>
+
+  </section>
+
+  <section>
+    <h2>参考</h2>
+    <ol>
+      <li><a href="https://www.w3.org/TR/widgets-reqs/">Requirement For Standardizing Widgets</a></li>
+      <li><a href="https://lists.w3.org/Archives/Public/public-webapps/2018OctDec/0011.html">W3C Widget标准废弃说明</a></li>
+      <li><a href="https://w3c.github.io/miniapp/specs/">规范描述</a>
+      <li><a href="https://w3c.github.io/miniapp/specs/manifest/">MiniApp Manifest文件规范</a>
+      <li><a href="https://w3c.github.io/miniapp/specs/uri/"> MiniApp URI 规范</a>
+      <li><a href="https://w3c.github.io/miniapp/specs/lifecycle/"> MiniApp 生命周期规范</a>
+    </ol>
+  </section>
+
+
+  <section class="appendix">
+    <h2>
+      Acknowledgments
+    </h2>
+    <p>
+      暂无
+    </p>
+  </section>
 </body>
 
 </html>
