@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>MiniApp URI Scheme</title>
+
+    <style>
+    .two-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    table {
+      border-collapse:collapse;
+    }
+
+    table,th, td {
+      border: 1px solid #666;
+    }
+
+    td {
+      padding:2px 15px;
+    }
+    </style>
+
+    <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common"></script>
+
+    <script class="remove">
+        var respecConfig = {
+            specStatus: "CG-DRAFT",
+            copyrightStart: "2020",
+            edDraftURI: "https://w3c.github.io/miniapp/specs/uri/",
+
+            shortName: "miniapp-uri",
+
+            editors: [{
+                name: "Dan Zhou",
+                companyURL: "https://www.baidu.com/",
+                company: "Baidu, Inc"
+              }, {
+                name: "Zhixing Lei",
+                companyURL: "https://www.baidu.com/",
+                company: "Baidu, Inc"
+              }, {
+                name: "Qian Liu",
+                companyURL: "https://www.baidu.com/",
+                company: "Baidu, Inc"
+              }, {
+                name: "Shuo Wang",
+                companyURL: "https://www.baidu.com/",
+                company: "Baidu, Inc"
+              }, {
+                name: "Tengyuan Zhang",
+                companyURL: "https://www.baidu.com/",
+                company: "Baidu, Inc"
+              }
+              ],
+
+            wg: "MiniApps Ecosystem Community Group",
+            wgURI: "https://www.w3.org/community/miniapps/",
+            github: "w3c/miniapp",
+        };
+    </script>
+</head>
+
+<body>
+    <section id='abstract'>
+        <p>
+          This specification defines the MiniApp URI scheme syntax and the process for dereferencing the MiniApp URI scheme. The MiniApp URI scheme syntax contains specifications for specific MiniApp URI syntax components based on the URI specification. Implementation of this specification enables the user agent to locate the MiniApp resources. 
+        </p>
+    </section>
+    <section id='sotd'>
+        <p>
+        This is still a work in progress. The proposal is being incubated in the <a href="https://www.w3.org/community/miniapps/">W3C MiniApps Ecosystem Community Group</a>.
+        </p>
+    </section>
+
+    <section class='informative'>
+        <h2>Introduction</h2>
+        <p>The MiniApp URI scheme is a protocol that uniquely corresponds to a specific resource within a mini app. Mini apps are applications that run on the user agent and are based on Web technology combined with native application technology. [MiniApp package specification] defines the form of resources in the mini app, as well as the specific path in the mini app and the mapped path relationship in the MiniApp URI scheme. 
+</p>
+
+        <p>The MiniApp URI syntax section describes the specifications and definitions of some syntax components of the URI in the mini app. Parts not covered in these specifications follow the URI specifications and are not repeated here.
+</p>
+    </section>
+
+    <section class='informative'>
+        <h2>Example of usage</h2>
+        <p>The following is an example of MiniApp URI.</p>
+        <p>miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?k=v#bar</p>
+
+        <section>
+          <h2>Example 1: Use MiniApp URI in a mini app</h2>
+            <p>All parts of the MiniApp URI are accessible. For example, the user agent can expose a global location object and store the following syntax parts into the location object. The developer can then access this location object through JavaScript in the mini app runtime environment.</p>
+
+            <pre class="example js">
+              console.log(location.href); // miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?k=v#bar
+              console.log(location.protocol); // miniapp:
+              console.log(location.origin); // miniapp://foo;version=1.0.1-trial@example.com:8080
+              console.log(location.id); // foo
+              console.log(location.version); // 1.0.1-trial
+              console.log(location.host); // example.com
+              console.log(location.port); // 8080
+              console.log(location.pathname); // /pages/index
+              console.log(location.search); // ?k=v
+              console.log(location.hash); // #bar
+            </pre>
+
+            <p>The user agent can also implement the URL interface. The developer can then use related properties and methods by accessing the object in the mini app runtime environment.</p>
+
+            <pre class="example js">
+              const url = new URL("miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?k=v#bar")
+              console.log(url.href); // miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?k=v#bar
+              console.log(url.protocol); // miniapp:
+              console.log(url.origin); // miniapp://foo;version=1.0.1-trial@example.com:8080
+              console.log(url.id); // foo
+              console.log(url.version); // 1.0.1-trial
+              console.log(url.host); // example.com
+              console.log(url.port); // 8080
+              console.log(url.pathname); // /pages/index
+              console.log(url.search); // ?k=v
+              console.log(url.hash); // #bar
+            </pre>
+        </section>
+
+        <section>
+        <h2>Example 2: Open a mini app on Web page</h2>
+        <pre class="example html">
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;a href=&quot;miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?category=book#section-3&quot;&gt;open a MiniApp&lt;/a&gt;
+&lt;/html&gt;
+        </pre>
+
+        <p>Embed an a tag with the href property as the mini app URI on the web page. When a user clicks the link, the user agent receives the protocol and dereferences it. Based on the host, id, version in the protocol, a request is made to a specific package server that can provide mini app package upload and download services, to download and open the corresponding mini app.</p>
+
+        <p>As shown in the following flowchart, the package is a collection of mini app resource packages, and the content and structure of the packages are defined in [package specification].</p>
+
+        <figure id="use-case-2">
+          <span style="text-align:center;"><img src="images/use-case-2.png" alt="TBD" width="600"></span>
+          <figcaption>TBD</figcaption>
+        </figure>
+
+        </section>
+
+        <section>
+          <h2>Example 3: Access a mini app package in a development environment</h2>
+          <p>The User agent can provide debugging tools for developers to place the mini app package in the user agent development environment. Developers can obtain the unique id and version number of the mini app in the development environment, such as "foo; version = 1.0.1". Developers can concatenate it into a MiniApp URI that opens the mini app:</p>
+          <pre>
+            miniapp://foo;version=1.0.1/pages/index?k=v#bar
+          </pre>
+        
+          <p>When the user agent dereferences the URI, it obtains the mini app package with the specific identification "foo; version = 1.0.1" in a certain way, and then opens and runs the mini app.</p>
+  
+          <figure id="use-case-3">
+            <span style="text-align:center;"><img src="images/use-case-3.png" alt="TBD" width="600"></span>
+            <figcaption>TBD</figcaption>
+          </figure>
+  
+          </section>
+
+        </section>
+
+        <!-- <section id="conformance"> -->
+        <section>
+          <h2>Conformance</h2>
+          <p>All contents in this specification are standard contents and are still in the draft stage, with sections, examples and notes that are clearly marked as “non-standard” being an exception. There is one class of products that can be declared compliant with this specification, and that is the user agent below. </p>
+          <p>
+            The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, <em class="rfc2119">OPTIONAL</em>, <em class="rfc2119">RECOMMENDED</em>, <em class="rfc2119">SHOULD</em>, and <em class="rfc2119">SHOULD NOT</em> in this document are to be interpreted as described in [[!RFC2119]].
+          </p>
+        </section>
+
+        <section id="user-agent">
+          <h2>User agent</h2>
+          <p>The user agent corresponding to the mini app implements the native client of this specification. The user agent can parse the MiniApp URI protocol according to the rules of this specification, and it can also point to a certain resource of the unique and correct mini app package based on the MiniApp URI.</p>
+        </section>
+ 
+        <section>
+          <h2>Syntax</h2>
+          <p>The MiniApp URI syntax is defined using [[!ABNF]] to introduce host, port, path-abempty, query, fragment, unreserved of [[!RFC3986]].
+          </p>
+          <pre>
+            miniappuri = scheme "://" authority path-abempty ["?" query ] ["#" fragment ]
+
+            scheme     = "miniapp"
+            authority  = id [";version=" version] ["@" host [ ":" port ]]
+            id         = 1*unreserved
+            version    = *unreserved
+          </pre>
+
+          <p>The following are the MiniApp URI examples that comply with this syntax rule:</p>
+
+          <ol>
+            <li>miniapp://foo</li>
+            <li>miniapp://foo/pages/index</li>
+            <li>miniapp://foo@example.com</li>
+            <li>miniapp://foo@bar</li>
+            <li>miniapp://foo@example.com/?category=img</li>
+            <li>miniapp://foo;version=1.0.1@example.com/pages/index?category=book#section-3</li>
+            <li>miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?category=book#section-3</li>
+          </ol>
+                        
+          <p>The strings of the MiniApp URI scheme must conform to the character set rules of the URI declared in RFC3986.</p>
+
+          <section>
+            <h2>id</h2>
+            <p>id is the logical identifier of the mini app under a specific host, which along with version, points to the unique mini app package of a host. There may be multiple versions of a mini app corresponding to an id under a specific host.</p>
+            <p>id is a mandatory field.</p>
+            <p>id consists of non-reserved characters and is not case sensitive.</p>
+            <p>The host must guarantee the uniqueness of the id.</p>
+          </section>
+
+          <section>
+            <h2>Version</h2>
+            <p>Version and id together represent the unique mini app package of the user agent.</p>
+            <p>Version is optional, and the user agent can make rules for version, to provide information such as version and development method.</p>
+            <p>Version consists of non-reserved characters and is not case sensitive.</p>
+            <p>In most usage scenarios, it is recommended that the version is null, and the version is managed by user agent and package provider.</p>
+          </section>
+
+          <section>
+            <h2>Host and port</h2>
+            <p>
+              The semantic rules for the host and port are consistent with the host in [[!RFC3986]] and the port in [[!RFC3986]].</p>
+
+            <p>Host and port are optional. When host and port are null, the user agent that opens the URI, decides how to open the mini app with specified id as the default behavior. When host has a value, the user agent can open the mini app with specified id after obtaining the mini app package through network protocol or file protocol.
+</p>
+          </section>
+
+          <section>
+            <h2>Path</h2>
+            <p>Path (optional) represents the path of the mini app resource to be opened. The [package specification] defines the resource form, how to locate specific resource path in the package through path, and handling of the user agent when the path value is null or the path pointed by path does not exist.
+</p>
+
+            <p>The semantic rules of path are consistent with the path in [[!RFC3986]].</p>
+          </section>
+
+          <section>
+            <h2>Query and fragment</h2>
+            <p>See [[!RFC3986]] for definitions of query and fragment.</p>
+          </section>
+
+          </section>
+
+          <section>
+            <h2>Dereferencing</h2>
+            <p>This section describes how the user agent obtains the corresponding mini app package based on MiniApp URI, as well as some error handling.</p>
+
+            <p>The rules for dereferencing are as follows:</p>
+            
+            <ol start=1>
+            <li> User agent recognizes MiniApp URI. If the scheme of this URI is ‘miniapp’, the user agent considers it as MiniApp URI and parses the syntax components according to the syntax rules specified in this specification. </li>
+            <li> The user agent parses the syntax components of MiniApp URI according to the above syntax rules into id, version, host, port, path, query, fragment. If the syntax parsing fails, the user agent terminates this dereferencing algorithm.</li>
+            <li>The user agent uses the host and port information as the source to obtain the mini app package with specified identification. The mapping relation between the host and the method to obtain the applet package is determined by the user agent, and the user agent handles different existence modes of host values:
+</li>
+            </ol>
+
+            <p> When host value is not null, the user agent determines the mini app package provider based on the values specified by host and port. The provider can be a package server that provides mini app package download service, or it can be a user agent custom decision that corresponds to a specific method to obtain the mini app package. The download process using HTTPS protocol as a download protocol is described in Section 7 below.</p>
+            
+            <p>When host value is null, the user agent obtains the mini app package with the specified id using a default method, which can be obtained through paths such as local path, default remote path, etc.</p>
+            
+            <ol start=4>
+            <li>The user agent uses id as a mini app logic identifier for a specific host. The mini app with specified id may have multiple versions for the service corresponding to the specific host and port values.</li>
+            <li>The user agent uses version as the version information of the mini app package with the specified id. The user agent handles different existence modes of version: For example</li>
+            </ol>
+            
+            <p> When version has a value, the version is used as the version information of the mini app package, which along with id, points to the unique mini app package of a host.</p>
+            <p>When version is null, the mini app package with specified id is customized as an mini app package provider (package server or user agent), which can be the latest version or the default version of the mini app package with specified id, or the mini app package of a version that conforms to a mapping rule.</p>
+            <p>In most usage scenarios, it is recommended that the version is null, and the version is managed by the user agent and package provider.</p>
+            
+            <ol start=6>
+            <li>The user agent obtains the mini app package based on the parsed provider information and the identification information of the mini app (e.g., id, version). The user agent handles different situations of the provider:</li>
+            </ol>
+            
+            <p>When provider is a package server, the user agent sends an HTTPS Request with mini app identification information to the server; the final mini app package is obtained by handling the Response body returned by the package server.</p>
+            <p>When provider is a custom method of the user agent, the user agent obtains the mini app package with specified mini app identification information through the custom method.</p>
+            
+            <ol start=7>
+            <li>The user agent conducts corresponding processing based on the results of the obtained mini app package:</li>
+            </ol>
+
+            <p>When the mini app package is obtained successfully, the following processing is performed.</p>
+            <p>When obtaining the mini app package fails, exception handling is performed based on the cause of failure. For example, when the user agent cannot obtain the package from the host, the error code and error message are returned.</p>
+            
+            <ol start=8>
+            <li>The user agent locates the corresponding mini app resource based on the path, query, fragment and the method defined in [MiniApp Manifest Specification].</li>
+            </ol>
+
+            <p>The user agent MUST handle any failure during dereferencing and provide appropriate information prompts.</p>
+            </section>
+
+            <section class='informative'>
+              <h2>Use HTTPS protocol as network protocol to download the MiniApp package</h2>
+              <p>This section describes a use case scenario for a network protocol that uses HTTPS protocol as a request to download the mini app package.</p>
+              <p>Use URI for example:</p>
+              <pre>miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?category=book#section-3</pre>
+              <p>Dereferencing steps are as follows:</p>
+
+              <ol>
+              <li>If the URI does not conform to the syntax rules of MiniApp URI, the user agent does not respond or handle exceptions.</li>
+              <li>Extract host and port from MiniApp URI and concatenate them into a complete HTTPS URL: https://example.com:8080/ </li>
+              <li>Use Get request as request parameters of id and version. That is, https://example.com:8080/?id=foo&version=1.0.1-trial</li>
+              <li>The user agent may implement [HTTP] cache control; it is recommended to use gzip as the encoding scheme ([HTTP] accept-encoding) and send HTTPS request message.
+</li>
+              <li>If the received request is not an HTTPS request, an [HTTP] 403 forbidden response is returned, and the request is terminated.</li>
+              <li>If the received request fails to pass authentication, an [HTTP] 403 forbidden response is returned, and the request is terminated.</li>
+              <li>If the requested HTTP Method is not supported, an [HTTP] 501 Not Implemented response is returned, and the request is terminated.</li>
+              <li>Based on the query or body carried in the requested URL, a mini app package with id “foo”, version “1.0.1” is returned. If it is not found, an [HTTP] 404 Not Found response is returned.</li>
+              <li>If it is successfully found, an [HTTP] 200 OK response is returned, and the mini app package is returned as the response body in the format specified by content-type.</li>
+              <li>The user agent determines whether the request is successful based on status and continues to parse the response body when status is 200. A failure exception is processed when status is not 200.</li>
+              <li>It is recommended to use the agreed unique identification field to reverify the package integrity.</li>
+              <li>For downloaded mini app package, use the package format specified in [MiniApp Manifest Specification] to decompress.</li>
+              </ol>
+              </section>
+
+              <section class='informative'>
+                <h2>Security Considerations</h2>
+                    <ol>
+                      <li>The user agent must ensure the correctness of URI, avoid URI tampering and prevent phishing attacks.</li>
+                      <li>It is recommended that UA or sign signature are used to authenticate the request process on the package server side.</li>
+                      <li>During the request process, it is recommended to check replay attacks using HMAC.</li>
+                      <li>During the request process, it is recommended to verify package integrity by abstract comparison of md5 or sha1.</li>
+                      <li>While parsing the Response by the user agent, it is recommended to protect the data package security through encryption and decryption.</li>
+                      <li>When the user agent stores the package resource locally, it is necessary to ensure the storage security of files, to protect against malware attacks.</li>
+                    </ol>
+                </section>
+
+    <section class="appendix">
+      <h2>
+        Acknowledgments
+      </h2>
+      <p>
+        TBD.
+      </p>
+    </section>
+</body>
+
+</html>
