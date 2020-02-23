@@ -1,0 +1,162 @@
+[lang="zh-hans"] {
+  font-family: "PingFang SC", "Noto Sans CJK SC", "Heiti SC", "DengXian",
+    "Microsoft YaHei", Helvetica, Segoe UI, Arial, sans-serif;
+}
+
+h2 {
+  margin-top: 3em;
+  margin-bottom: 0em;
+}
+
+.head h2,
+#abstract h2,
+#sotd h2 {
+  margin-top: 0;
+}
+
+h3 {
+  margin-top: 3em;
+}
+
+h4 {
+  margin-top: 2em;
+  font-size: 100%;
+  font-weight: normal;
+  color: #005a9c;
+}
+
+h5 {
+  font-style: inherit !important;
+}
+
+.leadin {
+  font-weight: bold;
+}
+
+ins {
+  background-color: #99ff99;
+  text-decoration: none;
+}
+
+del {
+  display: inline;
+  color: silver;
+}
+
+figure {
+  margin-bottom: 2em;
+  text-align: center;
+  vertical-align: top;
+}
+
+figure img {
+  vertical-align: middle;
+}
+
+figcaption {
+  text-align: center;
+  margin: 0.5em 2em;
+  font-style: italic;
+  font-size: 90%;
+}
+
+.figno:after {
+  content: ":\00A0  ";
+}
+
+code,
+samp,
+kbd {
+  font-family: Consolas, "Andale Mono", "Lucida Console",
+    "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+  font-size: 100%;
+}
+
+code {
+  color: #a52a2a;
+}
+
+.uname {
+  text-transform: uppercase;
+  font-size: 85%;
+  letter-spacing: 0.03em;
+}
+
+#langSwitch {
+  position: fixed;
+  top: -14px;
+  z-index: 10000;
+  top: 100px;
+  right: 10px;
+  width: 5em;
+  text-align: right;
+}
+#langSwitch button {
+  background: #fff none repeat scroll 0% 0%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#langSwitch button:lang(zh-hans) {
+  /* background-color: #fbc481; */
+}
+
+.translateme,
+.retranslateme {
+  background-color: #f3f3c3;
+  background-clip: content-box;
+}
+.checkme {
+  background-color: #bbeffc;
+  background-clip: content-box;
+}
+
+.checkme::before {
+  content: " Check this translation: ";
+  color: coral;
+}
+
+.translateme::before {
+  content: " Translate this: ";
+  color: coral;
+}
+
+.retranslateme::before {
+  content: " (Re)translate this: ";
+  color: coral;
+}
+
+.is-multilingual [its-locale-filter-list^="zh"] {
+  padding-left: 0.4em;
+  border-left: 3px solid;
+}
+.is-multilingual [its-locale-filter-list="zh-hans"] {
+  border-color: rgba(248, 138, 5, 0.5);
+}
+
+.is-multilingual h2[its-locale-filter-list^="zh"],
+.is-multilingual h3[its-locale-filter-list^="zh"],
+.is-multilingual h4[its-locale-filter-list^="zh"],
+.is-multilingual h5[its-locale-filter-list^="zh"],
+.is-multilingual h6[its-locale-filter-list^="zh"],
+.is-multilingual p[its-locale-filter-list^="zh"],
+.is-multilingual ol[its-locale-filter-list^="zh"],
+.is-multilingual ul[its-locale-filter-list^="zh"] {
+  margin-left: calc(-0.4em - 2px);
+}
+
+.is-multilingual .secno ~ span[its-locale-filter-list^="zh"] {
+  display: inline-block;
+  margin-left: 0.3em;
+  padding-left: 0.3em;
+}
+
+.note {
+  margin-left: -1em !important;
+  padding-left: 1.5em !important;
+}
+
+.note h6 {
+  margin-top: 1em;
+  margin-bottom: 0;
+  font-weight: bold;
+}
