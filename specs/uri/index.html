@@ -70,7 +70,7 @@
 <body>
     <section id='abstract'>
         <p its-locale-filter-list="en" lang="en">
-          This specification defines the MiniApp URI scheme syntax and the process for dereferencing the MiniApp URI scheme. The MiniApp URI scheme syntax contains specifications for specific MiniApp URI syntax components based on the URI specification. Implementation of this specification enables the user agent to locate the MiniApp resources. 
+          This specification defines the MiniApp URI scheme syntax and the process for dereferencing the MiniApp URI scheme. The MiniApp URI scheme syntax contains specifications for specific MiniApp URI syntax components based on the URI specification. Implementation of this specification enables the user agent to locate the MiniApp resources.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           本规范定义了 MiniApp URI scheme 的语法，以及解引用 MiniApp URI scheme 的过程。MiniApp URI scheme 语法包含基于 URI 规范之上的 MiniApp URI 具体语法组件的规格说明。实现本规范，能使得 user agent 能够定位 MiniApp 的资源。
@@ -93,7 +93,7 @@
         <span its-locale-filter-list="zh-hans" lang="zh-hans">介绍</span>
       </h2>
         <p its-locale-filter-list="en" lang="en">
-          The MiniApp URI scheme is a protocol that uniquely corresponds to a specific resource within a mini app. Mini apps are applications that run on the user agent and are based on Web technology combined with native application technology. <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package specification</a> defines the form of resources in the mini app, as well as the specific path in the mini app and the mapped path relationship in the MiniApp URI scheme. 
+          The MiniApp URI scheme is a protocol that uniquely corresponds to a specific resource within a mini app. Mini apps are applications that run on the user agent and are based on Web technology combined with native application technology. <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package specification</a> defines the form of resources in the mini app, as well as the specific path in the mini app and the mapped path relationship in the MiniApp URI scheme.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp URI scheme 是用于唯一对应一个小程序内的具体资源的协议。小程序是运行在 user agent 上的，基于 Web 技术，结合原生应用技术实现的应用。在 <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package 规范</a> 中定义了小程序内资源的形式，以及小程序内具体的资源路径和 MiniApp URI scheme 中的 path 映射关系。</p>
 
@@ -172,8 +172,8 @@
         <p its-locale-filter-list="zh-hans" lang="zh-hans">如下流程图，其中 package 为小程序资源包集合，包的内容和结构由<a href="https://w3c.github.io/miniapp/specs/packaging/">包规范</a>定义。</p>
 
         <figure id="use-case-2">
-          <span style="text-align:center;"><img src="images/use-case-2.png" alt="TBD" width="600"></span>
-          <figcaption>TBD</figcaption>
+          <span style="text-align:center;"><img src="images/use-case-2.png" alt="open a MiniApp from web" width="600"></span>
+          <figcaption>open a MiniApp from web</figcaption>
         </figure>
 
         </section>
@@ -190,15 +190,15 @@
           <pre>
             miniapp://foo;version=1.0.1/pages/index?k=v#bar
           </pre>
-        
+
           <p its-locale-filter-list="en" lang="en">When the user agent dereferences the URI, it obtains the mini app package with the specific identification "foo; version = 1.0.1" in a certain way, and then opens and runs the mini app.</p>
           <p its-locale-filter-list="zh-hans" lang="zh-hans">当 user agent 解引用该 URI 时，会使用某种方式获取到此特定标识为 “foo;version=1.0.1” 的小程序包，并打开和运行。</p>
-  
+
           <figure id="use-case-3">
-            <span style="text-align:center;"><img src="images/use-case-3.png" alt="TBD" width="600"></span>
-            <figcaption>TBD</figcaption>
+            <span style="text-align:center;"><img src="images/use-case-3.png" alt="open a MiniApp in development environment" width="600"></span>
+            <figcaption>open a MiniApp in development environment</figcaption>
           </figure>
-  
+
           </section>
 
         </section>
@@ -211,7 +211,7 @@
           <p its-locale-filter-list="en" lang="en">The user agent corresponding to the mini app implements the native client of this specification. The user agent can parse the MiniApp URI protocol according to the rules of this specification, and it can also point to a certain resource of the unique and correct mini app package based on the MiniApp URI.</p>
           <p its-locale-filter-list="zh-hans" lang="zh-hans">小程序对应的 user agent 即实现了本规范的原生客户端。 User agent 能根据本规范制定的规则解析 MiniApp URI 协议，能根据 MiniApp URI 指向唯一的、正确的小程序包的某资源。</p>
         </section>
- 
+
         <section>
           <h2>
             <span its-locale-filter-list="en" lang="en">Syntax</span>
@@ -244,7 +244,7 @@
             <li>miniapp://foo;version=1.0.1@example.com/pages/index?category=book#section-3</li>
             <li>miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?category=book#section-3</li>
           </ol>
-                        
+
           <p its-locale-filter-list="en" lang="en">The strings of the MiniApp URI scheme must conform to the character set rules of the URI declared in RFC3986.</p>
           <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp URI scheme 的字符串必须要符合在 RFC3986 中声明的 URI 的字符集规则。</p>
 
@@ -333,7 +333,7 @@
 
             <p its-locale-filter-list="en" lang="en">The rules for dereferencing are as follows:</p>
             <p its-locale-filter-list="zh-hans" lang="zh-hans">解引用的规则如下：</p>
-            
+
             <ol start=1>
             <li>
               <p its-locale-filter-list="en" lang="en">User agent recognizes MiniApp URI. If the scheme of this URI is ‘miniapp’, the user agent considers it as MiniApp URI and parses the syntax components according to the syntax rules specified in this specification.</p>
@@ -351,10 +351,10 @@
 
             <p its-locale-filter-list="en" lang="en"> When host value is not null, the user agent determines the mini app package provider based on the values specified by host and port. The provider can be a package server that provides mini app package download service, or it can be a user agent custom decision that corresponds to a specific method to obtain the mini app package. The download process using HTTPS protocol as a download protocol is described in [[[#https]]] below.</p>
             <p its-locale-filter-list="zh-hans" lang="zh-hans">当 host 值非空时，user agent 根据 host 与 port 指定的值确定小程序包的 provider。provider 可以是一种提供小程序包下载服务的 package server，也可以是 user agent 自定义决定对应了某种特殊的获取小程序包的方式。使用 HTTPS 协议作为下载协议的下载过程见[[[#https]]]。</p>
-            
+
             <p its-locale-filter-list="en" lang="en">When host value is null, the user agent obtains the mini app package with the specified id using a default method, which can be obtained through paths such as local path, default remote path, etc.</p>
             <p its-locale-filter-list="zh-hans" lang="zh-hans">当 host 值为空值时，user agent 将会以某种默认方式获取指定 id 的小程序包，可以是从本地路径、默认的远程路径等途径获取。</p>
-            
+
             <ol start=4>
             <li>
               <p its-locale-filter-list="en" lang="en">The user agent uses id as a mini app logic identifier for a specific host. The mini app with specified id may have multiple versions for the service corresponding to the specific host and port values.</p>
@@ -369,7 +369,7 @@
               </p>
             </li>
             </ol>
-            
+
             <p its-locale-filter-list="en" lang="en">When version has a value, the version is used as the version information of the mini app package, which along with id, points to the unique mini app package of a host.</p>
             <p its-locale-filter-list="zh-hans" lang="zh-hans">当 version 存在值时，将 version 作为小程序包的版本信息，与 id 共同指向某个 host 唯一的小程序包。</p>
 
@@ -378,20 +378,20 @@
 
             <p its-locale-filter-list="en" lang="en">In most usage scenarios, it is recommended that the version is null, and the version is managed by the user agent and package provider.</p>
             <p its-locale-filter-list="zh-hans" lang="zh-hans">多数使用场景下建议 version 为空，由 user agent 及 package provider 进行版本的管理。</p>
-            
+
             <ol start=6>
             <li>
               <p its-locale-filter-list="en" lang="en">The user agent obtains the mini app package based on the parsed provider information and the identification information of the mini app (e.g., id, version). The user agent handles different situations of the provider:</p>
               <p its-locale-filter-list="zh-hans" lang="zh-hans">user agent 根据解析到的 provider 的信息及小程序的标识信息（比如id、version）获取小程序的包。User agent 需要处理provider不同的情况：</p>
             </li>
             </ol>
-            
+
             <p its-locale-filter-list="en" lang="en">When provider is a package server, the user agent sends an HTTPS Request with mini app identification information to the server; the final mini app package is obtained by handling the Response body returned by the package server.</p>
             <p its-locale-filter-list="zh-hans" lang="zh-hans">当 provider 为 package server 时，user agent 向该服务器发起携带了小程序标识信息的 HTTPS Request；通过处理 package server 返回的 Response body 得到最终的小程序包。</p>
 
             <p its-locale-filter-list="en" lang="en">When provider is a custom method of the user agent, the user agent obtains the mini app package with specified mini app identification information through the custom method.</p>
             <p its-locale-filter-list="zh-hans" lang="zh-hans">当 provider 为 user agent 自定义的方式时，user agent 通过该自定义方式获取指定小程序标识信息的小程序包。</p>
-            
+
             <ol start=7>
             <li>
               <p its-locale-filter-list="en" lang="en">The user agent conducts corresponding processing based on the results of the obtained mini app package:</p>
@@ -404,7 +404,7 @@
 
             <p its-locale-filter-list="en" lang="en">When obtaining the mini app package fails, exception handling is performed based on the cause of failure. For example, when the user agent cannot obtain the package from the host, the error code and error message are returned.</p>
             <p its-locale-filter-list="zh-hans" lang="zh-hans">当获取小程序包失败时，则根据失败原因，做出异常处理。例如 user agent 从 host 无法获取到包时，返回错误码与错误信息。</p>
-            
+
             <ol start=8>
             <li>
               <p its-locale-filter-list="en" lang="en">
@@ -446,7 +446,7 @@
               </li>
               <li>
                 <p its-locale-filter-list="en" lang="en">
-                  Extract host and port from MiniApp URI and concatenate them into a complete HTTPS URL: https://example.com:8080/ 
+                  Extract host and port from MiniApp URI and concatenate them into a complete HTTPS URL: https://example.com:8080/
                 </p>
                 <p its-locale-filter-list="zh-hans" lang="zh-hans">从 MiniApp URI 中取出 host 与 port，拼接为完整的 HTTPS URL: https://example.com:8080/ </p>
               </li>
@@ -520,7 +520,7 @@
           <p its-locale-filter-list="en" lang="en">There is one class of products that can conform to this specification, and that is the user agent above. </p>
           <p its-locale-filter-list="zh-hans" lang="zh-hans">本规范中的所有内容均为本草案的规范性内容，目前仍在草案阶段，但明确标记为“非规范性”的部分、示例和注释除外。有一类产品可以声明符合此规范，即上文中的 user agent。</p>
               </section>
-              
+
 
               <section class='informative'>
                 <h2>
@@ -558,11 +558,12 @@
 
     <section class="appendix">
       <h2>
-        <span its-locale-filter-list="en" lang="en">Acknowledgments</span>
-        <span its-locale-filter-list="zh-hans" lang="zh-hans">致谢</span>
+        <span its-locale-filter-list="en" lang="en">Acknowledgments(Non-Normative)</span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans">致谢(非正式)</span>
       </h2>
       <p>
-        TBD.
+        <span its-locale-filter-list="en" lang="en">The editors thank to Baidu Smart Mini Program team for reviewing this document over and over again, thank to the W3C MiniApps community group for providing a lot of valuable advice</span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans">编辑者感谢百度智能小程序团队对本文档的反复评审，感谢 W3C 小程序社区组成员提供了宝贵的意见</span>
       </p>
     </section>
 </body>
