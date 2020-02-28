@@ -120,8 +120,8 @@
             <span its-locale-filter-list="zh-hans" lang="zh-hans">用例1：在一个小程序内使用 MiniApp URI</span>
           </h2>
 
-          <p its-locale-filter-list="en" lang="en">All parts of the MiniApp URI are accessible. For example, the user agent can expose a global location object and store the following syntax parts into the location object. The developer can then access this location object through JavaScript in the mini app runtime environment.</p>
-          <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp URI 的各部分都是可以被访问到的。比如 user agent 可以暴露一个全局的 location 对象，并将以下语法部分存入 location 对象。那么开发者在小程序运行时环境可以通过 JavaScript 访问这个 location 对象。</p>
+          <p its-locale-filter-list="en" lang="en">All parts of the MiniApp URI are accessible. For example, the user agent can expose a global <code>location</code> object and store the following syntax parts into the <code>location</code> object. The developer can then access this <code>location</code> object through JavaScript in the mini app runtime environment.</p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp URI 的各部分都是可以被访问到的。比如 user agent 可以暴露一个全局的 <code>location</code> 对象，并将以下语法部分存入 <code>location</code> 对象。那么开发者在小程序运行时环境可以通过 JavaScript 访问这个 <code>location</code> 对象。</p>
 
             <pre class="example js">
               console.log(location.href); // miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?k=v#bar
@@ -136,8 +136,8 @@
               console.log(location.hash); // #bar
             </pre>
 
-            <p its-locale-filter-list="en" lang="en">The user agent can also implement the URL interface. The developer can then use related properties and methods by accessing the object in the mini app runtime environment.</p>
-            <p its-locale-filter-list="zh-hans" lang="zh-hans">User agent 也可以实现 URL 接口。那么开发者在小程序运行时环境可以通过访问该对象使用相关的属性和方法。</p>
+            <p its-locale-filter-list="en" lang="en">The user agent can also implement the <code>URL</code> interface. The developer can then use related properties and methods by accessing the object in the mini app runtime environment.</p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">User agent 也可以实现 <code>URL</code> 接口。那么开发者在小程序运行时环境可以通过访问该对象使用相关的属性和方法。</p>
 
             <pre class="example js">
               const url = new URL("miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?k=v#bar")
@@ -167,8 +167,8 @@
 &lt;/html&gt;
         </pre>
 
-        <p its-locale-filter-list="en" lang="en">Embed an a tag with the href property as the mini app URI on the web page. When a user clicks the link, the user agent receives the protocol and dereferences it. Based on the host, id, version in the protocol, a request is made to a specific package server that can provide mini app package upload and download services, to download and open the corresponding mini app.</p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans">在 Web 页面中嵌入一个 href property 为小程序 URI 的 a 标签。当用户点击该链接时，user agent 会接收到该协议，并对该协议解引用，根据协议中的 host，id，version 请求特定的能提供小程序包上传和下载服务的 package server，下载并打开对应的小程序。</p>
+        <p its-locale-filter-list="en" lang="en">Embed an <code>a</code> element with the <code>href</code> attribute as the mini app URI on the web page. When a user clicks the link, the user agent receives the URI and dereferences it. Based on the host, id, version in the URI, a request is made to a specific package server that can provide mini app package upload and download services, to download and open the corresponding mini app.</p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">在 Web 页面中嵌入一个 href 属性为小程序 URI 的 <code>a</code> 元素。当用户点击该链接时，user agent 会接收到该 URI，并对该 URI 解引用，根据 URI 中的 host、id、version 请求特定的能提供小程序包上传和下载服务的 package server，下载并打开对应的小程序。</p>
 
         <p its-locale-filter-list="en" lang="en">As shown in the following flowchart, the package is a collection of mini app resource packages, and the content and structure of the packages are defined in the <a href="https://w3c.github.io/miniapp/specs/packaging/">packaging specification</a>.</p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">如下流程图，其中 package 为小程序资源包集合，包的内容和结构由<a href="https://w3c.github.io/miniapp/specs/packaging/">包规范</a>定义。</p>
@@ -177,7 +177,7 @@
           <span style="text-align:center;"><img src="images/use-case-2.png" alt="Open a MiniApp from web" width="600"></span>
           <figcaption>
             <span its-locale-filter-list="en" lang="en">Open a MiniApp from web</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">TBD</span>
+            <span its-locale-filter-list="zh-hans" lang="zh-hans">在 Web 中打开一个小程序</span>
           </figcaption>
         </figure>
 
@@ -203,7 +203,7 @@
             <span style="text-align:center;"><img src="images/use-case-3.png" alt="Open a MiniApp in development environment" width="600"></span>
             <figcaption>
               <span its-locale-filter-list="en" lang="en">Open a MiniApp in development environment</span>
-              <span its-locale-filter-list="zh-hans" lang="zh-hans">TBD</span>
+              <span its-locale-filter-list="zh-hans" lang="zh-hans">在开发环境中打开一个小程序</span>
             </figcaption>
           </figure>
 
