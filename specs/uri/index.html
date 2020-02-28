@@ -226,10 +226,10 @@
             <span its-locale-filter-list="zh-hans" lang="zh-hans">语法</span>
           </h2>
           <p its-locale-filter-list="en" lang="en">
-            The MiniApp URI syntax is defined using [[ABNF]] to introduce host, port, path-abempty, query, fragment, unreserved of [[RFC3986]].
+            The MiniApp URI syntax is defined using [[ABNF]], using <code>host</code>, <code>port</code>, <code>path-abempty</code>, <code>query</code>, <code>fragment</code>, and <code>unreserved</code> from [[RFC3986]].
           </p>
           <p its-locale-filter-list="zh-hans" lang="zh-hans">
-            MiniApp URI 语法使用 [[ABNF]] 定义，引入 [[RFC3986]] 的 host、port、path-abempty、query、fragment、unreserved。
+            MiniApp URI 语法使用 [[ABNF]] 定义，引入 [[RFC3986]] 的 <code>host</code>、<code>port</code>、<code>path-abempty</code>、<code>query</code>、<code>fragment</code> 和 <code>unreserved</code>。
           </p>
           <pre>
             miniappuri = scheme "://" authority path-abempty ["?" query ] ["#" fragment ]
@@ -243,6 +243,8 @@
           <p its-locale-filter-list="en" lang="en">The following are the MiniApp URI examples that conform to this syntax rule:</p>
           <p its-locale-filter-list="zh-hans" lang="zh-hans">以下是符合本语法规则的 MiniApp URI 示例：</p>
 
+          <aside class="example" title=
+            "MiniApp URI examples">
           <ol>
             <li>miniapp://foo</li>
             <li>miniapp://foo/pages/index</li>
@@ -252,9 +254,10 @@
             <li>miniapp://foo;version=1.0.1@example.com/pages/index?category=book#section-3</li>
             <li>miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?category=book#section-3</li>
           </ol>
+          </aside>
 
-          <p its-locale-filter-list="en" lang="en">The strings of the MiniApp URI scheme must conform to the character set rules of the URI declared in RFC3986.</p>
-          <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp URI scheme 的字符串必须要符合在 RFC3986 中声明的 URI 的字符集规则。</p>
+          <p its-locale-filter-list="en" lang="en">The strings of the MiniApp URI scheme must conform to the character set rules of the URI declared in [[RFC3986]].</p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp URI scheme 的字符串必须要符合在 [[RFC3986]] 中声明的 URI 的字符集规则。</p>
 
           <section>
             <h2>id</h2>
@@ -344,16 +347,16 @@
 
             <ol start=1>
             <li>
-              <p its-locale-filter-list="en" lang="en">User agent recognizes MiniApp URI. If the scheme of this URI is ‘miniapp’, the user agent considers it as MiniApp URI and parses the syntax components according to the syntax rules specified in this specification.</p>
-              <p its-locale-filter-list="zh-hans" lang="zh-hans">user agent 识别 MiniApp URI。如果该 URI 的 scheme 为 ‘miniapp’，则 user agent 认为其是 MiniApp URI，并以本规范中规定的语法规则解析语法部件。 </p>
+              <p its-locale-filter-list="en" lang="en">User agent recognizes MiniApp URI. If the scheme of this URI is <code>miniapp</code>, the user agent considers it as a MiniApp URI and parses the syntax components according to the syntax rules specified in this specification.</p>
+              <p its-locale-filter-list="zh-hans" lang="zh-hans">user agent 识别 MiniApp URI。如果该 URI 的 scheme 为 <code>miniapp</code>，则 user agent 认为其是 MiniApp URI，并以本规范中规定的语法规则解析语法部件。 </p>
             </li>
             <li>
-              <p its-locale-filter-list="en" lang="en">The user agent parses the syntax components of MiniApp URI according to the above syntax rules into id, version, host, port, path, query, fragment. If the syntax parsing fails, the user agent terminates this dereferencing algorithm.</p>
-              <p its-locale-filter-list="zh-hans" lang="zh-hans">user agent 解析 MiniApp URI 语法部件。User agent 依据上述语法规则，将 MiniApp URI 解析为 id，version， host， port， path， query， fragment 语法部件。如果语法解析失败，user agent  则终止此解引用算法。</p>
+              <p its-locale-filter-list="en" lang="en">The user agent parses the syntax components of MiniApp URI according to the above syntax rules into id, version, host, port, path, query, and fragment. If the syntax parsing fails, the user agent terminates this dereferencing algorithm.</p>
+              <p its-locale-filter-list="zh-hans" lang="zh-hans">user agent 解析 MiniApp URI 语法部件。User agent 依据上述语法规则，将 MiniApp URI 解析为 id、version、 host、 port、 path、 query 和 fragment 语法部件。如果语法解析失败，user agent  则终止此解引用算法。</p>
             </li>
             <li>
               <p its-locale-filter-list="en" lang="en">The user agent uses the host and port information as the source to obtain the mini app package with specified identification. The mapping relation between the host and the method to obtain the applet package is determined by the user agent, and the user agent handles different existence modes of host values:</p>
-              <p its-locale-filter-list="zh-hans" lang="zh-hans">user agent 将 host 与 port 信息作为获取指定标识的小程序包的来源。host 与小程序包获取方式间的映射关系由 user agent 确定，User agent 需要处理 host 值的不同存在方式：</p>
+              <p its-locale-filter-list="zh-hans" lang="zh-hans">user agent 将 host 与 port 信息作为获取指定标识的小程序包的来源。host 与小程序包获取方式间的映射关系由 user agent 确定，user agent 需要处理 host 值的不同存在方式：</p>
             </li>
             </ol>
 
@@ -506,7 +509,7 @@
                 <p its-locale-filter-list="en" lang="en">
                   The user agent determines whether the request is successful based on status and continues to parse the response body when status is 200. A failure exception is processed when status is not 200.
                 </p>
-              <p its-locale-filter-list="zh-hans" lang="zh-hans">user agent 根据 status 来判断请求是否成功，当 status 为200 时，则继续解析响应体。当 status 不为 200 时，则处理失败异常。</p>
+              <p its-locale-filter-list="zh-hans" lang="zh-hans">user agent 根据 status 来判断请求是否成功，当 status 为 200 时，则继续解析响应体。当 status 不为 200 时，则处理失败异常。</p>
               </li>
               <li>
                 <p its-locale-filter-list="en" lang="en">
@@ -518,7 +521,7 @@
                 <p its-locale-filter-list="en" lang="en">
                   For downloaded mini app package, use the package format specified in the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging</a> specification to decompress.
                 </p>
-              <p its-locale-filter-list="zh-hans" lang="zh-hans">对于下载好的小程序包，使用 <a href="https://w3c.github.io/miniapp/specs/packaging/">小程序打包规范</a> 中规定的包格式进行解压缩。</p>
+              <p its-locale-filter-list="zh-hans" lang="zh-hans">对于下载好的小程序包，使用<a href="https://w3c.github.io/miniapp/specs/packaging/">小程序打包规范</a>中规定的包格式进行解压缩。</p>
               </li>
               </ol>
               </section>
