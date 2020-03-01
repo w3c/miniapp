@@ -8,9 +8,7 @@ Dan Chou, Shuo Wang, Qian Liu, Tengyuan Zhang
 
 ## 1. Introduction
 ### What is this?
-What is MiniApp：[https://w3c.github.io/miniapp/white-paper/#what-is-miniapp](https://w3c.github.io/miniapp/white-paper/#what-is-miniapp)
-
-MiniApp URI Scheme defines the Uniform Resource Identifier of a MiniApp.
+MiniApp URI Scheme defines the Uniform Resource Identifier of a MiniApp ([What is MiniApp?](https://w3c.github.io/miniapp/white-paper/#what-is-miniapp)).
 
 Any application, including Web application, which references a MiniApp resource can use its MiniApp URI Scheme to claim the resource it's trying to reference.
 
@@ -20,16 +18,21 @@ Each MiniApp vendors, i.e. the MiniApp packaging service providers, are now usin
 
 For example:
 
-| User Agent    | URI                                                             |
-|:--------------|:----------------------------------------------------------------|
-| Wechat App    | `weixin://dl/<path>/?appid=<appId>&businessType=<businessType>` |
-| Alipay App    | `alipays://platformapi/startapp?appId=<appId>&url=<path>`       |
-| Quick App     | `http://hapjs.org/app/<package>/[path][?key=value]`             |
-|               | `https://hapjs.org/app/<package>/[path][?key=value]`            |
-|               | `hap://app/<package>/[path][?key=value]`                        |
-| Baidu App     | `baiduboxxapp://swan/appKey/path?key=value`                     |
-| Bytedance App | `sslocal://microapp?app_id=<appId>&start_page=pages/home/home`  |
-|               | `snssdk143://microapp?app_id=<appId>&start_page=<path>`         |
+<table>
+    <thead>
+        <tr class="thead-first-child"><th align="left"> User Agent    </th><th align="left"> URI                                                             </th></tr>
+    </thead>
+    <tbody>
+        <tr class="tbody-first-child"><td align="left"> Wechat App    </td><td align="left"> <code>weixin://dl/&lt;path&gt;/?appid=&lt;appId&gt;&amp;businessType=&lt;businessType&gt;</code> </td></tr>
+        <tr class="tbody-even-child"><td align="left"> Alipay App    </td><td align="left"> <code>alipays://platformapi/startapp?appId=&lt;appId&gt;&amp;url=&lt;path&gt;</code>       </td></tr>
+        <tr class="tbody-odd-child"><td rowspan="3" align="left"> Quick App     </td><td align="left"> <code>http://hapjs.org/app/&lt;package&gt;/[path][?key=value]</code>             </td></tr>
+        <tr class="tbody-even-child"><td align="left"> <code>https://hapjs.org/app/&lt;package&gt;/[path][?key=value]</code>            </td></tr>
+        <tr class="tbody-odd-child"><td align="left"> <code>hap://app/&lt;package&gt;/[path][?key=value]</code>                        </td></tr>
+        <tr class="tbody-even-child"><td align="left"> Baidu App     </td><td align="left"> <code>baiduboxxapp://swan/appKey/path?key=value</code>                     </td></tr>
+        <tr class="tbody-odd-child"><td rowspan="2" align="left"> Bytedance App </td><td align="left"> <code>sslocal://microapp?app_id=&lt;appId&gt;&amp;start_page=pages/home/home</code>  </td></tr>
+        <tr class="tbody-even-child"><td align="left"> <code>snssdk143://microapp?app_id=&lt;appId&gt;&amp;start_page=&lt;path&gt;</code>         </td></tr>
+    </tbody>
+</table>
 
 ## 2. Goals
 
@@ -67,9 +70,10 @@ The following titles are also important but out of the scope of the MiniApp URI 
 
 ### Scenario 1 A link to a miniapp in a web page
 
-![figure1. the use case which link to a miniapp in a web page](https://images-cdn.shimo.im/BqkA6Gqh1CQArUFl/image.png__thumbnail)
+<p><img style="width: 500px" src="https://images-cdn.shimo.im/BqkA6Gqh1CQArUFl/image.png__thumbnail" alt="figure1. the use case which link to a miniapp in a web page" /></p>
 
-```
+example code:
+```html
 <!doctype html>
 <html>
 <a href="miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?category=book#section-3">open a MiniApp</a>
@@ -83,7 +87,7 @@ Browsers may handle the click action of Link A inconsistently for this Web page.
 ### Scenario 2 Use MiniApp URI within a miniapp
 Similar to parsing the URLs of each parts of the context for a web page, in MiniApp's runtime context, developers also need to know all the necessary information of the URI corresponding to the current MiniApp page. These information may include,
 
-```
+```javascript
 console.log(location.href);     // miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?k=v#bar
 console.log(location.protocol); // miniapp:
 console.log(location.origin);   // miniapp://foo;version=1.0.1-trial@example.com:8080
@@ -96,7 +100,7 @@ console.log(location.search);   // ?k=v
 console.log(location.hash);     // #bar
 ```
 
-More use case of MiniApp can be found in the MiniApp White Paper <[https://w3c.github.io/miniapp/white-paper/#case-studies](https://w3c.github.io/miniapp/white-paper/#case-studies)>.
+More use case of MiniApp can be found in the [MiniApp White Paper use case](https://w3c.github.io/miniapp/white-paper/#case-studies).
 
 ## 5. Security and Privacy Considerations
 
@@ -117,9 +121,12 @@ The proposal of the URI scheme is still in an early stage. The main form of disc
 [https://github.com/w3c/miniapp/issues/20](https://github.com/w3c/miniapp/issues/20)
 
 ### 6.2 Q&A
-**Question 1：【Syntax-appId】The syntax 'foo@example.com' represents the username for traditional usage in URL. Is it appropriate to reuse this syntax for appId in MiniApp URIs?（by @hax）**
 
-Answer 1：
+#### Q1：About Syntax-appId
+**Question 1: The syntax `foo@example.com` represents the username for traditional usage in URL. Is it appropriate to reuse this syntax for appId in MiniApp URIs?（by @hax）**
+
+
+**Answer 1：**
 
 In some URI protocals, the content before '@'  does indeed represent username. And those protocals are usually used to locate a specific resource related to a person's identify, such as email or ftp.
 
@@ -129,7 +136,8 @@ Therefore, in our opinion, it is appropriate** **for appId to take the  username
 
  
 
-**Question 2: [syntax-host] Traditionally,  in an URI like "scheme://foo", foo represents the host like HTTP(s) URL, or the path like file URL. But with MiniApp URI, foo is not host or path. That's mean the original correspondence is changed. Is this appropriate? (by @hax)**
+#### Q2: About syntax-host
+**Question 2: Traditionally,  in an URI like "scheme://foo", foo represents the host like HTTP(s) URL, or the path like file URL. But with MiniApp URI, foo is not host or path. That's mean the original correspondence is changed. Is this appropriate? (by @hax)**
 
 
 Answer 2. Unlike regular resources that must be obtained through the network,  it is determined by the user agent where to obtain the resources (either network or local).
@@ -138,25 +146,28 @@ For this feature, we have designed the MiniApp URI syntax that the host of the a
 
 The MiniApp URI 'miniapp://foo' which has only appId  is similar to the known URN, such as tel: + 1-816-555-0000, isbn: 0451450523.
 
-**opening question:** Judging from the syntax description of RFC 3986 specification and the known URL, we did not find the case which authority is required but host is omitted. We want your help to review whether this design complies with RFC 3986 specification.
+**opening question:** Judging from the syntax description of RFC 3986 specification and the known URL, we did not find the case which authority is required but host is omitted. We want your help to review whether this design complies with RFC 3986 specification.?
 
 
-**Question 3: [Security] Does MiniApp URI has security risk?(by @hax)**
+#### Q3 About security
+**Question 3: Does MiniApp URI has security risk?(by @hax)**
 
-Answer 3: The MiniApp URI protocol may exposes the package address in some situation, which makes someone think that there may be security risk.  However, for the time being, the address of the package is not secret information. That can be obtained easily by capturing the accessing, etc. Therefore, expressing the package address in the URI does not increase the security risk.
+**Answer 3:** The MiniApp URI protocol may exposes the package address in some situation, which makes someone think that there may be security risk.  However, for the time being, the address of the package is not secret information. That can be obtained easily by capturing the accessing, etc. Therefore, expressing the package address in the URI does not increase the security risk.
 
 For other possible security risks, we have explained in the "Security and Privacy" section.
 
 For the security of the entire MiniApp, not only does the provider of the package need to guarantee the security of package transmission, caching, and dereferencing, but also the user agent needs to consider the security of the use of each high-level component or api.
 
-**Question 4: 【syntax-version] What is the relationship between version in URI and versionName / versionCode in manifest? (By @hax)**
+#### Q4 About syntax-version
+**Question 4: What is the relationship between version in URI and versionName / versionCode in manifest? (By @hax)**
 
-Answer: According to the editor's explaining for the Maniafest spec, versionName is a semantic, optional field that can be used by the user agent or developer to show it to the user; and versionCode is a number that is incremented each time the MiniApp is released. Therefore, the version syntax component in the MiniApp URI can be mapped to the versionCode in the Manifest proposal.
+**Answer 4:** According to the editor's explaining for the Maniafest spec, versionName is a semantic, optional field that can be used by the user agent or developer to show it to the user; and versionCode is a number that is incremented each time the MiniApp is released. Therefore, the version syntax component in the MiniApp URI can be mapped to the versionCode in the Manifest proposal.
 
 
- **Question 5：[dereference] it seems the "dereferencing" process ends up with a standard HTTP(s) URL. Wouldn't using that as is make it more accessible to end-users? This would trip unless you have a runtime (which would be also presumably, be a browser) - it feels like this tripwire mechanism's main motivation is to make the user install the runtime (in which case, what does this runtime provide that the current browser does not?), which I'm not sure is something that I personally would agree with. (by @cynthia)**
+#### Q5 About dereference
+**Question 5: it seems the "dereferencing" process ends up with a standard HTTP(s) URL. Wouldn't using that as is make it more accessible to end-users? This would trip unless you have a runtime (which would be also presumably, be a browser) - it feels like this tripwire mechanism's main motivation is to make the user install the runtime (in which case, what does this runtime provide that the current browser does not?), which I'm not sure is something that I personally would agree with. (by @cynthia)**
 
-Answer: I understand your question contains two points,
+**Answer 5:** I understand your question contains two points,
 
 1. Why not directly use the HTTPS protocol as the MiniApp URI?
 
@@ -172,9 +183,9 @@ In other case, the user agent can specific its own mapping relationship with "ho
 
 In summary, MiniApp URI are designed to locate MiniApp resource cross-platform, regardless of how they are obtained.That cannot be expressed intuitively through HTTPS URLs only. This is why we mentioned in Chapter 6 that it is non-normative, and it just describes a user scenario.
 
-For point 2, the runtime make miniapp can help to fill the gap of the Web and the Native.(https://w3c.github.io/miniapp/white-paper/#what-is-miniapp). And because the design of the MiniApp is different from traditional web applications ([https://w3c.github.io/miniapp/white-paper/#core-features)](https://w3c.github.io/miniapp/white-paper/#core-features),/). Even if the miniapp packaged is downloaded by a traditional browser, it cannot be opened and run.
+For point 2, the runtime make miniapp can help to fill the gap of the Web and the Native.(like we mentioned in [miniapp white paper introduction](https://w3c.github.io/miniapp/white-paper/#what-is-miniapp). And because the design of the MiniApp is different from traditional web applications (like we mentioned in [miniapp white paper core-features)](https://w3c.github.io/miniapp/white-paper/#core-features)). Even if the miniapp packaged is downloaded by a traditional browser, it cannot be opened and run.
 
-And with the necessity of the MiniApp URI demonstrated above, therefore, browsers need to implement MiniApp URI specifications to correctly parse MiniApp URIs and implement MiniApp runtime related specifications (under development) to open and run MiniApps properly
+And with the necessity of the MiniApp URI demonstrated above, therefore, browsers need to implement MiniApp URI specifications to correctly parse MiniApp URIs and implement MiniApp runtime related specifications (under development) to open and run MiniApps properly.
 
 
 ## References & acknowledgements
