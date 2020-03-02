@@ -77,7 +77,7 @@ The following titles are also important but out of the scope of the MiniApp URI 
 
 ### Scenario 1 A link to a miniapp in a web page
 
-<p><img style="width: 500px!important;" src="https://images-cdn.shimo.im/BqkA6Gqh1CQArUFl/image.png__thumbnail" alt="figure1. the use case which link to a miniapp in a web page" /></p>
+<p><img width="500px" src="https://images-cdn.shimo.im/BqkA6Gqh1CQArUFl/image.png__thumbnail" alt="figure1. the use case which link to a miniapp in a web page" /></p>
 
 Example code:
 
@@ -125,7 +125,7 @@ More use case of MiniApp can be found in the [MiniApp White Paper use case](http
 1. User Agent should isolate the resources of the local package. Only the current miniapp can cache or access these resources, while other miniapp or applications are not supposed to. In addition, the user agent needs to obfuscate the resource names and provide mapping for the paths of the stored files, to prevent file privacy leaks.
 2. User agent should restrict the permissions of the miniapp to access certain information, miniapp can only access the user's private information (such as user address, mobile number, or email) after the user has authorized.
 
-## 6. Detailed design discussion
+## 6. Detailed design discussions
 
 The proposal of the URI scheme is still in an early stage. The main form of discussion are meetings and offline communication. All of the discussion has been recorded in [the Q&A document](./Q&A.md)
 
