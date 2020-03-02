@@ -10,7 +10,7 @@
 
 
 
-### 2. Is the syntax ["@" host [":" port]], is there any restriction to `host`?
+### 2. In the syntax ["@" host [":" port]], is there any restriction to `host`?
 
 **Answer:** The host field is optional, and the value is parsed by the user agent. The host can be a null value, or it can represent some special package fetching logic, such as local debugging.
 
