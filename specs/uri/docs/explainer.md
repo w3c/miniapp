@@ -10,7 +10,7 @@ Dan Chou, Shuo Wang, Qian Liu, Tengyuan Zhang
 ### What is this?
 MiniApp URI Scheme defines the Uniform Resource Identifier of a MiniApp ([What is MiniApp?](https://w3c.github.io/miniapp/white-paper/#what-is-miniapp)).
 
-Any application, including Web application, which references a MiniApp resource can use its MiniApp URI Scheme to claim the resource it's trying to reference.
+Applications including Web applications can use MiniApp URI Scheme to claim the MiniApp resource it's trying to reference.
 
 ### Why do we care？
 
@@ -36,12 +36,12 @@ For example:
 
 ## 2. Goals
 
-The MiniApp URI Scheme specification aims to provide a set of conform syntax rules to concatenate the information of a miniapp, such as id, version, package address, so that the user agents can identify, parse, and obtain the miniapp resource on any platform with this algorithm.
+The MiniApp URI Scheme specification aims to provide a set of conform syntax rules to concatenate the information of a miniapp, such as id, version, package address, so that the user agents can identify, parse, and obtain the miniapp resource on any platform.
 
 The miniapp URI achieve this goal by the following design:
 
-* Identify the miniapp package resource by the id, host, port and version components. Usually, through host and IP, a user agent can discover a miniapp package management service, then can access a specific miniapp package by providing the unique ID and version of the miniapp.
-* Identify the resource in miniapp package by path, query and fragment components. The meaning of the three components is close to a HTTP url in browser. How those components can be used depends on other miniapp specs, for example, [MiniApp package specification](https://w3c.github.io/miniapp/specs/packaging/).
+* Identify the miniapp package resource by its id, host, port and version components. In most cases, through host and IP, a user agent can discover a miniapp package management service, then access a specific miniapp package by providing the unique ID and version of the miniapp.
+* Identify the resource inside miniapp package by its path, query and fragment components. The definition of these three components is close to a HTTP url in browser. How those components can be used relies on other miniapp specs, especially, the [MiniApp package specification](https://w3c.github.io/miniapp/specs/packaging/).
 
 ### Key Considerations
 #### Why is host and port needed?
