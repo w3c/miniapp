@@ -1,6 +1,6 @@
 # MiniApp Specifications
 
-* [URI Scheme](https://w3c.github.io/miniapp/specs/uri/)
+* URI Scheme: [spec](https://w3c.github.io/miniapp/specs/uri/) / [explainer](https://github.com/w3c/miniapp/blob/gh-pages/specs/uri/docs/explainer.md)
 
 This specification defines the MiniApp URI scheme syntax and the process to dereference the MiniApp URI scheme. The MiniApp URI scheme syntax contains specifications for specific MiniApp URI syntax components based on the URI specification. Implementing this specification enables the user agent to locate the resources of MiniApp.
 
