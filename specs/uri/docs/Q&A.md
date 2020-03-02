@@ -1,4 +1,4 @@
-# Question & Answer
+# Questions & Answers
 
 > Note: This document documents Q&A during all discussions about [MiniApp URI Scheme](https://w3c.github.io/miniapp/specs/uri/) spec.
 
@@ -6,20 +6,20 @@
 
 ### 1. Why does the URI need the `host` field, do we need to download the package from another website?
 
-**Answer：** At present, there is such a demand for MiniApp. Such as, the Open Source Alliance of Baidu Smart Program has a scenario that an alliance member user agent to download MiniApp packages from package server that provided by another user agent.
+**Answer:** At present, there is such a demand for MiniApp. For example, the Open Source Alliance of Baidu Smart Program has a scenario that an alliance member user agent downloads MiniApp packages from package server provided by another user agent.
 
 
 
-### 2. For the syntax ["@" host [":" port]], does host is restricted?
+### 2. Is the syntax ["@" host [":" port]], is there any restriction to `host`?
 
-**Answer：**: The host field is optional, and the value is parsed by the user agent. The host can be a null value, or it can represent some special package fetching logic, such as local debugging.
+**Answer:** The host field is optional, and the value is parsed by the user agent. The host can be a null value, or it can represent some special package fetching logic, such as local debugging.
 
 
 ## About syntax-appId
 
 ### 1. The syntax `foo@example.com` represents the username for traditional usage in URL. Is it appropriate to reuse this syntax for appId in MiniApp URIs?（by @hax)
 
-**Answer：** In some URI protocol, the content before `@`  does indeed represent username. And those protocals are usually used to locate a specific resource related to a person's identify, such as email or ftp.
+**Answer:** In some URI protocol, the content before `@`  does indeed represent username. And those protocals are usually used to locate a specific resource related to a person's identify, such as email or ftp.
 
 But in MiniApp URI, there is no concept of 'user', so we needn't a real username.  What's the more , appid as the identity of the MiniApp can correspond to the meaning of username relative to resources.
 
@@ -28,7 +28,7 @@ Therefore, in our opinion, it is appropriate for appId to take the  username com
 
 ### 2. Traditionally,  in an URI like "scheme://foo", `foo` represents the host like HTTP(s) URL, or the path like file URL. But with MiniApp URI, `foo` is not host or path. That means the original correspondence is changed. Is this appropriate? (by @hax)
 
-**Answer：** Unlike regular resources that must be obtained through the network, where to obtain the resources (network or local) is up to the user agent.
+**Answer:** Unlike regular resources that must be obtained through the network, where to obtain the resources (network or local) is up to the user agent.
 
 For this feature, we have designed the MiniApp URI syntax that the host of the authority can be omitted, but appId, as the unique identifier of the MiniApp cannot be omitted.
 
@@ -46,10 +46,11 @@ The MiniApp URI 'miniapp://foo' which has only appId  is similar to the known UR
 
 
 
-## About use case
+## About use cases
 
-### 1. Is `location` in [Example 1](https://w3c.github.io/miniapp/specs/uri/#example-1-use-miniapp-uri-in-a-mini-app-1-miniapp-uri) related to `location` of dom?
-**Answer：** There is no association. It is recommended that the user agent provide MiniApp URI analysis results in the runtime environment of the MiniApp.
+### 1. Is `location` in [Example 1](https://w3c.github.io/miniapp/specs/uri/#example-1-use-miniapp-uri-in-a-mini-app-1-miniapp-uri) related to the HTML [Location](https://html.spec.whatwg.org/multipage/history.html#the-location-interface) interface?
+
+**Answer:** There is no association. It is recommended that the user agent provides MiniApp URI analysis results in the runtime environment of the MiniApp.
 
 
 
@@ -68,7 +69,7 @@ For the security of the entire MiniApp, not only does the provider of the packag
 ## About accessibility
 
 ### 1. What happens when a browser without MiniApp runtime accesses the MiniApp URI?
-**Answer:**  If the dereference of the MiniApp URI is not supported, then generally, the browser will give it to the system to identify it. If it cannot be identified, it will not respond or prompt.
+**Answer:**  If the dereference of the MiniApp URI is not supported, then generally, the browser will let the operating system to identify it. If it cannot be identified, it will not respond or prompt.
 And if the developer hopes that the MiniApp can still be called even if the MiniApp URI is running in an unsupported browser, the developer can use some known methods in the industry, such as the deep link, to call up the designated user agent which can recognize and parse MiniApp URIs.
 
 
@@ -78,7 +79,7 @@ And if the developer hopes that the MiniApp can still be called even if the Mini
 
 ### 1. Why using the HTTPS protocol to download MiniApp package?
 
-**Answer:** There is no requirement on how to download packages. This chapter is only a practical way to describes a user scenario. User agent can also download packages using other protocols, or just obtain MiniApp packages locally.
+**Answer:** There is no requirement on how to download packages. [This chapter](https://w3c.github.io/miniapp/specs/uri/#https) is only a practical way to describe a user scenario. User agents can also download packages using other protocols, or just obtain MiniApp packages locally.
 
 
 
@@ -93,7 +94,7 @@ And if the developer hopes that the MiniApp can still be called even if the Mini
 For point 1: downloading a package through the network is just one of the ways to get a package. In addition, there are many ways to access a miniapp resource.
 
 
-For example, after accessing the miniapp once, the miniapp package would be stored locally. Or the user agent can preset the miniapp package before the user accesses the URI for performance (as we mentioned in [#2.1.6 of the miniapp white paper](https://w3c.github.io/miniapp/white-paper/#performance-and-user-experience
+For example, after accessing the miniapp once, the miniapp package would be stored locally. Or the user agent can preset the miniapp package before the user accesses the URI for performance (as we mentioned in [§ 2.1.6 of the miniapp white paper](https://w3c.github.io/miniapp/white-paper/#performance-and-user-experience
 )). Or when debugging the Miniapp, the developer can directly push the miniapp package to the user agent through a debugging tool.
 
 
@@ -102,8 +103,8 @@ In these cases, the user agent open miniapp locally according to the appId in Mi
 In other cases, the user agent can specify its own mapping relationship with "host" component. For example, the "bar" in "miniapp: // foo @ bar" can correspond a domain or a local directory, anyway.
 
 
-In summary, MiniApp URI are designed to locate MiniApp resource cross-platform, regardless of how they are obtained. That cannot be expressed intuitively through HTTPS URLs only. This is why we mentioned in [Chapter 6 Use HTTPS](https://w3c.github.io/miniapp/specs/uri/#https) that it is non-normative, and it just describes a user scenario.
+In summary, MiniApp URI are designed to locate MiniApp resource cross-platform, regardless of how they are obtained. That cannot be expressed intuitively through HTTPS URLs only. This is why we marked [Chapter 6](https://w3c.github.io/miniapp/specs/uri/#https) non-normative, and just describes it as a user scenario.
 
-For point 2, the runtime make miniapp can help to fill the gap of the Web and the Native (like we mentioned in [miniapp white paper introduction](https://w3c.github.io/miniapp/white-paper/#what-is-miniapp)). And because the design of the MiniApp is different from traditional web applications (like we mentioned in [miniapp white paper core-features](https://w3c.github.io/miniapp/white-paper/#core-features)). Even if the miniapp packaged is downloaded by a traditional browser, it cannot be opened and run.
+For point 2, the runtime make miniapp help fill the gap of the Web and the Native (like we mentioned in [miniapp white paper introduction](https://w3c.github.io/miniapp/white-paper/#what-is-miniapp)). And because the design of the MiniApp is different from traditional web applications (like we mentioned in [miniapp white paper core-features](https://w3c.github.io/miniapp/white-paper/#core-features)). Even if the miniapp packaged is downloaded by a traditional browser, it cannot be opened and run.
 
 And with the necessity of the MiniApp URI demonstrated above, therefore, browsers need to implement MiniApp URI specifications to correctly parse MiniApp URIs and implement MiniApp runtime related specifications (under development) to open and run MiniApps properly.
