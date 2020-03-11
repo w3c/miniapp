@@ -87,7 +87,7 @@
         <li>MiniApp Widget 的 User agent 应当能根据 <a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI 规范</a>
           中描述的过程解析 MiniApp URI 并获取 MiniApp 包，该过程应当符合 <a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI
             规范</a> 中解引用一节描述。</li>
-        <li>User agent 应当能按照 <b><i>[MiniApp Package 规范]</i></b> 的描述解析 MiniApp 包结构。</li>
+        <li>User agent 应当能按照 <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Package 规范</a> 的描述解析 MiniApp 包结构。</li>
         <li>User agent 应当能按照 <a href="https://w3c.github.io/miniapp/specs/manifest/">MiniApp Manifest 规范</a> 的描述解析
           manifest文件，以加载运行MiniApp Widget。在本文档的Manifest文件一节中描述了一些与 Widget 相关的特定需求。</li>
         <li>在运行过程中，User agent 应能根据 MiniApp URI 访问 MiniApp 包中的资源文件。</li>
@@ -99,6 +99,7 @@
         <li>User agent 可以将 MiniApp Widget 与自身界面结合在一起显示，以达到更好的融合体验。</li>
         <li>为了更好的将 MiniApp Widget 与 User agent 的界面融合，User agent 应当为 MiniApp Widget 提供自身样式的信息，以更好的支持诸如深色模式等需求。</li>
         <li>User agent 可以同时加载并显示多个 MiniApp Widget，例如在负一屏中同时显示相关的机票 Widget 和打车 Widget。</li>
+        <li>User agent的一些行为可能会导致 Widget 的展现和消失，此时应该正确触发 Widget 的生命周期回调。</li>
       </ol>
 
     </section>
@@ -117,7 +118,7 @@
     <section>
       <h2>包</h2>
       <p>与 MiniApp 保持一致，MiniApp Widget 同样以包的形式分发，User agent 获取到 MiniApp 包并进行校验后，获取包中包含的Widget信息，并正确地加载和显示。包的形式和规范应当与
-        MiniApp 包的形式 <b><i>[MiniApp Package 规范]</i></b> 保持一致。包括不限于文件组织形式、压缩格式、文件后缀名、数字签名等。User agent 会以同样的形式对 MiniApp
+        MiniApp 包的形式 <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Package 规范</a>  保持一致。包括不限于文件组织形式、压缩格式、文件后缀名、数字签名等。User agent 会以同样的形式对 MiniApp
         Widget 的包进行校验、安装等过程。</p>
       <p>在 MiniApp Widget 场景下，特定的需求：</p>
 
@@ -130,8 +131,8 @@
 
     <section>
       <h2>Manifest 文件</h2>
-      <p>MiniApp Widget 包中需要包含配置文件，开发者可通过 Manifest 文件设置 Widget 的基本信息、样式和路由等信息。Widget 的 Manifest 文件应当与 MiniApp Manifest
-        文件 的格式保持一致。特定地，在Widget环境中，会有一些变化：</p>
+      <p>MiniApp Widget 包中需要包含配置文件，开发者可通过 Manifest 文件设置 Widget 的基本信息、样式和路由等信息。Widget 的 Manifest 文件应当与
+        <a href="https://w3c.github.io/miniapp/specs/manifest/">MiniApp Manifest文件</a> 的格式保持一致。特定地，在Widget环境中，会有一些变化：</p>
 
       <b>widget 描述</b>
       <p>Manifest 文件中需要包含 widgets 字段（类似于pages字段），用于指定 MiniApp 中包含的 widget 的相关信息和配置，应当包含以下：</p>
@@ -148,8 +149,10 @@
 
     <section>
       <h2>Lifecycle</h2>
-      <p>MiniApp Widget 的生命周期应该与 <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp 的生命周期</a> 保持一致，因为
-        Widget 的形态和在客户端中运行的形式，会有一些新的生命周期方法需要定义。</p>
+      <p>MiniApp Widget 的生命周期应该与 <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp 的生命周期</a> 保持一致，
+        其中 onShow/onHide 生命周期回调的触发时机会有一些变化。因为 Widget 的出现和消失也可能发生在 User agent 将 Widget 滑出屏幕或者进行折叠操作时，
+        此时 Widget 的 onShow/onHide 也应该被正确的触发。
+        因为 Widget 的形态和在客户端中运行的形式，Widget 也需要支持一些新的生命周期方法：</p>
       <ol>
         <li>当系统语言/窗口大小/Darkmode 等发生变化时，Widget 需要接收到变化后的信息，以改变界面。</li>
         <li>客户端可能会通过传入数据的形式更新 Widget 界面的状态，此时不应该触发 Widget 的重新初始化。</li>
@@ -208,6 +211,7 @@
       <li><a href="https://w3c.github.io/miniapp/specs/manifest/">MiniApp Manifest文件规范</a>
       <li><a href="https://w3c.github.io/miniapp/specs/uri/"> MiniApp URI 规范</a>
       <li><a href="https://w3c.github.io/miniapp/specs/lifecycle/"> MiniApp 生命周期规范</a>
+      <li><a href="https://w3c.github.io/miniapp/specs/packaging/"> MiniApp Packaging规范</a>
     </ol>
   </section>
 
