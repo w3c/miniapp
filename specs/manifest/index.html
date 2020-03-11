@@ -54,7 +54,7 @@
 <body>
     <section id='abstract'>
         <p>
-          本规范定义了基于Json格式的Manifest文件和packaging结构，使开发者可通过Manifest文件设置MiniApp的基本信息、窗口样式和页面路由等信息。 这里，MiniApp 基本信息包括但不限于MiniApp ID、名称、版本名称、版本号以及最小平台版本等；窗口样式window包括但不限于导航栏、标题和窗口背景等；pages用于指定页面路由信息。
+          本规范定义了基于Json格式的Manifest文件和packaging结构，使开发者可通过Manifest文件设置MiniApp的基本信息、窗口样式和页面路由等信息。 这里，MiniApp 基本信息包括但不限于MiniApp ID、名称、版本名称、版本号以及最小平台版本等；窗口样式window包括但不限于导航栏、标题和窗口背景等；pages用于指定页面路由信息；widgets用于描述卡片信息。
         </p>
         <p>
           备注：目前只是列出MiniApp Manifest的一个基础子集，后续会根据不同的场景需求进行渐进式更新和补充。
@@ -132,7 +132,7 @@
 </td></tr>
 <tr>
 <td> minPlatformVersion </td>
-<td> Integer </td>
+<td> String </td>
 <td> 是 </td>
 <td> 支持最小平台版本
 </td></tr>
@@ -221,7 +221,7 @@
           <section>
             <h2>引擎版本 minPlatformVersion</h2>
             <p>
-              平台版本，保证MiniApp正常运行所需的平台最小版本支持。版本默认类型是整型数值，比如：<code>100</code>。
+              平台版本，保证MiniApp正常运行所需的平台最小版本支持。版本默认类型是整型数值，比如：<code>1.0.0</code>。
             </p>
           </section>
 
@@ -347,55 +347,9 @@
             <h2>包结构 Packaging</h2>
           
             <p>
-              描述项目配置信息的manifest.json文件，全局逻辑文件app.js，全局样式文件app.css, 多个描述页面的css、xml、js文件，典型示例如下：
+              <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging 规范</a>包含描述项目配置信息的manifest.json文件，全局逻辑文件app.js，全局样式文件app.css, 多个描述页面的css、xml、js文件。
             </p>
-            <figure><img alt="Packaging figure" src="Packaging.png" width="228" height="494"></figure>
-
-            <p>
-              其中common目录下为公用的资源文件和组件文件，如：png，xml，css，js等。页面pages目录下存放各自页面私有的xml，css和js文件。
-            </p>
-
-            <section>
-            <h2>app.js</h2>
-            <p>
-              全局JavaScript逻辑和MiniApp全局应用生命周期管理，这里MiniApp全局应用生命周期详见：<a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle规范</a>。
-            </p>
-          </section>
-
-          <section>
-            <h2>app.css</h2>
-            <p>
-              描述全局样式，作用于MiniApp中的所有页面。
-            </p>
-          </section>
-
-          <section>
-            <h2>manifest.json</h2>
-            <p>
-              manifest.json文件中包含了应用描述、窗口样式和页面路由信息。
-            </p>
-          </section>
-
-          <section>
-            <h2>page xml文件</h2>
-            <p>
-              页面结构文件，可类似HTML文件，通过组件之间的组合构造页面结构。
-            </p>
-          </section>
-
-          <section>
-            <h2>page css文件</h2>
-            <p>
-              页面样式文件，用于描述组件样式，决定组件应该如何显示。页面组件样式会覆盖app.css全局样式文件。
-            </p>
-          </section>
-
-          <section>
-            <h2>page js文件</h2>
-            <p>
-              用来定义页面数据和实现页面生命周期接口，这里MiniApp页面生命周期详见：<a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle规范</a>。
-            </p>
-          </section>
+            
         </section>
         <section>
             <h2>需求依赖 Dependency</h2>
@@ -423,7 +377,7 @@
                 "versionCode": 1,
                 "description": "A Simple MiniApp Demo",
                 "icon": "common/xxx.png",
-                "minPlatformVersion": 100, 
+                "minPlatformVersion": "1.0.0", 
                 "pages": [
                   "pages/index/index",
                   "pages/detail/detail"
@@ -435,16 +389,151 @@
                   "backgroundColor": "#ffffff",
                   "fullScreen": false
                 },
-                "widgets": {
-                  "name": "widget",
-                  "path": "pages/index/index",
-                  "minPlatformVersion": 100
-                }
+                "widgets": [
+                  {
+                    "name": "widget",
+                    "path": "pages/index/index",
+                    "minPlatformVersion": "1.0.0"
+                  }
+                ]
               }
             </pre>
      </section>
     </section>
+	
+    <section class="appendix">
+      <h2>对比Web App Manifest</h2>
+	  <p>
+	    此表主要描述Mini App和Web App之间Manifest标签的差异化，表中"-"表示相应Manifest无此标签；这里，Mini App Manifest中pages和window标签为和Web App中的标签对应，pages和window标签出现了多次。
+      </p>
+                  <table>
 
+          <thead><tr>
+          <th> Mini App </th>
+          <th> Web App </th>
+          <th> Web App描述
+          </th></tr></thead><tbody>
+<tr>
+<td> dir </td>
+<td> dir </td>
+<td> 文本方向
+</td></tr>
+<tr>
+<td> lang </td>
+<td> lang </td>
+<td> 语言标签
+</td></tr>
+<tr>
+<td> appID </td>
+<td> - </td>
+<td> -
+</td></tr>
+<tr>
+<td> appName </td>
+<td> name </td>
+<td> 应用名称
+</td></tr>
+<tr>
+<td> shortName </td>
+<td> short_name </td>
+<td> 应用名称缩写
+</td></tr>
+<tr>
+<td> description </td>
+<td> description </td>
+<td> 应用描述
+</td></tr>
+<tr>
+<td> icon </td>
+<td> icon </td>
+<td> 应用图标
+</td></tr>
+<tr>
+<td> versionName </td>
+<td> - </td>
+<td> -
+</td></tr>
+<tr>
+<td> versionCode </td>
+<td> - </td>
+<td> -
+</td></tr>
+<tr>
+<td> minPlatformVersion </td>
+<td> - </td>
+<td> -
+</td></tr>
+<tr>
+<td> pages </td>
+<td> scope </td>
+<td> 导航范围
+</td></tr>
+<tr>
+<td> pages </td>
+<td> start_url </td>
+<td> 开始页面的URL
+</td></tr>
+<tr>
+<td> windows </td>
+<td> background_color </td>
+<td> 背景颜色
+</td></tr>
+<tr>
+<td> windows </td>
+<td> orientation </td>
+<td> 屏幕方向设置
+</td></tr>
+<tr>
+<td> windows </td>
+<td> display </td>
+<td> 显示模式
+</td></tr>
+<tr>
+<td> windows </td>
+<td> theme_color </td>
+<td> 主题颜色
+</td></tr>
+<tr>
+<td> widgets </td>
+<td> - </td>
+<td> -
+</td></tr>
+<tr>
+<td> - </td>
+<td> iarc_rating_id </td>
+<td> Web App IARC证书号
+</td></tr>
+<tr>
+<td> - </td>
+<td> related_applications </td>
+<td> 相关的本机应用程序集
+</td></tr>
+<tr>
+<tr>
+<td> - </td>
+<td> prefer_related_applications </td>
+<td> 指定相关的本机应用程序可用
+</td></tr>
+<tr>
+<tr>
+<td> - </td>
+<td> categories </td>
+<td> 应用分类
+</td></tr>
+<tr>
+<tr>
+<td> - </td>
+<td> screenshots </td>
+<td> 图片资源集
+</td></tr>
+<tr>
+<td> - </td>
+<td> shortcuts </td>
+<td> 关键任务的快捷方式
+</td></tr></tbody>
+</table>
+    </section>
+	
     <section class="appendix">
       <h2>
         致谢 Acknowledgments
