@@ -138,7 +138,7 @@
 </td></tr>
 <tr>
 <td> pages </td>
-<td> Object </td>
+<td> Array </td>
 <td> 是 </td>
 <td> 路由信息
 </td></tr>
@@ -207,14 +207,14 @@
           <section>
             <h2>版本名称 versionName</h2>
             <p>
-              versionName 是一个String类型的值，主要用作版本信息的描述。一般格式为：<code>1.0.0</code>，在版本控制、MiniApp应用与设备兼容性等方面发挥重要作用。
+              versionName 是一个String类型的值，主要用作版本信息的描述，也是向用户显示的版本号。一般格式为：<code>1.0.0</code>，在版本控制、MiniApp应用与设备兼容性等方面发挥重要作用。
             </p>
           </section>
 
           <section>
             <h2>版本号 versionCode</h2>
             <p>
-              versionCode 是一个Integer类型的值，根据版本发布过程进行递增。提高MiniApp的可维护性和安全性，比如：低版本不能覆盖高版本。默认值：<code>1</code>。
+              versionCode 是一个Integer类型的值，根据版本发布过程进行递增，不是向用户显示的版本号。用作提高MiniApp的可维护性和安全性，比如：低版本不能覆盖高版本。默认值：<code>1</code>。
             </p>
           </section>
 
@@ -235,8 +235,76 @@
           <section>
             <h2>窗口 window</h2>
             <p>
-              用于设置MiniApp的导航栏、标题和窗口背景色等表现样式。比如：<code>navigationBarTextStyle</code>、<code>navigationBarTitleText</code>、<code>navigationBarBackgroundColor</code>和<code>fullScreen</code>。
+              用于设置MiniApp的状态栏、导航条、标题和窗口背景色等样式，如下表所示：
             </p>
+              
+            <table>
+
+          <thead><tr>
+          <th> 属性 </th>
+          <th> 类型 </th>
+          <th> 必填 </th>
+          <th> 默认值 </th>
+          <th> 描述
+          </th></tr></thead><tbody>
+<tr>
+<td> navigationBarBackgroundColor </td>
+<td> HexColor </td>
+<td> 否 </td>
+<td> #000000 </td>
+<td> 导航栏背景颜色
+</td></tr>
+<tr>
+<td> navigationBarTextStyle </td>
+<td> String </td>
+<td> 否 </td>
+<td> white </td>
+<td> 导航栏标题颜色，仅支持black/white
+</td></tr>
+<tr>
+<td> navigationBarTitleText </td>
+<td> String </td>
+<td> 否 </td>
+<td> - </td>
+<td> 导航栏标题文字内容
+</td></tr>
+<tr>
+<td> navigationStyle </td>
+<td> String </td>
+<td> 否 </td>
+<td> default </td>
+<td> 导航栏样式, 有效值：default 默认样式 和 custom 自定义导航栏 （只保留右上角胶囊按钮）
+</td></tr>
+<tr>
+<td> backgroundColor </td>
+<td> HexColor </td>
+<td> 否 </td>
+<td> #ffffff </td>
+<td> 窗口的背景颜色
+</td></tr>
+<tr>
+<td> backgroundTextStyle </td>
+<td> String </td>
+<td> 否 </td>
+<td> dark </td>
+<td> 下拉背景字体、loading 图的样式，有效值：dark 和 light
+</td></tr>
+<tr>
+<td> enablePullDownRefresh </td>
+<td> Boolean </td>
+<td> 否 </td>
+<td> false </td>
+<td> 是否开启下拉刷新
+</td></tr>
+<tr>
+<td> onReachBottomDistance </td>
+<td> Number </td>
+<td> 否 </td>
+<td> 50 </td>
+<td> 页面上拉触底事件触发时距页面底部距离，单位为 px。
+</td></tr></tbody>
+</table>  
+              
           </section>
 
           <section>
