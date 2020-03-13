@@ -71,7 +71,8 @@
 
     <section>
           <h2>MiniApp Global Application Lifecycle</h2>
-          <h3>MiniApp Global Application Lifecycle States</h3>
+        <section>
+          <h2>MiniApp Global Application Lifecycle States</h2>
           <p>This spec defines what the lifecycle of a MiniApp global aplication is and adds definition to enable MiniApp to respond to four important lifecycle events commonly performed by MiniApp:</p>
           <ul>
           <li>MiniApp initialization</li>
@@ -95,8 +96,10 @@
           <li>Hidden: lifecycle state for MiniApp running in background. It is triggered once the MiniApp switches to be running from foreground to background.</li>
           <li>Error: lifecycle state for MiniApp error. It is triggered once the MiniApp is confronted with script error.</li>
           </ul>
+        </section>
           
-          <h3>MiniApp Global Application Lifecycle API</h3>
+        <section>
+          <h2>MiniApp Global Application Lifecycle API</h2>
           
           <p>MiniApp global application lifecycle involves the following API:</p>
           
@@ -120,11 +123,13 @@
           <li>onHide(): to monitor the callback of MiniApp switching to be running in the background.</li>
           <li>onError(error: String): to monitor the callback of MiniApp error.</li>
           </ul>
+        </section>
        </section>
 
         <section>
           <h2>MiniApp Page Lifecycle</h2>
-          <h3>MiniApp Page Lifecycle States</h3>
+         </section>
+          <h2>MiniApp Page Lifecycle States</h2>
             
           <p>This spec defines what the lifecycle of a MiniApp page is and adds definition to enable MiniApp to respond to five important page lifecycle events commonly performed by MiniApp:</p>
           <ul>
@@ -137,8 +142,8 @@
             
           <p>The following figure illustrates the MiniApp page lifecycle.</p>
           <figure id="lifecycle-img">
-            <span style="text-align:center;"><img src="images/lifecycle.png" alt="TBD" width="600"></span>
-            <figcaption>TBD</figcaption>
+            <span style="text-align:center;"><img src="images/lifecycle.png" alt="MiniApp page lifecycle" width="600"></span>
+            <figcaption>MiniApp page lifecycle illustration</figcaption>
           </figure>
 
           <ul>
@@ -160,8 +165,9 @@
           <li>Hidden: lifecycle state for MiniApp page running in background. It is triggered once the MiniApp page switches to be running from foreground to background.</li>
           <li>Unloaded: lifecycle state for MiniApp page destroying. It is triggered once the MiniApp page is destroyed.</li>
           </ul>
-          
-          <h3>MiniApp Page Lifecycle API</h3>
+       </section>
+       <section>
+          <h2>MiniApp Page Lifecycle API</h2>
           <p>MiniApp page lifecycle involves the following API:</p>
           <ul>
 <li>onLoad(query: Object): to monitor the callback of MiniApp page loading.
@@ -174,6 +180,7 @@
 <li>onHide(): to monitor the callback of MiniApp page switching to be running in the background.</li>
 <li>onUnload(): to monitor the callback of destroying MiniApp page.</li>
           </ul>
+         </section>
         </section>
 
     <section class="appendix">
