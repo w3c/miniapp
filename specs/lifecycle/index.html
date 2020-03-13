@@ -71,6 +71,15 @@
 
     <section>
           <h2>MiniApp Global Application Lifecycle</h2>
+          <h3>MiniApp Global Application Lifecycle States</h3>
+          <p>This spec defines what the lifecycle of a MiniApp global aplication is and adds definition to enable MiniApp to respond to four important lifecycle events commonly performed by MiniApp:</p>
+          <ul>
+          <li>MiniApp initialization</li>
+          <li>MiniApp running in foreground</li>
+          <li>MiniApp running in background</li>
+          <li>MiniApp error</li>
+          </ul>
+        
           <p>For each MiniApp, after initialized, it will be either running in the foreground or in the background.</p>
 
           <p>When user chooses to close the MiniApp by clicking the close button on MiniApp, or go to the mobile phone’s home screen, the MiniApp will not be destroyed immediately, but switch to be running in the background.</p>
@@ -79,10 +88,20 @@
           
           <p>Only when MiniApp runs in the background for more than a specific time duration (e.g. 5 minutes), or occupies too much system resources in the background, then MiniApp will be destroyed.</p>
           
-          <p>Therefore, MiniApp global application lifecycle contains the following events:</p>
+          <p>This spec formalizes four lifecycle states to support the above:</p>
+          <ul>
+          <li>Launched: lifecycle state for MiniApp initialization. This means that the MiniApp initialization is completed, and it is triggered only once. Through this event, developer can obtain the information of the MiniApp, such as URI, source info, etc.</li>
+          <li>Shown: lifecycle state for MiniApp running in foreground. It is triggered once the MiniApp launch is completed, or once the MiniApp switches to be running in foreground from background.</li>
+          <li>Hidden: lifecycle state for MiniApp running in background. It is triggered once the MiniApp switches to be running from foreground to background.</li>
+          <li>Error: lifecycle state for MiniApp error. It is triggered once the MiniApp is confronted with script error.</li>
+          </ul>
+          
+          <h3>MiniApp Global Application Lifecycle API</h3>
+          
+          <p>MiniApp global application lifecycle involves the following API:</p>
           
           <ul>
-          <li>onLaunch(object: Object): to monitor the callback of MiniApp initialization. It is triggered once the MiniApp initialization is completed, and it is triggered only once. Through this event, developer can obtain the information of the MiniApp, such as URI, source info, etc.
+          <li>onLaunch(object: Object): to monitor the callback of MiniApp initialization.
              <ul>
              <li>object contains several attributes:
                  <ul>
@@ -93,18 +112,29 @@
              </li>
              </ul>
           </li>
-          <li>onShow(object: Object): to monitor the callback of MiniApp foreground display. It is triggered once the MiniApp launch is completed, or the MiniApp switches to be running in foreground from background.
+          <li>onShow(object: Object): to monitor the callback of MiniApp foreground display.
              <ul>
              <li>Definition of object is same as the onLaunch(object: Object)</li>
              </ul>
           </li>
-          <li>onHide(): to monitor the callback of MiniApp switching to be running in the background. It is triggered once the MiniApp switches to be running from foreground to background.</li>
-          <li>onError(error: String): to monitor the callback of MiniApp error. It is triggered once the MiniApp is confronted with script error.</li>
+          <li>onHide(): to monitor the callback of MiniApp switching to be running in the background.</li>
+          <li>onError(error: String): to monitor the callback of MiniApp error.</li>
           </ul>
        </section>
 
         <section>
           <h2>MiniApp Page Lifecycle</h2>
+          <h3>MiniApp Page Lifecycle States</h3>
+            
+          <p>This spec defines what the lifecycle of a MiniApp page is and adds definition to enable MiniApp to respond to five important page lifecycle events commonly performed by MiniApp:</p>
+          <ul>
+          <li>MiniApp page loading</li>
+          <li>MiniApp page first rendering ready</li>
+          <li>MiniApp page running in foreground</li>
+          <li>MiniApp page running in background</li>
+          <li>MiniApp page unloading</li>
+          </ul>
+            
           <p>The following figure illustrates the MiniApp page lifecycle.</p>
           <figure id="lifecycle-img">
             <span style="text-align:center;"><img src="images/lifecycle.png" alt="TBD" width="600"></span>
@@ -114,25 +144,35 @@
           <ul>
 <li>When user firstly opens a MiniApp, the RenderView and Worker will simultaneously start the initialization.</li>
 <li>After Worker is initialized, it runs MiniApp global lifecycle event app.onLaunch and app.onShow to create the MiniApp instance.</li>
-<li>Afterwards，Worker runs MiniApp page lifecycle event page.onLoad and page.onShow event.</li>
+<li>Afterwards，Worker runs MiniApp page lifecycle event page.onLoad.</li>
 <li>Then Worker sends the initial data to RenderView to start the first render.</li>
 <li>Once first render is completed, RenderView notifies Worker, then Worker runs MiniApp page lifecycle event page.onReady.</li>
 <li>Afterwards, user can interact with MiniApp. RenderView can be triggered to deliver user event to Worker for further processing, then Workers returns result data to RenderView for re-render.</li>
-<li>If MiniApp page switch to be running in the background, Worker runs MiniApp page lifecycle event page.onHide keep alive. If MiniApp page switch to foreground, Woker runs MiniApp page lifecycle event page.onShow.</li>
-<li>If to destroy MiniApp page, Woker runs MiniApp page lifecycle event page.onUnload.</li>
+<li>If MiniApp page switch to be running in the background, Worker runs MiniApp page lifecycle event page.onHide keep alive. If MiniApp page switch to foreground, Worker runs MiniApp page lifecycle event page.onShow.</li>
+<li>If to destroy MiniApp page, Worker runs MiniApp page lifecycle event page.onUnload.</li>
           </ul>
-
-          <p>MiniApp page lifecycle contains the following events:</p>
+            
+          <p>This spec formalizes five page lifecycle states to support the above:</p>
           <ul>
-<li>onLoad(query: Object): to monitor the callback of MiniApp page loading. It is triggered once the MiniApp page loading is completed.
+          <li>Loaded: lifecycle state for MiniApp page loading. This means that MiniApp page loading is completed. At this moment, Worker has obtained initialization data.</li>
+          <li>Ready: lifecycle state for MiniApp page’s first rendering. It is triggered once the MiniApp page first rendering is completed.</li>
+          <li>Shown: lifecycle state for MiniApp page display. It is triggered once the page switches to be running in foreground from background.</li>
+          <li>Hidden: lifecycle state for MiniApp page running in background. It is triggered once the MiniApp page switches to be running from foreground to background.</li>
+          <li>Unloaded: lifecycle state for MiniApp page destroying. It is triggered once the MiniApp page is destroyed.</li>
+          </ul>
+          
+          <h3>MiniApp Page Lifecycle API</h3>
+          <p>MiniApp page lifecycle involves the following API:</p>
+          <ul>
+<li>onLoad(query: Object): to monitor the callback of MiniApp page loading.
 <ul>
 <li>query: inputted query for current MiniApp page</li>
 </ul>
 </li>
-<li>onShow(): to monitor the callback of MiniApp page display. It is triggered once the MiniApp page display is completed, or the MiniApp page switches to be running in foreground from background.</li>
-<li>onReady(): to monitor the callback of MiniApp page’s first rendering. It is triggered once the MiniApp page first rendering is completed.</li>
-<li>onHide(): to monitor the callback of MiniApp page switching to be running in the background. It is triggered once the MiniApp page switches to be running from foreground to background.</li>
-<li>onUnload(): to monitor the callback of destroying MiniApp page. It is triggered once the MiniApp page is destroyed.</li>
+<li>onShow(): to monitor the callback of MiniApp page display.</li>
+<li>onReady(): to monitor the callback of MiniApp page’s first rendering.</li>
+<li>onHide(): to monitor the callback of MiniApp page switching to be running in the background.</li>
+<li>onUnload(): to monitor the callback of destroying MiniApp page.</li>
           </ul>
         </section>
 
