@@ -66,11 +66,6 @@ the state of “Shown”
 enters the state of “Hidden”
 *	MiniApp page unloading: once the MiniApp page is destroyed, MiniApp page enters the state of “Unloaded”
 
-## Procedure of MiniApp lifecycle
-
-<figure id="lifecycle-img">
-  <span style="text-align:center;"><img src="lifecycle/images/lifecycle.png" alt="MiniApp page lifecycle" width="600"></span>
-</figure>
 
 ## Sample code
 
