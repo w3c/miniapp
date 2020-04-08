@@ -58,7 +58,13 @@
 <body>
     <section id='abstract'>
         <p>
-          This document specifies a standardized MiniApp packaging constructor to describe MiniApp package uniformly.
+            This document specifies a standardized MiniApp packaging constructor to describe MiniApp package uniformly.This provides a standard description of the package structure and the package construction methods that can be used in any miniapp runtime environment.
+        </p>
+        <p>
+            For example, by configuring the package resource's description file, developer can determine the path to start the miniapp. The miniapp runtime environment search for the specified path resource from the description file, and launch the specified page of the miniapp. The installation of the miniapp package is simpler than the native App. Miniapp runtime obtains the specified package resource through network request or local package file when the miniapp's first running. And caches the miniapp package locally. Miniapp runtime will load the package resource file from the local cache while next time started.
+        </p>
+        <p> 
+            The miniapp runtime loads the specified path resource according to the description file from miniapp package file, and miniapp can be launched offline. This provides a standard of complete package structure, maintaining offline capabilities and background running capabilities.
         </p>
     </section>
     
