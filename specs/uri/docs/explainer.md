@@ -2,8 +2,7 @@
 
 > Note: This document serves as a supplementary explanation of the [MiniApp URI Scheme](https://w3c.github.io/miniapp/specs/uri/) spec. If there is any inconsistency with the spec, you should consider the spec to be authoritative.
 
-
-## Authors：
+## Authors
 
 Dan Chou, Shuo Wang, Qian Liu, Tengyuan Zhang
 
