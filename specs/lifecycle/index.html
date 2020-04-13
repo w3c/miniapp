@@ -56,6 +56,9 @@
         <p>
           This specification defines the MiniApp lifecycle events and the process to manage MiniApp and each page's lifecycle. Implementing this specification enables the user agent to manage the lifecycle events of both global application lifecycle and page lifecycle.
         </p>
+        <p>
+          本规范定义了MiniApp生命周期的事件与管理小程序应用及各个MiniApp页面的生命周期流程。通过实施本规范可以实现user agent对MiniApp全局应用生命周期与MiniApp页面生命周期的管理。
+        </p>
     </section>
     <section id='sotd'>
         <p>
@@ -65,7 +68,9 @@
 
     <section>
         <h2>Background</h2>
-        <p>Application lifecycle mechanism provides a means to manage the lifecycle events of both global application lifecycle and page lifecycle. Developing MiniApp with knowledge of the application’s and page’s lifecycle state can lead to improved user experiences. MiniApp application lifecycle includes a set of events, with which MiniApp can choose to alter its behavior based on its state.
+        <p>Application lifecycle mechanism provides a means to manage the lifecycle events of both global application lifecycle and page lifecycle. Developing MiniApp with knowledge of the application’s and page’s lifecycle state can lead to improved user experiences. MiniApp lifecycle includes a set of events, with which MiniApp can choose to alter its behavior based on its state.
+        </p>
+        <p>应用生命周期机制提供了一种管理生命周期事件的机制，可以管理全局应用生命周期与页面生命周期。在开发MiniApp时，了解应用与页面的生命周期状态，可以帮助提供更好的用户体验。MiniApp生命周期包括一系列事件，MiniApp可以利用这些事件来基于生命周期状态变更MiniApp的行为。
         </p>
     </section>
 
@@ -74,27 +79,47 @@
         <section>
           <h2>MiniApp Global Application Lifecycle States</h2>
           <p>This spec defines what the lifecycle of a MiniApp global aplication is and adds definition to enable MiniApp to respond to four important lifecycle events commonly performed by MiniApp:</p>
+          <p>本规范规定MiniApp全局生命周期的定义，以及MiniApp重要的四个生命周期事件：</p>
           <ul>
           <li>MiniApp initialization</li>
           <li>MiniApp running in foreground</li>
           <li>MiniApp running in background</li> 
           <li>MiniApp error</li>
           </ul>
+          
+          <ul>
+          <li>MiniApp初始化</li>
+          <li>MiniApp前台运行</li>
+          <li>MiniApp后台运行</li> 
+          <li>MiniApp错误</li>
+          </ul>
         
           <p>For each MiniApp, after initialized, it will be either running in the foreground or in the background.</p>
+          <p>对每一个MiniApp，在初始化后，它会运行在前台或后台。</p>
 
           <p>When user chooses to close the MiniApp by clicking the close button on MiniApp, or go to the mobile phone’s home screen, the MiniApp will not be destroyed immediately, but switch to be running in the background.</p>
+          <p>当用户选择点击MiniApp的关闭按键来关闭MiniApp时，或者回到手机的桌面时，MiniApp并不会被销毁，而是转为运行在后台。</p>
           
           <p>When user reopens the same MiniApp, MiniApp will switch from running in the background to the foreground.</p>
-          
+          <p>当用户再次打开同一个MiniApp时，MiniApp会从后台切换为前台运行。</p>
+            
           <p>Only when MiniApp runs in the background for more than a specific time duration (e.g. 5 minutes), or occupies too much system resources in the background, then MiniApp will be destroyed.</p>
-          
+          <p>只有当MiniApp在后台运行了超过一段时间（比如5分钟），或者占用了太多后台系统资源，则MiniApp会被销毁。</p>
+            
           <p>This spec formalizes four lifecycle states to support the above:</p>
+          <p>本规范定义了四个生命周期状态来支持以上的功能：</p>
           <ul>
           <li>Launched: lifecycle state for MiniApp initialization. This means that the MiniApp initialization is completed, and it is triggered only once. Through this event, developer can obtain the information of the MiniApp, such as URI, source info, etc.</li>
           <li>Shown: lifecycle state for MiniApp running in foreground. It is triggered once the MiniApp launch is completed, or once the MiniApp switches to be running in foreground from background.</li>
           <li>Hidden: lifecycle state for MiniApp running in background. It is triggered once the MiniApp switches to be running from foreground to background.</li>
           <li>Error: lifecycle state for MiniApp error. It is triggered once the MiniApp is confronted with script error.</li>
+          </ul>
+          
+          <ul>
+          <li>Launched：MiniApp初始化的生命周期状态。代表MiniApp初始化已经完成，并且该状态只触发一次。通过这个事件，开发者可以获取MiniApp的信息，包括URI、来源信息等。</li>
+          <li>Shown：MiniApp前台运行的生命周期状态。在MiniApp启动完成后触发，或者在MiniApp从后台转为前台运行时触发。</li>
+          <li>Hidden：MiniApp后台运行的生命周期状态。在MiniApp从前台转为后台运行时触发。</li>
+          <li>Error：MiniApp错误的生命周期状态。在MiniApp遇到脚本错误时触发。</li>
           </ul>
         </section>
           
@@ -102,6 +127,7 @@
           <h2>MiniApp Global Application Lifecycle API</h2>
           
           <p>MiniApp global application lifecycle involves the following API:</p>
+          <p>MiniApp全局应用生命周期包含如下API：</p>
           
           <ul>
           <li>onLaunch(object: Object): to monitor the callback of MiniApp initialization.
@@ -123,6 +149,27 @@
           <li>onHide(): to monitor the callback of MiniApp switching to be running in the background.</li>
           <li>onError(error: String): to monitor the callback of MiniApp error.</li>
           </ul>
+            
+          <ul>
+          <li>onLaunch(object: Object)：监测MiniApp初始化的回调
+             <ul>
+             <li>object包含如下属性：
+                 <ul>
+                 <li>query：当前MiniApp的输入query</li>
+                 <li>path：当前MiniApp的页面路径</li>
+                 <li>referrerInfo：当前MiniApp的来源信息，包括MiniApp ID，以及可选的其他数据</li>
+                 </ul>
+             </li>
+             </ul>
+          </li>
+          <li>onShow(object: Object)：监测MiniApp前台显示的回调
+             <ul>
+             <li>定义与onLaunch(object: Object)相同</li>
+             </ul>
+          </li>
+          <li>onHide()：监测MiniApp转为后台运行的回调</li>
+          <li>onError(error: String)：监测MiniApp错误的回调</li>
+          </ul>
         </section>
        </section>
 
@@ -132,6 +179,7 @@
           <h2>MiniApp Page Lifecycle States</h2>
             
           <p>This spec defines what the lifecycle of a MiniApp page is and adds definition to enable MiniApp to respond to five important page lifecycle events commonly performed by MiniApp:</p>
+          <p>本规范规定MiniApp页面生命周期的定义，以及MiniApp重要的五个页面生命周期事件：</p>
           <ul>
           <li>MiniApp page loading</li>
           <li>MiniApp page first rendering ready</li>
@@ -139,8 +187,17 @@
           <li>MiniApp page running in background</li>
           <li>MiniApp page unloading</li>
           </ul>
+          
+          <ul>
+          <li>MiniApp页面加载</li>
+          <li>MiniApp页面首次渲染完成</li>
+          <li>MiniApp页面前台运行</li>
+          <li>MiniApp页面后台运行</li>
+          <li>MiniApp页面关闭</li>
+          </ul>
             
           <p>The following figure illustrates the MiniApp page lifecycle.</p>
+          <p>下图描述了MiniApp页面生命周期过程。</p>
           <figure id="lifecycle-img">
             <span style="text-align:center;"><img src="images/lifecycle.png" alt="MiniApp page lifecycle" width="600"></span>
             <figcaption>MiniApp page lifecycle illustration</figcaption>
@@ -156,8 +213,20 @@
 <li>If MiniApp page switch to be running in the background, Worker runs MiniApp page lifecycle event page.onHide keep alive. If MiniApp page switch to foreground, Worker runs MiniApp page lifecycle event page.onShow.</li>
 <li>If to destroy MiniApp page, Worker runs MiniApp page lifecycle event page.onUnload.</li>
           </ul>
+             
+          <ul>
+<li>当用户第一次打开一个MiniApp时，RenderView与Worker同时启动初始化。</li>
+<li>Worker初始化完成后，它运行MiniApp全局生命周期事件app.onLaunch与app.onShow来创建MiniApp实例。</li>
+<li>之后，Worker运行MiniApp页面生命周期事件page.onLoad。</li>
+<li>Worker发送初始化数据到RenderView来启动页面首次渲染。</li>
+<li>首次渲染完成后，RenderView通知Worker，之后Worker运行MiniApp页面生命周期事件page.onReady。</li>
+<li>之后用户可以与MiniApp进行交互。RenderView会被触发来发送用户事件到Worker进行处理，然后Worker返回结果数据到RenderView进行再次渲染。</li>
+<li>如果MiniApp页面转为后台运行，Worker运行MiniApp页面生命周期事件page.onHide来保活。如果MiniApp页面转为前台运行，Worker运行MiniApp页面生命周期事件page.onShow。</li>
+<li>如果要销毁MiniApp页面，则Worker运行MiniApp页面生命周期事件page.onUnload。</li>
+          </ul>
             
           <p>This spec formalizes five page lifecycle states to support the above:</p>
+          <p>本规范定义了五个页面生命周期状态来支持以上的功能：</p>
           <ul>
           <li>Loaded: lifecycle state for MiniApp page loading. This means that MiniApp page loading is completed. At this moment, Worker has obtained initialization data. Developers can obtain the path of current MiniApp page as well as the path’s query. Also, at this moment, the system event can be monitored.</li>
           <li>Ready: lifecycle state for MiniApp page’s first rendering. It is triggered once the MiniApp page first rendering is completed. At this moment, the page UI can be configured.</li>
@@ -165,10 +234,19 @@
           <li>Hidden: lifecycle state for MiniApp page running in background. It is triggered once the MiniApp page switches to be running from foreground to background.</li>
           <li>Unloaded: lifecycle state for MiniApp page destroying. It is triggered once the MiniApp page is destroyed. At this moment, the registered monitoring event is destroyed.</li>
           </ul>
+          
+          <ul>
+          <li>Loaded：MiniApp页面加载的生命周期状态。代表MiniApp页面加载已经完成。此时Worker已经获取到初始化数据，开发者能获取当前MiniApp页面路径、以及页面的query，并且此时系统事件可以被监测。</li>
+          <li>Ready：MiniApp页面首次渲染的生命周期状态。在MiniApp页面首次渲染完成后触发。此时页面UI可以被配置。</li>
+          <li>Shown：MiniApp页面显示的生命周期状态。在MiniApp从后台转为前台运行时触发。此时开发者可以更新页面。</li>
+          <li>Hidden：MiniApp页面后台运行的生命周期状态。在MiniApp从前台转为后台运行时触发。</li>
+          <li>Unloaded：MiniApp页面销毁的生命周期状态。在MiniApp页面被销毁时触发。此时注册的监测事件被销毁。</li>
+          </ul>
        </section>
        <section>
           <h2>MiniApp Page Lifecycle API</h2>
           <p>MiniApp page lifecycle involves the following API:</p>
+          <p>MiniApp页面生命周期包含如下API：</p>
           <ul>
 <li>onLoad(query: Object): to monitor the callback of MiniApp page loading.
 <ul>
@@ -179,6 +257,18 @@
 <li>onReady(): to monitor the callback of MiniApp page’s first rendering.</li>
 <li>onHide(): to monitor the callback of MiniApp page switching to be running in the background.</li>
 <li>onUnload(): to monitor the callback of destroying MiniApp page.</li>
+          </ul>
+           
+          <ul>
+<li>onLoad(query: Object)：监测MiniApp页面加载的回调
+<ul>
+<li>query：当前MiniApp的输入query</li>
+</ul>
+</li>
+<li>onShow()监测MiniApp页面显示的回调</li>
+<li>onReady()：监测MiniApp首次渲染的回调</li>
+<li>onHide()：监测MiniApp转为后台运行的回调</li>
+<li>onUnload()：监测MiniApp页面销毁的回调</li>
           </ul>
          </section>
         </section>
