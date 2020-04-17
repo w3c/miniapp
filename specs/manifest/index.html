@@ -45,7 +45,11 @@
                 name: "Zhiqiang Yu",
                 companyURL: "http://www.huawei.com/",
                 company: "Huawei"
-              }],
+              }, {
+			    name: "Xiaofeng Zhang",
+                companyURL: "http://www.huawei.com/",
+                company: "Huawei"
+			  }],
 
             wg: "MiniApps Ecosystem Community Group",
             wgURI: "https://www.w3.org/community/miniapps/",
@@ -687,10 +691,6 @@
     </h2>
     <ul>
       <li>
-        <p its-locale-filter-list="en" lang="en">The pages route specification is specified by the <a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI specification</a>.</p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans">pages路由规范由<a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI规范</a>指定。</p>
-      </li>
-      <li>
         <p its-locale-filter-list="en" lang="en"><code>app.js</code> is used for global JavaScript logic and global application life cycle management of MiniApp; MiniApp life cycle is specified by the <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle specification</a>.</p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans"><code>app.js</code>用于全局JavaScript逻辑和MiniApp全局应用生命周期管理，MiniApp生命周期由<a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle规范</a>指定。</p>
       </li>
@@ -716,7 +716,12 @@
                 "versionName": "1.0.0",
                 "versionCode": 1,
                 "description": "A Simple MiniApp Demo",
-                "icon": "common/xxx.png",
+                "icon": [
+                  {
+                    "src": "common/icon/icon.png",
+                    "sizes": "48x48"
+                  }
+                ],
                 "minPlatformVersion": "1.0.0",
                 "pages": [
                   "pages/index/index",
