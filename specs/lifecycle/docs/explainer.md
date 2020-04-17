@@ -1,9 +1,9 @@
-# Minipp Lifecycle explainer
+# MiniApp Lifecycle explainer
 
 > Note: This document serves as a supplementary explanation of the [MiniApp Lifecycle](https://w3c.github.io/miniapp/specs/lifecycle/) 
 spec. If there is any inconsistency with the spec, you should consider the spec to be authoritative.
 
-## Authors：
+## Authors
 
 Qing An (Alibaba)
 
@@ -23,7 +23,7 @@ MiniApp is install-free. When user opens a MiniApp for the first time, the hoste
 from backend server. The downloaded MiniApp resource will be cached in the hosted native App for some duration. Afterwards, 
 when user reopens the cached MiniApp, the downloading procedure can be skipped, therefore the MiniApp can be opened more quickly.
 
-* Cold Launch and Host Launch
+* Cold Launch and Hot Launch
 
 Cold launch means the procedure of opening a MiniApp that has never been launched locally, or has been destroyed. During this 
 procedure, MiniApp will implement initialization.
@@ -71,7 +71,7 @@ enters the state of “Hidden”
 
 *	MiniApp application lifecycle: 
 
-Assume MiniApp URI is: miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?k=v#bar
+Assume MiniApp URI is: `miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?k=v#bar`
 
 ```js
 App({ 
