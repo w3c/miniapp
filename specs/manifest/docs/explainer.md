@@ -18,26 +18,26 @@ Manifest, as the manifest file of MiniApp, includes configuration information th
 
 ## 2. Manifest Design
 
-To ensure the overall design requirements of [MiniApp Packaging](https://w3c.github.io/miniapp/specs/packaging/)、[MiniApp Widget](https://w3c.github.io/miniapp/specs/widget-req/), and [MiniApp URI Scheme](https://w3c.github.io/miniapp/specs/uri/) are met, the manifest file of MiniApp should contain basic information of the application, page routing scope, window configuration information and widget configuration information, etc.
+To ensure the overall design requirements of [MiniApp Packaging](https://w3c.github.io/miniapp/specs/packaging/), [MiniApp Widget](https://w3c.github.io/miniapp/specs/widget-req/), and [MiniApp URI Scheme](https://w3c.github.io/miniapp/specs/uri/) are met, the manifest file of MiniApp should contain basic information of the application, page routing scope, window configuration information and widget configuration information, etc.
 
 ### Key Considerations
 
 #### Why is basic information needed?
 
-* Desktop display: Show the name and icon of the application to users by appName and icon.
-* Locales: Set different languages ​​and text directions to meet the localization requirement by lang and dir.
-* Version management: Show version information of MiniApp, control application and device compatibility to users by versionName.
-* Version upgrade: Provide maintainability and security of MiniApp by versionCode.
-* Permission statement: Declare the necessary permissions required for running MiniApp, such as geographic location, storage, camera, etc.
+* Home screen display: Show the name and icon of the application to users by `appName` and `icon`.
+* Locales: Set different languages ​​and text directions to meet the localization requirement by `lang` and `dir`.
+* Version management: Show version information of MiniApp, control application and device compatibility to users by `versionName`.
+* Version upgrade: Provide maintainability and security of MiniApp by `versionCode`.
+* Permission statement: Declare the necessary permissions required for running MiniApp, such as geolocation, storage, camera, etc.
 
-#### Why is pages and window needed?
+#### Why are pages and window needed?
 
-* The pages array needs to cover all the pages included in the MiniApp, specify a reasonable page jump range and home page settings.
-* The window object needs to cover the basic elements of the MiniApp window, such as the status bar, navigation bar, title and window style, etc.
+* The [pages](https://w3c.github.io/miniapp/specs/manifest/#pages) array needs to cover all the pages included in the MiniApp and specify a reasonable page jump range and home page settings.
+* The [window](https://w3c.github.io/miniapp/specs/manifest/#window) object needs to cover the basic elements of the MiniApp window, such as the status bar, navigation bar, title and window style, etc.
 
-#### Why is widget needed?
+#### Why is `widgets` needed?
 
-The widget can be embedded in various local applications, and directly display the content that the user is most concerned about in an interactive way to better meet the user's requirements.
+Widgets can be embedded in various local applications, and directly display the content that the user is most concerned about in an interactive way to better meet the user's requirements.
 
 ## 3. Sample
 

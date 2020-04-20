@@ -7,6 +7,6 @@ This specification defines the MiniApp URI scheme syntax and the process to dere
 本规范定义了 MiniApp URI scheme 的语法，以及解引用 MiniApp URI scheme 的过程。MiniApp URI scheme 语法包含基于 URI 规范之上的 MiniApp URI 具体语法组件的规格说明。实现本规范，能使得 user agent 能够定位 MiniApp 的资源。
 
 * Lifecycle: [spec](https://w3c.github.io/miniapp/specs/lifecycle/) / [explainer](https://github.com/w3c/miniapp/blob/gh-pages/specs/lifecycle/docs/explainer.md)
-* [Manifest](https://w3c.github.io/miniapp/specs/manifest/)
+* Manifest: [spec](https://w3c.github.io/miniapp/specs/manifest/) / [explainer](https://github.com/w3c/miniapp/blob/gh-pages/specs/manifest/docs/explainer.md)
 * [Widget Requirements](https://w3c.github.io/miniapp/specs/widget-req/)
 * [Packaging](https://w3c.github.io/miniapp/specs/packaging/)
