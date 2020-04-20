@@ -1,4 +1,4 @@
-# Minipp Manifest explainer
+# MiniApp Manifest explainer
 
 > Note: This document serves as a supplementary explanation of the [MiniApp Manifest](https://github.com/w3c/miniapp/tree/gh-pages/specs/manifest/) spec. If there is any inconsistency with the spec, you should consider the spec to be authoritative.
 
