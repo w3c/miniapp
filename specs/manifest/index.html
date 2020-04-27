@@ -184,7 +184,7 @@
           </td>
         </tr>
         <tr>
-          <td> icon </td>
+          <td> icons </td>
           <td> Array </td>
           <td>
             <span its-locale-filter-list="en" lang="en">Yes</span>
@@ -295,11 +295,14 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">语言</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>lang</code> specifies the language tag of MiniApp. The value of lang here takes the value of <a href="https://developer.chrome.com/webstore/i18n#localeTable">locales</a>; please see more details in locales. Default is <code>zh-CN</code>.
-        </p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <code>lang</code>指定MiniApp的语言标签。这里取值为locales值，详见<a href="https://developer.chrome.com/webstore/i18n#localeTable">locales</a>。默认值<code>zh-CN</code>。
-        </p>
+            <code>lang</code> specifies the language tag of MiniApp. The value of lang here takes the value of
+            <code>Language-Tag</code> defined in the <a href="https://tools.ietf.org/html/bcp47">[BCP47]</a>; please see
+            more details in locales. Default is <code>zh-CN</code>.
+          </p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">
+            <code>lang</code>指定MiniApp的语言标签。这里取值为<code>Language-Tag</code>值，详见<a
+              href="https://tools.ietf.org/html/bcp47">[BCP47]</a>。默认值<code>zh-CN</code>。
+          </p>
       </section>
 
       <section>
@@ -356,14 +359,14 @@
 
       <section>
         <h2>
-          <span its-locale-filter-list="en" lang="en">icon</span>
+          <span its-locale-filter-list="en" lang="en">icons</span>
           <span its-locale-filter-list="zh-hans" lang="zh-hans">图标</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>icon</code> is the array of MiniApp application icons. It consists of icons with different resolutions, and displays different icons based on the type of display equipment.
+          <code>icons</code> is the array of MiniApp application icons. It consists of icons with different resolutions, and displays different icons based on the type of display equipment.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <code>icon</code>，MiniApp应用图标数组。由不同分辨率的图标组成，根据显示设备类型的不同展示不同的图标。
+          <code>icons</code>，MiniApp应用图标数组。由不同分辨率的图标组成，根据显示设备类型的不同展示不同的图标。
         </p>
       </section>
 
@@ -597,10 +600,10 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">卡片</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          Widget is a part of MiniApp. Specifically, a MiniApp package can include MiniApp Pages and Widgets concurrently. As a part of the MiniApp application, the Widget shares some of the Manifest fields with the MiniApp host program, e.g. <code>dir</code>、<code>lang</code>、<code>appID</code>、<code>appName</code>、<code>shortName</code>、<code>icon</code>、<code>versionName</code> and <code>versionCode</code>. However, Widget also has its private fields, as shown in the following table:
+          Widget is a part of MiniApp. Specifically, a MiniApp package can include MiniApp Pages and Widgets concurrently. As a part of the MiniApp application, the Widget shares some of the Manifest fields with the MiniApp host program, e.g. <code>dir</code>、<code>lang</code>、<code>appID</code>、<code>appName</code>、<code>shortName</code>、<code>icons</code>、<code>versionName</code> and <code>versionCode</code>. However, Widget also has its private fields, as shown in the following table:
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          Widget是MiniApp的一部分。特定地，MiniApp包中可同时包含 MiniApp Page和Widget。Widget作为MiniApp应用程序的一部分，Widget和MiniApp主体程序共用部分Manifest字段，比如：<code>dir</code>、<code>lang</code>、<code>appID</code>、<code>appName</code>、<code>shortName</code>、<code>icon</code>、<code>versionName</code>和<code>versionCode</code>。但是Widget也有自己的私有字段，如下表所示：
+          Widget是MiniApp的一部分。特定地，MiniApp包中可同时包含 MiniApp Page和Widget。Widget作为MiniApp应用程序的一部分，Widget和MiniApp主体程序共用部分Manifest字段，比如：<code>dir</code>、<code>lang</code>、<code>appID</code>、<code>appName</code>、<code>shortName</code>、<code>icons</code>、<code>versionName</code>和<code>versionCode</code>。但是Widget也有自己的私有字段，如下表所示：
         </p>
 
         <table>
@@ -703,6 +706,34 @@
 
   <section>
     <h2>
+      <span its-locale-filter-list="en" lang="en">Security and Privacy Considerations</span>
+      <span its-locale-filter-list="zh-hans" lang="zh-hans">安全隐私考虑</span>
+    </h2>
+    <p its-locale-filter-list="en" lang="en">
+      tbd
+    </p>
+
+    <p its-locale-filter-list="zh-hans" lang="zh-hans"> tbd
+    </p>
+
+  </section>
+
+  <section>
+    <h2>
+      <span its-locale-filter-list="en" lang="en">JSON Schema</span>
+      <span its-locale-filter-list="zh-hans" lang="zh-hans">JSON語法</span>
+    </h2>
+    <p its-locale-filter-list="en" lang="en">
+      tbd
+    </p>
+
+    <p its-locale-filter-list="zh-hans" lang="zh-hans"> tbd
+    </p>
+
+  </section>
+
+  <section>
+    <h2>
       <span its-locale-filter-list="en" lang="en"> Example</span>
       <span its-locale-filter-list="zh-hans" lang="zh-hans">样例</span>
     </h2>
@@ -716,9 +747,9 @@
                 "versionName": "1.0.0",
                 "versionCode": 1,
                 "description": "A Simple MiniApp Demo",
-                "icon": [
+                "icons": [
                   {
-                    "src": "common/icon/icon.png",
+                    "src": "common/icons/icon.png",
                     "sizes": "48x48"
                   }
                 ],
@@ -816,10 +847,10 @@
           </td>
         </tr>
         <tr>
-          <td> icon </td>
-          <td> icon </td>
+          <td> icons </td>
+          <td> icons </td>
           <td>
-            <span its-locale-filter-list="en" lang="en">Application icon</span>
+            <span its-locale-filter-list="en" lang="en">Application icons</span>
             <span its-locale-filter-list="zh-hans" lang="zh-hans">应用图标</span>
           </td>
         </tr>
