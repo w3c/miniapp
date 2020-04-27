@@ -724,11 +724,23 @@
       <span its-locale-filter-list="zh-hans" lang="zh-hans">JSON語法</span>
     </h2>
     <p its-locale-filter-list="en" lang="en">
-      tbd
+      Developers interested in validating the MiniApp manifest document can use the following JSON Schema.
     </p>
 
-    <p its-locale-filter-list="zh-hans" lang="zh-hans"> tbd
+    <p its-locale-filter-list="zh-hans" lang="zh-hans"> 开发者可以使用如下JSON Schema定义的语法来验证manifest文件。
     </p>
+
+    <pre class="example json">
+      {
+        "$id": "http://www.w3.org/schema_miniapp_manifest-v1_0_0.json",
+        "title": "MiniApp Manifest JSON Schema",
+        "$schema ": "http://json-schema.org/draft-07/schema#",
+        "description": "JSON Schema for the valiation of MiniApp Manifest document",
+        "type": "object",
+        "properties": {
+        }
+      }
+    </pre>
 
   </section>
 
