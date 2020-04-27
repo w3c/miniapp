@@ -2,60 +2,62 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <title>MiniApp Manifest</title>
+  <meta charset="utf-8" />
+  <title>MiniApp Manifest</title>
 
-    <link rel="stylesheet" href="../local.css" />
+  <link rel="stylesheet" href="../local.css" />
 
-    <style>
+  <style>
     .two-cols {
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
 
     table {
-      border-collapse:collapse;
+      border-collapse: collapse;
     }
 
-    table,th, td {
+    table,
+    th,
+    td {
       border: 1px solid #666;
     }
 
     td {
-      padding:2px 15px;
+      padding: 2px 15px;
     }
-    </style>
+  </style>
 
-    <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common"></script>
-    <script defer src="../script.js"></script>
+  <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common"></script>
+  <script defer src="../script.js"></script>
 
-    <script class="remove">
-        var respecConfig = {
-            specStatus: "CG-DRAFT",
-            copyrightStart: "2020",
-            edDraftURI: "https://w3c.github.io/miniapp/specs/manifest/",
+  <script class="remove">
+    var respecConfig = {
+      specStatus: "CG-DRAFT",
+      copyrightStart: "2020",
+      edDraftURI: "https://w3c.github.io/miniapp/specs/manifest/",
 
-            shortName: "miniapp-manifest",
+      shortName: "miniapp-manifest",
 
-            editors: [{
-                name: "Shouren Lan",
-                companyURL: "http://www.huawei.com/",
-                company: "Huawei"
-              }, {
-                name: "Zhiqiang Yu",
-                companyURL: "http://www.huawei.com/",
-                company: "Huawei"
-              }, {
-	        name: "Xiaofeng Zhang",
-                companyURL: "http://www.huawei.com/",
-                company: "Huawei"
-             }],
+      editors: [{
+        name: "Shouren Lan",
+        companyURL: "http://www.huawei.com/",
+        company: "Huawei"
+      }, {
+        name: "Zhiqiang Yu",
+        companyURL: "http://www.huawei.com/",
+        company: "Huawei"
+      }, {
+        name: "Xiaofeng Zhang",
+        companyURL: "http://www.huawei.com/",
+        company: "Huawei"
+      }],
 
-            wg: "MiniApps Ecosystem Community Group",
-            wgURI: "https://www.w3.org/community/miniapps/",
-            github: "w3c/miniapp",
-        };
-    </script>
+      wg: "MiniApps Ecosystem Community Group",
+      wgURI: "https://www.w3.org/community/miniapps/",
+      github: "w3c/miniapp",
+    };
+  </script>
 </head>
 
 <body>
@@ -91,23 +93,24 @@
   <section>
     <h2>Manifest</h2>
     <table>
-      <thead><tr>
-        <th>
-          <span its-locale-filter-list="en" lang="en">Attribute</span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">属性</span>
-        </th>
-        <th>
-          <span its-locale-filter-list="en" lang="en">Type</span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">类型</span>
-        </th>
-        <th>
-          <span its-locale-filter-list="en" lang="en">Required</span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">必填</span>
-        </th>
-        <th>
-          <span its-locale-filter-list="en" lang="en">Description</span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">描述</span>
-        </th>
+      <thead>
+        <tr>
+          <th>
+            <span its-locale-filter-list="en" lang="en">Attribute</span>
+            <span its-locale-filter-list="zh-hans" lang="zh-hans">属性</span>
+          </th>
+          <th>
+            <span its-locale-filter-list="en" lang="en">Type</span>
+            <span its-locale-filter-list="zh-hans" lang="zh-hans">类型</span>
+          </th>
+          <th>
+            <span its-locale-filter-list="en" lang="en">Required</span>
+            <span its-locale-filter-list="zh-hans" lang="zh-hans">必填</span>
+          </th>
+          <th>
+            <span its-locale-filter-list="en" lang="en">Description</span>
+            <span its-locale-filter-list="zh-hans" lang="zh-hans">描述</span>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -295,14 +298,13 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">语言</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-            <code>lang</code> specifies the language tag of MiniApp. The value of lang here takes the value of
-            <code>Language-Tag</code> defined in the <a href="https://tools.ietf.org/html/bcp47">[BCP47]</a>; please see
-            more details in locales. Default is <code>zh-CN</code>.
-          </p>
-          <p its-locale-filter-list="zh-hans" lang="zh-hans">
-            <code>lang</code>指定MiniApp的语言标签。这里取值为<code>Language-Tag</code>值，详见<a
-              href="https://tools.ietf.org/html/bcp47">[BCP47]</a>。默认值<code>zh-CN</code>。
-          </p>
+          <code>lang</code> specifies the language tag of MiniApp. The value of lang here takes the value of
+          <code>Language-Tag</code> defined in the <a href="https://tools.ietf.org/html/bcp47">[BCP47]</a>; please see
+          more details in locales. Default is <code>zh-CN</code>.
+        </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+          <code>lang</code>指定MiniApp的语言标签。这里取值为<code>Language-Tag</code>值，详见<a href="https://tools.ietf.org/html/bcp47">[BCP47]</a>。默认值<code>zh-CN</code>。
+        </p>
       </section>
 
       <section>
@@ -416,10 +418,10 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">页面路由</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>pages</code> is an array used for specifying which pages are included in MiniApp. Each item in the array represents a page route. Page route = <code>[path + filename]</code>. During the MiniApp development process, adding or deleting pages should be configured in the array. When configuring the page route, there is no need to add suffix to the document name, and the MiniApp platform will automatically parse it. Note: the first item in the <code>pages</code> array stands for the homepage of MiniApp.
+          <code>pages</code> is an array of path strings used for specifying which pages are included in MiniApp. Each item in the array represents a page route (a relative path). Page route = <code>[path + filename]</code>. During the MiniApp development process, adding or deleting pages should be configured in the array. When configuring the page route, there is no need to add suffix to the document name, and the MiniApp platform will automatically parse it. Note: the first item in the <code>pages</code> array stands for the homepage of MiniApp.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <code>pages</code>数组用于指定MiniApp都包含哪些页面，数组中每一项代表一个页面路由，页面路由 = <code>[路径 + 文件名]</code>。MiniApp开发时新增或删除页面需在数组中进行配置，配置页面路由时文件名不需加后缀名，MiniApp平台会自动解析。备注：<code>pages</code>数组中第一项代表MiniApp首页。
+          <code>pages</code>数组用于指定MiniApp都包含哪些页面，数组中每一项代表一个页面路由(相对路径)，页面路由 = <code>[路径 + 文件名]</code>。MiniApp开发时新增或删除页面需在数组中进行配置，配置页面路由时文件名不需加后缀名，MiniApp平台会自动解析。备注：<code>pages</code>数组中第一项代表MiniApp首页。
         </p>
       </section>
 
@@ -590,6 +592,32 @@
                 <span its-locale-filter-list="zh-hans" lang="zh-hans">全屏显示</span>
               </td>
             </tr>
+            <tr>
+              <td> designWidth </td>
+              <td> number </td>
+              <td>
+                <span its-locale-filter-list="en" lang="en">No</span>
+                <span its-locale-filter-list="zh-hans" lang="zh-hans">否</span>
+              </td>
+              <td> 750 </td>
+              <td>
+                <span its-locale-filter-list="en" lang="en">The baseline width of the page design, based on which the size of the components on the page would be adjusted accordingly.</span>
+                <span its-locale-filter-list="zh-hans" lang="zh-hans">页面设计基准宽度，根据实际设备宽度来缩放元素大小。</span>
+              </td>
+            </tr>
+            <tr>
+              <td> autoDesignWidth </td>
+              <td> boolean </td>
+              <td>
+                <span its-locale-filter-list="en" lang="en">No</span>
+                <span its-locale-filter-list="zh-hans" lang="zh-hans">否</span>
+              </td>
+              <td> false </td>
+              <td>
+                <span its-locale-filter-list="en" lang="en">Whether the designWidth of the page is auto-calculated. When it's <i>true</i>, the value of the <code>designWidth</code> is ignored, and the baseline width is determined by the system automatically according to the pixel densentiy of the screen.</span>
+                <span its-locale-filter-list="zh-hans" lang="zh-hans">页面设计基准宽度是否自动计算，当设为true时，designWidth将会被忽略，设计基准宽度由设备宽度与屏幕密度计算得出。</span>
+              </td>
+            </tr>
           </tbody>
         </table>
       </section>
@@ -709,13 +737,46 @@
       <span its-locale-filter-list="en" lang="en">Security and Privacy Considerations</span>
       <span its-locale-filter-list="zh-hans" lang="zh-hans">安全隐私考虑</span>
     </h2>
-    <p its-locale-filter-list="en" lang="en">
-      tbd
-    </p>
+    <section>
+      <h2>
+        <span its-locale-filter-list="en" lang="en">Content constraint</span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans">内容限制</span>
+      </h2>
+      <p its-locale-filter-list="en" lang="en">
+        As the manifest is a JSON file and will commonly be encoded using <a href="https://www.unicode.org/versions/latest/">[UNICODE]</a>, the security considerations described in <a href="https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf">[ECMA-404]</a> and <a href="https://www.unicode.org/reports/tr36/tr36-15.html">[UNICODE-SECURITY]</a> apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#json-schema-json">JSON Schema</a> to impose their own implementation-specific limits on the member types and value ranges, e.g. to prevent denial of service attacks, to guard against running out of memory, or to work around platform-specific limitations.
+      </p>
+      <p its-locale-filter-list="zh-hans" lang="zh-hans"> 
+        tbd
+      </p>
+    </section>
 
-    <p its-locale-filter-list="zh-hans" lang="zh-hans"> tbd
-    </p>
+    <section>
+      <h2>
+        <span its-locale-filter-list="en" lang="en">Local resource access</span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans">本地资源访问</span>
+      </h2>
+      <p its-locale-filter-list="en" lang="en"> Attributes like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain relative paths referring to local resources on the hosting platform. Implementors should check the validity of those paths to ensure no illegal access outside the scope of the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>. On the other hand, the MiniApp itself may provide means to jump to extenral ressources either on the hosting platform, or on a remote web site (e.g. through a hyperlink or a deeplink). In this case, the hosting platform shall provide clear indication to an end-user about such context switch.</p>
+      <p its-locale-filter-list="zh-hans" lang="zh-hans"> tbd      </p>
+    </section>
 
+    <section>
+      <h2>
+        <span its-locale-filter-list="en" lang="en">Integrity</span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans">完整性</span>
+      </h2>
+      <p its-locale-filter-list="en" lang="en"> The integrity of the manifest document shall be protected by a cryptographic hash mechanism as part of the whole MiniApp package. Details are specified in the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>. </p>
+      <p its-locale-filter-list="zh-hans" lang="zh-hans"> tbd      </p>
+    </section>
+
+    <section>
+      <h2>
+        <span its-locale-filter-list="en" lang="en">Transparency</span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans">信息透明</span>
+      </h2>
+      <p its-locale-filter-list="en" lang="en"> 
+        It is RECOMMENDED that the hosting platform makes the necessary meta inforamtion in the manifest available to the end-user, such as <code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code>, <code>description</code>. This is to give an end-user an opportunity to make a conscious decision to approve the installation and use of the MiniApp. This could also help to identify a spoofing MiniApp.</p>
+      <p its-locale-filter-list="zh-hans" lang="zh-hans"> tbd      </p>
+    </section>
   </section>
 
   <section>
@@ -750,7 +811,7 @@
       <span its-locale-filter-list="en" lang="en"> Example</span>
       <span its-locale-filter-list="zh-hans" lang="zh-hans">样例</span>
     </h2>
-            <pre class="example json">
+    <pre class="example json">
               {
                 "dir": "ltr",
                 "lang": "en-US",
@@ -787,8 +848,8 @@
                 ]
               }
             </pre>
-     </section>
-    </section>
+  </section>
+  </section>
 
   <section class="appendix">
     <h2>
@@ -810,7 +871,7 @@
           <th>
             <span its-locale-filter-list="en" lang="en">Web App description</span>
             <span its-locale-filter-list="zh-hans" lang="zh-hans">Web App描述</span>
-              </th>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -989,9 +1050,9 @@
   </section>
 
   <section class="appendix">
-           <h2>
-             <span its-locale-filter-list="en" lang="en">Acknowledgments</span>
-             <span its-locale-filter-list="zh-hans" lang="zh-hans">致谢</span>
+    <h2>
+      <span its-locale-filter-list="en" lang="en">Acknowledgments</span>
+      <span its-locale-filter-list="zh-hans" lang="zh-hans">致谢</span>
     </h2>
     <p its-locale-filter-list="en" lang="en">
       This document refers to <a href="https://www.w3.org/TR/appmanifest">W3C Web App Manifest</a>，<a href="https://smartprogram.baidu.com/docs/develop/tutorial/process/">Baidu MiniApp</a>，<a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">WeChat MiniApp</a>，<a href="https://opendocs.alipay.com/mini/framework/app-json">Alipay MiniApp</a>，<a href="https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration">ByteDance MiniApp</a>，<a href="https://doc.quickapp.cn/framework/manifest.html">Quick App Specification</a>，<a href="https://developer.chrome.com/webstore/i18n#localeTable">chromium locales</a>，<a href="https://www.science.co.il/language/Locale-codes.php">Windows Locale Codes</a>，<a href="https://w3c.github.io/miniapp/specs/widget-req/">MiniApp Widget Specification</a>，<a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle Specification</a>，<a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI Specification</a>. We appreciate the open source efforts of these documents.
@@ -1000,5 +1061,6 @@
       本文档参考了<a href="https://www.w3.org/TR/appmanifest">W3C Web App Manifest</a>，<a href="https://smartprogram.baidu.com/docs/develop/tutorial/process/">百度小程序</a>，<a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">微信小程序</a>，<a href="https://opendocs.alipay.com/mini/framework/app-json">支付宝小程序</a>，<a href="https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration">字节跳动小程序</a>，<a href="https://doc.quickapp.cn/framework/manifest.html">快应用联盟规范</a>，<a href="https://developer.chrome.com/webstore/i18n#localeTable">chromium locales</a>，<a href="https://www.science.co.il/language/Locale-codes.php">Windows Locale Codes</a>，<a href="https://w3c.github.io/miniapp/specs/widget-req/">MiniApp Widget文件规范</a>，<a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle规范</a>，<a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI规范</a>。感谢这些文档的开源努力。
     </p>
   </section>
-  </body>
+</body>
+
 </html>
