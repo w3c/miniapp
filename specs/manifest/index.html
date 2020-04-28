@@ -743,10 +743,10 @@
         <span its-locale-filter-list="zh-hans" lang="zh-hans">内容限制</span>
       </h2>
       <p its-locale-filter-list="en" lang="en">
-        As the manifest is a JSON file and will commonly be encoded using <a href="https://www.unicode.org/versions/latest/">[UNICODE]</a>, the security considerations described in <a href="https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf">[ECMA-404]</a> and <a href="https://www.unicode.org/reports/tr36/tr36-15.html">[UNICODE-SECURITY]</a> apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#json-schema-json">JSON Schema</a> to impose their own implementation-specific limits on the member types and value ranges, e.g. to prevent denial of service attacks, to guard against running out of memory, or to work around platform-specific limitations.
+        As the manifest is a JSON file and will commonly be encoded using <a href="https://www.unicode.org/versions/latest/">[UNICODE]</a>, the security considerations described in <a href="https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf">[ECMA-404]</a> and <a href="https://www.unicode.org/reports/tr36/tr36-15.html">[UNICODE-SECURITY]</a> apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#json-schema-json">JSON Schema</a> to impose their own implementation-specific limits on the member names, types and value ranges, e.g. to prevent denial of service attacks, to guard against running out of memory, or to work around platform-specific limitations.
       </p>
       <p its-locale-filter-list="zh-hans" lang="zh-hans"> 
-        tbd
+        Manifest作为一个JSON文件，通常以<a href="https://www.unicode.org/versions/latest/">[UNICODE]</a>方式编码，因此<a href="https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf">[ECMA-404]</a>和<a href="https://www.unicode.org/reports/tr36/tr36-15.html">[UNICODE-SECURITY]</a>中所定义的安全措施同样适用。为了防止开发者在manifest中添加任意不受限的数据，开发者可在其具体实现中采用比<a href="#json-schema-json">JSON Schema</a>中所定义的更加严格的schema来约束文件中的成员元素名称、类型和取值范围等，从而防止DoS攻击、内存耗尽或满足平台特有的限制。
       </p>
     </section>
 
@@ -755,8 +755,8 @@
         <span its-locale-filter-list="en" lang="en">Local resource access</span>
         <span its-locale-filter-list="zh-hans" lang="zh-hans">本地资源访问</span>
       </h2>
-      <p its-locale-filter-list="en" lang="en"> Attributes like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain relative paths referring to local resources on the hosting platform. Implementors should check the validity of those paths to ensure no illegal access outside the scope of the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>. On the other hand, the MiniApp itself may provide means to jump to extenral ressources either on the hosting platform, or on a remote web site (e.g. through a hyperlink or a deeplink). In this case, the hosting platform shall provide clear indication to an end-user about such context switch.</p>
-      <p its-locale-filter-list="zh-hans" lang="zh-hans"> tbd      </p>
+      <p its-locale-filter-list="en" lang="en"> Attributes like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain relative paths referring to local resources on the hosting platform. Implementors should check the validity of those paths to ensure no illegal access outside the scope of the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>. On the other hand, the MiniApp itself may provide means to jump to external ressources either on the hosting platform, or on a remote web site (e.g. through a hyperlink or a deeplink). In this case, the hosting platform shall provide clear indication to an end-user about such context switch.</p>
+      <p its-locale-filter-list="zh-hans" lang="zh-hans"> <code>icons</code>, <code>pages</code>, <code>widgets</code>等属性包含了宿主平台上的本地资源路径引用，开发者应该检查这些路径的合法性以确保没有<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>之外的非法访问。另一方面，MiniApp自身可能提供跳转到其他外部资源的方式，包括宿主平台或远程网站上的外部资源（比如通过超链接或deeplink)。此时，宿主平台应该向用户提供明确的上下文切换的指示信息。</p>
     </section>
 
     <section>
@@ -775,7 +775,7 @@
       </h2>
       <p its-locale-filter-list="en" lang="en"> 
         It is RECOMMENDED that the hosting platform makes the necessary meta inforamtion in the manifest available to the end-user, such as <code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code>, <code>description</code>. This is to give an end-user an opportunity to make a conscious decision to approve the installation and use of the MiniApp. This could also help to identify a spoofing MiniApp.</p>
-      <p its-locale-filter-list="zh-hans" lang="zh-hans"> tbd      </p>
+      <p its-locale-filter-list="zh-hans" lang="zh-hans"> 建议宿主平台将manifest中的必要元数据信息提供给用户，比如code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code>, <code>description</code>。这样可以给用户一个机会来对MiniApp的安装和使用提供清晰的判断依据，也可以帮助用户来识别伪装的恶意MiniApp。</p>
     </section>
   </section>
 
