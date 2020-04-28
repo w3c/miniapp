@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8" />
     <title>MiniApp Manifest</title>
-
     <link rel="stylesheet" href="../local.css" />
 
     <style>
@@ -184,7 +183,7 @@
           </td>
         </tr>
         <tr>
-          <td> icon </td>
+          <td> icons </td>
           <td> Array </td>
           <td>
             <span its-locale-filter-list="en" lang="en">Yes</span>
@@ -295,10 +294,12 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">语言</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>lang</code> specifies the language tag of MiniApp. The value of lang here takes the value of <a href="https://developer.chrome.com/webstore/i18n#localeTable">locales</a>; please see more details in locales. Default is <code>zh-CN</code>.
+            <code>lang</code> specifies the language tag of MiniApp. The value of lang here takes the value of
+            <code>Language-Tag</code> defined in the <a href="https://tools.ietf.org/html/bcp47">[BCP47]</a>; please see
+            more details in locales. Default is <code>zh-CN</code>.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <code>lang</code>指定MiniApp的语言标签。这里取值为locales值，详见<a href="https://developer.chrome.com/webstore/i18n#localeTable">locales</a>。默认值<code>zh-CN</code>。
+            <code>lang</code>指定MiniApp的语言标签。这里取值为<code>Language-Tag</code>值，详见<a href="https://tools.ietf.org/html/bcp47">[BCP47]</a>。默认值<code>zh-CN</code>。
         </p>
       </section>
 
@@ -356,14 +357,14 @@
 
       <section>
         <h2>
-          <span its-locale-filter-list="en" lang="en">icon</span>
+          <span its-locale-filter-list="en" lang="en">icons</span>
           <span its-locale-filter-list="zh-hans" lang="zh-hans">图标</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>icon</code> is the array of MiniApp application icons. It consists of icons with different resolutions, and displays different icons based on the type of display equipment.
+          <code>icons</code> is the array of MiniApp application icons. It consists of icons with different resolutions, and displays different icons based on the type of display equipment.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <code>icon</code>，MiniApp应用图标数组。由不同分辨率的图标组成，根据显示设备类型的不同展示不同的图标。
+          <code>icons</code>，MiniApp应用图标数组。由不同分辨率的图标组成，根据显示设备类型的不同展示不同的图标。
         </p>
       </section>
 
@@ -413,7 +414,7 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">页面路由</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>pages</code> is an array used for specifying which pages are included in MiniApp. Each item in the array represents a page route. Page route = <code>[path + filename]</code>. During the MiniApp development process, adding or deleting pages should be configured in the array. When configuring the page route, there is no need to add suffix to the document name, and the MiniApp platform will automatically parse it. Note: the first item in the <code>pages</code> array stands for the homepage of MiniApp.
+            <code>pages</code> is an array of path strings used for specifying which pages are included in MiniApp. Each item in the array represents a page route. Page route = <code>[path + filename]</code>. During the MiniApp development process, adding or deleting pages should be configured in the array. When configuring the page route, there is no need to add suffix to the document name, and the MiniApp platform will automatically parse it. Note: the first item in the <code>pages</code> array stands for the homepage of MiniApp.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           <code>pages</code>数组用于指定MiniApp都包含哪些页面，数组中每一项代表一个页面路由，页面路由 = <code>[路径 + 文件名]</code>。MiniApp开发时新增或删除页面需在数组中进行配置，配置页面路由时文件名不需加后缀名，MiniApp平台会自动解析。备注：<code>pages</code>数组中第一项代表MiniApp首页。
@@ -587,6 +588,32 @@
                 <span its-locale-filter-list="zh-hans" lang="zh-hans">全屏显示</span>
               </td>
             </tr>
+            <tr>
+                <td> designWidth </td>
+                <td> number </td>
+                <td>
+                    <span its-locale-filter-list="en" lang="en">No</span>
+                    <span its-locale-filter-list="zh-hans" lang="zh-hans">否</span>
+                </td>
+                <td> 750 </td>
+                <td>
+                    <span its-locale-filter-list="en" lang="en">The baseline width of the page design, based on which the size of the components on the page would be adjusted accordingly.</span>
+                    <span its-locale-filter-list="zh-hans" lang="zh-hans">页面设计基准宽度，根据实际设备宽度来缩放元素大小。</span>
+                </td>
+            </tr>
+            <tr>
+                <td> autoDesignWidth </td>
+                <td> boolean </td>
+                <td>
+                    <span its-locale-filter-list="en" lang="en">No</span>
+                    <span its-locale-filter-list="zh-hans" lang="zh-hans">否</span>
+                </td>
+                <td> false </td>
+                <td>
+                    <span its-locale-filter-list="en" lang="en">Whether the designWidth of the page is auto-calculated. When it's <i>true</i>, the value of the <code>designWidth</code> is ignored, and the baseline width is determined by the system automatically according to the pixel densentiy of the screen.</span>
+                    <span its-locale-filter-list="zh-hans" lang="zh-hans">页面设计基准宽度是否自动计算，当设为true时，designWidth将会被忽略，设计基准宽度由设备宽度与屏幕密度计算得出。</span>
+                </td>
+            </tr>
           </tbody>
         </table>
       </section>
@@ -597,10 +624,10 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">卡片</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          Widget is a part of MiniApp. Specifically, a MiniApp package can include MiniApp Pages and Widgets concurrently. As a part of the MiniApp application, the Widget shares some of the Manifest fields with the MiniApp host program, e.g. <code>dir</code>、<code>lang</code>、<code>appID</code>、<code>appName</code>、<code>shortName</code>、<code>icon</code>、<code>versionName</code> and <code>versionCode</code>. However, Widget also has its private fields, as shown in the following table:
+            Widget is a part of MiniApp. Specifically, a MiniApp package can include MiniApp Pages and Widgets concurrently. As a part of the MiniApp application, the Widget shares some of the Manifest fields with the MiniApp host program, e.g. <code>dir</code>, <code>lang</code>, <code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code> and <code>versionCode</code>. However, Widget also has its private fields, as shown in the following table:
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          Widget是MiniApp的一部分。特定地，MiniApp包中可同时包含 MiniApp Page和Widget。Widget作为MiniApp应用程序的一部分，Widget和MiniApp主体程序共用部分Manifest字段，比如：<code>dir</code>、<code>lang</code>、<code>appID</code>、<code>appName</code>、<code>shortName</code>、<code>icon</code>、<code>versionName</code>和<code>versionCode</code>。但是Widget也有自己的私有字段，如下表所示：
+            Widget是MiniApp的一部分。特定地，MiniApp包中可同时包含 MiniApp Page和Widget。Widget作为MiniApp应用程序的一部分，Widget和MiniApp主体程序共用部分Manifest字段，比如：<code>dir</code>、<code>lang</code>、<code>appID</code>、<code>appName</code>、<code>shortName</code>、<code>icons</code>、<code>versionName</code>和<code>versionCode</code>。但是Widget也有自己的私有字段，如下表所示：
         </p>
 
         <table>
@@ -703,6 +730,80 @@
 
   <section>
     <h2>
+        <span its-locale-filter-list="en" lang="en">Security and Privacy Considerations</span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans">安全隐私考虑</span>
+    </h2>
+    <section>
+        <h2>
+            <span its-locale-filter-list="en" lang="en">Content constraint</span>
+            <span its-locale-filter-list="zh-hans" lang="zh-hans">内容限制</span>
+        </h2>
+        <p its-locale-filter-list="en" lang="en">
+            As the manifest is a JSON file and will commonly be encoded using <a href="https://www.unicode.org/versions/latest/">[UNICODE]</a>, the security considerations described in <a href="https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf">[ECMA-404]</a> and <a href="https://www.unicode.org/reports/tr36/tr36-15.html">[UNICODE-SECURITY]</a> apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#json-schema-json">JSON Schema</a> to impose their own implementation-specific limits on the member names, types and value ranges, e.g. to prevent denial of service attacks, to guard against running out of memory, or to work around platform-specific limitations.
+        </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+            Manifest作为一个JSON文件，通常以<a href="https://www.unicode.org/versions/latest/">[UNICODE]</a>方式编码，因此<a href="https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf">[ECMA-404]</a>和<a href="https://www.unicode.org/reports/tr36/tr36-15.html">[UNICODE-SECURITY]</a>中所定义的安全措施同样适用。为了防止开发者在manifest中添加任意不受限的数据，开发者可在其具体实现中采用比<a href="#json-schema-json">JSON Schema</a>中所定义的更加严格的schema来约束文件中的成员元素名称、类型和取值范围等，从而防止DoS攻击、内存耗尽或满足平台特有的限制。
+        </p>
+    </section>
+
+    <section>
+        <h2>
+            <span its-locale-filter-list="en" lang="en">Local resource access</span>
+            <span its-locale-filter-list="zh-hans" lang="zh-hans">本地资源访问</span>
+        </h2>
+        <p its-locale-filter-list="en" lang="en"> Attributes like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to ensure no illegal access outside the scope of the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>. On the other hand, the MiniApp itself (e.g. in JS code) may provide means to jump to external ressources either on the hosting platform, or on a remote web site (e.g. through a uri). In this case, the hosting platform shall provide clear indication to an end-user about such context switch.</p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans"> <code>icons</code>, <code>pages</code>, <code>widgets</code>等属性包含了宿主平台上的本地资源引用路径，开发者和宿主平台应该检查这些路径的合法性以确保没有<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>之外的非法访问。另一方面，MiniApp自身（如JS代码中）可能提供跳转到其他外部资源的方式，包括宿主平台或远程网站上的外部资源（比如通过uri)。此时，宿主平台应该向用户提供明确的上下文切换的指示信息。</p>
+    </section>
+
+    <section>
+        <h2>
+            <span its-locale-filter-list="en" lang="en">Integrity</span>
+            <span its-locale-filter-list="zh-hans" lang="zh-hans">完整性</span>
+        </h2>
+        <p its-locale-filter-list="en" lang="en"> The integrity of the manifest document shall be protected by a cryptographic hash mechanism as part of the whole MiniApp package. Details are specified in the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>. </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans"> Manifest文档的完整性需要作为MiniApp package的一部分被密码哈希机制所保护。详细定义见<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>。 </p>
+    </section>
+
+    <section>
+        <h2>
+            <span its-locale-filter-list="en" lang="en">Transparency</span>
+            <span its-locale-filter-list="zh-hans" lang="zh-hans">信息透明</span>
+        </h2>
+        <p its-locale-filter-list="en" lang="en">
+            It is RECOMMENDED that the hosting platform makes the necessary meta inforamtion in the manifest available to the end-user, such as <code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code>, <code>description</code>. This is to give an end-user an opportunity to make a conscious decision to approve the installation and use of the MiniApp. This could also help to identify a spoofing MiniApp.</p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans"> 建议宿主平台将manifest中的必要元数据信息提供给用户，比如<code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code>, <code>description</code>。这样可以给用户一个机会来对MiniApp的安装和使用提供清晰的判断依据，也可以帮助用户来识别伪装的恶意MiniApp。</p>
+    </section>
+</section>
+
+<section>
+    <h2>
+        <span its-locale-filter-list="en" lang="en">JSON Schema</span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans">JSON语法</span>
+    </h2>
+    <p its-locale-filter-list="en" lang="en">
+        Developers interested in validating the MiniApp manifest document can use the following JSON Schema.
+    </p>
+
+    <p its-locale-filter-list="zh-hans" lang="zh-hans"> 开发者可以使用如下JSON Schema定义的语法来验证manifest文件。
+    </p>
+
+    <pre class="example json">
+  {
+    "$id": "http://www.w3.org/schema_miniapp_manifest-v1_0_0.json",
+    "title": "MiniApp Manifest JSON Schema",
+    "$schema ": "http://json-schema.org/draft-07/schema#",
+    "description": "JSON Schema for the valiation of MiniApp Manifest document",
+    "type": "object",
+    "properties": {
+     
+    }
+  }
+</pre>
+
+</section>
+
+  <section>
+    <h2>
       <span its-locale-filter-list="en" lang="en"> Example</span>
       <span its-locale-filter-list="zh-hans" lang="zh-hans">样例</span>
     </h2>
@@ -716,9 +817,9 @@
                 "versionName": "1.0.0",
                 "versionCode": 1,
                 "description": "A Simple MiniApp Demo",
-                "icon": [
+                "icons": [
                   {
-                    "src": "common/icon/icon.png",
+                    "src": "common/icons/icon.png",
                     "sizes": "48x48"
                   }
                 ],
@@ -816,8 +917,8 @@
           </td>
         </tr>
         <tr>
-          <td> icon </td>
-          <td> icon </td>
+          <td> icons </td>
+          <td> icons </td>
           <td>
             <span its-locale-filter-list="en" lang="en">Application icon</span>
             <span its-locale-filter-list="zh-hans" lang="zh-hans">应用图标</span>
@@ -957,4 +1058,5 @@
     </p>
   </section>
   </body>
+
 </html>
