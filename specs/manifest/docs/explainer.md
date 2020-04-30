@@ -53,7 +53,7 @@ So far only a basic subset of MiniApp Manifest is listed, which will be graduall
   "versionName": "1.0.0",
   "versionCode": 1,
   "description": "A Simple MiniApp Demo",
-  "icon": [
+  "icons": [
     {
       "src": "common/icon/icon.png",
       "sizes": "48x48"
