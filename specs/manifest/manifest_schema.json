@@ -1,0 +1,176 @@
+{
+  "$id": "http://www.w3.org/schema_miniapp_manifest-v1_0_0.json",
+  "title": "MiniApp Manifest JSON Schema",
+  "$schema ": "http://json-schema.org/draft-07/schema#",
+  "description": "JSON Schema for the valiation of MiniApp Manifest document",
+  "definitions": {
+    "TypeHexColor": {
+      "type": "string",
+      "pattern": "^#[0-9a-fA-F]{6}$"
+    },
+    "TypeVersionString": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+      "example": "1.0.0",
+      "description": "It is the minimum supported version of the required platform that can ensure normal operation of MiniApp."
+    },
+    "TypePathString": {
+      "type": "string",
+      "format": "uri-reference"
+    }
+  },
+  "type": "object",
+  "required": [
+    "appID",
+    "appName",
+    "icons",
+    "versionName",
+    "versionCode",
+    "minPlatformVersion",
+    "pages"
+  ],
+  "properties": {
+    "dir": {
+      "type": "string",
+      "enum": ["ltr", "rtl"]
+    },
+    "lang": {
+      "type": "string",
+      "description": "The value of lang here takes the value of Language-Tag defined in the [BCP47]"
+    },
+    "appID": {
+      "type": "string",
+      "format": "idn-hostname",
+      "description": "The naming convention of appID adopts the reverse domain naming rule and uses all lowercases",
+      "example": "com.company.miniapp"
+    },
+    "appName": {
+      "type": "string",
+      "minLength": 4,
+      "maxLength": 30
+    },
+    "shortName": {
+      "type": "string",
+      "minLength": 4,
+      "maxLength": 30
+    },
+    "description": {
+      "type": "string"
+    },
+    "icons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required":["src","sizes"],
+        "properties": {
+          "src": {
+            "$ref": "#/definitions/TypePathString"
+          },
+          "sizes": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^([1-9][0-9]*)(x|X)([1-9][0-9]*)( ([1-9][0-9]*)(x|X)([1-9][0-9]*))*$"
+              },
+              {
+                "enum": ["any"]
+              }
+            ]
+          }
+        }
+      },
+      "description": "It consists of icons with different resolutions, and displays different icons based on the type of display equipment."
+    },
+    "versionName": {
+      "type": "string",
+      "example": "1.0.0"
+    },
+    "versonCode": {
+      "type": "integer",
+      "default": 1,
+      "min": 1
+    },
+    "minPlatformVersion": {
+      "$ref": "#/definitions/TypeVersionString"
+    },
+    "pages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/TypePathString"
+      },
+      "description": "An array of path strings used for specifying which pages are included in MiniApp. Each item in the array represents a page route. Page route = [path + filename]. "
+    },
+    "window": {
+      "type": "object",
+      "properties": {
+        "navigationBarBackgroundColor": {
+          "$ref": "#/definitions/TypeHexColor",
+          "default": "#000000"
+        },
+        "navigationBarTextStyle": {
+          "enum": ["white", "black"],
+          "default": "white"
+        },
+        "navigationBarTitleText": {
+          "type": "string"
+        },
+        "navigationStyle": {
+          "enum": ["default", "custom"],
+          "default": "default"
+        },
+        "backgroundColor": {
+          "$ref": "#/definitions/TypeHexColor",
+          "default": "#ffffff"
+        },
+        "backgroundTextStyle": {
+          "enum": ["dark", "light"],
+          "default": "dark"
+        },
+        "enablePullDownRefresh": {
+          "type": "boolean",
+          "default": false
+        },
+        "onReachBottomDistance": {
+          "type": "integer",
+          "default": 50,
+          "min": 0
+        },
+        "orientation": {
+          "enum": ["portrait", "landscape"],
+          "default": "portrait"
+        },
+        "fullscreen": {
+          "type": "boolean",
+          "default": false
+        },
+        "designWidth": {
+          "type": "integer",
+          "default": 750,
+          "min": 0
+        },
+        "autoDesignWidth": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "widgets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "path"],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "path": {
+            "$ref": "#/definitions/TypePathString"
+          },
+          "minPlatformVersion": {
+            "$ref": "#/definitions/TypeVersionString"
+          }
+        }
+      }
+    }
+  }
+}
