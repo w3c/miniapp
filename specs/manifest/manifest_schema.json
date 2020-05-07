@@ -11,8 +11,7 @@
     "TypeVersionString": {
       "type": "string",
       "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
-      "example": "1.0.0",
-      "description": "It is the minimum supported version of the required platform that can ensure normal operation of MiniApp."
+      "example": "1.0.0"
     },
     "TypePathString": {
       "type": "string",
@@ -91,7 +90,8 @@
       "min": 1
     },
     "minPlatformVersion": {
-      "$ref": "#/definitions/TypeVersionString"
+      "$ref": "#/definitions/TypeVersionString",
+      "description": "It is the minimum supported version of the required platform that can ensure normal operation of MiniApp."
     },
     "pages": {
       "type": "array",
@@ -167,7 +167,8 @@
             "$ref": "#/definitions/TypePathString"
           },
           "minPlatformVersion": {
-            "$ref": "#/definitions/TypeVersionString"
+            "$ref": "#/definitions/TypeVersionString",
+            "description":"If not set, it's identical to the MiniApp platform version by default."
           }
         }
       }
