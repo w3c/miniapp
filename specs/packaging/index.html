@@ -102,7 +102,8 @@
         
         </pre>
         
-        <h2>app</h2>
+        <section>
+        <h3>app</h3>
         <p>app manages all MiniApp pages and global data, as well as MiniApp’s lifecycle management. It contains logic (app.js), configuration (manifest.json) and css (app.css).
         </p>
         
@@ -111,8 +112,10 @@
           <li>app.css is responsible for global css for all MiniApp pages.</li>
           <li>app.js is responsible for MiniApp lifecycle management, like launch Mini App, show Mini App, hide Mini App.</li>
         </ul>
-        
-        <h2>page</h2>
+    </section>
+
+    <section>
+        <h3>page</h3>
         <p>page represents each of MiniApp pages, responsible for MiniApp page display and user interaction. It contains logic (page.js), configuration (page.json), structure (page.xml) and css (page.css).
         </p>
         
@@ -122,10 +125,23 @@
           <li>page.css is responsible for CSS for each MiniApp page.</li>
           <li>page.js is responsible for MiniApp page lifecycle management, defined in <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle</a></li>
         </ul>
-        
-        <h2>common</h2>
+
+    </section>
+
+        <section>
+        <h3>common</h3>
         <p>It can include public resources such as components, resources, and utils, which are used to store custom components, multimedia resources, and js files.</p>
-        
+        </section>
+    </section>
+
+    <section>
+        <h2>IANA Considerations</h2>
+        <p>
+            The proposed MIME type for the MiniApp package is <code>application/miniapp-pkg</code>. It needs to be registered with <a href="https://www.iana.org/">IANA</a> when this work moves to a normative phase. 
+            <p class="note">
+                A temporary solution could be <code>application/x-w3c-miniapp-pkg</code> for the sake of any early implementation.
+            </p>
+        </p>
     </section>
 
 </body>
