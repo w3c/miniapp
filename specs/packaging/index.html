@@ -46,6 +46,10 @@
                 name: "Zhiqiang Yu",
                 companyURL: "http://www.huawei.com/",
                 company: "Huawei"
+              }, {
+                name: "Yongjing Zhang",
+                companyURL: "http://www.huawei.com/",
+                company: "Huawei"
               }],
 
             wg: "MiniApps Ecosystem Community Group",
@@ -76,12 +80,12 @@
     
     <section>
         <h2>Packaging</h2>
-        <p>MiniApp has one app config file to globally describe and configure MiniApp. It is responsible for all MiniApp pages and global data, as well as the management of MiniApp lifecycle.
+        <p>Each MiiniApp package is wrapped as a <a herf="https://www.pkware.com/documents/casestudies/APPNOTE.TXT">ZIP</a> file. It contains, at the root level, a global configration file (<code>manifest.json</code>) to describe and configure the whole MiniApp, an application logic file (<code>app.js</code>), and a default style file (<code>app.css</code>).
         </p>
         
-        <p>MiniApp contains multiple pages files.</p>
+        <p>The MiniApp pacakge also contains multiple page related files in the <code>pages</code> folder, and other common resource files in the <code>common</code> folder </p>
         
-        <p>One common illustration example as following:</p>
+        <p>One typical illustrative example of a MiniApp pacakge is as follows:</p>
         
         <pre class="example">
                 |___app
@@ -89,42 +93,45 @@
                 |     |___app.js
                 |     |___app.css
                 |     |___pages
-                |     |       |___page.js
-                |     |       |___page.xml
-                |     |       |___page.json
-                |     |       |___page.css
+                |     |       |___page1.js
+                |     |       |___page1.xml
+                |     |       |___page1.json
+                |     |       |___page1.css
                 |     |___common
-                |     |       |___component.js
-                |     |       |___component.xml
-                |     |       |___component.css
-                |     |       |___component.json
+                |     |       |___componentA.js
+                |     |       |___componentA.xml
+                |     |       |___componentA.css
+                |     |       |___componentA.json
                 |     |       |___example.png
         
         </pre>
         
         <h2>app</h2>
-        <p>app manages all MiniApp pages and global data, as well as MiniApp’s lifecycle management. It contains logic (app.js), configuration (manifest.json) and css (app.css).
-        </p>
+        <p class="note">Whether this 'app' root folder is need is ffs.</p>
+            <p>
+                The MiniApp packge contains at the root level the global data and lifecycle management of the MiniApp in the form of the following files:
+            </p>
         
         <ul>
-          <li>manifest.json is responsible for global configuration of MiniApp, including: file path of MiniApp pages, window configuration (such as navigator bar, background image and color, page title, etc.) and Tab Bar configuration.</li>
-          <li>app.css is responsible for global css for all MiniApp pages.</li>
-          <li>app.js is responsible for MiniApp lifecycle management, like launch Mini App, show Mini App, hide Mini App.</li>
+          <li><code>manifest.json</code> is responsible for the global configuration of the MiniApp, such as the file paths of MiniApp pages and the window configuration (e.g. navigator bar, background image and color, page title, etc.). Details are specified in the <a href="../manifest/index.html">Manifest specification</a></li>
+          <li><code>app.css</code> is responsible for the global CSS style for all MiniApp pages.</li>
+          <li><code>app.js</code> is responsible for the MiniApp lifecycle management, such as launching, showing and hiding the MiniApp.</li>
         </ul>
         
-        <h2>page</h2>
-        <p>page represents each of MiniApp pages, responsible for MiniApp page display and user interaction. It contains logic (page.js), configuration (page.json), structure (page.xml) and css (page.css).
+        <h2>pages</h2>
+        <p>
+            The <code>pages</code> folder contains sets of files for the display and user interaction of all MiniApp pages. Each set of files that shares the same base file name (e.g. 'page1') with different extension names describe a particular page on different aspects, such as the service logic (e.g. page1.js), the configuration (e.g. page1.json), the structure (e.g. page1.xml) and the style (e.g page1.css). Developers can choose to put all page files directly under the <code>pages</code> folder in a flat manner, or organize them in different sub-folders for different pages.
         </p>
         
         <ul>
-          <li>page.json is responsible for configuration of each MiniApp page.</li>
-          <li>page.xml is responsible for the structure of each MiniApp page, similar to HTML.</li>
-          <li>page.css is responsible for CSS for each MiniApp page.</li>
-          <li>page.js is responsible for MiniApp page lifecycle management, defined in <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle</a></li>
+          <li>A <code>*.json</code> file is responsible for the configuration of a MiniApp page.</li>
+          <li>A <code>*.xml</code> file is responsible for the structure of a MiniApp page, similar to HTML.</li>
+          <li>A <code>*.css</code> file is responsible for the CSS style of a MiniApp page.</li>
+          <li>A <code>*.js</code> file is responsible for the service logic and lifecycle management (defined in <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle</a>) of a MiniApp page.</li>
         </ul>
         
         <h2>common</h2>
-        <p>It can include public resources such as components, resources, and utils, which are used to store custom components, multimedia resources, and js files.</p>
+        <p>The <code>common</code> folder contains common resources such as components, multimedia resources, and utils (js files). Developers can choose to put all resource files directly under the <code>common</code> folder in a flat manner, or organize them in different sub-folders as needed.</p>
         
     </section>
 
