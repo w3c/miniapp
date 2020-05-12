@@ -124,7 +124,6 @@ Page({
           <th align="left"> Lifecycle States defined by existing W3C specs </th>
         </tr>
     </thead>
-    <tbody>
         <tr class="tbody-first-child">
           <td align="left"> Application Launched </td>
           <td align="left"> N/A </td>
@@ -162,5 +161,4 @@ Page({
           <td align="left"> Discarded (https://wicg.github.io/page-lifecycle/#sec-lifecycle-states) </td>
         </tr>
         
-    </tbody>
 </table>
