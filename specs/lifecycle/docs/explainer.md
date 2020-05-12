@@ -113,3 +113,54 @@ Page({
   },
 });
 ```
+
+
+## Comparison with some related work in W3C (such as [Page Visibility](https://w3c.github.io/page-visibility/) and [Page Lifecycle](https://wicg.github.io/page-lifecycle/))
+
+<table>
+    <thead>
+        <tr class="thead-first-child">
+          <th align="left"> MiniApp Lifecycle States</th>
+          <th align="left"> Lifecycle States defined by existing W3C specs </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="tbody-first-child">
+          <td align="left"> Application Launched </td>
+          <td align="left"> N/A </td>
+        </tr>
+        <tr class="tbody-first-child">
+          <td align="left"> Application Shown </td>
+          <td align="left"> N/A </td>
+        </tr>
+        <tr class="tbody-first-child">
+          <td align="left"> Application Hidden </td>
+          <td align="left"> N/A </td>
+        </tr>
+        <tr class="tbody-first-child">
+          <td align="left"> Application Error </td>
+          <td align="left"> N/A </td>
+        </tr>
+        <tr class="tbody-first-child">
+          <td align="left"> Page Loaded </td>
+          <td align="left"> N/A </td>
+        </tr>
+        <tr class="tbody-first-child">
+          <td align="left"> Page Ready </td>
+          <td align="left"> N/A </td>
+        </tr>
+        <tr class="tbody-first-child">
+          <td align="left"> Page Shown </td>
+          <td align="left"> Visible (https://w3c.github.io/page-visibility/#visibility-states) </td>
+        </tr>
+        <tr class="tbody-first-child">
+          <td align="left"> Page Hidden </td>
+          <td align="left"> Hidden (https://w3c.github.io/page-visibility/#visibility-states) </td>
+        </tr>
+        <tr class="tbody-first-child">
+          <td align="left"> Page Unloaded </td>
+          <td align="left"> Discarded (https://wicg.github.io/page-lifecycle/#sec-lifecycle-states) </td>
+        </tr>
+        
+    </tbody>
+</table>
