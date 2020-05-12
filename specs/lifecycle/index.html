@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <title>MiniApp Lifecycle</title>
 
+    <link rel="stylesheet" href="../local.css" />
+
     <style>
     .two-cols {
       display: grid;
@@ -25,6 +27,7 @@
     </style>
 
     <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common"></script>
+    <script defer src="../script.js"></script>
 
     <script class="remove">
         var respecConfig = {
@@ -53,19 +56,36 @@
 
 <body>
     <section id='abstract'>
-        <p>
+        <p its-locale-filter-list="en" lang="en">
           This specification defines the MiniApp lifecycle events and the process to manage MiniApp and each page's lifecycle. Implementing this specification enables the user agent to manage the lifecycle events of both global application lifecycle and page lifecycle.
+        </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+          本规范定义了MiniApp生命周期的事件与管理小程序应用及各个MiniApp页面的生命周期流程。通过实施本规范可以实现user agent对MiniApp全局应用生命周期与MiniApp页面生命周期的管理。
         </p>
     </section>
     <section id='sotd'>
-        <p>
+        <p its-locale-filter-list="en" lang="en">
         This is still a work in progress. The proposal is being incubated in the <a href="https://www.w3.org/community/miniapps/">W3C MiniApps Ecosystem Community Group</a>.
         </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+          本文档由 <a href="https://www.w3.org/community/miniapps/">W3C MiniApps生态社区组</a>孵化，目前尚在编辑草稿阶段。</p>
+      <p id="langSwitch">
+        <button onclick="switchLang('zh-hans')" lang="zh-hans">简体中文</button>
+        <button onclick="switchLang('en')" lang="en">English</button>
+        <button onclick="switchLang('all')" lang="en">All</button>
+      </p>
     </section>
 
     <section>
-        <h2>Background</h2>
-        <p>Application lifecycle mechanism provides a means to manage the lifecycle events of both global application lifecycle and page lifecycle. Developing MiniApp with knowledge of the application’s and page’s lifecycle state can lead to improved user experiences. MiniApp application lifecycle includes a set of events, with which MiniApp can choose to alter its behavior based on its state.
+      <h2>
+        <span its-locale-filter-list="en" lang="en">Background</span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans">背景</span>
+      </h2>
+      <p its-locale-filter-list="en" lang="en">
+        Application lifecycle mechanism provides a means to manage the lifecycle events of both global application lifecycle and page lifecycle. Developing MiniApp with knowledge of the application’s and page’s lifecycle state can lead to improved user experiences. MiniApp lifecycle includes a set of events, with which MiniApp can choose to alter its behavior based on its state.
+        </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+          应用生命周期机制提供了一种管理生命周期事件的机制，可以管理全局应用生命周期与页面生命周期。在开发MiniApp时，了解应用与页面的生命周期状态，可以帮助提供更好的用户体验。MiniApp生命周期包括一系列事件，MiniApp可以利用这些事件来基于生命周期状态变更MiniApp的行为。
         </p>
     </section>
 
@@ -73,55 +93,143 @@
           <h2>MiniApp Global Application Lifecycle</h2>
         <section>
           <h2>MiniApp Global Application Lifecycle States</h2>
-          <p>This spec defines what the lifecycle of a MiniApp global aplication is and adds definition to enable MiniApp to respond to four important lifecycle events commonly performed by MiniApp:</p>
+          <p its-locale-filter-list="en" lang="en">This spec defines what the lifecycle of a MiniApp global aplication is and adds definition to enable MiniApp to respond to four important lifecycle events commonly performed by MiniApp:</p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">本规范规定MiniApp全局生命周期的定义，以及MiniApp重要的四个生命周期事件：</p>
           <ul>
-          <li>MiniApp initialization</li>
-          <li>MiniApp running in foreground</li>
-          <li>MiniApp running in background</li> 
-          <li>MiniApp error</li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">MiniApp initialization</p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp初始化</p>
+          </li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">MiniApp running in foreground</p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp前台运行</p>
+          </li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">MiniApp running in background</p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp后台运行</p>
+          </li> 
+          <li>
+            <p its-locale-filter-list="en" lang="en">MiniApp error</p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp错误</p>
+          </li>
           </ul>
-        
-          <p>For each MiniApp, after initialized, it will be either running in the foreground or in the background.</p>
+          
+          <p its-locale-filter-list="en" lang="en">For each MiniApp, after initialized, it will be either running in the foreground or in the background.</p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">对每一个MiniApp，在初始化后，它会运行在前台或后台。</p>
 
-          <p>When user chooses to close the MiniApp by clicking the close button on MiniApp, or go to the mobile phone’s home screen, the MiniApp will not be destroyed immediately, but switch to be running in the background.</p>
+          <p its-locale-filter-list="en" lang="en">When user chooses to close the MiniApp by clicking the close button on MiniApp, or go to the mobile phone’s home screen, the MiniApp will not be destroyed immediately, but switch to be running in the background.</p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">当用户选择点击MiniApp的关闭按键来关闭MiniApp时，或者回到手机的桌面时，MiniApp并不会被销毁，而是转为运行在后台。</p>
           
-          <p>When user reopens the same MiniApp, MiniApp will switch from running in the background to the foreground.</p>
-          
-          <p>Only when MiniApp runs in the background for more than a specific time duration (e.g. 5 minutes), or occupies too much system resources in the background, then MiniApp will be destroyed.</p>
-          
-          <p>This spec formalizes four lifecycle states to support the above:</p>
+          <p its-locale-filter-list="en" lang="en">When user reopens the same MiniApp, MiniApp will switch from running in the background to the foreground.</p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">当用户再次打开同一个MiniApp时，MiniApp会从后台切换为前台运行。</p>
+            
+          <p its-locale-filter-list="en" lang="en">Only when MiniApp runs in the background for more than a specific time duration (e.g. 5 minutes), or occupies too much system resources in the background, then MiniApp will be destroyed.</p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">只有当MiniApp在后台运行了超过一段时间（比如5分钟），或者占用了太多后台系统资源，则MiniApp会被销毁。</p>
+            
+          <p its-locale-filter-list="en" lang="en">This spec formalizes four lifecycle states to support the above:</p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">本规范定义了四个生命周期状态来支持以上的功能：</p>
+
           <ul>
-          <li>Launched: lifecycle state for MiniApp initialization. This means that the MiniApp initialization is completed, and it is triggered only once. Through this event, developer can obtain the information of the MiniApp, such as URI, source info, etc.</li>
-          <li>Shown: lifecycle state for MiniApp running in foreground. It is triggered once the MiniApp launch is completed, or once the MiniApp switches to be running in foreground from background.</li>
-          <li>Hidden: lifecycle state for MiniApp running in background. It is triggered once the MiniApp switches to be running from foreground to background.</li>
-          <li>Error: lifecycle state for MiniApp error. It is triggered once the MiniApp is confronted with script error.</li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">Launched: lifecycle state for MiniApp initialization. This means that the MiniApp initialization is completed, and it is triggered only once. Through this event, developer can obtain the information of the MiniApp, such as URI, source info, etc.
+            </p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">
+              Launched：MiniApp初始化的生命周期状态。代表MiniApp初始化已经完成，并且该状态只触发一次。通过这个事件，开发者可以获取MiniApp的信息，包括URI、来源信息等。
+            </p>
+            </li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">Shown: lifecycle state for MiniApp running in foreground. It is triggered once the MiniApp launch is completed, or once the MiniApp switches to be running in foreground from background.
+            </p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">
+              Shown：MiniApp前台运行的生命周期状态。在MiniApp启动完成后触发，或者在MiniApp从后台转为前台运行时触发。
+            </p>
+            </li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">Hidden: lifecycle state for MiniApp running in background. It is triggered once the MiniApp switches to be running from foreground to background.
+            </p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">
+              Hidden：MiniApp后台运行的生命周期状态。在MiniApp从前台转为后台运行时触发。
+            </p>
+            </li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">Error: lifecycle state for MiniApp error. It is triggered once the MiniApp is confronted with script error.
+            </p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">
+              Error：MiniApp错误的生命周期状态。在MiniApp遇到脚本错误时触发。
+            </p>
+            </li>
           </ul>
         </section>
           
         <section>
           <h2>MiniApp Global Application Lifecycle API</h2>
           
-          <p>MiniApp global application lifecycle involves the following API:</p>
+          <p its-locale-filter-list="en" lang="en">MiniApp global application lifecycle involves the following API:</p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp全局应用生命周期包含如下API：</p>
           
           <ul>
-          <li>onLaunch(object: Object): to monitor the callback of MiniApp initialization.
+          <li>
+            <p its-locale-filter-list="en" lang="en">onLaunch(object: Object): to monitor the callback of MiniApp initialization.</p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">onLaunch(object: Object)：监测MiniApp初始化的回调</p>
              <ul>
-             <li>object contains several attributes:
+             <li>
+              <p its-locale-filter-list="en" lang="en">object contains several attributes:</p>
+              <p its-locale-filter-list="zh-hans" lang="zh-hans">object包含如下属性：</p>
                  <ul>
-                 <li>query: inputted query for current MiniApp</li>
-                 <li>path: the page path for current MiniApp</li>
-                 <li>referrerInfo: source info for current MiniApp, including MiniApp ID, and optional extra data</li>
+                 <li>
+                   <p its-locale-filter-list="en" lang="en">
+                     query: inputted query for current MiniApp
+                   </p>
+                   <p its-locale-filter-list="zh-hans" lang="zh-hans">
+                    query：当前MiniApp的输入query
+                   </p>
+                  </li>
+                 <li>
+                   <p its-locale-filter-list="en" lang="en">
+                     path: the page path for current MiniApp
+                   </p>
+                   <p its-locale-filter-list="zh-hans" lang="zh-hans">
+                    path：当前MiniApp的页面路径
+                   </p>
+                  </li>
+                 <li>
+                   <p its-locale-filter-list="en" lang="en">
+                     referrerInfo: source info for current MiniApp, including MiniApp ID, and optional extra data
+                   </p>
+                   <p its-locale-filter-list="zh-hans" lang="zh-hans">
+                    referrerInfo：当前MiniApp的来源信息，包括MiniApp ID，以及可选的其他数据
+                   </p>
+                  </li>
                  </ul>
              </li>
              </ul>
           </li>
-          <li>onShow(object: Object): to monitor the callback of MiniApp foreground display.
+          <li>
+            <p its-locale-filter-list="en" lang="en">onShow(object: Object): to monitor the callback of MiniApp foreground display.</p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">onShow(object: Object)：监测MiniApp前台显示的回调</p>
              <ul>
-             <li>Definition of object is same as the onLaunch(object: Object)</li>
+             <li>
+              <p its-locale-filter-list="en" lang="en">Definition of object is same as the onLaunch(object: Object)</p>
+              <p its-locale-filter-list="zh-hans" lang="zh-hans">定义与onLaunch(object: Object)相同</p>
+              </li>
              </ul>
           </li>
-          <li>onHide(): to monitor the callback of MiniApp switching to be running in the background.</li>
-          <li>onError(error: String): to monitor the callback of MiniApp error.</li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">
+              onHide(): to monitor the callback of MiniApp switching to be running in the background.
+            </p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">
+              onHide()：监测MiniApp转为后台运行的回调
+            </p>
+          </li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">
+              onError(error: String): to monitor the callback of MiniApp error.
+            </p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">
+              onError(error: String)：监测MiniApp错误的回调
+            </p>
+          </li>
           </ul>
         </section>
        </section>
@@ -131,61 +239,146 @@
          <section>
           <h2>MiniApp Page Lifecycle States</h2>
             
-          <p>This spec defines what the lifecycle of a MiniApp page is and adds definition to enable MiniApp to respond to five important page lifecycle events commonly performed by MiniApp:</p>
+          <p its-locale-filter-list="en" lang="en">This spec defines what the lifecycle of a MiniApp page is and adds definition to enable MiniApp to respond to five important page lifecycle events commonly performed by MiniApp:</p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">本规范规定MiniApp页面生命周期的定义，以及MiniApp重要的五个页面生命周期事件：</p>
           <ul>
-          <li>MiniApp page loading</li>
-          <li>MiniApp page first rendering ready</li>
-          <li>MiniApp page running in foreground</li>
-          <li>MiniApp page running in background</li>
-          <li>MiniApp page unloading</li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">MiniApp page loading</p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp页面加载</p>
+          </li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">MiniApp page first rendering ready</p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp页面首次渲染完成</p>
+          </li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">MiniApp page running in foreground</p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp页面前台运行</p>
+          </li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">MiniApp page running in background</p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp页面后台运行</p>
+          </li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">MiniApp page unloading</p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp页面关闭</p>
+          </li>
           </ul>
-            
-          <p>The following figure illustrates the MiniApp page lifecycle.</p>
+          
+          <p its-locale-filter-list="en" lang="en">The following figure illustrates the MiniApp page lifecycle.</p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">下图描述了MiniApp页面生命周期过程。</p>
+          
           <figure id="lifecycle-img">
             <span style="text-align:center;"><img src="images/lifecycle.png" alt="MiniApp page lifecycle" width="600"></span>
             <figcaption>MiniApp page lifecycle illustration</figcaption>
           </figure>
 
           <ul>
-<li>When user firstly opens a MiniApp, the RenderView and Worker will simultaneously start the initialization.</li>
-<li>After Worker is initialized, it runs MiniApp global lifecycle event app.onLaunch and app.onShow to create the MiniApp instance.</li>
-<li>Afterwards，Worker runs MiniApp page lifecycle event page.onLoad.</li>
-<li>Then Worker sends the initial data to RenderView to start the first render.</li>
-<li>Once first render is completed, RenderView notifies Worker, then Worker runs MiniApp page lifecycle event page.onReady.</li>
-<li>Afterwards, user can interact with MiniApp. RenderView can be triggered to deliver user event to Worker for further processing, then Workers returns result data to RenderView for re-render.</li>
-<li>If MiniApp page switch to be running in the background, Worker runs MiniApp page lifecycle event page.onHide keep alive. If MiniApp page switch to foreground, Worker runs MiniApp page lifecycle event page.onShow.</li>
-<li>If to destroy MiniApp page, Worker runs MiniApp page lifecycle event page.onUnload.</li>
+<li>
+  <p its-locale-filter-list="en" lang="en">When user firstly opens a MiniApp, the RenderView and Worker will simultaneously start the initialization.</p>
+  <p its-locale-filter-list="zh-hans" lang="zh-hans">当用户第一次打开一个MiniApp时，RenderView与Worker同时启动初始化。</p>
+</li>
+<li>
+  <p its-locale-filter-list="en" lang="en">After Worker is initialized, it runs MiniApp global lifecycle event app.onLaunch and app.onShow to create the MiniApp instance.</p>
+  <p its-locale-filter-list="zh-hans" lang="zh-hans">Worker初始化完成后，它运行MiniApp全局生命周期事件app.onLaunch与app.onShow来创建MiniApp实例。</p>
+</li>
+<li>
+  <p its-locale-filter-list="en" lang="en">Afterwards，Worker runs MiniApp page lifecycle event page.onLoad.</p>
+  <p its-locale-filter-list="zh-hans" lang="zh-hans">之后，Worker运行MiniApp页面生命周期事件page.onLoad。</p>
+</li>
+<li>
+  <p its-locale-filter-list="en" lang="en">Then Worker sends the initial data to RenderView to start the first render.</p>
+  <p its-locale-filter-list="zh-hans" lang="zh-hans">Worker发送初始化数据到RenderView来启动页面首次渲染。</p>
+</li>
+<li>
+  <p its-locale-filter-list="en" lang="en">Once first render is completed, RenderView notifies Worker, then Worker runs MiniApp page lifecycle event page.onReady.</p>
+  <p its-locale-filter-list="zh-hans" lang="zh-hans">首次渲染完成后，RenderView通知Worker，之后Worker运行MiniApp页面生命周期事件page.onReady。</p>
+</li>
+<li>
+  <p its-locale-filter-list="en" lang="en">Afterwards, user can interact with MiniApp. RenderView can be triggered to deliver user event to Worker for further processing, then Workers returns result data to RenderView for re-render.</p>
+  <p its-locale-filter-list="zh-hans" lang="zh-hans">之后用户可以与MiniApp进行交互。RenderView会被触发来发送用户事件到Worker进行处理，然后Worker返回结果数据到RenderView进行再次渲染。</p>
+</li>
+<li>
+  <p its-locale-filter-list="en" lang="en">
+    If MiniApp page switch to be running in the background, Worker runs MiniApp page lifecycle event page.onHide keep alive. If MiniApp page switch to foreground, Worker runs MiniApp page lifecycle event page.onShow.
+  </p>
+  <p its-locale-filter-list="zh-hans" lang="zh-hans">
+    如果MiniApp页面转为后台运行，Worker运行MiniApp页面生命周期事件page.onHide来保活。如果MiniApp页面转为前台运行，Worker运行MiniApp页面生命周期事件page.onShow。
+  </p>
+</li>
+<li>
+  <p its-locale-filter-list="en" lang="en">
+    If to destroy MiniApp page, Worker runs MiniApp page lifecycle event page.onUnload.
+  </p>
+  <p its-locale-filter-list="zh-hans" lang="zh-hans">
+    如果要销毁MiniApp页面，则Worker运行MiniApp页面生命周期事件page.onUnload。
+  </p>
+  </li>
           </ul>
-            
-          <p>This spec formalizes five page lifecycle states to support the above:</p>
+             
+          <p its-locale-filter-list="en" lang="en">This spec formalizes five page lifecycle states to support the above:</p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">本规范定义了五个页面生命周期状态来支持以上的功能：</p>
           <ul>
-          <li>Loaded: lifecycle state for MiniApp page loading. This means that MiniApp page loading is completed. At this moment, Worker has obtained initialization data. Developers can obtain the path of current MiniApp page as well as the path’s query. Also, at this moment, the system event can be monitored.</li>
-          <li>Ready: lifecycle state for MiniApp page’s first rendering. It is triggered once the MiniApp page first rendering is completed. At this moment, the page UI can be configured.</li>
-          <li>Shown: lifecycle state for MiniApp page display. It is triggered once the page switches to be running in foreground from background. At this moment, developers can update data and refresh page.</li>
-          <li>Hidden: lifecycle state for MiniApp page running in background. It is triggered once the MiniApp page switches to be running from foreground to background.</li>
-          <li>Unloaded: lifecycle state for MiniApp page destroying. It is triggered once the MiniApp page is destroyed. At this moment, the registered monitoring event is destroyed.</li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">Loaded: lifecycle state for MiniApp page loading. This means that MiniApp page loading is completed. At this moment, Worker has obtained initialization data. Developers can obtain the path of current MiniApp page as well as the path’s query. Also, at this moment, the system event can be monitored.</p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">Loaded：MiniApp页面加载的生命周期状态。代表MiniApp页面加载已经完成。此时Worker已经获取到初始化数据，开发者能获取当前MiniApp页面路径、以及页面的query，并且此时系统事件可以被监测。</p>
+          </li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">Ready: lifecycle state for MiniApp page’s first rendering. It is triggered once the MiniApp page first rendering is completed. At this moment, the page UI can be configured.</p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">Ready：MiniApp页面首次渲染的生命周期状态。在MiniApp页面首次渲染完成后触发。此时页面UI可以被配置。</p>
+          </li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">Shown: lifecycle state for MiniApp page display. It is triggered once the page switches to be running in foreground from background. At this moment, developers can update data and refresh page.</p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">Shown：MiniApp页面显示的生命周期状态。在MiniApp从后台转为前台运行时触发。此时开发者可以更新页面。</p>
+          </li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">Hidden: lifecycle state for MiniApp page running in background. It is triggered once the MiniApp page switches to be running from foreground to background.</p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">Hidden：MiniApp页面后台运行的生命周期状态。在MiniApp从前台转为后台运行时触发。</p>
+          </li>
+          <li>
+            <p its-locale-filter-list="en" lang="en">Unloaded: lifecycle state for MiniApp page destroying. It is triggered once the MiniApp page is destroyed. At this moment, the registered monitoring event is destroyed.</p>
+            <p its-locale-filter-list="zh-hans" lang="zh-hans">Unloaded：MiniApp页面销毁的生命周期状态。在MiniApp页面被销毁时触发。此时注册的监测事件被销毁。</p>
+          </li>
           </ul>
        </section>
        <section>
           <h2>MiniApp Page Lifecycle API</h2>
-          <p>MiniApp page lifecycle involves the following API:</p>
+          <p its-locale-filter-list="en" lang="en">MiniApp page lifecycle involves the following API:</p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp页面生命周期包含如下API：</p>
           <ul>
-<li>onLoad(query: Object): to monitor the callback of MiniApp page loading.
+<li>
+  <p its-locale-filter-list="en" lang="en">onLoad(query: Object): to monitor the callback of MiniApp page loading.</p>
+  <p its-locale-filter-list="zh-hans" lang="zh-hans">onLoad(query: Object)：监测MiniApp页面加载的回调</p>
 <ul>
-<li>query: inputted query for current MiniApp page</li>
+<li>
+  <p its-locale-filter-list="en" lang="en">query: inputted query for current MiniApp page</p>
+  <p its-locale-filter-list="zh-hans" lang="zh-hans">query：当前MiniApp的输入query</p>
+</li>
 </ul>
 </li>
-<li>onShow(): to monitor the callback of MiniApp page display.</li>
-<li>onReady(): to monitor the callback of MiniApp page’s first rendering.</li>
-<li>onHide(): to monitor the callback of MiniApp page switching to be running in the background.</li>
-<li>onUnload(): to monitor the callback of destroying MiniApp page.</li>
+<li>
+  <p its-locale-filter-list="en" lang="en">onShow(): to monitor the callback of MiniApp page display.</p>
+  <p its-locale-filter-list="zh-hans" lang="zh-hans">onShow()：监测MiniApp页面显示的回调</p>
+</li>
+<li>
+  <p its-locale-filter-list="en" lang="en">onReady(): to monitor the callback of MiniApp page’s first rendering.</p>
+  <p its-locale-filter-list="zh-hans" lang="zh-hans">onReady()：监测MiniApp首次渲染的回调</p>
+</li>
+<li>
+  <p its-locale-filter-list="en" lang="en">onHide(): to monitor the callback of MiniApp page switching to be running in the background.</p>
+  <p its-locale-filter-list="zh-hans" lang="zh-hans">onHide()：监测MiniApp转为后台运行的回调</p>
+</li>
+<li>
+  <p its-locale-filter-list="en" lang="en">onUnload(): to monitor the callback of destroying MiniApp page.</p>
+  <p its-locale-filter-list="zh-hans" lang="zh-hans">onUnload()：监测MiniApp页面销毁的回调</p>
+</li>
           </ul>
          </section>
         </section>
 
     <section class="appendix">
       <h2>
-        Acknowledgments
+        <span its-locale-filter-list="en" lang="en">Acknowledgments</span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans">致谢</span>
       </h2>
       <p>
         暂无
