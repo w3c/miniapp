@@ -50,6 +50,22 @@
                 name: "Yongjing Zhang",
                 companyURL: "http://www.huawei.com/",
                 company: "Huawei"
+              },{
+                name: "Tengyuan Zhang",
+                companyURL: "https://www.baidu.com/",
+                company: "Baidu, Inc"
+              }, {
+                name: "Qian Liu",
+                companyURL: "https://www.baidu.com/",
+                company: "Baidu, Inc"
+              }, {
+                name: "Shuo Wang",
+                companyURL: "https://www.baidu.com/",
+                company: "Baidu, Inc"
+              }, {
+                name: "Dan Zhou",
+                companyURL: "https://www.baidu.com/",
+                company: "Baidu, Inc"
               }],
 
             wg: "MiniApps Ecosystem Community Group",
@@ -61,14 +77,23 @@
 
 <body>
     <section id='abstract'>
-        <p>
-            This document specifies a standardized MiniApp packaging constructor to describe MiniApp package uniformly. This provides a standard description of the package structure and the package construction methods that can be used in any MiniApp runtime environment.
+        <p its-locale-filter-list="en" lang="en">
+          This specification defines the standardized miniapp packaging construction method, which provides a standard package structure description. The Miniapp package file packages all the static page templates / CSS / JavaScript files and manifest file. Miniapp package file can be used in any runtime environment (user agent).
         </p>
-        <p>
-            For example, by configuring the package resource's description file, developers can determine the path to start the MiniApp. The MiniApp runtime environment searches for the specified path resource from the description file, and launches the specified page of the MiniApp. The installation of the MiniApp package is simpler than native apps. MiniApp runtime obtains the specified package resource through network request or local package file during the MiniApp's first run and caches the MiniApp package locally. MiniApp runtime will load the package resource file from the local cache while the MiniApp is opened next time.
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+          本文描述了一个标准化的MiniApp包构建方式，提供一种标准的包结构描述，将小程序页面所需的所有静态页面模板 /CSS/JavaScript 文件，和配置文件（Manifest）打包在一起，允许在任何运行时环境可使用。
         </p>
-        <p> 
-            The MiniApp runtime loads the specified path resource according to the description file from MiniApp package file, and MiniApp can be launched offline. This provides a standard of complete package structure, maintaining offline capabilities and background running capabilities.
+        <p its-locale-filter-list="en" lang="en">
+          The Miniapp package file contains a manifest document (located in the root directory of the package). The manifest file included an overview of the Miniapp resource. Including page description and page path. package file contains JavaScript code, one or more page files, including template code of page, CSS code of page style and JavaScript code of page logic. The Miniapp package file should support digital signature verification.
+        </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+          小程序包资源，包含一个配置文档，位于包的根目录下。配置文件应包括整个小程序的概述（页面描述及其对应路径，用于页面定位和开启）。包含 JavaScript 代码的应用级逻辑文件，一个或多个页面文件，包含页面结构的模板代码、页面样式的 CSS 代码和页面逻辑的 JavaScript 代码。小程序包应支持数字签名验证。
+        </p>
+        <p its-locale-filter-list="en" lang="en">
+          The Miniapp runtime environment (user agent), which can identify Miniapp package files through standard package format and MIME media type. After fetching the Miniapp package file, all static page templates / CSS / JavaScript files are cached on the device through standardized dereference. These cache package resources are available until the next update without fetching the miniapp package file again. In terms of launch  mode, the Miniapp can launch in normally without network. The runtime environment (user agent) locates the specified startup page from the package cache path and starts the Miniapp according to the description of the manifest file.
+        </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+          小程序运行时环境，可通过标准的文件格式、媒体类型识别小程序包文件。获取（Fetch）小程序包后，通过标准化的解引用，将所有静态页面模板 /CSS/JavaScript 文件缓存在设备上。在下次更新之前，这些资源始终可用，无需重新获取（Fetch）小程序包文件。启动方式上，小程序无需网络也可以正常启动，运行时环境根据小程序标准配置文件的描述(minifest)，从包缓存路径中定位指定的启动页面，启动小程序。
         </p>
     </section>
     
