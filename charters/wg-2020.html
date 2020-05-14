@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      [DRAFT] MiniApps Working Group Charter
+    </title>
+    <link rel="stylesheet" href="https://www.w3.org/2005/10/w3cdoc.css" type=
+    "text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href=
+    "https://www.w3.org/OldGuide/pubrules-style.css">
+    <link rel="stylesheet" type="text/css" href=
+    "https://www.w3.org/2006/02/charter-style.css">
+    <style>
+    #navbar
+    {
+       font-size: small;
+    }
+
+    .complete
+    {
+       font-weight: bold;
+    }
+    .roadmap { width: 80%;}
+    .roadmap tr td:nth-child(2) { background: #FED }
+    .roadmap tr td:nth-child(3) { background: #FCB }
+    .roadmap tr td:nth-child(4) { background: #FA9 }
+    .roadmap tr td:nth-child(5) { background: #F87 }
+    .roadmap tr td:nth-child(6) { background: #F60 }
+    </style>
+  </head>
+  <body>
+    <div id="template">
+      <ul id="navbar">
+        <li>
+          <a href="#goals">Goals</a>
+        </li>
+        <li>
+          <a href="#scope">Scope</a>
+        </li>
+        <li>
+          <a href="#success-criteria">Success Criteria</a>
+        </li>
+        <li>
+          <a href="#deliverables">Deliverables</a>
+        </li>
+        <li>
+          <a href="#coordination">Dependencies</a>
+        </li>
+        <li>
+          <a href="#participation">Participation</a>
+        </li>
+        <li>
+          <a href="#communication">Communication</a>
+        </li>
+        <li>
+          <a href="#decisions">Decision Policy</a>
+        </li>
+        <li>
+          <a href="#patentpolicy">Patent Policy</a>
+        </li>
+        <li>
+          <a href="#about">About this Charter</a>
+        </li>
+      </ul>
+      <p>
+        <a href="https://www.w3.org/"><img alt="W3C" src=
+        "https://www.w3.org/Icons/w3c_home.png" height="48" width="72"></a>
+      </p>
+      <h1 id="title">
+        [DRAFT] MiniApps Working Group Charter
+      </h1>
+      <p>
+        <em>This is a draft revised MiniApps Working Group charter
+        for discussion. It has no standing.</em>
+      </p>
+      <p class="mission">
+        The <strong>mission</strong> of the <a href=
+        "https://www.w3.org/das/">MiniApps Working Group</a> provides a forum for global community to discuss, incubate, and propose MiniApp related standard ideas with the goal to bring more interoperability and robustness to MiniApp ecosystem.
+      </p>
+      <p>
+        <a href="#">Join the
+        MiniApps Working Group</a>.
+      </p>
+      <table class="summary-table">
+        <tbody>
+          <tr id="Duration">
+            <th rowspan="1" colspan="1">
+              End date
+            </th>
+            <td rowspan="1" colspan="1">
+              <span>TBD</span>
+            </td>
+          </tr>
+          <tr>
+            <th rowspan="1" colspan="1">
+              Chairs
+            </th>
+            <td rowspan="1" colspan="1">
+              TBD
+            </td>
+          </tr>
+          <tr>
+            <th rowspan="1" colspan="1">
+              Team Contact<br>
+              (FTE %: 10)
+            </th>
+            <td rowspan="1" colspan="1">
+              Fuqiao Xue
+            </td>
+          </tr>
+          <tr>
+            <th rowspan="1" colspan="1">
+              Usual Meeting Schedule
+            </th>
+            <td rowspan="1" colspan="1">
+              Teleconferences: topic-specific calls may be held<br>
+              Face-to-face: 1 or 2 per year (only as needed)
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="scope">
+        <h2 id="scope">
+          Scope
+        </h2>
+        <p>MiniApp as a new form of mobile application, leveraging both Web technologies (especially CSS and JavaScript) as well as capabilities of native applications, is gaining more and more popularities in Asian countries such as China. To enhance the interoperability between different MiniApp platforms (AKA the super application or host application), main stream MiniApp vendors has been working together in <a href="https://www.w3.org/2018/chinese-web-ig/">W3C Chinese Web Interest Group</a> since May 2019 and published a <a href="https://www.w3.org/TR/mini-app-white-paper/">MiniApp Standardization White Paper</a> in September 2019 as the initial standardization exploration for MiniApp technologies.</p>
+
+    <p>As more global companies get interested in joining the MiniApp related discussion, the MiniApp Ecosystem Community Group was proposed and approved during TPAC 2019 so that global Web community can join the discussion.</p>
+
+    <p>The MiniApp Ecosystem Community Group aims to discuss proposals for MiniApp features that would benefit the interoperability and robustness of MiniApp ecosystem, including:</p>
+<ol>
+    <li>Basic architecture and essential functions of MiniApp such as the URI scheme, widget, application lifecycle and event, manifest, and packaging;
+    <li>Elements and APIs that would enhance the interoperability among different MiniApp platforms, including UI elements, Device API, and those advanced APIs such as Account API and Map API;
+    <li>Coordination with current W3C efforts, especially PWA, on the commonality of Web features;
+    <li>Carry out horizontal review for accessibility, internationalization, privacy, and security for MiniApp specifications;
+</ol>
+        <div id="section-out-of-scope">
+          <h3 id="out-of-scope">
+            Out of Scope
+          </h3>
+          <p>
+            The group does not intend to discuss ideas related to MiniApp platform operation.
+          </p>
+        </div>
+      </div>
+      <div class="deliverables">
+        <h2 id="deliverables">
+          Deliverables
+        </h2>
+        <h3 id="rec-track">
+          Normative Specifications
+        </h3>
+        <p>
+          The Working Group will deliver the following W3C normative
+          specifications:
+        </p>
+        <dl>
+          <dt>
+            MiniApp URI Scheme
+          </dt>
+          <dd>
+            <p>
+              Description TBD
+            </p>
+            <p class="draft-status">
+              <b>Draft state:</b> <a href="https://w3c.github.io/miniapp/specs/uri/">In progress in MiniApp CG</a>
+            </p>
+            <p>
+              <b>Adopted Draft</b>: <a href=
+              "https://w3c.github.io/miniapp/specs/uri/">https://w3c.github.io/miniapp/specs/uri/</a>
+            </p>
+          </dd>
+          <dt>
+            MiniApp Lifecycle
+          </dt>
+          <dd>
+            <p>
+              Description TBD
+            </p>
+            <p class="draft-status">
+              <b>Draft state:</b> <a href="https://w3c.github.io/miniapp/specs/lifecycle/">In progress in MiniApp CG</a>
+            </p>
+            <p>
+              <b>Adopted Draft</b>: <a href=
+              "https://w3c.github.io/miniapp/specs/lifecycle/">https://w3c.github.io/miniapp/specs/lifecycle/</a>
+            </p>
+          </dd>
+          <dt>
+            MiniApp Manifest
+          </dt>
+          <dd>
+            <p>
+              Description TBD
+            </p>
+            <p class="draft-status">
+              <b>Draft state:</b> <a href="https://w3c.github.io/miniapp/specs/manifest/">In progress in MiniApp CG</a>
+            </p>
+            <p>
+              <b>Adopted Draft</b>: <a href=
+              "https://w3c.github.io/miniapp/specs/manifest/">https://w3c.github.io/miniapp/specs/manifest/</a>
+            </p>
+          </dd>
+          <dt>
+            MiniApp Packaging
+          </dt>
+          <dd>
+            <p>
+              Description TBD
+            </p>
+            <p class="draft-status">
+              <b>Draft state:</b> <a href="https://w3c.github.io/miniapp/specs/packaging/">In progress in MiniApp CG</a>
+            </p>
+            <p>
+              <b>Adopted Draft</b>: <a href=
+              "https://w3c.github.io/miniapp/specs/packaging/">https://w3c.github.io/miniapp/specs/packaging/</a>
+            </p>
+          </dd>
+        </dl>
+        <h3 id="other-deliverables">
+          Other Deliverables
+        </h3>
+        <dl>
+        <dt>
+          MiniApp Widget Requirements
+        </dt>
+        <dd>
+          <p>
+            Description TBD
+          </p>
+          <p class="draft-status">
+            <b>Draft state:</b> <a href="https://w3c.github.io/miniapp/specs/widget-req/">In progress in MiniApp CG</a>
+          </p>
+          <p>
+            <b>Adopted Draft</b>: <a href=
+            "https://w3c.github.io/miniapp/specs/widget-req/">https://w3c.github.io/miniapp/specs/widget-req/</a>
+          </p>
+        </dd>
+      </dl>
+        <h3>
+          Timeline
+        </h3>
+        <table class="roadmap">
+          <caption>
+            Milestones
+          </caption>
+          <thead>
+            <tr>
+              <th>
+                Specification
+              </th>
+              <th>
+                <abbr title="First Working Draft">FPWD</abbr>
+              </th>
+              <th>
+                <abbr title="Candidate Recommendation">CR</abbr>
+              </th>
+              <th>
+                <abbr title="Proposed Recommendation">PR</abbr>
+              </th>
+              <th>
+                <abbr title="Recommendation">Rec</abbr>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                MiniApp URI Scheme
+              </th>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+            </tr>
+            <tr>
+              <th>
+                MiniApp Lifecycle
+              </th>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+            </tr>
+            <tr>
+              <th>
+                MiniApp Manifest
+              </th>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+            </tr>
+            <tr>
+              <th>
+                MiniApp Packaging
+              </th>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+            </tr>
+            <tr>
+              <th>
+                MiniApp Widget Requirements
+              </th>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <em>Note: The actual production of some of the deliverables may
+          follow a different timeline.</em>
+        </p>
+      </div>
+      <div class="success-criteria">
+        <h2 id="success-criteria">
+          Success Criteria
+        </h2>
+        <p>
+          To advance to Proposed Recommendation, each specification must have
+          two independent implementations of all defined features.
+        </p>
+        <p>
+          Comprehensive test suites will be developed for each specification to
+          ensure interoperability, and the group will create interoperability
+          reports. The group will also maintain errata as required for the
+          continued relevance and usefulness of the specifications it produces.
+        </p>
+        <p>
+          Each specification must contain a section on accessibility that
+          describes the benefits and impacts, including ways specification
+          features can be used to address them, and recommendations for
+          maximising accessibility in implementations.
+        </p>
+        <p>
+          Each specification must detail all known security and privacy
+          implications for implementers, Web authors, and end users.
+        </p>
+        <p>
+          APIs that cannot be demonstrated to be implementable securely will not be released.
+        </p>
+        <p>
+          TBD: testing policy
+        </p>
+      </div>
+      <div class="dependencies">
+        <h2 id="coordination">
+          Coordination
+        </h2>
+        <h3>
+          W3C Groups
+        </h3>
+        <p>
+          For all specifications, this Working Group will seek <a href=
+          "https://www.w3.org/Guide/process/charter.html#horizontal-review">horizontal
+          review</a> for accessibility, internationalization, performance,
+          privacy, and security with the relevant Working and Interest Groups,
+          and with the <a href="https://www.w3.org/2001/tag/" title=
+          "Technical Architecture Group">TAG</a>. Invitation for review must be
+          issued during each major standards-track document transition,
+          including <a href="https://www.w3.org/Consortium/Process/#RecsWD"
+          title="First Public Working Draft">FPWD</a>. The Working Group is
+          encouraged to engage collaboratively with the horizontal review
+          groups throughout development of each specification. The Working
+          Group is advised to seek a review at least 3 months before first
+          entering <a href="https://www.w3.org/Consortium/Process/#RecsCR"
+          title="Candidate Recommendation">CR</a> and is encouraged to
+          proactively notify the horizontal review groups when major changes
+          occur in a specification following a review.
+        </p>
+        <p>
+          Additional technical coordination with the following Groups will be
+          made, per the <a href=
+          "https://www.w3.org/Consortium/Process/#WGCharter">W3C Process
+          Document</a>:
+        </p>
+        <ul>
+          <li>
+            <a href="https://www.w3.org/2011/webappsec/">Web Application
+            Security Working Group</a>
+          </li>
+          <li>
+            <a href="https://privacycg.github.io/">Privacy Community Group</a>
+          </li>
+          <li>
+            <a href="https://www.w3.org/2019/webapps/">Web Applications Working
+            Group</a>
+          </li>
+          <li>
+            <a href="https://www.w3.org/webperf/">Web Performance Working Group</a>
+          </li>
+          <li>
+            <a href="https://www.w3.org/sw/">Service Worker Working Group</a>
+          </li>
+          <li>
+            <a href="https://www.w3.org/Style/CSS/">Cascading Style Sheets (CSS) Working Group</a>
+          </li>
+          <li>
+            <a href="https://www.w3.org/das/">Devices and Sensors Working Group</a>
+          </li>
+          <li>
+            <a href="https://www.w3.org/immersive-web/">Immersive Web Working Group</a>
+          </li>
+          <li>
+            <a href="https://www.w3.org/community/webmachinelearning/">Machine Learning for the Web Community Group</a>
+          </li>
+        </ul>
+        <div>
+          <h3>
+            External Groups
+          </h3>
+          <p>
+            The following is a tentative list of external bodies the Working
+            Group should collaborate with:
+          </p>
+          <dl>
+            <dt>
+              <a href="https://whatwg.org" id="whatwg">WHATWG</a>
+            </dt>
+            <dd>
+              The WHATWG maintains the URL Living Standard, which some of the
+              specifications in this WG’s scope extend.
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="participation">
+        <h2 id="participation">
+          Participation
+        </h2>
+        <p>
+          To be successful, this Working Group is expected to have 6 or more
+          active participants for its duration, and to have the participation
+          of the industry leaders in fields relevant to the specifications it
+          produces.
+        </p>
+        <p>
+          The Chair(s) and specification Editors are expected to contribute one
+          to two days per week towards the Working Group. There is no minimum
+          requirement for other participants.
+        </p>
+        <p>
+          Based on the input from the group participants, the Chairs may also
+          decide to create task forces that allow more focused discussions for
+          topics that require specific expertise.
+        </p>
+        <p>
+          This Working Group will also allocate the necessary resources for
+          building Test Suites for each specification.
+        </p>
+        <p>
+          The group encourages questions and comments on its public mailing
+          lists and document repositories, as described in <a href=
+          "#communication">Communication</a>.
+        </p>
+        <p>
+          The group also welcomes non-Members to contribute technical
+          submissions for consideration upon their agreement to the terms of
+          the <a href="https://www.w3.org/Consortium/Patent-Policy/">W3C Patent
+          Policy</a>.
+        </p>
+        <p>
+          Participants in the group are required (by the <a href=
+          "https://www.w3.org/Consortium/Process/#ParticipationCriteria">W3C
+          Process</a>) to follow the W3C <a href=
+          "https://www.w3.org/Consortium/cepc/">Code of Ethics and Professional
+          Conduct</a>.
+        </p>
+      </div>
+      <div class="communication">
+        <h2 id="communication">
+          Communication
+        </h2>
+        <p>
+          Technical discussions for this Working Group are conducted in
+          <a href="https://www.w3.org/Consortium/Process/#confidentiality-levels">
+          public</a>: the meeting minutes from teleconference and face-to-face
+          meetings will be archived for public review, and technical
+          discussions and issue tracking will be conducted in a manner that can
+          be both read and written to by the general public. Working Drafts and
+          Editor's Drafts of specifications will be developed on a public
+          repository, and may permit direct public contribution requests. The
+          meetings themselves are not open to public participation, however.
+        </p>
+        <p>
+          Information about the group (for example, details about deliverables,
+          issues, actions, status, participants) is available from the <a href=
+          "#">MiniApps Working Group home page</a>.
+        </p>
+        <p>
+          The Working Group’s Teleconferences focus on discussion of particular
+          specifications, and are conducted on an as-needed basis.
+        </p>
+        <p>
+          This group primarily conducts its technical work on the <a href= "#">public-TBD@w3.org</a> and on GitHub issues. Other communication tools are allowed if considerable number of the group participants decide to embrace them. The public is invited to review, discuss and contribute to this work.
+        </p>
+        <p>
+          The group uses a Member-confidential mailing list for administrative
+          purposes and, at the discretion of the Chairs and participants of the
+          group, for Member-only discussions in special cases when a particular
+          participant requests such a discussion.
+        </p>
+      </div>
+      <div class="decisions">
+        <h2 id="decisions">
+          Decision Policy
+        </h2>
+        <p>
+          This group will seek to make decisions through consensus and due
+          process, per the <a href=
+          "https://www.w3.org/Consortium/Process/#Consensus">W3C Process
+          Document (section 3.3)</a>. Typically, an editor or other participant
+          makes an initial proposal, which is then refined in discussion with
+          members of the group and other reviewers, and consensus emerges with
+          little formal voting being required.
+        </p>
+        <p>
+          However, if a decision is necessary for timely progress, but
+          consensus is not achieved after careful consideration of the range of
+          views presented, the Chairs may call for a group vote, and record a
+          decision along with any objections.
+        </p>
+        <p>
+          To afford asynchronous decisions and organizational deliberation, any
+          resolution (including publication decisions) taken in a face-to-face
+          meeting or teleconference will be considered provisional. A call for
+          consensus (CfC) will be issued for all resolutions (for example, via
+          email and/or web-based survey), with a response period from 5 to 10
+          working days, depending on the chair's evaluation of the group
+          consensus on the issue. If no objections are raised on the mailing
+          list by the end of the response period, the resolution will be
+          considered to have consensus as a resolution of the Working Group.
+        </p>
+        <p>
+          All decisions made by the group should be considered resolved unless
+          and until new information becomes available, or unless reopened at
+          the discretion of the Chairs or the Director.
+        </p>
+        <p>
+          This charter is written in accordance with the <a href=
+          "https://www.w3.org/Consortium/Process/policies#Votes">W3C Process
+          Document (Section 3.4, Votes)</a>, and includes no voting procedures
+          beyond what the Process Document requires.
+        </p>
+      </div>
+      <div class="patent">
+        <h2 id="patentpolicy">
+          Patent Policy
+        </h2>
+        <p>
+          This Working Group operates under the <a href=
+          "https://www.w3.org/Consortium/Patent-Policy/">W3C Patent Policy</a>
+          (5 February 2004 Version updated 1 August 2017). To promote the
+          widest adoption of Web standards, W3C seeks to issue Recommendations
+          that can be implemented, according to this policy, on a Royalty-Free
+          basis. For more information about disclosure obligations for this
+          group, please see the <a href=
+          "https://www.w3.org/2004/01/pp-impl/">W3C Patent Policy
+          Implementation</a>.
+        </p>
+      </div>
+      <div class="licensing">
+        <h2 id="licensing">
+          Licensing
+        </h2>
+        <p>
+          This Working Group will use the <a href=
+          'https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document.html'>
+          W3C Software and Document license</a> for all its deliverables.
+        </p>
+      </div>
+      <div class="patent">
+        <h2 id="about">
+          About this Charter
+        </h2>
+        <p>
+          This charter for this Working Group has been created according to
+          <a href=
+          "https://www.w3.org/Consortium/Process/groups#GAGeneral">section
+          5.2</a> of the <a href=
+          "https://www.w3.org/Consortium/Process">Process Document</a>. In the
+          event of a conflict between this document or the provisions of any
+          charter and the W3C Process, the W3C Process shall take precedence.
+        </p>
+        <h3 id="history">
+          Charter history
+        </h3>
+        <p>
+          The following table lists details of all changes from the initial
+          charter, per the <a href=
+          "https://www.w3.org/Consortium/Process/#CharterReview">W3C Process
+          Document (section 5.2.3)</a>:
+        </p>
+        <table class="history">
+          <tbody>
+            <tr>
+              <th>
+                Charter Period
+              </th>
+              <th>
+                Start Date
+              </th>
+              <th>
+                End Date
+              </th>
+              <th>
+                Changes
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <a href="#">Initial
+                Charter</a>
+              </th>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                N/A
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <hr>
+        <address>
+          <a href="mailto:xfq@w3.org">Fuqiao Xue</a>
+        </address>
+      </div>
+      <p class="copyright">
+        <a rel="license" href=
+        "https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>©
+        2020 <a href="https://www.w3.org/"><abbr title=
+        "World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href=
+        "https://www.csail.mit.edu/"><abbr title=
+        "Massachusetts Institute of Technology">MIT</abbr></a>, <a href=
+        "https://www.ercim.eu/"><abbr title=
+        "European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+        <a href="https://www.keio.ac.jp/">Keio</a>, <a href=
+        "https://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved.
+      </p>
+    </div>
+  </body>
+</html>
