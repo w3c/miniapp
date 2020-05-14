@@ -110,29 +110,26 @@
         
         <p>The MiniApp pacakge also contains multiple page related files in the <code>pages</code> folder, and other common resource files in the <code>common</code> folder </p>
         
-        <p>One typical illustrative example of a MiniApp pacakge is as follows:</p>
+        <p>One typical illustrative example of a MiniApp pacakge is the following:</p>
         
         <pre class="example">
-                |___app
-                |     |___manifest.json
-                |     |___app.js
-                |     |___app.css
-                |     |___pages
-                |     |       |___page1.js
-                |     |       |___page1.xml
-                |     |       |___page1.json
-                |     |       |___page1.css
-                |     |___common
-                |     |       |___componentA.js
-                |     |       |___componentA.xml
-                |     |       |___componentA.css
-                |     |       |___componentA.json
-                |     |       |___example.png
-        
+            |___manifest.json
+            |___app.js
+            |___app.css
+            |___pages
+            |       |___page1.js
+            |       |___page1.xml
+            |       |___page1.json
+            |       |___page1.css
+            |___common
+            |       |___componentA.js
+            |       |___componentA.xml
+            |       |___componentA.css
+            |       |___componentA.json
+            |       |___example.png
         </pre>
         
-        <h2>app</h2>
-        <p class="ednote">Whether this 'app' root folder is need is ffs.</p>
+        <h2>root files</h2>
             <p>
                 The MiniApp packge contains at the root level the global data and lifecycle management of the MiniApp in the form of the following files:
             </p>
@@ -140,7 +137,7 @@
         <ul>
           <li><code>manifest.json</code> is responsible for the global configuration of the MiniApp, such as the file paths of MiniApp pages and the window configuration (e.g. navigator bar, background image and color, page title, etc.). Details are specified in the <a href="../manifest/index.html">Manifest specification</a></li>
           <li><code>app.css</code> is responsible for the global CSS style for all MiniApp pages.</li>
-          <li><code>app.js</code> is responsible for the MiniApp lifecycle management, such as launching, showing and hiding the MiniApp.</li>
+          <li><code>app.js</code> is responsible for the service logic of the MiniApp as well as the lifecycle management of it, such as launching, showing and hiding the MiniApp.</li>
         </ul>
         
         <h2>pages</h2>
