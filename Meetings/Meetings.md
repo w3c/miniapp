@@ -8,7 +8,7 @@ This document contains links to meeting minutes of the CG.
 * [9 April 2020 TeleConf](https://www.w3.org/2020/04/09-miniapp-minutes.html) ([summary](https://lists.w3.org/Archives/Public/public-miniapps/2020Apr/0000.html))
 * [12 March 2020 TeleConf](https://www.w3.org/2020/03/12-miniapp-minutes.html) ([summary](https://lists.w3.org/Archives/Public/public-miniapps/2020Mar/0001.html))
 * [13 Feb 2020 TeleConf](https://www.w3.org/2020/02/13-MiniApp-minutes.html) 
-* [9 Jan 2020 TeleConf](https://www.w3.org/2020/01/09-miniapp-minutes.html) ([summary](https://lists.w3.org/Archives/Public/public-miniapps/2020Jan/0000.html)]
+* [9 Jan 2020 TeleConf](https://www.w3.org/2020/01/09-miniapp-minutes.html) ([summary](https://lists.w3.org/Archives/Public/public-miniapps/2020Jan/0000.html))
 
 ## 2019
 
