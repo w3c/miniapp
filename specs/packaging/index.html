@@ -6,22 +6,24 @@
     <title>MiniApp Packaging</title>
 
     <style>
-    .two-cols {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
+        .two-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
 
-    table {
-      border-collapse:collapse;
-    }
+        table {
+            border-collapse: collapse;
+        }
 
-    table,th, td {
-      border: 1px solid #666;
-    }
+        table,
+        th,
+        td {
+            border: 1px solid #666;
+        }
 
-    td {
-      padding:2px 15px;
-    }
+        td {
+            padding: 2px 15px;
+        }
     </style>
 
     <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common"></script>
@@ -38,15 +40,35 @@
                 name: "Qing An",
                 companyURL: "http://www.alibabagroup.com/en/global/home",
                 company: "Alibaba"
-              }, {
+            }, {
                 name: "Shouren Lan",
                 companyURL: "http://www.huawei.com/",
                 company: "Huawei"
-              }, {
+            }, {
                 name: "Zhiqiang Yu",
                 companyURL: "http://www.huawei.com/",
                 company: "Huawei"
-              }],
+            }, {
+                name: "Yongjing Zhang",
+                companyURL: "http://www.huawei.com/",
+                company: "Huawei"
+            }, {
+                name: "Tengyuan Zhang",
+                companyURL: "https://www.baidu.com/",
+                company: "Baidu, Inc"
+            }, {
+                name: "Qian Liu",
+                companyURL: "https://www.baidu.com/",
+                company: "Baidu, Inc"
+            }, {
+                name: "Shuo Wang",
+                companyURL: "https://www.baidu.com/",
+                company: "Baidu, Inc"
+            }, {
+                name: "Dan Zhou",
+                companyURL: "https://www.baidu.com/",
+                company: "Baidu, Inc"
+            }],
 
             wg: "MiniApps Ecosystem Community Group",
             wgURI: "https://www.w3.org/community/miniapps/",
@@ -57,92 +79,101 @@
 
 <body>
     <section id='abstract'>
-        <p>
-            This document specifies a standardized MiniApp packaging constructor to describe MiniApp package uniformly. This provides a standard description of the package structure and the package construction methods that can be used in any MiniApp runtime environment.
+        <p its-locale-filter-list="en" lang="en">
+            This specification defines the standardized MiniApp packaging construction method, which provides a standard package structure description. The MiniApp package file packages all the static page templates / CSS / JavaScript files and manifest file. MiniApp package file can be used in any runtime environment (user agent).
         </p>
-        <p>
-            For example, by configuring the package resource's description file, developers can determine the path to start the MiniApp. The MiniApp runtime environment searches for the specified path resource from the description file, and launches the specified page of the MiniApp. The installation of the MiniApp package is simpler than native apps. MiniApp runtime obtains the specified package resource through network request or local package file during the MiniApp's first run and caches the MiniApp package locally. MiniApp runtime will load the package resource file from the local cache while the MiniApp is opened next time.
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+            本文描述了一个标准化的MiniApp包构建方式，提供一种标准的包结构描述，将小程序页面所需的所有静态页面模板 /CSS/JavaScript 文件，和配置文件（Manifest）打包在一起，允许在任何运行时环境可使用。
         </p>
-        <p> 
-            The MiniApp runtime loads the specified path resource according to the description file from MiniApp package file, and MiniApp can be launched offline. This provides a standard of complete package structure, maintaining offline capabilities and background running capabilities.
+        <p its-locale-filter-list="en" lang="en">
+            The Miniapp package file contains a manifest document (located in the root directory of the package). The manifest file included an overview of the Miniapp resource. Including page description and page path. package file contains JavaScript code, one or more page files, including template code of page, CSS code of page style and JavaScript code of page logic. The Miniapp package file should support digital signature verification.
+        </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+            小程序包资源，包含一个配置文档，位于包的根目录下。配置文件应包括整个小程序的概述（页面描述及其对应路径，用于页面定位和开启）。包含 JavaScript 代码的应用级逻辑文件，一个或多个页面文件，包含页面结构的模板代码、页面样式的 CSS 代码和页面逻辑的 JavaScript 代码。小程序包应支持数字签名验证。
+        </p>
+        <p its-locale-filter-list="en" lang="en">
+            The Miniapp runtime environment (user agent), which can identify Miniapp package files through standard package format and MIME media type. After fetching the Miniapp package file, all static page templates / CSS / JavaScript files are cached on the device through standardized dereference. These cache package resources are available until the next update without fetching the MiniApp package file again. In terms of launch mode, the Miniapp can launch in normally without network. The runtime environment (user agent) locates the specified startup page from the package cache path and starts the Miniapp according to the description of the manifest file.
+        </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+            小程序运行时环境，可通过标准的文件格式、媒体类型识别小程序包文件。获取（Fetch）小程序包后，通过标准化的解引用，将所有静态页面模板 /CSS/JavaScript 文件缓存在设备上。在下次更新之前，这些资源始终可用，无需重新获取（Fetch）小程序包文件。启动方式上，小程序无需网络也可以正常启动，运行时环境根据小程序标准配置文件的描述(manifest)，从包缓存路径中定位指定的启动页面，启动小程序。
         </p>
     </section>
-    
+
     <section id='sotd'>
         <p>
-        This is still a work in progress. The proposal is being incubated in the <a href="https://www.w3.org/community/miniapps/">W3C MiniApps Ecosystem Community Group</a>.
+            This is still a work in progress. The proposal is being incubated in the <a href="https://www.w3.org/community/miniapps/">W3C MiniApps Ecosystem Community Group</a>.
         </p>
     </section>
-    
+
     <section>
         <h2>Packaging</h2>
-        <p>MiniApp has one app config file to globally describe and configure MiniApp. It is responsible for all MiniApp pages and global data, as well as the management of MiniApp lifecycle.
+        <p>Each MiniApp package is wrapped as a [[ZIP]] file. It contains, at the root level, a global configuration file (<code>manifest.json</code>) to describe and configure the whole MiniApp, an application logic file (<code>app.js</code>), and a default style file (<code>app.css</code>).
         </p>
-        
-        <p>MiniApp contains multiple pages files.</p>
-        
-        <p>One common illustration example as following:</p>
-        
+
+        <p>The MiniApp package also contains multiple page related files in the <code>pages</code> directory, and other common resource files in the <code>common</code> directory </p>
+
+        <p>One typical illustrative example of a MiniApp package is the following:</p>
+
         <pre class="example">
-                |___app
-                |     |___manifest.json
-                |     |___app.js
-                |     |___app.css
-                |     |___pages
-                |     |       |___page.js
-                |     |       |___page.xml
-                |     |       |___page.json
-                |     |       |___page.css
-                |     |___common
-                |     |       |___component.js
-                |     |       |___component.xml
-                |     |       |___component.css
-                |     |       |___component.json
-                |     |       |___example.png
-        
+            |___manifest.json
+            |___app.js
+            |___app.css
+            |___pages
+            |       |___page1.js
+            |       |___page1.xml
+            |       |___page1.json
+            |       |___page1.css
+            |___common
+            |       |___componentA.js
+            |       |___componentA.xml
+            |       |___componentA.css
+            |       |___componentA.json
+            |       |___example.png
         </pre>
-        
-        <section>
-        <h3>app</h3>
-        <p>app manages all MiniApp pages and global data, as well as MiniApp’s lifecycle management. It contains logic (app.js), configuration (manifest.json) and css (app.css).
-        </p>
-        
-        <ul>
-          <li>manifest.json is responsible for global configuration of MiniApp, including: file path of MiniApp pages, window configuration (such as navigator bar, background image and color, page title, etc.) and Tab Bar configuration.</li>
-          <li>app.css is responsible for global css for all MiniApp pages.</li>
-          <li>app.js is responsible for MiniApp lifecycle management, like launch Mini App, show Mini App, hide Mini App.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h3>page</h3>
-        <p>page represents each of MiniApp pages, responsible for MiniApp page display and user interaction. It contains logic (page.js), configuration (page.json), structure (page.xml) and css (page.css).
-        </p>
-        
-        <ul>
-          <li>page.json is responsible for configuration of each MiniApp page.</li>
-          <li>page.xml is responsible for the structure of each MiniApp page, similar to HTML.</li>
-          <li>page.css is responsible for CSS for each MiniApp page.</li>
-          <li>page.js is responsible for MiniApp page lifecycle management, defined in <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle</a></li>
-        </ul>
-
-    </section>
 
         <section>
-        <h3>common</h3>
-        <p>It can include public resources such as components, resources, and utils, which are used to store custom components, multimedia resources, and js files.</p>
+            <h2>root files</h2>
+            <p>
+                The MiniApp package contains at the root level the global data and lifecycle management of the MiniApp in the form of the following files:
+            </p>
+
+            <ul>
+                <li><code>manifest.json</code> is responsible for the global configuration of the MiniApp, such as the file paths of MiniApp pages and the window configuration (e.g. navigator bar, background image and color, page title, etc.). Details are specified in the <a href="../manifest/index.html">Manifest specification</a></li>
+                <li><code>app.css</code> is responsible for the global CSS style for all MiniApp pages.</li>
+                <li><code>app.js</code> is responsible for the service logic of the MiniApp as well as the lifecycle management of it, such as launching, showing and hiding the MiniApp.</li>
+            </ul>
+
+            <h2>pages</h2>
+            <p>
+                The <code>pages</code> directory contains sets of files for the display and user interaction of all MiniApp pages. Each set of files that shares the same base file name (e.g. 'page1') with different extension names describe a particular page on different aspects, such as the service logic (e.g. page1.js), the configuration (e.g. page1.json), the structure (e.g. page1.xml) and the style (e.g page1.css). Developers can choose to put all page files directly under the <code>pages</code> directory in a flat manner, or organize them in different sub-directories for different pages.
+            </p>
+
+            <ul>
+                <li>A <code>.json</code> file is responsible for the configuration of a MiniApp page.</li>
+                <li>A <code>.xml</code> file is responsible for the structure of a MiniApp page, similar to HTML.</li>
+                <li>A <code>.css</code> file is responsible for the CSS style of a MiniApp page.</li>
+                <li>A <code>.js</code> file is responsible for the service logic and lifecycle management (defined in <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle</a>) of a MiniApp page.</li>
+            </ul>
+
+
+
+            <h2>common</h2>
+            <p>The <code>common</code> directory contains common resources such as components, multimedia resources, and utils (js files). Developers can choose to put all resource files directly under the <code>common</code> directory in a flat manner, or organize them in different sub-directories as needed.</p>
         </section>
     </section>
 
     <section>
         <h2>IANA Considerations</h2>
         <p>
-            The proposed MIME type for the MiniApp package is <code>application/miniapp-pkg+zip</code>. It needs to be registered with <a href="https://www.iana.org/">IANA</a> when this work moves to a normative phase. 
-            <p class="note">
-                <span>Note:</span>
-                A temporary solution could be <code>application/x-w3c-miniapp-pkg+zip</code> for the sake of any early implementation.
-            </p>
+            The proposed MIME type for the MiniApp package is <code>application/miniapp-pkg+zip</code>. It needs to be registered with <a href="https://www.iana.org/">IANA</a> when this work moves to a normative phase.
+        <p class="note">
+            <span>Note:</span>
+            A temporary solution could be <code>application/x-w3c-miniapp-pkg+zip</code> for the sake of any early implementation.
         </p>
+        </p>
+
+
+
     </section>
 
 </body>
