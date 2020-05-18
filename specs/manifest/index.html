@@ -369,6 +369,57 @@
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           <code>icons</code>，MiniApp应用图标数组。由不同分辨率的图标组成，根据显示设备类型的不同展示不同的图标。
         </p>
+        <table>
+            <thead>
+              <tr>
+                <th>
+                  <span its-locale-filter-list="en" lang="en">Attribute</span>
+                  <span its-locale-filter-list="zh-hans" lang="zh-hans">属性</span>
+                </th>
+                <th>
+                  <span its-locale-filter-list="en" lang="en">Type</span>
+                  <span its-locale-filter-list="zh-hans" lang="zh-hans">类型</span>
+                </th>
+                <th>
+                  <span its-locale-filter-list="en" lang="en">Required</span>
+                  <span its-locale-filter-list="zh-hans" lang="zh-hans">必填</span>
+                </th>
+                <th>
+                  <span its-locale-filter-list="en" lang="en">Description</span>
+                  <span its-locale-filter-list="zh-hans" lang="zh-hans">描述</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td> src </td>
+                <td> string </td>
+                <td>
+                  <span its-locale-filter-list="en" lang="en">Yes</span>
+                  <span its-locale-filter-list="zh-hans" lang="zh-hans">是</span>
+                </td>
+                <td>
+                  <span its-locale-filter-list="en" lang="en">the source of the icon image in the format of a path string</span>
+                  <span its-locale-filter-list="zh-hans" lang="zh-hans">以路径字符串所表示的图标图片来源</span>
+                </td>
+              </tr>
+              <tr>
+                <td> sizes </td>
+                <td> string </td>
+                <td>
+                  <span its-locale-filter-list="en" lang="en">Yes</span>
+                  <span its-locale-filter-list="zh-hans" lang="zh-hans">是</span>
+                </td>
+                <td>
+                  <span its-locale-filter-list="en" lang="en">The applicable resolution sizes of the icon image from the above mentioned <code>src</code></span>
+                  <span its-locale-filter-list="zh-hans" lang="zh-hans">来自以上<code>src</code>的图标图片所适用的分辨率大小</span>
+                </td>
+              </tr>
+             
+            </tbody>
+          </table>
+
+
       </section>
 
 
@@ -391,10 +442,10 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">版本号</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>versionCode</code> is a number-type value, and is mainly used for enhancing the maintainability and security of MiniApp, e.g. a lower version is not compatible with a higher version. <code>versionCode</code> is not displayed to the user and is incrementing according to the version iteration process. Default: 1.
+          <code>versionCode</code> is a number-type value, and is mainly used for enhancing the maintainability and security of MiniApp, e.g. a lower version is not compatible with a higher version. <code>versionCode</code> is not displayed to the user and is incrementing according to the version iteration process. The value is a non-negative integer. Default: 1.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <code>versionCode</code>是一个number类型的数值，主要用作提高MiniApp的可维护性和安全性，比如：低版本不能覆盖高版本。此版本号不向用户显示，根据版本迭代过程进行递增。默认值：<code>1</code>。
+          <code>versionCode</code>是一个number类型的数值，主要用作提高MiniApp的可维护性和安全性，比如：低版本不能覆盖高版本。此版本号不向用户显示，根据版本迭代过程进行递增。取值是非负整数。默认值：<code>1</code>。
         </p>
       </section>
 
@@ -561,8 +612,8 @@
               </td>
               <td> 50 </td>
               <td>
-                <span its-locale-filter-list="en" lang="en">Distance from the bottom when page pull-up bottom event is triggered; the unit is in <code>px</code>.</span>
-                <span its-locale-filter-list="zh-hans" lang="zh-hans">页面上拉触底事件触发时距页面底部距离，单位为 <code>px</code>。</span>
+                <span its-locale-filter-list="en" lang="en">Distance from the bottom when page pull-up bottom event is triggered. The value is a non-negative integer and the unit is in <code>px</code>.</span>
+                <span its-locale-filter-list="zh-hans" lang="zh-hans">页面上拉触底事件触发时距页面底部距离。取值应为非负整数，单位为 <code>px</code>。</span>
               </td>
             </tr>
             <tr>
@@ -600,8 +651,8 @@
                 </td>
                 <td> 750 </td>
                 <td>
-                    <span its-locale-filter-list="en" lang="en">The baseline width of the page design, based on which the size of the components on the page would be adjusted accordingly.</span>
-                    <span its-locale-filter-list="zh-hans" lang="zh-hans">页面设计基准宽度，根据实际设备宽度来缩放元素大小。</span>
+                    <span its-locale-filter-list="en" lang="en">The baseline width of the page design in <code>px</code>, based on which the size of the components on the page would be adjusted accordingly. The value is a non-negative integer.</span>
+                    <span its-locale-filter-list="zh-hans" lang="zh-hans">以<code>px</code>为单位的页面设计基准宽度，元素大小将根据实际设备宽度来缩放。取值应为非负整数。</span>
                 </td>
             </tr>
             <tr>
@@ -754,8 +805,8 @@
             <span its-locale-filter-list="en" lang="en">Local resource access</span>
             <span its-locale-filter-list="zh-hans" lang="zh-hans">本地资源访问</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en"> Attributes like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to ensure no illegal access outside the scope of the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>. On the other hand, the MiniApp itself (e.g. in JS code) may provide means to jump to external ressources either on the hosting platform, or on a remote web site (e.g. through a uri). In this case, the hosting platform shall provide clear indication to an end-user about such context switch.</p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans"> <code>icons</code>, <code>pages</code>, <code>widgets</code>等属性包含了宿主平台上的本地资源引用路径，开发者和宿主平台应该检查这些路径的合法性以确保没有<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>之外的非法访问。另一方面，MiniApp自身（如JS代码中）可能提供跳转到其他外部资源的方式，包括宿主平台或远程网站上的外部资源（比如通过uri)。此时，宿主平台应该向用户提供明确的上下文切换的指示信息。</p>
+        <p its-locale-filter-list="en" lang="en"> Attributes like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to ensure no illegal access outside the scope of the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>. On the other hand, the MiniApp itself (e.g. in JS code) may provide means to jump to external ressources either on the hosting platform, or on a remote web site (e.g. through a uri). In this case, the hosting platform is responsible for providing clear indication to an end-user about such context switch.</p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans"> <code>icons</code>, <code>pages</code>, <code>widgets</code>等属性包含了宿主平台上的本地资源引用路径，开发者和宿主平台应该检查这些路径的合法性以确保没有<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>之外的非法访问。另一方面，MiniApp自身（如JS代码中）可能提供跳转到其他外部资源的方式，包括宿主平台或远程网站上的外部资源（比如通过uri)。此时，宿主平台应该负责向用户提供明确的上下文切换的指示信息。</p>
     </section>
 
     <section>
@@ -763,8 +814,8 @@
             <span its-locale-filter-list="en" lang="en">Integrity</span>
             <span its-locale-filter-list="zh-hans" lang="zh-hans">完整性</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en"> The integrity of the manifest document shall be protected by a cryptographic hash mechanism as part of the whole MiniApp package. Details are specified in the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>. </p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans"> Manifest文档的完整性需要作为MiniApp package的一部分被密码哈希机制所保护。详细定义见<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>。 </p>
+        <p its-locale-filter-list="en" lang="en"> The integrity of the manifest document is protected by a cryptographic hash mechanism as part of the whole MiniApp package. Details are specified in the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>. </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans"> Manifest文档的完整性作为MiniApp package的一部分被密码哈希机制所保护。详细定义见<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>。 </p>
     </section>
 
     <section>
@@ -784,27 +835,12 @@
         <span its-locale-filter-list="zh-hans" lang="zh-hans">JSON语法</span>
     </h2>
     <p its-locale-filter-list="en" lang="en">
-        Developers interested in validating the MiniApp manifest document can use the following JSON Schema.
+        Developers interested in validating the MiniApp manifest document can use the JSON Schema defined <a href="./manifest_schema.json">here</a>.
     </p>
 
-    <p its-locale-filter-list="zh-hans" lang="zh-hans"> 开发者可以使用如下JSON Schema定义的语法来验证manifest文件。
+    <p its-locale-filter-list="zh-hans" lang="zh-hans"> 开发者可使用<a href="./manifest_schema.json">此处</a>所定义的JSON Schema来验证manifest文件。
     </p>
-
-    <p its-locale-filter-list="en" lang="en" class="note">
-        NOTE: The following JSON Schema is to be further developed.
-    </p>
-    <pre class="example json">
-  {
-    "$id": "http://www.w3.org/schema_miniapp_manifest-v1_0_0.json",
-    "title": "MiniApp Manifest JSON Schema",
-    "$schema ": "http://json-schema.org/draft-07/schema#",
-    "description": "JSON Schema for the valiation of MiniApp Manifest document",
-    "type": "object",
-    "properties": {
-     
-    }
-  }
-</pre>
+   
 
 </section>
 
