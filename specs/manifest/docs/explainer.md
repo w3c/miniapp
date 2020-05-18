@@ -114,13 +114,13 @@ window.backgroundColor	|background_color	|Similar. MiniApp accepts only 'HexColo
 window.orientation	|orientation	|Same
 window.fullscreen	|display=fullscreen	|Same but in different formation (boolean vs enum). 
 widgets	|-	|MiniApp only
-\-	|theme_color	|Web App only.  (ffs in MiniApp)
-\-	|iarc_rating_id	| Web App only. (ffs in MiniApp)
-\-	|related_applications	| Web App only (ffs in MiniApp)
-\-	|prefer_related_applications	| Web App only (ffs in MiniApp)
-\-	|categories	| Web App only.  (ffs in MiniApp)
-\-	|screenshots	| Web App only.  (ffs in MiniApp)
-\-	|shortcuts	| Web App only  (ffs in MiniApp)
+\-	|theme_color	|Web App only.  (For further study in MiniApp)
+\-	|iarc_rating_id	| Web App only. (For further study in MiniApp)
+\-	|related_applications	| Web App only (For further study in MiniApp)
+\-	|prefer_related_applications	| Web App only (For further study in MiniApp)
+\-	|categories	| Web App only.  (For further study in MiniApp)
+\-	|screenshots	| Web App only.  (For further study in MiniApp)
+\-	|shortcuts	| Web App only  (For further study in MiniApp)
 
 ## References & acknowledgements
 
