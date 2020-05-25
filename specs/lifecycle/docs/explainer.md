@@ -38,7 +38,7 @@ Running in the foreground: when user firstly opens a MiniApp, it is in the state
 Running in the background: when user closes the MiniApp, or leaves the hosted Native App, the MiniApp will not be destroyed 
 directly. Instead, it will switch to run in the background.
 
-Switching from running in the background to foreground: when the have-not-been-destroyed MiniApp is reopened, it will switch 
+Switching from running in the background to foreground: when the has-not-been-destroyed MiniApp is reopened, it will switch 
 from running in the background to running in the foreground.
 
 * Destroy

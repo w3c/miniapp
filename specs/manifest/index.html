@@ -93,6 +93,18 @@
 
   <section>
     <h2>Manifest</h2>
+    <p its-locale-filter-list="en" lang="en">
+      A MiniApp manifest is a JSON document that contains put metadata associated with a MiniApp.
+    </p>
+    <p its-locale-filter-list="zh-hans" lang="zh-hans">
+      MiniApp Manifest 是一个JSON文档，其中包含与该MiniApp关联的元数据。
+    </p>
+    <p its-locale-filter-list="en" lang="en">
+      The following table is a summary of each attribute:
+    </p>
+    <p its-locale-filter-list="zh-hans" lang="zh-hans">
+      下表是manifest中每个属性的总结：
+    </p>
     <table>
       <thead><tr>
         <th>
@@ -793,10 +805,10 @@
             <span its-locale-filter-list="zh-hans" lang="zh-hans">内容限制</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-            As the manifest is a JSON file and will commonly be encoded using <a href="https://www.unicode.org/versions/latest/">[UNICODE]</a>, the security considerations described in <a href="https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf">[ECMA-404]</a> and <a href="https://www.unicode.org/reports/tr36/tr36-15.html">[UNICODE-SECURITY]</a> apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#json-schema-json">JSON Schema</a> to impose their own implementation-specific limits on the member names, types and value ranges, e.g. to prevent denial of service attacks, to guard against running out of memory, or to work around platform-specific limitations.
+            As the manifest is a JSON file and will commonly be encoded using [[UNICODE]], the security considerations described in [[ECMA-404]] and [[UTR36]] apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#json-schema-json">JSON Schema</a> to impose their own implementation-specific limits on the member names, types and value ranges, e.g. to prevent denial of service attacks, to guard against running out of memory, or to work around platform-specific limitations.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-            Manifest作为一个JSON文件，通常以<a href="https://www.unicode.org/versions/latest/">[UNICODE]</a>方式编码，因此<a href="https://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf">[ECMA-404]</a>和<a href="https://www.unicode.org/reports/tr36/tr36-15.html">[UNICODE-SECURITY]</a>中所定义的安全措施同样适用。为了防止开发者在manifest中添加任意不受限的数据，开发者可在其具体实现中采用比<a href="#json-schema-json">JSON Schema</a>中所定义的更加严格的schema来约束文件中的成员元素名称、类型和取值范围等，从而防止DoS攻击、内存耗尽或满足平台特有的限制。
+            Manifest作为一个JSON文件，通常以[[UNICODE]]</a>方式编码，因此[[ECMA-404]]和[[UTR36]]中所定义的安全措施同样适用。为了防止开发者在manifest中添加任意不受限的数据，开发者可在其具体实现中采用比<a href="#json-schema-json">JSON Schema</a>中所定义的更加严格的schema来约束文件中的成员元素名称、类型和取值范围等，从而防止DoS攻击、内存耗尽或满足平台特有的限制。
         </p>
     </section>
 
@@ -895,7 +907,7 @@
              <span its-locale-filter-list="zh-hans" lang="zh-hans">致谢</span>
     </h2>
     <p its-locale-filter-list="en" lang="en">
-      This document refers to <a href="https://www.w3.org/TR/appmanifest">W3C Web App Manifest</a>，<a href="https://smartprogram.baidu.com/docs/develop/tutorial/process/">Baidu MiniApp</a>，<a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">WeChat MiniApp</a>，<a href="https://opendocs.alipay.com/mini/framework/app-json">Alipay MiniApp</a>，<a href="https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration">ByteDance MiniApp</a>，<a href="https://doc.quickapp.cn/framework/manifest.html">Quick App Specification</a>，<a href="https://w3c.github.io/miniapp/specs/widget-req/">MiniApp Widget Specification</a>，<a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle Specification</a>，<a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI Specification</a>, <a href="https://semver.org/">Semantic Versioning</a>. We appreciate the open source efforts of these documents.
+      This document refers to <a href="https://www.w3.org/TR/appmanifest">W3C Web App Manifest</a>, <a href="https://smartprogram.baidu.com/docs/develop/tutorial/process/">Baidu MiniApp</a>, <a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">WeChat MiniApp</a>, <a href="https://opendocs.alipay.com/mini/framework/app-json">Alipay MiniApp</a>, <a href="https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration">ByteDance MiniApp</a>, <a href="https://doc.quickapp.cn/framework/manifest.html">Quick App Specification</a>, <a href="https://w3c.github.io/miniapp/specs/widget-req/">MiniApp Widget Specification</a>, <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle Specification</a>, <a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI Scheme</a>, and <a href="https://semver.org/">Semantic Versioning</a>. We appreciate the open source efforts of these documents.
     </p>
     <p its-locale-filter-list="zh-hans" lang="zh-hans">
       本文档参考了<a href="https://www.w3.org/TR/appmanifest">W3C Web App Manifest</a>，<a href="https://smartprogram.baidu.com/docs/develop/tutorial/process/">百度小程序</a>，<a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">微信小程序</a>，<a href="https://opendocs.alipay.com/mini/framework/app-json">支付宝小程序</a>，<a href="https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration">字节跳动小程序</a>，<a href="https://doc.quickapp.cn/framework/manifest.html">快应用联盟规范</a>，<a href="https://w3c.github.io/miniapp/specs/widget-req/">MiniApp Widget文件规范</a>，<a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle规范</a>，<a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI规范</a>, <a href="https://semver.org/">Semantic Versioning规范</a>。感谢这些文档的开源努力。
