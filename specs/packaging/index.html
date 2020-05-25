@@ -163,6 +163,32 @@
     </section>
 
     <section>
+        <h2>Security & Privacy Considerations</h2>
+
+        <section>
+            <h2>Integrity & Trustworthiness</h2>
+            <p>
+                To ensure the integrity and trustworthiness, a MiniApp package should be protected by one or more digital signatures by the author (e.g. the MiniApp developer) and/or distributors (e.g. an application store).
+                <li>A digital signature by the author ensures the origin of the MiniApp, so that an end user or a hosting platform can decide whether to install the MiniApp package according to the knowledge about the author (e.g. credits, blacklist, quality).</li>
+                <li>A digital signature by a distributor ensures the integrity of the package and trustworthiness of the delivery channel, so that the end user can be protected from tampered software and can benefit from a healthier ecosystem. </li>
+            </p>
+        
+            <p>
+                Proven technologies such as [[RFC5652]](i.e. PKCS#7) can be used as the solution of the digital signatures for MiniApp package. Further evaluation is expected regarding whether it needs to be standardized in detail (e.g. the content scope under protection, additional attributes of concern, file format of the signature block, procedures), or is left to the discretion of implementations.
+            </p>
+        </section>
+        
+        <section>
+            <h2>Encryption</h2>
+            <p>
+                There is no requirement to develop a standardized encryption mechanism for the MiniApp package. However, it doesn't preclude an implementation from deploying encryption mechanism for its own purpose.
+        
+            </p>
+        </section>
+
+    </section>
+
+    <section>
         <h2>IANA Considerations</h2>
         <p>
             The proposed MIME type for the MiniApp package is <code>application/miniapp-pkg+zip</code>. It needs to be registered with <a href="https://www.iana.org/">IANA</a> when this work moves to a normative phase.
@@ -171,9 +197,6 @@
             A temporary solution could be <code>application/x-w3c-miniapp-pkg+zip</code> for the sake of any early implementation.
         </p>
         </p>
-
-
-
     </section>
 
 </body>
