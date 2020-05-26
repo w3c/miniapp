@@ -142,7 +142,8 @@
                 <li><code>app.css</code> is responsible for the global CSS style for all MiniApp pages.</li>
                 <li><code>app.js</code> is responsible for the service logic of the MiniApp as well as the lifecycle management of it, such as launching, showing and hiding the MiniApp.</li>
             </ul>
-
+        </section>
+        <section>
             <h2>pages</h2>
             <p>
                 The <code>pages</code> directory contains sets of files for the display and user interaction of all MiniApp pages. Each set of files that shares the same base file name (e.g. 'page1') with different extension names describe a particular page on different aspects, such as the service logic (e.g. page1.js), the configuration (e.g. page1.json), the structure (e.g. page1.xml) and the style (e.g page1.css). Developers can choose to put all page files directly under the <code>pages</code> directory in a flat manner, or organize them in different sub-directories for different pages.
@@ -154,12 +155,38 @@
                 <li>A <code>.css</code> file is responsible for the CSS style of a MiniApp page.</li>
                 <li>A <code>.js</code> file is responsible for the service logic and lifecycle management (defined in <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle</a>) of a MiniApp page.</li>
             </ul>
+        </section>
 
-
-
+        <section>
             <h2>common</h2>
             <p>The <code>common</code> directory contains common resources such as components, multimedia resources, and utils (js files). Developers can choose to put all resource files directly under the <code>common</code> directory in a flat manner, or organize them in different sub-directories as needed.</p>
         </section>
+    </section>
+
+    <section>
+        <h2>Security & Privacy Considerations</h2>
+
+        <section>
+            <h2>Integrity & Trustworthiness</h2>
+            <p>
+                To ensure the integrity and trustworthiness, a MiniApp package should be protected by one or more digital signatures by the author (e.g. the MiniApp developer) and/or distributors (e.g. an application store) along with certificates issued by trusted authorities.
+                <li>A digital signature (with a valid certificate) by the author ensures the origin of the MiniApp, so that an end user or a hosting platform can decide whether to install the MiniApp package according to the knowledge about the author (e.g. credits, blacklist, quality).</li>
+                <li>A digital signature (with a valid certificate) by a distributor ensures the integrity of the package and trustworthiness of the delivery channel, so that the end user can be protected from tampered software and can benefit from a healthier ecosystem. </li>
+            </p>
+        
+            <p>
+                Proven technologies such as [[RFC5652]](i.e. PKCS#7) can be used as the solution of the digital signatures for MiniApp package. Further evaluation is expected regarding whether it needs to be standardized in detail (e.g. the content scope under protection, additional attributes of concern, file format of the signature block, procedures), or is left to the discretion of implementations.
+            </p>
+        </section>
+        
+        <section>
+            <h2>Confidentiality</h2>
+            <p>
+                There is no requirement to develop a standardized encryption mechanism for the MiniApp package to protect its confidentiality. However, it doesn't preclude an implementation from deploying some encryption mechanism for  special purpose.
+        
+            </p>
+        </section>
+
     </section>
 
     <section>
@@ -171,9 +198,6 @@
             A temporary solution could be <code>application/x-w3c-miniapp-pkg+zip</code> for the sake of any early implementation.
         </p>
         </p>
-
-
-
     </section>
 
 </body>
