@@ -767,31 +767,27 @@
 
   <section>
     <h2>
-      <span its-locale-filter-list="en" lang="en">Packaging</span>
-      <span its-locale-filter-list="zh-hans" lang="zh-hans">包结构</span>
-    </h2>
-    <p its-locale-filter-list="en" lang="en">
-      <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a> defines the package structure of a MiniApp, including the global configuration document <code> manifest.json</code>, the global logic document <code>app.js</code>, the global style document <code>app.css</code>, as well as the configuration, logic and style documents for describing different pages and widgets.
-    </p>
-    <p its-locale-filter-list="zh-hans" lang="zh-hans"><a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging规范</a>定义了MiniApp包结构，包含全局配置文件<code> manifest.json</code>，全局逻辑文件<code> app.js</code>，全局样式文件<code>app.css</code>, 以及多个描述页面的配置、逻辑和样式文件。
-    </p>
-  </section>
-
-  <section>
-    <h2>
       <span its-locale-filter-list="en" lang="en">Dependencies</span>
-      <span its-locale-filter-list="zh-hans" lang="zh-hans">需求依赖</span>
+      <span its-locale-filter-list="zh-hans" lang="zh-hans">依赖</span>
     </h2>
-    <ul>
-      <li>
-        <p its-locale-filter-list="en" lang="en"><code>app.js</code> is used for global JavaScript logic and global application life cycle management of MiniApp. The MiniApp life cycle is specified by the <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle specification</a>.</p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans"><code>app.js</code>用于全局JavaScript逻辑和MiniApp全局应用生命周期管理，MiniApp生命周期由<a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle规范</a>指定。</p>
-      </li>
-      <li>
-        <p its-locale-filter-list="en" lang="en">MiniApp Page and Widget both follow <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>.</p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp Page和Widget都遵循<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging规范</a>。</p>
-      </li>
-    </ul>
+
+    <p its-locale-filter-list="en" lang="en">
+        As a key part of a MiniApp package, the <code>manifest.json</code> file describes several important aspects of the MiniApp by referring to the resources inside the MiniApp package in different forms of files, such as the page files in the <code>pages</code> directory and the icon images in the <code>common</code> directory. Details are specified in the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package specification</a>.
+    </p>
+    
+    <p its-locale-filter-list="en" lang="en">
+        The normal operation of a MiniApp relies on the proper configuration of the manifest file according to this specification and the availability of the dependent resources in the MiniApp package. Such dependency needs to be checked during both the development phase and deployment phase.
+    </p>
+    
+    <p its-locale-filter-list="zh-hans" lang="zh-hans">
+        作为MiniApp包中的关键部分，<code>manifest.json</code>文件通过引用MiniApp包中的多个不同形式的资源文件描述了MiniApp应用的多个重要方面，比如引用<code>pages</code>目录中的页面相关文件和<code>common</code>目录中的图标文件。详细情况在<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package规范</a>中定义。
+    </p>
+    
+    <p its-locale-filter-list="zh-hans" lang="zh-hans">
+        MiniApp的正常运行依赖于根据本规范进行恰当的manifest文件配置以及MiniApp包中所依赖资源的可用性。此依赖关系需要在开发和部署阶段进行检查。
+    </p>
+
+
   </section>
 
   <section>
