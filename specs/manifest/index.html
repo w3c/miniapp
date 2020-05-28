@@ -427,7 +427,7 @@
                   <span its-locale-filter-list="zh-hans" lang="zh-hans">来自以上<code>src</code>的图标图片所适用的分辨率大小</span>
                 </td>
               </tr>
-             
+
             </tbody>
           </table>
 
@@ -772,17 +772,16 @@
     </h2>
 
     <p its-locale-filter-list="en" lang="en">
-        As a key part of a MiniApp package, the <code>manifest.json</code> file describes several important aspects of the MiniApp by referring to the resources inside the MiniApp package in different forms of files, such as the page files in the <code>pages</code> directory and the icon images in the <code>common</code> directory. Details are specified in the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package specification</a>.
+        As a key part of a MiniApp package, the <code>manifest.json</code> file describes several important aspects of the MiniApp by referring to the resources inside the MiniApp package in different forms of files, such as the page files in the <code>pages</code> directory and the icon images in the <code>common</code> directory. Details are specified in the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>.
     </p>
-    
+    <p its-locale-filter-list="zh-hans" lang="zh-hans">
+      作为MiniApp包中的关键部分，<code>manifest.json</code>文件通过引用MiniApp包中的多个不同形式的资源文件描述了MiniApp应用的多个重要方面，比如引用<code>pages</code>目录中的页面相关文件和<code>common</code>目录中的图标文件。详细情况在<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging规范</a>中定义。
+    </p>
+
     <p its-locale-filter-list="en" lang="en">
         The normal operation of a MiniApp relies on the proper configuration of the manifest file according to this specification and the availability of the dependent resources in the MiniApp package. Such dependency needs to be checked during both the development phase and deployment phase.
     </p>
-    
-    <p its-locale-filter-list="zh-hans" lang="zh-hans">
-        作为MiniApp包中的关键部分，<code>manifest.json</code>文件通过引用MiniApp包中的多个不同形式的资源文件描述了MiniApp应用的多个重要方面，比如引用<code>pages</code>目录中的页面相关文件和<code>common</code>目录中的图标文件。详细情况在<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package规范</a>中定义。
-    </p>
-    
+
     <p its-locale-filter-list="zh-hans" lang="zh-hans">
         MiniApp的正常运行依赖于根据本规范进行恰当的manifest文件配置以及MiniApp包中所依赖资源的可用性。此依赖关系需要在开发和部署阶段进行检查。
     </p>
@@ -790,7 +789,32 @@
 
   </section>
 
-  <section id="conformance">
+  <section id="conformance" class="override">
+    <h2>
+      <span its-locale-filter-list="en" lang="en">Conformance</span>
+      <span its-locale-filter-list="zh-hans" lang="zh-hans">标准符合性</span>
+    </h2>
+    <p its-locale-filter-list="en" lang="en">
+      As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
+    </p>
+    <p its-locale-filter-list="zh-hans" lang="zh-hans">
+      本规范中的所有内容均为本草案的规范性内容，但明确标记为“非规范性”的部分、示例和注释除外。
+    </p>
+
+    <p its-locale-filter-list="en" lang="en">
+      The key word RECOMMENDED in this document
+      is to be interpreted as described in
+      <a href="https://tools.ietf.org/html/bcp14">BCP 14</a>
+      [[RFC2119]] [[RFC8174]]
+      when, and only when, they appear in all capitals, as shown here.
+    </p>
+
+    <p its-locale-filter-list="zh-hans" lang="zh-hans">
+      如此处所示，当且仅当以着重号标记时，<em class="rfc2119">建议</em>（<em lang="en" class="rfc2119">RECOMMENDED</em>）才以<a href="https://tools.ietf.org/html/bcp14">BCP 14</a> [[RFC2119]] [[RFC8174]]中的说明解释。
+    </p>
+  </section>
+
+  <section>
     <h2>
         <span its-locale-filter-list="en" lang="en">Security and Privacy Considerations</span>
         <span its-locale-filter-list="zh-hans" lang="zh-hans">安全隐私考虑</span>
@@ -833,7 +857,7 @@
         </h2>
         <p its-locale-filter-list="en" lang="en">
             It is RECOMMENDED that the hosting platform makes the necessary meta inforamtion in the manifest available to the end-user, such as <code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code>, <code>description</code>. This is to give an end-user an opportunity to make a conscious decision to approve the installation and use of the MiniApp. This could also help to identify a spoofing MiniApp.</p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans"> 建议宿主平台将manifest中的必要元数据信息提供给用户，比如<code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code>, <code>description</code>。这样可以给用户一个机会来对MiniApp的安装和使用提供清晰的判断依据，也可以帮助用户来识别伪装的恶意MiniApp。</p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans"><em class="rfc2119">建议</em>宿主平台将manifest中的必要元数据信息提供给用户，比如<code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code>, <code>description</code>。这样可以给用户一个机会来对MiniApp的安装和使用提供清晰的判断依据，也可以帮助用户来识别伪装的恶意MiniApp。</p>
     </section>
 </section>
 
@@ -848,11 +872,9 @@
 
     <p its-locale-filter-list="zh-hans" lang="zh-hans"> 开发者可使用<a href="./manifest_schema.json">此处</a>所定义的JSON Schema来验证manifest文件。
     </p>
-   
-
 </section>
 
-  <section>
+  <section class='informative'>
     <h2>
       <span its-locale-filter-list="en" lang="en"> Example</span>
       <span its-locale-filter-list="zh-hans" lang="zh-hans">样例</span>
