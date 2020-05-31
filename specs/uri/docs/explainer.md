@@ -4,7 +4,7 @@
 
 ## Authors
 
-Dan Chou, Shuo Wang, Qian Liu, Tengyuan Zhang
+Dan Zhou, Shuo Wang, Qian Liu, Tengyuan Zhang
 
 ## 1. Introduction
 
@@ -128,6 +128,9 @@ More use case of MiniApp can be found in the [MiniApp White Paper use case](http
 
 The proposal of the URI scheme is still in an early stage. The main form of discussion are meetings and offline communication. All of the discussion has been recorded in [the Q&A document](./Q&A.md)
 
+## 7. the flowchart of MiniApp URI and comparison of other solution
+![MiniApp URI flowchart](https://user-images.githubusercontent.com/12129112/83343149-2d774800-a329-11ea-9cfd-5a2b0fd7d626.jpg)
+For more discussions, refer to https://github.com/w3c/miniapp/issues/34 https://github.com/w3ctag/design-reviews/issues/478
 
 ## References & acknowledgements
 
