@@ -129,6 +129,9 @@
             |       |___componentA.css
             |       |___componentA.json
             |       |___example.png
+            |___i18n
+            |       |___zh-Hans.json
+            |       |___en-US.json
         </pre>
 
         <section>
@@ -160,6 +163,17 @@
         <section>
             <h2>common</h2>
             <p>The <code>common</code> directory contains common resources such as components, multimedia resources, and utils (js files). Developers can choose to put all resource files directly under the <code>common</code> directory in a flat manner, or organize them in different sub-directories as needed.</p>
+        </section>
+
+        <section>
+            <h2>i18n</h2>
+            <p>
+                The <code>i18n</code> directory contains multi-language configuration files to support internationalization. The name of each <code>.json</code> file in this directory follows the <code>Language-Tag</code> as defined in [[BCP47]], and represents the specific configuration for that particular language.
+                <p class="note">
+                    <span>Note:</span>
+                    The detailed format of the <code>.json </code> file is to be further developed.
+                </p>
+            </p>
         </section>
     </section>
 
