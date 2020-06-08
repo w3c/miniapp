@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      [草案] MiniApps工作组章程
+    </title>
+    <link rel="stylesheet" href="https://www.w3.org/2005/10/w3cdoc.css" type=
+    "text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href=
+    "https://www.w3.org/OldGuide/pubrules-style.css">
+    <link rel="stylesheet" type="text/css" href=
+    "https://www.w3.org/2006/02/charter-style.css">
+    <style>
+    #navbar
+    {
+       font-size: small;
+    }
+
+    .complete
+    {
+       font-weight: bold;
+    }
+    .roadmap { width: 80%;}
+    .roadmap tr td:nth-child(2) { background: #FED }
+    .roadmap tr td:nth-child(3) { background: #FCB }
+    .roadmap tr td:nth-child(4) { background: #FA9 }
+    .roadmap tr td:nth-child(5) { background: #F87 }
+    .roadmap tr td:nth-child(6) { background: #F60 }
+    </style>
+  </head>
+  <body>
+    <div id="template">
+      <ul id="navbar">
+        <li>
+          <a href="#goals">目标</a>
+        </li>
+        <li>
+          <a href="#scope">范围</a>
+        </li>
+        <li>
+          <a href="#success-criteria">成功标准</a>
+        </li>
+        <li>
+          <a href="#deliverables">交付文档</a>
+        </li>
+        <li>
+          <a href="#coordination">相关小组</a>
+        </li>
+        <li>
+          <a href="#participation">参与方式</a>
+        </li>
+        <li>
+          <a href="#communication">沟通方式</a>
+        </li>
+        <li>
+          <a href="#decisions">决策方式</a>
+        </li>
+        <li>
+          <a href="#patentpolicy">专利政策</a>
+        </li>
+        <li>
+          <a href="#about">关于此章程</a>
+        </li>
+      </ul>
+      <p>
+        <a href="https://www.w3.org/"><img alt="W3C" src=
+        "https://www.w3.org/Icons/w3c_home.png" height="48" width="72"></a>
+      </p>
+      <h1 id="title">
+        [草案] MiniApps工作组章程
+      </h1>
+      <p>
+        <strong>这是用于讨论的MiniApps工作组章程中文版草案，正式版本为英文版，请参见<a href="https://w3c.github.io/miniapp/charters/wg-2020.html">这里</a>。</strong>
+      </p>
+      <p class="mission">
+        <a href= "#">MiniApps工作组</a>的<strong>任务</strong>是制定规范，以促进可互操作且功能强大的MiniApps的开发。
+      </p>
+      <p>
+        <a href="#">加入MiniApps工作组</a>
+      </p>
+      <table class="summary-table">
+        <tbody>
+          <tr id="Duration">
+            <th rowspan="1" colspan="1">
+              结束日期
+            </th>
+            <td rowspan="1" colspan="1">
+              <span>TBD</span>
+            </td>
+          </tr>
+          <tr>
+            <th rowspan="1" colspan="1">
+              小组主席
+            </th>
+            <td rowspan="1" colspan="1">
+              TBD
+            </td>
+          </tr>
+          <tr>
+            <th rowspan="1" colspan="1">
+              W3C联络人<br>
+              (FTE %: 10)
+            </th>
+            <td rowspan="1" colspan="1">
+              薛富侨
+            </td>
+          </tr>
+          <tr>
+            <th rowspan="1" colspan="1">
+              常规会议安排
+            </th>
+            <td rowspan="1" colspan="1">
+              <strong>电话会议：</strong>根据需要
+              <br>
+              <strong>面对面会议：</strong>小组面对面会议可以在参与者同意的情况下安排，通常每年约一到两次。
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="scope">
+        <h2 id="scope">
+          范围
+        </h2>
+        <p>MiniApp作为一种新的移动应用程序形式，利用Web技术（尤其是CSS和JavaScript）以及原生应用的功能，在中国等亚洲国家越来越受欢迎。为了增强不同MiniApp平台（又称为超级应用或宿主应用）之间的互操作性，主流MiniApp供应商自2019年5月以来一直在<a href="https://www.w3.org/2018/chinese-web-ig/index.zh-Hans.html">W3C中文Web兴趣组</a>中合作，并于2019年9月发布了<a href="https://www.w3.org/TR/mini-app-white-paper/">MiniApp标准化白皮书</a>作为初步的标准化探索。随着越来越多的全球公司对加入MiniApp相关讨论感兴趣，<a href="https://www.w3.org/community/miniapps/">MiniApps生态社区组</a>在TPAC 2019期间被提议成立，以便全球Web社区可以加入讨论。</p>
+
+    <p>MiniApps工作组将正式开发在MiniApps生态社区组孵化的规范，这些规范将有利于MiniApp生态系统的互操作性和健壮性，包括：</p>
+<ol>
+    <li>MiniApp的基本架构和基本功能，例如URI scheme、widget、lifecycle、manifest和packaging；
+    <li>可以增强不同MiniApp平台之间的互操作性的元素和API，包括UI元素/组件，设备API以及Account API和Map API等高级API；
+    <li>与渐进式Web应用（PWA）等其他W3C工作合作，在Web功能的通用性方面进行协调。
+</ol>
+        <div id="section-out-of-scope">
+          <h3 id="out-of-scope">
+            超出范围
+          </h3>
+          <p>
+            与MiniApp平台运营、开发者工具和MiniApp生态的其他部分有关的讨论不在工作组的工作范围之内。
+          </p>
+        </div>
+      </div>
+      <div class="deliverables">
+        <h2 id="deliverables">
+          交付文档
+        </h2>
+        <h3 id="rec-track">
+          规范性文档
+        </h3>
+        <p>
+          工作组将交付以下W3C规范性文档：
+        </p>
+        <dl>
+          <dt>
+            MiniApp URI Scheme
+          </dt>
+          <dd>
+            <p>
+              This specification defines the MiniApp URI scheme syntax and the process to dereference the MiniApp URI scheme.
+            </p>
+            <p class="draft-status">
+              <b>草稿状态</b>： <a href="https://w3c.github.io/miniapp/specs/uri/">在MiniApp CG中孵化</a>
+            </p>
+            <p>
+              <b>Adopted Draft</b>: <a href=
+              "https://w3c.github.io/miniapp/specs/uri/">https://w3c.github.io/miniapp/specs/uri/</a>
+            </p>
+          </dd>
+          <dt>
+            MiniApp Lifecycle
+          </dt>
+          <dd>
+            <p>
+              This specification defines the MiniApp lifecycle events and the process to manage MiniApp and each page's lifecycle.
+            </p>
+            <p class="draft-status">
+              <b>草稿状态</b>： <a href="https://w3c.github.io/miniapp/specs/lifecycle/">在MiniApp CG中孵化</a>
+            </p>
+            <p>
+              <b>Adopted Draft</b>: <a href=
+              "https://w3c.github.io/miniapp/specs/lifecycle/">https://w3c.github.io/miniapp/specs/lifecycle/</a>
+            </p>
+          </dd>
+          <dt>
+            MiniApp Manifest
+          </dt>
+          <dd>
+            <p>
+              This specification defines a JSON-based manifest file that enables developers to set up basic information, window style, page route and other information of a MiniApp.
+            </p>
+            <p class="draft-status">
+              <b>草稿状态</b>： <a href="https://w3c.github.io/miniapp/specs/manifest/">在MiniApp CG中孵化</a>
+            </p>
+            <p>
+              <b>Adopted Draft</b>: <a href=
+              "https://w3c.github.io/miniapp/specs/manifest/">https://w3c.github.io/miniapp/specs/manifest/</a>
+            </p>
+          </dd>
+          <dt>
+            MiniApp Packaging
+          </dt>
+          <dd>
+            <p>
+              This specification defines the standardized MiniApp package structure.
+            </p>
+            <p class="draft-status">
+              <b>草稿状态</b>： <a href="https://w3c.github.io/miniapp/specs/packaging/">在MiniApp CG中孵化</a>
+            </p>
+            <p>
+              <b>Adopted Draft</b>: <a href=
+              "https://w3c.github.io/miniapp/specs/packaging/">https://w3c.github.io/miniapp/specs/packaging/</a>
+            </p>
+          </dd>
+        </dl>
+        <h3 id="other-deliverables">
+          其他交付文档
+        </h3>
+        <dl>
+        <dt>
+          MiniApp Widget Requirements
+        </dt>
+        <dd>
+          <p>
+            This document describes the requirements for MiniApp widgets, a special form of MiniApp pages.
+          </p>
+          <p class="draft-status">
+            <b>草稿状态</b>： <a href="https://w3c.github.io/miniapp/specs/widget-req/">在MiniApp CG中孵化</a>
+          </p>
+          <p>
+            <b>Adopted Draft</b>: <a href=
+            "https://w3c.github.io/miniapp/specs/widget-req/">https://w3c.github.io/miniapp/specs/widget-req/</a>
+          </p>
+        </dd>
+      </dl>
+        <h3>
+          时间表
+        </h3>
+        <table class="roadmap">
+          <caption>
+            里程碑
+          </caption>
+          <thead>
+            <tr>
+              <th>
+                规范
+              </th>
+              <th>
+                <abbr title="First Working Draft">FPWD</abbr>
+              </th>
+              <th>
+                <abbr title="Candidate Recommendation">CR</abbr>
+              </th>
+              <th>
+                <abbr title="Proposed Recommendation">PR</abbr>
+              </th>
+              <th>
+                <abbr title="Recommendation">Rec</abbr>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>
+                MiniApp URI Scheme
+              </th>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+            </tr>
+            <tr>
+              <th>
+                MiniApp Lifecycle
+              </th>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+            </tr>
+            <tr>
+              <th>
+                MiniApp Manifest
+              </th>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+            </tr>
+            <tr>
+              <th>
+                MiniApp Packaging
+              </th>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <strong>注意：某些交付文档的实际发布时间可能会与时间表不同。</strong>
+        </p>
+      </div>
+      <div class="success-criteria">
+        <h2 id="success-criteria">
+          成功标准
+        </h2>
+        <p>
+          在达到提案推荐标准（Proposed Recommendation）之前，每个规范中的所有特性必须已有两个独立的实现。
+        </p>
+        <p>
+          每个规范都会包含全面的测试套件，以确保互操作性，该小组将创建互操作性报告。小组还将按要求维护勘误表，以保证其制定的规范的可用性。
+        </p>
+        <p>
+          每个规范都必须包含有关无障碍的部分，描述可带来的好处和影响，包括规范里的特性如何解决这些问题，以及在实现中最大限度地提高无障碍的建议。
+        </p>
+        <p>
+          每个规范都必须详细说明与实现者、Web开发者和最终用户相关的的所有已知安全性和隐私隐患。
+        </p>
+        <p>
+          无法证明可以安全实现的API不会被发布。
+        </p>
+        <p>
+          <a href="https://github.com/w3c/miniapp/issues/60">TBD: testing policy</a>
+        </p>
+      </div>
+      <div class="dependencies">
+        <h2 id="coordination">
+          相关小组
+        </h2>
+        <h3>
+          W3C小组
+        </h3>
+        <p>
+          对于所有规范，该工作组将对相关工作组、兴趣组和<a href="https://www.w3.org/2001/tag/" title="技术架构组">TAG</a>的发起信息无障碍、国际化、性能、隐私和安全性的<a href="https://www.w3.org/Guide/process/charter.html#horizontal-review">横向审阅</a>请求。在进入包括<a href="https://www.w3.org/Consortium/Process/#RecsWD" title="首个公开工作草案">FPWD</a>在内的每个标准的主要阶段之前，都必须发出审阅邀请。在每个规范的制定过程中，鼓励工作组与横向审阅小组合作。建议工作组至少在进入<a href="https://www.w3.org/Consortium/Process/#RecsCR" title="候选推荐标准">CR</a>之前至少3个月进行审查，并鼓励在审查后规范中发生重大更改时主动通知横向审阅小组。
+        </p>
+        <p>
+          根据<a href="https://www.w3.org/Consortium/Process/#WGCharter">W3C流程文档</a>，将与以下小组进行其他技术协调：
+        </p>
+        <dl>
+          <dt>
+            <a href="https://www.w3.org/2011/webappsec/">Web应用安全工作组</a>
+          </dt>
+          <dd>
+            Web应用程序安全工作组正在开发有关暴露敏感信息的API以及用于管理权限的API，这两者均对该组的规范至关重要。
+          </dd>
+          <dt>
+            <a href="https://www.w3.org/2019/webapps/">Web应用工作组</a>
+          </dt>
+          <dd>
+            该小组与Web应用工作组进行协调，以尽量确保MiniApp Manifest和Web App Manifest的一致性。
+          </dd>
+          <dt>
+            <a href="https://www.w3.org/webperf/">Web性能工作组</a>
+          </dt>
+          <dd>
+            Web性能工作组开发了页面可见性（Page Visibility）规范，其功能与MiniApp Lifecycle规范中的特性有关。
+          </dd>
+        </dl>
+        <div>
+          <h3>
+            外部团体
+          </h3>
+          <p>
+            以下是工作组应与之合作的外部机构的暂定清单：
+          </p>
+          <dl>
+            <dt>
+              <a href="https://whatwg.org" id="whatwg">WHATWG</a>
+            </dt>
+            <dd>
+              WHATWG维护着URL持续更新标准，而MiniApps工作组的工作在该标准的基础上进行了扩展。
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="participation">
+        <h2 id="participation">
+          参与方式
+        </h2>
+        <p>
+          为了取得成功，该工作组将在其章程期内至少有6名或以上的积极参与者，并且在其制定的规范相关领域中将有行业领导者的参与。
+        </p>
+        <p>
+          预计主席和规范编辑每周为工作组贡献一到两天的时间。对其他参与者没有最低要求。
+        </p>
+        <p>
+          根据小组参与者的意见，主席还可以决定成立特别任务组（task force），以便就需要特定专业知识的主题进行更集中的讨论。
+        </p>
+        <p>
+          该工作组还将分配用于构建每个规范的测试套件的必要资源。
+        </p>
+        <p>
+          该小组鼓励在其公共邮件列表和文档repo上提出问题和评论，如<a href="#communication">沟通方式</a>中所述。
+        </p>
+        <p>
+          该小组还欢迎非会员在同意<a href="https://www.w3.org/Consortium/Patent-Policy/">W3C专利政策</a>条款的前提下提交技术意见。
+        </p>
+        <p>
+          该小组的参与者必须（通过<a href="https://www.w3.org/Consortium/Process/#ParticipationCriteria">W3C流程</a>）遵守W3C<a href="https://www.w3.org/Consortium/cepc/">道德与职业行为守则</a>。
+        </p>
+      </div>
+      <div class="communication">
+        <h2 id="communication">
+          沟通方式
+        </h2>
+        <p>
+          该工作组的技术讨论是<a href="https://www.w3.org/Consortium/Process/#confidentiality-levels">公开</a>进行的：电话会议和面对面会议的会议记录将被存档以供公众查看，技术讨论和问题跟踪将以一种由一般公众可参与的方式进行。规范的工作草案和编辑草案将在公开的repo上开发，并可以允许公众直接贡献。但是，会议本身并不开放给公众参与。
+        </p>
+        <p>
+          可从<a href="#">MiniApps工作组主页</a>上获得有关该组的信息（例如，有关交付文档、问题、行动、状态、参与者的详细信息等）。
+        </p>
+        <p>
+          工作组的电话会议着重讨论特定的规范，并根据需要进行。
+        </p>
+        <p>
+          该小组主要在<a href= "https://lists.w3.org/Archives/Public/public-miniapps-wg/">public-miniapps-wg@w3.org</a>和GitHub issues上进行技术工作。如果相当数量的小组参与者决定接受其他交流工具，则可以使用其他交流工具。公众可以审阅、讨论小组的工作，并为小组的工作做出贡献。
+        </p>
+        <p>
+          该小组将会员邮件列表用于内部管理目的，并由小组主席和参与者酌情决定何时使用。
+        </p>
+      </div>
+      <div class="decisions">
+        <h2 id="decisions">
+          决策方式
+        </h2>
+        <p>
+          根据<a href="https://www.w3.org/Consortium/Process/policies#Consensus">W3C流程文档第3.3节</a>，该小组将寻求通过共识和正当程序做出决策。通常，参与者提出初始提案，然后在与小组成员和其他审阅者的讨论中进行细化，并且在几乎不需要正式投票的情况下达成共识。
+        </p>
+        <p>
+          但是，如果必须作出决定以及时取得进展，但在仔细考虑所提出的意见范围后未能达成共识，主席可要求进行集体投票，并记录决定以及任何异议。
+        </p>
+        <p>
+          为了提供异步决策和组织审议，在面对面会议或电话会议中做出的任何决议（包括文档发布决定）都将被视为临时决议。对所有决议，小组主席都将（例如，通过邮件或网页调查方式）呼吁成员进行一致协商（Call for Consensus），响应期为5至10个工作日，具体取决于主席对该项决议共识达成程度的评估。若在回复期限内没有人通过邮件列表提出反对意见，那么该决议将被视为工作组协商一致后的共识决策。
+        </p>
+        <p>
+          除非出现与决议相关的新信息、小组主席或W3C理事长判定重新开放对该决议的讨论，否则小组作出的所有决议均应被视为最终决策。
+        </p>
+        <p>
+          本章程是根据<a href="https://www.w3.org/Consortium/Process/policies#Votes">W3C流程文档（第3.4节，投票）</a>编写的，不包括超出流程文档要求的投票程序。
+        </p>
+      </div>
+      <div class="patent">
+        <h2 id="patentpolicy">
+          专利政策
+        </h2>
+        <p>
+          该工作组根据<a href="https://www.w3.org/Consortium/Patent-Policy/">W3C专利政策</a>（2004年2月5日版本，2017年8月1日更新）运作。为了促进Web标准的最广泛采用，W3C试图发布可以根据此政策在免专利使用费的基础上实现的正式推荐标准。有关小组的专利披露义务的更多信息，请参见<a href="https://www.w3.org/2004/01/pp-impl/">W3C专利政策实施</a>。
+        </p>
+      </div>
+      <div class="licensing">
+        <h2 id="licensing">
+          文档许可
+        </h2>
+        <p>
+          工作组的全部交付文档均使用<a href='https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document.html'>W3C软件与文档使用许可</a>。
+        </p>
+      </div>
+      <div class="patent">
+        <h2 id="about">
+          关于此章程
+        </h2>
+        <p>
+          MiniApps工作组章程依据<a href="https://www.w3.org/Consortium/Process">W3C流程文档</a>的<a href="https://www.w3.org/Consortium/Process/groups#GAGeneral">第5.2节</a>制定。若此文档或任何规则与W3C流程文档有冲突，W3C流程文档将有优先决定权。
+        </p>
+        <h3 id="history">
+          章程历史
+        </h3>
+        <p>
+          根据<a href= "https://www.w3.org/Consortium/Process/#CharterReview">W3C流程文档第5.2.3节</a>，下表列出了章程中的所有更改：
+        </p>
+        <table class="history">
+          <tbody>
+            <tr>
+              <th>
+                章程动态
+              </th>
+              <th>
+                开始日期
+              </th>
+              <th>
+                结束日期
+              </th>
+              <th>
+                更改
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <a href="#">初始章程</a>
+              </th>
+              <td>
+                TBD
+              </td>
+              <td>
+                TBD
+              </td>
+              <td>
+                N/A
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <hr>
+        <address>
+          <a href="mailto:xfq@w3.org">Fuqiao Xue</a>
+        </address>
+      </div>
+      <p class="copyright">
+        <a rel="license" href=
+        "https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>©
+        2020 <a href="https://www.w3.org/"><abbr title=
+        "World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href=
+        "https://www.csail.mit.edu/"><abbr title=
+        "Massachusetts Institute of Technology">MIT</abbr></a>, <a href=
+        "https://www.ercim.eu/"><abbr title=
+        "European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+        <a href="https://www.keio.ac.jp/">Keio</a>, <a href=
+        "https://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved.
+      </p>
+    </div>
+  </body>
+</html>

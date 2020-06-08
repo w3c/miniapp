@@ -3,6 +3,14 @@
     "Microsoft YaHei", Helvetica, Segoe UI, Arial, sans-serif;
 }
 
+.rfc2119-zh {
+  font-style: normal;
+  text-emphasis: dot;
+  -webkit-text-emphasis: dot;
+  text-emphasis-position: under right;
+  -webkit-text-emphasis-position: under right;
+}
+
 h2 {
   margin-top: 3em;
   margin-bottom: 0em;
