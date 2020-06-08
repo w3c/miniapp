@@ -114,6 +114,7 @@ window.backgroundColor	|background_color	|Similar. MiniApp accepts only RGB hex 
 window.orientation	|orientation	|Same
 window.fullscreen	|display=fullscreen	|Same but in different formation (boolean vs enum). 
 widgets	|-	|MiniApp only
+reqPermissions	|-	|MiniApp only
 \-	|theme_color	|Web App only.  (For further study in MiniApp)
 \-	|iarc_rating_id	| Web App only. (For further study in MiniApp)
 \-	|related_applications	| Web App only (For further study in MiniApp)
