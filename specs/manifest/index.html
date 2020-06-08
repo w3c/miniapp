@@ -281,6 +281,17 @@
             <span its-locale-filter-list="zh-hans" lang="zh-hans">卡片</span>
           </td>
         </tr>
+        <tr>
+            <td> req-permissions </td>
+            <td> Array </td>
+            <td>
+              <span its-locale-filter-list="en" lang="en">No</span>
+              <span its-locale-filter-list="zh-hans" lang="zh-hans">否</span>
+            </td>
+            <td> <span its-locale-filter-list="en" lang="en">Required permissions</span>
+              <span its-locale-filter-list="zh-hans" lang="zh-hans">所需权限</span>
+            </td>
+          </tr>
       </tbody>
       <tfoot>
       </tfoot>
@@ -676,7 +687,7 @@
                 </td>
                 <td> false </td>
                 <td>
-                    <span its-locale-filter-list="en" lang="en">Whether the designWidth of the page is auto-calculated. When it's <i>true</i>, the value of the <code>designWidth</code> is ignored, and the baseline width is determined by the system automatically according to the pixel densentiy of the screen.</span>
+                    <span its-locale-filter-list="en" lang="en">Whether the designWidth of the page is auto-calculated. When it's <i>true</i>, the value of the <code>designWidth</code> is ignored, and the baseline width is determined by the system automatically according to the pixel density of the screen.</span>
                     <span its-locale-filter-list="zh-hans" lang="zh-hans">页面设计基准宽度是否自动计算，当设为true时，designWidth将会被忽略，设计基准宽度由设备宽度与屏幕密度计算得出。</span>
                 </td>
             </tr>
@@ -763,6 +774,75 @@
         </p>
       </section>
     </section>
+
+    <section>
+        <h2>
+          <span its-locale-filter-list="en" lang="en">req-permissions</span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans">所需权限</span>
+        </h2>
+        <p its-locale-filter-list="en" lang="en">
+            <code>req-permissions</code> is an array of permission objects. Each object declares a permission (such as the access to the location information, user contacts, and hardware features like camera) required for the proper running of the MiniApp. User's consent may be asked to protect user's privacy related to such permissions. Such information can also be used by a app store or a hosting platform to filter a MiniApp according to user's policy or device capabilities. The structure of a permission object is defined in the following table.
+        </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+          <code>req-permissions</code>是一个权限对象的数组，其中每个对象声明了MiniApp正常运行所需的一个权限（比如对位置信息、联系人和摄像头等硬件特性的访问）。为保护权限相关的用户隐私，可能需要征得用户同意。此类权限信息还可以被应用市场或宿主平台用来根据用户策略或者设备能力来过滤MiniApp。详细的权限对象结构定义如下表。
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <span its-locale-filter-list="en" lang="en">Attribute</span>
+                        <span its-locale-filter-list="zh-hans" lang="zh-hans">属性</span>
+                    </th>
+                    <th>
+                        <span its-locale-filter-list="en" lang="en">Type</span>
+                        <span its-locale-filter-list="zh-hans" lang="zh-hans">类型</span>
+                    </th>
+                    <th>
+                        <span its-locale-filter-list="en" lang="en">Required</span>
+                        <span its-locale-filter-list="zh-hans" lang="zh-hans">必填</span>
+                    </th>
+                    <th>
+                        <span its-locale-filter-list="en" lang="en">Description</span>
+                        <span its-locale-filter-list="zh-hans" lang="zh-hans">描述</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> name </td>
+                    <td> string </td>
+                    <td>
+                        <span its-locale-filter-list="en" lang="en">Yes</span>
+                        <span its-locale-filter-list="zh-hans" lang="zh-hans">是</span>
+                    </td>
+                    <td>
+                        <span its-locale-filter-list="en" lang="en">permission name</span>
+                        <span its-locale-filter-list="zh-hans" lang="zh-hans">权限名称</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td> reason </td>
+                    <td> string </td>
+                    <td>
+                        <span its-locale-filter-list="en" lang="en">No</span>
+                        <span its-locale-filter-list="zh-hans" lang="zh-hans">否</span>
+                    </td>
+                    <td>
+                        <span its-locale-filter-list="en" lang="en">The reason to use this permission</span>
+                        <span its-locale-filter-list="zh-hans" lang="zh-hans">该权限的使用目的</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="note" its-locale-filter-list="en" lang="en">
+            It's for further study regarding the predefined/standardized permissions, permission extension, permission groups and protection levels.
+        </p>
+
+        <p class="note" its-locale-filter-list="zh-hans" lang="zh-hans">
+            标准化/预定义权限，权限扩展，权限分组和保护等级方案有待进一步研究。
+        </p>
+      </section>
   </section>
 
   <section>
@@ -801,10 +881,10 @@
             <span its-locale-filter-list="zh-hans" lang="zh-hans">内容限制</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-            As the manifest is a JSON file and will commonly be encoded using [[UNICODE]], the security considerations described in [[ECMA-404]] and [[UTR36]] apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#json-schema-json">JSON Schema</a> to impose their own implementation-specific limits on the member names, types and value ranges, e.g. to prevent denial of service attacks, to guard against running out of memory, or to work around platform-specific limitations.
+            As the manifest is a JSON file and will commonly be encoded using [[UNICODE]], the security considerations described in [[ECMA-404]] and [[UTR36]] apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#json-schema-json">JSON Schema</a> to impose their own implementation-specific limits on the member names, types and value ranges, e.g. to guard against memory overflow, or to meet platform-specific limitations.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-            Manifest作为一个JSON文件，通常以[[UNICODE]]</a>方式编码，因此[[ECMA-404]]和[[UTR36]]中所定义的安全措施同样适用。为了防止开发者在manifest中添加任意不受限的数据，开发者可在其具体实现中采用比<a href="#json-schema-json">JSON Schema</a>中所定义的更加严格的schema来约束文件中的成员元素名称、类型和取值范围等，从而防止DoS攻击、内存耗尽或满足平台特有的限制。
+            Manifest作为一个JSON文件，通常以[[UNICODE]]</a>方式编码，因此[[ECMA-404]]和[[UTR36]]中所定义的安全措施同样适用。为了防止开发者在manifest中添加任意不受限的数据，开发者可在其具体实现中采用比<a href="#json-schema-json">JSON Schema</a>中所定义的更加严格的schema来约束文件中的成员元素名称、类型和取值范围等，从而防止内存耗尽或满足平台特有的限制。
         </p>
     </section>
 
@@ -813,8 +893,17 @@
             <span its-locale-filter-list="en" lang="en">Local resource access</span>
             <span its-locale-filter-list="zh-hans" lang="zh-hans">本地资源访问</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en"> Attributes like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to ensure no illegal access outside the scope of the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>. On the other hand, the MiniApp itself (e.g. in JS code) may provide means to jump to external ressources either on the hosting platform, or on a remote web site (e.g. through a uri). In this case, the hosting platform is responsible for providing clear indication to an end-user about such context switch.</p>
+        <p its-locale-filter-list="en" lang="en"> Attributes like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to ensure no illegal access outside the scope of the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>. On the other hand, the MiniApp itself (e.g. in JS code) may provide means to jump to external resources either on the hosting platform, or on a remote web site (e.g. through a uri). In this case, the hosting platform is responsible for providing clear indication to an end-user about such context switch.</p>
+
+        <p its-locale-filter-list="en" lang="en">
+            In addition, the <code>req-permissions</code> attribute provides a specific means to control the access to the local software, hardware and data resources on the user's device. User's consent should be asked when it comes to privacy-related or high-level privileged resources.
+        </p>
+
         <p its-locale-filter-list="zh-hans" lang="zh-hans"> <code>icons</code>, <code>pages</code>, <code>widgets</code>等属性包含了宿主平台上的本地资源引用路径，开发者和宿主平台应该检查这些路径的合法性以确保没有<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>之外的非法访问。另一方面，MiniApp自身（如JS代码中）可能提供跳转到其他外部资源的方式，包括宿主平台或远程网站上的外部资源（比如通过uri)。此时，宿主平台应该负责向用户提供明确的上下文切换的指示信息。</p>
+
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+            此外，<code>req-permissions</code>属性提供了具体的控制访问用户设备上的本地软硬件及数据资源的方法。当涉及隐私或者高级权限相关的资源访问时，应该征询用户的同意。
+        </p>
     </section>
 
     <section>
@@ -832,7 +921,7 @@
             <span its-locale-filter-list="zh-hans" lang="zh-hans">信息透明</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-            It is RECOMMENDED that the hosting platform makes the necessary meta inforamtion in the manifest available to the end-user, such as <code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code>, <code>description</code>. This is to give an end-user an opportunity to make a conscious decision to approve the installation and use of the MiniApp. This could also help to identify a spoofing MiniApp.</p>
+            It is RECOMMENDED that the hosting platform makes the necessary meta information in the manifest available to the end-user, such as <code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code>, <code>description</code>. This is to give an end-user an opportunity to make a conscious decision to approve the installation and use of the MiniApp. This could also help to identify a spoofing MiniApp.</p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans"> 建议宿主平台将manifest中的必要元数据信息提供给用户，比如<code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code>, <code>description</code>。这样可以给用户一个机会来对MiniApp的安装和使用提供清晰的判断依据，也可以帮助用户来识别伪装的恶意MiniApp。</p>
     </section>
 </section>
@@ -890,6 +979,16 @@
                     "name": "widget",
                     "path": "widgets/index/index",
                     "minPlatformVersion": "1.0.0"
+                  }
+                ],
+                "req-permissions": [
+                  {
+                    "name": "system.location",
+                    "reason": "To show user's position on the map"
+                  },
+                  {
+                    "name": "system.camera",
+                    "reason": "To scan the QR code"
                   }
                 ]
               }

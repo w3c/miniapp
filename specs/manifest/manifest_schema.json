@@ -60,7 +60,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required":["src","sizes"],
+        "required": ["src", "sizes"],
         "properties": {
           "src": {
             "$ref": "#/definitions/TypePathString"
@@ -168,7 +168,22 @@
           },
           "minPlatformVersion": {
             "$ref": "#/definitions/TypeVersionString",
-            "description":"If not set, it's identical to the MiniApp platform version by default."
+            "description": "If not set, it's identical to the MiniApp platform version by default."
+          }
+        }
+      }
+    },
+    "req-permissions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
           }
         }
       }
