@@ -779,7 +779,7 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">所需权限</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-            <code>reqPermissions</code> is an array of permission objects. Each object declares a permission (such as the access to the location information, user contacts, and hardware features like camera) required for the proper running of the MiniApp. User's consent may be asked to protect user's privacy related to such permissions. Such information can also be used by a app store or a hosting platform to filter a MiniApp according to user's policy or device capabilities. The structure of a permission object is defined in the following table.
+            <code>reqPermissions</code> is an array of permission objects. Each object declares a permission (such as the access to the location information, user contacts, and hardware features like camera) required for the proper running of the MiniApp. User's consent may be asked to protect user's privacy related to such permissions. Such information can also be used by an app store or a hosting platform to filter a MiniApp according to user's policy or device capabilities. The structure of a permission object is defined in the following table.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           <code>reqPermissions</code>是一个权限对象的数组，其中每个对象声明了MiniApp正常运行所需的一个权限（比如对位置信息、联系人和摄像头等硬件特性的访问）。为保护权限相关的用户隐私，可能需要征得用户同意。此类权限信息还可以被应用市场或宿主平台用来根据用户策略或者设备能力来过滤MiniApp。详细的权限对象结构定义如下表。
@@ -833,13 +833,16 @@
                 </tr>
             </tbody>
         </table>
-        <p class="ednote" its-locale-filter-list="en" lang="en">
+
+        <div class="ednote">
+        <p its-locale-filter-list="en" lang="en">
             It's for further study whether the predefined permissions, permission extension, permission groups and protection levels need to be specified.
         </p>
 
-        <p class="ednote" its-locale-filter-list="zh-hans" lang="zh-hans">
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
             预定义权限、权限扩展、权限分组和保护等级是否需要定义有待进一步研究。
         </p>
+        </div>
       </section>
     </section>
 
@@ -920,11 +923,11 @@
         </h2>
         <p its-locale-filter-list="en" lang="en"> Attributes like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to ensure no illegal access outside the scope of the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>. On the other hand, the MiniApp itself (e.g. in JS code) may provide means to jump to external resources either on the hosting platform, or on a remote web site (e.g. through a uri). In this case, the hosting platform is responsible for providing clear indication to an end-user about such context switch.</p>
 
-        <p its-locale-filter-list="en" lang="en">
+        <p its-locale-filter-list="zh-hans" lang="zh-hans"> <code>icons</code>, <code>pages</code>, <code>widgets</code>等属性包含了宿主平台上的本地资源引用路径，开发者和宿主平台应该检查这些路径的合法性以确保没有<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>之外的非法访问。另一方面，MiniApp自身（如JS代码中）可能提供跳转到其他外部资源的方式，包括宿主平台或远程网站上的外部资源（比如通过uri)。此时，宿主平台应该负责向用户提供明确的上下文切换的指示信息。</p>
+
+	<p its-locale-filter-list="en" lang="en">
             In addition, the <code>reqPermissions</code> attribute provides a specific means to control the access to the local software, hardware and data resources on the user's device. User's consent should be asked when it comes to privacy-related or high-level privileged resources.
         </p>
-
-        <p its-locale-filter-list="zh-hans" lang="zh-hans"> <code>icons</code>, <code>pages</code>, <code>widgets</code>等属性包含了宿主平台上的本地资源引用路径，开发者和宿主平台应该检查这些路径的合法性以确保没有<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>之外的非法访问。另一方面，MiniApp自身（如JS代码中）可能提供跳转到其他外部资源的方式，包括宿主平台或远程网站上的外部资源（比如通过uri)。此时，宿主平台应该负责向用户提供明确的上下文切换的指示信息。</p>
 
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
             此外，<code>reqPermissions</code>属性提供了具体的控制访问用户设备上的本地软硬件及数据资源的方法。当涉及隐私或者高级权限相关的资源访问时，应该征询用户的同意。
