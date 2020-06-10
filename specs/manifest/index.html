@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8" />
     <title>MiniApp Manifest</title>
-
     <link rel="stylesheet" href="../local.css" />
 
     <style>
@@ -45,7 +44,15 @@
                 name: "Zhiqiang Yu",
                 companyURL: "http://www.huawei.com/",
                 company: "Huawei"
-              }],
+              }, {
+	        name: "Xiaofeng Zhang",
+                companyURL: "http://www.huawei.com/",
+                company: "Huawei"
+             }, {
+	        name: "Yongjing Zhang",
+                companyURL: "http://www.huawei.com/",
+                company: "Huawei"
+             }],
 
             wg: "MiniApps Ecosystem Community Group",
             wgURI: "https://www.w3.org/community/miniapps/",
@@ -63,7 +70,7 @@
       本规范定义了基于JSON格式的Manifest文件，使开发者可通过Manifest文件设置MiniApp的基本信息、窗口样式和页面路由等信息。这里，MiniApp基本信息包括但不限于MiniApp ID、名称、版本名称、版本号以及最小平台版本等；窗口样式window包括但不限于导航栏、标题和窗口背景等；pages用于指定页面路由信息；widgets用于描述卡片信息。
     </p>
     <p its-locale-filter-list="en" lang="en">
-      Note: At present, only a basic subset of MiniApp Manifest is listed, and it will be gradually updated and supplemented, based on different scenario requirements.
+      Note: At present, only a basic subset of MiniApp Manifest is specified, and it will be gradually updated and supplemented based on different scenario requirements.
     </p>
     <p its-locale-filter-list="zh-hans" lang="zh-hans">
       备注：目前只是列出MiniApp Manifest的一个基础子集，后续会根据不同的场景需求进行渐进式更新和补充。
@@ -86,6 +93,18 @@
 
   <section>
     <h2>Manifest</h2>
+    <p its-locale-filter-list="en" lang="en">
+      A MiniApp manifest is a JSON document that contains put metadata associated with a MiniApp.
+    </p>
+    <p its-locale-filter-list="zh-hans" lang="zh-hans">
+      MiniApp Manifest 是一个JSON文档，其中包含与该MiniApp关联的元数据。
+    </p>
+    <p its-locale-filter-list="en" lang="en">
+      The following table is a summary of each attribute:
+    </p>
+    <p its-locale-filter-list="zh-hans" lang="zh-hans">
+      下表是manifest中每个属性的总结：
+    </p>
     <table>
       <thead><tr>
         <th>
@@ -180,7 +199,7 @@
           </td>
         </tr>
         <tr>
-          <td> icon </td>
+          <td> icons </td>
           <td> Array </td>
           <td>
             <span its-locale-filter-list="en" lang="en">Yes</span>
@@ -262,6 +281,17 @@
             <span its-locale-filter-list="zh-hans" lang="zh-hans">卡片</span>
           </td>
         </tr>
+        <tr>
+            <td> reqPermissions </td>
+            <td> Array </td>
+            <td>
+              <span its-locale-filter-list="en" lang="en">No</span>
+              <span its-locale-filter-list="zh-hans" lang="zh-hans">否</span>
+            </td>
+            <td> <span its-locale-filter-list="en" lang="en">Required permissions</span>
+              <span its-locale-filter-list="zh-hans" lang="zh-hans">所需权限</span>
+            </td>
+          </tr>
       </tbody>
       <tfoot>
       </tfoot>
@@ -278,7 +308,7 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">方向</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>dir</code> specifies the base direction of the app name, short name and description members. The value of <code>dir</code> can be <code>ltr</code> or <code>rtl</code>. <code>ltr</code> means from left to right, <code>rtl</code> means from right to left. Default: <code>ltr</code>.
+          <code>dir</code> specifies the base direction of the text value of the app name, short name and description members. The value of <code>dir</code> can be <code>ltr</code> or <code>rtl</code>. <code>ltr</code> means from left to right, <code>rtl</code> means from right to left. Default: <code>ltr</code>.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           dir，指定名称、简称和描述成员的主文本方向。这里取值类型可分为：<code>ltr</code>和<code>rtl</code>，<code>ltr</code>表示从左到右，<code>rtl</code>表示从右到左。默认值：<code>ltr</code>。
@@ -291,10 +321,11 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">语言</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>lang</code> specifies the language tag of MiniApp. The value of lang here takes the value of <a href="https://developer.chrome.com/webstore/i18n#localeTable">locales</a>; please see more details in locales. Default is <code>zh-CN</code>.
+            <code>lang</code> specifies the language tag of MiniApp. The value here takes the form of
+            <code>Language-Tag</code> as defined in the [[BCP47]]</a>. The default value is <code>zh-Hans</code>. If not specified, the default value is used.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <code>lang</code>指定MiniApp的语言标签。这里取值为locales值，详见<a href="https://developer.chrome.com/webstore/i18n#localeTable">locales</a>。默认值<code>zh-CN</code>。
+            <code>lang</code>指定MiniApp的语言标签。这里取值为<code>Language-Tag</code>值，详见[[BCP47]]</a>。默认值是<code>zh-Hans</code>。未指定的情况下，将采用默认值。
         </p>
       </section>
 
@@ -304,7 +335,7 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">标识</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>appID</code> is the ID of MiniApp and is mainly used for package management. It supports the update and release of MiniApp versions. The naming convention of <code>appID</code> adopts the reverse domain naming rule and uses all lowercases, e.g. <code>com.company.miniapp</code>.
+          <code>appID</code> is the ID of MiniApp and is mainly used for the package management. It supports the update and release of MiniApp versions. The naming convention of <code>appID</code> adopts the reverse domain naming rule and uses all lowercases, e.g. <code>com.company.miniapp</code>.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           <code>appID</code>，MiniApp唯一标识符，主要用于包管理，支撑MiniApp版本更新和发布。<code>appID</code>的命名规范采用反域名命名规则，全部使用小写字母，比如<code>com.company.miniapp</code>.
@@ -317,7 +348,7 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">名称</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>appName</code> is the name that is directly displayed to the user, and is used for displaying the name of MiniApp on the desktop icon and MiniApp management. MiniApp name may be composed of Chinese characters, English letters, numbers and some specific symbols, and its length must be between 4–30 characters.
+          <code>appName</code> is the name that is directly displayed to the user. It is used as the display name of MiniApp along with the desktop icon and in the context of MiniApp management. MiniApp name may be composed of Chinese characters, English letters, numbers and some special symbols, and its length must be between 4–30 characters.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           <code>appName</code>，直接呈现给用户的名称，用于在桌面图标和MiniApp管理等处显示MiniApp的名称。MiniApp名称可由中文、英文、数字及部分特殊符号组成，长度在4-30个字符之间。
@@ -330,7 +361,7 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">简称</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>shortName</code> provides a short and easy-to-read name for MiniApp, and it can be used when there is insufficient space to display the MiniApp name.
+          <code>shortName</code> provides a short and easy-to-read name for MiniApp, and it can be used when there is insufficient space to display the full MiniApp name provided in <code>appName</code>.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           <code>shortName</code>，为MiniApp提供简短易读的名称，可在没有足够空间显示MiniApp名称时使用。
@@ -352,15 +383,66 @@
 
       <section>
         <h2>
-          <span its-locale-filter-list="en" lang="en">icon</span>
+          <span its-locale-filter-list="en" lang="en">icons</span>
           <span its-locale-filter-list="zh-hans" lang="zh-hans">图标</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>icon</code> is the array of MiniApp application icons. It consists of icons with different resolutions, and displays different icons based on the type of display equipment.
+          <code>icons</code> is the array of MiniApp application icons. It consists of icons with different resolutions, that can be displayed based on different types of display equipments.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <code>icon</code>，MiniApp应用图标数组。由不同分辨率的图标组成，根据显示设备类型的不同展示不同的图标。
+          <code>icons</code>，MiniApp应用图标数组。由不同分辨率的图标组成，根据显示设备类型的不同展示不同的图标。
         </p>
+        <table>
+            <thead>
+              <tr>
+                <th>
+                  <span its-locale-filter-list="en" lang="en">Attribute</span>
+                  <span its-locale-filter-list="zh-hans" lang="zh-hans">属性</span>
+                </th>
+                <th>
+                  <span its-locale-filter-list="en" lang="en">Type</span>
+                  <span its-locale-filter-list="zh-hans" lang="zh-hans">类型</span>
+                </th>
+                <th>
+                  <span its-locale-filter-list="en" lang="en">Required</span>
+                  <span its-locale-filter-list="zh-hans" lang="zh-hans">必填</span>
+                </th>
+                <th>
+                  <span its-locale-filter-list="en" lang="en">Description</span>
+                  <span its-locale-filter-list="zh-hans" lang="zh-hans">描述</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td> src </td>
+                <td> string </td>
+                <td>
+                  <span its-locale-filter-list="en" lang="en">Yes</span>
+                  <span its-locale-filter-list="zh-hans" lang="zh-hans">是</span>
+                </td>
+                <td>
+                  <span its-locale-filter-list="en" lang="en">the source of the icon image in the format of a path string</span>
+                  <span its-locale-filter-list="zh-hans" lang="zh-hans">以路径字符串所表示的图标图片来源</span>
+                </td>
+              </tr>
+              <tr>
+                <td> sizes </td>
+                <td> string </td>
+                <td>
+                  <span its-locale-filter-list="en" lang="en">Yes</span>
+                  <span its-locale-filter-list="zh-hans" lang="zh-hans">是</span>
+                </td>
+                <td>
+                  <span its-locale-filter-list="en" lang="en">The applicable resolution sizes of the icon image from the above mentioned <code>src</code></span>
+                  <span its-locale-filter-list="zh-hans" lang="zh-hans">来自以上<code>src</code>的图标图片所适用的分辨率大小</span>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
       </section>
 
 
@@ -370,10 +452,10 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">版本名称</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>versionName</code> is a string-type character string, and is mainly used for describing version information. It is also the version name that is displayed to the user. General format is "1.0.0". It plays an important role in version control, MiniApp application and equipment compatibility.
+          <code>versionName</code> is a string-type character string, and is mainly used for describing the version information. It is also the version name that is displayed to the user. The general format is "1.0.0" as specified in <a href="https://semver.org/">Semantic Versioning</a>. It plays an important role in version control, MiniApp application and equipment compatibility.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <code>versionName</code>是一个string类型的字符串，主要用作版本信息描述，也是面向用户显示的版本名称。一般格式为：<code>"1.0.0"</code>，在版本控制、MiniApp应用与设备兼容性等方面发挥重要作用。
+          <code>versionName</code>是一个string类型的字符串，主要用作版本信息描述，也是面向用户显示的版本名称。一般格式为：<code>"1.0.0"</code>，详见定义<a href="https://semver.org/">Semantic Versioning</a>，该参数在版本控制、MiniApp应用与设备兼容性等方面发挥重要作用。
         </p>
       </section>
 
@@ -383,10 +465,10 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">版本号</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>versionCode</code> is a number-type value, and is mainly used for enhancing the maintainability and security of MiniApp, e.g. a lower version is not compatible with a higher version. versionCode is not displayed to the user and is incrementing according to the version iteration process. Default: 1.
+          <code>versionCode</code> is a number-type value, and is mainly used for enhancing the maintainability and security of MiniApp, e.g. a lower version is not compatible with a higher version. <code>versionCode</code> is not displayed to the user and is incrementing according to the version iteration process. The value is a non-negative integer. Default: 1.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <code>versionCode</code>是一个number类型的数值，主要用作提高MiniApp的可维护性和安全性，比如：低版本不能覆盖高版本。此版本号不向用户显示，根据版本迭代过程进行递增。默认值：<code>1</code>。
+          <code>versionCode</code>是一个number类型的数值，主要用作提高MiniApp的可维护性和安全性，比如：低版本不能覆盖高版本。此版本号不向用户显示，根据版本迭代过程进行递增。取值是非负整数。默认值：<code>1</code>。
         </p>
       </section>
 
@@ -409,7 +491,7 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">页面路由</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>pages</code> is an array used for specifying which pages are included in MiniApp. Each item in the array represents a page route. Page route = <code>[path + filename]</code>. During the MiniApp development process, adding or deleting pages should be configured in the array. When configuring the page route, there is no need to add suffix to the document name, and the MiniApp platform will automatically parse it. Note: the first item in the <code>pages</code> array stands for the homepage of MiniApp.
+            <code>pages</code> is an array of path strings used for specifying which pages are included in a MiniApp. Each item in the array represents a page route. Page route = <code>[path + filename]</code>. During the MiniApp development process, adding or deleting pages is done by configuring the array. When configuring the page route, there is no need to add the file name extension, since the MiniApp platform will automatically parse it. Note: the first item in the <code>pages</code> array stands for the homepage of a MiniApp.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           <code>pages</code>数组用于指定MiniApp都包含哪些页面，数组中每一项代表一个页面路由，页面路由 = <code>[路径 + 文件名]</code>。MiniApp开发时新增或删除页面需在数组中进行配置，配置页面路由时文件名不需加后缀名，MiniApp平台会自动解析。备注：<code>pages</code>数组中第一项代表MiniApp首页。
@@ -527,8 +609,8 @@
               </td>
               <td> dark </td>
               <td>
-                <span its-locale-filter-list="en" lang="en">Pull-down loading style, valid values: <code>dark</code> and <code>light</code>.</span>
-                <span its-locale-filter-list="zh-hans" lang="zh-hans">下拉loading的样式，有效值：<code>dark</code>和<code>light</code>。</span>
+                <span its-locale-filter-list="en" lang="en">Background text style, valid values: <code>dark</code> and <code>light</code>.</span>
+                <span its-locale-filter-list="zh-hans" lang="zh-hans">背景文字样式，有效值：<code>dark</code>和<code>light</code>。</span>
               </td>
             </tr>
             <tr>
@@ -553,8 +635,8 @@
               </td>
               <td> 50 </td>
               <td>
-                <span its-locale-filter-list="en" lang="en">Distance from the bottom when page pull-up bottom event is triggered; the unit is in <code>px</code>.</span>
-                <span its-locale-filter-list="zh-hans" lang="zh-hans">页面上拉触底事件触发时距页面底部距离，单位为 <code>px</code>。</span>
+                <span its-locale-filter-list="en" lang="en">Distance from the bottom when page pull-up bottom event is triggered. The value is a non-negative integer and the unit is in <code>px</code>.</span>
+                <span its-locale-filter-list="zh-hans" lang="zh-hans">页面上拉触底事件触发时距页面底部距离。取值应为非负整数，单位为 <code>px</code>。</span>
               </td>
             </tr>
             <tr>
@@ -583,6 +665,32 @@
                 <span its-locale-filter-list="zh-hans" lang="zh-hans">全屏显示</span>
               </td>
             </tr>
+            <tr>
+                <td> designWidth </td>
+                <td> number </td>
+                <td>
+                    <span its-locale-filter-list="en" lang="en">No</span>
+                    <span its-locale-filter-list="zh-hans" lang="zh-hans">否</span>
+                </td>
+                <td> 750 </td>
+                <td>
+                    <span its-locale-filter-list="en" lang="en">The baseline width of the page design in <code>px</code>, based on which the size of the components on the page would be adjusted accordingly. The value is a non-negative integer.</span>
+                    <span its-locale-filter-list="zh-hans" lang="zh-hans">以<code>px</code>为单位的页面设计基准宽度，元素大小将根据实际设备宽度来缩放。取值应为非负整数。</span>
+                </td>
+            </tr>
+            <tr>
+                <td> autoDesignWidth </td>
+                <td> boolean </td>
+                <td>
+                    <span its-locale-filter-list="en" lang="en">No</span>
+                    <span its-locale-filter-list="zh-hans" lang="zh-hans">否</span>
+                </td>
+                <td> false </td>
+                <td>
+                    <span its-locale-filter-list="en" lang="en">Whether the designWidth of the page is auto-calculated. When it's <i>true</i>, the value of the <code>designWidth</code> is ignored, and the baseline width is determined by the system automatically according to the pixel density of the screen.</span>
+                    <span its-locale-filter-list="zh-hans" lang="zh-hans">页面设计基准宽度是否自动计算，当设为true时，designWidth将会被忽略，设计基准宽度由设备宽度与屏幕密度计算得出。</span>
+                </td>
+            </tr>
           </tbody>
         </table>
       </section>
@@ -593,10 +701,10 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">卡片</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          Widget is a part of MiniApp. Specifically, a MiniApp package can include MiniApp Pages and Widgets concurrently. As a part of the MiniApp application, the Widget shares some of the Manifest fields with the MiniApp host program, e.g. <code>dir</code>、<code>lang</code>、<code>appID</code>、<code>appName</code>、<code>shortName</code>、<code>icon</code>、<code>versionName</code> and <code>versionCode</code>. However, Widget also has its private fields, as shown in the following table:
+            Widgets are a part of a MiniApp. Specifically, a MiniApp package can include MiniApp Pages and Widgets concurrently. As a part of the MiniApp application, widgets share some of the Manifest fields with the MiniApp main program, e.g. <code>dir</code>, <code>lang</code>, <code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code> and <code>versionCode</code>. However, a widget also has its private fields, as shown in the following table:
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          Widget是MiniApp的一部分。特定地，MiniApp包中可同时包含 MiniApp Page和Widget。Widget作为MiniApp应用程序的一部分，Widget和MiniApp主体程序共用部分Manifest字段，比如：<code>dir</code>、<code>lang</code>、<code>appID</code>、<code>appName</code>、<code>shortName</code>、<code>icon</code>、<code>versionName</code>和<code>versionCode</code>。但是Widget也有自己的私有字段，如下表所示：
+            Widget是MiniApp的一部分。具体来说，MiniApp包中可同时包含 MiniApp Page和Widget。Widget作为MiniApp应用程序的一部分，Widget和MiniApp主体程序共用部分Manifest字段，比如：<code>dir</code>、<code>lang</code>、<code>appID</code>、<code>appName</code>、<code>shortName</code>、<code>icons</code>、<code>versionName</code>和<code>versionCode</code>。但是Widget也有自己的私有字段，如下表所示：
         </p>
 
         <table>
@@ -660,48 +768,206 @@
           </tbody>
         </table>
 
-        <p its-locale-filter-list="en" lang="en">There are certain differences between Widget-related API and MiniApp API, hence, the declaration of minimum platform version may be different. If <code>minPlatformVersion</code> field of Widget is not set independently, it is identical to the MiniApp platform version by default.
+        <p its-locale-filter-list="en" lang="en">There are certain differences between the Widget-related APIs and the MiniApp APIs, hence, the declaration of the minimum platform version may be different. If the <code>minPlatformVersion</code> field of a widget is not set explicitly, it is then identical to the <code>minPlatformVersion</code> of the MiniApp by default.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">Widget 涉及的API与MiniApp API有一定差别，因此最小平台版本声明可能不同。如不单独设置Widget的<code>minPlatformVersion</code>字段，则默认与MiniApp平台版本相同。
         </p>
       </section>
-    </section>
-  </section>
+      <section>
+        <h2>
+          <span its-locale-filter-list="en" lang="en">reqPermissions</span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans">所需权限</span>
+        </h2>
+        <p its-locale-filter-list="en" lang="en">
+            <code>reqPermissions</code> is an array of permission objects. Each object declares a permission (such as the access to the location information, user contacts, and hardware features like camera) required for the proper running of the MiniApp. User's consent may be asked to protect user's privacy related to such permissions. Such information can also be used by an app store or a hosting platform to filter a MiniApp according to user's policy or device capabilities. The structure of a permission object is defined in the following table.
+        </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+          <code>reqPermissions</code>是一个权限对象的数组，其中每个对象声明了MiniApp正常运行所需的一个权限（比如对位置信息、联系人和摄像头等硬件特性的访问）。为保护权限相关的用户隐私，可能需要征得用户同意。此类权限信息还可以被应用市场或宿主平台用来根据用户策略或者设备能力来过滤MiniApp。详细的权限对象结构定义如下表。
+        </p>
 
-  <section>
-    <h2>
-      <span its-locale-filter-list="en" lang="en">Packaging</span>
-      <span its-locale-filter-list="zh-hans" lang="zh-hans">包结构</span>
-    </h2>
-    <p its-locale-filter-list="en" lang="en">
-      <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a> includes the manifest.json document which describes the project setting information, global logic document app.js, global style document app.css, and css, xml, js documents with multiple description pages.
-    </p>
-    <p its-locale-filter-list="zh-hans" lang="zh-hans"><a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging规范</a>包含描述项目配置信息的manifest.json文件，全局逻辑文件app.js，全局样式文件app.css, 多个描述页面的css、xml、js文件。
-    </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <span its-locale-filter-list="en" lang="en">Attribute</span>
+                        <span its-locale-filter-list="zh-hans" lang="zh-hans">属性</span>
+                    </th>
+                    <th>
+                        <span its-locale-filter-list="en" lang="en">Type</span>
+                        <span its-locale-filter-list="zh-hans" lang="zh-hans">类型</span>
+                    </th>
+                    <th>
+                        <span its-locale-filter-list="en" lang="en">Required</span>
+                        <span its-locale-filter-list="zh-hans" lang="zh-hans">必填</span>
+                    </th>
+                    <th>
+                        <span its-locale-filter-list="en" lang="en">Description</span>
+                        <span its-locale-filter-list="zh-hans" lang="zh-hans">描述</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> name </td>
+                    <td> string </td>
+                    <td>
+                        <span its-locale-filter-list="en" lang="en">Yes</span>
+                        <span its-locale-filter-list="zh-hans" lang="zh-hans">是</span>
+                    </td>
+                    <td>
+                        <span its-locale-filter-list="en" lang="en">permission name</span>
+                        <span its-locale-filter-list="zh-hans" lang="zh-hans">权限名称</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td> reason </td>
+                    <td> string </td>
+                    <td>
+                        <span its-locale-filter-list="en" lang="en">No</span>
+                        <span its-locale-filter-list="zh-hans" lang="zh-hans">否</span>
+                    </td>
+                    <td>
+                        <span its-locale-filter-list="en" lang="en">The reason to use this permission</span>
+                        <span its-locale-filter-list="zh-hans" lang="zh-hans">该权限的使用目的</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="ednote">
+        <p its-locale-filter-list="en" lang="en">
+            It's for further study whether the predefined permissions, permission extension, permission groups and protection levels need to be specified.
+        </p>
+
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+            预定义权限、权限扩展、权限分组和保护等级是否需要定义有待进一步研究。
+        </p>
+        </div>
+      </section>
+    </section>
+
+    
   </section>
 
   <section>
     <h2>
       <span its-locale-filter-list="en" lang="en">Dependencies</span>
-      <span its-locale-filter-list="zh-hans" lang="zh-hans">需求依赖</span>
+      <span its-locale-filter-list="zh-hans" lang="zh-hans">依赖</span>
     </h2>
-    <ul>
-      <li>
-        <p its-locale-filter-list="en" lang="en">The pages route specification is specified by the <a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI specification</a>.</p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans">pages路由规范由<a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI规范</a>指定。</p>
-      </li>
-      <li>
-        <p its-locale-filter-list="en" lang="en"><code>app.js</code> is used for global JavaScript logic and global application life cycle management of MiniApp; MiniApp life cycle is specified by the <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle specification</a>.</p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans"><code>app.js</code>用于全局JavaScript逻辑和MiniApp全局应用生命周期管理，MiniApp生命周期由<a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle规范</a>指定。</p>
-      </li>
-      <li>
-        <p its-locale-filter-list="en" lang="en">MiniApp Page and Widget both follow <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>.</p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans">MiniApp Page和Widget都遵循<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging规范</a>。</p>
-      </li>
-    </ul>
+
+    <p its-locale-filter-list="en" lang="en">
+        As a key part of a MiniApp package, the <code>manifest.json</code> file describes several important aspects of the MiniApp by referring to the resources inside the MiniApp package in different forms of files, such as the page files in the <code>pages</code> directory and the icon images in the <code>common</code> directory. Details are specified in the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>.
+    </p>
+    <p its-locale-filter-list="zh-hans" lang="zh-hans">
+      作为MiniApp包中的关键部分，<code>manifest.json</code>文件通过引用MiniApp包中的多个不同形式的资源文件描述了MiniApp应用的多个重要方面，比如引用<code>pages</code>目录中的页面相关文件和<code>common</code>目录中的图标文件。详细情况在<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging规范</a>中定义。
+    </p>
+
+    <p its-locale-filter-list="en" lang="en">
+        The normal operation of a MiniApp relies on the proper configuration of the manifest file according to this specification and the availability of the dependent resources in the MiniApp package. Such dependency needs to be checked during both the development phase and deployment phase.
+    </p>
+
+    <p its-locale-filter-list="zh-hans" lang="zh-hans">
+        MiniApp的正常运行依赖于根据本规范进行恰当的manifest文件配置以及MiniApp包中所依赖资源的可用性。此依赖关系需要在开发和部署阶段进行检查。
+    </p>
+
+
+  </section>
+
+  <section id="conformance" class="override">
+    <h2>
+      <span its-locale-filter-list="en" lang="en">Conformance</span>
+      <span its-locale-filter-list="zh-hans" lang="zh-hans">标准符合性</span>
+    </h2>
+    <p its-locale-filter-list="en" lang="en">
+      As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
+    </p>
+    <p its-locale-filter-list="zh-hans" lang="zh-hans">
+      本规范中的所有内容均为本草案的规范性内容，但明确标记为“非规范性”的部分、示例和注释除外。
+    </p>
+
+    <p its-locale-filter-list="en" lang="en">
+      The key word RECOMMENDED in this document
+      is to be interpreted as described in
+      <a href="https://tools.ietf.org/html/bcp14">BCP 14</a>
+      [[RFC2119]] [[RFC8174]]
+      when, and only when, they appear in all capitals, as shown here.
+    </p>
+
+    <p its-locale-filter-list="zh-hans" lang="zh-hans">
+      如此处所示，当且仅当以着重号标记时，<span class="rfc2119-zh">建议</span>（<em class="rfc2119">RECOMMENDED</em>）才以<a href="https://tools.ietf.org/html/bcp14">BCP 14</a> [[RFC2119]] [[RFC8174]]中的说明解释。
+    </p>
   </section>
 
   <section>
+    <h2>
+        <span its-locale-filter-list="en" lang="en">Security and Privacy Considerations</span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans">安全隐私考虑</span>
+    </h2>
+    <section>
+        <h2>
+            <span its-locale-filter-list="en" lang="en">Content constraint</span>
+            <span its-locale-filter-list="zh-hans" lang="zh-hans">内容限制</span>
+        </h2>
+        <p its-locale-filter-list="en" lang="en">
+            As the manifest is a JSON file and will commonly be encoded using [[UNICODE]], the security considerations described in [[ECMA-404]] and [[UTR36]] apply. In order to prevent developers from including custom/unrestrained data in a manifest, implementors may use a more strict schema than that defined in <a href="#json-schema-json">JSON Schema</a> to impose their own implementation-specific limits on the member names, types and value ranges, e.g. to guard against memory overflow, or to meet platform-specific limitations.
+        </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+            Manifest作为一个JSON文件，通常以[[UNICODE]]</a>方式编码，因此[[ECMA-404]]和[[UTR36]]中所定义的安全措施同样适用。为了防止开发者在manifest中添加任意不受限的数据，开发者可在其具体实现中采用比<a href="#json-schema-json">JSON Schema</a>中所定义的更加严格的schema来约束文件中的成员元素名称、类型和取值范围等，从而防止内存耗尽或满足平台特有的限制。
+        </p>
+    </section>
+
+    <section>
+        <h2>
+            <span its-locale-filter-list="en" lang="en">Local resource access</span>
+            <span its-locale-filter-list="zh-hans" lang="zh-hans">本地资源访问</span>
+        </h2>
+        <p its-locale-filter-list="en" lang="en"> Attributes like <code>icons</code>, <code>pages</code>, <code>widgets</code> contain paths referring to local resources on the hosting platform. Implementors and the hosting platform should check the validity of those paths to ensure no illegal access outside the scope of the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>. On the other hand, the MiniApp itself (e.g. in JS code) may provide means to jump to external resources either on the hosting platform, or on a remote web site (e.g. through a uri). In this case, the hosting platform is responsible for providing clear indication to an end-user about such context switch.</p>
+
+        <p its-locale-filter-list="zh-hans" lang="zh-hans"> <code>icons</code>, <code>pages</code>, <code>widgets</code>等属性包含了宿主平台上的本地资源引用路径，开发者和宿主平台应该检查这些路径的合法性以确保没有<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp package</a>之外的非法访问。另一方面，MiniApp自身（如JS代码中）可能提供跳转到其他外部资源的方式，包括宿主平台或远程网站上的外部资源（比如通过uri)。此时，宿主平台应该负责向用户提供明确的上下文切换的指示信息。</p>
+
+	<p its-locale-filter-list="en" lang="en">
+            In addition, the <code>reqPermissions</code> attribute provides a specific means to control the access to the local software, hardware and data resources on the user's device. User's consent should be asked when it comes to privacy-related or high-level privileged resources.
+        </p>
+
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+            此外，<code>reqPermissions</code>属性提供了具体的控制访问用户设备上的本地软硬件及数据资源的方法。当涉及隐私或者高级权限相关的资源访问时，应该征询用户的同意。
+        </p>
+    </section>
+
+    <section>
+        <h2>
+            <span its-locale-filter-list="en" lang="en">Integrity</span>
+            <span its-locale-filter-list="zh-hans" lang="zh-hans">完整性</span>
+        </h2>
+        <p its-locale-filter-list="en" lang="en"> The integrity of the manifest document is protected by a cryptographic hash mechanism as part of the whole MiniApp package. Details are specified in the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>. </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans"> Manifest文档的完整性作为MiniApp package的一部分被密码哈希机制所保护。详细定义见<a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>。 </p>
+    </section>
+
+    <section>
+        <h2>
+            <span its-locale-filter-list="en" lang="en">Transparency</span>
+            <span its-locale-filter-list="zh-hans" lang="zh-hans">信息透明</span>
+        </h2>
+        <p its-locale-filter-list="en" lang="en">
+            It is RECOMMENDED that the hosting platform makes the necessary meta information in the manifest available to the end-user, such as <code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code>, <code>description</code>. This is to give an end-user an opportunity to make a conscious decision to approve the installation and use of the MiniApp. This could also help to identify a spoofing MiniApp.</p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans"> <span class="rfc2119-zh">建议</span>宿主平台将manifest中的必要元数据信息提供给用户，比如<code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code>, <code>description</code>。这样可以给用户一个机会来对MiniApp的安装和使用提供清晰的判断依据，也可以帮助用户来识别伪装的恶意MiniApp。</p>
+    </section>
+</section>
+
+<section>
+    <h2>
+        <span its-locale-filter-list="en" lang="en">JSON Schema</span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans">JSON语法</span>
+    </h2>
+    <p its-locale-filter-list="en" lang="en">
+        Developers interested in validating the MiniApp manifest document can use the JSON Schema defined <a href="./manifest_schema.json">here</a>.
+    </p>
+
+    <p its-locale-filter-list="zh-hans" lang="zh-hans"> 开发者可使用<a href="./manifest_schema.json">此处</a>所定义的JSON Schema来验证manifest文件。
+    </p>
+</section>
+
+  <section class='informative'>
     <h2>
       <span its-locale-filter-list="en" lang="en"> Example</span>
       <span its-locale-filter-list="zh-hans" lang="zh-hans">样例</span>
@@ -716,7 +982,12 @@
                 "versionName": "1.0.0",
                 "versionCode": 1,
                 "description": "A Simple MiniApp Demo",
-                "icon": "common/xxx.png",
+                "icons": [
+                  {
+                    "src": "common/icons/icon.png",
+                    "sizes": "48x48"
+                  }
+                ],
                 "minPlatformVersion": "1.0.0",
                 "pages": [
                   "pages/index/index",
@@ -735,6 +1006,16 @@
                     "path": "widgets/index/index",
                     "minPlatformVersion": "1.0.0"
                   }
+                ],
+                "reqPermissions": [
+                  {
+                    "name": "system.permission.LOCATION",
+                    "reason": "To show user's position on the map"
+                  },
+                  {
+                    "name": "system.permission.CAMERA",
+                    "reason": "To scan the QR code"
+                  }
                 ]
               }
             </pre>
@@ -742,214 +1023,17 @@
     </section>
 
   <section class="appendix">
-    <h2>
-      <span its-locale-filter-list="en" lang="en">Comparison with Web App Manifest</span>
-      <span its-locale-filter-list="zh-hans" lang="zh-hans">对比Web App Manifest</span>
-    </h2>
-    <p its-locale-filter-list="en" lang="en">
-      The following table mainly describes the comparison between the manifest properties in Mini App and Web App. "-" in the table means that there is no such property in the corresponding manifest.
-    </p>
-    <p its-locale-filter-list="zh-hans" lang="zh-hans">
-      此表主要描述Mini App和Web App中Manifest标签的对比情况，表中"-"表示相应Manifest无此标签。
-    </p>
-
-    <table>
-      <thead>
-        <tr>
-          <th> Mini App </th>
-          <th> Web App </th>
-          <th>
-            <span its-locale-filter-list="en" lang="en">Web App description</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">Web App描述</span>
-              </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td> dir </td>
-          <td> dir </td>
-          <td>
-            <span its-locale-filter-list="en" lang="en">Text direction</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">文本方向</span>
-          </td>
-        </tr>
-        <tr>
-          <td> lang </td>
-          <td> lang </td>
-          <td>
-            <span its-locale-filter-list="en" lang="en">Language tag</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">语言标签</span>
-          </td>
-        </tr>
-        <tr>
-          <td> appID </td>
-          <td> - </td>
-          <td> - </td>
-        </tr>
-        <tr>
-          <td> appName </td>
-          <td> name </td>
-          <td>
-            <span its-locale-filter-list="en" lang="en">Application name</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">应用名称</span>
-          </td>
-        </tr>
-        <tr>
-          <td> shortName </td>
-          <td> short_name </td>
-          <td>
-            <span its-locale-filter-list="en" lang="en">Application name abbreviation</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">应用名称缩写</span>
-          </td>
-        </tr>
-        <tr>
-          <td> description </td>
-          <td> description </td>
-          <td>
-            <span its-locale-filter-list="en" lang="en">Application description</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">应用描述</span>
-          </td>
-        </tr>
-        <tr>
-          <td> icon </td>
-          <td> icon </td>
-          <td>
-            <span its-locale-filter-list="en" lang="en">Application icon</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">应用图标</span>
-          </td>
-        </tr>
-        <tr>
-          <td> versionName </td>
-          <td> - </td>
-          <td> - </td>
-        </tr>
-        <tr>
-          <td> versionCode </td>
-          <td> - </td>
-          <td> - </td>
-        </tr>
-        <tr>
-          <td> minPlatformVersion </td>
-          <td> - </td>
-          <td> - </td>
-        </tr>
-        <tr>
-          <td> pages </td>
-          <td> scope </td>
-          <td>
-            <span its-locale-filter-list="en" lang="en">Navigation scope</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">导航范围</span>
-          </td>
-        </tr>
-        <tr>
-          <td> pages.homepage </td>
-          <td> start_url </td>
-          <td>
-            <span its-locale-filter-list="en" lang="en">Start page URL</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">开始页面的URL</span>
-          </td>
-        </tr>
-        <tr>
-          <td> window.backgroundColor </td>
-          <td> background_color </td>
-          <td>
-            <span its-locale-filter-list="en" lang="en">Background color</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">背景颜色</span>
-          </td>
-        </tr>
-        <tr>
-          <td> window.orientation </td>
-          <td> orientation </td>
-          <td>
-            <span its-locale-filter-list="en" lang="en">Screen orientation settings</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">屏幕方向设置</span>
-          </td>
-        </tr>
-        <tr>
-          <td> window.fullscreen </td>
-          <td> display.fullscreen </td>
-          <td>
-            <span its-locale-filter-list="en" lang="en">Display mode</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">显示模式</span>
-          </td>
-        </tr>
-        <tr>
-          <td> - </td>
-          <td> theme_color </td>
-          <td>
-            <span its-locale-filter-list="en" lang="en">Theme color</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">主题颜色</span>
-          </td>
-        </tr>
-        <tr>
-          <td> widgets </td>
-          <td> - </td>
-          <td> - </td>
-        </tr>
-        <tr>
-          <td> - </td>
-          <td> iarc_rating_id </td>
-          <td>
-            <span its-locale-filter-list="en" lang="en">Web App IARC certificate number</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">Web App IARC证书号</span>
-          </td>
-        </tr>
-        <tr>
-          <td> - </td>
-          <td> related_applications </td>
-          <td>
-            <span its-locale-filter-list="en" lang="en">Related local application assembly</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">相关的本机应用程序集</span>
-          </td>
-        </tr>
-        <tr>
-        <tr>
-          <td> - </td>
-          <td> prefer_related_applications </td>
-          <td>
-            <span its-locale-filter-list="en" lang="en">Specify related local application is available</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">指定相关的本机应用程序可用</span>
-          </td>
-        </tr>
-        <tr>
-        <tr>
-          <td> - </td>
-          <td> categories </td>
-          <td> <span its-locale-filter-list="en" lang="en">Application category</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">应用分类</span>
-          </td>
-        </tr>
-        <tr>
-        <tr>
-          <td> - </td>
-          <td> screenshots </td>
-          <td> <span its-locale-filter-list="en" lang="en">Image resource set</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">图片资源集</span>
-          </td>
-        </tr>
-        <tr>
-          <td> - </td>
-          <td> shortcuts </td>
-          <td>
-            <span its-locale-filter-list="en" lang="en">Shortcut for key tasks</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">关键任务的快捷方式</span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section class="appendix">
            <h2>
              <span its-locale-filter-list="en" lang="en">Acknowledgments</span>
              <span its-locale-filter-list="zh-hans" lang="zh-hans">致谢</span>
     </h2>
     <p its-locale-filter-list="en" lang="en">
-      This document refers to <a href="https://www.w3.org/TR/appmanifest">W3C Web App Manifest</a>，<a href="https://smartprogram.baidu.com/docs/develop/tutorial/process/">Baidu MiniApp</a>，<a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">WeChat MiniApp</a>，<a href="https://opendocs.alipay.com/mini/framework/app-json">Alipay MiniApp</a>，<a href="https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration">ByteDance MiniApp</a>，<a href="https://doc.quickapp.cn/framework/manifest.html">Quick App Specification</a>，<a href="https://developer.chrome.com/webstore/i18n#localeTable">chromium locales</a>，<a href="https://www.science.co.il/language/Locale-codes.php">Windows Locale Codes</a>，<a href="https://w3c.github.io/miniapp/specs/widget-req/">MiniApp Widget Specification</a>，<a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle Specification</a>，<a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI Specification</a>. We appreciate the open source efforts of these documents.
+      This document refers to <a href="https://www.w3.org/TR/appmanifest">W3C Web App Manifest</a>, <a href="https://smartprogram.baidu.com/docs/develop/tutorial/process/">Baidu MiniApp</a>, <a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">WeChat MiniApp</a>, <a href="https://opendocs.alipay.com/mini/framework/app-json">Alipay MiniApp</a>, <a href="https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration">ByteDance MiniApp</a>, <a href="https://doc.quickapp.cn/framework/manifest.html">Quick App Specification</a>, <a href="https://w3c.github.io/miniapp/specs/widget-req/">MiniApp Widget Specification</a>, <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle Specification</a>, <a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI Scheme</a>, and <a href="https://semver.org/">Semantic Versioning</a>. We appreciate the open source efforts of these documents.
     </p>
     <p its-locale-filter-list="zh-hans" lang="zh-hans">
-      本文档参考了<a href="https://www.w3.org/TR/appmanifest">W3C Web App Manifest</a>，<a href="https://smartprogram.baidu.com/docs/develop/tutorial/process/">百度小程序</a>，<a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">微信小程序</a>，<a href="https://opendocs.alipay.com/mini/framework/app-json">支付宝小程序</a>，<a href="https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration">字节跳动小程序</a>，<a href="https://doc.quickapp.cn/framework/manifest.html">快应用联盟规范</a>，<a href="https://developer.chrome.com/webstore/i18n#localeTable">chromium locales</a>，<a href="https://www.science.co.il/language/Locale-codes.php">Windows Locale Codes</a>，<a href="https://w3c.github.io/miniapp/specs/widget-req/">MiniApp Widget文件规范</a>，<a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle规范</a>，<a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI规范</a>。感谢这些文档的开源努力。
+      本文档参考了<a href="https://www.w3.org/TR/appmanifest">W3C Web App Manifest</a>，<a href="https://smartprogram.baidu.com/docs/develop/tutorial/process/">百度小程序</a>，<a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html">微信小程序</a>，<a href="https://opendocs.alipay.com/mini/framework/app-json">支付宝小程序</a>，<a href="https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/general-configuration">字节跳动小程序</a>，<a href="https://doc.quickapp.cn/framework/manifest.html">快应用联盟规范</a>，<a href="https://w3c.github.io/miniapp/specs/widget-req/">MiniApp Widget文件规范</a>，<a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecycle规范</a>，<a href="https://w3c.github.io/miniapp/specs/uri/">MiniApp URI规范</a>, <a href="https://semver.org/">Semantic Versioning规范</a>。感谢这些文档的开源努力。
     </p>
   </section>
   </body>
+
 </html>

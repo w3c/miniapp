@@ -73,10 +73,10 @@
       MiniApp Widget 是 MiniApp 页面的一种特殊形式，与页面不同，Widget 可以仅占用屏幕的一个区域（而不是全部），用于为用户显示关键信息和响应简单的用户操作，例如显示用户所在地的天气，跟踪用户当前的行程状态并提供进一步的操作。
     </p>
      <p its-locale-filter-list="en" lang="en">
-       In mobile operating systems, the MiniApp Widget can be used for the HiBoard, Intelligent Assistant and other scenarios. In some scenarios, the user can subscribe to a service and the Widget is displayed in a fixed position, while in other scenarios, the Widget can dynamically appear and disappear based on contextual requirements. 
+       In mobile operating systems, the MiniApp Widget can be used for the Intelligent Assistant and other scenarios. In some scenarios, the user can subscribe to a service and the Widget is displayed in a fixed position, while in other scenarios, the Widget can dynamically appear and disappear based on contextual requirements.
     </p>
      <p its-locale-filter-list="zh-hans" lang="zh-hans">
-       在移动操作系统中，MiniApp Widget 可以被应用于负一屏、智能助手等场景，某些场景下用户可以订阅和固定显示 Widget，另外一些场景下 Widget 可以根据上下文需求动态地显示和消失。
+       在移动操作系统中，MiniApp Widget 可以被应用于智能助理等场景，某些场景下用户可以订阅和固定显示 Widget，另外一些场景下 Widget 可以根据上下文需求动态地显示和消失。
     </p>
      <p its-locale-filter-list="en" lang="en">
        As the MiniApp Widget is an integral part of MiniApp, the other relevant parts are described in other related MiniApp documents. This document mainly describes the specific requirements that need to be considered when defining the MiniApp Widget Specification as well as other dependencies.
@@ -106,7 +106,7 @@
     </h2>
     <section>
       <h2>
-        <span its-locale-filter-list="en" lang="en">Client</span>
+        <span its-locale-filter-list="en" lang="en">User agent</span>
         <span its-locale-filter-list="zh-hans" lang="zh-hans">客户端</span>
       </h2>
        <p its-locale-filter-list="en" lang="en">
@@ -130,7 +130,7 @@
              The user agent should be able to parse the structure of the MiniApp package as described in the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>.
           </p>
           <p its-locale-filter-list="zh-hans" lang="zh-hans">
-            User agent 应当能按照 <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging 规范</a>的描述解析 MiniApp 包结构。
+             User agent 应当能按照 <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging 规范</a>的描述解析 MiniApp 包结构。
           </p>
         </li>
         <li>
@@ -143,10 +143,10 @@
         </li>
         <li>
           <p its-locale-filter-list="en" lang="en">
-             When running the widget, the user agent should be able to access the resource files in the MiniApp package via the MiniApp URI.
+            The form of resources that the MiniApp Widget accesses in the package is consistent with a MiniApp page. Therefore, the user agent should be able to access the resource files in the MiniApp package in the same way.
           </p>
           <p its-locale-filter-list="zh-hans" lang="zh-hans">
-              在运行过程中，user agent 应能根据 MiniApp URI 访问 MiniApp 包中的资源文件。
+            MiniApp Widget 访问到包中的资源形式与 MiniApp Page 保持一致。因此，user agent 应能以同样的方式访问 MiniApp 包中的资源文件。
           </p>
         </li>
         <li>
@@ -154,7 +154,7 @@
             When running the widget, the user agent should be able to provide necessary interface support. Some specific requirements related to the Widget are described in the MiniApp API section of this document.
           </p>
           <p its-locale-filter-list="zh-hans" lang="zh-hans">
-              在运行过程中，user agent 应能提供必要的接口支持，在本文档的 MiniApp API 一节中描述与 Widget 相关的特定需求。
+             在运行过程中，user agent 应能提供必要的接口支持，在本文档的 MiniApp API 一节中描述与 Widget 相关的特定需求。
           </p>
         </li>
       </ol>
@@ -180,9 +180,9 @@
           </p>
         </li>
         <li>
-          <p its-locale-filter-list="en" lang="en">The user agent should be able to load and display multiple MiniApp Widgets concurrently, for example, display a relevant air ticket Widget and taxi Widget simultaneously on HiBoard.
+          <p its-locale-filter-list="en" lang="en">The user agent should be able to load and display multiple MiniApp Widgets concurrently, for example, display a relevant air ticket Widget and taxi Widget simultaneously on Intelligent Assistant.
           </p>
-          <p its-locale-filter-list="zh-hans" lang="zh-hans">User agent 可以同时加载并显示多个 MiniApp Widget，例如在负一屏中同时显示相关的机票 Widget 和打车 Widget。
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">User agent 可以同时加载并显示多个 MiniApp Widget，例如在智能助理中同时显示相关的机票 Widget 和打车 Widget。
           </p>
         </li>
         <li>
@@ -222,14 +222,6 @@
             User agent 能以与 MiniApp Page 相同的机制定位并加载 MiniApp Widget。
           </p>
         </li>
-        <li>
-           <p its-locale-filter-list="en" lang="en">
-            The form of resources that the MiniApp Widget accesses in the package is consistent with a MiniApp page. 
-          </p>
-           <p its-locale-filter-list="zh-hans" lang="zh-hans">
-            MiniApp Widget 访问到包中的资源形式与 MiniApp Page 保持一致。
-          </p>
-        </li>
       </ol>
     </section>
 
@@ -239,10 +231,10 @@
         <span its-locale-filter-list="zh-hans" lang="zh-hans">包</span>
       </h2>
       <p its-locale-filter-list="en" lang="en">
-        Like MiniApp, the MiniApp Widget is also distributed in the form of a package. After the user agent acquires and verifies a MiniApp package, it will acquire the Widget information contained in the package, and load and display it correctly. The form and specification of the package should be consistent with the MiniApp Package form and the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>, including but not limited to file organization, compression format, filename extension, digital signature, etc. The user agent should use the same form to verify and install the MiniApp Widget package.
+        Like MiniApp, the MiniApp Widget is also distributed in the form of a package. After the user agent acquires and verifies a MiniApp package, it will acquire the Widget information contained in the package, and load and display it correctly. The form and specification of the package should be consistent with the <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging specification</a>, including but not limited to file organization, compression format, filename extension, digital signature, etc. The user agent should use the same form to verify and install the MiniApp Widget package.
       </p>
       <p its-locale-filter-list="zh-hans" lang="zh-hans">
-        与 MiniApp 保持一致，MiniApp Widget 同样以包的形式分发，User agent 获取到 MiniApp 包并进行校验后，获取包中包含的Widget信息，并正确地加载和显示。包的形式和规范应当与 MiniApp 包的形式 <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging 规范</a>保持一致。包括不限于文件组织形式、压缩格式、文件后缀名、数字签名等。User agent 会以同样的形式对 MiniApp Widget 的包进行校验、安装等过程。
+        与 MiniApp 保持一致，MiniApp Widget 同样以包的形式分发，User agent 获取到 MiniApp 包并进行校验后，获取包中包含的Widget信息，并正确地加载和显示。包的形式和规范应当与 <a href="https://w3c.github.io/miniapp/specs/packaging/">MiniApp Packaging 规范</a>保持一致。包括不限于文件组织形式、压缩格式、文件后缀名、数字签名等。User agent 会以同样的形式对 MiniApp Widget 的包进行校验、安装等过程。
       </p>
       <p its-locale-filter-list="en" lang="en">
         In the MiniApp Widget scenario, the specific requirements are as follows:
@@ -334,10 +326,10 @@
     <section>
       <h2>Lifecycle</h2>
        <p its-locale-filter-list="en" lang="en">
-         The lifecycle of the MiniApp Widget should be consistent with the <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecyle</a>, wherein the trigger timing of <code>onShow</code>/<code>onHide</code> lifecycle callback will have some changes. As the Widget may also show or hide when the user agent slides the Widget off the screen or conducts a collapse action, the <code>onShow</code>/<code>onHide</code> of the Widget should also be triggered correctly at this time. Due to the form of the Widget and the form it runs in the client, the Widget also needs to support some new lifecycle methodologies:
+         The lifecycle of the MiniApp Widget should be consistent with the <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp Lifecyle</a>, wherein the trigger timing of <code>onShow</code>/<code>onHide</code> lifecycle callback will have some changes. As the Widget may also show or hide when the user agent slides the Widget off the screen or conducts a collapse action, the <code>onShow</code>/<code>onHide</code> of the Widget should also be triggered correctly at this time. Due to the form of the Widget and the form it runs in the client, the Widget also needs to support some new lifecycle API:
       </p>
        <p its-locale-filter-list="zh-hans" lang="zh-hans">
-         MiniApp Widget 的生命周期应该与 <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp 的生命周期</a>保持一致，其中 <code>onShow</code>/<code>onHide</code> 生命周期回调的触发时机会有一些变化。因为 Widget 的出现和消失也可能发生在 user agent 将 Widget 滑出屏幕或者进行折叠操作时，此时 Widget 的 <code>onShow</code>/<code>onHide</code> 也应该被正确的触发。因为 Widget 的形态和在客户端中运行的形式，Widget 也需要支持一些新的生命周期方法：
+         MiniApp Widget 的生命周期应该与 <a href="https://w3c.github.io/miniapp/specs/lifecycle/">MiniApp 的生命周期</a>保持一致，其中 <code>onShow</code>/<code>onHide</code> 生命周期回调的触发时机会有一些变化。因为 Widget 的出现和消失也可能发生在 user agent 将 Widget 滑出屏幕或者进行折叠操作时，此时 Widget 的 <code>onShow</code>/<code>onHide</code> 也应该被正确的触发。因为 Widget 的形态和在客户端中运行的形式，Widget 也需要支持一些新的生命周期 API：
       </p>
       <ol>
         <li>

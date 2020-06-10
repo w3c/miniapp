@@ -1,9 +1,9 @@
-# Minipp Lifecycle explainer
+# MiniApp Lifecycle explainer
 
 > Note: This document serves as a supplementary explanation of the [MiniApp Lifecycle](https://w3c.github.io/miniapp/specs/lifecycle/) 
 spec. If there is any inconsistency with the spec, you should consider the spec to be authoritative.
 
-## Authors：
+## Authors
 
 Qing An (Alibaba)
 
@@ -23,7 +23,7 @@ MiniApp is install-free. When user opens a MiniApp for the first time, the hoste
 from backend server. The downloaded MiniApp resource will be cached in the hosted native App for some duration. Afterwards, 
 when user reopens the cached MiniApp, the downloading procedure can be skipped, therefore the MiniApp can be opened more quickly.
 
-* Cold Launch and Host Launch
+* Cold Launch and Hot Launch
 
 Cold launch means the procedure of opening a MiniApp that has never been launched locally, or has been destroyed. During this 
 procedure, MiniApp will implement initialization.
@@ -38,7 +38,7 @@ Running in the foreground: when user firstly opens a MiniApp, it is in the state
 Running in the background: when user closes the MiniApp, or leaves the hosted Native App, the MiniApp will not be destroyed 
 directly. Instead, it will switch to run in the background.
 
-Switching from running in the background to foreground: when the have-not-been-destroyed MiniApp is reopened, it will switch 
+Switching from running in the background to foreground: when the has-not-been-destroyed MiniApp is reopened, it will switch 
 from running in the background to running in the foreground.
 
 * Destroy
@@ -71,7 +71,7 @@ enters the state of “Hidden”
 
 *	MiniApp application lifecycle: 
 
-Assume MiniApp URI is: miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?k=v#bar
+Assume MiniApp URI is: `miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?k=v#bar`
 
 ```js
 App({ 
@@ -113,3 +113,52 @@ Page({
   },
 });
 ```
+
+
+## Comparison with some related work in W3C (such as [Page Visibility](https://w3c.github.io/page-visibility/) and [Page Lifecycle](https://wicg.github.io/page-lifecycle/))
+
+<table>
+    <thead>
+        <tr class="thead-first-child">
+          <th align="left"> MiniApp Lifecycle States</th>
+          <th align="left"> Lifecycle States defined by existing W3C specs </th>
+        </tr>
+    </thead>
+        <tr class="tbody-first-child">
+          <td align="left"> Application Launched </td>
+          <td align="left"> N/A </td>
+        </tr>
+        <tr class="tbody-first-child">
+          <td align="left"> Application Shown </td>
+          <td align="left"> N/A </td>
+        </tr>
+        <tr class="tbody-first-child">
+          <td align="left"> Application Hidden </td>
+          <td align="left"> N/A </td>
+        </tr>
+        <tr class="tbody-first-child">
+          <td align="left"> Application Error </td>
+          <td align="left"> N/A </td>
+        </tr>
+        <tr class="tbody-first-child">
+          <td align="left"> Page Loaded </td>
+          <td align="left"> N/A </td>
+        </tr>
+        <tr class="tbody-first-child">
+          <td align="left"> Page Ready </td>
+          <td align="left"> N/A </td>
+        </tr>
+        <tr class="tbody-first-child">
+          <td align="left"> Page Shown </td>
+          <td align="left"> Visible (https://w3c.github.io/page-visibility/#visibility-states) </td>
+        </tr>
+        <tr class="tbody-first-child">
+          <td align="left"> Page Hidden </td>
+          <td align="left"> Hidden (https://w3c.github.io/page-visibility/#visibility-states) </td>
+        </tr>
+        <tr class="tbody-first-child">
+          <td align="left"> Page Unloaded </td>
+          <td align="left"> Discarded (https://wicg.github.io/page-lifecycle/#sec-lifecycle-states) </td>
+        </tr>
+        
+</table>
