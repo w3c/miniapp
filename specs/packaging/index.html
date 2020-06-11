@@ -251,10 +251,10 @@
                 <section>
                     <h3>Locate Signature File</h3>
                     <p>
-                        User Agent SHOULD verify the package digital signature file and check the digital signature identity before installing the MiniApp package. If the digital signature verification failed, it should be regarded as an ineffective package archive. User Agent SHOULD execute the MiniApp package installation failure process.
+                        The user agent SHOULD verify the package digital signature file and check the digital signature identity before installing the MiniApp package. If the digital signature verification failed, it should be regarded as an ineffective package archive. User Agent SHOULD execute the MiniApp package installation failure process.
                     </p>
                     <p>
-                        The User Agent SHOULD locate the X.509 Certificate file [[RFC5280]] in the MiniApp package archive. It is RECOMMEND using an algorithm with sufficient strength, key length, and certificate format. The MiniApp digital signature checking follows the [[RFC5280]] specification. 
+                        The user agent SHOULD locate the X.509 Certificate file [RFC5280] in the MiniApp package archive. It is RECOMMEND using an algorithm with sufficient strength, key length, and certificate format. The MiniApp digital signature checking follows the [RFC5280] specification.
                     </p>
                 </section>  
                 <section>
@@ -281,7 +281,7 @@
                 <section>
                     <h3>Process Manifest File</h3>
                     <p>
-                        User Agent SHOULD parse the attributes in the manifest.json file, which contains the MiniApp’s metadata. The metadata is the attribute values used for MiniApp runtime. The specific process of manifest metadata follows MiniApp Manifest spec.[MiniApp Manifest]
+                        User Agent SHOULD parse the attributes in the manifest.json file, which contains the MiniApp’s metadata. The metadata is the attribute values used for MiniApp runtime. The specific process of manifest metadata follows the MiniApp Manifest spec.[MiniApp Manifest]
                     </p>
                 </section>
         </section>  
@@ -303,8 +303,7 @@
                 <section>
                     <h3>Package Reload</h3>
                     <p>
-                        User Agent NEED fetch the orign package file at first time installation. And User Agent SHOULD cache the Max-Age of specific version of package archive.
-User Agent MAY Only load business data without reFetch the package archive again while MiniApp Reload.
+                        User Agent NEED fetch the remote package file at first time installation. And User Agent SHOULD cache the Max-Age of a specific version of the package archive. User Agent MAY Only load business data without fetching the package archive again while MiniApp Reload.
                     </p>
                 </section>
         </section>  
@@ -313,7 +312,7 @@ User Agent MAY Only load business data without reFetch the package archive again
                 <section>
                     <h3>Locate the Start File in Logical</h3>
                     <p>
-                        The logic container start file of Mini App is app.js, which is responsible for life cycle management, launching, showing and hiding. User Agent SHOULD find the logical start file app.js of MiniApp.
+                        The logic container start file of Mini App is app.js, which is responsible for life cycle management, launching, showing, and hiding. User Agent SHOULD find the logical start file app.js of MiniApp.
                     </p>
                 </section>
                 <section>
@@ -325,7 +324,7 @@ User Agent MAY Only load business data without reFetch the package archive again
                         User Agent SHOULD locate the first page as which path MiniApp URI Scheme [[MiniApp URI Scheme]] defined while starting up MiniApp through the MiniApp URI.
                     </p>
                     <p>
-                        If MiniApp URI Scheme's specific the path is empty, User Agent SHOULD use the routing configuration pages in manifest.json (pages should be the path of all pages in the MiniApp). The first page SHOULD be the default first page.
+                        If MiniApp URI Scheme's specific the path is empty, The user agent SHOULD use the routing configuration pages in manifest.json (pages should be the path of all pages in the MiniApp). The first page SHOULD be the default first page.
                     </p>
                 </section>
         </section>  
