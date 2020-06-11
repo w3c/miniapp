@@ -180,63 +180,63 @@
     <section>
         <h2>Dereferencing</h2>
         <p>
-            The essential steps for dereferencing a miniapp package contains 7 steps. User Agent SHOULD follow the rules to process the package archive file. And User Agent SHOULD execute failure process according to the package dereferencing algorithm.
+            The essential steps for dereferencing a MiniApp package contains 7 steps. The user agent SHOULD follow the rules to process the package archive file. And user Agent SHOULD execute the fail process according to the package dereferencing algorithm.
         </p>
 
         <section>
-            <h3>Step 1 - Acquire a Miniapp Archive</h3>
+            <h3>Step 1 - Acquire a MiniApp Archive</h3>
             <p>
-                User Agent MAY obtains a MiniApp archive and verifying MiniApp archive through specific channels(unspecified, e.g. network or offline). User Agent MAY fetch a potential MiniApp archive through data transfer protocol, such as HTTPs, WebSocket, FTP or specific TCP/UDP based protocols.
+                User Agent MAY obtains a MiniApp archive and verifying MiniApp archive through specific channels(unspecified, e.g. network or offline). The user agent MAY fetch a potential MiniApp archive through data transfer protocol, such as HTTPs, WebSocket, FTP, or specific TCP/UDP based protocols.
             </p>
             <section>
                 <h3>Verify Zip archive</h3>
                 <p>
-                    The MiniApp package archive file is packaged as a specialized ZIP file. It can be delivered to the User Agent through different channels (unspecified, e.g. web, app store, offline), then installed/executed by the User Agent. User Agent NEED verify the ZIP archive through following algorithm.
+                    The MiniApp package archive file is packaged as a specialized ZIP file. It can be delivered to the user agent through different channels (unspecified, e.g. web, app store, offline), then installed/executed by the user agent. The user agent SHOULD verify the ZIP archive through the following algorithm.
                 </p>
                 <p>
-                    1. Get a potential Zip archive.
+                    1. Get a potential ZIP archive.
                 </p>
                 <p>
-                    2. Read the first 4 bytes of data in the potential Zip archive file.
+                    2. Read the first 4 bytes of data in the potential ZIP archive file.
                 </p>
                 <p>
                     3. Check if these 4 bytes are 50 4B 03 04.
                 </p>
                 <p>
-                    4. If verified, process as vaild ZIP archive.
+                    4. If verified, process as a valid ZIP archive.
                 </p>
                 <p>
-                    5. Otherwise, process as invaild ZIP archive.
+                    5. Otherwise, process as an invalid ZIP archive.
                 </p>
             </section>  
             <section>
                 <h3>Verify the MiniApp MIME Type</h3>
                 <p>
-                    The User Agent RECOMMEND obtains potential ZIP archives from data transfer protocols, such as HTTPs. Regardless of whether its extension is .zip or no contain extension, User Agent NEED process the specific algorithm to check the potential archive.
+                    The user agent RECOMMEND obtains potential ZIP archives from data transfer protocols, such as HTTPs. Regardless of whether its extension is .zip or is not contain an extension, The user agent SHOULD process the specific algorithm to check the potential archive.
                 </p>
                 <p>
-                    If the obtained potential Zip archive is defined in an unsupported MIME Type, User Agent SHOULD process the potential Zip archive as an invalid MiniApp package file.
+                    If the obtained potential Zip archive is defined in an unsupported MIME Type, The user agent SHOULD process the potential Zip archive as an invalid MiniApp package file.
                 </p>
             </section>  
         </section>  
         <section>
             <h3>Step 2 - Verify the MiniApp Package File</h3>
             <p>
-                There may be network errors and security issues during the fetching of MiniApp package archive. User Agent SHOULD verify the legitimacy of the archive. RECOMMEND to verify the digital signature file and integrity checking of archive. The dereferencing OPTIONAL process the decryption of binary files.
+                There may be network errors and security issues during the fetching of the MiniApp package archive. User Agent SHOULD verify the legitimacy of the archive. RECOMMEND verifying the digital signature file and integrity checking of an archive. The dereferencing OPTIONAL process the decryption of binary files.
             </p>
             <section>
                 <h3>Integrity Check</h3>
                 <p>
-                    If the MiniApp package is not data integrity or different summary. User Agent SHOULD regard the archive as an ineffective MiniApp package archive. And executes the failure proceess.
+                    If the MiniApp package is not data integrity or a different summary. User Agent SHOULD regard the archive as an ineffective MiniApp package archive. And executes the failure process.
                 </p>
                 <p>
-                    RECOMMEND User Agent to use the MD5 or SHA1 digest algorithm for verification. The Miniapp package digest algorithm is RECOMMEND using SHA-256 to ensure the security.
+                    RECOMMEND User Agent to use the MD5 or SHA1 digest algorithm for verification. The MiniApp package digest algorithm is RECOMMEND using SHA-256 to ensure security.
                 </p>
             </section>  
             <section>
                 <h3>Encryption</h3>
                 <p>
-                    The MiniApp package encryption algorithm RECOMMEND to use RSA encryption, and passes the key verification to prevent the MiniApp package from being tampered during network transmission. For the encryption algorithm key length, is RECOMMEND to use RSA 4096 bit length.
+                    The MiniApp package encryption algorithm RECOMMEND to use RSA encryption and passes the key verification to prevent the MiniApp package from being tampered during network transmission. For the encryption algorithm key length, is RECOMMEND to use RSA 4096 bit length.
                 </p>
             </section>  
         </section>  
@@ -245,7 +245,7 @@
                 <section>
                     <h3>Miniapp Digital Signature </h3>
                     <p>
-                        User Agent SHOULD locate the digital signatures in archive. The digital signatures SHOULD packaging in archive file with other resources together. User Agent SHOULD process the failure execution while digital signatures checking failed.
+                        User Agent SHOULD locate the digital signatures in the archive. The digital signatures SHOULD be packaging in an archive file with other resources together. User Agent SHOULD process the failure execution while digital signatures checking failed.
                     </p>
                 </section>  
                 <section>
@@ -260,7 +260,7 @@
                 <section>
                     <h3>Verify Digital Signature</h3>
                     <p>
-                        RECOMMEND using X.509 version 3 [[RFC5280]] Spec digital certificates to build a secure channel for fetching package archive to prevent man-in-the-middle attacks.If the signature file is empty (this means that the signature file was not found in the MiniApp package archive) , the signature is verified to incorrect. User Agent SHOULD execute the process of the installation failure.
+                        RECOMMEND using X.509 version 3 [RFC5280] Spec digital certificates to build a secure channel for fetching package archive to prevent man-in-the-middle attacks. If the signature file is empty (this means that the signature file was not found in the MiniApp package archive), the signature is verified to incorrect. User Agent SHOULD execute the process of the installation failure.
                     </p>
                 </section>  
         </section>  
@@ -269,10 +269,10 @@
                 <section>
                     <h3>Locate Manifest File</h3>
                     <p>
-                        User Agent SHOULD executes an failure installation process while the manifest.json file does not exist or the parsing process is wrong.
+                        User Agent SHOULD execute a failure installation process while the manifest.json file does not exist or the parsing process is incorrect.
                     </p>
                     <p>
-                        User Agent SHOULD use JSON parser to process manifest.json, and call the parsed object a manifest.
+                        User Agent SHOULD use JSON parser to process manifest.json and call the parsed object a manifest.
                     </p>
                 </section>  
         </section>  
@@ -281,7 +281,7 @@
                 <section>
                     <h3>Process Manifest File</h3>
                     <p>
-                        User Agent SHOULD parse the attributes in the manifest.json file[[MiniApp Manifest]], which contains the MiniApp’s meta data. The meta data is the attribute values used for MiniApp runtime.
+                        User Agent SHOULD parse the attributes in the manifest.json file, which contains the MiniApp’s metadata. The metadata is the attribute values used for MiniApp runtime. The specific process of manifest metadata follows MiniApp Manifest spec.[MiniApp Manifest]
                     </p>
                 </section>
         </section>  
@@ -290,19 +290,18 @@
                 <section>
                     <h3>Process Platform Runtime</h3>
                     <p>
-                        User Agent NEED to prepare the runtime environment. It contains JavaScript Framework to locate the first page in the MiniApp package. 
+                        User Agent SHOULD prepare the runtime environment. It contains JavaScript Framework to locate the first page in the MiniApp package.
                     </p>
                     <p>
-                        User Agent runtime is isolated with two parts, the logical container and the rendering container. The logical container loads logical code (such as app.js, page.js files). 
-The rendering container locate and loads the page resource files (such as template HTML and CSS files).
+                        User Agent runtime is isolated with two parts, the logical container, and the rendering container. The logical container loads logical code (such as app.js, page.js files). The rendering container conditions and loads the page resource files (such as template HTML and CSS files).
                     </p>
                     <p class="note">
                         <span>Note:</span>
-                        Recommending User Agent JavaScript V8 engine as the logic container. Rendering container MAY tilt toward Webview or other rendering containers depend on specific User Agent.
+                        Recommending the user agent JavaScript V8 engine as the logic container. Rendering container MAY tilt toward Webview or other rendering containers depend on specific the user agent.
                     </p>
                 </section>
                 <section>
-                    <h3>The Package Reload</h3>
+                    <h3>Package Reload</h3>
                     <p>
                         User Agent NEED fetch the orign package file at first time installation. And User Agent SHOULD cache the Max-Age of specific version of package archive.
 User Agent MAY Only load business data without reFetch the package archive again while MiniApp Reload.
