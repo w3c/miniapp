@@ -8,5 +8,5 @@ This specification defines the MiniApp URI scheme syntax and the process to dere
 
 * Lifecycle: [spec](https://w3c.github.io/miniapp/specs/lifecycle/) / [explainer](https://github.com/w3c/miniapp/blob/gh-pages/specs/lifecycle/docs/explainer.md)
 * Manifest: [spec](https://w3c.github.io/miniapp/specs/manifest/) / [explainer](https://github.com/w3c/miniapp/blob/gh-pages/specs/manifest/docs/explainer.md)
-* [Widget Requirements](https://w3c.github.io/miniapp/specs/widget-req/)
 * [Packaging](https://w3c.github.io/miniapp/specs/packaging/)
+* [Widget Requirements](https://w3c.github.io/miniapp/specs/widget-req/)
