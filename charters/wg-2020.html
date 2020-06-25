@@ -76,10 +76,10 @@
       </p>
       <p class="mission">
         The <strong>mission</strong> of the <a href=
-        "#">MiniApps Working Group</a> is to produce specifications that facilitate the development of interoperable and robust MiniApps.
+        "#TBD">MiniApps Working Group</a> is to produce specifications that facilitate the development of interoperable and robust MiniApps.
       </p>
       <p>
-        <a href="#">Join the
+        <a href="#TBD">Join the
         MiniApps Working Group</a>.
       </p>
       <table class="summary-table">
@@ -124,22 +124,18 @@
         <h2 id="scope">
           Scope
         </h2>
-        <p>MiniApp as a new form of mobile application, leveraging both Web technologies (especially CSS and JavaScript) as well as capabilities of native applications, is gaining more and more popularities in Asian countries such as China. To enhance the interoperability between different MiniApp platforms (AKA the super application or host application), main stream MiniApp vendors has been working together in <a href="https://www.w3.org/2018/chinese-web-ig/">W3C Chinese Web Interest Group</a> since May 2019 and published a <a href="https://www.w3.org/TR/mini-app-white-paper/">MiniApp Standardization White Paper</a> in September 2019 as the initial standardization exploration for MiniApp technologies. As more global companies get interested in joining the MiniApp related discussion, the <a href="https://www.w3.org/community/miniapps/">MiniApps Ecosystem Community Group</a> was proposed and approved during TPAC 2019 so that global Web community can join the discussion.</p>
+        <p>MiniApp as a new form of mobile application, leveraging both Web technologies (especially CSS and JavaScript) as well as capabilities of native applications, is gaining more and more popularity in Asian countries such as China. To enhance the interoperability between different MiniApp platforms (including super applications and native operating systems), main stream MiniApp vendors has been working together in <a href="https://www.w3.org/2018/chinese-web-ig/">W3C Chinese Web Interest Group</a> since May 2019 and published a <a href="https://www.w3.org/TR/mini-app-white-paper/">MiniApp Standardization White Paper</a> in September 2019 as the initial standardization exploration for MiniApp technologies. As more global companies get interested in joining the MiniApp related discussion, the <a href="https://www.w3.org/community/miniapps/">MiniApps Ecosystem Community Group</a> was proposed and approved during TPAC 2019 so that global Web community can join the discussion.</p>
+
+        <p>
+            During the exploration phase, potential standard requirements are identified due to the different nature of MiniApp comparing to the typical web environment. For instance, the hosting platform may not be a browser and the application construction is not based on web pages. Therefore different but relevant technologies are used for UI configuration and rendering, resource packaging and the API access to local system capabilities. Such cases have not be covered by existing Web standards such as <a href="https://github.com/WICG/webpackage">Web Packaging</a>, <a href="https://www.w3.org/TR/appmanifest/">Web App Manifest</a>, and Web APIs. 
+        </p>
 
     <p>The MiniApps Working Group aims to work on specifications incubated in the MiniApps Ecosystem Community Group for MiniApp features that would benefit the interoperability and robustness of MiniApp ecosystem, including:</p>
 <ol>
     <li>Basic architecture and essential functions of MiniApp such as the URI scheme, widget, application lifecycle and event, manifest, and packaging;
-    <li>Elements and APIs that would enhance the interoperability among different MiniApp platforms, including UI elements, Device API, and those advanced APIs such as Account API and Map API;
+    <li>Components, APIs, and a template mechanism that would enhance the interoperability among different MiniApp platforms, such as UI components, Device APIs, Account API etc.;
     <li>Coordination with other W3C efforts, especially Progressive Web Apps, on the commonality of Web features.
 </ol>
-        <div id="section-out-of-scope">
-          <h3 id="out-of-scope">
-            Out of Scope
-          </h3>
-          <p>
-            The group does not intend to discuss ideas related to MiniApp platform operation, developer tools, and other parts of the MiniApp ecosystem.
-          </p>
-        </div>
       </div>
       <div class="deliverables">
         <h2 id="deliverables">
@@ -214,6 +210,15 @@
             </p>
           </dd>
         </dl>
+        <h3 id="add-new">
+          New Recommendation-track deliverables
+        </h3>
+        <p>
+          The Working Group may work on additional in-<a href="#scope">scope</a> Recommendation-track deliverables without preparing an updated Charter.
+        </p>
+        <p>
+          The Working Group will not adopt new proposals until they have matured through the <a href="https://www.w3.org/community/miniapps/">MiniApps Ecosystem Community Group</a>.
+        </p>
         <h3 id="other-deliverables">
           Other Deliverables
         </h3>
@@ -266,16 +271,16 @@
                 MiniApp URI Scheme
               </th>
               <td>
-                TBD
+                Q1 2021
               </td>
               <td>
-                TBD
+                Q4 2021
               </td>
               <td>
-                TBD
+                Q3 2022
               </td>
               <td>
-                TBD
+                Q4 2022
               </td>
             </tr>
             <tr>
@@ -283,16 +288,16 @@
                 MiniApp Lifecycle
               </th>
               <td>
-                TBD
+                Q1 2021
               </td>
               <td>
-                TBD
+                Q4 2021
               </td>
               <td>
-                TBD
+                Q3 2022
               </td>
               <td>
-                TBD
+                Q4 2022
               </td>
             </tr>
             <tr>
@@ -300,16 +305,16 @@
                 MiniApp Manifest
               </th>
               <td>
-                TBD
+                Q1 2021
               </td>
               <td>
-                TBD
+                Q4 2021
               </td>
               <td>
-                TBD
+                Q3 2022
               </td>
               <td>
-                TBD
+                Q4 2022
               </td>
             </tr>
             <tr>
@@ -317,16 +322,16 @@
                 MiniApp Packaging
               </th>
               <td>
-                TBD
+                Q1 2021
               </td>
               <td>
-                TBD
+                Q4 2021
               </td>
               <td>
-                TBD
+                Q3 2022
               </td>
               <td>
-                TBD
+                Q4 2022
               </td>
             </tr>
           </tbody>
@@ -361,10 +366,7 @@
           implications for implementers, Web authors, and end users.
         </p>
         <p>
-          APIs that cannot be demonstrated to be implementable securely will not be released.
-        </p>
-        <p>
-          <a href="https://github.com/w3c/miniapp/issues/60">TBD: testing policy</a>
+            APIs shall be demonstrated to be implementable securely before released.
         </p>
       </div>
       <div class="dependencies">
@@ -400,6 +402,18 @@
         </p>
         <dl>
           <dt>
+            <a href="https://www.w3.org/community/miniapps/">MiniApps Ecosystem Community Group</a>
+          </dt>
+          <dd>
+            The MiniApps Ecosystem Community Group will provide the seed specifications to begin the standards process. In addition, the MiniApps Working Group plans to partner closely with the MiniApps Ecosystem Community Group to incubate new features - in particular, incubation of features that are out of current scope for the working group will happen in the Community Group, and then be followed by future WG rechartering to include them in scope.
+          </dd>
+          <dt>
+            <a href="https://www.w3.org/2019/did-wg/">DID Working Group</a>
+          </dt>
+          <dd>
+            The Decentralized Identifier Working Group works on the DID URI scheme, which may contain text the MiniApp URI Scheme specification can learn from or reuse.
+          </dd>
+          <dt>
             <a href="https://www.w3.org/2011/webappsec/">Web Application
             Security Working Group</a>
           </dt>
@@ -411,6 +425,12 @@
           </dt>
           <dd>
             The group coordinates with the Web Applications Working Group to ensure the consistency of the MiniApp Manifest and the Web App Manifest.
+          </dd>
+          <dt>
+            <a href="https://www.w3.org/community/wicg/">Web Platform Incubator Community Group</a>
+          </dt>
+          <dd>
+            The Web Platform Incubator Community Group provides a lightweight venue for proposing, incubating and discussing new web platform features. The MiniApps WG coordinates with the WICG to ensure MiniApp leverages existing proposals in the WICG as much as possible.
           </dd>
           <dt>
             <a href="https://www.w3.org/webperf/">Web Performance Working Group</a>
@@ -499,14 +519,14 @@
         <p>
           Information about the group (for example, details about deliverables,
           issues, actions, status, participants) is available from the <a href=
-          "#">MiniApps Working Group home page</a>.
+          "#TBD">MiniApps Working Group home page</a>.
         </p>
         <p>
           The Working Group’s Teleconferences focus on discussion of particular
           specifications, and are conducted on an as-needed basis.
         </p>
         <p>
-          This group primarily conducts its technical work on the <a href= "https://lists.w3.org/Archives/Public/public-miniapps-wg/">public-miniapps-wg@w3.org</a> and on GitHub issues. Other communication tools are allowed if considerable number of the group participants decide to embrace them. The public is invited to review, discuss and contribute to this work.
+          This group primarily conducts its technical work on the <a href= "https://lists.w3.org/Archives/Public/public-miniapps-wg/">public-miniapps-wg@w3.org</a> and on <a href="#TBD">GitHub issues</a>. Other communication tools are allowed if considerable number of the group participants decide to embrace them. The public is invited to review, discuss and contribute to this work.
         </p>
         <p>
           The group uses a Member-confidential mailing list for administrative
@@ -623,7 +643,7 @@
             </tr>
             <tr>
               <th>
-                <a href="#">Initial
+                <a href="#TBD">Initial
                 Charter</a>
               </th>
               <td>
