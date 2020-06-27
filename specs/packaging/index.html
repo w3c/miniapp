@@ -273,6 +273,12 @@
         </section>  
         <section>
             <h3>Step 3 - Locate and Process the Digital Signature</h3>
+                <p>
+                    The MiniApp publishers need to sign the package achieves through digital certificates. The publisher needs to apply to the CA certification center to publish certificates. Before downloading the MiniApp package resources, the digital certificate SHOULD be to transport to the user agent through the agreement protocols.
+                </p>
+                <p>
+                    The user agent is RECOMMEND using X.509 version 3 [[RFC5280]] Spec digital certificates to build a secure channel for fetching package archive to prevent man-in-the-middle attacks. If the signature file is empty (this means that the signature file was not found in the MiniApp package archive), the signature is verified to incorrect. User Agent SHOULD execute the process of the installation failure.
+                </p>
                 <section>
                     <h3>Miniapp Digital Signature </h3>
                     <p>
@@ -289,10 +295,16 @@
                     </p>
                 </section>  
                 <section>
-                    <h3>Verify Digital Signature</h3>
+                    <h3>Verify Digital Certificate</h3>
                     <p>
-                        RECOMMEND using X.509 version 3 [RFC5280] Spec digital certificates to build a secure channel for fetching package archive to prevent man-in-the-middle attacks. If the signature file is empty (this means that the signature file was not found in the MiniApp package archive), the signature is verified to incorrect. User Agent SHOULD execute the process of the installation failure.
+                        The user agent SHOULD verify the identity of the publisher of the MiniApp or the identity of the server by the CA certification center. (the PKI center is used as the standard certification center)
                     </p>
+                    <p>
+                        The user agent SHOULD verify the identity of the MiniApp publisher or server domain name or package storage service identity, then install the MiniApp package achieve.
+                    </p>
+                    <p>
+                        When the MiniApp package certificate is revoked. The user agent needs to be able to quickly detect that the resource package is outdated. And executes the fail process when reloading.
+                    </p> 
                 </section>  
         </section>  
         <section>
