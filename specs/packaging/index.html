@@ -197,13 +197,13 @@
                     1. Get a potential ZIP archive.
                 </p>
                 <p>
-                    2. Read the first 4 bytes of data in the potential ZIP archive file.
+                    2. Read the local file header in the potential ZIP archive file.
                 </p>
                 <p>
-                    3. Check if these 4 bytes are 50 4B 03 04.
+                    3. Check if these file header signature. (Specialized in .ZIP File Format Specification)
                 </p>
                 <p>
-                    4. If verified, process as a valid ZIP archive.
+                    4. If verified, process as a valid ZIP archive. [[RFC1951]]
                 </p>
                 <p>
                     5. Otherwise, process as an invalid ZIP archive.
@@ -215,7 +215,7 @@
                     The user agent RECOMMEND obtains potential ZIP archives from data transfer protocols, such as HTTPs. Regardless of whether its extension is .zip or is not contain an extension, The user agent SHOULD process the specific algorithm to check the potential archive.
                 </p>
                 <p>
-                    If the obtained potential Zip archive is defined in an unsupported MIME Type, The user agent SHOULD process the potential Zip archive as an invalid MiniApp package file.
+                    The MIME type of the MiniApp package is application/miniapp-pkg+zip [[RFC6839]]. If the obtained potential Zip archive is defined in an unsupported MIME Type, The user agent SHOULD process the potential Zip archive as an invalid MiniApp package file.
                 </p>
             </section>  
         </section>  
@@ -236,7 +236,7 @@
             <section>
                 <h3>Encryption</h3>
                 <p>
-                    The MiniApp package encryption algorithm RECOMMEND to use RSA encryption and passes the key verification to prevent the MiniApp package from being tampered during network transmission. For the encryption algorithm key length, is RECOMMEND to use RSA 4096 bit length.
+                    The MiniApp package encryption algorithm OPTIONAL to use RSA encryption and passes the key verification to prevent the MiniApp package from being tampered during network transmission. For the encryption algorithm key length, is RECOMMEND to use RSA 4096 bit length.
                 </p>
             </section>  
         </section>  
@@ -269,10 +269,10 @@
                 <section>
                     <h3>Locate Manifest File</h3>
                     <p>
-                        User Agent SHOULD execute a failure installation process while the manifest.json file does not exist or the parsing process is incorrect.
+                        User Agent SHOULD execute a failure installation process while the manifest.json file does not exist or the parsing process is incorrect. And executes the failure process.
                     </p>
                     <p>
-                        User Agent SHOULD use JSON parser to process manifest.json and call the parsed object a manifest.
+                        If the manifest file is detected, execute Step 5. User Agent SHOULD use JSON parser to process manifest.json and call the parsed object a manifest.
                     </p>
                 </section>  
         </section>  
@@ -290,14 +290,10 @@
                 <section>
                     <h3>Process Platform Runtime</h3>
                     <p>
-                        User Agent SHOULD prepare the runtime environment. It contains JavaScript Framework to locate the first page in the MiniApp package.
+                        User Agent SHOULD prepare the runtime environment. It contains Logic and View Layers. User agent MAY locates the first page in the MiniApp package in manifest's description.
                     </p>
                     <p>
-                        User Agent runtime is isolated with two parts, the logical container, and the rendering container. The logical container loads logical code (such as app.js, page.js files). The rendering container conditions and loads the page resource files (such as template HTML and CSS files).
-                    </p>
-                    <p class="note">
-                        <span>Note:</span>
-                        Recommending the user agent JavaScript V8 engine as the logic container. Rendering container MAY tilt toward Webview or other rendering containers depend on specific the user agent.
+                        User Agent runtime is isolated with two parts, the logical layer, and the view layer. The logical layer loads logical code (such as app.js, page.js files). The view layer conditions and loads the page resource files (such as template HTML and CSS files).
                     </p>
                 </section>
                 <section>
@@ -312,7 +308,7 @@
                 <section>
                     <h3>Locate the Start File in Logical</h3>
                     <p>
-                        The logic container start file of Mini App is app.js, which is responsible for life cycle management, launching, showing, and hiding. User Agent SHOULD find the logical start file app.js of MiniApp.
+                        The logic layer start file of Mini App is app.js, which is responsible for life cycle management, launching, showing, and hiding. User Agent SHOULD find the logical start file app.js of MiniApp.
                     </p>
                 </section>
                 <section>
