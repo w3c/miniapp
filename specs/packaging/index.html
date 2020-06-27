@@ -106,6 +106,37 @@
     </section>
 
     <section>
+        <h2>Example of usage</h2>
+        <section>
+            <h2>Launch a MiniApp on the web</h2>
+            <p>
+                When the user clicks the MiniApp URL(an embedded href or the whole MiniApp URI link), the user agent will receive the URI and dereference the URI. The URI dereference process is defined by the MiniApp URI specification. Based on the host, appId, and version obtained after dereferencing the URI, the user agent posts an HTTPs request to download, install, and launch the specified page of MiniApp.
+            </p>
+            <pre class="example html">
+                &lt;!doctype html&gt;
+                &lt;html&gt;
+                &lt;a href=&quot;miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?k=v#bar&quot;&gt;open a MiniApp&lt;/a&gt;
+                &lt;/html&gt;
+            </pre>
+        </section>
+        <section>
+            <h2>Launches a MiniApp through the desktop shortcut</h2>
+            <p>
+                The user can launch the MiniApp from the desktop shortcut in the user agent (The user agent may be an Operation System like Mac OS or Android). This needs to pass this operating system common mechanism.（That may need to register the MiniApp calling scheme which defined in the MiniApp URI specification）
+            </p>
+        </section>
+        <section>
+            <h2>Security access to the third-party MiniApp package</h2>
+            <p>
+                The user agent needs to verify the digital signature before installing the third-party MiniApp package to ensure the legitimacy of the package source. This requires MiniApp package achievement needs to support the security verification capabilities of digital certificates to prevent man-in-the-middle attacks, package resource replacement, and other security issues in the transmission of package resources.
+            </p>
+            <p>
+                Some MiniApp users only want to use the MiniApps which have been safely verified. The user agents need to have the opportunity to audit trusted third-party digital certificates during binary transmission (for example TLS Handshake). [[RFC6962]]
+            </p>
+        </section>
+    </section>
+
+    <section>
         <h2>Packaging</h2>
         <p>Each MiniApp package is wrapped as a [[ZIP]] file. It contains, at the root level, a global configuration file (<code>manifest.json</code>) to describe and configure the whole MiniApp, an application logic file (<code>app.js</code>), and a default style file (<code>app.css</code>).
         </p>
@@ -215,7 +246,7 @@
                     The user agent RECOMMEND obtains potential ZIP archives from data transfer protocols, such as HTTPs. Regardless of whether its extension is .zip or is not contain an extension, The user agent SHOULD process the specific algorithm to check the potential archive.
                 </p>
                 <p>
-                    The MIME type of the MiniApp package is application/miniapp-pkg+zip [[RFC6839]]. If the obtained potential Zip archive is defined in an unsupported MIME Type, The user agent SHOULD process the potential Zip archive as an invalid MiniApp package file.
+                    The MIME type of the MiniApp package is <code>application/miniapp-pkg+zip</code> [[RFC6839]]. If the obtained potential Zip archive is defined in an unsupported MIME Type, The user agent SHOULD process the potential Zip archive as an invalid MiniApp package file.
                 </p>
             </section>  
         </section>  
