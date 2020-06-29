@@ -311,7 +311,7 @@
           <code>dir</code> specifies the default base direction of the text value of the whole MiniApp as well as the <a>localizable attributes</a> in the manifest file such as the <code>appName</code>, <code>shortName</code> and <code>description</code> attributes. The value of <code>dir</code> can be <code>ltr</code> or <code>rtl</code>. <code>ltr</code> means left-to-right, <code>rtl</code> means right-to-left. The default value is <code>ltr</code>.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <code>dir</code>定义了整个MiniApp以及Manifest文件中<code>appName</code>, <code>shortName</code> and <code>description</code>等<a>可本地化属性</a>的默认主文本方向，取值类型可以为：<code>ltr</code>和<code>rtl</code>，<code>ltr</code>表示从左到右，<code>rtl</code>表示从右到左。默认值为<code>ltr</code>。
+          <code>dir</code>定义了整个MiniApp以及Manifest文件中<code>appName</code>、<code>shortName</code>和<code>description</code>等<a>可本地化属性</a>的默认主文本方向，取值类型可以为：<code>ltr</code>和<code>rtl</code>，<code>ltr</code>表示从左到右，<code>rtl</code>表示从右到左。默认值为<code>ltr</code>。
         </p>
       </section>
 
@@ -324,7 +324,7 @@
             <code>lang</code> specifies the default language of the MiniApp. It's applied to all <a>localizable attributes</a> of the manifest. The value here MUST be a well-formed <code>Language-Tag</code> specified in [[BCP47]].  The default value is undefined. Implementers are encouraged to provide the accurate value that matches the manifest content.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-            <code>lang</code>定义了MiniApp的默认语言，适用于manifest所有<a>可本地化属性</a>，取值必须为[[BCP47]]所规定的合法的<code>Language-Tag</code>值。默认值未定义。开发者需要提供匹配manifest内容的准确值。
+            <code>lang</code>定义了MiniApp的默认语言，适用于manifest所有<a>可本地化属性</a>，取值必须为[[BCP47]]所规定的合法的（well-formed）</well-formed><code>Language-Tag</code>值。默认值未定义。开发者需要提供匹配manifest内容的准确值。
         </p>
       </section>
 
@@ -697,7 +697,7 @@
             <code>window</code> inherits the text direction and language configuration from <code>dir</code> and <code>lang</code>.
           </p>
           <p its-locale-filter-list="zh-hans" lang="zh-hans">
-            <code>window</code>的文字方向和语言设置继承自<code>dir</code> and <code>lang</code>.
+            <code>window</code>的文字方向和语言设置继承自<code>dir</code>和<code>lang</code>.
           </p>
 
       </section>
@@ -756,7 +756,7 @@
                 <span its-locale-filter-list="zh-hans" lang="zh-hans">是</span>
               </td>
               <td>
-                <span its-locale-filter-list="en" lang="en">Corresponding page path of Widget.It follows the same path route format as defined in <code>pages</code>.</span>
+                <span its-locale-filter-list="en" lang="en">Corresponding page path of Widget. It follows the same path route format as defined in <code>pages</code>.</span>
                 <span its-locale-filter-list="zh-hans" lang="zh-hans">Widget对应页面路径，采用与<code>pages</code>中相同页面路由的格式。</span>
               </td>
             </tr>
@@ -862,14 +862,14 @@
             The following attributes are localizable and share the same default configuration of <code>dir</code> and <code>lang</code> if not otherwise specified.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-            如下属性为可本地化属性。无特别规定的情况下，共享默认的<code>dir</code> and <code>lang</code>配置.
+            如下属性为可本地化属性。无特别规定的情况下，共享默认的<code>dir</code> and <code>lang</code>配置。
         </p>
         <ul>
-            <li>appName</li>
-            <li>shortName</li>
-            <li>description</li>
-            <li>window.navigationBarTitleText</li>
-            <li>widgets.name</li>
+            <li><a href="#appname">appName</a></li>
+            <li><a href="#shortname">shortName</a></li>
+            <li><a href="#description">description</a></li>
+            <li><a href="#window">window.navigationBarTitleText</a></li>
+            <li><a href="#widgets">widgets.name</a></li>
         </ul>
         
        
