@@ -8,3 +8,4 @@
 ## Other documents
 
 * [MiniApp Standardization White Paper](https://w3c.github.io/miniapp/white-paper/)
+* [FAQ](https://github.com/w3c/miniapp/blob/gh-pages/docs/FAQ.md)
