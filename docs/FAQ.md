@@ -38,7 +38,7 @@ See also the detailed analysis in the [explainer](https://github.com/w3c/miniapp
 
 ## What is the implementation expectations of MiniApp specifications in the globe? Are the implementations only expected from Chinese MiniApp vendors?
 
-We welcome international vendors to participate in the formulation and implementation of standards.
+If MiniApp related specifications become W3C recommendations, the implementation expectation is the same with every other W3C Rec, meaning global implementation. And there is a good reason for it. MiniApp as a new type of application, has been gaining popularity in more counties other than China, such as in Japan and Korean. And very recent news shows that there have been similar efforts in the US market as well. There is a good possibility that MiniApp might eventually become a global phenomenon, and we do hope the MiniApp specifications that incubated and developed by the MiniApp CG (and later by the WG) would be embraced globally. And the MiniApp CG cordially invite the global community to cooperate on MiniApp specifications together.
 
 ## Does MiniApp have its own security model?
 
