@@ -20,7 +20,7 @@ See the [explainer](https://github.com/w3c/miniapp/blob/gh-pages/specs/uri/docs/
 
 ## 5. Is it possible to harmonize [Page Lifecycle](https://wicg.github.io/page-lifecycle/), [Page Visibility](https://w3c.github.io/page-visibility/), [Service Worker Lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle), and MiniApp Lifecycle specifications? If so, how?
 
-But MiniApp Lifecycle has its unique requirements that cannot be fully supported by Page Lifecycle.
+MiniApp Lifecycle has its unique requirements that cannot be fully supported by Page Lifecycle.
 
 Page Lifecycle is Page-level, but MiniApp Lifecycle is App-level, which is composed of multiple pages.
 
