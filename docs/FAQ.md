@@ -16,6 +16,30 @@ Some of the [members](https://www.w3.org/TR/appmanifest/#webappmanifest-dictiona
 
 ## 4. Why is there a need to create a new URI Scheme specification? How to use the new URI Scheme specification to handle origin? How to handle SecureContext without origin? How to handle CORS?
 
+> 4.1 Why there is a need to create a new URI Scheme specification?
+
+Because other schemes may not satisfied with the status of MiniApp, mainly including the following reasons:
+The first and most important reason is that there is no centralized package service like "`https://miniapp.com`";
+Second, We hope there is an easier way to judge miniapp uri in advance to preload runtime;
+What's more, Some manufacturers(user agents) want more flexibility, such as using other protocols to fetch package;
+
+See also this [issue #34](https://github.com/w3c/miniapp/issues/34) .
+
+> 4.2 How to use the new URI Scheme specification to handle origin?
+
+The new URI Scheme used [Host and port](https://w3c.github.io/miniapp/specs/uri/#host-and-port-host-port) to identify the origin. And when we [use https to download MiniApp packages](https://w3c.github.io/miniapp/specs/uri/#https), the origin conform to the rules in [HTTP origin](https://tools.ietf.org/html/rfc6454#section-7)
+
+> 4.3 How to handle SecureContext without origin?
+
+ If there isn't an origin, it may be a local debugging scenario. Since the miniapp package just used for debugging which will not spread across the web or across the platform, so strict security model is not required. User agents can verify it according to the actual situation.
+Usually, miniapp uri requires an origin.
+And, in fact, the current manufacturers still use the https protocol to download miniapp packages. The minapp uri is only used to identify that this is a miniapp(in advance), and where to download packages, and which miniapp need to download, and what page to open after downloading. So, in this case, the miniapp can be considered to be in a secure context.
+
+> 4.4 How to handle CORS?
+
+Now we use a built-in domain name whitelist to allow CORS and ensure security. Each miniapp would configure the domain name whitelist on the package management platform before it is released.
+The user agent only allows requests to the domain name in the whitelist. And a minapp developer server would also allow the request from the MiniApp origin.
+
 See the [explainer](https://github.com/w3c/miniapp/blob/gh-pages/specs/uri/docs/explainer.md) for more details.
 
 ## 5. Is it possible to harmonize [Page Lifecycle](https://wicg.github.io/page-lifecycle/), [Page Visibility](https://w3c.github.io/page-visibility/), [Service Worker Lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle), and MiniApp Lifecycle specifications? If so, how?
@@ -45,13 +69,13 @@ We welcome international vendors to participate in the formulation and implement
 MiniApp user agent has a security model, including the following:
 
 - View: MiniApp can not access DOM and global object `window`, user agents provide high-level components and APIs to makes that feasible.
-- Framework: 
+- Framework:
   - use package digital signature checking when fetching and processing packages
   - perform permission management on some components and APIs
 - Network:
   - use HTTPs to transmit miniapp packages
   - use domain name safelist to restrict the requests from miniapp
   - restrict the use of cookies
-- Storage: 
+- Storage:
   - the file access is isolated, only the user directory of the miniapp can be accessed
   - the storage path is limited, and the real physical address is hidden
