@@ -18,26 +18,26 @@ Some of the [members](https://www.w3.org/TR/appmanifest/#webappmanifest-dictiona
 
 > 4.1 Why there is a need to create a new URI Scheme specification?
 
-Because other schemes may not satisfied with the status of MiniApp, mainly including the following reasons:
-The first and most important reason is that there is no centralized package service like "`https://miniapp.com`";
-Second, We hope there is an easier way to judge miniapp uri in advance to preload runtime;
-What's more, Some manufacturers(user agents) want more flexibility, such as using other protocols to fetch package;
+Because other schemes may not meet the needs of MiniApp, mainly including the following reasons:
+The first and most important reason is that there is no centralized package service like "`https://miniapp.com`".
+Second, We hope there is an easier way to recognize whether a URI is a MiniApp URI in advance to preload runtime.
+What's more, Some MiniApp vendors (user agents) want more flexibility, such as using protocols other than HTTP to fetch packages.
 
-See also this [issue #34](https://github.com/w3c/miniapp/issues/34) .
+See also [issue #34](https://github.com/w3c/miniapp/issues/34).
 
 > 4.2 How to use the new URI Scheme specification to handle origin?
 
-The new URI Scheme used [Host and port](https://w3c.github.io/miniapp/specs/uri/#host-and-port-host-port) to identify the origin. And when we [use https to download MiniApp packages](https://w3c.github.io/miniapp/specs/uri/#https), the origin conform to the rules in [HTTP origin](https://tools.ietf.org/html/rfc6454#section-7)
+The new URI Scheme uses [Host and port](https://w3c.github.io/miniapp/specs/uri/#host-and-port-host-port) to identify the origin, and when we [use https to download MiniApp packages](https://w3c.github.io/miniapp/specs/uri/#https), the origin conforms to the rules in [HTTP origin](https://tools.ietf.org/html/rfc6454#section-7).
 
 > 4.3 How to handle SecureContext without origin?
 
  If there isn't an origin, it may be a local debugging scenario. Since the miniapp package just used for debugging which will not spread across the web or across the platform, so strict security model is not required. User agents can verify it according to the actual situation.
 Usually, miniapp uri requires an origin.
-And, in fact, the current manufacturers still use the https protocol to download miniapp packages. The minapp uri is only used to identify that this is a miniapp(in advance), and where to download packages, and which miniapp need to download, and what page to open after downloading. So, in this case, the miniapp can be considered to be in a secure context.
+And, in fact, the current vendors still use the https protocol to download miniapp packages. The minapp uri is only used to identify that this is a miniapp (in advance), and where to download packages, and which miniapp need to download, and what page to open after downloading. So, in this case, the miniapp can be considered to be in a secure context.
 
 > 4.4 How to handle CORS?
 
-Now we use a built-in domain name whitelist to allow CORS and ensure security. Each miniapp would configure the domain name whitelist on the package management platform before it is released.
+Now we use a built-in domain name safelist to allow CORS and ensure security. Each miniapp would configure the domain name safelist on the package management platform before it is released.
 The user agent only allows requests to the domain name in the whitelist. And a minapp developer server would also allow the request from the MiniApp origin.
 
 See the [explainer](https://github.com/w3c/miniapp/blob/gh-pages/specs/uri/docs/explainer.md) for more details.
