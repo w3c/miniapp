@@ -59,7 +59,7 @@ enters the state of “Hidden”
 ## MiniApp page lifecycle states
 
 *	MiniApp page loading: once MiniApp page loading is completed, MiniApp page enters the state of “Loaded”
-*	MiniApp page first rendering ready: once the MiniApp page first rendering is completed, MiniApp page enters the state
+*	MiniApp page first rendering ready: once the MiniApp page first rendering is completed, MiniApp page enters the state of "Ready"
 *	MiniApp page running in foreground: once the page switches to be running in foreground from background, MiniApp page enters 
 the state of “Shown”
 *	MiniApp page running in background: once the MiniApp page switches to be running from foreground to background, MiniApp page 
