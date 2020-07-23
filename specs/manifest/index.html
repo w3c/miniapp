@@ -61,6 +61,14 @@
              'SEMANTIC-VERSIONING': {
                 title: 'Semantic Versioning',
                 href: 'https://semver.org/'
+              },
+             'manifest-app-info': {
+                title: 'Web App Manifest - Application Information',
+                href: 'https://w3c.github.io/manifest-app-info/',
+                authors: [
+                  'Aaron Gustafson'
+                ],
+                date: 'July 2020'
               }
             },
         };
@@ -395,18 +403,6 @@
           The <dfn>short_name</dfn> member, if present, MUST have the same value as <a>shortName</a>.
         </p>
       </section>
-      <section>
-        <h2>
-          <span its-locale-filter-list="en" lang="en"><code>description</code> member</span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">简述</span>
-        </h2>
-        <p its-locale-filter-list="en" lang="en">
-          The <dfn>description</dfn> member provides a brief description for MiniApp.
-        </p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <code>description</code>，为MiniApp提供简短的描述。
-        </p>
-      </section>
       <section data-cite="appmanifest image-resource">
         <h2>
           <span its-locale-filter-list="en" lang="en"><code>icons</code> member</span>
@@ -439,7 +435,24 @@
         </p>
       </section>
       </section>
-
+      <section id='webappmanifest-app-info-members' data-cite='manifest-app-info'>
+        <h2>Members supplemented from the Application Information</h2>
+        <p>
+          The members listed in this section are defined in <cite>Web App Manifest - Application Information</cite> [[manifest-app-info]].
+        </p>
+      <section>
+        <h2>
+          <span its-locale-filter-list="en" lang="en"><code>description</code> member</span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans">简述</span>
+        </h2>
+        <p its-locale-filter-list="en" lang="en">
+          The <dfn>description</dfn> member provides a brief description for MiniApp.
+        </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+          <code>description</code>，为MiniApp提供简短的描述。
+        </p>
+      </section>
+      </section>
       <section>
         <h2>{{MiniAppManifest}} members</h2>
 
