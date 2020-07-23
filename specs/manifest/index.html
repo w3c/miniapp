@@ -103,7 +103,7 @@
 
   <section data-cite="appmanifest">
     <h2>Manifest</h2>
-    <p its-locale-filter-list="en" lang="en">
+    <p its-locale-filter-list="en" lang="en" class="retranslateme">
       A MiniApp manifest extends and profiles the Web App manifest format [[appManifest]] and
       contains metadata associated with a MiniApp.
     </p>
@@ -308,7 +308,7 @@
       </tfoot>
     </table>
 
-    <p class="note">
+    <p class="note translateme">
       Other {{WebAppManifest}} members
       ({{WebAppManifest/scope}},
       {{WebAppManifest/display}},
@@ -326,7 +326,7 @@
     <section>
       <h2>
         <span its-locale-filter-list="en" lang="en"><dfn>MiniAppManifest</dfn> Dictionary</span>
-        <span its-locale-filter-list="zh-hans" lang="zh-hans">字段</span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans"><dfn>MiniAppManifest</dfn> 字典</span>
       </h2>
       <pre class="idl">
         dictionary MiniAppManifest : WebAppManifest {
@@ -349,13 +349,16 @@
         };
     </pre>
       <section id='webappmanifest-members'>
-        <h2>Members inherited from the {{WebAppManifest}} dictionary</h2>
+        <h2>
+          <span its-locale-filter-list="en" lang="en">Members inherited from the {{WebAppManifest}} dictionary</span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans">从 {{WebAppManifest}} 字典继承的成员</span>
+        </h2>
       <section>
         <h2>
           <span its-locale-filter-list="en" lang="en"><code>dir</code> member</span>
           <span its-locale-filter-list="zh-hans" lang="zh-hans">方向</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en">
+        <p its-locale-filter-list="en" lang="en" class="translateme">
           The <dfn>dir</dfn> member, while
           specifying the base direction of the <a>localizable members</a>, also specifies
           the default base direction of the whole MiniApp. Only the values <code>ltr</code> and
@@ -368,7 +371,7 @@
           <span its-locale-filter-list="en" lang="en"><code>lang</code> member</span>
           <span its-locale-filter-list="zh-hans" lang="zh-hans">语言</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en">
+        <p its-locale-filter-list="en" lang="en" class="translateme">
           The <dfn>lang</dfn> member, while
           specifying the primary language of the <a>localizable members</a>, also specifies
           the primary language of the whole MiniApp.
@@ -380,9 +383,9 @@
       <section>
         <h2>
           <span its-locale-filter-list="en" lang="en"><code>name</code> member</span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">简称</span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans">名称</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en">
+        <p its-locale-filter-list="en" lang="en" class="translateme">
           The <dfn>name</dfn> member, if present, MUST have the same value as <a>appName</a>.
         </p>
       </section>
@@ -391,7 +394,7 @@
           <span its-locale-filter-list="en" lang="en"><code>short_name</code> member</span>
           <span its-locale-filter-list="zh-hans" lang="zh-hans">简称</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en">
+        <p its-locale-filter-list="en" lang="en" class="translateme">
           The <dfn>short_name</dfn> member, if present, MUST have the same value as <a>shortName</a>.
         </p>
       </section>
@@ -412,7 +415,7 @@
           <span its-locale-filter-list="en" lang="en"><code>icons</code> member</span>
           <span its-locale-filter-list="zh-hans" lang="zh-hans">图标</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en">
+        <p its-locale-filter-list="en" lang="en" class="translateme">
           The <dfn>icons</dfn> member are images that serve as iconic representations of the web
           application in various contexts. {{ImageResource/src}} and {{ImageResource/sizes}} are required.
           {{ImageResource/src}} MUST be a <a data-cite='url'>relative-url string</a>.
@@ -425,7 +428,7 @@
         <h2>
           <span its-locale-filter-list="en" lang="en"><code>start_url</code> member</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en">
+        <p its-locale-filter-list="en" lang="en" class="translateme">
           The <dfn>start_url</dfn> member, if present, MUST have the same value as the first entry in
           <a>pages</a>.
         </p>
@@ -434,7 +437,7 @@
         <h2>
           <span its-locale-filter-list="en" lang="en"><code>background_color</code> member</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en">
+        <p its-locale-filter-list="en" lang="en" class="translateme">
           The <dfn>background_color</dfn> member, if present, MUST have the same value as {{MiniAppWindowResource.backgroundColor}}.
         </p>
       </section>
@@ -448,7 +451,7 @@
           <span its-locale-filter-list="en" lang="en"><code>appID</code> member</span>
           <span its-locale-filter-list="zh-hans" lang="zh-hans">标识</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en">
+        <p its-locale-filter-list="en" lang="en" class="retranslateme">
           The <dfn>appID</dfn> member is the ID of MiniApp and is mainly used for the package management.
           It supports the update and release of MiniApp versions.
           The format of <code>appID</code> SHALL be a string defined by the rule below:
@@ -508,7 +511,7 @@
           <span its-locale-filter-list="en" lang="en"><code>versionName</code> member</span>
           <span its-locale-filter-list="zh-hans" lang="zh-hans">版本名称</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en">
+        <p its-locale-filter-list="en" lang="en" class="retranslateme">
           The <dfn>versionName</dfn> member is a string-type character string, and is mainly used for
           describing the version information. It is also the version name that is displayed to the user.
           The general format is "1.0.0" as specified in <cite>Semantic Versioning</cite> [[SEMANTIC-VERSIONING]]. It plays an important role in version control, MiniApp application and equipment compatibility.
@@ -552,7 +555,7 @@
           <span its-locale-filter-list="en" lang="en"><code>pages</code> member</span>
           <span its-locale-filter-list="zh-hans" lang="zh-hans">页面路由</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en">
+        <p its-locale-filter-list="en" lang="en" class="retranslateme">
             The <dfn>pages</dfn> member is an array of <a data-cite='url'>relative-url string</a> used for specifying which pages are included in a
             MiniApp. Each item in the array represents a page route. During the MiniApp development process, adding or deleting pages is done by configuring the array. When configuring the page route, there is no need to add the file name extension, since the MiniApp platform will automatically parse it. Note: the first item in the <code>pages</code> array stands for the homepage of a MiniApp.
         </p>
@@ -570,7 +573,7 @@
           <span its-locale-filter-list="en" lang="en"><code>window</code> member</span>
           <span its-locale-filter-list="zh-hans" lang="zh-hans">窗口</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en">
+        <p its-locale-filter-list="en" lang="en" class="translateme">
           The <dfn>window</dfn> member contains sub-attributes, defined in {{MiniAppWindowResource}}, used for styling the status bar, navigation bar, title, window background color, etc.
         </p>
 
@@ -587,7 +590,7 @@
           <span its-locale-filter-list="en" lang="en"><code>widgets</code> member</span>
           <span its-locale-filter-list="zh-hans" lang="zh-hans">卡片</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en">
+        <p its-locale-filter-list="en" lang="en" class="translateme">
             The <dfn>widget</dfn> member defines a set of widgets that are a part of a MiniApp.
             Specifically, a MiniApp package can include MiniApp Pages and Widgets concurrently.
             As a part of the MiniApp application, widgets share some of the Manifest fields with the
@@ -599,7 +602,7 @@
           <span its-locale-filter-list="en" lang="en"><code>reqPermissions</code> member</span>
           <span its-locale-filter-list="zh-hans" lang="zh-hans">所需权限</span>
         </h2>
-        <p its-locale-filter-list="en" lang="en">
+        <p its-locale-filter-list="en" lang="en" class="retranslateme">
             <dfn>reqPermissions</dfn> is an array of permission objects. Each {{MiniAppPermission}} object
             declares a permission
             (such as the access to the location information, user contacts, and hardware features like camera) required for the proper running of the MiniApp. User's consent may be asked to protect user's privacy related to such permissions. Such information can also be used by an app store or a hosting platform to filter a MiniApp according to user's policy or device capabilities.
@@ -612,7 +615,10 @@
       </section>
     </section>
     <section>
-        <h2>{{MiniAppWindowResource}} and its members</h2>
+        <h2>
+          <span its-locale-filter-list="en" lang="en">{{MiniAppWindowResource}} and its members</span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans">{{MiniAppWindowResource}}和其成员</span>
+        </h2>
         <pre class="idl">
           dictionary MiniAppWindowResource {
             USVString navigationBarBackgroundColor = "#000000";
@@ -642,7 +648,9 @@
             enum NavigationBarTextStyleType { "black", "white" };
           </pre>
           <p>
-            <span its-locale-filter-list="en" lang="en">The <dfn>navigationBarTextStyle</dfn> member specifies the text color of the navigation bar title.</span>
+            <span its-locale-filter-list="en" lang="en" class="retranslateme">
+              The <dfn>navigationBarTextStyle</dfn> member specifies the text color of the navigation bar title.
+            </span>
           </p>
         </section>
         <section>
@@ -676,7 +684,7 @@
           </pre>
           <p>
             <span its-locale-filter-list="en" lang="en">The background text style.</span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">背景文字样式，。</span>
+            <span its-locale-filter-list="zh-hans" lang="zh-hans">背景文字样式。</span>
           </p>
         </section>
         <section>
@@ -726,7 +734,10 @@
         </section>
             </section>
             <section>
-              <h2>{{MiniAppWidgetResource}} and its members</h2>
+              <h2>
+                <span its-locale-filter-list="en" lang="en">{{MiniAppWidgetResource}} and its members</span>
+                <span its-locale-filter-list="zh-hans" lang="zh-hans">{{MiniAppWidgetResource}} 和其成员</span>
+              </h2>
               <pre class="idl">
                 dictionary MiniAppWidgetResource {
                   required USVString name;
@@ -762,7 +773,10 @@
               </section>
             </section>
             <section>
-                <h2>{{MiniAppPermission}} and its members</h2>
+                <h2>
+                  <span its-locale-filter-list="en" lang="en">{{MiniAppPermission}} and its members</span>
+                  <span its-locale-filter-list="zh-hans" lang="zh-hans">{{MiniAppPermission}} 和其成员</span>
+                </h2>
                 <pre class="idl">
                   dictionary MiniAppPermission {
                     required USVString name;
@@ -803,7 +817,7 @@
         <h2>
             <span its-locale-filter-list="en" lang="en"><dfn>Localizable members</dfn></span>
         </h2>
-        <p its-locale-filter-list="en" lang="en">
+        <p its-locale-filter-list="en" lang="en" class="translateme">
             The following members are localizable and share the same default configuration of <code>dir</code> and <code>lang</code> if not otherwise specified.
         </p>
         <ul>
@@ -864,7 +878,7 @@
       [[RFC2119]] [[RFC8174]]
       when, and only when, they appear in all capitals, as shown here.
     </p>
-    <p>
+    <p its-locale-filter-list="en" lang="en" class="translateme">
       This specification uses the Augmented Backus-Naur Form (ABNF) notation of [[!RFC5234]].
     </p>
     <p its-locale-filter-list="zh-hans" lang="zh-hans">
