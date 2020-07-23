@@ -343,6 +343,7 @@
           // USVString background_color; is identical to window.backgroundColor
           // DisplayModeType display; is mapped to window.fullscreen
           // OrientationLockType orientation; is identical to window.orientation
+          // USVString scope; should be "." if used
           required USVString versionName;
           unsigned long versionCode = 1;
           required USVString minPlatformVersion;
@@ -444,6 +445,14 @@
         </h2>
         <p its-locale-filter-list="en" lang="en">
           The <dfn>orientation</dfn> member, if present, MUST have the same value as {{MiniAppWindowResource.orientation}}.
+        </p>
+      </section>
+      <section>
+        <h2>
+          <span its-locale-filter-list="en" lang="en"><code>scope</code> member</span>
+        </h2>
+        <p its-locale-filter-list="en" lang="en">
+          The <dfn>scope</dfn> member, if present, MUST have the value <code>"."</code>.
         </p>
       </section>
       </section>
@@ -585,8 +594,9 @@
           <code>pages</code>数组用于指定MiniApp都包含哪些页面，数组中每一项代表一个页面路由，页面路由 = <code>[路径 + 文件名]</code>。MiniApp开发时新增或删除页面需在数组中进行配置，配置页面路由时文件名不需加后缀名，MiniApp平台会自动解析。备注：<code>pages</code>数组中第一项代表MiniApp首页。
         </p>
         <p class="note">
-          For compatibility with the Web platform, it is RECOMMENDED to use both <a>pages</a> and <a>start_url</a>
-          in the manifest file, with the value of <a>start_url</a> being the same as the first entry in <a>pages</a>.
+          For compatibility with the Web platform, it is RECOMMENDED to use both <a>pages</a> and <a>start_url</a> and use the value
+          <code>"."</code> for <code>scope</code> in the manifest file. The value of <a>start_url</a> MUST be the same as the first entry in <a>pages</a>.
+          If <code>scope</code>.
         </p>
       </section>
 
@@ -984,6 +994,9 @@
                 "appID": "org.w3c.miniapp",
                 "appName": "MiniApp Demo",
                 "shortName": "MiniApp",
+                "short_name": "MiniApp",
+                "background_color": "#ffffff",
+                "start_url": "pages/index/index",
                 "versionName": "1.0.0",
                 "versionCode": 1,
                 "description": "A Simple MiniApp Demo",
@@ -995,6 +1008,7 @@
                   }
                 ],
                 "minPlatformVersion": "1.0.0",
+                "scope": ".",
                 "pages": [
                   "pages/index/index",
                   "pages/detail/detail"
@@ -1015,11 +1029,11 @@
                 ],
                 "reqPermissions": [
                   {
-                    "name": "system.permission.LOCATION",
+                    "name": "geolocation",
                     "reason": "To show user's position on the map"
                   },
                   {
-                    "name": "system.permission.CAMERA",
+                    "name": "camera",
                     "reason": "To scan the QR code"
                   }
                 ]
