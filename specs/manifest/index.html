@@ -109,7 +109,7 @@
     </p>
   </section>
 
-  <section data-cite="appmanifest">
+  <section data-cite="appmanifest screen-orientation">
     <h2>Manifest</h2>
     <p its-locale-filter-list="en" lang="en">
       A MiniApp manifest extends and profiles the Web App manifest format [[appManifest]] and
@@ -320,7 +320,6 @@
       Other {{WebAppManifest}} members
       ({{WebAppManifest/scope}},
       {{WebAppManifest/display}},
-      {{WebAppManifest/orientation}},
       {{WebAppManifest/theme_color}},
       {{WebAppManifest/related_applications}},
       {{WebAppManifest/prefer_related_applications}},
@@ -347,6 +346,7 @@
           // required sequence&lt;ManifestImageResource&gt; icons;
           //  USVString start_url; is identical to pages[0]
           // USVString background_color; is identical to window.backgroundColor
+          // OrientationLockType orientation; is identical to window.orientation
           required USVString versionName;
           unsigned long versionCode = 1;
           required USVString minPlatformVersion;
@@ -432,6 +432,14 @@
         </h2>
         <p its-locale-filter-list="en" lang="en">
           The <dfn>background_color</dfn> member, if present, MUST have the same value as {{MiniAppWindowResource.backgroundColor}}.
+        </p>
+      </section>
+      <section>
+        <h2>
+          <span its-locale-filter-list="en" lang="en"><code>orientation</code> member</span>
+        </h2>
+        <p its-locale-filter-list="en" lang="en">
+          The <dfn>orientation</dfn> member, if present, MUST have the proper corresponding value as {{MiniAppWindowResource.orientation}}.
         </p>
       </section>
       </section>
@@ -636,7 +644,7 @@
             BackgroundTextStyleType backgroundTextStyle = "dark";
             boolean enablePullDownRefresh = false;
             unsigned long onReachBottomDistance = 50;
-            OrientationType orientation = "portrait";
+            OrientationLockType orientation = "portrait"; // same as WebAppManifest.orientation
             boolean fullscreen = false;
             unsigned long designWidth = 750;
             boolean autoDesignWidth = false;
@@ -708,13 +716,16 @@
         </section>
         <section>
           <h2><code>orientation</code> member</h2>
-          <pre class="idl">
-            enum OrientationType { "portrait", "landscape" };
-          </pre>
           <p>
-            <span its-locale-filter-list="en" lang="en">The screen orientation settings, similar to the CSS <a data-xref-type="css-descriptor" data-cite="mediaqueries">orientation</a>.</span>
+            <span its-locale-filter-list="en" lang="en">The screen orientation settings to which a screen can be locked. The two supported values are
+              <code>portrait</code> and <code>landscape</code>, defined in {{OrientationLockType}} [[screen-orientation]].</span>
             <span its-locale-filter-list="zh-hans" lang="zh-hans">屏幕方向设置</span>
           </p>
+          <p class="note">
+            For compatibility with the Web platform, it is RECOMMENDED to use both {{WebAppManifest/orientation}} and {{MiniAppWindowResource.orientation}}
+            in the manifest file.
+          </p>
+          <div class="issue" data-number="69"></div>
         </section>
         <section>
           <h2><code>fullscreen</code> member</h2>
