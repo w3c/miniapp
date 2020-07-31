@@ -155,12 +155,10 @@ Page({
         <tr class="tbody-first-child">
           <td align="left"> Page Hidden </td>
           <td align="left"> Hidden (https://w3c.github.io/page-visibility/#visibility-states) </td>
-          <td align="left"> N/A </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Page Unloaded </td>
           <td align="left"> Discarded (https://wicg.github.io/page-lifecycle/#sec-lifecycle-states) </td>
-          <td align="left"> N/A </td>
         </tr>
         
 </table>
