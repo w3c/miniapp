@@ -147,8 +147,8 @@ Page({
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Page Loaded </td>
-          <td align="left"> N/A </td>
           <td align="left"> It is mentioned that "we already have a longstanding `onload` event", but have not found the link. Welcome for input </td>
+          <td align="left"> N/A </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Page Ready </td>
