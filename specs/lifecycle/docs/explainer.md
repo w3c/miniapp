@@ -115,7 +115,7 @@ Page({
 ```
 
 
-## Comparison with some related work in W3C (such as [Page Visibility](https://w3c.github.io/page-visibility/) and [Page Lifecycle](https://wicg.github.io/page-lifecycle/))
+## Comparison with some related work in W3C (such as [Service Worker](https://www.w3.org/TR/service-workers/) [Page Visibility](https://w3c.github.io/page-visibility/) and [Page Lifecycle](https://wicg.github.io/page-lifecycle/))
 
 <table>
     <thead>
