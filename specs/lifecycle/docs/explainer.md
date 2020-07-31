@@ -120,45 +120,37 @@ Page({
 <table>
     <thead>
         <tr class="thead-first-child">
-          <th align="left"> MiniApp Lifecycle States</th>
+          <th align="left"> MiniApp Lifecycle Events</th>
           <th align="left"> Lifecycle States defined by existing W3C specs </th>
-          <th align="left"> Service Worker Lifecycle defined in https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle </th>
         </tr>
     </thead>
         <tr class="tbody-first-child">
           <td align="left"> Application Launched </td>
-          <td align="left"> N/A </td>
-          <td align="left"> Install (https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#install) </td>
+          <td align="left"> Service Worker Intall (https://www.w3.org/TR/service-workers/#service-worker-global-scope-install-event) </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Application Shown </td>
-          <td align="left"> N/A </td>
-          <td align="left"> Activate (https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#activate) </td>
+          <td align="left"> Service Worker Activate (https://www.w3.org/TR/service-workers/#service-worker-global-scope-activate-event) </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Application Hidden </td>
-          <td align="left"> N/A </td>
           <td align="left"> N/A </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Application Error </td>
           <td align="left"> N/A </td>
-          <td align="left"> N/A </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Page Loaded </td>
           <td align="left"> It is mentioned that "we already have a longstanding `onload` event", but have not found the link. Welcome for input </td>
-          <td align="left"> N/A </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Page Ready </td>
-          <td align="left"> N/A </td>
           <td align="left"> N/A </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Page Shown </td>
           <td align="left"> Visible (https://w3c.github.io/page-visibility/#visibility-states) </td>
-          <td align="left"> N/A </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Page Hidden </td>
