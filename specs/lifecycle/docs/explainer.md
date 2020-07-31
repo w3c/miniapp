@@ -122,43 +122,53 @@ Page({
         <tr class="thead-first-child">
           <th align="left"> MiniApp Lifecycle States</th>
           <th align="left"> Lifecycle States defined by existing W3C specs </th>
+          <th align="left"> Service Worker Lifecycle defined in https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle </th>
         </tr>
     </thead>
         <tr class="tbody-first-child">
           <td align="left"> Application Launched </td>
           <td align="left"> N/A </td>
+          <td align="left"> Install (https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#install) </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Application Shown </td>
           <td align="left"> N/A </td>
+          <td align="left"> Activate (https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#activate) </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Application Hidden </td>
+          <td align="left"> N/A </td>
           <td align="left"> N/A </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Application Error </td>
           <td align="left"> N/A </td>
+          <td align="left"> N/A </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Page Loaded </td>
           <td align="left"> N/A </td>
+          <td align="left"> It is mentioned that "we already have a longstanding `onload` event", but have not found the link. Welcome for input </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Page Ready </td>
+          <td align="left"> N/A </td>
           <td align="left"> N/A </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Page Shown </td>
           <td align="left"> Visible (https://w3c.github.io/page-visibility/#visibility-states) </td>
+          <td align="left"> N/A </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Page Hidden </td>
           <td align="left"> Hidden (https://w3c.github.io/page-visibility/#visibility-states) </td>
+          <td align="left"> N/A </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Page Unloaded </td>
           <td align="left"> Discarded (https://wicg.github.io/page-lifecycle/#sec-lifecycle-states) </td>
+          <td align="left"> N/A </td>
         </tr>
         
 </table>
