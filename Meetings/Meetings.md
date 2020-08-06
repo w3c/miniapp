@@ -5,8 +5,9 @@ This document contains links to meeting minutes of the CG.
 ## 2020
 
 * [30-31 July 2020 Virtual Meeting](https://www.w3.org/2020/07/miniapp-virtual-meeting/index.html) ([day 1](https://www.w3.org/2020/07/30-miniapp-minutes.html), [day 2](https://www.w3.org/2020/07/31-miniapp-minutes.html))
-* [18 June 2020 TeleConf - draft WG charter](https://www.w3.org/2020/06/18-miniapp-minutes.html) ([Summary](https://lists.w3.org/Archives/Public/public-miniapps/2020Jun/0001.html))
-* [11 June 2020 TeleConf](https://www.w3.org/2020/06/11-miniapp-minutes.html) ([Summary](https://lists.w3.org/Archives/Public/public-miniapps/2020Jun/0000.html))
+* [9 July 2020 TeleConf](https://www.w3.org/2020/07/09-miniapp-minutes.html) ([summary](https://lists.w3.org/Archives/Public/public-miniapps/2020Jul/0001.html))
+* [18 June 2020 TeleConf - draft WG charter](https://www.w3.org/2020/06/18-miniapp-minutes.html) ([summary](https://lists.w3.org/Archives/Public/public-miniapps/2020Jun/0001.html))
+* [11 June 2020 TeleConf](https://www.w3.org/2020/06/11-miniapp-minutes.html) ([summary](https://lists.w3.org/Archives/Public/public-miniapps/2020Jun/0000.html))
 * [14 May 2020 TeleConf](https://www.w3.org/2020/05/14-miniapp-minutes.html) ([summary](https://lists.w3.org/Archives/Public/public-miniapps/2020May/0001.html))
 * [9 April 2020 TeleConf](https://www.w3.org/2020/04/09-miniapp-minutes.html) ([summary](https://lists.w3.org/Archives/Public/public-miniapps/2020Apr/0000.html))
 * [12 March 2020 TeleConf](https://www.w3.org/2020/03/12-miniapp-minutes.html) ([summary](https://lists.w3.org/Archives/Public/public-miniapps/2020Mar/0001.html))
