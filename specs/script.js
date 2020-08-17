@@ -32,11 +32,12 @@ void function() {
 
         dt: {
           'This version:': '本版本：',
+          'Previous version:': '上一版：',
           'Latest published version:': '最新发布草稿：',
           'Latest editor\'s draft:': '最新编辑草稿：',
           'Editors:': '编辑：',
-          'Bug tracker:': '错误跟踪：',
-          'GitHub:': 'GitHub：',
+          'Former editors:': '原编辑：',
+          'Participate:': '协助参与：',
         },
 
         dd: {
@@ -109,7 +110,7 @@ void function() {
 
       $$('h1 + h2 + dl dt')
       .forEach(function($dt) {
-        var originalText = $dt.dataset.originalText || $dt.textContent
+        var originalText = $dt.dataset.originalText || $dt.textContent.trim()
         var text = l10n.dt[originalText] || originalText
 
         if (text) {
