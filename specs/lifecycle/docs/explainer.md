@@ -59,7 +59,7 @@ enters the state of “Hidden”
 ## MiniApp page lifecycle states
 
 *	MiniApp page loading: once MiniApp page loading is completed, MiniApp page enters the state of “Loaded”
-*	MiniApp page first rendering ready: once the MiniApp page first rendering is completed, MiniApp page enters the state
+*	MiniApp page first rendering ready: once the MiniApp page first rendering is completed, MiniApp page enters the state of "Ready"
 *	MiniApp page running in foreground: once the page switches to be running in foreground from background, MiniApp page enters 
 the state of “Shown”
 *	MiniApp page running in background: once the MiniApp page switches to be running from foreground to background, MiniApp page 
@@ -115,22 +115,22 @@ Page({
 ```
 
 
-## Comparison with some related work in W3C (such as [Page Visibility](https://w3c.github.io/page-visibility/) and [Page Lifecycle](https://wicg.github.io/page-lifecycle/))
+## Comparison with some related work in W3C (such as [Service Worker](https://www.w3.org/TR/service-workers/), [Page Visibility](https://w3c.github.io/page-visibility/) and [Page Lifecycle](https://wicg.github.io/page-lifecycle/))
 
 <table>
     <thead>
         <tr class="thead-first-child">
-          <th align="left"> MiniApp Lifecycle States</th>
+          <th align="left"> MiniApp Lifecycle Events</th>
           <th align="left"> Lifecycle States defined by existing W3C specs </th>
         </tr>
     </thead>
         <tr class="tbody-first-child">
           <td align="left"> Application Launched </td>
-          <td align="left"> N/A </td>
+          <td align="left"> Service Worker Intall (https://www.w3.org/TR/service-workers/#service-worker-global-scope-install-event) </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Application Shown </td>
-          <td align="left"> N/A </td>
+          <td align="left"> Service Worker Activate (https://www.w3.org/TR/service-workers/#service-worker-global-scope-activate-event) </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Application Hidden </td>
@@ -142,7 +142,7 @@ Page({
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Page Loaded </td>
-          <td align="left"> N/A </td>
+          <td align="left"> It is mentioned that "we already have a longstanding `onload` event", but have not found the link. Welcome for input </td>
         </tr>
         <tr class="tbody-first-child">
           <td align="left"> Page Ready </td>

@@ -25,7 +25,7 @@
     }
     </style>
 
-    <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common"></script>
+    <script async class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
     <script defer src="../script.js"></script>
 
     <script class="remove">
@@ -308,10 +308,10 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">方向</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>dir</code> specifies the base direction of the text value of the app name, short name and description members. The value of <code>dir</code> can be <code>ltr</code> or <code>rtl</code>. <code>ltr</code> means from left to right, <code>rtl</code> means from right to left. Default: <code>ltr</code>.
+          <code>dir</code> specifies the default base direction of the text value of the whole MiniApp as well as the <a>localizable attributes</a> in the manifest file such as the <code>appName</code>, <code>shortName</code> and <code>description</code> attributes. The value of <code>dir</code> can be <code>ltr</code> or <code>rtl</code>. <code>ltr</code> means left-to-right, <code>rtl</code> means right-to-left. The default value is <code>ltr</code>.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          dir，指定名称、简称和描述成员的主文本方向。这里取值类型可分为：<code>ltr</code>和<code>rtl</code>，<code>ltr</code>表示从左到右，<code>rtl</code>表示从右到左。默认值：<code>ltr</code>。
+          <code>dir</code>定义了整个MiniApp以及Manifest文件中<code>appName</code>、<code>shortName</code>和<code>description</code>等<a>可本地化属性</a>的默认主文本方向，取值类型可以为：<code>ltr</code>和<code>rtl</code>，<code>ltr</code>表示从左到右，<code>rtl</code>表示从右到左。默认值为<code>ltr</code>。
         </p>
       </section>
 
@@ -321,11 +321,10 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">语言</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-            <code>lang</code> specifies the language tag of MiniApp. The value here takes the form of
-            <code>Language-Tag</code> as defined in the [[BCP47]]</a>. The default value is <code>zh-Hans</code>. If not specified, the default value is used.
+            <code>lang</code> specifies the default language of the MiniApp. It's applied to all <a>localizable attributes</a> of the manifest. The value here MUST be a well-formed <code>Language-Tag</code> specified in [[BCP47]].  The default value is undefined. Implementers are encouraged to provide the accurate value that matches the manifest content.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-            <code>lang</code>指定MiniApp的语言标签。这里取值为<code>Language-Tag</code>值，详见[[BCP47]]</a>。默认值是<code>zh-Hans</code>。未指定的情况下，将采用默认值。
+            <code>lang</code>定义了MiniApp的默认语言，适用于manifest所有<a>可本地化属性</a>，取值必须为[[BCP47]]所规定的合法的（well-formed）<code>Language-Tag</code>值。默认值未定义。开发者需要提供匹配manifest内容的准确值。
         </p>
       </section>
 
@@ -335,10 +334,10 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">标识</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>appID</code> is the ID of MiniApp and is mainly used for the package management. It supports the update and release of MiniApp versions. The naming convention of <code>appID</code> adopts the reverse domain naming rule and uses all lowercases, e.g. <code>com.company.miniapp</code>.
+          <code>appID</code> is the ID of MiniApp and is mainly used for the package management. It supports the update and release of MiniApp versions. The format of <code>appID</code> SHALL be a string started with a letter [a-zA-Z], and the remaining characters SHALL be either alphanumeric, an underscore or a dot [0-9a-zA-Z_\.]. One common practice is to use the reverse-domain-name-like convention, e.g. <code>com.company.miniapp</code>.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <code>appID</code>，MiniApp唯一标识符，主要用于包管理，支撑MiniApp版本更新和发布。<code>appID</code>的命名规范采用反域名命名规则，全部使用小写字母，比如<code>com.company.miniapp</code>.
+          <code>appID</code>是MiniApp的唯一标识符，主要用于包管理，支撑MiniApp版本更新和发布。<code>appID</code>的格式是由字母起头的字符串，剩余字符为数字、字母、下划线或点[a-zA-Z_\.]。一种常见的实现方式是使用类似反向域名的命名方式，如<code>com.company.miniapp</code>。
         </p>
       </section>
 
@@ -348,10 +347,10 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">名称</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          <code>appName</code> is the name that is directly displayed to the user. It is used as the display name of MiniApp along with the desktop icon and in the context of MiniApp management. MiniApp name may be composed of Chinese characters, English letters, numbers and some special symbols, and its length must be between 4–30 characters.
+          <code>appName</code> is the name that is directly displayed to the user. It is used as the display name of MiniApp along with the desktop icon and in the context of MiniApp management. 
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <code>appName</code>，直接呈现给用户的名称，用于在桌面图标和MiniApp管理等处显示MiniApp的名称。MiniApp名称可由中文、英文、数字及部分特殊符号组成，长度在4-30个字符之间。
+          <code>appName</code>，直接呈现给用户的名称，用于在桌面图标和MiniApp管理等处显示MiniApp的名称。
         </p>
       </section>
 
@@ -504,7 +503,7 @@
           <span its-locale-filter-list="zh-hans" lang="zh-hans">窗口</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-          Used for styling the status bar, navigation bar, title, window background color, etc., as shown in the following table:
+          <code>window</code> contains sub-attributes used for styling the status bar, navigation bar, title, window background color, etc., as shown in the following table:
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
           用于设置MiniApp的状态栏、导航条、标题和窗口背景色等样式，如下表所示：
@@ -693,6 +692,14 @@
             </tr>
           </tbody>
         </table>
+
+        <p its-locale-filter-list="en" lang="en">
+            <code>window</code> inherits the text direction and language configuration from <code>dir</code> and <code>lang</code>.
+          </p>
+          <p its-locale-filter-list="zh-hans" lang="zh-hans">
+            <code>window</code>的文字方向和语言设置继承自<code>dir</code>和<code>lang</code>.
+          </p>
+
       </section>
 
       <section>
@@ -749,8 +756,8 @@
                 <span its-locale-filter-list="zh-hans" lang="zh-hans">是</span>
               </td>
               <td>
-                <span its-locale-filter-list="en" lang="en">Corresponding page path of Widget</span>
-                <span its-locale-filter-list="zh-hans" lang="zh-hans">Widget对应页面路径</span>
+                <span its-locale-filter-list="en" lang="en">Corresponding page path of Widget. It follows the same path route format as defined in <code>pages</code>.</span>
+                <span its-locale-filter-list="zh-hans" lang="zh-hans">Widget对应页面路径，采用与<code>pages</code>中相同页面路由的格式。</span>
               </td>
             </tr>
             <tr>
@@ -846,6 +853,29 @@
       </section>
     </section>
 
+    <section>
+        <h2>
+            <span its-locale-filter-list="en" lang="en"><dfn>Localizable attributes</dfn></span>
+            <span its-locale-filter-list="zh-hans" lang="zh-hans"><dfn>可本地化属性</dfn></span>
+        </h2>
+        <p its-locale-filter-list="en" lang="en">
+            The following attributes are localizable and share the same default configuration of <code>dir</code> and <code>lang</code> if not otherwise specified.
+        </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+            如下属性为可本地化属性。无特别规定的情况下，共享默认的<code>dir</code>和<code>lang</code>配置。
+        </p>
+        <ul>
+            <li><a href="#appname">appName</a></li>
+            <li><a href="#shortname">shortName</a></li>
+            <li><a href="#description">description</a></li>
+            <li><a href="#window">window.navigationBarTitleText</a></li>
+            <li><a href="#widgets">widgets.name</a></li>
+        </ul>
+        
+       
+    
+    
+    </section>
     
   </section>
 
