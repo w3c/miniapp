@@ -4,6 +4,7 @@ This document contains links to meeting minutes of the CG.
 
 ## 2020
 
+* [10 September 2020 TeleConf](https://www.w3.org/2020/09/10-miniapp-minutes.html)
 * [26 August 2020 TeleConf on manifest](https://www.w3.org/2020/08/26-manifest-minutes.html)
 * [6 August 2020 TeleConf](https://www.w3.org/2020/08/06-Miniapp-minutes.html) ([summary](https://lists.w3.org/Archives/Public/public-miniapps/2020Aug/0001.html))
 * [30-31 July 2020 Virtual Meeting](https://www.w3.org/2020/07/miniapp-virtual-meeting/index.html) ([day 1](https://www.w3.org/2020/07/30-miniapp-minutes.html), [day 2](https://www.w3.org/2020/07/31-miniapp-minutes.html))
