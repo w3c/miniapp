@@ -78,10 +78,16 @@
         The <strong>mission</strong> of the <a href=
         "#TBD">MiniApps Working Group</a> is to produce specifications that facilitate the development of interoperable and robust MiniApps.
       </p>
-      <p>
-        <a href="#TBD">Join the
-        MiniApps Working Group</a>.
-      </p>
+      
+      <div class="noprint">
+        <p class="join"><a href="https://www.w3.org/2004/01/pp-impl/#####/join">Join the MiniApps Working Group.</a></p>
+      </div>
+
+         <p style="padding: 0.5ex; border: 1px solid green"> This proposed charter is available
+      on <i class="todo"><a href="https://github.com/w3c/miniapp/charters/">GitHub</a>.
+
+    Feel free to raise <a href="https://github.com/w3c/miniapp/issues">issues</a></i>.
+          </p>
       <table class="summary-table">
         <tbody>
           <tr id="Duration">
@@ -124,17 +130,19 @@
         <h2 id="scope">
           Scope
         </h2>
-        <p>MiniApp as a new form of mobile application, leveraging both Web technologies (especially CSS and JavaScript) as well as capabilities of native applications, is gaining more and more popularity in Asian countries such as China. To enhance the interoperability between different MiniApp platforms (including super applications and native operating systems), main stream MiniApp vendors has been working together in <a href="https://www.w3.org/2018/chinese-web-ig/">W3C Chinese Web Interest Group</a> since May 2019 and published a <a href="https://www.w3.org/TR/mini-app-white-paper/">MiniApp Standardization White Paper</a> in September 2019 as the initial standardization exploration for MiniApp technologies. As more global companies get interested in joining the MiniApp related discussion, the <a href="https://www.w3.org/community/miniapps/">MiniApps Ecosystem Community Group</a> was proposed and approved during TPAC 2019 so that global Web community can join the discussion.</p>
+        <p>
+          MiniApp as a new form of mobile application, leveraging both Web technologies (especially CSS and JavaScript) as well as capabilities of native applications, is gaining more and more popularity in the globe. To enhance the interoperability between MiniApp platforms and the Web, and between different MiniApp platforms (including super applications and native operating systems), mainstream MiniApp vendors and related stakeholders have been working together in <a href="https://www.w3.org/2018/chinese-web-ig/">W3C Chinese Web Interest Group</a> since May 2019 and published a <a href="https://www.w3.org/TR/mini-app-white-paper/">MiniApp Standardization White Paper</a> in September 2019 as the initial standardization exploration for MiniApp technologies. As more global companies get interested in joining the MiniApp related discussion, the <a href="https://www.w3.org/community/miniapps/">MiniApps Ecosystem Community Group</a> was proposed and approved during TPAC 2019 so that the global Web community can join the discussion.</p>
 
         <p>
-            During the exploration phase, potential standard requirements are identified due to the different nature of MiniApp comparing to the typical web environment. For instance, the hosting platform may not be a browser and the application construction is not based on web pages. Therefore different but relevant technologies are used for UI configuration and rendering, resource packaging and the API access to local system capabilities. Such cases have not be covered by existing Web standards such as <a href="https://github.com/WICG/webpackage">Web Packaging</a>, <a href="https://www.w3.org/TR/appmanifest/">Web App Manifest</a>, and Web APIs. 
+          During the exploration phase, potential standard requirements are identified due to the unique nature of MiniApp comparing to the typical Web environment. Substantial research work and joint discussion with related W3C groups have been conducted to clarify the requirements and possible solutions for MiniApp standardization. For instance, the hosting platform may not be a browser, and the application construction is not based on web resources. Therefore different but relevant technologies are used for UI configuration and rendering, resource packaging, and the API access to local system capabilities. Such cases have not been fully covered by existing Web standards such as <a href="https://github.com/WICG/webpackage">Web Packaging</a>, <a href="https://www.w3.org/TR/appmanifest/">Web App Manifest</a>, or Web APIs.
         </p>
 
-    <p>The MiniApps Working Group aims to work on specifications incubated in the MiniApps Ecosystem Community Group for MiniApp features that would benefit the interoperability and robustness of MiniApp ecosystem, including:</p>
+    <p>The MiniApps Working Group aims to harmonize the heterogeneous MiniApp ecosystem, enabling interoperability among the different MiniApp platforms, maximizing the convergence of MiniApps and the World Wide Web, reducing the development costs and facilitating the adoption of this technology. The work will be based on the specifications incubated in the MiniApps Ecosystem Community Group for MiniApp features, including:
+</p>
 <ol>
-    <li>Basic architecture and essential functions of MiniApp such as the URI scheme, widget, application lifecycle and event, manifest, and packaging;
-    <li>Components, APIs, and a template mechanism that would enhance the interoperability among different MiniApp platforms, such as UI components, Device APIs, Account API etc.;
-    <li>Coordination with other W3C efforts, especially Progressive Web Apps, on the commonality of Web features.
+    <li>Basic architecture and essential functions of MiniApp such as the Manifest, Packaging, URI Solution, and Lifecycle; 
+    <li>Basic layout and components, APIs, and a template mechanism that would enhance the interoperability among different MiniApp platforms and the Web, including widget, UI components, etc.; 
+    <li>Coordination with other W3C efforts, especially security, privacy, accessibility, internationalization and other Webapp APIs including Progressive Web Apps, on the commonality of the Web. 
 </ol>
       </div>
       <div class="deliverables">
@@ -150,41 +158,11 @@
         </p>
         <dl>
           <dt>
-            MiniApp URI Scheme
-          </dt>
-          <dd>
-            <p>
-              This specification defines the MiniApp URI scheme syntax and the process to dereference the MiniApp URI scheme.
-            </p>
-            <p class="draft-status">
-              <b>Draft state:</b> <a href="https://w3c.github.io/miniapp/specs/uri/">In progress in MiniApp CG</a>
-            </p>
-            <p>
-              <b>Adopted Draft</b>: <a href=
-              "https://w3c.github.io/miniapp/specs/uri/">https://w3c.github.io/miniapp/specs/uri/</a>
-            </p>
-          </dd>
-          <dt>
-            MiniApp Lifecycle
-          </dt>
-          <dd>
-            <p>
-              This specification defines the MiniApp lifecycle events and the process to manage MiniApp and each page's lifecycle.
-            </p>
-            <p class="draft-status">
-              <b>Draft state:</b> <a href="https://w3c.github.io/miniapp/specs/lifecycle/">In progress in MiniApp CG</a>
-            </p>
-            <p>
-              <b>Adopted Draft</b>: <a href=
-              "https://w3c.github.io/miniapp/specs/lifecycle/">https://w3c.github.io/miniapp/specs/lifecycle/</a>
-            </p>
-          </dd>
-          <dt>
             MiniApp Manifest
           </dt>
           <dd>
             <p>
-              This specification defines a JSON-based manifest file that enables developers to set up basic information, window style, page route and other information of a MiniApp.
+              This specification defines a JSON-based manifest document that enables developers to set up descriptive information, window styling, page routing, feature policies, and other information of a MiniApp. The MiniApp Manifest specification will follow the recommendations of the <a href="https://w3ctag.github.io/design-principles/#extend-manifests">Web Platform Design Principles</a> to extend the <a href="https://www.w3.org/TR/appmanifest/">Web App Manifest</a>.
             </p>
             <p class="draft-status">
               <b>Draft state:</b> <a href="https://w3c.github.io/miniapp/specs/manifest/">In progress in MiniApp CG</a>
@@ -199,7 +177,7 @@
           </dt>
           <dd>
             <p>
-              This specification defines the standardized MiniApp package structure.
+             This specification defines the standardized MiniApp package structure and its construction method. The MiniApp package file includes all the application assets such as document templates, components, stylesheets, scripts, internationalization resources, security resources, and the manifest file. The MiniApps Working Group aims at defining a MiniApp package format to be processed by various runtime environment.
             </p>
             <p class="draft-status">
               <b>Draft state:</b> <a href="https://w3c.github.io/miniapp/specs/packaging/">In progress in MiniApp CG</a>
@@ -207,6 +185,21 @@
             <p>
               <b>Adopted Draft</b>: <a href=
               "https://w3c.github.io/miniapp/specs/packaging/">https://w3c.github.io/miniapp/specs/packaging/</a>
+            </p>
+          </dd>
+          <dt>
+            MiniApp Lifecycle
+          </dt>
+          <dd>
+            <p>
+              This specification defines the MiniApp lifecycle events and the process that enables developers to manage the lifecycle events of both MiniApp application lifecycle and each MiniApp page's lifecycle. MiniApp application lifecycle includes a set of events, including application initialization, application running in foreground, application running in background. MiniApp page lifecycle includes a set of events, including page loading, page first rendering ready, page running in foreground, page running in background and page unloading.
+            </p>
+            <p class="draft-status">
+              <b>Draft state:</b> <a href="https://w3c.github.io/miniapp/specs/lifecycle/">In progress in MiniApp CG</a>
+            </p>
+            <p>
+              <b>Adopted Draft</b>: <a href=
+              "https://w3c.github.io/miniapp/specs/lifecycle/">https://w3c.github.io/miniapp/specs/lifecycle/</a>
             </p>
           </dd>
         </dl>
@@ -223,6 +216,21 @@
           Other Deliverables
         </h3>
         <dl>
+        <dt>
+            MiniApp URI Solution
+          </dt>
+          <dd>
+            <p>
+              This document defines a MiniApp URI Deep Link solution that will work across various MiniApp platforms, with reference to existing URI standard work in W3C and related standard bodies.
+            </p>
+            <p class="draft-status">
+              <b>Draft state:</b> <a href="https://w3c.github.io/miniapp/specs/uri/">In progress in MiniApp CG</a>
+            </p>
+            <p>
+              <b>Adopted Draft</b>: <a href=
+              "https://w3c.github.io/miniapp/specs/uri/">https://w3c.github.io/miniapp/specs/uri/</a>
+            </p>
+          </dd>
         <dt>
           MiniApp Widget Requirements
         </dt>
@@ -268,10 +276,27 @@
           <tbody>
             <tr>
               <th>
-                MiniApp URI Scheme
+                MiniApp Manifest
               </th>
               <td>
                 Q1 2021
+              </td>
+              <td>
+                Q4 2021
+              </td>
+              <td>
+                Q3 2022
+              </td>
+              <td>
+                Q4 2022
+              </td>
+            </tr>
+            <tr>
+              <th>
+                MiniApp Packaging
+              </th>
+              <td>
+                Q2 2021
               </td>
               <td>
                 Q4 2021
@@ -302,36 +327,31 @@
             </tr>
             <tr>
               <th>
-                MiniApp Manifest
+                MiniApp URI Scheme
               </th>
               <td>
                 Q1 2021
               </td>
               <td>
-                Q4 2021
               </td>
               <td>
-                Q3 2022
               </td>
               <td>
-                Q4 2022
               </td>
             </tr>
+
             <tr>
               <th>
-                MiniApp Packaging
+                Widget Requirement
               </th>
               <td>
                 Q1 2021
               </td>
               <td>
-                Q4 2021
               </td>
               <td>
-                Q3 2022
               </td>
               <td>
-                Q4 2022
               </td>
             </tr>
           </tbody>
@@ -346,27 +366,19 @@
           Success Criteria
         </h2>
         <p>
-          To advance to Proposed Recommendation, each specification must have
-          two independent implementations of all defined features.
+          To advance to Proposed Recommendation, each specification must have two independent implementations of all defined features.
         </p>
         <p>
-          Comprehensive test suites will be developed for each specification to
-          ensure interoperability, and the group will create interoperability
-          reports. The group will also maintain errata as required for the
-          continued relevance and usefulness of the specifications it produces.
+          Comprehensive test suites will be developed for each specification to ensure interoperability, and the group will create interoperability reports. The group will also maintain errata as required for the continued relevance and usefulness of the specifications it produces. 
         </p>
         <p>
-          Each specification must contain a section on accessibility that
-          describes the benefits and impacts, including ways specification
-          features can be used to address them, and recommendations for
-          maximising accessibility in implementations.
+          Each specification must contain a section on accessibility that describes the benefits and impacts, including ways specification features can be used to address them, and recommendations for maximizing accessibility in implementations. 
         </p>
         <p>
-          Each specification must detail all known security and privacy
-          implications for implementers, Web authors, and end users.
+          Each specification must detail all known security and privacy implications for implementers, Web authors, and end users. 
         </p>
         <p>
-            APIs shall be demonstrated to be implementable securely before released.
+          APIs shall be demonstrated to be implementable securely before released. 
         </p>
       </div>
       <div class="dependencies">
@@ -584,7 +596,7 @@
         <p>
           This Working Group operates under the <a href=
           "https://www.w3.org/Consortium/Patent-Policy/">W3C Patent Policy</a>
-          (5 February 2004 Version updated 1 August 2017). To promote the
+          (15 September 2020). To promote the
           widest adoption of Web standards, W3C seeks to issue Recommendations
           that can be implemented, according to this policy, on a Royalty-Free
           basis. For more information about disclosure obligations for this
