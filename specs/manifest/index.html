@@ -109,8 +109,8 @@
       <p its-locale-filter-list="en" lang="en">
         The following members MUST be set in the <a>MiniAppManifest</a>.
       </p>
-      <p its-locale-filter-list="zh-hans" lang="zh-hans">
-        <span>@@@Chinese version here@@@</span>
+      <p its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+        The following members MUST be set in the <a>MiniAppManifest</a>.
       </p>
       <ul>
         <li>
@@ -138,8 +138,8 @@
       <p its-locale-filter-list="en" lang="en">
           The following members MUST be set in an {{ImageResource}}.
       </p>
-      <p its-locale-filter-list="zh-hans" lang="zh-hans">
-        <span>@@@Chinese version here@@@</span>
+      <p its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+        The following members MUST be set in an {{ImageResource}}.
       </p>
       <ul>
         <li>
@@ -152,8 +152,8 @@
       <p its-locale-filter-list="en" lang="en">
         The following members MUST be set in a <a>MiniAppWidgetResource</a>.
       </p>
-      <p its-locale-filter-list="zh-hans" lang="zh-hans">
-        <span>@@@Chinese version here@@@</span>
+      <p its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+        The following members MUST be set in a <a>MiniAppWidgetResource</a>.
       </p>
       <ul>
         <li>
@@ -166,8 +166,8 @@
       <p its-locale-filter-list="en" lang="en">
         The following member MUST be set in a <a>MiniAppPermissionResource</a>.
       </p>
-      <p its-locale-filter-list="zh-hans" lang="zh-hans">
-        <span>@@@Chinese version here@@@</span>
+      <p its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+        The following member MUST be set in a <a>MiniAppPermissionResource</a>.
       </p>
       <ul>
         <li>
@@ -642,15 +642,19 @@
           the default base text direction of the whole MiniApp. The <a>dir</a>
           member's value can be set to one of the <a>text-direction values</a>.
         </p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <span>@@@Chinese version here@@@</span>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+          <dfn>dir</dfn> member, while
+          specifying the base direction of the <a>localizable members</a> of the manifest, also specifies
+          the default base text direction of the whole MiniApp. The <a>dir</a>
+          member's value can be set to one of the <a>text-direction values</a>.
         </p>        
         <p its-locale-filter-list="en" lang="en">
           The <dfn>text-direction values</dfn> defined by <dfn>TextDirectionType</dfn>, are the following, implying
           that the value of the <a>localizable members</a> is by default:
         </p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <span>@@@Chinese version here@@@</span>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+          The <dfn>text-direction values</dfn> defined by <dfn>TextDirectionType</dfn>, are the following, implying
+          that the value of the <a>localizable members</a> is by default:
         </p>
         <dl data-dfn-for="TextDirectionType">
           <dt>
@@ -660,8 +664,8 @@
             <span its-locale-filter-list="en" lang="en">
               Left-to-right text.
             </span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">
-              <span>@@@Chinese version here@@@</span>
+            <span its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+              Left-to-right text.
             </span>
           </dd>
           <dt>
@@ -671,8 +675,8 @@
             <span its-locale-filter-list="en" lang="en">
               Right-to-left text.
             </span>
-            <span its-locale-filter-list="zh-hans" lang="zh-hans">
-              <span>@@@Chinese version here@@@</span>
+            <span its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+              Right-to-left text.
             </span>
           </dd>
         </dl>
@@ -680,8 +684,8 @@
           <span its-locale-filter-list="en" lang="en">
             Value `auto` is not supported currently by MiniApp agents. Value by default: <code>rtl</code>.
           </span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">
-            <span>@@@Chinese version here@@@</span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+            Value `auto` is not supported currently by MiniApp agents. Value by default: <code>rtl</code>.
           </span>
         </p>
         <div class="issue" data-number='115'></div>
@@ -694,8 +698,8 @@
         <p its-locale-filter-list="en" lang="en">
           The <dfn>icons</dfn> member describes images that serve as iconic representations of MiniApps in various contexts. Both {{ImageResource/src}} and {{ImageResource/sizes}} are required. {{ImageResource/src}} MUST be a <a data-cite='url'>relative-url string</a>.
         </p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <span>@@@Chinese version here@@@</span>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+          The <dfn>icons</dfn> member describes images that serve as iconic representations of MiniApps in various contexts. Both {{ImageResource/src}} and {{ImageResource/sizes}} are required. {{ImageResource/src}} MUST be a <a data-cite='url'>relative-url string</a>.
         </p>
       </section>      
       <section>
@@ -708,8 +712,10 @@
           specifying the primary language of the <a>localizable members</a>, also specifies
           the primary language of the whole MiniApp.
         </p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans">
-            <span>@@@Chinese version here@@@</span>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+          The <dfn>lang</dfn> member, while
+          specifying the primary language of the <a>localizable members</a>, also specifies
+          the primary language of the whole MiniApp.
         </p>
         <p class='note' title='Use of language'>
           Implementers are encouraged to provide an accurate value that matches the manifest content.
@@ -757,8 +763,9 @@
              One common practice is to use the reverse-domain-name-like convention,
              e.g. <code>com.company.miniapp</code>.
            </span>
-           <span its-locale-filter-list="en" lang="en">
-             <span>@@@Chinese version here@@@</span>
+           <span its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+             One common practice is to use the reverse-domain-name-like convention,
+             e.g. <code>com.company.miniapp</code>.
            </span>
         </p>
       </section>
@@ -916,10 +923,10 @@
         <span its-locale-filter-list="en" lang="en">
           Value by default: <code>#000000</code>.
           </span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">
-            <span>@@@Chinese version here@@@</span>
-          </span>
-        </p>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+          Value by default: <code>#000000</code>.
+        </span>
+      </p>
     </section>
     <section>
       <h3><code>navigationBarTextStyle</code> member</h3>
@@ -929,10 +936,10 @@
       <p class="note">
         <span its-locale-filter-list="en" lang="en">
          Value by default: <code>white</code>.
-          </span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">
-            <span>@@@Chinese version here@@@</span>
-          </span>
+        </span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+          Value by default: <code>white</code>.
+        </span>
         </p>
     </section>
     <section>
@@ -951,11 +958,11 @@
       <p class="note">
         <span its-locale-filter-list="en" lang="en">
           Value by default: <code>default</code>.
-          </span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">
-            <span>@@@Chinese version here@@@</span>
-          </span>
-        </p>
+        </span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+          Value by default: <code>default</code>.
+        </span>
+      </p>
     </section>
     <section>
       <h3><code>backgroundColor</code> member</h3>
@@ -967,8 +974,8 @@
         <span its-locale-filter-list="en" lang="en">
           Value by default: <code>#ffffff</code>.
         </span>
-        <span its-locale-filter-list="zh-hans" lang="zh-hans">
-          <span>@@@Chinese version here@@@</span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+          Value by default: <code>#ffffff</code>.
         </span>
       </p>
     </section>
@@ -981,11 +988,11 @@
       <p class="note">
         <span its-locale-filter-list="en" lang="en">
           Value by default: <code>dark</code>.
-          </span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">
-            <span>@@@Chinese version here@@@</span>
-          </span>
-        </p>
+        </span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+          Value by default: <code>dark</code>.
+        </span>
+      </p>
     </section>
     <section>
       <h3><code>enablePullDownRefresh</code> member</h3>
@@ -996,11 +1003,11 @@
       <p class="note">
         <span its-locale-filter-list="en" lang="en">
           Value by default: <code>false</code>.
-          </span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">
-            <span>@@@Chinese version here@@@</span>
-          </span>
-        </p>
+        </span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+          Value by default: <code>false</code>.
+        </span>
+      </p>
     </section>
     <section>
       <h3><code>onReachBottomDistance</code> member</h3>
@@ -1011,11 +1018,11 @@
       <p class="note">
         <span its-locale-filter-list="en" lang="en">
           Value by default: <code>50</code>.
-          </span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">
-            <span>@@@Chinese version here@@@</span>
-          </span>
-        </p>
+        </span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+          Value by default: <code>50</code>.
+        </span>
+      </p>
     </section>
     <section>
       <h3><code>orientation</code> member</h3>
@@ -1026,11 +1033,11 @@
       <p class="note">
         <span its-locale-filter-list="en" lang="en">
           Value by default: <code>portrait</code>.
-          </span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">
-            <span>@@@Chinese version here@@@</span>
-          </span>
-        </p>
+        </span>
+        <span its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+          Value by default: <code>portrait</code>.
+        </span>
+      </p>
       <div class="issue" data-number="69"></div>
     </section>
       <section>
@@ -1043,8 +1050,8 @@
           <span its-locale-filter-list="en" lang="en">
             Value by default: <code>false</code>.
           </span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">
-            <span>@@@Chinese version here@@@</span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+            Value by default: <code>false</code>.
           </span>
         </p>
         <p class="issue">
@@ -1061,8 +1068,8 @@
           <span its-locale-filter-list="en" lang="en">
             Value by default: <code>750</code>.
           </span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">
-            <span>@@@Chinese version here@@@</span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+            Value by default: <code>750</code>.
           </span>
         </p>
       </section>
@@ -1076,8 +1083,8 @@
           <span its-locale-filter-list="en" lang="en">
             Value by default: <code>false</code>.
           </span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">
-            <span>@@@Chinese version here@@@</span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans" class="translateme">
+            Value by default: <code>false</code>.
           </span>
         </p>
       </section>
