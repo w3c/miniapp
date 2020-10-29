@@ -117,7 +117,7 @@
           <a>appID</a>
         </li>
         <li>
-          <a>appName</a>
+          <a>name</a>
         </li>
         <li>
           <a>icons</a>
@@ -219,18 +219,6 @@
             </td>
           </tr>
           <tr>
-            <td colspan="2"><a>appName</a></td>
-            <td> [=string=] </td>
-            <td>
-              <span its-locale-filter-list="en" lang="en">Yes</span>
-              <span its-locale-filter-list="zh-hans" lang="zh-hans">是</span>
-            </td>
-            <td>
-              <span its-locale-filter-list="en" lang="en">App name</span>
-              <span its-locale-filter-list="zh-hans" lang="zh-hans">名称</span>
-            </td>
-          </tr>
-          <tr>
             <td colspan="2"><a>description</a></td>
             <td> [=string=] </td>
             <td>
@@ -302,7 +290,7 @@
               <span its-locale-filter-list="en" lang="en">Language tag</span>
               <span its-locale-filter-list="zh-hans" lang="zh-hans">语言</span>
             </td>
-          </tr>
+          </tr>          
           <tr>
             <td colspan="2"><a>minPlatformVersion</a></td>
             <td> [=string=] </td>
@@ -316,6 +304,18 @@
             </td>
           </tr>
           <tr>
+            <td colspan="2"><a>name</a></td>
+            <td> [=string=] </td>
+            <td>
+              <span its-locale-filter-list="en" lang="en">Yes</span>
+              <span its-locale-filter-list="zh-hans" lang="zh-hans">是</span>
+            </td>
+            <td>
+              <span its-locale-filter-list="en" lang="en">App name</span>
+              <span its-locale-filter-list="zh-hans" lang="zh-hans">名称</span>
+            </td>
+          </tr>          
+          <tr>
             <td colspan="2"><a>pages</a></td>
             <td> [=array=] </td>
             <td>
@@ -328,7 +328,7 @@
             </td>
           </tr>          
           <tr>
-            <td colspan="2"><a>shortName</a></td>
+            <td colspan="2"><a>short_name</a></td>
             <td> [=string=] </td>
             <td>
               <span its-locale-filter-list="en" lang="en">No</span>
@@ -721,6 +721,30 @@
           Implementers are encouraged to provide an accurate value that matches the manifest content.
         </p>
       </section>
+      <section>
+        <h3>
+          <span its-locale-filter-list="en" lang="en"><code>name</code> member</span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans" class="retranslateme">名称</span>
+        </h3>
+        <p its-locale-filter-list="en" lang="en">
+          The <dfn>name</dfn> member is the descriptive name of the application. This is the name directly displayed to the user. It is used as the display name of MiniApp along with the desktop icon and in the context of MiniApp management. 
+        </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+          <code>name</code>，直接呈现给用户的名称，用于在桌面图标和MiniApp管理等处显示MiniApp的名称。
+        </p>
+      </section>
+      <section>
+        <h3>
+          <span its-locale-filter-list="en" lang="en"><code>short_name</code> member</span>
+          <span its-locale-filter-list="zh-hans" lang="zh-hans" class="retranslateme">简称</span>
+        </h3>
+        <p its-locale-filter-list="en" lang="en">
+          The <dfn>short_name</dfn> member provides a concise and easy-to-read name for MiniApp. It can be used when there is insufficient space to display the full MiniApp name provided in <code>name</code>.
+        </p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans">
+          <code>short_name</code>，为MiniApp提供简短易读的名称，可在没有足够空间显示MiniApp名称时使用。
+        </p>
+      </section>
     </section>
     <section id='webappmanifest-app-info-members' data-cite='manifest-app-info'>
         <h2>Members supplemented from the Application Information</h2>
@@ -767,36 +791,6 @@
              One common practice is to use the reverse-domain-name-like convention,
              e.g. <code>com.company.miniapp</code>.
            </span>
-        </p>
-      </section>
-      <section>
-        <h3>
-          <span its-locale-filter-list="en" lang="en"><code>appName</code> member</span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">名称</span>
-        </h3>
-        <p its-locale-filter-list="en" lang="en">
-          The <dfn>appName</dfn> member is the descriptive name of the application. This is the name directly displayed to the user. It is used as the display name of MiniApp along with the desktop icon and in the context of MiniApp management. 
-        </p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <code>appName</code>，直接呈现给用户的名称，用于在桌面图标和MiniApp管理等处显示MiniApp的名称。
-        </p>
-        <p class="issue">
-          Same as {{WebAppManifest/name}}. Should `appName` be `name`? 
-        </p>
-      </section>
-      <section>
-        <h3>
-          <span its-locale-filter-list="en" lang="en"><code>shortName</code> member</span>
-          <span its-locale-filter-list="zh-hans" lang="zh-hans">简称</span>
-        </h3>
-        <p its-locale-filter-list="en" lang="en">
-          The <dfn>shortName</dfn> member provides a concise and easy-to-read name for MiniApp. It can be used when there is insufficient space to display the full MiniApp name provided in <code>appName</code>.
-        </p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans">
-          <code>shortName</code>，为MiniApp提供简短易读的名称，可在没有足够空间显示MiniApp名称时使用。
-        </p>
-        <p class="issue">
-          Same as {{WebAppManifest/short_name}}. Should `shortName` be `short_name`? 
         </p>
       </section>
       <section>
@@ -882,10 +876,10 @@
             The <dfn>widgets</dfn> member defines a set of widgets that are a part of a MiniApp.
             Specifically, a MiniApp package can include MiniApp Pages and Widgets concurrently.
             As a part of the MiniApp application, widgets share some of the Manifest fields with the
-            MiniApp main program, e.g. <code>dir</code>, <code>lang</code>, <code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code>, and <code>versionCode</code>. However, a widget also has its private fields, defined in <a>MiniAppWidgetResource</a>.
+            MiniApp main program, e.g. <code>dir</code>, <code>lang</code>, <code>appID</code>, <code>name</code>, <code>short_name</code>, <code>icons</code>, <code>versionName</code>, and <code>versionCode</code>. However, a widget also has its private fields, defined in <a>MiniAppWidgetResource</a>.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
-            Widget是MiniApp的一部分。具体来说，MiniApp包中可同时包含 MiniApp Page和Widget。Widget作为MiniApp应用程序的一部分，Widget和MiniApp主体程序共用部分Manifest字段，比如：<code>dir</code>、<code>lang</code>、<code>appID</code>、<code>appName</code>、<code>shortName</code>、<code>icons</code>、<code>versionName</code>和<code>versionCode</code>。但是Widget也有自己的私有字段，如下表所示：
+            Widget是MiniApp的一部分。具体来说，MiniApp包中可同时包含 MiniApp Page和Widget。Widget作为MiniApp应用程序的一部分，Widget和MiniApp主体程序共用部分Manifest字段，比如：<code>dir</code>、<code>lang</code>、<code>appID</code>、<code>name</code>、<code>short_name</code>、<code>icons</code>、<code>versionName</code>和<code>versionCode</code>。但是Widget也有自己的私有字段，如下表所示：
         </p>
         <p its-locale-filter-list="en" lang="en">There are certain differences between the Widget-related APIs and the MiniApp APIs, hence, the declaration of the minimum platform version may be different. If the <code>minPlatformVersion</code> field of a widget is not set explicitly, it is then identical to the <code>minPlatformVersion</code> of the MiniApp by default.
         </p>
@@ -1157,8 +1151,8 @@
           如下属性为可本地化属性。无特别规定的情况下，共享默认的<code>dir</code>和<code>lang</code>配置。
       </p>
       <ul>
-          <li><a>appName</a></li>
-          <li><a>shortName</a></li>
+          <li><a>name</a></li>
+          <li><a>short_name</a></li>
           <li><a>description</a></li>
           <li><a>MiniAppWindowResource.navigationBarTitleText</a></li>
           <li><a>MiniAppWidgetResource.name</a></li>
@@ -1269,8 +1263,8 @@
             <span its-locale-filter-list="zh-hans" lang="zh-hans">信息透明</span>
         </h2>
         <p its-locale-filter-list="en" lang="en">
-            It is RECOMMENDED that the hosting platform makes the necessary meta information in the manifest available to the end-user, such as <code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code>, <code>description</code>. This is to give an end-user an opportunity to make a conscious decision to approve the installation and use of the MiniApp. This could also help to identify a spoofing MiniApp.</p>
-        <p its-locale-filter-list="zh-hans" lang="zh-hans"> <span class="rfc2119-zh">建议</span>宿主平台将manifest中的必要元数据信息提供给用户，比如<code>appID</code>, <code>appName</code>, <code>shortName</code>, <code>icons</code>, <code>versionName</code>, <code>description</code>。这样可以给用户一个机会来对MiniApp的安装和使用提供清晰的判断依据，也可以帮助用户来识别伪装的恶意MiniApp。</p>
+            It is RECOMMENDED that the hosting platform makes the necessary meta information in the manifest available to the end-user, such as <code>appID</code>, <code>name</code>, <code>short_name</code>, <code>icons</code>, <code>versionName</code>, <code>description</code>. This is to give an end-user an opportunity to make a conscious decision to approve the installation and use of the MiniApp. This could also help to identify a spoofing MiniApp.</p>
+        <p its-locale-filter-list="zh-hans" lang="zh-hans"> <span class="rfc2119-zh">建议</span>宿主平台将manifest中的必要元数据信息提供给用户，比如<code>appID</code>, <code>name</code>, <code>short_name</code>, <code>icons</code>, <code>versionName</code>, <code>description</code>。这样可以给用户一个机会来对MiniApp的安装和使用提供清晰的判断依据，也可以帮助用户来识别伪装的恶意MiniApp。</p>
     </section>
 </section>
 
@@ -1297,8 +1291,8 @@
                 "dir": "ltr",
                 "lang": "en-US",
                 "appID": "org.w3c.miniapp",
-                "appName": "MiniApp Demo",
-                "shortName": "MiniApp",
+                "name": "MiniApp Demo",
+                "short_name": "MiniApp",
                 "versionName": "1.0.0",
                 "versionCode": 1,
                 "description": "A Simple MiniApp Demo",
