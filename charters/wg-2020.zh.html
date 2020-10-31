@@ -76,9 +76,13 @@
       <p class="mission">
         <a href= "#TBD">MiniApps工作组</a>的<strong>任务</strong>是制定规范，以促进可互操作且功能强大的MiniApps的开发。
       </p>
-      <p>
-        <a href="#TBD">加入MiniApps工作组</a>
-      </p>
+      <div class="noprint">
+        <p class="join"><a href="https://www.w3.org/2004/01/pp-impl/#####/join">加入MiniApps工作组</a></p>
+      </div>
+
+         <p style="padding: 0.5ex; border: 1px solid green">章程的草案可在<a href="https://github.com/w3c/miniapp/charters/">GitHub</a>上找到，欢迎随时提<a href="https://github.com/w3c/miniapp/issues">issue</a>。
+          </p>
+
       <table class="summary-table">
         <tbody>
           <tr id="Duration">
@@ -122,17 +126,17 @@
         <h2 id="scope">
           范围
         </h2>
-        <p>MiniApp作为一种新的移动应用程序形式，利用Web技术（尤其是CSS和JavaScript）以及原生应用的功能，在中国等亚洲国家越来越受欢迎。为了增强不同MiniApp平台（又称为超级应用或宿主应用）之间的互操作性，主流MiniApp供应商自2019年5月以来一直在<a href="https://www.w3.org/2018/chinese-web-ig/index.zh-Hans.html">W3C中文Web兴趣组</a>中合作，并于2019年9月发布了<a href="https://www.w3.org/TR/mini-app-white-paper/">MiniApp标准化白皮书</a>作为初步的标准化探索。随着越来越多的全球公司对加入MiniApp相关讨论感兴趣，<a href="https://www.w3.org/community/miniapps/">MiniApps生态社区组</a>在TPAC 2019期间被提议成立，以便全球Web社区可以加入讨论。</p>
+        <p>MiniApp作为一种新的移动应用程序形式，利用Web技术（尤其是CSS和JavaScript）以及原生应用的功能，在全球范围内越来越受欢迎。为了增强不同MiniApp平台（又称为超级应用或宿主应用）之间的互操作性，主流MiniApp供应商自2019年5月以来一直在<a href="https://www.w3.org/2018/chinese-web-ig/index.zh-Hans.html">W3C中文Web兴趣组</a>中合作，并于2019年9月发布了<a href="https://www.w3.org/TR/mini-app-white-paper/">MiniApp标准化白皮书</a>作为初步的标准化探索。随着越来越多的全球公司对加入MiniApp相关讨论感兴趣，<a href="https://www.w3.org/community/miniapps/">MiniApps生态社区组</a>在TPAC 2019期间被提议成立，以便全球Web社区可以加入讨论。</p>
 
         <p>
-          在探索阶段，由于MiniApp与典型的Web环境相比具有不同的性质，因此确定了潜在的标准要求。例如，宿主平台可能不是浏览器，而应用的构造也可能不基于Web。因此，MiniApp与典型的Web环境在UI配置、渲染、资源打包以及对本地系统功能的API访问中使用了不同但相关的技术。现有的Web标准（如<a href="https://github.com/WICG/webpackage">Web Packaging</a>、<a href="https://www.w3.org/TR/appmanifest/">Web App Manifest</a>和Web API）则未涵盖此类情况。
+          在探索阶段，由于MiniApp与典型的Web环境相比具有独特的性质，因此确定了潜在的标准要求。MiniApps生态社区组已经进行了大量的研究工作并与W3C相关小组进行了联合讨论，以阐明MiniApp标准化的要求和可能的解决方案。例如，宿主平台可能不是浏览器，而应用的构造也可能不是基于Web上的资源。因此，MiniApp与典型的Web环境在UI配置、渲染、资源打包以及对本地系统功能的API访问中使用了不同但相关的技术。现有的Web标准（如<a href="https://github.com/WICG/webpackage">Web Packaging</a>、<a href="https://www.w3.org/TR/appmanifest/">Web App Manifest</a>和Web API）则未涵盖此类情况。
       </p>
 
-    <p>MiniApps工作组将正式开发在MiniApps生态社区组孵化的规范，这些规范将有利于MiniApp生态系统的互操作性和健壮性，包括：</p>
+    <p>MiniApps工作组旨在协调多样化的的MiniApp生态系统，实现不同MiniApp平台之间的互操作性，最大程度地实现MiniApps与万维网的融合，降低开发成本并促进该技术的采用。工作组的工作将基于MiniApps生态系统社区组针对MiniApp功能而制定的规范，包括：</p>
 <ol>
-    <li>MiniApp的基本架构和基本功能，例如URI scheme、widget、lifecycle、manifest和packaging；
-    <li>可以增强不同MiniApp平台之间的互操作性的组件、API和模板机制，如UI组件、设备API以及账号API等；
-    <li>与渐进式Web应用（PWA）等其他W3C工作合作，在Web功能的通用性方面进行协调。
+    <li>MiniApp的基本架构和基本功能，例如Manifest、Packaging、URI Solution和Lifecycle；
+    <li>可以增强不同MiniApp平台之间以及MiniApp平台和Web之间的互操作性的MiniApp UI组件和与组件相关的API和页面布局模板机制。工作组可以通过修订章程从MiniApp社区组的孵化结果包含其他组件和API的规范。
+    <li>在Web的通用性上与其他W3C的工作进行协调，尤其是安全性、隐私、信息无障碍、国际化和其他Web API（包括渐进式Web应用，即PWA）。
 </ol>
       </div>
       <div class="deliverables">
@@ -147,41 +151,11 @@
         </p>
         <dl>
           <dt>
-            MiniApp URI Scheme
-          </dt>
-          <dd>
-            <p>
-              This specification defines the MiniApp URI scheme syntax and the process to dereference the MiniApp URI scheme.
-            </p>
-            <p class="draft-status">
-              <b>草稿状态</b>： <a href="https://w3c.github.io/miniapp/specs/uri/">在MiniApp CG中孵化</a>
-            </p>
-            <p>
-              <b>Adopted Draft</b>: <a href=
-              "https://w3c.github.io/miniapp/specs/uri/">https://w3c.github.io/miniapp/specs/uri/</a>
-            </p>
-          </dd>
-          <dt>
-            MiniApp Lifecycle
-          </dt>
-          <dd>
-            <p>
-              This specification defines the MiniApp lifecycle events and the process to manage MiniApp and each page's lifecycle.
-            </p>
-            <p class="draft-status">
-              <b>草稿状态</b>： <a href="https://w3c.github.io/miniapp/specs/lifecycle/">在MiniApp CG中孵化</a>
-            </p>
-            <p>
-              <b>Adopted Draft</b>: <a href=
-              "https://w3c.github.io/miniapp/specs/lifecycle/">https://w3c.github.io/miniapp/specs/lifecycle/</a>
-            </p>
-          </dd>
-          <dt>
             MiniApp Manifest
           </dt>
           <dd>
             <p>
-              This specification defines a JSON-based manifest file that enables developers to set up basic information, window style, page route and other information of a MiniApp.
+              This specification defines a JSON-based manifest document that enables developers to set up descriptive information, window styling, page routing, feature policies, and other information of a MiniApp. The MiniApp Manifest specification will follow the recommendations of the <a href="https://w3ctag.github.io/design-principles/#extend-manifests">Web Platform Design Principles</a> to extend the <a href="https://www.w3.org/TR/appmanifest/">Web App Manifest</a>.
             </p>
             <p class="draft-status">
               <b>草稿状态</b>： <a href="https://w3c.github.io/miniapp/specs/manifest/">在MiniApp CG中孵化</a>
@@ -196,7 +170,7 @@
           </dt>
           <dd>
             <p>
-              This specification defines the standardized MiniApp package structure.
+              This specification defines the standardized MiniApp package structure and its construction method. The MiniApp package file includes all the application assets such as document templates, components, stylesheets, scripts, internationalization resources, security resources, and the manifest file. The MiniApps Working Group aims at defining a MiniApp package format to be processed by various runtime environment.
             </p>
             <p class="draft-status">
               <b>草稿状态</b>： <a href="https://w3c.github.io/miniapp/specs/packaging/">在MiniApp CG中孵化</a>
@@ -204,6 +178,21 @@
             <p>
               <b>Adopted Draft</b>: <a href=
               "https://w3c.github.io/miniapp/specs/packaging/">https://w3c.github.io/miniapp/specs/packaging/</a>
+            </p>
+          </dd>
+          <dt>
+            MiniApp Lifecycle
+          </dt>
+          <dd>
+            <p>
+              This specification defines the MiniApp lifecycle events and the process that enables developers to manage the lifecycle events of both MiniApp application lifecycle and each MiniApp page's lifecycle. MiniApp application lifecycle includes a set of events, including application initialization, application running in foreground, application running in background. MiniApp page lifecycle includes a set of events, including page loading, page first rendering ready, page running in foreground, page running in background and page unloading. Whenever possible, the specification should provide a mapping to existing Web specifications such as <a href="https://www.w3.org/TR/service-workers/">Service Workers</a> and <a href="https://w3c.github.io/page-visibility/">Page Visibility</a>.
+            </p>
+            <p class="draft-status">
+              <b>草稿状态</b>： <a href="https://w3c.github.io/miniapp/specs/lifecycle/">在MiniApp CG中孵化</a>
+            </p>
+            <p>
+              <b>Adopted Draft</b>: <a href=
+              "https://w3c.github.io/miniapp/specs/lifecycle/">https://w3c.github.io/miniapp/specs/lifecycle/</a>
             </p>
           </dd>
         </dl>
@@ -220,6 +209,21 @@
           其他交付文档
         </h3>
         <dl>
+          <dt>
+            MiniApp URI Solution
+          </dt>
+          <dd>
+            <p>
+              This document defines a MiniApp URI Deep Link solution that will work across various MiniApp platforms, with reference to existing URI standard work in W3C and related standard bodies.
+            </p>
+            <p class="draft-status">
+              <b>Draft state:</b> <a href="https://w3c.github.io/miniapp/specs/uri/">In progress in MiniApp CG</a>
+            </p>
+            <p>
+              <b>Adopted Draft</b>: <a href=
+              "https://w3c.github.io/miniapp/specs/uri/">https://w3c.github.io/miniapp/specs/uri/</a>
+            </p>
+          </dd>
         <dt>
           MiniApp Widget Requirements
         </dt>
@@ -265,10 +269,27 @@
           <tbody>
             <tr>
               <th>
-                MiniApp URI Scheme
+                MiniApp Manifest
               </th>
               <td>
                 Q1 2021
+              </td>
+              <td>
+                Q4 2021
+              </td>
+              <td>
+                Q3 2022
+              </td>
+              <td>
+                Q4 2022
+              </td>
+            </tr>
+            <tr>
+              <th>
+                MiniApp Packaging
+              </th>
+              <td>
+                Q2 2021
               </td>
               <td>
                 Q4 2021
@@ -299,36 +320,31 @@
             </tr>
             <tr>
               <th>
-                MiniApp Manifest
+                MiniApp URI Scheme
               </th>
               <td>
                 Q1 2021
               </td>
               <td>
-                Q4 2021
               </td>
               <td>
-                Q3 2022
               </td>
               <td>
-                Q4 2022
               </td>
             </tr>
+
             <tr>
               <th>
-                MiniApp Packaging
+                Widget Requirement
               </th>
               <td>
                 Q1 2021
               </td>
               <td>
-                Q4 2021
               </td>
               <td>
-                Q3 2022
               </td>
               <td>
-                Q4 2022
               </td>
             </tr>
           </tbody>
@@ -406,6 +422,18 @@
           </dt>
           <dd>
             Web性能工作组开发了页面可见性（Page Visibility）规范，其功能与MiniApp Lifecycle规范中的特性有关。
+          </dd>
+          <dt>
+            <a href="https://www.w3.org/sw/">Service Workers工作组</a>
+          </dt>
+          <dd>
+            Service Workers工作组开发了Service Workers规范，其功能与MiniApp Lifecycle规范中的功能有关。
+          </dd>
+          <dt>
+            <a href="https://www.w3.org/Style/CSS/">CSS工作组</a>
+          </dt>
+          <dd>
+            CSS工作组开发了向Web应用程序中的组件添加样式的机制，这与该组中潜在的UI组件标准化有关。
           </dd>
         </dl>
         <div>
@@ -496,7 +524,7 @@
           专利政策
         </h2>
         <p>
-          该工作组根据<a href="https://www.w3.org/Consortium/Patent-Policy/">W3C专利政策</a>（2004年2月5日版本，2017年8月1日更新）运作。为了促进Web标准的最广泛采用，W3C试图发布可以根据此政策在免专利使用费的基础上实现的正式推荐标准。有关小组的专利披露义务的更多信息，请参见<a href="https://www.w3.org/2004/01/pp-impl/">W3C专利政策实施</a>。
+          该工作组根据<a href="https://www.w3.org/Consortium/Patent-Policy/">W3C专利政策</a>（2020年9月15日版本）运作。为了促进Web标准的最广泛采用，W3C试图发布可以根据此政策在免专利使用费的基础上实现的正式推荐标准。有关小组的专利披露义务的更多信息，请参见<a href="https://www.w3.org/2004/01/pp-impl/">W3C专利政策实施</a>。
         </p>
       </div>
       <div class="licensing">
