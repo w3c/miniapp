@@ -18,7 +18,7 @@ Manifest, as the manifest file of MiniApp, includes configuration information th
 
 ## 2. Manifest Design
 
-To ensure the overall design requirements of [MiniApp Packaging](https://w3c.github.io/miniapp/specs/packaging/), [MiniApp Widget](https://w3c.github.io/miniapp/specs/widget-req/), and [MiniApp URI Scheme](https://w3c.github.io/miniapp/specs/uri/) are met, the manifest file of MiniApp should contain basic information of the application, page routing scope, window configuration information and widget configuration information, etc.
+To ensure the overall design requirements of [MiniApp Packaging](https://w3c.github.io/miniapp/specs/packaging/), [MiniApp Widget](https://w3c.github.io/miniapp/specs/widget-req/), and [MiniApp Addressing](https://w3c.github.io/miniapp/specs/uri/) are met, the manifest file of MiniApp should contain basic information of the application, page routing scope, window configuration information and widget configuration information, etc.
 
 ### Key Considerations
 
