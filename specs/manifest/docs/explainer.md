@@ -81,7 +81,7 @@ So far only a basic subset of MiniApp Manifest is specified. It will be graduall
 }
 ```
 
-## 4. Relationship with Web App Manifest
+## 4. Extension of the Web App Manifest
 The MiniApp manifest is developed in the way that it covers the most common practices in the  target ecosystems like 'Mini Program' [[1]](https://smartprogram.baidu.com/developer/index.html)[[2]](https://open.alipay.com/channel/miniIndex.htm)[[3]](https://mp.weixin.qq.com/cgi-bin/wx) and [Quick App](https://www.quickapp.cn/), while trying to be aligned (compatible) as much as possible with other ongoing web standard development. In this sense, the MiniApp Manifest follows the recommendations of the <a href="https://w3ctag.github.io/design-principles/#extend-manifests">Web Platform Design Principles</a> to extend the <a href="https://www.w3.org/TR/appmanifest/">Web App Manifest</a>. Therefore common elements (e.g. `dir`, `lang`) or counterparts (e.g. `window.orientation` vs. `orientation`) can be found in both manifest specifications. A detailed comparison given in [Appendix A](#a-miniapp-manifest-comparison-with-web-app-manifest).
 
 On the other hand, MiniApp manifest has different assumptions on the hosting platforms and the form of application from those of Web App Manifest, so there are aspects that are not matched:
