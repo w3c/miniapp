@@ -4,6 +4,7 @@ This document contains links to meeting minutes of the CG.
 
 ## 2020
 
+* [29 October 2020 TPAC Breakout Session](https://www.w3.org/2020/10/29-MiniApp-Standardization-minutes.html)
 * [15 October 2020 TeleConf](https://www.w3.org/2020/10/15-miniapp-minutes.html) ([summary](https://lists.w3.org/Archives/Public/public-miniapps/2020Oct/0003.html))
 * [10 September 2020 TeleConf](https://www.w3.org/2020/09/10-miniapp-minutes.html)
 * [26 August 2020 TeleConf on manifest](https://www.w3.org/2020/08/26-manifest-minutes.html)
