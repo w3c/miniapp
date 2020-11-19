@@ -86,13 +86,13 @@
             本文描述了一个标准化的MiniApp包构建方式，提供一种标准的包结构描述，将小程序页面所需的所有静态页面模板、CSS 和 JavaScript 文件，和配置文件（Manifest）打包在一起，允许在任何运行时环境可使用。
         </p>
         <p its-locale-filter-list="en" lang="en">
-            The Miniapp package file contains a manifest document (located in the root directory of the package). The manifest file includes an overview of the MiniApp, including page description and page path. The package file contains JavaScript code, one or more page files, including template code of page(s), CSS code for page style and JavaScript code for page logic. The MiniApp package file should support digital signature verification.
+            The MiniApp package file contains a manifest document (located in the root directory of the package). The manifest file includes an overview of the MiniApp, including page description and page path. The package file contains JavaScript code, page files, including template code of the page(s), CSS code for page style,  and JavaScript code for page logic. The MiniApp package file should support digital signature verification.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
             小程序包资源，包含一个配置文档，位于包的根目录下。配置文件应包括整个小程序的概述（页面描述及其对应路径，用于页面定位和开启）。包含 JavaScript 代码的应用级逻辑文件，一个或多个页面文件，包含页面结构的模板代码、页面样式的 CSS 代码和页面逻辑的 JavaScript 代码。小程序包应支持数字签名验证。
         </p>
         <p its-locale-filter-list="en" lang="en">
-            The MiniApp runtime environment (user agent) can identify MiniApp package files through standard package format and MIME media type. After fetching the MiniApp package file, all static page templates / CSS / JavaScript files are cached on the device through a standardized dereference step. These cached package resources are available until the next update without fetching the MiniApp package file again. In terms of launch mode, the MiniApp can be launched normally without network. The runtime environment (user agent) locates the specified startup page from the package cache path and starts the MiniApp according to the description of the manifest file.
+            The MiniApp runtime environment (user agent) can identify MiniApp package files through standard package format and MIME media type. After fetching the MiniApp package file, all static page templates / CSS / JavaScript files are cached on the device through standardized dereference steps. These cached package resources are available until the next update without fetching the MiniApp package file again. In terms of launch mode, the MiniApp can be launched normally without the network. The runtime environment (user agent) locates the specified start page from the package cache and starts the MiniApp according to the description of the manifest file.
         </p>
         <p its-locale-filter-list="zh-hans" lang="zh-hans">
             小程序运行时环境，可通过标准的文件格式、媒体类型识别小程序包文件。获取（Fetch）小程序包后，通过标准化的解引用，将所有静态页面模板、CSS 和 JavaScript 文件缓存在设备上。在下次更新之前，这些资源始终可用，无需重新获取（Fetch）小程序包文件。启动方式上，小程序无需网络也可以正常启动，运行时环境根据小程序标准配置文件的描述（manifest），从包缓存路径中定位指定的启动页面，启动小程序。
@@ -103,6 +103,37 @@
         <p>
             This is still a work in progress. The proposal is being incubated in the <a href="https://www.w3.org/community/miniapps/">W3C MiniApps Ecosystem Community Group</a>.
         </p>
+    </section>
+
+    <section>
+        <h2>Example of usage</h2>
+        <section>
+            <h2>Launch a MiniApp on the web</h2>
+            <p>
+                When the user clicks the MiniApp URL(an embedded href or the whole MiniApp URI link), the user agent will receive the URI and dereference the URI. The URI dereference process is defined by the MiniApp URI specification. Based on the host, appId, and version obtained after dereferencing the URI, the user agent posts an HTTPs request to download, install, and launch the specified page of MiniApp.
+            </p>
+            <pre class="example html">
+                &lt;!doctype html&gt;
+                &lt;html&gt;
+                &lt;a href=&quot;miniapp://foo;version=1.0.1-trial@example.com:8080/pages/index?k=v#bar&quot;&gt;open a MiniApp&lt;/a&gt;
+                &lt;/html&gt;
+            </pre>
+        </section>
+        <section>
+            <h2>Launch a MiniApp through the desktop shortcut</h2>
+            <p>
+                The user can launch the MiniApp from the desktop shortcut in the user agent (The user agent may be an Operation System like Mac OS or Android). This needs to pass this operating system common mechanism.（That may need to register the MiniApp calling scheme which defined in the MiniApp URI specification）
+            </p>
+        </section>
+        <section>
+            <h2>Security access to the third-party MiniApp package</h2>
+            <p>
+                The user agent needs to verify the digital signature before installing the third-party MiniApp package to ensure the legitimacy of the package source. This requires MiniApp package achievement needs to support the security verification capabilities of digital certificates to prevent man-in-the-middle attacks, package resource replacement, and other security issues in the transmission of package resources.
+            </p>
+            <p>
+                Some MiniApp users only want to use the MiniApps which have been safely verified. The user agents need to have the opportunity to audit trusted third-party digital certificates during binary transmission (for example TLS Handshake). [[RFC6962]]
+            </p>
+        </section>
     </section>
 
     <section>
@@ -143,7 +174,7 @@
             <ul>
                 <li><code>manifest.json</code> is responsible for the global configuration of the MiniApp, such as the file paths of MiniApp pages and the window configuration (e.g. navigator bar, background image and color, page title, etc.). Details are specified in the <a href="../manifest/index.html">Manifest specification</a>.</li>
                 <li><code>app.css</code> is responsible for the global CSS style for all MiniApp pages.</li>
-                <li><code>app.js</code> is responsible for the service logic of the MiniApp as well as the lifecycle management of it, such as launching, showing and hiding the MiniApp.</li>
+                <li><code>app.js</code> is responsible for the service logic of the MiniApp as well as the lifecycle management of it, such as launching, showing and hiding the MiniApp.[[MiniApp Lifecycle]]</li>
             </ul>
         </section>
         <section>
@@ -177,6 +208,166 @@
         </section>
     </section>
 
+    <section>
+        <h2>Dereferencing</h2>
+        <p>
+            The essential steps for dereferencing a MiniApp package contains 7 steps. The user agent SHOULD follow the rules to process the package archive file. And user Agent SHOULD execute the fail process according to the package dereferencing algorithm.
+        </p>
+
+        <section>
+            <h3>Step 1 - Acquire a MiniApp Archive</h3>
+            <p>
+                User Agent MAY obtains a MiniApp archive and verifying MiniApp archive through specific channels(unspecified, e.g. network or offline). The user agent MAY fetch a potential MiniApp archive through data transfer protocol, such as HTTPs, WebSocket, FTP, or specific TCP/UDP based protocols.
+            </p>
+            <section>
+                <h3>Verify Zip archive</h3>
+                <p>
+                    The MiniApp package archive file is packaged as a specialized ZIP file. It can be delivered to the user agent through different channels (unspecified, e.g. web, app store, offline), then installed/executed by the user agent. The user agent SHOULD verify the ZIP archive through the following algorithm.
+                </p>
+                <p>
+                    1. Get a potential ZIP archive.
+                </p>
+                <p>
+                    2. Read the local file header in the potential ZIP archive file.
+                </p>
+                <p>
+                    3. Check if these file header signature. (Specialized in .ZIP File Format Specification)
+                </p>
+                <p>
+                    4. If verified, process as a valid ZIP archive. [[ZIP]]
+                </p>
+                <p>
+                    5. Otherwise, process as an invalid ZIP archive.
+                </p>
+            </section>  
+            <section>
+                <h3>Verify the MiniApp MIME Type</h3>
+                <p>
+                    The user agent RECOMMEND obtains potential ZIP archives from data transfer protocols, such as HTTPs. Regardless of whether its extension is .zip or is not contain an extension, The user agent SHOULD process the specific algorithm to check the potential archive.
+                </p>
+                <p>
+                    The MIME type of the MiniApp package is <code>application/miniapp-pkg+zip</code> [[RFC6839]]. If the obtained potential Zip archive is defined in an unsupported MIME Type, The user agent SHOULD process the potential Zip archive as an invalid MiniApp package file.
+                </p>
+            </section>  
+        </section>  
+        <section>
+            <h3>Step 2 - Verify the MiniApp Package File</h3>
+            <p>
+                There may be network errors and security issues during the fetching of the MiniApp package archive. User Agent SHOULD verify the legitimacy of the archive. RECOMMEND verifying the digital signature file and integrity checking of an archive. The dereferencing OPTIONAL process the decryption of binary files.
+            </p>
+            <section>
+                <h3>Integrity Check</h3>
+                <p>
+                    If the MiniApp package is not data integrity or a different summary. User Agent SHOULD regard the archive as an ineffective MiniApp package archive. And executes the failure process.
+                </p>
+                <p>
+                    RECOMMEND User Agent to use the MD5 or SHA1 digest algorithm for verification. The MiniApp package digest algorithm is RECOMMEND using SHA-256 to ensure security.
+                </p>
+            </section>  
+            <section>
+                <h3>Encryption</h3>
+                <p>
+                    The MiniApp package encryption algorithm MAY use RSA encryption and passes the key verification to prevent the MiniApp package from being tampered during network transmission. For the encryption algorithm key length, it is RECOMMENDED to use RSA 4096 bit length.
+                </p>
+            </section>  
+        </section>  
+        <section>
+            <h3>Step 3 - Locate and Process the Digital Signature</h3>
+                <p>
+                    The MiniApp publishers need to sign the package achieves through digital certificates. The publisher needs to apply to the CA certification center to publish certificates. Before downloading the MiniApp package resources, the digital certificate SHOULD be to transport to the user agent through the agreement protocols.
+                </p>
+                <p>
+                    The user agent is RECOMMEND using X.509 version 3 [[RFC5280]] Spec digital certificates to build a secure channel for fetching package archive to prevent man-in-the-middle attacks. If the signature file is empty (this means that the signature file was not found in the MiniApp package archive), the signature is verified to incorrect. User Agent SHOULD execute the process of the installation failure.
+                </p>
+                <section>
+                    <h3>Miniapp Digital Signature </h3>
+                    <p>
+                        User Agent SHOULD locate the digital signatures in the archive. The digital signatures SHOULD be packaging in an archive file with other resources together. User Agent SHOULD process the failure execution while digital signatures checking failed.
+                    </p>
+                </section>  
+                <section>
+                    <h3>Locate Signature File</h3>
+                    <p>
+                        The user agent SHOULD verify the package digital signature file and check the digital signature identity before installing the MiniApp package. If the digital signature verification failed, it should be regarded as an ineffective package archive. User Agent SHOULD execute the MiniApp package installation failure process.
+                    </p>
+                    <p>
+                        The user agent SHOULD locate the X.509 Certificate file [RFC5280] in the MiniApp package archive. It is RECOMMEND using an algorithm with sufficient strength, key length, and certificate format. The MiniApp digital signature checking follows the [RFC5280] specification.
+                    </p>
+                </section>  
+                <section>
+                    <h3>Verify Digital Certificate</h3>
+                    <p>
+                        The user agent SHOULD verify the identity of the publisher of the MiniApp or the identity of the server by the CA certification center. (the PKI center is used as the standard certification center)
+                    </p>
+                    <p>
+                        The user agent SHOULD verify the identity of the MiniApp publisher or server domain name or package storage service identity, then install the MiniApp package achieve.
+                    </p>
+                    <p>
+                        When the MiniApp package certificate is revoked. The user agent needs to be able to quickly detect that the resource package is outdated. And executes the fail process when reloading.
+                    </p> 
+                </section>  
+        </section>  
+        <section>
+            <h3>Step 4 - Locate the Manifest File</h3>
+                <section>
+                    <h3>Locate Manifest File</h3>
+                    <p>
+                        User Agent SHOULD execute a failure installation process while the manifest.json file does not exist or the parsing process is incorrect. And executes the failure process.
+                    </p>
+                    <p>
+                        If the manifest file is detected, execute Step 5. User Agent SHOULD use JSON parser to process manifest.json and call the parsed object a manifest.
+                    </p>
+                </section>  
+        </section>  
+        <section>
+            <h3>Step 5 - Process the Manifest File</h3>
+                <section>
+                    <h3>Process Manifest File</h3>
+                    <p>
+                        User Agent SHOULD parse the attributes in the manifest.json file, which contains the MiniApp’s metadata. The metadata is the attribute values used for MiniApp runtime. The specific process of manifest metadata follows the MiniApp Manifest spec.[[MiniApp Manifest]]
+                    </p>
+                </section>
+        </section>  
+        <section>
+            <h3>Step 6 - Process Runtime </h3>
+                <section>
+                    <h3>Process Platform Runtime</h3>
+                    <p>
+                        User Agent SHOULD prepare the runtime environment. It contains Logic and View Layers. User agent MAY locate the first page in the MiniApp package in manifest's description.
+                    </p>
+                    <p>
+                        User Agent runtime is isolated with two parts, the logical layer, and the view layer. The logical layer loads logical code (such as app.js, page.js files). The view layer conditions and loads the page resource files (such as template HTML and CSS files).
+                    </p>
+                </section>
+                <section>
+                    <h3>Package Reload</h3>
+                    <p>
+                        User Agent NEED fetch the remote package file at first time installation. And User Agent SHOULD cache the Max-Age of a specific version of the package archive. User Agent MAY Only load business data without fetching the package archive again while MiniApp Reload.
+                    </p>
+                </section>
+        </section>  
+        <section>
+            <h3>Step 7 - Locate the Start File </h3>
+                <section>
+                    <h3>Locate the Start File in Logical</h3>
+                    <p>
+                        The logic layer start file of Mini App is app.js, which is responsible for life cycle management, launching, showing, and hiding. User Agent SHOULD find the logical start file app.js of MiniApp.
+                    </p>
+                </section>
+                <section>
+                    <h3>Locate the Start File to Render</h3>
+                    <p>
+                        Each MiniApp SHOULD have a start file, which is responsible for the structure, similar to HTML.
+                    </p>
+                    <p>
+                        User Agent SHOULD locate the first page as which path MiniApp URI Scheme [[MiniApp URI Scheme]] defined while starting up MiniApp through the MiniApp URI.
+                    </p>
+                    <p>
+                        If MiniApp URI Scheme's specific the path is empty, The user agent SHOULD use the routing configuration pages in manifest.json (pages should be the path of all pages in the MiniApp). The first page SHOULD be the default first page.
+                    </p>
+                </section>
+        </section>  
+    </section>
     <section>
         <h2>Security & Privacy Considerations</h2>
 
