@@ -1,4 +1,16 @@
+TODO: move the specs per https://github.com/w3c/miniapp/issues/146
+
+TODO: link to WG charter
+
 # MiniApp Standardization
+
+## MiniApps Working Group
+
+* [WG homepage](https://www.w3.org/2021/miniapps/)
+* [WG Specs](https://github.com/w3c/miniapp/tree/gh-pages/specs)
+* [WG Charter](@@)
+
+## MiniApps Ecosystem Community Group
 
 * [CG homepage](https://www.w3.org/community/miniapps/)
 * [CG Specs](https://github.com/w3c/miniapp/tree/gh-pages/specs)
