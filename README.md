@@ -1,20 +1,10 @@
-TODO: move the specs per https://github.com/w3c/miniapp/issues/146
-
-TODO: link to WG charter
-
-TODO: add a link to https://www.w3.org/2021/01/27-MiniApps-WG-session.html
-
-TODO: Separate WG meetings from CG meetings
-
-TODO: link to CJK meeting
-
 # MiniApp Standardization
 
 ## MiniApps Working Group
 
 * [WG Homepage](https://www.w3.org/2021/miniapps/)
 * [WG Specs](https://github.com/w3c/miniapp/tree/gh-pages/specs)
-* [WG Charter](@@)
+* [WG Charter](https://www.w3.org/2021/01/miniapps-wg-charter.html)
 
 ## MiniApps Ecosystem Community Group
 
