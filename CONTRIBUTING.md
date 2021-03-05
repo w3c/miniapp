@@ -1,6 +1,15 @@
-# MiniApps Ecosystem Community Group
+# MiniApp Standardization
 
-This repository is being used for work in the W3C MiniApps Ecosystem Community Group, governed by the [W3C Community License Agreement (CLA)](https://www.w3.org/community/about/agreements/cla/). To make substantive contributions, you must join the CG. 
+This repository is being used for work in the MiniApps Working Group and the W3C MiniApps Ecosystem Community Group. Some documents are intended to become part of Recommendation-track documents, and are governed by the:
+
+  * [W3C Patent Policy](https://www.w3.org/Consortium/Patent-Policy-20200915/)
+  * [Software and Document License](https://www.w3.org/Consortium/Legal/copyright-software)
+
+To make substantive contributions to these specifications, you must either participate in the relevant W3C Working Group or make a non-member patent licensing commitment.
+
+Some documents are still incubated in the Community Group, and are governed by the [W3C Community License Agreement (CLA)](https://www.w3.org/community/about/agreements/cla/).
+
+To make substantive contributions, you must join the CG. 
 
 If you are not the sole contributor to a contribution (pull request), please identify all 
 contributors in the pull request comment.

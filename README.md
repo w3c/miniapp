@@ -1,7 +1,14 @@
 # MiniApp Standardization
 
-* [CG homepage](https://www.w3.org/community/miniapps/)
-* [CG Specs](https://github.com/w3c/miniapp/tree/gh-pages/specs)
+## MiniApps Working Group
+
+* [WG Homepage](https://www.w3.org/2021/miniapps/)
+* [WG Specs](https://github.com/w3c/miniapp/tree/gh-pages/specs)
+* [WG Charter](https://www.w3.org/2021/01/miniapps-wg-charter.html)
+
+## MiniApps Ecosystem Community Group
+
+* [CG Homepage](https://www.w3.org/community/miniapps/)
 * [CG Charter](https://w3c.github.io/miniapp/charters/cg.html)
 * [CG Meetings](https://github.com/w3c/miniapp/blob/gh-pages/Meetings/Meetings.md)
 
