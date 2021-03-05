@@ -2,6 +2,11 @@
 
 This document contains links to meeting minutes of the CG.
 
+## 2021
+
+* [25 Feb 2021 TeleConf](https://www.w3.org/2021/02/25-miniapp-minutes.html) ([summary](https://lists.w3.org/Archives/Public/public-miniapps/2021Mar/0001.html))
+* [14 January 2021 TeleConf](https://www.w3.org/2021/01/14-miniapp-minutes.html) ([summary](https://lists.w3.org/Archives/Member/internal-miniapps/2021Jan/0001.html))
+
 ## 2020
 
 * [10 December 2020 TeleConf](https://www.w3.org/2020/12/10-miniapp-minutes.html) ([summary](https://lists.w3.org/Archives/Public/public-miniapps/2020Dec/0000.html))
