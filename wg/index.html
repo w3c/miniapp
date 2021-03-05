@@ -11,6 +11,45 @@
     To get your own API key, go to https://www.w3.org/users/myprofile/apikeys
   -->
   <style>
+
+:root {
+    color-scheme: light dark;
+
+    --a-normal-text: #1955a5;
+
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text: #ddd;
+		--bg: #111;
+
+		--heading-text: #f2ecde;
+
+		--hr-text: var(--text);
+
+		--del-text: #f44;
+		--del-bg: transparent;
+		--ins-text: #4a4;
+		--ins-bg: transparent;
+
+		/* --a-normal-text: #6af; */
+		--a-normal-text: var(--text);
+		--a-normal-underline: #555;
+		--a-visited-text: var(--a-normal-text);
+		--a-visited-underline: var(--a-normal-underline);
+		--a-hover-bg: rgba(25%, 25%, 25%, .2);
+		/* --a-active-text: #f44;
+		--a-active-underline: var(--a-active-text); */
+
+		--blockquote-border: silver;
+		--blockquote-bg: #181818;
+		--blockquote-text: var(--text);
+
+		--dd-text: #aaa;
+	}
+}
+
     @keyframes fadeInOpacity {
       0% {
         opacity: 0;
@@ -28,16 +67,19 @@
       margin: 0 auto;
       font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
       padding: 0 0.25cm;
+      color: var(--text);
+      background-color: var(--bg);
     }
 
     a:link,
     a:visited {
       text-decoration: none;
       color: #0d1321;
+      color: var(--a-visited-text);
     }
 
     a:hover {
-      color: #1955a5;
+      color: var(--a-normal-text);
     }
 
     dl,
@@ -65,6 +107,7 @@
     header h1 {
       font-weight: normal;
       color: #0d1321;
+      color: var(--heading-text);
       font-size: 1.7em;
     }
 
@@ -75,8 +118,10 @@
 
     header nav a:hover {
       color: black;
+      color: var(--a-normal-text);
       padding-bottom: 0.1cm;
       border-bottom: 0.1cm solid black;
+      border-bottom: 0.1cm solid var(--a-normal-text);
     }
 
     main {
@@ -150,6 +195,7 @@
       margin: 0.1cm 0 0 0;
       font-size: 0.8em;
       color: #555;
+      color: var(--dd-text);
     }
 
     #about {
