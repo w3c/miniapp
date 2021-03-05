@@ -8,5 +8,5 @@
 
 * * *
 
-* Addressing: [spec](https://w3c.github.io/miniapp/specs/uri/) / [explainer](https://github.com/w3c/miniapp/blob/gh-pages/specs/uri/docs/explainer.md) / [repo](https://github.com/w3c/miniapp-addressing)
+* Addressing: [spec](https://w3c.github.io/miniapp-addressing/) / [explainer](https://github.com/w3c/miniapp-addressing/blob/main/docs/explainer.md) / [repo](https://github.com/w3c/miniapp-addressing)
 * Widget Requirements: [spec](https://w3c.github.io/miniapp/specs/widget-req/)
