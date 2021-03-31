@@ -9,4 +9,4 @@
 * * *
 
 * Addressing: [spec](https://w3c.github.io/miniapp-addressing/) / [explainer](https://github.com/w3c/miniapp-addressing/blob/main/docs/explainer.md) / [repo](https://github.com/w3c/miniapp-addressing) / [issues](https://github.com/w3c/miniapp-addressing/issues)
-* Widget: [spec](https://w3c.github.io/miniapp-widget/req/) / [repo](https://github.com/w3c/miniapp-widget/issues) / [issues](https://github.com/w3c/miniapp-widget/issues)
+* Widget: [spec](https://w3c.github.io/miniapp-widget/req/) / [repo](https://github.com/w3c/miniapp-widget) / [issues](https://github.com/w3c/miniapp-widget/issues)
