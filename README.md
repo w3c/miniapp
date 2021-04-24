@@ -5,13 +5,15 @@
 * [WG Homepage](https://www.w3.org/2021/miniapps/)
 * [WG Specs](https://github.com/w3c/miniapp/tree/gh-pages/specs)
 * [WG Charter](https://www.w3.org/2021/01/miniapps-wg-charter.html)
-* [WG Meetings](https://github.com/w3c/miniapp/blob/gh-pages/Meetings/WG.md)
+* [WG Meeting Minutes](https://github.com/w3c/miniapp/blob/gh-pages/Meetings/WG.md)
+* [WG Calendar](https://www.w3.org/groups/wg/miniapps/calendar)
 
 ## MiniApps Ecosystem Community Group
 
 * [CG Homepage](https://www.w3.org/community/miniapps/)
 * [CG Charter](https://w3c.github.io/miniapp/charters/cg.html)
-* [CG Meetings](https://github.com/w3c/miniapp/blob/gh-pages/Meetings/CG.md)
+* [CG Meeting Minutes](https://github.com/w3c/miniapp/blob/gh-pages/Meetings/CG.md)
+* [CG Calendar](https://www.w3.org/groups/cg/miniapps/calendar)
 
 ## Other documents
 
