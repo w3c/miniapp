@@ -4,6 +4,7 @@ This document contains links to meeting minutes of the WG.
 
 ## 2021
 
+* [27 May 2021 TeleConf](https://www.w3.org/2021/05/27-miniapp-minutes.html)
 * [29 April 2021 TeleConf](https://www.w3.org/2021/04/29-MiniApp-minutes.html)
 * [8 April 2021 CJK Meeting](https://www.w3.org/2021/03/miniapp-cjk/index.html) ([minutes](https://www.w3.org/2021/04/08-MiniApp-minutes.html))
 * [1 April 2021 TeleConf](https://www.w3.org/2021/04/01-miniapp-minutes.html)
