@@ -4,6 +4,7 @@ This document contains links to meeting minutes of the CG.
 
 ## 2021
 
+* [17 June 2021 TeleConf](https://www.w3.org/2021/06/17-miniapp-minutes.html)
 * [20 May 2021 TeleConf](https://www.w3.org/2021/05/20-MiniApp-minutes.html)
 * [22 April 2021 TeleConf](https://www.w3.org/2021/04/22-miniapp-minutes.html)
 * [8 April 2021 CJK Meeting](https://www.w3.org/2021/03/miniapp-cjk/index.html) ([minutes](https://www.w3.org/2021/04/08-MiniApp-minutes.html))
