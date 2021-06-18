@@ -11,6 +11,7 @@
 ## MiniApps Ecosystem Community Group
 
 * [CG Homepage](https://www.w3.org/community/miniapps/)
+* [CG Specs](https://github.com/w3c/miniapp/tree/gh-pages/specs)
 * [CG Charter](https://w3c.github.io/miniapp/charters/cg.html)
 * [CG Meeting Minutes](https://github.com/w3c/miniapp/blob/gh-pages/Meetings/CG.md)
 * [CG Calendar](https://www.w3.org/groups/cg/miniapps/calendar)
