@@ -15,4 +15,5 @@
 
 ## CG documents
 
+* UI Components: [spec](https://w3c.github.io/miniapp-components/) / [repo](https://github.com/w3c/miniapp-components) / [issues](https://github.com/w3c/miniapp-components/issues)
 * IoT: [spec](https://w3c.github.io/miniapp-iot/) / [repo](https://github.com/w3c/miniapp-iot) / [issues](https://github.com/w3c/miniapp-iot/issues)
