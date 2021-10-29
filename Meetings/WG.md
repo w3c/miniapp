@@ -4,6 +4,7 @@ This document contains links to meeting minutes of the WG.
 
 ## 2021
 
+* [28 October 2021 TPAC vF2F](https://www.w3.org/2021/10/28-MiniApp-minutes.html)
 * [19 October 2021 TPAC Breakout Session](https://www.w3.org/2021/10/18-miniapptools-minutes.html)
 * [23 September 2021 TeleConf](https://www.w3.org/2021/09/23-MiniApp-minutes.html)
 * [26 August 2021 TeleConf](https://www.w3.org/2021/08/26-miniapp-minutes.html)
