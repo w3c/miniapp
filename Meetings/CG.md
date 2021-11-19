@@ -4,6 +4,7 @@ This document contains links to meeting minutes of the CG.
 
 ## 2021
 
+* [18 November 2021 TeleConf](https://www.w3.org/2021/11/18-MiniApp-minutes.html)
 * [28 October 2021 TPAC vF2F](https://www.w3.org/2021/10/28-MiniApp-minutes.html)
 * [19 October 2021 TPAC Breakout Session](https://www.w3.org/2021/10/18-miniapptools-minutes.html)
 * [16 September 2021 TeleConf](https://www.w3.org/2021/09/16-miniapp-minutes.html)
