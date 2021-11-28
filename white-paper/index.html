@@ -12,14 +12,14 @@
     }
 
     table {
-      border-collapse:collapse;
+      border-collapse: collapse;
     }
 
-    table,th, td {
+    table, th, td {
       border: 1px solid #666;
     }
 
-    td {
+    th, td {
       padding:2px 15px;
     }
     </style>
@@ -636,20 +636,23 @@
                  <p>Note: the further gap between current MiniApp APIs and Web APIs will be analyzed in parallel.</p>
             </section>
 
-            <section>
+            <section id="glossary">
                 <h2>Glossary</h2>
-                <table>
-                      <tbody><tr>
+                <table class="glossary">
+                  <thead>
+                      <tr>
                         <th>Chinese</th>
                         <th>English</th>
-                        <th></th>
+                        <th>Definition</th>
                       </tr>
+                    </thead>
+                      <tbody>
                       <tr id="term.mini-program">
                         <td>小程序</td>
                         <td>Mini Program</td> 
                         <td>One format of MiniApp running within Native Apps.</td> 
                       </tr>
-                      <tr id="term.">
+                      <tr id="term.quick-app">
                         <td>快应用</td>
                         <td>Quick App</td>
                         <td>A MiniApp standard developed by 12 mobile phone manufacturers in Quick App alliances.</td> 
