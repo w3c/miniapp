@@ -742,10 +742,9 @@
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Calendar (@system.calendar)</td>
-          <td class="c6">Calendar (private
-            implementation)</td>
-          <td class="c7">No</td>
+          <td class="c5">`@system.calendar`</td>
+          <td class="c6">`Calendar` element</td>
+          <td class="c7">`swan.addEventOnCalendar`</td>
         </tr>
         <tr class="r48">
           <td class="c0">Forms
@@ -769,7 +768,7 @@
           <td class="c4">No</td>
           <td class="c5">No</td>
           <td class="c6">`my.chooseCity`</td>
-          <td class="c7">`picker` component (`mode=region`)</td>
+          <td class="c7">`picker` element (`mode=region`)</td>
         </tr>
         <tr class="r50">
           <td class="c0">Forms
@@ -786,35 +785,35 @@
         <tr class="r51">
           <td class="c0">Sensors and 
             Local Interactions</td>
-          <td class="c1">Sensor (Ambient Light)</td>
+          <td class="c1">Ambient Light Sensor</td>
           <td class="c2"><a href="https://www.w3.org/TR/ambient-light/">Ambient Light Sensor</a>
           </td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5"></td>
+          <td class="c5">`sensor.subscribeLight`</td>
           <td class="c6">&nbsp;</td>
           <td class="c7">No</td>
         </tr>
         <tr class="r52">
           <td class="c0">Sensors and 
             Local Interactions</td>
-          <td class="c1">Sensor (Proximity)</td>
-          <td class="c2"><a href="https://w3c.github.io/proximity/">Proximity Sensor</a></td>
+          <td class="c1">Proximity Sensor</td>
+          <td class="c2"><a href="https://www.w3.org/TR/proximity/">Proximity Sensor</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Sensor (sensor.subscribeProximity(OBJECT))</td>
+          <td class="c5">`sensor.subscribeProximity`</td>
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
         <tr class="r53">
           <td class="c0">Sensors and 
             Local Interactions</td>
-          <td class="c1">Sensor (Orientation Event)</td>
-          <td class="c2"><a href="https://w3c.github.io/deviceorientation/">DeviceOrientation
+          <td class="c1">Orientation Event</td>
+          <td class="c2"><a href="https://www.w3.org/TR/orientation-event/">DeviceOrientation
               Event</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Sensor (sensor.subscribeCompass(OBJECT))</td>
+          <td class="c5">`sensor.subscribeCompass`</td>
           <td class="c6">my.onCompassChange/offCompassChange</td>
           <td class="c7">swan.onCompassChange<br />
             swan.startCompass<br />
@@ -823,12 +822,12 @@
         <tr class="r54">
           <td class="c0">Sensors and 
             Local Interactions</td>
-          <td class="c1">Sensor (OrientationSensor)</td>
+          <td class="c1">Orientation Sensor</td>
           <td class="c2"><a href="https://w3c.github.io/orientation-sensor/">Orientation
               Sensor</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Sensor (sensor.subscribeCompass(OBJECT))</td>
+          <td class="c5">`sensor.subscribeCompass`</td>
           <td class="c6">my.onCompassChange/offCompassChange</td>
           <td class="c7">swan.onCompassChange<br />
             swan.startCompass<br />
@@ -837,8 +836,8 @@
         <tr class="r55">
           <td class="c0">Sensors and 
             Local Interactions</td>
-          <td class="c1">Sensor (Magnetometer)</td>
-          <td class="c2"><a href="https://w3c.github.io/magnetometer/">Magnetometer</a></td>
+          <td class="c1">Magnetometer</td>
+          <td class="c2"><a href="https://www.w3.org/TR/magnetometer/">Magnetometer</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
           <td class="c5">Sensor (sensor.subscribeCompass(OBJECT))</td>
@@ -850,11 +849,11 @@
         <tr class="r56">
           <td class="c0">Sensors and 
             Local Interactions</td>
-          <td class="c1">Sensor (Gyroscope)</td>
-          <td class="c2"><a href="http://w3c.github.io/gyroscope/">Gyroscope</a></td>
-          <td class="c3">WD</td>
+          <td class="c1">Gyroscope</td>
+          <td class="c2"><a href="https://www.w3.org/TR/gyroscope/">Gyroscope</a></td>
+          <td class="c3">CR</td>
           <td class="c4">Yes</td>
-          <td class="c5">Sensor (sensor.subscribeCompass(OBJECT))</td>
+          <td class="c5">`sensor.subscribeCompass`</td>
           <td class="c6">my.onGyroscopeChange/offGyroscopeChange</td>
           <td class="c7">swan.onCompassChange<br />
             swan.startCompass<br />
@@ -863,11 +862,11 @@
         <tr class="r57">
           <td class="c0">Sensors and 
             Local Interactions</td>
-          <td class="c1">Sensor (Accelerometer)</td>
-          <td class="c2"><a href="https://w3c.github.io/accelerometer/">Accelerometer</a></td>
-          <td class="c3">WD</td>
+          <td class="c1">Accelerometer</td>
+          <td class="c2"><a href="https://www.w3.org/TR/accelerometer/">Accelerometer</a></td>
+          <td class="c3">CR</td>
           <td class="c4">Yes</td>
-          <td class="c5">Sensor (sensor.subscribeAccelerometer(OBJECT))</td>
+          <td class="c5">`sensor.subscribeAccelerometer`</td>
           <td class="c6">my.onAccelerometerChange/offAccelerometerChange</td>
           <td class="c7">swan.onAccelerometerChange<br />
             swan.offAccelerometerChange</td>
@@ -875,12 +874,12 @@
         <tr class="r58">
           <td class="c0">Sensors and 
             Local Interactions</td>
-          <td class="c1">Sensor(Geolocation)</td>
-          <td class="c2"><a href="https://w3c.github.io/geolocation-sensor/">Geolocation
+          <td class="c1">Geolocation</td>
+          <td class="c2"><a href="https://www.w3.org/TR/geolocation-sensor/">Geolocation
               Sensor</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Geoloaction (@system.geolocation)</td>
+          <td class="c5">`@system.geolocation`</td>
           <td class="c6">Location (private
             implementation)</td>
           <td class="c7">swan.getLocation<br />
@@ -890,36 +889,21 @@
         <tr class="r59">
           <td class="c0">Sensors and 
             Local Interactions</td>
-          <td class="c1">Sensor</td>
-          <td class="c2"><a href="https://w3c.github.io/sensors/">Generic Sensor API</a></td>
-          <td class="c3">WD</td>
+          <td class="c1">Generic Sensor</td>
+          <td class="c2"><a href="https://www.w3.org/TR/generic-sensor/">Generic Sensor API</a></td>
+          <td class="c3">CR</td>
           <td class="c4">Yes</td>
-          <td class="c5">Sensor (@system.sensor)</td>
+          <td class="c5">`@system.sensor`</td>
           <td class="c6">Yes (private
             implementation)</td>
           <td class="c7">Not general</td>
-        </tr>
-        <tr class="r60">
-          <td class="c0">Sensors and 
-            Local Interactions</td>
-          <td class="c1">Geolocation</td>
-          <td class="c2"><a href="https://www.w3.org/TR/geolocation-API/">Geolocation API</a>
-          </td>
-          <td class="c3">Rec</td>
-          <td class="c4">Yes</td>
-          <td class="c5">Geoloaction (@system.geolocation)</td>
-          <td class="c6">Location (private
-            implementation)</td>
-          <td class="c7">swan.getLocation<br />
-            swan.chooseLocation<br />
-            swan.openLocation</td>
         </tr>
         <tr class="r61">
           <td class="c0">Sensors and 
             Local Interactions</td>
           <td class="c1">WebHID</td>
-          <td class="c2"><a href="https://wicg.github.io/webhid/index.html">WebHID API</a></td>
-          <td class="c3">ED</td>
+          <td class="c2"><a href="https://wicg.github.io/webhid/">WebHID API</a></td>
+          <td class="c3">CGR</td>
           <td class="c4">Yes</td>
           <td class="c5">No</td>
           <td class="c6">No</td>
@@ -940,10 +924,10 @@
           <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">Battery Status</td>
-          <td class="c2"><a href="https://w3c.github.io/battery/">Battery Status API</a></td>
-          <td class="c3">CR</td>
+          <td class="c2"><a href="https://www.w3.org/TR/battery-status/">Battery Status API</a></td>
+          <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">Battery (@system.battery)</td>
+          <td class="c5">`@system.battery`</td>
           <td class="c6">my.getSystemInfo</td>
           <td class="c7">swan.getBatteryInfo<br />
             swan.getBatteryInfoSync</td>
@@ -955,7 +939,7 @@
           <td class="c2"><a href="https://w3c.github.io/web-nfc/">Web NFC API</a></td>
           <td class="c3">CGR</td>
           <td class="c4">Yes</td>
-          <td class="c5">&nbsp;</td>
+          <td class="c5">`@system.nfc`</td>
           <td class="c6">&nbsp;</td>
           <td class="c7">No</td>
         </tr>
@@ -967,8 +951,7 @@
               Bluetooth</a></td>
           <td class="c3">CGR</td>
           <td class="c4">Yes</td>
-          <td class="c5">Bluetooth (private
-            implementation)</td>
+          <td class="c5">`@system.bluetooth`</td>
           <td class="c6">Bluetooth (private
             implementation)</td>
           <td class="c7">No</td>
@@ -980,7 +963,7 @@
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Device Info (@system.device)</td>
+          <td class="c5">`@system.device`</td>
           <td class="c6">my.getSystemInfo</td>
           <td class="c7">swan.getSystemInfo</td>
         </tr>
@@ -992,89 +975,85 @@
               Information API</a></td>
           <td class="c3">CGR</td>
           <td class="c4">Yes</td>
-          <td class="c5">Network Info 
-            (@system.network)</td>
+          <td class="c5">`@system.network`</td>
           <td class="c6">Network Status 
             (private implementation)</td>
           <td class="c7">swan.getNetworkType</td </tr>
         <tr class="r68">
           <td class="c0">Sensors and Local Interactions
           </td>
-          <td class="c1">Screen Brightness</td>
+          <td class="c1">Screen Brightness Control</td>
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Screen Brightness 
-            (@system.brightness)</td>
+          <td class="c5">`@system.brightness`</td>
           <td class="c6">Screen Brightness 
             (private implementation)</td>
-          <td class="c7">swan.setScreenBrightness<br />
-            swan.getScreenBrightness</td>
+          <td class="c7">`swan.setScreenBrightness`<br />
+            `swan.getScreenBrightness`</td>
         </tr>
         <tr class="r69">
           <td class="c0">Sensors and Local Interactions
           </td>
-          <td class="c1">System Volume</td>
+          <td class="c1">System Volume Control</td>
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">System Volume (@system.volume)</td>
+          <td class="c5">`@system.volume`</td>
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
         <tr class="r70">
           <td class="c0">Sensors and Local Interactions
           </td>
-          <td class="c1">App Management</td>
+          <td class="c1">Third-party App Management</td>
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">App Management 
-            (@system.package)</td>
-          <td class="c6">No and managed by 
-            Alipay</td>
-          <td class="c7">No and managed by 
-            Baidu App</td>
+          <td class="c5">`@system.package`</td>
+          <td class="c6">No (only managed by 
+            Alipay)</td>
+          <td class="c7">No (only managed by 
+            Baidu App)</td>
         </tr>
         <tr class="r71">
           <td class="c0">Sensors and Local Interactions
           </td>
-          <td class="c1">Contact</td>
-          <td class="c2">No</td>
-          <td class="c3">&nbsp;</td>
-          <td class="c4">No</td>
-          <td class="c5">Contact (@system.contact)</td>
-          <td class="c6">Contact (private
-            implementation)</td>
-          <td class="c7">swan.addPhoneContact</td>
+          <td class="c1">Contacts Management</td>
+          <td class="c2"><a href="https://w3c.github.io/contact-api/spec/">Contact Picker API</a></td>
+          <td class="c3">Proposal</td>
+          <td class="c4">?</td>
+          <td class="c5">`@system.contact` (pick and list)</td>
+          <td class="c6">`my.addPhoneContact`</td>
+          <td class="c7">`swan.addPhoneContact`</td>
         </tr>
         <tr class="r72">
           <td class="c0">Sensors and Local Interactions
           </td>
-          <td class="c1">SMS</td>
-          <td class="c2">No</td>
+          <td class="c1"><abbr title="Short Message Service">SMS</abbr> Management</td>
+          <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">SMS (@system.sms)</td>
+          <td class="c5">`@system.sms`</td>
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
         <tr class="r73">
           <td class="c0">Sensors and Local Interactions
           </td>
-          <td class="c1">Wi-Fi</td>
-          <td class="c2">No</td>
+          <td class="c1" title="Management of Wi-Fi connections">Wi-Fi Management</td>
+          <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Wi-Fi (@system.wifi)</td>
-          <td class="c6">No</td>
-          <td class="c7">No</td>
+          <td class="c5">`@system.wifi`</td>
+          <td class="c6">Wi-Fi API</td>
+          <td class="c7">Wi-Fi API</td>
         </tr>
         <tr class="r74">
           <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">Card</td>
-          <td class="c2">No</td>
+          <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">Yes</td>
@@ -1086,12 +1065,12 @@
           </td>
           <td class="c1">Phone Call</td>
           <td class="c2"><a href="https://www.w3.org/2012/sysapps/telephony/">Web Telephony
-              API (No update for 5 years)</a></td>
-          <td class="c3">ED</td>
+              API</a></td>
+          <td class="c3">Discontinued</td>
           <td class="c4">No</td>
-          <td class="c5">Yes</td>
-          <td class="c6">my.makePhoneCall(OBJECT)</td>
-          <td class="c7">swan.makePhoneCall</td>
+          <td class="c5">No</td>
+          <td class="c6">`my.makePhoneCall`</td>
+          <td class="c7">`swan.makePhoneCall`</td>
         </tr>
         <tr class="r76">
           <td class="c0">Sensors and Local Interactions
@@ -1101,9 +1080,9 @@
           <td class="c2">No</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Yes(Partial)</td>
-          <td class="c6">No</td>
-          <td class="c7">Yes(Partial)</td>
+          <td class="c5">Yes (locale and themes)</td>
+          <td class="c6">Partial (`my.openSetting`)</td>
+          <td class="c7">Partial (`swan.openSetting`)</td>
         </tr>
         <tr class="r77">
           <td class="c0">Graphics and Layout
