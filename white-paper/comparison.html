@@ -1211,48 +1211,45 @@
         <tr class="r88">
           <td class="c0">Security and Privacy</td>
           <td class="c1">Web Crypto API</td>
-          <td class="c2"><a href="https://w3c.github.io/webcrypto/">Web Cryptography API</a>
+          <td class="c2"><a href="https://www.w3.org/TR/WebCryptoAPI/">Web Cryptography API</a>
           </td>
           <td class="c3">Rec</td>
           <td class="c4">Yes</td>
-          <td class="c5">Cipher 
-            (@system.cipher)</td>
-          <td class="c6">my.rsa</td>
+          <td class="c5">`@system.cipher`</td>
+          <td class="c6">`my.rsa`</td>
           <td class="c7">No</td>
         </tr>
         <tr class="r89">
           <td class="c0">Security and
             Privacy</td>
-          <td class="c1">Auth</td>
+          <td class="c1">Authentication</td>
           <td class="c2"><a href="https://www.w3.org/TR/webauthn/">Web Authentication</a></td>
           <td class="c3">Rec</td>
           <td class="c4">Yes</td>
-          <td class="c5">Yes (private
-            implementation)</td>
-          <td class="c6">my.getAuthCode</td>
-          <td class="c7">swan.authorize</td>
+          <td class="c5">`@service.account`</td>
+          <td class="c6">`my.getAuthCode`</td>
+          <td class="c7">`swan.authorize`</td>
         </tr>
         <tr class="r90">
           <td class="c0">Security and
             Privacy</td>
           <td class="c1">Permissions</td>
-          <td class="c2"><a href="https://w3c.github.io/permissions/">Permissions</a></td>
+          <td class="c2"><a href="https://www.w3.org/TR/permissions/">Permissions</a></td>
           <td class="c3">WD</td>
           <td class="c4">Yes</td>
-          <td class="c5">manifest.permissions</td>
-          <td class="c6">my.showAuthGuide 
-            (Object)/my.getSetting(OBJECT)</td>
-          <td class="c7">swan.getSetting</td>
+          <td class="c5">Manifest's `permissions` member</td>
+          <td class="c6">app.json `permission` member</td>
+          <td class="c7">app.json `permission` member</td>
         </tr>
         <tr class="r91">
           <td class="c0">Security and
             Privacy</td>
           <td class="c1">SMS OTP Retriever</td>
           <td class="c2"><a href="https://discourse.wicg.io/t/sms-otp-retrieval/3499">SMS OTP
-              Retriever(Proposal)</a></td>
+              Retriever</a></td>
           <td class="c3">Proposal</td>
-          <td class="c4">Yes</td>
-          <td class="c5">Yes (@system.sms)</td>
+          <td class="c4">?</td>
+          <td class="c5">`@system.sms`</td>
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
@@ -1261,10 +1258,9 @@
             Privacy</td>
           <td class="c1">Sign up API</td>
           <td class="c2"><a href="https://discourse.wicg.io/t/proposal-sign-up-api-for-web/1844">Sign up with
-              phone number: 
-              API(Proposal)</a></td>
+              phone number API</a></td>
           <td class="c3">Proposal</td>
-          <td class="c4">Yes</td>
+          <td class="c4">?</td>
           <td class="c5">No</td>
           <td class="c6">No</td>
           <td class="c7">No</td>
@@ -1276,40 +1272,40 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Statistics (@service.stats)</td>
+          <td class="c5">`@service.stats`</td>
           <td class="c6">No</td>
-          <td class="c7">provided statistcs plan</td>
+          <td class="c7">Provide statistics plan</td>
         </tr>
         <tr class="r94">
           <td class="c0">Security and
             Privacy</td>
-          <td class="c1">Account</td>
+          <td class="c1">Account Information</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Account (@service.account)</td>
+          <td class="c5">`@service.account`</td>
           <td class="c6">No</td>
-          <td class="c7">swan.getEnvInfoSync</td>
+          <td class="c7">`swan.getEnvInfoSync`</td>
         </tr>
         <tr class="r95">
           <td class="c0">Security and
             Privacy</td>
-          <td class="c1">User Info</td>
+          <td class="c1">User Information</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">my.getAuthUserInfo</td>
-          <td class="c7">swan.getUserInfo</td>
+          <td class="c6">`my.getAuthUserInfo`</td>
+          <td class="c7">`swan.getUserInfo`</td>
         </tr>
         <tr class="r96">
           <td class="c0">Security and
             Privacy</td>
-          <td class="c1">Third-party Account</td>
+          <td class="c1">Third-party Accounts</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Third-party Account (QQ + WeChat + Weibo)</td>
+          <td class="c5">`@service.qqaccount`, `@service.wxaccount`, `@service.wbaccount`</td>
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
@@ -1321,8 +1317,8 @@
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">my.reportAnalytics</td>
-          <td class="c7">swan.reportAnalytics</td>
+          <td class="c6">`my.reportAnalytics`</td>
+          <td class="c7">`swan.reportAnalytics`</td>
         </tr>
         <tr class="r98">
           <td class="c0">Security and
@@ -1333,8 +1329,8 @@
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">my.textRiskIdentification (Object)</td>
-          <td class="c7">swan.ai.textReview</td>
+          <td class="c6">`my.textRiskIdentification`</td>
+          <td class="c7">`swan.ai.textReview`</td>
         </tr>
         <tr class="r99">
           <td class="c0">Security and
@@ -1345,15 +1341,14 @@
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">Image Content 
-            Security (private implementation)</td>
-          <td class="c7">swan.ai.imageAudit</td>
+          <td class="c6">`my.ap.imgRisk`</td>
+          <td class="c7">`swan.ai.imageAudit`</td>
         </tr>
         <tr class="r100">
           <td class="c0">Security and
             Privacy</td>
           <td class="c1">Fingerprint 
-            Authertication</td>
+            Authentication</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
@@ -1369,20 +1364,18 @@
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">Face Authentication (private implementation)</td>
-          <td class="c7">swan.ai.faceMatch
-          </td>
+          <td class="c6">Face Authentication</td>
+          <td class="c7">`swan.ai.faceMatch`</td>
         </tr>
         <tr class="r102">
-          <td class="c0">Performance 
-            and Turning</td>
+          <td class="c0">Performance</td>
           <td class="c1">Memory Warning</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">No</td>
-          <td class="c7">swan.onMemoryWarning</td>
+          <td class="c6">`my.onMemoryWarning`</td>
+          <td class="c7">`swan.onMemoryWarning`</td>
         </tr>
       </tbody>
     </table>
