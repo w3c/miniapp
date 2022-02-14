@@ -77,7 +77,7 @@
     .c5,
     .c6,
     .c7 {
-      width: 25vw;
+      width: 15vw;
     }
     
     .search {
@@ -245,22 +245,36 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">Browser Engines</td>
-          <td class="c5">No Chromium layout engine but with V8 engine, more lightweight.<br /> Providing pure WebAPIs to app developers,Web
-            JS APIs are mapped from Android native APIs and part of standard WebAPIs.<br /> Template part(with HTML tags)in
-            .ux file mapping to single android native views and combined view components, provided native performance experiences.<br
-            /> CSS subset: Mapping to attributes of Android View(e.g. position, color)</td>
-          <td class="c6">Native(rendering) + WebView (rendering) + Worker (Data storage and business logic) + V8(use UC browsering engine)</td>
-          <td class="c7">Rendering: Native+WebView<br /> Logic: V8/Javascript Core</td>
+          <td class="c5">
+            <details>
+              <summary>Native, WebView, V8</summary>
+              No Chromium layout engine but with V8 engine, more lightweight.<br /> 
+              Providing pure WebAPIs to app developers, Web JS APIs are mapped from Android native APIs and part of standard WebAPIs.<br /> Template part (with HTML tags) in `.ux` file mapping to single android native views and combined view components, provided native performance experiences. <br/> 
+              CSS subset: Mapping to attributes of Android View (e.g. `position`, `color`)
+            </details>
+          </td>
+          <td class="c6">
+            <details>
+              <summary>Native, WebView, V8</summary>
+              Native (rendering) + WebView (rendering) + Worker (Data storage and business logic) + V8 (use UC browser engine)
+            </details>
+           </td>
+          <td class="c7">
+            <details>
+              <summary>Native, WebView, V8</summary>
+              Rendering: Native+WebView<br /> Logic: V8/JavaScript Core
+            </details>
+           </td>
         </tr>
         <tr class="r7">
           <td class="c0">File format</td>
           <td class="c1">Page</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
-          <td class="c4">.html, .js, .css</td>
-          <td class="c5">.ux file (template), .js, .css</td>
-          <td class="c6">.axml, .js, .acss</td>
-          <td class="c7">.swan, .js, .css</td>
+          <td class="c4">`.html`, `.js`, `.css`</td>
+          <td class="c5">`.ux`, `.js`, `.css`</td>
+          <td class="c6">`.axml`, `.js`, `.acss`</td>
+          <td class="c7">`.swan`, `.js`, `.css`</td>
         </tr>
         <tr class="r8">
           <td class="c0">ES6</td>
@@ -289,14 +303,33 @@
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">Yes</td>
-          <td class="c6">Can be used within Alibaba's Native Apps including Alipay, Taobao, DingDing, Gaode, ELE.me</td>
-          <td class="c7">Can be used within Baidu App and Open Source Union apps, such as iQiyi, Bilibili, Wifi and so on</td>
+          <td class="c6">
+            <details>
+              <summary>Yes</summary>
+              Can be used within Alibaba's Native Apps including Alipay, Taobao, DingDing, Gaode, ELE.me
+            </details>
+           </td>
+          <td class="c7">
+            <details>
+              <summary>Yes</summary>
+              Can be used within Baidu App and Open Source Union apps, such as iQiyi, Bilibili, Wifi and so on
+            </details>
+           </td>
         </tr>
         <tr class="r11">
           <td class="c0">Modular</td>
           <td class="c1">Customized Component</td>
-          <td class="c2">Web Components (<a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements">Custom Elements</a>,
-            <a href="https://www.w3.org/TR/shadow-dom/">Shadow DOM</a>, <a href="https://html.spec.whatwg.org/#the-template-element"><code>template</code></a>            and <a href="https://html.spec.whatwg.org/#the-slot-element"><code>slot</code></a> elements)</td>
+          <td class="c2">
+            <details>
+              <summary>Web Components</summary>
+              <ul>
+                <li><a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements">Custom Elements</a></li>
+                <li><a href="https://www.w3.org/TR/shadow-dom/">Shadow DOM</a></li>
+                <li><a href="https://html.spec.whatwg.org/#the-template-element"><code>template</code></a> element</li>
+                <li><a href="https://html.spec.whatwg.org/#the-slot-element"><code>slot</code></a> element</li>
+              </ul>
+            </details>
+          </td>  
           <td class="c3"><abbr title="Recommendation">REC</abbr></td>
           <td class="c4">Yes</td>
           <td class="c5">Yes</td>
@@ -310,7 +343,12 @@
           <td class="c3"><abbr title="Working Group Working Draft">WD</abbr></td>
           <td class="c4">Yes</td>
           <td class="c5">Yes</td>
-          <td class="c6">Yes (via <abbr title="Add to home screen">A2HS</abbr> feature on Safari)</td>
+          <td class="c6">
+            <details>
+              <summary>Yes</summary>
+              Via <abbr title="Add to home screen">A2HS</abbr> feature on Safari
+            </details>
+          </td>
           <td class="c7">Yes</td>
         </tr>
         <tr class="r13">
@@ -319,9 +357,24 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">Yes</td>
-          <td class="c5">Yes (search within system search bar, management apps, app store, browsers, home page etc.)</td>
-          <td class="c6">Yes (search within Alipay)</td>
-          <td class="c7">Yes (search with Baidu search engine)</td>
+          <td class="c5">
+            <details>
+              <summary>Yes</summary>
+              Search within system search bar, management apps, app store, browsers, home page etc.
+            </details>
+          </td>
+          <td class="c6">
+            <details>
+              <summary>Yes</summary>
+              Search within Alipay.
+            </details>
+          </td>
+          <td class="c7">
+            <details>
+              <summary>Yes</summary>
+              Search with Baidu search engine.
+            </details>
+          </td>
         </tr>
         <tr class="r14">
           <td class="c0">Application Lifecycle
@@ -330,8 +383,18 @@
           <td class="c2"><a href="https://www.w3.org/TR/web-share/">Web Share API</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.share`, `@service.share`</td>
-          <td class="c6">`onShareAppMessage`</td>
+          <td class="c5">
+            <details>
+              <summary>Yes</summary>
+              `@system.share`, `@service.share`
+            </details>
+          </td>
+          <td class="c6">
+            <details>
+              <summary>Yes</summary>
+              `onShareAppMessage`
+            </details>
+          </td>
           <td class="c7">Yes</td>
         </tr>
         <tr class="r15">
@@ -339,7 +402,7 @@
           <td class="c1">Splash screen</td>
           <td class="c2"><a href="https://github.com/w3c/manifest/issues/589#issuecomment-323232119">Splash Screen in Manifest</a></td>
           <td class="c3"><a href="https://github.com/w3c/manifest/issues/510">On Hold</a></td>
-          <td class="c4">Yes (depending on the browser)</td>
+          <td class="c4">Yes</td>
           <td class="c5">Yes</td>
           <td class="c6">No</td>
           <td class="c7">No</td>
@@ -363,8 +426,8 @@
           <td class="c2"><a href="https://www.w3.org/TR/appmanifest/">Web App Manifest</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`manifest.json`</td>
-          <td class="c6">`app.json`</td>
+          <td class="c5"><details><summary>Yes</summary>`manifest.json`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`app.json`</details></td>  
           <td class="c7">`app.json`</td>
         </tr>
         <tr class="r18">
@@ -373,8 +436,18 @@
           <td class="c1">App Info</td>
           <td class="c2"><a href="https://www.w3.org/TR/appmanifest/#application-information">Web App Manifest + Application Information</a></td>
           <td class="c3"><abbr>WD</abbr></td>
-          <td class="c4">Yes (Manifest metadata)</td>
-          <td class="c5">`@system.app`</td>
+          <td class="c4">
+            <details>
+              <summary>Yes</summary>
+              Manifest metadata
+            </details>
+           </td>
+          <td class="c5">
+            <details>
+              <summary>Yes</summary>
+              `@system.app`
+            </details>
+           </td>            
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
@@ -385,7 +458,12 @@
           <td class="c2"><a href="https://www.w3.org/TR/mediaqueries-5/#display-mode">Media Queries - Display Mode</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">manifest's `display.fullscreen`</td>
+          <td class="c5">
+            <details>
+              <summary>Yes</summary>
+              manifest's `display.fullscreen`
+            </details>
+           </td>  
           <td class="c6">Yes</td>
           <td class="c7">Yes</td>
         </tr>
@@ -397,8 +475,8 @@
           <td class="c3"><abbr title="Community Group Report">CGR</abbr></td>
           <td class="c4">?</td>
           <td class="c5">No</td>
-          <td class="c6">Internal (in tabs)</td>
-          <td class="c7">Internal (in tabs)</td>
+          <td class="c6"><details><summary>Internal</summary>Internal (in tabs)</details></td>  
+          <td class="c7"><details><summary>Internal</summary>Internal (in tabs)</details></td>  
         </tr>
         <tr class="r21">
           <td class="c0">User Interaction
@@ -408,9 +486,9 @@
           <td class="c3">Living Standard
           </td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.prompt`</td>
-          <td class="c6">`popup` component</td>
-          <td class="c7">`popup` component</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.prompt`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`popup` component</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`popup` component</details></td>  
         </tr>
         <tr class="r22">
           <td class="c0">User Interaction
@@ -419,9 +497,9 @@
           <td class="c2"><a href="https://www.w3.org/TR/vibration/">Vibration API</a></td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.vibrator`</td>
-          <td class="c6">`my.vibrate`</td>
-          <td class="c7">`swan.vibrateLong`, `swan.vibrateShort`</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.vibrator`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.vibrate`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.vibrateLong`, `swan.vibrateShort`</details></td>  
         </tr>
         <tr class="r23">
           <td class="c0">User Interaction
@@ -432,9 +510,9 @@
           <td class="c3">Living Standard
           </td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.notification`</td>
-          <td class="c6">Notice</td>
-          <td class="c7">Template Message<br /> Customer Service Message</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.notification`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>Notice</details></td>  
+          <td class="c7"><details><summary>Yes</summary>Template Message<br /> Customer Service Message</details></td>  
         </tr>
         <tr class="r24">
           <td class="c0">User Interaction
@@ -443,9 +521,9 @@
           <td class="c2"><a href="https://www.w3.org/TR/screen-orientation/">Screen Orientation API</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`orientation` in Manifest (partial)</td>
+          <td class="c5"><details><summary>Partial</summary>`orientation` in Manifest</details></td>  
           <td class="c6">No</td>
-          <td class="c7">swan.onDeviceMotionChange</td>
+          <td class="c7"><details><summary>Yes</summary>`swan.onDeviceMotionChange</details></td>  
         </tr>
         <tr class="r25">
           <td class="c0">User Interaction
@@ -466,9 +544,9 @@
           <td class="c2"><a href="https://www.w3.org/TR/screen-wake-lock/">Wake Lock API</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`brightness.setKeepScreenOn`</td>
-          <td class="c6">only screen lock `my.setKeepScreenOn`</td>
-          <td class="c7">only screen lock `swan.setKeepScreenOn`</td>
+          <td class="c5"><details><summary>Yes</summary>`brightness.setKeepScreenOn`</details></td>  
+          <td class="c6"><details><summary>Partial</summary>only screen lock `my.setKeepScreenOn`</details></td>  
+          <td class="c7"><details><summary>Partial</summary>only screen lock `swan.setKeepScreenOn`</details></td>  
         </tr>
         <tr class="r27">
           <td class="c0">User Interaction
@@ -478,10 +556,9 @@
               events</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.clipboard`</td>
-          <td class="c6">`my.getClipboard`, `my.setClipboard`</td>
-          <td class="c7">`swan.setClipboardData`, `swan.getClipboardData`
-          </td>
+          <td class="c5"><details><summary>Yes</summary>`@system.clipboard`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.getClipboard`, `my.setClipboard`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.setClipboardData`, `swan.getClipboardData`</details></td>  
         </tr>
         <tr class="r28">
           <td class="c0">User Interaction
@@ -502,9 +579,9 @@
           <td class="c2"><a href="https://html.spec.whatwg.org/multipage/history.html#the-history-interface">The `History` interface</a></td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.router`</td>
-          <td class="c6">`navigator` component</td>
-          <td class="c7">`navigator` component</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.router`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`navigator` component</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`navigator` component</details></td>  
         </tr>
         <tr class="r30">
           <td class="c0">User Interaction
@@ -512,13 +589,11 @@
           <td class="c1">Shape detection in Images</td>
           <td class="c2"><a href="https://wicg.github.io/shape-detection-api/">Accelerated Shape
               Detection in Images</a></td>
-          <td class="c3">
-            <td class="c3"><abbr>CGR</abbr></td>
-          </td>
+          <td class="c3"><abbr>CGR</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.barcode`</td>
-          <td class="c6">Barcode</td>
-          <td class="c7">`swan.scanCode`, `swan.ai.faceDetect`, `swan.ai.advancedGeneralIdentify`</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.barcode`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>Barcode</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.scanCode`, `swan.ai.faceDetect`, `swan.ai.advancedGeneralIdentify`</details></td>  
         </tr>
         <tr class="r31">
           <td class="c0">User Interaction
@@ -528,7 +603,7 @@
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">`my.watchShake`</td>
+          <td class="c6"><details><summary>Yes</summary>`my.watchShake`</details></td>  
           <td class="c7">No</td>
         </tr>
         <tr class="r32">
@@ -538,9 +613,9 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">`@system.screenshot`</td>
-          <td class="c6">`my.onUserCaptureScreen`</td>
-          <td class="c7">`swan.onUserCaptureScreen`</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.screenshot`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.onUserCaptureScreen`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.onUserCaptureScreen`</details></td>  
         </tr>
         <tr class="r33">
           <td class="c0">User Interaction
@@ -549,21 +624,21 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">`@system.alarm`</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.alarm`</details></td>  
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
         <tr class="r34">
-          <td class="c0">Payment and Services
+          <td class="c0">Payments and Services
           </td>
           <td class="c1">Payment</td>
           <td class="c2"><a href="https://www.w3.org/TR/payment-method-basic-card/">Payment
               Method: Basic Card</a></td>
           <td class="c3">WG Note</td>
           <td class="c4">Yes</td>
-          <td class="c5">`@service.pay` (WeChat + Alipay)</td>
-          <td class="c6">`my.tradePay`</td>
-          <td class="c7">`swan.requestPolymerPayment`</td>
+          <td class="c5"><details><summary>Yes</summary>`@service.pay` (WeChat + Alipay)</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.tradePay`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.requestPolymerPayment`</details></td>  
         </tr>
         <tr class="r35">
           <td class="c0">Payment and Services
@@ -573,9 +648,9 @@
               Identifiers</a></td>
           <td class="c3"><abbr title="Proposed Recommendation">PR</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@service.pay` (WeChat + Alipay)</td>
-          <td class="c6">`my.tradePay`</td>
-          <td class="c7">`swan.requestPolymerPayment`</td>
+          <td class="c5"><details><summary>Yes</summary>`@service.pay` (WeChat + Alipay)</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.tradePay`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.requestPolymerPayment`</details></td>  
         </tr>
         <tr class="r36">
           <td class="c0">Payment and Services
@@ -585,9 +660,9 @@
               API</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@service.pay` (WeChat + Alipay)</td>
-          <td class="c6">`my.tradePay`</td>
-          <td class="c7">`swan.requestPolymerPayment`</td>
+          <td class="c5"><details><summary>Yes</summary>`@service.pay` (WeChat + Alipay)</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.tradePay`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.requestPolymerPayment`</details></td>  
         </tr>
         <tr class="r37">
           <td class="c0">Payment and Services
@@ -597,9 +672,9 @@
               API</a></td>
           <td class="c3"><abbr>PR</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@service.pay` (WeChat + Alipay)</td>
-          <td class="c6">`my.tradePay`</td>
-          <td class="c7">`swan.requestPolymerPayment`</td>
+          <td class="c5"><details><summary>Yes</summary>`@service.pay` (WeChat + Alipay)</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.tradePay`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.requestPolymerPayment`</details></td>  
         </tr>
         <tr class="r38">
           <td class="c0">Network and Communications
@@ -608,9 +683,9 @@
           <td class="c2"><a href="https://www.w3.org/TR/push-api/">Push API</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@service.push`</td>
-          <td class="c6">`alipay.open.app.mini.templatemessage.send`</td>
-          <td class="c7">Template Message, Customer Service Message</td>
+          <td class="c5"><details><summary>Yes</summary>`@service.push`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`alipay.open.app.mini.templatemessage.send`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>Template Message, Customer Service Message</details></td>  
         </tr>
         <tr class="r39">
           <td class="c0">Network and Communications
@@ -619,9 +694,9 @@
           <td class="c2"><a href="https://fetch.spec.whatwg.org/">Fetch</a></td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system fetch`</td>
-          <td class="c6">`my.request`</td>
-          <td class="c7">`swan.request`</td>
+          <td class="c5"><details><summary>Yes</summary>`@system fetch`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.request`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.request`</details></td>  
         </tr>
         <tr class="r40">
           <td class="c0">Network and Communications
@@ -631,9 +706,9 @@
               sockets</a></td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">WebSocket (`@system.websocketfactory`)</td>
-          <td class="c6">`my.connectSocket`</td>
-          <td class="c7">`WebSocket`</td>
+          <td class="c5"><details><summary>Yes</summary>WebSocket (`@system.websocketfactory`)</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.connectSocket`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`WebSocket`</details></td>  
         </tr>
         <tr class="r41">
           <td class="c0">Network and Communications
@@ -643,7 +718,7 @@
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">`<a href="https://opendocs.alipay.com/mini/006ll8">iBeacon</a>`</td>
+          <td class="c6"><details><summary>Yes</summary>`<a href="https://opendocs.alipay.com/mini/006ll8">iBeacon</a>`</details></td>  
           <td class="c7">No</td>
         </tr>
         <tr class="r42">
@@ -654,9 +729,9 @@
               Storage</a></td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.storage`</td>
-          <td class="c6">Cache</td>
-          <td class="c7">Cache</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.storage`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>Cache</details></td>  
+          <td class="c7"><details><summary>Yes</summary>Cache</details></td>  
         </tr>
         <tr class="r43">
           <td class="c0">DataStorage
@@ -665,9 +740,9 @@
           <td class="c2"><a href="https://www.w3.org/TR/FileAPI/">File API</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.file`</td>
-          <td class="c6">File API</td>
-          <td class="c7">File API</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.file`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>File API</details></td>  
+          <td class="c7"><details><summary>Yes</summary>File API</details></td>  
         </tr>
         <tr class="r44">
           <td class="c0">DataStorage
@@ -678,9 +753,9 @@
               API</a></td>
           <td class="c3"><abbr>CGR</abbr></td>
           <td class="c4">?</td>
-          <td class="c5">`@system.file`, `@system.request`</td>
-          <td class="c6">File API</td>
-          <td class="c7">File API</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.file`, `@system.request`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>File API</details></td>  
+          <td class="c7"><details><summary>Yes</summary>File API</details></td>  
         </tr>
         <tr class="r45">
           <td class="c0">DataStorage
@@ -691,7 +766,7 @@
           <td class="c4">?</td>
           <td class="c5">No</td>
           <td class="c6">No</td>
-          <td class="c7">Yes (Partial)</td>
+          <td class="c7">Partial</td>
         </tr>
         <tr class="r46">
           <td class="c0">DataStorage
@@ -712,9 +787,9 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">`@system.calendar`</td>
-          <td class="c6">`Calendar` element</td>
-          <td class="c7">`swan.addEventOnCalendar`</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.calendar`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`calendar` element</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.addEventOnCalendar`</details></td>  
         </tr>
         <tr class="r48">
           <td class="c0">Forms
@@ -724,9 +799,9 @@
           </td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`picker` element</td>
-          <td class="c6">`my.datePicker`</td>
-          <td class="c7">`picker` component (`mode=date`)</td>
+          <td class="c5"><details><summary>Yes</summary>`picker` element</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.datePicker`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`picker` component (`mode=date`)</details></td>  
         </tr>
         <tr class="r49">
           <td class="c0">Forms
@@ -736,8 +811,8 @@
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">`my.chooseCity`</td>
-          <td class="c7">`picker` element (`mode=region`)</td>
+          <td class="c6"><details><summary>Yes</summary>`my.chooseCity`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`picker` element (`mode=region`)</details></td>  
         </tr>
         <tr class="r50">
           <td class="c0">Forms
@@ -746,7 +821,7 @@
           <td class="c2">`input` <a href="https://html.spec.whatwg.org/multipage/input.html#color-state-(type%3Dcolor)">color state</a></td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`picker` element</td>
+          <td class="c5"><details><summary>Yes</summary>`picker` element</details></td>  
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
@@ -756,7 +831,7 @@
           <td class="c2"><a href="https://www.w3.org/TR/ambient-light/">Ambient Light Sensor</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`sensor.subscribeLight`</td>
+          <td class="c5"><details><summary>Yes</summary>`sensor.subscribeLight`</details></td>  
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
@@ -766,7 +841,7 @@
           <td class="c2"><a href="https://www.w3.org/TR/proximity/">Proximity Sensor</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`sensor.subscribeProximity`</td>
+          <td class="c5"><details><summary>Yes</summary>`sensor.subscribeProximity`</details></td>  
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
@@ -776,9 +851,9 @@
           <td class="c2"><a href="https://www.w3.org/TR/orientation-event/">DeviceOrientation Event</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`sensor.subscribeCompass`</td>
-          <td class="c6">`my.onCompassChange`, `offCompassChange`</td>
-          <td class="c7">`swan.onCompassChange`, `swan.startCompass`, `swan.stopCompass`</td>
+          <td class="c5"><details><summary>Yes</summary>`sensor.subscribeCompass`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.onCompassChange`, `offCompassChange`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.onCompassChange`, `swan.startCompass`, `swan.stopCompass`</details></td>  
         </tr>
         <tr class="r54">
           <td class="c0">Sensors and Local Interactions</td>
@@ -786,10 +861,9 @@
           <td class="c2"><a href="https://www.w3.org/TR/orientation-sensor/">Orientation Sensor</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`sensor.subscribeCompass`</td>
-          <td class="c6">my.onCompassChange/offCompassChange</td>
-          <td class="c6">`my.onCompassChange`, `offCompassChange`</td>
-          <td class="c7">`swan.onCompassChange`, `swan.startCompass`, `swan.stopCompass`</td>
+          <td class="c5"><details><summary>Yes</summary>`sensor.subscribeCompass`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.onCompassChange`, `my.offCompassChange`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.onCompassChange`, `swan.startCompass`, `swan.stopCompass`</details></td>  
         </tr>
         <tr class="r55">
           <td class="c0">Sensors and Local Interactions</td>
@@ -797,10 +871,9 @@
           <td class="c2"><a href="https://www.w3.org/TR/magnetometer/">Magnetometer</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`sensor.subscribeCompass`</td>
-          <td class="c6">my.onCompassChange/offCompassChange</td>
-          <td class="c6">`my.onCompassChange`, `offCompassChange`</td>
-          <td class="c7">`swan.onCompassChange`, `swan.startCompass`, `swan.stopCompass`</td>
+          <td class="c5"><details><summary>Yes</summary>`sensor.subscribeCompass`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.onCompassChange`, `my.offCompassChange`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.onCompassChange`, `swan.startCompass`, `swan.stopCompass`</details></td>  
         </tr>
         <tr class="r56">
           <td class="c0">Sensors and Local Interactions</td>
@@ -808,11 +881,9 @@
           <td class="c2"><a href="https://www.w3.org/TR/gyroscope/">Gyroscope</a></td>
           <td class="c3"><abbr>CR</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`sensor.subscribeCompass`</td>
-          <td class="c6">my.onGyroscopeChange/offGyroscopeChange</td>
-          <td class="c7">swan.onCompassChange<br /> swan.startCompass
-            <br /> swan.stopCompass
-          </td>
+          <td class="c5">No</td>  
+          <td class="c6"><details><summary>Yes</summary>`my.onGyroscopeChange`, `offGyroscopeChange`</details></td>  
+          <td class="c7">No</td>
         </tr>
         <tr class="r57">
           <td class="c0">Sensors and Local Interactions</td>
@@ -820,10 +891,9 @@
           <td class="c2"><a href="https://www.w3.org/TR/accelerometer/">Accelerometer</a></td>
           <td class="c3"><abbr>CR</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`sensor.subscribeAccelerometer`</td>
-          <td class="c6">my.onAccelerometerChange/offAccelerometerChange</td>
-          <td class="c7">swan.onAccelerometerChange<br /> swan.offAccelerometerChange
-          </td>
+          <td class="c5"><details><summary>Yes</summary>`sensor.subscribeAccelerometer`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.onAccelerometerChange`, `offAccelerometerChange`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.onAccelerometerChange`, `swan.offAccelerometerChange`</details></td>  
         </tr>
         <tr class="r58">
           <td class="c0">Sensors and Local Interactions</td>
@@ -832,12 +902,9 @@
               Sensor</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.geolocation`</td>
-          <td class="c6">Location (private implementation)
-          </td>
-          <td class="c7">swan.getLocation<br /> swan.chooseLocation
-            <br /> swan.openLocation
-          </td>
+          <td class="c5"><details><summary>Yes</summary>`@system.geolocation`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>Location</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.getLocation`, `swan.chooseLocation`, `swan.openLocation`</details></td>  
         </tr>
         <tr class="r59">
           <td class="c0">Sensors and Local Interactions</td>
@@ -845,10 +912,9 @@
           <td class="c2"><a href="https://www.w3.org/TR/generic-sensor/">Generic Sensor API</a></td>
           <td class="c3"><abbr>CR</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.sensor`</td>
-          <td class="c6">Yes (private implementation)
-          </td>
-          <td class="c7">Not general</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.sensor`</details></td>  
+          <td class="c6">Yes</td>
+          <td class="c7"><details><summary>No</summary>Non generic</details></td>  
         </tr>
         <tr class="r61">
           <td class="c0">Sensors and Local Interactions</td>
@@ -877,10 +943,9 @@
           <td class="c2"><a href="https://www.w3.org/TR/battery-status/">Battery Status API</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.battery`</td>
-          <td class="c6">my.getSystemInfo</td>
-          <td class="c7">swan.getBatteryInfo<br /> swan.getBatteryInfoSync
-          </td>
+          <td class="c5"><details><summary>Yes</summary>`@system.battery`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.getSystemInfo`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.getBatteryInfo`, `swan.getBatteryInfoSync`</details></td>  
         </tr>
         <tr class="r64">
           <td class="c0">Sensors and Local Interactions
@@ -889,8 +954,8 @@
           <td class="c2"><a href="https://w3c.github.io/web-nfc/">Web NFC API</a></td>
           <td class="c3"><abbr>CGR</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.nfc`</td>
-          <td class="c6">&nbsp;</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.nfc`</details></td>  
+          <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
         <tr class="r65">
@@ -901,9 +966,8 @@
               Bluetooth</a></td>
           <td class="c3"><abbr>CGR</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.bluetooth`</td>
-          <td class="c6">Bluetooth (private implementation)
-          </td>
+          <td class="c5"><details><summary>Yes</summary>`@system.bluetooth`</details></td>  
+          <td class="c6"><details><summary>Yes</summary><a href="https://opendocs.alipay.com/mini/api/bluetooth-intro">Bluetooth API</a></details></td>  
           <td class="c7">No</td>
         </tr>
         <tr class="r66">
@@ -913,9 +977,9 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">`@system.device`</td>
-          <td class="c6">my.getSystemInfo</td>
-          <td class="c7">swan.getSystemInfo</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.device`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.getSystemInfo`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.getSystemInfo`</details></td>  
         </tr>
         <tr class="r67">
           <td class="c0">Sensors and Local Interactions
@@ -925,9 +989,9 @@
               Information API</a></td>
           <td class="c3"><abbr>CGR</abbr></td>
           <td class="c4">?</td>
-          <td class="c5">`@system.network`</td>
-          <td class="c6">`my.getNetworkType`</td>
-          <td class="c7">`swan.getNetworkType`</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.network`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.getNetworkType`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.getNetworkType`</details></td>  
         </tr>
         <tr class="r68">
           <td class="c0">Sensors and Local Interactions
@@ -936,11 +1000,9 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">`@system.brightness`</td>
-          <td class="c6">`my.setScreenBrightness`<br /> `my.getScreenBrightness`
-          </td>
-          <td class="c7">`swan.setScreenBrightness`<br /> `swan.getScreenBrightness`
-          </td>
+          <td class="c5"><details><summary>Yes</summary>`@system.brightness`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.setScreenBrightness`, `my.getScreenBrightness`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.setScreenBrightness`, `swan.getScreenBrightness`</details></td>  
         </tr>
         <tr class="r69">
           <td class="c0">Sensors and Local Interactions
@@ -949,7 +1011,7 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">`@system.volume`</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.volume`</details></td>  
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
@@ -960,10 +1022,9 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">`@system.package`</td>
-          <td class="c6">No (only managed by Alipay)
-          </td>
-          <td class="c7">No (only managed by Baidu App)</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.package`</details></td>  
+          <td class="c6"><details><summary>No</summary>(only managed by Alipay)</details></td>
+          <td class="c7"><details><summary>No</summary>(only managed by Baidu App)</details></td>  
         </tr>
         <tr class="r71">
           <td class="c0">Sensors and Local Interactions
@@ -972,9 +1033,9 @@
           <td class="c2"><a href="https://w3c.github.io/contact-api/spec/">Contact Picker API</a></td>
           <td class="c3">Proposal</td>
           <td class="c4">?</td>
-          <td class="c5">`@system.contact` (pick and list)</td>
-          <td class="c6">`my.addPhoneContact`</td>
-          <td class="c7">`swan.addPhoneContact`</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.contact` (pick and list)</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.addPhoneContact`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.addPhoneContact`</details></td>  
         </tr>
         <tr class="r72">
           <td class="c0">Sensors and Local Interactions
@@ -983,7 +1044,7 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">`@system.sms`</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.sms`</details></td>  
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
@@ -994,9 +1055,9 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">`@system.wifi`</td>
-          <td class="c6">Wi-Fi API</td>
-          <td class="c7">Wi-Fi API</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.wifi`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>Wi-Fi API</details></td>  
+          <td class="c7"><details><summary>Yes</summary>Wi-Fi API</details></td>  
         </tr>
         <tr class="r74">
           <td class="c0">Sensors and Local Interactions
@@ -1017,8 +1078,8 @@
           <td class="c3">Discontinued</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">`my.makePhoneCall`</td>
-          <td class="c7">`swan.makePhoneCall`</td>
+          <td class="c6"><details><summary>Yes</summary>`my.makePhoneCall`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.makePhoneCall`</details></td>  
         </tr>
         <tr class="r76">
           <td class="c0">Sensors and Local Interactions
@@ -1028,9 +1089,9 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">Yes (locale and themes)</td>
-          <td class="c6">Partial (`my.openSetting`)</td>
-          <td class="c7">Partial (`swan.openSetting`)</td>
+          <td class="c5"><details><summary>Yes</summary>Yes (locale and themes)</details></td>  
+          <td class="c6"><details><summary>Partial</summary>`my.openSetting`</details></td>  
+          <td class="c7"><details><summary>Partial</summary>`swan.openSetting`</details></td>  
         </tr>
         <tr class="r77">
           <td class="c0">Graphics and Layout
@@ -1040,9 +1101,9 @@
           </td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">CSS-based</td>
-          <td class="c6">`my.createAnimation`</td>
-          <td class="c7">`swan.createAnimation`</td>
+          <td class="c5"><details><summary>Yes</summary>CSS-based</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.createAnimation`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.createAnimation`</details></td>  
         </tr>
         <tr class="r78">
           <td class="c0">Graphics and Layout:
@@ -1051,9 +1112,9 @@
           <td class="c2">HTML <a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element">`canvas` element</a></td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`canvas` element</td>
-          <td class="c6">`canvas` element</td>
-          <td class="c7">`canvas` element</td>
+          <td class="c5"><details><summary>Yes</summary>`canvas` element</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`canvas` element</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`canvas` element</details></td>  
         </tr>
         <tr class="r79">
           <td class="c0">Graphics and Layout
@@ -1072,9 +1133,9 @@
           <td class="c2"><a href="https://www.w3.org/TR/mediastream-recording/">MediaStream Recording</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.record`</td>
-          <td class="c6">`my.getRecorderManager` (partially disabled)</td>
-          <td class="c7">`RecorderManager`</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.record`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.getRecorderManager` (partially disabled)</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`RecorderManager`</details></td>  
         </tr>
         <tr class="r81">
           <td class="c0">Media</td>
@@ -1084,9 +1145,9 @@
               Streams</a></td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.media`</td>
-          <td class="c6">`my.chooseImage`...</td>
-          <td class="c7">`swan.chooseImage`...</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.media`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.chooseImage`...</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.chooseImage`...</details></td>  
         </tr>
         <tr class="r82">
           <td class="c0">Media</td>
@@ -1095,9 +1156,9 @@
               Capture</a></td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.media`</td>
-          <td class="c6">`my.chooseImage`...</td>
-          <td class="c7">`swan.chooseImage`...</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.media`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.chooseImage`...</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.chooseImage`...</details></td>  
         </tr>
         <tr class="r83">
           <td class="c0">Media</td>
@@ -1106,9 +1167,9 @@
               Capture</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.media`</td>
-          <td class="c6">`my.chooseImage`...</td>
-          <td class="c7">`swan.chooseImage`...</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.media`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.chooseImage`...</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.chooseImage`...</details></td>  
         </tr>
         <tr class="r84">
           <td class="c0">Media</td>
@@ -1117,9 +1178,9 @@
           </td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.audio`</td>
-          <td class="c6">`my.createInnerAudioContext`</td>
-          <td class="c7">`audio` element</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.audio`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.createInnerAudioContext`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`audio` element</details></td>  
         </tr>
         <tr class="r85">
           <td class="c0">Media</td>
@@ -1128,9 +1189,9 @@
           </td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`video` element</td>
-          <td class="c6">`video` element</td>
-          <td class="c7">`video` element</td>
+          <td class="c5"><details><summary>Yes</summary>`video` element</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`video` element</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`video` element</details></td>  
         </tr>
         <tr class="r86">
           <td class="c0">Media</td>
@@ -1138,7 +1199,7 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">`@system.image`</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.image`</details></td>  
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
@@ -1148,9 +1209,9 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">`map` component</td>
-          <td class="c6">`map` component</td>
-          <td class="c7">`map` component</td>
+          <td class="c5"><details><summary>Yes</summary>`map` component</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`map` component</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`map` component</details></td>  
         </tr>
         <tr class="r88">
           <td class="c0">Security and Privacy</td>
@@ -1159,8 +1220,8 @@
           </td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@system.cipher`</td>
-          <td class="c6">`my.rsa`</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.cipher`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.rsa`</details></td>  
           <td class="c7">No</td>
         </tr>
         <tr class="r89">
@@ -1170,9 +1231,9 @@
           <td class="c2"><a href="https://www.w3.org/TR/webauthn/">Web Authentication</a></td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">`@service.account`</td>
-          <td class="c6">`my.getAuthCode`</td>
-          <td class="c7">`swan.authorize`</td>
+          <td class="c5"><details><summary>Yes</summary>`@service.account`</details></td>  
+          <td class="c6"><details><summary>Yes</summary>`my.getAuthCode`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.authorize`</details></td>  
         </tr>
         <tr class="r90">
           <td class="c0">Security and Privacy
@@ -1181,9 +1242,9 @@
           <td class="c2"><a href="https://www.w3.org/TR/permissions/">Permissions</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
-          <td class="c5">Manifest's `permissions` member</td>
-          <td class="c6">app.json `permission` member</td>
-          <td class="c7">app.json `permission` member</td>
+          <td class="c5"><details><summary>Yes</summary>Manifest's `permissions` member</details></td>  
+          <td class="c6"><details><summary>Yes</summary>app.json `permission` member</details></td>  
+          <td class="c7"><details><summary>Yes</summary>app.json `permission` member</details></td>  
         </tr>
         <tr class="r91">
           <td class="c0">Security and Privacy
@@ -1193,7 +1254,7 @@
               Retriever</a></td>
           <td class="c3">Proposal</td>
           <td class="c4">?</td>
-          <td class="c5">`@system.sms`</td>
+          <td class="c5"><details><summary>Yes</summary>`@system.sms`</details></td>  
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
@@ -1216,9 +1277,9 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">`@service.stats`</td>
+          <td class="c5"><details><summary>Yes</summary>`@service.stats`</details></td>  
           <td class="c6">No</td>
-          <td class="c7">Provide statistics plan</td>
+          <td class="c7"><details><summary>Yes</summary>Provide statistics plan</details></td>  
         </tr>
         <tr class="r94">
           <td class="c0">Security and Privacy
@@ -1227,9 +1288,9 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">`@service.account`</td>
+          <td class="c5"><details><summary>Yes</summary>`@service.account`</details></td>  
           <td class="c6">No</td>
-          <td class="c7">`swan.getEnvInfoSync`</td>
+          <td class="c7"><details><summary>Yes</summary>`swan.getEnvInfoSync`</details></td>  
         </tr>
         <tr class="r95">
           <td class="c0">Security and Privacy
@@ -1239,8 +1300,8 @@
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">`my.getAuthUserInfo`</td>
-          <td class="c7">`swan.getUserInfo`</td>
+          <td class="c6"><details><summary>Yes</summary>`my.getAuthUserInfo`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.getUserInfo`</details></td>  
         </tr>
         <tr class="r96">
           <td class="c0">Security and Privacy
@@ -1249,7 +1310,7 @@
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
-          <td class="c5">`@service.qqaccount`, `@service.wxaccount`, `@service.wbaccount`</td>
+          <td class="c5"><details><summary>Yes</summary>`@service.qqaccount`, `@service.wxaccount`, `@service.wbaccount`</details></td>  
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
@@ -1261,8 +1322,8 @@
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">`my.reportAnalytics`</td>
-          <td class="c7">`swan.reportAnalytics`</td>
+          <td class="c6"><details><summary>Yes</summary>`my.reportAnalytics`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.reportAnalytics`</details></td>  
         </tr>
         <tr class="r98">
           <td class="c0">Security and Privacy
@@ -1273,8 +1334,8 @@
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">`my.textRiskIdentification`</td>
-          <td class="c7">`swan.ai.textReview`</td>
+          <td class="c6"><details><summary>Yes</summary>`my.textRiskIdentification`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.ai.textReview`</details></td>  
         </tr>
         <tr class="r99">
           <td class="c0">Security and Privacy
@@ -1285,8 +1346,8 @@
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">`my.ap.imgRisk`</td>
-          <td class="c7">`swan.ai.imageAudit`</td>
+          <td class="c6"><details><summary>Yes</summary>`my.ap.imgRisk`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.ai.imageAudit`</details></td>  
         </tr>
         <tr class="r100">
           <td class="c0">Security and Privacy
@@ -1308,8 +1369,8 @@
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">Face Authentication</td>
-          <td class="c7">`swan.ai.faceMatch`</td>
+          <td class="c6"><details><summary>Yes</summary>Face Authentication</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.ai.faceMatch`</details></td>  
         </tr>
         <tr class="r102">
           <td class="c0">Performance</td>
@@ -1318,8 +1379,8 @@
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
-          <td class="c6">`my.onMemoryWarning`</td>
-          <td class="c7">`swan.onMemoryWarning`</td>
+          <td class="c6"><details><summary>Yes</summary>`my.onMemoryWarning`</details></td>  
+          <td class="c7"><details><summary>Yes</summary>`swan.onMemoryWarning`</details></td>  
         </tr>
       </tbody>
     </table>
