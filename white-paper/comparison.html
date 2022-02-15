@@ -15,14 +15,14 @@
       padding: 1em;
       align-items: center;
     }
-    
+
     h1 {
       color: #005A9C;
       font-weight: bold;
       margin: 0 0 .1em;
       font-size: 160%;
     }
-    
+
     table {
       border-collapse: collapse;
       width: 100%;
@@ -31,18 +31,18 @@
       margin-top: 1rem;
       position: relative;
     }
-    
+
     td {
       padding: 0.4em 0.4em;
       text-align: left;
       border-right: 1px solid rgba(17, 101, 145, 0.4);
       border-left: 1px solid rgba(17, 101, 145, 0.4);
     }
-    
+
     tr:last-child td {
       border-bottom: 1px solid rgba(17, 101, 145, 0.4);
     }
-    
+
     td.err {
       background-color: #e992b9;
       color: #fff;
@@ -50,7 +50,7 @@
       text-align: center;
       line-height: 1;
     }
-    
+
     th {
       font-weight: bold;
       color: #fff;
@@ -58,28 +58,26 @@
       text-align: center;
       padding-top: 1.0em;
       padding-bottom: 1.0em;
-      top: 0;
+      top:0;
       background-color: #034575;
       position: sticky;
       min-width: 120px;
     }
-    
+
     tbody tr:nth-child(2n-1) {
       background-color: #fafafa;
       transition: all .125s ease-in-out;
     }
-    
+
     tbody tr:hover {
       background-color: rgba(17, 101, 145, 0.95);
       color: #fff;
     }
-    
-    .c5,
-    .c6,
-    .c7 {
+
+    .c5, .c6, .c7 {
       width: 15vw;
     }
-    
+
     .search {
       text-align: left;
       margin: 1rem;
@@ -90,18 +88,18 @@
       background-color: transparent;
       display: inline-block;
     }
-    
+
     input[type=search] {
       border: 1px solid rgba(17, 101, 145, 0.4);
       padding: 0.5em 0.5em;
       width: 120px;
       font-size: 16px;
     }
-    
+
     .hidden {
       display: none;
     }
-    
+
     a[href] {
       color: #034575;
       text-decoration: none;
@@ -109,11 +107,11 @@
       padding: 0 1px 0;
       margin: 0 -1px 0;
     }
-    
+
     a:visited {
       border-bottom-color: #BBB;
     }
-    
+
     a[href]:focus,
     a[href]:hover {
       background: #f8f8f8;
@@ -121,17 +119,17 @@
       border-bottom-width: 2px;
       margin-bottom: -2px;
     }
-    
+
     th a[href] {
       color: #ffffff;
       text-decoration: none;
       border-bottom: 1px solid #ffffff;
     }
-    
+
     th a:visited {
       border-bottom-color: #eee;
     }
-    
+
     th a[href]:focus,
     th a[href]:hover {
       background: #f8f8f8;
@@ -139,29 +137,29 @@
       border-bottom-width: 2px;
       margin-bottom: -2px;
     }
-    
+
     tbody tr:hover a {
       color: #fff;
       border-bottom: 1px solid #ffffff;
     }
-    
+
     tbody tr:hover a:visited {
       border-bottom-color: #fff;
     }
-    
+
     tbody tr:hover a[href]:focus,
     tbody tr:hover a[href]:hover {
       border-bottom: 2px solid #fff;
     }
-    
+
     ::-webkit-scrollbar {
       width: 6px;
     }
-    
+
     ::-webkit-scrollbar-track {
       -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     }
-    
+
     ::-webkit-scrollbar-thumb {
       -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     }
@@ -178,14 +176,16 @@
     <table id="filter">
       <thead>
         <tr class="r0">
-          <th class="c0" scope="col">Category</th>
-          <th class="c1" scope="col">Features</th>
-          <th class="c2" scope="col">W3C Spec</th>
-          <th class="c3" scope="col">Status</th>
-          <th class="c4" scope="col">PWA.next</th>
-          <th class="c5" scope="col"><a hreflang="zh-hans" href="https://www.quickapp.cn/">QuickApp (Xiaomi, Huawei)</a></th>
-          <th class="c6" scope="col"><a hreflang="zh-hans" href="https://docs.alipay.com/mini/developer/">Alipay Mini Program</a></th>
-          <th class="c7" scope="col"><a hreflang="zh-hans" href="https://smartprogram.baidu.com/developer/index.html">Baidu Smart Mini Program</a></th>
+          <th class="c0">Category</th>
+          <th class="c1">Features</th>
+          <th class="c2">W3C Spec</th>
+          <th class="c3">Status</th>
+          <th class="c4">PWA.next</th>
+          <th class="c5"><a href="https://www.quickapp.cn/">QuickApp (Xiaomi, Huawei)</a></th>
+          <th class="c6"><a href="https://docs.alipay.com/mini/developer/">Alipay Mini Program</a>
+          </th>
+          <th class="c7"><a href="https://smartprogram.baidu.com/developer/index.html">Baidu Smart Mini
+              Program</a></th>
         </tr>
       </thead>
       <tbody>
@@ -341,7 +341,7 @@
           <td class="c0">Installation</td>
           <td class="c1">Add to home screen</td>
           <td class="c2"><a href="https://www.w3.org/TR/appmanifest/#installable-web-applications">Web Application Manifest</a></td>
-          <td class="c3"><abbr title="Working Group Working Draft">WD</abbr></td>
+          <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
           <td class="c5">Yes</td>
           <td class="c6">
@@ -378,8 +378,8 @@
           </td>
         </tr>
         <tr class="r14">
-          <td class="c0">Application Lifecycle
-          </td>
+          <td class="c0">Application 
+            Lifecycle</td>
           <td class="c1">Web Share</td>
           <td class="c2"><a href="https://www.w3.org/TR/web-share/">Web Share API</a></td>
           <td class="c3"><abbr>WD</abbr></td>
@@ -409,8 +409,8 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r16">
-          <td class="c0">Application Lifecycle
-          </td>
+          <td class="c0">Application 
+            Lifecycle</td>
           <td class="c1">Service Workers</td>
           <td class="c2"><a href="https://w3c.github.io/ServiceWorker/">Service Workers
               Nightly</a></td>
@@ -418,11 +418,11 @@
           <td class="c4">Yes</td>
           <td class="c5">No</td>
           <td class="c6">Yes</td>
-          <td class="c7">No</td>
+          <td class="c7">No and no necessary</td>
         </tr>
         <tr class="r17">
-          <td class="c0">Application Lifecycle
-          </td>
+          <td class="c0">Application 
+            Lifecycle</td>
           <td class="c1">Manifest</td>
           <td class="c2"><a href="https://www.w3.org/TR/appmanifest/">Web App Manifest</a></td>
           <td class="c3"><abbr>WD</abbr></td>
@@ -441,8 +441,8 @@
           </td>
         </tr>
         <tr class="r18">
-          <td class="c0">Application Lifecycle
-          </td>
+          <td class="c0">Application 
+            Lifecycle</td>
           <td class="c1">App Info</td>
           <td class="c2"><a href="https://www.w3.org/TR/appmanifest/#application-information">Web App Manifest + Application Information</a></td>
           <td class="c3"><abbr>WD</abbr></td>
@@ -462,9 +462,9 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r19">
-          <td class="c0">User Interaction
-          </td>
-          <td class="c1">Full Screen</td>
+          <td class="c0">User
+            Interaction</td>
+          <td class="c1">Fullscreen</td>
           <td class="c2"><a href="https://www.w3.org/TR/mediaqueries-5/#display-mode">Media Queries - Display Mode</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
@@ -478,12 +478,12 @@
           <td class="c7">Yes</td>
         </tr>
         <tr class="r20">
-          <td class="c0">User Interaction
-          </td>
+          <td class="c0">User
+            Interaction</td>
           <td class="c1">Badging</td>
           <td class="c2"><a href="https://wicg.github.io/badging/">Badging API</a></td>
-          <td class="c3"><abbr title="Community Group Report">CGR</abbr></td>
-          <td class="c4">?</td>
+          <td class="c3"><abbr>CGR</abbr></td>
+          <td class="c4">Yes (partial support)</td>
           <td class="c5">No</td>
           <td class="c6">
             <details>
@@ -495,12 +495,12 @@
           </td>
         </tr>
         <tr class="r21">
-          <td class="c0">User Interaction
-          </td>
+          <td class="c0">User
+            Interaction</td>
           <td class="c1">Dialogs</td>
           <td class="c2">HTML <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element"><code>dialog</code> element</a></td>
-          <td class="c3">Living Standard
-          </td>
+          <td class="c3">Living 
+            Standard</td>
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
@@ -516,8 +516,8 @@
           </td>
         </tr>
         <tr class="r22">
-          <td class="c0">User Interaction
-          </td>
+          <td class="c0">User
+            Interaction</td>
           <td class="c1">Vibration</td>
           <td class="c2"><a href="https://www.w3.org/TR/vibration/">Vibration API</a></td>
           <td class="c3"><abbr>REC</abbr></td>
@@ -536,13 +536,13 @@
           </td>
         </tr>
         <tr class="r23">
-          <td class="c0">User Interaction
-          </td>
+          <td class="c0">User
+            Interaction</td>
           <td class="c1">Notification</td>
           <td class="c2"><a href="https://notifications.spec.whatwg.org/">Notifications API</a>
           </td>
-          <td class="c3">Living Standard
-          </td>
+          <td class="c3">Living 
+            Standard</td>
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
@@ -558,10 +558,11 @@
           </td>
         </tr>
         <tr class="r24">
-          <td class="c0">User Interaction
-          </td>
+          <td class="c0">User
+            Interaction</td>
           <td class="c1">Screen Orientation</td>
-          <td class="c2"><a href="https://www.w3.org/TR/screen-orientation/">Screen Orientation API</a></td>
+          <td class="c2"><a href="https://www.w3.org/TR/screen-orientation/">The Screen
+              Orientation API</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
           <td class="c5">
@@ -575,20 +576,20 @@
           </td>
         </tr>
         <tr class="r25">
-          <td class="c0">User Interaction
-          </td>
+          <td class="c0">User
+            Interaction</td>
           <td class="c1">User Idle Detection</td>
           <td class="c2"><a href="https://wicg.github.io/idle-detection/">User Idle
               Detection</a></td>
-          <td class="c3"><abbr title="Community Group Report">CGR</abbr></td>
-          <td class="c4">?</td>
+          <td class="c3"><abbr title="Draft Community Group Report">DCGR</abbr></td>
+          <td class="c4">Yes (partial)</td>
           <td class="c5">No</td>
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
         <tr class="r26">
-          <td class="c0">User Interaction
-          </td>
+          <td class="c0">User
+            Interaction</td>
           <td class="c1">Wake Lock</td>
           <td class="c2"><a href="https://www.w3.org/TR/screen-wake-lock/">Wake Lock API</a></td>
           <td class="c3"><abbr>WD</abbr></td>
@@ -607,8 +608,8 @@
           </td>
         </tr>
         <tr class="r27">
-          <td class="c0">User Interaction
-          </td>
+          <td class="c0">User
+            Interaction</td>
           <td class="c1">Clipboard</td>
           <td class="c2"><a href="https://www.w3.org/TR/clipboard-apis/">Clipboard API and
               events</a></td>
@@ -628,8 +629,8 @@
           </td>
         </tr>
         <tr class="r28">
-          <td class="c0">User Interaction
-          </td>
+          <td class="c0">User
+            Interaction</td>
           <td class="c1">execCommand()</td>
           <td class="c2"><a href="https://w3c.github.io/editing/docs/execCommand/">execCommand</a>
           </td>
@@ -640,11 +641,12 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r29">
-          <td class="c0">User Interaction
-          </td>
+          <td class="c0">User
+            Interaction</td>
           <td class="c1">History API</td>
-          <td class="c2"><a href="https://html.spec.whatwg.org/multipage/history.html#the-history-interface">The `History` interface</a></td>
-          <td class="c3"><abbr>REC</abbr></td>
+          <td class="c2"><a href="https://html.spec.whatwg.org/multipage/history.html#the-history-interface"
+             >The `History` interface</a></td>
+          <td class="c3">Living Standard</td>
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
@@ -660,8 +662,8 @@
           </td>
         </tr>
         <tr class="r30">
-          <td class="c0">User Interaction
-          </td>
+          <td class="c0">User
+            Interaction</td>
           <td class="c1">Shape detection in Images</td>
           <td class="c2"><a href="https://wicg.github.io/shape-detection-api/">Accelerated Shape
               Detection in Images</a></td>
@@ -681,8 +683,8 @@
           </td>
         </tr>
         <tr class="r31">
-          <td class="c0">User Interaction
-          </td>
+          <td class="c0">User
+            Interaction</td>
           <td class="c1">Shake detection</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
@@ -695,8 +697,8 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r32">
-          <td class="c0">User Interaction
-          </td>
+          <td class="c0">User
+            Interaction</td>
           <td class="c1">Detection of User Screenshots</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
@@ -715,8 +717,8 @@
           </td>
         </tr>
         <tr class="r33">
-          <td class="c0">User Interaction
-          </td>
+          <td class="c0">User
+            Interaction</td>
           <td class="c1" title="Management of alarms in the device">Alarms</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
@@ -729,8 +731,8 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r34">
-          <td class="c0">Payments and Services
-          </td>
+          <td class="c0">Payment and 
+            Services</td>
           <td class="c1">Payment</td>
           <td class="c2"><a href="https://www.w3.org/TR/payment-method-basic-card/">Payment
               Method: Basic Card</a></td>
@@ -750,8 +752,8 @@
           </td>
         </tr>
         <tr class="r35">
-          <td class="c0">Payment and Services
-          </td>
+          <td class="c0">Payment and 
+            Services</td>
           <td class="c1">Payment</td>
           <td class="c2"><a href="https://www.w3.org/TR/payment-method-id/">Payment Method
               Identifiers</a></td>
@@ -771,8 +773,8 @@
           </td>
         </tr>
         <tr class="r36">
-          <td class="c0">Payment and Services
-          </td>
+          <td class="c0">Payment and 
+            Services</td>
           <td class="c1">Payment</td>
           <td class="c2"><a href="https://www.w3.org/TR/payment-handler/">Payment Handler
               API</a></td>
@@ -792,8 +794,8 @@
           </td>
         </tr>
         <tr class="r37">
-          <td class="c0">Payment and Services
-          </td>
+          <td class="c0">Payment and 
+            Services</td>
           <td class="c1">Payment</td>
           <td class="c2"><a href="https://www.w3.org/TR/payment-request/">Payment Request
               API</a></td>
@@ -813,8 +815,8 @@
           </td>
         </tr>
         <tr class="r38">
-          <td class="c0">Network and Communications
-          </td>
+          <td class="c0">Network and
+            Communications</td>
           <td class="c1">Push Messages</td>
           <td class="c2"><a href="https://www.w3.org/TR/push-api/">Push API</a></td>
           <td class="c3"><abbr>WD</abbr></td>
@@ -833,11 +835,11 @@
           </td>
         </tr>
         <tr class="r39">
-          <td class="c0">Network and Communications
-          </td>
+          <td class="c0">Network and
+            Communications</td>
           <td class="c1">Fetch</td>
           <td class="c2"><a href="https://fetch.spec.whatwg.org/">Fetch</a></td>
-          <td class="c3"><abbr>REC</abbr></td>
+          <td class="c3">Living Standard</td>
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
@@ -853,12 +855,12 @@
           </td>
         </tr>
         <tr class="r40">
-          <td class="c0">Network and Communications
-          </td>
+          <td class="c0">Network and
+            Communications</td>
           <td class="c1">WebSocket</td>
           <td class="c2"><a href="https://html.spec.whatwg.org/multipage/web-sockets.html#network">Web
               sockets</a></td>
-          <td class="c3"><abbr>REC</abbr></td>
+          <td class="c3">Living Standard</td>
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
@@ -874,8 +876,8 @@
           </td>
         </tr>
         <tr class="r41">
-          <td class="c0">Network and Communications
-          </td>
+          <td class="c0">Network and
+            Communications</td>
           <td class="c1">(<abbr title="Bluetooth Low Energy">BLE</abbr>) iBeacon</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
@@ -931,8 +933,8 @@
         <tr class="r44">
           <td class="c0">DataStorage
           </td>
-          <td class="c1">File System Access API
-          </td>
+          <td class="c1">File System Access
+            API</td>
           <td class="c2"><a href="https://wicg.github.io/file-system-access/">File System Access
               API</a></td>
           <td class="c3"><abbr>CGR</abbr></td>
@@ -956,7 +958,7 @@
           <td class="c1">File Handling</td>
           <td class="c2"><a href="https://github.com/WICG/file-handling/blob/master/explainer.md">File Handling</a></td>
           <td class="c3">Proposal</td>
-          <td class="c4">?</td>
+          <td class="c4">Yes</td>
           <td class="c5">No</td>
           <td class="c6">No</td>
           <td class="c7">Partial</td>
@@ -997,7 +999,8 @@
           <td class="c0">Forms
           </td>
           <td class="c1">Date Picker</td>
-          <td class="c2">`input` <a href="https://html.spec.whatwg.org/multipage/input.html#date-state-(type%3Ddate)">date state</a>
+          <td class="c2">`input` <a href="https://html.spec.whatwg.org/multipage/input.html#date-state-(type%3Ddate)"
+             >date state</a>
           </td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
@@ -1035,7 +1038,8 @@
           <td class="c0">Forms
           </td>
           <td class="c1">Color Picker</td>
-          <td class="c2">`input` <a href="https://html.spec.whatwg.org/multipage/input.html#color-state-(type%3Dcolor)">color state</a></td>
+          <td class="c2">`input` <a href="https://html.spec.whatwg.org/multipage/input.html#color-state-(type%3Dcolor)"
+             >color state</a></td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
           <td class="c5">
@@ -1046,9 +1050,11 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r51">
-          <td class="c0">Sensors and Local Interactions</td>
+          <td class="c0">Sensors and 
+            Local Interactions</td>
           <td class="c1">Ambient Light Sensor</td>
-          <td class="c2"><a href="https://www.w3.org/TR/ambient-light/">Ambient Light Sensor</a></td>
+          <td class="c2"><a href="https://www.w3.org/TR/ambient-light/">Ambient Light Sensor</a>
+          </td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
           <td class="c5">
@@ -1059,7 +1065,8 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r52">
-          <td class="c0">Sensors and Local Interactions</td>
+          <td class="c0">Sensors and 
+            Local Interactions</td>
           <td class="c1">Proximity Sensor</td>
           <td class="c2"><a href="https://www.w3.org/TR/proximity/">Proximity Sensor</a></td>
           <td class="c3"><abbr>WD</abbr></td>
@@ -1072,9 +1079,11 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r53">
-          <td class="c0">Sensors and Local Interactions</td>
+          <td class="c0">Sensors and 
+            Local Interactions</td>
           <td class="c1">Orientation Event</td>
-          <td class="c2"><a href="https://www.w3.org/TR/orientation-event/">DeviceOrientation Event</a></td>
+          <td class="c2"><a href="https://www.w3.org/TR/orientation-event/">DeviceOrientation
+              Event</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
           <td class="c5">
@@ -1091,9 +1100,11 @@
           </td>
         </tr>
         <tr class="r54">
-          <td class="c0">Sensors and Local Interactions</td>
+          <td class="c0">Sensors and 
+            Local Interactions</td>
           <td class="c1">Orientation Sensor</td>
-          <td class="c2"><a href="https://www.w3.org/TR/orientation-sensor/">Orientation Sensor</a></td>
+          <td class="c2"><a href="https://w3c.github.io/orientation-sensor/">Orientation
+              Sensor</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
           <td class="c5">
@@ -1110,7 +1121,8 @@
           </td>
         </tr>
         <tr class="r55">
-          <td class="c0">Sensors and Local Interactions</td>
+          <td class="c0">Sensors and 
+            Local Interactions</td>
           <td class="c1">Magnetometer</td>
           <td class="c2"><a href="https://www.w3.org/TR/magnetometer/">Magnetometer</a></td>
           <td class="c3"><abbr>WD</abbr></td>
@@ -1129,7 +1141,8 @@
           </td>
         </tr>
         <tr class="r56">
-          <td class="c0">Sensors and Local Interactions</td>
+          <td class="c0">Sensors and 
+            Local Interactions</td>
           <td class="c1">Gyroscope</td>
           <td class="c2"><a href="https://www.w3.org/TR/gyroscope/">Gyroscope</a></td>
           <td class="c3"><abbr>CR</abbr></td>
@@ -1142,7 +1155,8 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r57">
-          <td class="c0">Sensors and Local Interactions</td>
+          <td class="c0">Sensors and 
+            Local Interactions</td>
           <td class="c1">Accelerometer</td>
           <td class="c2"><a href="https://www.w3.org/TR/accelerometer/">Accelerometer</a></td>
           <td class="c3"><abbr>CR</abbr></td>
@@ -1161,7 +1175,8 @@
           </td>
         </tr>
         <tr class="r58">
-          <td class="c0">Sensors and Local Interactions</td>
+          <td class="c0">Sensors and 
+            Local Interactions</td>
           <td class="c1">Geolocation</td>
           <td class="c2"><a href="https://www.w3.org/TR/geolocation-sensor/">Geolocation
               Sensor</a></td>
@@ -1181,7 +1196,8 @@
           </td>
         </tr>
         <tr class="r59">
-          <td class="c0">Sensors and Local Interactions</td>
+          <td class="c0">Sensors and 
+            Local Interactions</td>
           <td class="c1">Generic Sensor</td>
           <td class="c2"><a href="https://www.w3.org/TR/generic-sensor/">Generic Sensor API</a></td>
           <td class="c3"><abbr>CR</abbr></td>
@@ -1197,21 +1213,23 @@
           </td>
         </tr>
         <tr class="r61">
-          <td class="c0">Sensors and Local Interactions</td>
+          <td class="c0">Sensors and 
+            Local Interactions</td>
           <td class="c1">WebHID</td>
           <td class="c2"><a href="https://wicg.github.io/webhid/">WebHID API</a></td>
           <td class="c3"><abbr>CGR</abbr></td>
-          <td class="c4">?</td>
+          <td class="c4">Yes</td>
           <td class="c5">No</td>
           <td class="c6">No</td>
           <td class="c7">No</td>
         </tr>
         <tr class="r62">
-          <td class="c0">Sensors and Local Interactions</td>
+          <td class="c0">Sensors and 
+            Local Interactions</td>
           <td class="c1">Web Serial</td>
           <td class="c2"><a href="https://wicg.github.io/serial/">Serial API</a></td>
           <td class="c3"><abbr>CGR</abbr></td>
-          <td class="c4">?</td>
+          <td class="c4">Yes</td>
           <td class="c5">No</td>
           <td class="c6">No</td>
           <td class="c7">No</td>
@@ -1432,7 +1450,8 @@
           <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">Phone Call</td>
-          <td class="c2"><a href="https://www.w3.org/2012/sysapps/telephony/">Web Telephony API</a></td>
+          <td class="c2"><a href="https://www.w3.org/2012/sysapps/telephony/">Web Telephony
+              API</a></td>
           <td class="c3">Discontinued</td>
           <td class="c4">No</td>
           <td class="c5">No</td>
@@ -1448,8 +1467,8 @@
         <tr class="r76">
           <td class="c0">Sensors and Local Interactions
           </td>
-          <td class="c1">Modifying System Settings
-          </td>
+          <td class="c1">Modifying System 
+            Settings</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
@@ -1488,7 +1507,7 @@
           </td>
         </tr>
         <tr class="r78">
-          <td class="c0">Graphics and Layout:
+          <td class="c0">Graphics and Layout: 
           </td>
           <td class="c1">Canvas</td>
           <td class="c2">HTML <a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element">`canvas` element</a></td>
@@ -1511,7 +1530,8 @@
           <td class="c0">Graphics and Layout
           </td>
           <td class="c1">Local Font Access</td>
-          <td class="c2"><a href="https://wicg.github.io/local-font-access/">Local Font Access API</a></td>
+          <td class="c2"><a href="https://wicg.github.io/local-font-access/">Local
+              Font Access API</a></td>
           <td class="c3"><abbr>CGR</abbr></td>
           <td class="c4">?</td>
           <td class="c5">No</td>
@@ -1521,7 +1541,8 @@
         <tr class="r80">
           <td class="c0">Media</td>
           <td class="c1">Recording</td>
-          <td class="c2"><a href="https://www.w3.org/TR/mediastream-recording/">MediaStream Recording</a></td>
+          <td class="c2"><a href="https://www.w3.org/TR/mediastream-recording/">MediaStream
+              Recording</a></td>
           <td class="c3"><abbr>WD</abbr></td>
           <td class="c4">Yes</td>
           <td class="c5">
@@ -1539,8 +1560,8 @@
         </tr>
         <tr class="r81">
           <td class="c0">Media</td>
-          <td class="c1">Media Capture and Streams
-          </td>
+          <td class="c1">Media Capture and
+            Streams</td>
           <td class="c2"><a href="https://www.w3.org/TR/mediacapture-streams/">Media Capture and
               Streams</a></td>
           <td class="c3"><abbr>REC</abbr></td>
@@ -1601,7 +1622,8 @@
         <tr class="r84">
           <td class="c0">Media</td>
           <td class="c1">Audio</td>
-          <td class="c2">HTML <a href="https://html.spec.whatwg.org/multipage/media.htmll#the-audio-element">`audio` element</a>
+          <td class="c2">HTML <a href="https://html.spec.whatwg.org/multipage/media.htmll#the-audio-element"
+             >`audio` element</a>
           </td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
@@ -1621,7 +1643,8 @@
         <tr class="r85">
           <td class="c0">Media</td>
           <td class="c1">Video</td>
-          <td class="c2">HTML <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element">`video` element</a>
+          <td class="c2">HTML <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element"
+             >`video` element</a>
           </td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
@@ -1688,8 +1711,8 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r89">
-          <td class="c0">Security and Privacy
-          </td>
+          <td class="c0">Security and
+            Privacy</td>
           <td class="c1">Authentication</td>
           <td class="c2"><a href="https://www.w3.org/TR/webauthn/">Web Authentication</a></td>
           <td class="c3"><abbr>REC</abbr></td>
@@ -1708,8 +1731,8 @@
           </td>
         </tr>
         <tr class="r90">
-          <td class="c0">Security and Privacy
-          </td>
+          <td class="c0">Security and
+            Privacy</td>
           <td class="c1">Permissions</td>
           <td class="c2"><a href="https://www.w3.org/TR/permissions/">Permissions</a></td>
           <td class="c3"><abbr>WD</abbr></td>
@@ -1728,8 +1751,8 @@
           </td>
         </tr>
         <tr class="r91">
-          <td class="c0">Security and Privacy
-          </td>
+          <td class="c0">Security and
+            Privacy</td>
           <td class="c1">SMS OTP Retriever</td>
           <td class="c2"><a href="https://discourse.wicg.io/t/sms-otp-retrieval/3499">SMS OTP
               Retriever</a></td>
@@ -1743,8 +1766,8 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r92">
-          <td class="c0">Security and Privacy
-          </td>
+          <td class="c0">Security and
+            Privacy</td>
           <td class="c1">Sign up API</td>
           <td class="c2"><a href="https://discourse.wicg.io/t/proposal-sign-up-api-for-web/1844">Sign up with
               phone number API</a></td>
@@ -1755,8 +1778,8 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r93">
-          <td class="c0">Security and Privacy
-          </td>
+          <td class="c0">Security and
+            Privacy</td>
           <td class="c1">Statistics</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
@@ -1772,8 +1795,8 @@
           </td>
         </tr>
         <tr class="r94">
-          <td class="c0">Security and Privacy
-          </td>
+          <td class="c0">Security and
+            Privacy</td>
           <td class="c1">Account Information</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
@@ -1789,8 +1812,8 @@
           </td>
         </tr>
         <tr class="r95">
-          <td class="c0">Security and Privacy
-          </td>
+          <td class="c0">Security and
+            Privacy</td>
           <td class="c1">User Information</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
@@ -1806,8 +1829,8 @@
           </td>
         </tr>
         <tr class="r96">
-          <td class="c0">Security and Privacy
-          </td>
+          <td class="c0">Security and
+            Privacy</td>
           <td class="c1">Third-party Accounts</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
@@ -1820,8 +1843,8 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r97">
-          <td class="c0">Security and Privacy
-          </td>
+          <td class="c0">Security and
+            Privacy</td>
           <td class="c1">Data Analysis</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
@@ -1837,10 +1860,10 @@
           </td>
         </tr>
         <tr class="r98">
-          <td class="c0">Security and Privacy
-          </td>
-          <td class="c1">Text Risk Identification
-          </td>
+          <td class="c0">Security and
+            Privacy</td>
+          <td class="c1">Text Risk 
+            Identification</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
@@ -1855,10 +1878,10 @@
           </td>
         </tr>
         <tr class="r99">
-          <td class="c0">Security and Privacy
-          </td>
-          <td class="c1">Image Risk Identification
-          </td>
+          <td class="c0">Security and
+            Privacy</td>
+          <td class="c1">Image Risk 
+            Identification</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
@@ -1873,10 +1896,10 @@
           </td>
         </tr>
         <tr class="r100">
-          <td class="c0">Security and Privacy
-          </td>
-          <td class="c1">Fingerprint Authentication
-          </td>
+          <td class="c0">Security and
+            Privacy</td>
+          <td class="c1">Fingerprint 
+            Authentication</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
           <td class="c4">No</td>
@@ -1885,8 +1908,8 @@
           <td class="c7">No</td>
         </tr>
         <tr class="r101">
-          <td class="c0">Security and Privacy
-          </td>
+          <td class="c0">Security and
+            Privacy</td>
           <td class="c1">Face Authentication</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
