@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>MiniApp Standardization White Paper</title>
+    <title>MiniApp Standardization White Paper version 2</title>
 
     <style>
     .two-cols {
@@ -171,26 +171,73 @@
                 </ul>
             </section>
             <section>
-                <h2>Can we just use PWA?</h2>
-                <p>MiniApps are NOT aimed to replace PWA, or the Web, or the Native.</p>
-                <ul>
-                    <li>Goal
-                        <dl>
-                            <dt>PWA</dt>
-                            <dd>Progressive Web Apps provide user experience that feels like the Native apps, especially with better support for offline and push APIs.</dd>
-                            <dt>MiniApp</dt>
-                            <dd>MiniApps try to provide seamless service by sharing data and capabilities within the Native Apps, the Web and the OS.</dd>
-                        </dl>
-                    </li>
-                    <li>Host Environment
-                        <dl>
-                            <dt>PWA</dt>
-                            <dd>The browser.</dd>
-                            <dt>MiniApp</dt>
-                            <dd>A platform with extra capabilities, compared to the Native Apps, the Web and the OS. It's easier to implement new APIs on this platform.</dd>
-                        </dl>
-                    </li>
-                </ul>
+                <h2>Gap between MiniApps and PWA</h2>
+                <p>MiniApps are <em>not</em> aimed to replace PWA, or the Web, or the Native.</p>
+<p>MiniApps and PWAs are composed of the same resources (i.e., scripts, markup-language-based documents, stylesheets, multimedia, etc.). The type of documents and their coding languages are similar, but MiniApps implement specific dialects and built-in services that are not standard. </p>
+<p>Apart from the format, MiniApp's resources are usually packed in a self-contained physical structure that enables a flexible distribution from app marketplaces to offline exchange. </p>
+<p>The main difference between PWAs and MiniApps is the execution environment. MiniApp user agents are super-apps or platforms implemented on the operating system, while PWA user agents are usually web browsers.  </p>
+<p>Although both technologies have similar APIs and services, there is a significant gap between the API specifications in each application type. PWAs rely on standard Web APIs while MiniApps implement non-standard APIs to maximize the platform's capabilities, such as device-specific features and vendor-exclusive services.  </p>
+<p>MiniApp vendors define similar UI (User Interface) elements that do not always have a direct equivalent in HTML. </p>
+<p>Depending on the implementation, a MiniApp user agent could be an operating system, a super-app, or any other hosting platform, based on different and various rendering engines and WebViews. The architecture of a MiniApp user agent differs from PWA user agents, as we can see in the following picture.</p>
+
+<figure>
+  <img alt="The architecture of MiniApps and PWA" src="images/miniapp_pwa.svg" width="800">
+  <figcaption>
+    The architecture of MiniApps and PWA
+  </figcaption>
+</figure>
+
+<p>
+  The main differences between them can be summarized as the following table.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Progressive Web App</th>
+      <th>MiniApp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Source code</td>
+      <td>Standard markup languages (HTML), stylesheets (CSS), and scripts (JavaScript). </td>
+      <td>Non-standard dialects of HTML, CSS and JavaScript</td>
+    </tr>
+    <tr>
+      <td>Deployed Format</td>
+      <td>Web resources (mainly: HTML, CSS, JavaScript code, and WebAssembly modules)</td>
+      <td>HTML, CSS, JavaScript, and other resources packed in a container. </td>
+    </tr>
+    <tr>
+      <td>Packaging</td>
+      <td>No. Resources linked on the Web.</td>
+      <td>Yes. Different package formats per vendor.</td>
+    </tr>
+    <tr>
+      <td>Needs to host files on web server</td>
+      <td>Yes </td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Installation-free usage</td>
+      <td>Yes, running in the browser.</td>
+      <td>Running in a <a>super app</a> or on the OS.</td>
+    </tr>
+    <tr>
+      <td>Installation with standalone icon</td>
+      <td>From the browser or app store (optional)</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Services </td>
+      <td>Access to Web APIs</td>
+      <td>Access to non-standard Web APIs, including some system native APIs</td>
+    </tr>
+  </tbody>
+  </table>
+
             </section>
             <section>
                 <h2>Case studies</h2>
@@ -301,7 +348,7 @@
                 </section>
 
                 <section>
-                    <h2>Case 3: MiniApp for IoT</h2>
+                    <h2>Case 3: MiniApp for Vehicle</h2>
                     <p>One of the goals of MiniApp to connect information and services across different platforms, so it's ideal for IoT applications such as Smart Automotive, voice-control speaker and Smart TV.</p>
                     <p>Nowadays, it's possible to convert some MiniApps to adapt the vehicle screen and system, also, a few MiniApp vendors have built a MiniApp platform specially design for the vehicle system, to help distribute or upgrade applications to various of car model. This brings millions of Web developers to the Automotive application ecosystem.</p>
                     <p>These Automotive miniapps can service many user scenarios, including gas filling, car washing, Electronic Toll Collection, insurance, restaurant reservation, or entertainment. For example, when the system detects the remaining fuel is less than 20%, it can recommend to the owner a Gas Pumping MiniApp. The user can get the information of the nearest gas station and head there to complete the gas pumping including the payment within MiniApp, "refueling without getting off the vehicle".</p>
@@ -312,13 +359,64 @@
                       </figcaption>
                     </figure>
             </section>
+
+            <section>
+              <h2>Case 4: MiniApp for IoT</h2>
+              <p>IoT device is becoming another carrier running MiniApps. MiniApp for IoT intends to enable interoperability across multiple IoT device platforms and IoT operating systems. Rather than having to deal with the difference across the multiple IoT device platforms and IoT operating systems, by introducing MiniApps for IoT, developers only need to focus on the application development on IoT devices.</p>
+
+              <p>One example is HVAC (heating, ventilating, and air-conditioning)
+                application switch panel which has a screen and several physical buttons. In this case, by introducing MiniApp for IoT, the switch panel’s screen UI can be designed and developed using Web technologies, to display the HVAC information. For example, the target temperature value inputted by the physical and the measured real-time temperature value can be displayed.</p>
+              <figure>
+                <img alt="IoT MiniApp" src="images/hvac.png" width="300">
+                <figcaption>
+                  IoT MiniApp running on HVAC application switch panel having a screen and several physical buttons
+                </figcaption>
+              </figure>
+
+              <p>
+                Another example is smart speakers with a touch screen. In this case, by introducing MiniApp for IoT, the smart speaker’s touch screen UI can be designed and developed using Web technologies, to play music and video, to control the IoT devices at home, to do online shopping.
+              </p>
+
+              <figure>
+                <img alt="IoT MiniApp on smart speaker" src="images/smart_speaker.png" width="300">
+                <figcaption>
+                  IoT MiniApp running on smart speaker with a touch screen
+                </figcaption>
+              </figure>
+      </section>
+
+      <section>
+        <h2>Case 5: MiniApp for TV</h2>
+        <p>Unlike MiniApps running on mobile phones where user interaction depends on the touch screen, the user interaction of MiniApps running on TV switches to TV remote panel keyboard plus TV screen focus.
+        </p>
+
+        <p>With MiniApp for TV, users can buy merchandise on TV through E-commerce MiniApp.</p>
+        <figure>
+          <img alt="E-commerce MiniApp running on TV" src="images/tv_e_commerce.png" width="600">
+          <figcaption>
+            E-commerce MiniApp running on TV
+          </figcaption>
+        </figure>
+
+        <p>
+          And also, users can play games on TV through Gaming MiniApps.
+        </p>
+
+        <figure>
+          <img alt="Gaming MiniApp running on TV" src="images/game_tv.png" width="600">
+          <figcaption>
+            Gaming MiniApp running on TV
+          </figcaption>
+        </figure>
+        </section>
+
             </section>
         </section>
             <section>
                 <h2>MiniApp Overview</h2>
                 <section>
                     <h2>Core Features</h2>
-                    <section>
+                    <section id="separate-the-view-layer-from-the-logic-layer">
                         <h2>Separate the View Layer from the Logic Layer</h2>
                         <p>In a miniapp, the view layer is usually separated from the logic layer.</p>
                         <figure>
@@ -434,6 +532,43 @@
                             </dd>
                         </dl>
                     </section>
+
+                    <section>
+                      <h2>Login</h2>
+                      <p>
+                        The MiniApp platforms provide a variety of ways for a user to log in to the MiniApp. If the user has already logged in to the platform with identity authentication, the login information of the platform can be shared with MiniApp, quickly realizing the interoperability of MiniApp’s own account system and the platform account system, which makes the access process of the MiniApp more smooth.
+                      </p>
+                      <p>
+                        For example, the traditional login process with SMS verification is more time-consuming, users need to manually enter their cell phone number first, and then enter the verification code after receiving the SMS to log in. The advantage of MiniApp is that developers can use the components / APIs provided by the platform to obtain users' cell phone numbers securely and conveniently, prompting the user to authorize one-click login process with their cell phone numbers, which makes the entire process simple for the user and reduces the cost of obtaining user information for developers.
+                      </p>
+                      <figure>
+                        <img alt="Sign in to a MiniApp" src="images/login.png" width="300">
+                        <figcaption>
+                          Sign in to a MiniApp
+                        </figcaption>
+                      </figure>
+                  </section>
+
+                  <section>
+                    <h2>Subpackaging</h2>
+<p>MiniApp subpackaging is a build mechanism for improving the MiniApp package development process. It helps developers divide different business modules into different subpackages.</p>
+<p>For developers: a MiniApp has the main package by default, it contains the startup page files and public resources. Subpackage is a building type that flexibly way divided the developer's business modules. Users can open special pages after loading different sub-packages on demand.</p>
+<p>For users: when the user starts the MiniApp, the main package will be downloaded by default and the page in the main package will be launched. If the user needs to open a page in the subpackage, the MiniApp Runtime will start to download and load the subpackage and start the subpackage page.</p>
+<p>Through such a subpackage building mechanism is better to decouple and collaborate when multiple teams develop together. When users use the MiniApps, the subpackaging mechanism can improve the loading speed of the MiniApp homepage, load subpackages on demand, and optimize the user experience.</p>
+                </section>
+
+                <section>
+                  <h2>Add-ons
+                  </h2>
+                  <p>In a MiniApp, an add-on / extension is an encapsulated module that adds a specific feature to an existing MiniApp, and it could be a component, a JavaScript module, or a page. The add-on / extension can be only executed in a MiniApp instead of running separately. Developers can develop add-on / extension just like a MiniApp, and upload it to the MiniApp platform for other MiniApps to reuse.</p>
+                  <p>MiniApp supports add-on / extension to:</p>
+                  <ul>
+                  <li>reduce development costs by code reuse and help developers easily add new features</li>
+                  <li>update functionality automatically without awareness of developers</li>
+                  <li>reduce the package size of MiniApps by not loading unused functions</li>
+                  </ul>
+                  <p>The add-on / extension mechanism lowers the barriers of developing MiniApps and brings more developers to the MiniApp ecosystem.</p>
+              </section>
                 </section>
                 <section>
                     <h2>MiniApp Market</h2>
@@ -594,6 +729,82 @@
         </section>
 
         <section>
+          <h2>Current standards work, the WG work</h2>
+          <section>
+            <h2>Lifecycle</h2>
+            <p>[[MINIAPP-LIFECYCLE]] defines the MiniApp lifecycle events and the process to manage MiniApp and each page's lifecycle. Implementing this specification enables the user agent to manage the lifecycle events of both the global application lifecycle and the page lifecycle.</p>
+
+            <p>As described in [[[#separate-the-view-layer-from-the-logic-layer]]], in a MiniApp, the View layer is separated from the Logic layer. The View layer is responsible for rendering MiniApp pages, including Web rendering and native rendering, which can be considered as hybrid rendering. The Logic layer is implemented with JavaScript Worker. The Logic layer is responsible for MiniApp’s event processing, API calling, and lifecycle management.</p>
+
+            <p>MiniApp lifecycle mechanism provides a means to manage MiniApp's View layer and Logic layer through the MiniApp global application lifecycle events and MiniApp page lifecycle events. Developing MiniApp with knowledge of the MiniApp global application lifecycle states and MiniApp page lifecycle states can lead to improved user experiences. MiniApp lifecycle includes a set of events, with which MiniApp can choose to alter its behavior based on its state.</p>
+          </section>
+
+          <section>
+            <h2>Manifest</h2>
+            <p>[[MINIAPP-MANIFEST]] is the specification that defines the set of metadata to describe MiniApps. The MiniApp Manifest extends the [[APPMANIFEST]] and the [[MANIFEST-APP-INFO]] specifications by providing additional mechanisms to set up basic information of a MiniApp, like identification, human-readable descriptions, versioning data, and styling information. The MiniApp manifest also configures the routing of the pages and widgets that are part of a MiniApp. 
+            </p>
+
+            <p>A MiniApp manifest is a JSON document that uses some basic elements of the Web App Manifest to describe a MiniApp (<code>name</code>, <code>short_name</code>, <code>description</code>, and <code>icons</code>), adding nine supplementary members to specify technical details about the MiniApp (<code>app_id</code>, <code>version</code>, <code>platform_version</code>, <code>device_type</code>, <code>pages</code>, <code>req_permissions</code>, and <code>widgets</code>) and configure the look and feel of the app (<code>color_scheme</code> and <code>window</code>).
+            </p>
+          </section>
+
+          <section>
+            <h2>Packaging</h2>
+            <p>[[MINIAPP-PACKAGING]] defines the semantics and conformance requirements for a MiniApp package and the structure of the container that holds the resources of a MiniApp, including the page components (i.e., templates, stylesheets, and JavaScript logic), the manifest, and other media files or configuration resources.
+            </p>
+
+            <p>This specification determines the logic and physical structures of MiniApps, holding the requirements in terms of file system organization and processing of the ZIP-based container that packs a MiniApp. Instances of the MiniApp package facilitate the MiniApp distribution and execution in runtime environments or MiniApp user agents.
+            </p>
+          </section>
+
+          <section>
+            <h2>Addressing</h2>
+            <p>[[MINIAPP-ADDRESSING]] is a Note defines a standard MiniApp protocol for accessing MiniApps. It aims to solve the problem that currently, each MiniApp vendor has its own way to describe a MiniApp resource, and uses very different methods to obtain the MiniApp package, which makes it very difficult to access MiniApps across platforms and difficult to reach a unified understanding from both user and developer perspectives.</p>
+            <p>The document refers to mobile deep linking technology and defines two ways to access MiniApp, one with the HTTPS protocol and the other with a custom protocol. In addition, MiniApp Addressing defines the syntax of MiniApp URIs, including uri-prefix for cross-environment access, uri-infix "miniapp" for MiniApps, and id and version to uniquely identify a MiniApp.</p>
+            <p>MiniApp Addressing also describes how the user agent obtains the corresponding mini-app package based on MiniApp URI, as well as some error handling, and gives an example procedure for downloading MiniApp packages over the network. </p>
+            </p>
+          </section>
+
+          <section>
+            <h2>Widget</h2>
+            <p>MiniApp Widget is a special form of MiniApp Page. Same as a page, a widget runs in a host environment that is called the User Agent. Unlike a page, a widget can occupy a certain area instead of the entire screen. The [[MINIAPP-WIDGET-REQ]] document describes the initial design considerations for developing a MiniApp Widget, including user agent, packaging, manifest, addressing, lifecyle, UI components, API, and communication between MiniApp and MiniApp Widget etc. The detailed Widget Specification will be described in a separate document, which will describe the detailed technical requirement and capabilities of User Agent. For example, the potential dependencies of Widget running environment, the potential changes of API and UI Components brought by Widget, new features bright by Widget such as requirement of communication between MiniApp and MiniApp Widget. Both User Agent developers and Widget developers can refer to the Widget Specification for technical development.
+            </p>
+          </section>
+
+          <section>
+            <h2>Implementation, converting tools</h2>
+            <p>In 2021, the Working Group published two documents, [[MINIAPP-MANIFEST]] and [[MINIAPP-LIFECYCLE]]. Meanwhile, various vendors have some pre-standard implementations. To verify the feasibility of the standards, and to be compatible with pre-standard implementations, the working group developed a tool for converting MiniApp standard Manifest to different pre-standard manifest files, such as Baidu's <code>App.json</code> and HarmonyOS FA's <code>config.json</code>. And in a 2021 TPAC breakout session, the working group demonstrated a demo of the tool.</p>
+            <p>As the standards and pre-deployment progress, the working group plans to refine the tools to support a complete, standardized development approach that may include Packaging, Addressing, Lifecycle, UI components, and APIs.
+            </p>
+          </section>
+
+        </section>
+
+        <section>
+          <h2>New ideas incubated, the CG work</h2>
+          <section>
+            <h2>UI components</h2>
+            <p>MiniApp components are the building blocks to define the structure, content, and logic of the pages that form a MiniApp. Each component encapsulates functionality, data, and styles, enabling developers to build reusable and customizable items.</p>
+            <p>The MiniApp UI Components specification collects a set of essential elements that developers can use to build homogeneous but customized user interfaces across MiniApp platforms.</p>
+            <p>This specification does not reference specific versions of HTML and CSS. It points to the latest W3C recommendations in order to guarantee the adoption and implementation of the changes to the HTML and CSS standards. Both MiniApp user agent vendors and developers will need to keep track of changes to these specifications to ensure that their processes and systems are kept up to date.</p>
+            <p>This specification defines a set of predefined elements that are common in all the MiniApp specifications, based on Web Components.</p>
+          </section>
+
+          <section>
+            <h2>MiniApps for IoT</h2>
+            <p><a href="https://w3c.github.io/miniapp-iot">MiniApp for IoT</a> describes the use cases of MiniApp for IoT. Derived from the use cases, this specification defines the architecture of MiniApp for IoT. How to reuse and extend the MiniApp Packaging and MiniApp Lifecycle is specified. Also, several APIs are specified for MiniApp APIs for IoT.</p>
+
+            <p>MiniApp for IoT shares similar architecture of MiniApp running on the cell phone and PC. But since IoT device has different hardware capabilities, MiniApp for IoT has its unique features, including:</p>
+
+            <ul>
+            <li>MiniApp Packaging for IoT</li>
+            <li>MiniApp Lifecycle for IoT</li>
+            <li>MiniApp APIs for IoT</li>
+            </ul>
+          </section>
+        </section>
+
+          <section>
                 <h2>Security and Privacy Consideration</h2>
                 <p>MiniApp utilizes HTTPs to support secure connection. Multiple MiniApps within same host environment are independent with each other.</p>
                 <p>User interactions within MiniApp needs different level of user permissions:
@@ -622,7 +833,83 @@
                         <td>request password</td>
                         <td>Payment</td> 
                       </tr>
-                    </tbody></table>
+                    </tbody>
+                  </table>
+                  <p>
+                    From different perspectives and according to different security levels, the MiniApp framework provides the following methods.
+                  </p>
+
+                  <section>
+                    <h2>Capability authentication</h2>
+                    <p>
+                      For capabilities with high privacy risks, MiniApp requires developers to apply for permission to use such capabilities on the MiniApp Developer Platform. The application includes application reason, a detailed description of the usage scenario, and the demo of usage. Then the platform will review applications according to the MiniApp usage requirements.  Only approved MiniApps are allowed to invoke such interfaces. For example, the ability to obtain the user's mobile phone number is one of the capabilities with high security risks. 
+                    </p>
+                  </section>
+
+                  <section>
+                    <h2>
+                      User Authorization
+                    </h2>
+                    <p>
+                      For interfaces involving user privacy, the user's authorization must be required.  MiniApp classifies these sensible interfaces into several authorization <dfn>scopes</dfn> such as <em>location</em>, <em>album</em>, <em>address</em>, <em>camera</em>, <em>calendar</em>, and so on. For example, a window will be popped up like below when the MiniApp tries to invoke the camera capability but users don't authorize it and users would understand that such privacy-related capability is actually being protected.  Meanwhile, MiniApps hosted by different super apps might have some different privacy authorization <a>scopes</a> based on the usage characteristics and usage scenarios of each <a>super app</a>.
+                    </p>
+                    <figure>
+                      <img alt="User Authorization" src="images/user_authorization.png" width="400">
+                      <figcaption>
+                        User Authorization
+                      </figcaption>
+                    </figure>
+                  </section>
+
+                  <section>
+                    <h2>
+                      MiniApp Audit Review
+                    </h2>
+                    <p>
+                      All MiniApps packages will be reviewed by MiniApp platforms before publishing. Developers must follow MiniApp Platform Operation Terms because the platform is the only way for them to publish a new version MiniApp. There are many aspects of platform auditing such as data collection, data use, data security and geographic location.
+                    </p>
+                  </section>
+
+                  <section>
+                    <h2>
+                      Domain check
+                    </h2>
+                    <p>
+                      For some container components where could render an online web page like <code>&lt;web-view></code>, MiniApp has limitations to the URL opened by the component. Only the domain configured in the MiniApp Management Center can be accessed in <code>&lt;web-view></code>. Also, if the component contains an <code>&lt;iframe></code>, the URL opened by the iframe should also be configured in the MiniApp Management Center. In this way, MiniApp platform can have stronger control over the dynamic pages opened by the MiniApp.
+                    </p>
+                    <p>
+                      Similarly, the MiniApp framework verifies the legitimacy of asynchronous request address.
+                    </p>
+                    <p>
+                      For example, for URLs launched by request, download, upload, etc., their domain must belong to the domain configured in the MiniApp Management Center, and their protocols must be HTTPS protocols to ensure the security of data transmission.
+                    </p>
+                  </section>
+            </section>
+
+            <section>
+              <h2>MiniApp Standardization in the Globe</h2>
+              <p>
+                Though it originated in China, MiniApp is increasing in popularity around the globe. Similar product forms are raised in other parts of the world, including Japan, Korea, Southeast Asia, the US, Europe, and Africa. The standardization of MiniApp technologies has drawn considerable attention from the global Web community. Thus, the collaboration on MiniApp standards becomes a joint international effort.
+              </p>
+              <section>
+                <h2>Broader Web Community Discussions on MiniApp</h2>
+                <p>The first global Web community discussion on MiniApp standardization was during <a href="https://www.w3.org/2019/09/TPAC/">TPAC 2019</a> in Fukuoka. A <a href="https://www.w3.org/2019/09/18-miniapp-minutes.html">breakout session</a> was organized during which MiniApp vendors introduced MiniApp technologies and the necessity for MiniApp standards. The participants discussed the possible directions for MiniApp standardizing such as packaging, manifest, lifecycle, and widget. Special efforts were made to avoid the overlapping between MiniApp standards and the current Web standards efforts, and enhance the interoperability between MiniApp platforms and the Web, and between different MiniApp platforms. The <a href="https://www.w3.org/community/miniapps/">MiniApps Ecosystem Community Group</a> was launched right after this discussion and the incubation of MiniApp specifications started.</p>
+                <p>During virtual <a href="https://www.w3.org/2020/10/TPAC/">TPAC 2020</a>, there was a breakout session titled <i><a href="https://www.w3.org/2020/10/28-miniappslearnings-minutes.html">Learning from Mini Apps</a></i> at the event. In this breakout session, experts discussed the abstract form of a MiniApp and the powerful features that MiniApps can have. Also, the session shared how one could build a MiniApp via various development tools. Then there was an open discussion focused on what Web developers can learn from MiniApp and their developer experience. </p>
+              </section>
+
+              <section>
+                <h2>MiniApp in CJK</h2>
+                <p>
+                  MiniApp product forms and technologies in Asian markets share lots of similarities. To gather the global community, especially the Chinese, Japanese and Korean participants, to communicate around the MiniApp ecosystem in each area and discuss the future of standardization effort on MiniApps, W3C <a href="https://www.w3.org/2021/miniapps/">MiniApps Working Group</a> and <a href="https://www.w3.org/community/miniapps/">MiniApps Ecosystem Community Group</a> organized <a href="https://www.w3.org/2021/03/miniapp-cjk/index.html">the 1st CJK Meeting on MiniApps</a> in April 2021. About 90 participants from over 30 organizations joined the discussion and exchanged ideas about MiniApp ecosystems, technical architecture, frameworks and MiniApps in new scenarios such as MiniApp for vehicles. Rough conclusion about the discussion is that as the development of MiniApp standards go on well in the MiniApps Working Group, it’s time to start the horizontal review of security, privacy, accessibility as well as internationalization of MiniApp standards; also, leveraging IoT technologies in MiniApp can be a very promising direction for the for MiniApp in new scenarios and there will be good opportunity for the global MiniApp community to cooperate on the related standardization work. 
+                </p>
+              </section>
+
+              <section>
+                <h2>MiniApps in Europe</h2>
+                  <p>Although there are only a few cases of MiniApps in Europe, this concept is gaining traction; and the community has started to explore these technologies, looking for new business models and innovations out of the traditional app marketplaces.</p>
+                  <p>In 2021, a group of stakeholders, including three W3C Members, launched the <a rel="nofollow" href="https://quick-app-initiative.ow2.io/">Quick App Initiative</a>, an open-source-oriented interest group open to any organization and individual and driven by open collaboration. This group, hosted by OW2, an independent non-profit organization based in France, is ruled under a transparent process intending to promote the W3C works from a vendor-neutral perspective and focused on outreach, implementations, and standardization requirements gathering from the European market perspective.</p>
+              </section>
+
             </section>
 
             <section>
