@@ -12,7 +12,7 @@ The implementation method depends on user agents. If a user agent does not use a
 
 ## 3. How is MiniApp Manifest different from the Web App Manifest? Could MiniApp Manifest become a unique case for Web App Manifest? Could MiniApp Manifest be merged into the Web App Manifest?
 
-Some of the [members](https://www.w3.org/TR/appmanifest/#webappmanifest-dictionary) of Web App Manifest are reused in MiniApp Manifest, but since MiniApp is essentially an application rather than a web page, it requires configuration management of the application and hosting platform compatibility, permissions control, and window style, which are beyond the scope of the Web App Manifest. On the other hand, some members and their semantics in the Web App Manifest may not be fully applicable to the context of MiniApp (such as [scope](https://www.w3.org/TR/appmanifest/#scope-member) and [start_url](https://www.w3.org/TR/appmanifest/#start_url-member)), and further research is needed. See the [explainer](https://github.com/w3c/miniapp/blob/gh-pages/specs/manifest/docs/explainer.md) for more details. We are willing to communicate with the Web App Manifest editors and seek as much technical compatibility as possible.
+Some of the [members](https://www.w3.org/TR/appmanifest/#webappmanifest-dictionary) of Web App Manifest are reused in MiniApp Manifest, but since MiniApp is essentially an application rather than a web page, it requires configuration management of the application and hosting platform compatibility, permissions control, and window style, which are beyond the scope of the Web App Manifest. On the other hand, some members and their semantics in the Web App Manifest may not be fully applicable to the context of MiniApp (such as [scope](https://www.w3.org/TR/appmanifest/#scope-member) and [start_url](https://www.w3.org/TR/appmanifest/#start_url-member)), and further research is needed. See the [explainer](https://github.com/w3c/miniapp/blob/main/specs/manifest/docs/explainer.md) for more details. We are willing to communicate with the Web App Manifest editors and seek as much technical compatibility as possible.
 
 ## 4. Is it possible to harmonize [Page Lifecycle](https://wicg.github.io/page-lifecycle/), [Page Visibility](https://w3c.github.io/page-visibility/), [Service Worker Lifecycle](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle), and MiniApp Lifecycle specifications? If so, how?
 
@@ -24,13 +24,13 @@ If only look at MiniApp Page Lifecycle, the `onLoad` and `onReady` is not covere
 
 If W3C community can find common use cases among different lifecycle specs, it is reasonable to define a harmonized lifecycle. For now, it is recommended to develop MiniApp Lifecycle.
 
-See also the [explainer](https://github.com/w3c/miniapp/blob/gh-pages/specs/lifecycle/docs/explainer.md).
+See also the [explainer](https://github.com/w3c/miniapp/blob/main/specs/lifecycle/docs/explainer.md).
 
 ## 5. Is it possible for MiniApp packaging to leverage the existing discussions such as [signed exchanges](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html) and [Web Packaging](https://www.w3.org/TR/2015/WD-web-packaging-20150115/)?
 
 It's not feasible to reuse Signed Exchanges/Web Packaging (WPACK) for MiniApp since the design purposes are quite different. MiniApp package is basically to pack the resources (e.g. page layouts, UI components, app logics) that comprise a mobile app (which happens to be JS-based), while WPACK is to pack HTTP exchanges (requrests and responses) which are not the building blocks of a MiniApp. Using web technologies doesn't change the nature of MiniApp as a mobile app rather than a web app. The HTTP-oriented design of WPACK is not suitable for MiniApp. The runtime envrionments are also different (App/OS-based vs. browser-based) hence the archiving and parsing requirements are different too.
 
-See also the detailed analysis in the [explainer](https://github.com/w3c/miniapp/blob/gh-pages/specs/packaging/docs/explainer.md).
+See also the detailed analysis in the [explainer](https://github.com/w3c/miniapp/blob/main/specs/packaging/docs/explainer.md).
 
 ## 6. What is the implementation expectations of MiniApp specifications in the globe? Are the implementations only expected from Chinese MiniApp vendors?
 

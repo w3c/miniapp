@@ -1,3 +1,3 @@
 # Meetings
 
-See [WG Meetings](https://github.com/w3c/miniapp/blob/gh-pages/Meetings/WG.md) and [CG Meetings](https://github.com/w3c/miniapp/blob/gh-pages/Meetings/CG.md).
+See [WG Meetings](https://github.com/w3c/miniapp/blob/main/Meetings/WG.md) and [CG Meetings](https://github.com/w3c/miniapp/blob/main/Meetings/CG.md).
