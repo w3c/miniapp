@@ -434,14 +434,14 @@
                             Data flow of MiniApp when an API is called
                           </figcaption>
                         </figure>
-                        <p>The Worker establishes a connection for each render, transferring the need-to-be-rendered data to the render for further processing.</p>
-                        <p>If an event is triggered by a component in a MiniApp page, this page’s render will send the event to worker for further processing. At the same time, the render will wait for the data sent from worker to re-render the MiniApp page.</p>
+                        <p>The Worker establishes a connection for each Render, transferring the need-to-be-rendered data to the Render for further processing.</p>
+                        <p>If an event is triggered by a component in a MiniApp page, this page’s Render will send the event to worker for further processing. At the same time, the Render will wait for the data sent from worker to re-render the MiniApp page.</p>
                         <p>The rendering can be considered as stateless, and all the states will be stored in the worker.</p>
                         <p>The benefits of separating the view layer and the logic layer include:</p>
                         <ul>
                             <li>Very handy for data sharing and interaction among multiple MiniApp pages.</li>
                             <li>Having the same context within a lifecycle of MiniApp can provide a similar coding experience for those developers coming from native app developement background.</li>
-                            <li>Separation and parallel implementation of Render and JS worker can prevent the situation where a JS execution impacts or slows down the page rendering, which can help enhance the performance of rendering.</li>
+                            <li>Separation and parallel implementation of render and JS worker can prevent the situation where a JS execution impacts or slows down the page rendering, which can help enhance the performance of rendering.</li>
                         </ul>
                     </section>
                     <section id="api_and_component">
