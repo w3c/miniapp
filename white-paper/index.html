@@ -426,16 +426,16 @@
                           </figcaption>
                         </figure>
                         <p>The view layer is responsible for rendering MiniApp pages, including Web components and native components display, which can be considered as hybrid rendering. For example, some Web components might not be supported by the WebView or have performance limitations, so MiniApp also relies on native components such as map, video, etc.</p>
-                        <p>The logic layer is implemented with JS Worker. The Worker is responsible for MiniApp’s event processing, API calling and lifecycle management.</p>
-                        <p>Extended native capabilities usually come from the hosting native app or OS, including payment, file processing, scanning, phone call, etc. These capabilities are called through certain APIs. When a Mini App calls a native API, it transfers the API calling to Extended Native Capabilities for further processing via JS Bridge, and obtains the result from Extended Native Capabilities via JS Bridge.</p>
+                        <p>The logic layer is implemented with JS Worker. The Worker is responsible for MiniApp’s event processing, API calls, and lifecycle management.</p>
+                        <p>Extended native capabilities usually come from the hosting native app or OS, including payment, file processing, image scanning, phone calls, etc. These features are called through specific APIs. When a MiniApp calls a native API, it transfers the API call to extended native capabilities for further processing via a JS Bridge. It obtains the result from the extended native capabilities via the JS Bridge.</p>
                         <figure>
                           <img alt="data flow of MiniApp when an API is called" src="images/data_flow.png" width="600">
                           <figcaption>
                             Data flow of MiniApp when an API is called
                           </figcaption>
                         </figure>
-                        <p>Worker establishes connection for each Render, transferring the need-to-be-rendered data to render for further processing.</p>
-                        <p>If an event is triggered by a component in a MiniApp page, this page’s Render will send the event to worker for further processing. At the same time, the Render will wait for the data sent from worker to re-render the MiniApp page.</p>
+                        <p>The Worker establishes a connection for each render, transferring the need-to-be-rendered data to the render for further processing.</p>
+                        <p>If an event is triggered by a component in a MiniApp page, this page’s render will send the event to worker for further processing. At the same time, the render will wait for the data sent from worker to re-render the MiniApp page.</p>
                         <p>The rendering can be considered as stateless, and all the states will be stored in the worker.</p>
                         <p>The benefits of separating the view layer and the logic layer include:</p>
                         <ul>
