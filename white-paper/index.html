@@ -123,7 +123,7 @@
 <body>
     <section id='abstract'>
         <p>
-        This document introduces a new format for mobile application, named MiniApp, which is a very popular hybrid solution relying on Web technologies but also integrates with capabilities of Native Apps.
+        This document introduces a new format for mobile applications, named MiniApp, which is a very popular hybrid solution relying on Web technologies but also integrates with capabilities of the native apps.
         </p>
     </section>
     <section id='sotd'>
@@ -133,23 +133,23 @@
         <h2>Introduction</h2>
         <section>
             <h2>Problems</h2>
-            <p>Native Apps are well received in our daily life, but there are still many things that can be done better for users.</p>
+            <p>Native apps are well received in our daily life, but there are still many things that can be done better for users.</p>
             <ul>
                 <li>
-                    <p>Before a user get the service from a native app, he/she often has to go through the process to download -> install -> register the app.</p>
-                    <p>User can only keep a limited number of Native Apps on their phone due to constraint of storage capability.</p>
-                    <p>It's not easy to share data between different Native apps.</p>
+                    <p>Before a user gets the service from a native app, they often has to go through the process of downloading -> installing -> registering the app.</p>
+                    <p>Users can only keep a limited number of native apps on their phones due to the constraints of storage capability.</p>
+                    <p>It's not easy to share data between different native apps.</p>
                 </li>
                 <li>
-                    <p>To work on a Native App, developers may need to learn a few new programming languages.</p>
-                    <p>To provide the same service with Native Apps, developers may need to maintain duplicate products for different platforms.</p>
+                    <p>To work on a native app, developers may need to learn a few new programming languages.</p>
+                    <p>To provide the same service as native apps, developers may need to maintain duplicate products for different platforms.</p>
                 </li>
             </ul>
-            <p>The Web is an ideal platform to avoid these problems, but by far, it's still imperfect.</p>
+            <p>The Web is an ideal platform to avoid these problems, but it's still imperfect by far.</p>
             <ul>
                 <li>
-                    <p>Compared to the Native, it isn't easy to take advantage of the capabilities provided by the system. </p>
-                    <p>Also, it's usually difficult to design a Web application whose performance can actually match or surpass a similar Native app.</p>
+                    <p>Compared to the native, it isn't easy to take advantage of the capabilities provided by the system. </p>
+                    <p>Also, it's usually difficult to design a Web application whose performance can actually match or surpass a similar native app.</p>
                 </li>
                 <li>
                     <p>On a mobile device, users obtain services or contents outside the browser very frequently, naturally, they would like all their applications to be consistent on user accounts, login status and user interaction across the whole system.</p>
@@ -159,20 +159,20 @@
         </section>
         <section>
             <h2>What is MiniApp?</h2>
-                <p>MiniApp is a new format of mobile application, a hybrid solution which relies on Web technologies (especially CSS and JavaScript) but also integrates with capabilities of Native Apps.</p>
+                <p>MiniApp is a new format of mobile application, a hybrid solution which relies on Web technologies (especially CSS and JavaScript) but also integrates with capabilities of native apps.</p>
                 <p>A <dfn>super app</dfn> is a software platform that hosts and supports other applications (i.e., MiniApps), enabling their execution through the use of the platform's resources.</p>
-                <p>MiniApps got popular from their usage on a few super apps, as it was born with a few characters that help to fill the gap of the Web and the Native.</p>
+                <p>MiniApps got popular from their usage on a few super apps, as it was born with a few characters that help to fill the gap of the Web and the native.</p>
                 <ul>
                     <li>It's free of installation.</li>
                     <li>Multiple webviews to improve performance.</li>
-                    <li>It provides a few mechanisms to get access to OS capabilities or data through the Native.</li>
+                    <li>It provides a few mechanisms to get access to OS capabilities or data through the native.</li>
                     <li>The content is usually more trustworthy because the app needs to be validated by the platform.</li>
-                    <li>A miniapp can be distributed to multiple MiniApp platforms (the Web, a Native App, even the OS). These platforms also provide entry to the miniapp to ensure it can be easily discovered by the users.</li>
+                    <li>A MiniApp can be distributed to multiple MiniApp platforms (the Web, a native app, even the OS). These platforms also provide entry to the MiniApp to ensure it can be easily discovered by the users.</li>
                 </ul>
             </section>
             <section>
                 <h2>Gap between MiniApps and PWA</h2>
-                <p>MiniApps are <em>not</em> aimed to replace PWA, or the Web, or the Native.</p>
+                <p>MiniApps are <em>not</em> aimed to replace PWA, or the Web, or the native apps.</p>
 <p>MiniApps and PWAs are composed of the same resources (i.e., scripts, markup-language-based documents, stylesheets, multimedia, etc.). The type of documents and their coding languages are similar, but MiniApps implement specific dialects and built-in services that are not standard. </p>
 <p>Apart from the format, MiniApp's resources are usually packed in a self-contained physical structure that enables a flexible distribution from app marketplaces to offline exchange. </p>
 <p>The main difference between PWAs and MiniApps is the execution environment. MiniApp user agents are super-apps or platforms implemented on the operating system, while PWA user agents are usually web browsers.  </p>
@@ -246,10 +246,10 @@
                     <p>The popularization of MiniApps helps to make the shared bike a seamless service instead of a cumbersome application.</p>
                     <div class="two-cols">
                     <ul>
-                        <li>User chooses any of the miniapp platforms on their mobile device, which, is usually a <a>super app</a> that he/she already logined;</li>
+                        <li>User chooses any of the MiniApp platforms on their mobile device, which, is usually a <a>super app</a> that he/she already logged;</li>
                         <li>User scans the QR-code label attached on a shared bicycle within the <a>super app</a>;</li>
-                        <li>The hosted-app will automatically navigate to the shared bicycle miniapp and unlocks the bicycle instantly;</li>
-                        <li>Upon arrival, user locks the bike on the miniapp;</li>
+                        <li>The hosted-app will automatically navigate to the shared bicycle MiniApp and unlocks the bicycle instantly;</li>
+                        <li>Upon arrival, user locks the bike on the MiniApp;</li>
                         <li>Transaction completes, a message of the payment detail is sent to the user.</li>
                     </ul>
                     <figure>
@@ -259,12 +259,12 @@
                       </figcaption>
                     </figure>
                     </div>
-                    <p>For users, miniapps can bring convenient from a few perspectives:</p>
+                    <p>For users, MiniApps can bring convenient from a few perspectives:</p>
                     <table>
                       <tbody><tr>
                         <th></th>
                         <th>the Web</th> 
-                        <th>Native App</th>
+                        <th>Native app</th>
                         <th>MiniApp</th> 
                       </tr>
                       <tr>
@@ -306,12 +306,12 @@
                         AR Zoo MiniApp
                       </figcaption>
                     </figure>
-                    <p>For the developers, the incentive to work on miniapps is very obvious.</p>
+                    <p>For the developers, the incentive to work on MiniApps is very obvious.</p>
                     <table>
                       <tbody><tr>
                         <th></th>
                         <th>the Web</th> 
-                        <th>Native App</th>
+                        <th>Native app</th>
                         <th>MiniApp</th> 
                       </tr>
                       <tr>
@@ -323,8 +323,8 @@
                       <tr>
                         <td>Verified/Trusted</td>
                         <td>Still exploring</td> 
-                        <td>by Native App stores</td>
-                        <td>by host App platforms</td>
+                        <td>by native app stores</td>
+                        <td>by host app platforms</td>
                       </tr>
                       <tr>
                         <td>Deploy/Reload</td>
@@ -351,7 +351,7 @@
                     <h2>Case 3: MiniApp for Vehicle</h2>
                     <p>One of the goals of MiniApp to connect information and services across different platforms, so it's ideal for IoT applications such as Smart Automotive, voice-control speaker and Smart TV.</p>
                     <p>Nowadays, it's possible to convert some MiniApps to adapt the vehicle screen and system, also, a few MiniApp vendors have built a MiniApp platform specially design for the vehicle system, to help distribute or upgrade applications to various of car model. This brings millions of Web developers to the Automotive application ecosystem.</p>
-                    <p>These Automotive miniapps can service many user scenarios, including gas filling, car washing, Electronic Toll Collection, insurance, restaurant reservation, or entertainment. For example, when the system detects the remaining fuel is less than 20%, it can recommend to the owner a Gas Pumping MiniApp. The user can get the information of the nearest gas station and head there to complete the gas pumping including the payment within MiniApp, "refueling without getting off the vehicle".</p>
+                    <p>These Automotive MiniApps can service many user scenarios, including gas filling, car washing, Electronic Toll Collection, insurance, restaurant reservation, or entertainment. For example, when the system detects the remaining fuel is less than 20%, it can recommend to the owner a Gas Pumping MiniApp. The user can get the information of the nearest gas station and head there to complete the gas pumping including the payment within MiniApp, "refueling without getting off the vehicle".</p>
                     <figure>
                       <img alt="smart car" src="images/smart_cars.png" width="600">
                       <figcaption>
@@ -418,7 +418,7 @@
                     <h2>Core Features</h2>
                     <section id="separate-the-view-layer-from-the-logic-layer">
                         <h2>Separate the View Layer from the Logic Layer</h2>
-                        <p>In a miniapp, the view layer is usually separated from the logic layer.</p>
+                        <p>In a MiniApp, the view layer is usually separated from the logic layer.</p>
                         <figure>
                           <img alt="logic layer and view layer" src="images/logic_view.png" width="400">
                           <figcaption>
@@ -427,7 +427,7 @@
                         </figure>
                         <p>The View Layer is responsible for rendering MiniApp pages, including Web components rendering and native components rendering, which can be considered as hybrid rendering. For example, Web components rendering can be handled by WebView, but some of the Web components rendering aren't supported by WebView or have performance limitation, MiniApp also relies on some native components, such as map, video, etc.</p>
                         <p>Logic Layer is implemented with JS Worker. The Worker is responsible for MiniApp’s event processing, API calling and lifecycle management.</p>
-                        <p>Extended native capabilities usually come from the hosting Native App or OS, including payment, file processing, scanning, phone call, etc. These capabilities are called through certain APIs. When a Mini App calls a native API, it transfers the API calling to Extended Native Capabilities for further processing via JS Bridge, and obtains the result from Extended Native Capabilities via JS Bridge.</p>
+                        <p>Extended native capabilities usually come from the hosting native app or OS, including payment, file processing, scanning, phone call, etc. These capabilities are called through certain APIs. When a Mini App calls a native API, it transfers the API calling to Extended Native Capabilities for further processing via JS Bridge, and obtains the result from Extended Native Capabilities via JS Bridge.</p>
                         <figure>
                           <img alt="data flow of MiniApp when an API is called" src="images/data_flow.png" width="600">
                           <figcaption>
@@ -447,7 +447,7 @@
                     <section id="api_and_component">
                         <h2>Rich APIs and Components</h2>
                         <p>MiniApp platform provides many components to help developers build a fancy UI, including basic components like View, Form, Image, and high-level component like Maps.</p>
-                        <p>MiniApp venders also offer a number of APIs for developers to get access to capabilities of both the Web and the native, including basic APIs such as UI display APIs, Image API, and those advanced ones like Account API, Map API, Payment API.</p>
+                        <p>MiniApp vendors also offer a number of APIs for developers to get access to capabilities of both the Web and the native, including basic APIs such as UI display APIs, Image API, and those advanced ones like Account API, Map API, Payment API.</p>
                         <p>APIs usually work together with components. When user clicks certain component on a MiniApp page, it will call the related API to complete user’s interaction and refresh the current MiniApp page if needed.</p>
                     </section>
                     <section id="constructor">
@@ -576,8 +576,8 @@
                     <dl>
                         <dt>Alipay Mini Program</dt>
                         <dd>
-                            <p>Alipay Mini Program runs on top of Alipay Native App, which is a hybrid solution of Web and Native. Alipay Mini Program relies on Web technologies as CSS and JavaScript. Meanwhile, it integrates the functionalities of Alipay Native App as payment, credit service, face authentication, etc.</p>
-                            <p>Now there have been more than 1,000,000 Mini Programs running on Alipay Native App and 230 million DAU (Daily Active User). The user scenarios include retails, transportation, medical services, etc.</p>
+                            <p>Alipay Mini Program runs on top of Alipay native app, which is a hybrid solution of Web and Native. Alipay Mini Program relies on Web technologies as CSS and JavaScript. Meanwhile, it integrates the functionalities of Alipay native app as payment, credit service, face authentication, etc.</p>
+                            <p>Now there have been more than 1,000,000 Mini Programs running on Alipay native app and 230 million DAU (Daily Active User). The user scenarios include retails, transportation, medical services, etc.</p>
                         </dd>
                         <dt>Baidu Smart Mini Program</dt>
                         <dd>
@@ -592,7 +592,7 @@
                         <dt>360 PC MiniApp</dt>
                         <dd>
                             <p>MiniApps on PC is still in an early exploration stage. 360 PC MiniApp is a light application running in their PC browser. Compared to the traditional webpages, it's served with more functionalities and easier interaction with the PC operation system.</p>
-                            <p>PC miniapps are only available to those validated as an enterprise account, most of the features are under tough regulations, so that they can be considered as highly trusted web contents.</p>
+                            <p>PC MiniApps are only available to those validated as an enterprise account, most of the features are under tough regulations, so that they can be considered as highly trusted web contents.</p>
                         </dd>
                         <dt>PWAs</dt>
                         <dd>
@@ -619,7 +619,7 @@
             </section>
             <section>
             <h2>Transition Animation</h2>
-                <p>MiniApp would like to provide transition animation during page switching so that users can have similar experience as when they are using a Native App, but it's almost impossible to do that now.</p>
+                <p>MiniApp would like to provide transition animation during page switching so that users can have similar experience as when they are using a native app, but it's almost impossible to do that now.</p>
                 <p>Proposal: Mini App needs an API to call add transition animation during MiniApp page switching.</p>
             </section>
             <section>
@@ -666,7 +666,7 @@
                             <p>User can place the 3D model in the real world environment with camera.  User can specify different locations to place the model.</p>
                         </li>
                     </ul>
-                <p>Proposal: A <code>&lt;xmodel></code> Element to specify a 3D model on the web and to power interactive 3D contents with AR.</p>
+                <p>Proposal: A <code>&lt;xmodel></code> Element to specify a 3D model on the Web and to power interactive 3D contents with AR.</p>
             </section>
 
             <section>
@@ -953,7 +953,7 @@
                       <tr id="term.mini-program">
                         <td>小程序</td>
                         <td>Mini Program</td> 
-                        <td>One format of MiniApp running within Native Apps.</td> 
+                        <td>One format of MiniApp running within native apps.</td> 
                       </tr>
                       <tr id="term.quick-app">
                         <td>快应用</td>
