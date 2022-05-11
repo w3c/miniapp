@@ -441,7 +441,7 @@
                           </figcaption>
                         </figure>
                         <p>The view layer is responsible for rendering MiniApp pages, including Web components and native components display, which can be considered as hybrid rendering. For example, some Web components might not be supported by the WebView or have performance limitations, so MiniApp also relies on native components such as map, video, etc.</p>
-                        <p>The logic layer is implemented with JS Worker. The Worker is responsible for MiniApp’s event processing, API calls, and lifecycle management.</p>
+                        <p>The logic layer is implemented with JS Workers. A worker is responsible for MiniApp’s event processing, API calls, and lifecycle management.</p>
                         <p>Extended native capabilities usually come from the hosting native app or OS, including payment, file processing, image scanning, phone calls, etc. These features are called through specific APIs. When a MiniApp calls a native API, it transfers the API call to extended native capabilities for further processing via a JS Bridge. It obtains the result from the extended native capabilities via the JS Bridge.</p>
                         <figure>
                           <img alt="data flow of MiniApp when an API is called" src="images/data_flow.png" width="600">
@@ -449,51 +449,51 @@
                             Data flow of MiniApp when an API is called
                           </figcaption>
                         </figure>
-                        <p>The Worker establishes a connection for each Render, transferring the need-to-be-rendered data to the Render for further processing.</p>
-                        <p>If an event is triggered by a component in a MiniApp page, this page’s Render will send the event to worker for further processing. At the same time, the Render will wait for the data sent from worker to re-render the MiniApp page.</p>
-                        <p>The rendering can be considered as stateless, and all the states will be stored in the worker.</p>
+                        <p>The worker establishes a connection for each Render, transferring the need-to-be-rendered data to the Render for further processing.</p>
+                        <p>If an event is triggered by a component in a MiniApp page, this page’s Render will send the event to the worker for further processing. At the same time, the Render will wait for the data sent from the worker to re-render the MiniApp page.</p>
+                        <p>The rendering can be considered stateless, and all the states will be stored in the worker.</p>
                         <p>The benefits of separating the view layer and the logic layer include:</p>
                         <ul>
                             <li>Very handy for data sharing and interaction among multiple MiniApp pages.</li>
-                            <li>Having the same context within a lifecycle of MiniApp can provide a similar coding experience for those developers coming from native app developement background.</li>
-                            <li>Separation and parallel implementation of render and JS worker can prevent the situation where a JS execution impacts or slows down the page rendering, which can help enhance the performance of rendering.</li>
+                            <li>Having the same context within the lifecycle of MiniApp can provide a similar coding experience for those developers coming from native app development background.</li>
+                            <li>Separation and parallel implementation of render and JS worker can prevent the situation where a JS execution impacts or slows down the page rendering, which can help enhance the rendering performance.</li>
                         </ul>
                     </section>
                     <section id="api_and_component">
                         <h2>Rich APIs and Components</h2>
-                        <p>MiniApp platform provides many components to help developers build a fancy UI, including basic components like View, Form, Image, and high-level component like Maps.</p>
-                        <p>MiniApp vendors also offer a number of APIs for developers to get access to capabilities of both the Web and the native, including basic APIs such as UI display APIs, Image API, and those advanced ones like Account API, Map API, Payment API.</p>
-                        <p>APIs usually work together with components. When user clicks certain component on a MiniApp page, it will call the related API to complete user’s interaction and refresh the current MiniApp page if needed.</p>
+                        <p>MiniApp platform provides many components to help developers build a fancy UI, including essential components like `view`, `form`, `image`, and high-level components like maps.</p>
+                        <p>MiniApp vendors also offer many APIs for developers to access both the Web and the native capabilities, including basic interfaces such as UI display APIs, image processing API, and those advanced ones like user account API, map API, and payment API.</p>
+                        <p>APIs usually work together with components. When a user clicks a certain component on a MiniApp page, it will call the related API to complete the user’s interaction and refresh the current MiniApp page if needed.</p>
                     </section>
                     <section id="constructor">
                         <h2>MiniApp Constructor</h2>
-                        <p>In order to obtain similar user experiences to native apps, MiniApp resources are usually packaged together. After downloading and installing a MiniApp package, all static page templates/CSS/JavaScript files need to present app pages already exist on users' machines. These resources are always available without any redundant downloads until next update.</p>
+                        <p>In order to obtain similar user experiences as in native apps, MiniApp resources are usually packaged together. After downloading and installing a MiniApp package, all the static resources (i.e., page templates, CSS, JavaScript files, and other documents) required by the MiniApp persist on the users' devices. These resources are always available without any redundant downloads until the next update.</p>
                         <p>A MiniApp package is a compressed ZIP archive, including:</p>
                             <ul>
-                                <li>one configuration document, located at the root directory of the package. The config file should include:
+                                <li>A configuration document located in the root directory of the package. The config file should include:
                                     <ul>
-                                        <li>general description of the entire MiniApp.</li>
-                                        <li>description of pages and their corresponding paths, for the purpose of page locating and opening.</li>
+                                        <li>the general description of the entire MiniApp; and</li>
+                                        <li>the description of the pages, including their corresponding paths and configuration, for page setup and opening.</li>
                                     </ul></li>
-                                    <li>one app-level logic file, containing JavaScript codes, deals with app-level lifecycle callbacks.</li>
-                                    <li>one or multi page files, containing templates codes for page structure, CSS codes for page style, and JavaScript codes for page logic.</li>
-                                    <li>support digital signature for validation.</li>
+                                    <li>One app-level logic file containing a script to deal with app-level lifecycle callbacks.</li>
+                                    <li>One or several files, containing templates code for page structure, CSS stylesheets for page styling, and JavaScript codes for the page logic.</li>
+                                    <li>Digital signature support for integrity validation.</li>
                             </ul>
-                            <p>For the purpose of locating a specific MiniApp while searching and executing, a MiniApp must have a package name or an ID on the platform. An icon is also required for user recognization.</p>
+                            <p>For the purpose of locating a specific MiniApp while searching and executing, a MiniApp must have a package name or an identifier on the platform. An icon is also required for user recognition.</p>
                     </section>
                     <section>
                         <h2>MiniApp Widgets</h2>
-                        <p>In addition to being presented in the form of an MiniApp page, MiniApp can also be displayed in the form of information fragment, that is, a MiniApp widget. In this form, developers can put their service and/or content to various host scenarios, called host environment, such as assistants, search page, etc.. This feature connects services of the MiniApp with the scenario, providing users with more convenience.</p>
-                        <p>For example, when a user purchases a train ticket for trip, the MiniApp widget on <a href="#term.smart-assistant">smart assistant</a> shows the train's latest status immediately. The user can click on this widget and jump to a full-screen MiniApp page for more detailed information.</p>
+                        <p>In addition to MiniApp pages, MiniApps can also be displayed as information fragments or MiniApp widgets. In this form, developers can put their service and/or content to various host scenarios, called host environments (e.g., assistants, global search of the device, etc.). This feature connects the services and content of the MiniApp with the concrete scenario, providing users with more convenience.</p>
+                        <p>For example, when a user purchases a train ticket for a trip, the MiniApp widget on the <a href="#term.smart-assistant">smart assistant</a> shows the train's latest status immediately. The user can click on this widget and jump to a full-screen MiniApp page for more detailed information.</p>
                         <figure>
-                          <img alt="Widget from home screen to MiniApp" src="images/widget.png" width="600">
+                          <img alt="Widget from the home screen to a MiniApp" src="images/widget.png" width="600">
                           <figcaption>
-                            Widget from home screen to MiniApp
+                            Widget from the home screen to a MiniApp
                           </figcaption>
                         </figure>
-                        <p>Same as MiniApp page, widget is also described by URI scheme. The host environment specifies the MiniApp package and the corresponding widget to be loaded through URI path, and passes data to the widget through URI query params. After the widget is loaded, it is displayed and rendered in the host environment. Data from the host and widget, as well as data from different widgets are isolated to ensure security and independence.</p>
+                        <p>Like in a MiniApp page, a widget is also described by URI scheme. The host environment specifies the MiniApp package and the corresponding widget to be loaded through its URI path and passes data to the widget through URI query parameters. After the widget is loaded, it is displayed and rendered in the host environment. Data from the host and widget, as well as data from different widgets are isolated to ensure security and independence.</p>
 
-                        <p>In many scenarios, a widget can open a MiniApp page for more complicated operations. In such cases, widgets often need to share data with its corresponding MiniApp (e.g., maintain a consistent login status). Therefore, the data of the widget and the MiniApp can be accessed from each side. In other word, MiniApp widget and page have same data access rights.</p>
+                        <p>In many scenarios, a widget can open a MiniApp page for more complicated operations. In such cases, widgets often need to share data with their corresponding MiniApp (e.g., maintain a consistent login status). Therefore, the data of the widget and the MiniApp can be accessed from each side. In other words, the MiniApp widget and the page have same data access rights.</p>
 
                         <figure>
                           <img alt="widget interaction" src="images/widget_interaction.png" width="600">
@@ -502,23 +502,23 @@
                           </figcaption>
                         </figure>
 
-                        <p>One of the goals of the widget is to let the user forget the traditional app concept and truly meet the user's needs in the form of service. So in addition to all app invocation paths, widgets can also be triggered by different methods on different scenarios, such as text keywords, voice analysis, picture recognition, scan code, event intent.</p>
+                        <p>One of the goals of the widget is to let the user forget the traditional app concept and truly meet the user's needs in the form of service. So, in addition to all app invocation paths, widgets can also be triggered by different methods in different scenarios, such as text keywords, voice analysis, picture recognition, scan code, and event intent.</p>
                         <p>Note: Widget is implemented by Quick App in China market.</p>
                     </section>
                     <section>
                         <h2>Single-Instance, Multi-Entries</h2>
-                        <p>There are multiple entrances to discover, open and access MiniApps. Unlike Web in multi WebView, only one instance will be created for the same MiniApp, so MiniApp keeps its status and data in a consistent manner globally. For example, after one user opens and logs in a MiniApp through the entrance of QR code for the first time, the user will remain logged in next time when the user returns from another entrance like MiniApp store.</p>
-                        <p>The entries for MiniApps include, but not limit to:</p>
+                        <p>There are multiple entrances to discover, open and access MiniApps. Unlike the Web content in multi WebViews, only one instance will be created for the same MiniApp, so MiniApp keeps its status and data in a consistent manner globally. For example, after one user opens and logs in to a MiniApp through the entrance of a QR code for the first time, the user will remain logged in the next time when the user returns from another entry like a MiniApp store.</p>
+                        <p>The entries for MiniApps include, but are not limited to:</p>
                         <ul>
-                            <li>MiniApp store</li>
-                            <li>Search Engine</li>
-                            <li>Smart Assistant</li>
+                            <li>MiniApp marketplace</li>
+                            <li>Search engine</li>
+                            <li>Smart assistant</li>
                             <li>QR code</li>
                             <li>SMS/text</li>
-                            <li>Physical Object(with AI)</li>
+                            <li>Physical object (with AI)</li>
                             <li>Browser</li>
-                            <li>Calender items</li>
-                            <li>Voice message(with AI)</li>
+                            <li>Calendar items</li>
+                            <li>Voice message (with AI)</li>
                         </ul>  
                     </section>
                     <section>
@@ -526,24 +526,24 @@
                         <p>MiniApps try to improve their performance and user experience with a few mechanisms that have been proved to be effective through practice.
                         <dl>                            
                                 <dt>Packaging</dt>
-                                <dd><p>With <a href="#constructor">MiniApp's constructor</a>, user only needs to download the package when the MiniApp is first opened, and then the static resources(pages/JavaScript/CSS) in the MiniApp needn't be downloaded again, so that the loading and jumping of the following pages can be more quickly responded. This feature improves user operation experience and save network traffic.</p>
-                                <p>Meanwhile, the MiniApp has a pre-download mechanism, which can download the MiniApp packages in advance, or pre-downloads separately for the first page, and perform streaming decompression in parallel during download to minimize the time-consuming of MiniApp startup phase and balance the loss of the first page performance when openning first time.</p>
+                                <dd><p>With <a href="#constructor">MiniApp's constructor</a>, a user only needs to download the package when the MiniApp is first opened, and then the static resources (e.g, pages, scripts, and CSS) in the MiniApp needn't be downloaded again, so that the loading and jumping of the following pages are more efficient. This feature improves user experience and saves network traffic.</p>
+                                <p>Meanwhile, the MiniApp has a pre-download mechanism, which can download the MiniApp packages in advance, or pre-downloads separately for the first page, and perform streaming decompression in parallel during download to minimize the time-consuming of MiniApp startup phase and balance the loss of the first page performance when opening first time.</p>
                             </dd>
                                 <dt>Multiple Rendering Views</dt>
-                            <dd><p>The MiniApp uses native page stack management between render views, and the page switching is driving by native code. Therefore, the gesture operation in the page, the switching between pages can achieve the exactly same smooth experience as native.</p>
-                                <p>Because of the isolation of view layer and logic layer, the view layer can be rendered independently. Without being blocked by JavaScript logic code, the rendering speed of the page can be greatly improved.</p>
+                            <dd><p>The MiniApp uses native page stack management between render views, and the page switching is driven by native code. Therefore, the gesture operation in the page, the switching between pages can achieve the exact same smooth experience as native.</p>
+                                <p>Because of the isolation of the view and logic layers, the view layer can be rendered independently. Without being blocked by JavaScript logic code, the rendering speed of the page can be greatly improved.</p>
                             </dd>
                                 <dt>Pre-built and reuse of runtime environments</dt>
                             <dd>
-                                <p>MiniApp's runtime environment is usually pre-built before launching a mini-app, thus reducing the time to launch a MiniApp. Pre-built content includes rendering views, static resources, developer defined prefetch requests, and MiniApps runtime container. After a MiniApp is activated, it will take over the pre-built rendering view, then we continue to pre-built a new render view into the cache pool for the next one. There is a limit on render view quantity, when any render view gets closed or the quantity limit is  exceeded, the oldest opened render view will be destroyed. When the MiniApp application exit, the runtime will be destroyed and the application environment and resources can be reused.</p>
+                                <p>MiniApp's runtime environment is usually pre-built before launching a mini-app, thus reducing the time to launch a MiniApp. Pre-built content includes rendering views, static resources, developer-defined prefetch requests, and MiniApps runtime container. After a MiniApp is activated, it will take over the pre-built rendering view, and then we will continue to pre-build a new render view into the cache pool for the next one. There is a limit on render view quantity. When any render view gets closed or the quantity limit is exceeded, the oldest opened render view will be destroyed. When the MiniApp application exits, the runtime is destroyed, and the application environment and resources can be reused.</p>
                             </dd>
                                 <dt>Pre-defined Component and API</dt>
                             <dd>
-                                <p>MiniApp platforms provides very rich <a href="#api_and_component">components and APIs</a>, these components and APIs are usually well designed and able to help ensure the performance of the general work from developers.</p>
+                                <p>MiniApp platforms provide very rich <a href="#api_and_component">components and APIs</a>. These components and APIs are usually well designed to meet the developers' performance requirements.</p>
                             </dd>
                                 <dt>JavaScript framework presets and hot reload</dt>
                             <dd>
-                                <p>MiniApp's runtime environment contains two major parts, the basic capabilities provided by native code, and a framework, include developer API and some components, implemented by JavaScript. The JavaScript framework is built in native Apps, and will be loaded into the MiniApp runtime environment in advance before executing MiniApp. The JavaScript framework can be hot reloaded (reload during usage), which brings lots of possibilities to improve performance.</p>
+                                <p>MiniApp's runtime environment contains two major parts, the basic capabilities provided by native code and a framework, including developer API and some components implemented by JavaScript. The JavaScript framework is built in native apps and will be loaded into the MiniApp runtime environment in advance before executing the MiniApp. The JavaScript framework can be hot reloaded (reload during usage), which brings lots of possibilities to improve performance.</p>
                             </dd>
                         </dl>
                     </section>
@@ -554,7 +554,7 @@
                         The MiniApp platforms provide a variety of ways for a user to log in to the MiniApp. If the user has already logged in to the platform with identity authentication, the login information of the platform can be shared with MiniApp, quickly realizing the interoperability of MiniApp’s own account system and the platform account system, which makes the access process of the MiniApp more smooth.
                       </p>
                       <p>
-                        For example, the traditional login process with SMS verification is more time-consuming, users need to manually enter their cell phone number first, and then enter the verification code after receiving the SMS to log in. The advantage of MiniApp is that developers can use the components / APIs provided by the platform to obtain users' cell phone numbers securely and conveniently, prompting the user to authorize one-click login process with their cell phone numbers, which makes the entire process simple for the user and reduces the cost of obtaining user information for developers.
+                        For example, the traditional login process with SMS verification is more time-consuming; users need to manually enter their cell phone number first and then enter the verification code after receiving the SMS to log in. The advantage of MiniApp is that developers can use the components / APIs provided by the platform to obtain users' cell phone numbers securely and conveniently, prompting the user to authorize a one-click login process with their cell phone numbers, which makes the entire process simple for the user and reduces the cost of obtaining user information for developers.
                       </p>
                       <figure>
                         <img alt="Sign in to a MiniApp" src="images/login.png" width="300">
@@ -567,22 +567,22 @@
                   <section>
                     <h2>Subpackaging</h2>
 <p>MiniApp subpackaging is a build mechanism for improving the MiniApp package development process. It helps developers divide different business modules into different subpackages.</p>
-<p>For developers: a MiniApp has the main package by default, it contains the startup page files and public resources. Subpackage is a building type that flexibly way divided the developer's business modules. Users can open special pages after loading different sub-packages on demand.</p>
-<p>For users: when the user starts the MiniApp, the main package will be downloaded by default and the page in the main package will be launched. If the user needs to open a page in the subpackage, the MiniApp Runtime will start to download and load the subpackage and start the subpackage page.</p>
+<p>For developers: a MiniApp has the main package by default; it contains the startup page files and public resources. Subpackage is a building type that flexibly divides the developer's business modules. Users can open special pages after loading different sub-packages on demand.</p>
+<p>For users: when the user starts the MiniApp, the main package will be downloaded by default, and the page in the main package will be launched. If the user needs to open a page in the subpackage, the MiniApp Runtime will start to download and load the subpackage and start the subpackage page.</p>
 <p>Through such a subpackage building mechanism is better to decouple and collaborate when multiple teams develop together. When users use the MiniApps, the subpackaging mechanism can improve the loading speed of the MiniApp homepage, load subpackages on demand, and optimize the user experience.</p>
                 </section>
 
                 <section>
                   <h2>Add-ons
                   </h2>
-                  <p>In a MiniApp, an add-on / extension is an encapsulated module that adds a specific feature to an existing MiniApp, and it could be a component, a JavaScript module, or a page. The add-on / extension can be only executed in a MiniApp instead of running separately. Developers can develop add-on / extension just like a MiniApp, and upload it to the MiniApp platform for other MiniApps to reuse.</p>
-                  <p>MiniApp supports add-on / extension to:</p>
+                  <p>In a MiniApp, an add-on/extension is an encapsulated module that adds a specific feature to an existing MiniApp, and it could be a component, a JavaScript module, or a page. The add-on/extension can only be executed in a MiniApp instead of running separately. Developers can develop an add-on/extension just like a MiniApp, and upload it to the MiniApp platform for other MiniApps to reuse.</p>
+                  <p>MiniApp supports add-on/extensions to:</p>
                   <ul>
                   <li>reduce development costs by code reuse and help developers easily add new features</li>
-                  <li>update functionality automatically without awareness of developers</li>
+                  <li>update functionality automatically without the awareness of developers</li>
                   <li>reduce the package size of MiniApps by not loading unused functions</li>
                   </ul>
-                  <p>The add-on / extension mechanism lowers the barriers of developing MiniApps and brings more developers to the MiniApp ecosystem.</p>
+                  <p>The add-on/extension mechanism lowers the barriers to developing MiniApps and brings more developers to the MiniApp ecosystem.</p>
               </section>
                 </section>
                 <section>
