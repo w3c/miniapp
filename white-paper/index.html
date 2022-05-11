@@ -151,7 +151,7 @@
             <p>Native apps are well received in our daily life, but there are still many things that can be done better for users.</p>
             <ul>
                 <li>
-                    <p>Before a user gets the service from a native app, they often has to go through the process of downloading -> installing -> registering the app.</p>
+                    <p>Before users get the service from a native app, they often have to go through the process of downloading -> installing -> registering the app.</p>
                     <p>Users can only keep a limited number of native apps on their phones due to the constraints of storage capability.</p>
                     <p>It's not easy to share data between different native apps.</p>
                 </li>
@@ -167,31 +167,31 @@
                     <p>Also, it's usually difficult to design a Web application whose performance can actually match or surpass a similar native app.</p>
                 </li>
                 <li>
-                    <p>On a mobile device, users obtain services or contents outside the browser very frequently, naturally, they would like all their applications to be consistent on user accounts, login status and user interaction across the whole system.</p>
-                    <p>Moreover, sometimes users may want to share some data with an application if they really trust it, but for a few frequently requested information, such as personal mobile number of the current device, or the contact list, there isn't a good way for the users to give permits on the Web.</p>
+                    <p>On a mobile device, users frequently obtain services or contents outside the browser; naturally, they would like all their applications to be consistent on user accounts, login status, and user interaction across the whole system.</p>
+                    <p>Moreover, sometimes users may want to share some data with an application if they really trust it. Still, for a few frequently requested information, such as the personal mobile number of the current device, or the contact list, there isn't a good way for the users to give permits on the Web.</p>
                 </li>
             </ul>
         </section>
         <section>
             <h2>What is MiniApp?</h2>
-                <p>MiniApp is a new format of mobile application, a hybrid solution which relies on Web technologies (especially CSS and JavaScript) but also integrates with capabilities of native apps.</p>
-                <p>A <dfn>super app</dfn> is a software platform that hosts and supports other applications (i.e., MiniApps), enabling their execution through the use of the platform's resources.</p>
-                <p>MiniApps got popular from their usage on a few super apps, as it was born with a few characters that help to fill the gap of the Web and the native.</p>
+                <p>MiniApp is a new mobile application format, a hybrid solution which relies on Web technologies (especially CSS and JavaScript) and integrates with the capabilities of native apps.</p>
+                <p>A <dfn>super app</dfn> is a software platform that hosts and supports other applications (i.e., MiniApps), enabling their execution by using the platform's resources.</p>
+                <p>MiniApps got popular from their usage on a few super apps, as it was born with a few characters that helped fill the gap between the Web and the native.</p>
                 <ul>
                     <li>It's free of installation.</li>
                     <li>Multiple webviews to improve performance.</li>
-                    <li>It provides a few mechanisms to get access to OS capabilities or data through the native.</li>
+                    <li>It provides a few mechanisms to access OS capabilities or data through the native.</li>
                     <li>The content is usually more trustworthy because the app needs to be validated by the platform.</li>
-                    <li>A MiniApp can be distributed to multiple MiniApp platforms (the Web, a native app, even the OS). These platforms also provide entry to the MiniApp to ensure it can be easily discovered by the users.</li>
+                    <li>A MiniApp can be distributed to multiple MiniApp platforms (the Web, a native app, even the OS). These platforms also provide entry to the MiniApp to ensure the users can easily discover it.</li>
                 </ul>
             </section>
             <section>
                 <h2>Gap between MiniApps and PWA</h2>
-                <p>MiniApps are <em>not</em> aimed to replace PWA, or the Web, or the native apps.</p>
+                <p>MiniApps are <em>not</em> aimed to replace PWA, the Web, or the native apps.</p>
 <p>MiniApps and PWAs are composed of the same resources (i.e., scripts, markup-language-based documents, stylesheets, multimedia, etc.). The type of documents and their coding languages are similar, but MiniApps implement specific dialects and built-in services that are not standard. </p>
 <p>Apart from the format, MiniApp's resources are usually packed in a self-contained physical structure that enables a flexible distribution from app marketplaces to offline exchange. </p>
 <p>The main difference between PWAs and MiniApps is the execution environment. MiniApp user agents are super-apps or platforms implemented on the operating system, while PWA user agents are usually web browsers.  </p>
-<p>Although both technologies have similar APIs and services, there is a significant gap between the API specifications in each application type. PWAs rely on standard Web APIs while MiniApps implement non-standard APIs to maximize the platform's capabilities, such as device-specific features and vendor-exclusive services.  </p>
+<p>Although both technologies have similar APIs and services, there is a significant gap between the API specifications in each application type. PWAs rely on standard Web APIs, while MiniApps implement non-standard APIs to maximize the platform's capabilities, such as device-specific features and vendor-exclusive services.  </p>
 <p>MiniApp vendors define similar UI (User Interface) elements that do not always have a direct equivalent in HTML. </p>
 <p>Depending on the implementation, a MiniApp user agent could be an operating system, a super-app, or any other hosting platform, based on different and various rendering engines and WebViews. The architecture of a MiniApp user agent differs from PWA user agents, as we can see in the following picture.</p>
 
@@ -203,7 +203,7 @@
 </figure>
 
 <p>
-  The main differences between them can be summarized as the following table.
+  The main differences between them can be summarized in the following table.
 </p>
 
 <table>
@@ -261,7 +261,7 @@
                     <p>The popularization of MiniApps helps to make the shared bike a seamless service instead of a cumbersome application.</p>
                     <div class="two-cols">
                     <ul>
-                        <li>User chooses any of the MiniApp platforms on their mobile device, which, is usually a <a>super app</a> that he/she already logged;</li>
+                        <li>User chooses any of the MiniApp platforms on their mobile device, which, is usually a <a>super app</a> that they already logged in;</li>
                         <li>User scans the QR-code label attached on a shared bicycle within the <a>super app</a>;</li>
                         <li>The hosted-app will automatically navigate to the shared bicycle MiniApp and unlocks the bicycle instantly;</li>
                         <li>Upon arrival, user locks the bike on the MiniApp;</li>
@@ -313,7 +313,7 @@
                 <section>
                     <h2>Case 2: AR Zoo</h2>
                     <p>MiniApp developers can simply use HTML/CSS/JavaScript as the programming language, but MiniApp is more flexible so it excels at quick development of complex features in daily work.</p>
-                    <p>This MiniApp tries to build an AR zoo with AI technologies to recognise the animals. Developers can easily do that by adding a few components or APIs that provide access to the native capabilities or advance features, f.ex., Image Recognition, AR 3D Animal models rendering, a speech API to for speech synthesis, AR navigation provided by the map SDK.</p>
+                    <p>This MiniApp tries to build an AR zoo with AI technologies to recognise the animals. Developers can easily do that by adding a few components or APIs that provide access to the native capabilities or advance features (e.g., Image Recognition, AR 3D Animal models rendering, a speech API to for speech synthesis, and AR navigation provided by the map SDK).</p>
                     <p>MiniApps can be discovered by the search engines, by the MiniApp store in the hosted-app or by QR-code.
                     <figure>
                       <img alt="AR zoo" src="images/ar_zoo.png" width="600">
@@ -468,7 +468,7 @@
                     <section id="constructor">
                         <h2>MiniApp Constructor</h2>
                         <p>In order to obtain similar user experiences to native apps, MiniApp resources are usually packaged together. After downloading and installing a MiniApp package, all static page templates/CSS/JavaScript files need to present app pages already exist on users' machines. These resources are always available without any redundant downloads until next update.</p>
-                        <p>A MiniApp package is a compressed format (e.g. zip) archive, including:</p>
+                        <p>A MiniApp package is a compressed ZIP archive, including:</p>
                             <ul>
                                 <li>one configuration document, located at the root directory of the package. The config file should include:
                                     <ul>
@@ -493,7 +493,7 @@
                         </figure>
                         <p>Same as MiniApp page, widget is also described by URI scheme. The host environment specifies the MiniApp package and the corresponding widget to be loaded through URI path, and passes data to the widget through URI query params. After the widget is loaded, it is displayed and rendered in the host environment. Data from the host and widget, as well as data from different widgets are isolated to ensure security and independence.</p>
 
-                        <p>In many scenarios, a widget can open a MiniApp page for more complicated operations. In such cases, widgets often need to share data with its corresponding MiniApp, e.g. maintain a consistent login status. Therefore, the data of the widget and the MiniApp can be accessed from each side. In other word, MiniApp widget and page have same data access rights.</p>
+                        <p>In many scenarios, a widget can open a MiniApp page for more complicated operations. In such cases, widgets often need to share data with its corresponding MiniApp (e.g., maintain a consistent login status). Therefore, the data of the widget and the MiniApp can be accessed from each side. In other word, MiniApp widget and page have same data access rights.</p>
 
                         <figure>
                           <img alt="widget interaction" src="images/widget_interaction.png" width="600">
@@ -530,7 +530,7 @@
                                 <p>Meanwhile, the MiniApp has a pre-download mechanism, which can download the MiniApp packages in advance, or pre-downloads separately for the first page, and perform streaming decompression in parallel during download to minimize the time-consuming of MiniApp startup phase and balance the loss of the first page performance when openning first time.</p>
                             </dd>
                                 <dt>Multiple Rendering Views</dt>
-                            <dd><p>The MiniApp uses native page stack management between render views, and the page switching is driving by native code. Therefore, the gesture operation in the page, the switching between pages can achieve the exactly same smooth experience as Native.</p>
+                            <dd><p>The MiniApp uses native page stack management between render views, and the page switching is driving by native code. Therefore, the gesture operation in the page, the switching between pages can achieve the exactly same smooth experience as native.</p>
                                 <p>Because of the isolation of View layer and Logic layer, the View layer can be rendered independently. Without being blocked by JavaScript logic code, the rendering speed of the page can be greatly improved.</p>
                             </dd>
                                 <dt>Pre-built and reuse of runtime environments</dt>
@@ -543,7 +543,7 @@
                             </dd>
                                 <dt>JavaScript framework presets and hot reload</dt>
                             <dd>
-                                <p>MiniApp's runtime environment contains two major parts, the basic capabilities provided by Native code, and a framework, include developer API and some components, implemented by JavaScript. The JavaScript framework is built in native Apps, and will be loaded into the MiniApp runtime environment in advance before executing MiniApp. The JavaScript framework can be hot reloaded (reload during usage), which brings lots of possibilities to improve performance.</p>
+                                <p>MiniApp's runtime environment contains two major parts, the basic capabilities provided by native code, and a framework, include developer API and some components, implemented by JavaScript. The JavaScript framework is built in native Apps, and will be loaded into the MiniApp runtime environment in advance before executing MiniApp. The JavaScript framework can be hot reloaded (reload during usage), which brings lots of possibilities to improve performance.</p>
                             </dd>
                         </dl>
                     </section>
@@ -591,7 +591,7 @@
                     <dl>
                         <dt>Alipay Mini Program</dt>
                         <dd>
-                            <p>Alipay Mini Program runs on top of Alipay native app, which is a hybrid solution of Web and Native. Alipay Mini Program relies on Web technologies as CSS and JavaScript. Meanwhile, it integrates the functionalities of Alipay native app as payment, credit service, face authentication, etc.</p>
+                            <p>Alipay Mini Program runs on top of Alipay native app, which is a hybrid solution of Web and native. Alipay Mini Program relies on Web technologies as CSS and JavaScript. Meanwhile, it integrates the functionalities of Alipay native app as payment, credit service, face authentication, etc.</p>
                             <p>Now there have been more than 1,000,000 Mini Programs running on Alipay native app and 230 million DAU (Daily Active User). The user scenarios include retails, transportation, medical services, etc.</p>
                         </dd>
                         <dt>Baidu Smart Mini Program</dt>
@@ -623,11 +623,11 @@
                 <h2>Application Lifecycle</h2>
             <section>
                 <h2>Hybrid Rendering</h2>
-                <p>MiniApp is a hybrid solution of Web rendering and Native rendering. It'd be great if there is a good way to combine the rendering results from the Web and from the Native.</p>
+                <p>MiniApp is a hybrid solution of Web rendering and native rendering. It'd be great if there is a good way to combine the rendering results from the Web and from the native.</p>
                 <figure>
-                    <img alt="Rendering results coming from both the Web and the Native" src="images/rendering.png" width="600">
+                    <img alt="Rendering results coming from both the Web and the native" src="images/rendering.png" width="600">
                     <figcaption>
-                        Rendering results coming from both the Web and the Native
+                        Rendering results coming from both the Web and the native
                     </figcaption>
                 </figure>
                 <p>Proposal: Mini App needs a standardized API to help integrate the native rendering result into Web rendering result.</p>
