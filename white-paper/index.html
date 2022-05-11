@@ -190,7 +190,7 @@
                 <p>MiniApps are <em>not</em> aimed to replace PWA, the Web, or the native apps.</p>
 <p>MiniApps and PWAs are composed of the same resources (i.e., scripts, markup-language-based documents, stylesheets, multimedia, etc.). The type of documents and their coding languages are similar, but MiniApps implement specific dialects and built-in services that are not standard. </p>
 <p>Apart from the format, MiniApp's resources are usually packed in a self-contained physical structure that enables a flexible distribution from app marketplaces to offline exchange. </p>
-<p>The main difference between PWAs and MiniApps is the execution environment. MiniApp user agents are <a>super apps</a> or platforms implemented on the operating system, while PWA user agents are usually web browsers.  </p>
+<p>The main difference between PWAs and MiniApps is the execution environment. MiniApp user agents are <a>super apps</a> or platforms implemented on the operating system, while PWA user agents are usually Web browsers.  </p>
 <p>Although both technologies have similar APIs and services, there is a significant gap between the API specifications in each application type. PWAs rely on standard Web APIs, while MiniApps implement non-standard APIs to maximize the platform's capabilities, such as device-specific features and vendor-exclusive services.  </p>
 <p>MiniApp vendors define similar UI (User Interface) elements that do not always have a direct equivalent in HTML. </p>
 <p>Depending on the implementation, a MiniApp user agent could be an operating system, a <a>super app</a>, or any other hosting platform based on different and various rendering engines and WebViews. The architecture of a MiniApp user agent differs from PWA user agents, as we can see in the following picture.</p>
@@ -231,7 +231,7 @@
       <td>Yes. Different package formats per vendor.</td>
     </tr>
     <tr>
-      <td>Needs to host files on web server</td>
+      <td>Needs to host files on Web server</td>
       <td>Yes </td>
       <td>No</td>
     </tr>
@@ -356,7 +356,7 @@
                       <tr>
                         <td>APIs/Components (AR, Image Recognition, Geolocation, Speech API)</td>
                         <td>Very basic</td> 
-                        <td>Complex for web developers</td>
+                        <td>Complex for Web developers</td>
                         <td>Very simple high-level APIs and components</td>
                       </tr>
                     </tbody></table>
@@ -441,8 +441,8 @@
                           </figcaption>
                         </figure>
                         <p>The view layer is responsible for rendering MiniApp pages, including Web components and native components display, which can be considered hybrid rendering. For example, some Web components might not be supported by the WebView or have performance limitations, so MiniApp also relies on native components such as map, video, etc.</p>
-                        <p>The logic layer is implemented with JS Workers. A worker is responsible for MiniApp’s event processing, API calls, and lifecycle management.</p>
-                        <p>Extended native capabilities usually come from the hosting native app or OS, including payment, file processing, image scanning, phone calls, etc. These features are called through specific APIs. When a MiniApp calls a native API, it transfers the API call to extended native capabilities for further processing via a JS Bridge. It obtains the result from the extended native capabilities via the JS Bridge.</p>
+                        <p>The logic layer is implemented with JavaScript Workers. A worker is responsible for MiniApp’s event processing, API calls, and lifecycle management.</p>
+                        <p>Extended native capabilities usually come from the hosting native app or OS, including payment, file processing, image scanning, phone calls, etc. These features are called through specific APIs. When a MiniApp calls a native API, it transfers the API call to extended native capabilities for further processing via a JavaScript Bridge. It obtains the result from the extended native capabilities via the JavaScript Bridge.</p>
                         <figure>
                           <img alt="data flow of MiniApp when an API is called" src="images/data_flow.png" width="600">
                           <figcaption>
@@ -456,7 +456,7 @@
                         <ul>
                             <li>Very handy for data sharing and interaction among multiple MiniApp pages.</li>
                             <li>Having the same context within the lifecycle of MiniApp can provide a similar coding experience for those developers coming from native app development background.</li>
-                            <li>Separation and parallel implementation of render and JS worker can prevent the situation where a JS execution impacts or slows down the page rendering, which can help enhance the rendering performance.</li>
+                            <li>Separation and parallel implementation of render and JavaScript worker can prevent the situation where a JavaScript execution impacts or slows down the page rendering, which can help enhance the rendering performance.</li>
                         </ul>
                     </section>
                     <section id="api_and_component">
@@ -607,11 +607,11 @@
                         <dt>360 PC MiniApp</dt>
                         <dd>
                             <p>MiniApps on PC is still in an early exploration stage. 360 PC MiniApp is a light application running in their PC browser. Compared to the traditional webpages, it's served with more functionalities and easier interaction with the PC operating system.</p>
-                            <p>PC MiniApps are only available to those validated as an enterprise account. Most of the features are under strict regulations so that they can be considered highly trusted web content.</p>
+                            <p>PC MiniApps are only available to those validated as an enterprise account. Most of the features are under strict regulations so that they can be considered highly trusted Web content.</p>
                         </dd>
                         <dt>PWAs</dt>
                         <dd>
-                            <p>PWAs are the latest term to summarize modern web applications. As a counterpart of native apps, a PWA looks and feels like a native app and can be installed on the device home screen/launcher/start menu; it can send push notifications to re-engage users; it can be used when offline and behaves under poor network conditions; it works with devices of wide-ranging capabilities, and it's still evolving to works with new capabilities defined by open web standards; payments can be made by user inside PWAs apps; and PWAs apps are search-engine-friendly, working perfectly with hyperlinks. PWAs are successful in technical and business aspects (widely adopted by many websites, especially in consumer-facing ones).</p>
+                            <p>PWAs are the latest term to summarize modern Web applications. As a counterpart of native apps, a PWA looks and feels like a native app and can be installed on the device home screen/launcher/start menu; it can send push notifications to re-engage users; it can be used when offline and behaves under poor network conditions; it works with devices of wide-ranging capabilities, and it's still evolving to works with new capabilities defined by open Web standards; payments can be made by user inside PWAs apps; and PWAs apps are search-engine-friendly, working perfectly with hyperlinks. PWAs are successful in technical and business aspects (widely adopted by many websites, especially in consumer-facing ones).</p>
                         </dd>
                     </dl>
                 </section> 
@@ -654,7 +654,7 @@
                     <ul>
                         <li>A MiniApp widget can be displayed within a host environment, either a WebView or a native app page. The host environment loads a widget with its corresponding URI path, which describes a package and widget page.</li>
                         <li>A MiniApp widget can access local data or data from a server.  Meanwhile, a MiniApp widget can communicate with MiniApp in the same package.</li>
-                        <li>A MiniApp widget should be interactive, meaning that it should be responsive to any user behaviors/interactions. A MiniApp widget should have the ability to open a web or app page.</li>
+                        <li>A MiniApp widget should be interactive, meaning that it should be responsive to any user behaviors/interactions. A MiniApp widget should have the ability to open a Web or app page.</li>
                     </ul>
             </section>
             </section>
@@ -672,10 +672,10 @@
                 <h2>Graphics and Media</h2>
             <section>
                 <h2>3D Model Element</h2>
-                <p>3D models have become more and more popular thanks to their rich details. Combined with AR, they will provide a better user experience than 2D. The business cases might include online shopping, advertisement, education, etc. However, the current web lacks a standard and convenient way to deal with 3D models. In this document, we propose to define an HTML tag to directly handle 3D models, similar to the way we handle audio, video, and image with corresponding HTML tags:</p>
+                <p>3D models have become more and more popular thanks to their rich details. Combined with AR, they will provide a better user experience than 2D. The business cases might include online shopping, advertisement, education, etc. However, the current Web lacks a standard and convenient way to deal with 3D models. In this document, we propose to define an HTML tag to directly handle 3D models, similar to the way we handle audio, video, and image with corresponding HTML tags:</p>
                     <ul>
                         <li>360 view
-                            <p>Users can view a 3D model from different angles via gestures. And the 3D model can be zoomed in/out as well. It can be viewed on full screen or embedded in an HTML page, shown together w/ other HTML contents.</p>
+                            <p>Users can view a 3D model from different angles via gestures. And the 3D model can be zoomed in/out as well. It can be viewed on full screen or embedded in an webpage, shown together w/ other HTML contents.</p>
                         </li>
                         <li>View with AR
                             <p>Users can place the 3D model in the real world with the camera. Users can specify different locations to place the model.</p>
@@ -890,7 +890,7 @@
                       Domain check
                     </h2>
                     <p>
-                      For some container components, like <code>&lt;web-view&gt;</code>, that could render online web pages, MiniApp user agents may limit the URLs accessed by the component. Only the domain configured in the MiniApp Management Center can be accessed in <code>&lt;web-view&gt;</code>. Also, if the component contains an <code>&lt;iframe&gt;</code>, the URL opened by the `iframe` should also be configured in the MiniApp Management Center. In this way, MiniApp platforms can have more robust control over the dynamic pages opened by the MiniApp.
+                      For some container components, like <code>&lt;web-view&gt;</code>, that could render online webpages, MiniApp user agents may limit the URLs accessed by the component. Only the domain configured in the MiniApp Management Center can be accessed in <code>&lt;web-view&gt;</code>. Also, if the component contains an <code>&lt;iframe&gt;</code>, the URL opened by the `iframe` should also be configured in the MiniApp Management Center. In this way, MiniApp platforms can have more robust control over the dynamic pages opened by the MiniApp.
                     </p>
                     <p>
                       Similarly, the MiniApp framework verifies the legitimacy of the asynchronous request address.
@@ -949,7 +949,7 @@
                         <li>Widget</li>
                     </ul>
                         </li>
-                        <li>design future Web APIs to be useful for both web and MiniApp environments.</li>
+                        <li>design future Web APIs to be useful for both Web and MiniApp environments.</li>
                     </ul>
                  <p>Note: the further gap between current MiniApp APIs and Web APIs will be analyzed in parallel.</p>
             </section>
