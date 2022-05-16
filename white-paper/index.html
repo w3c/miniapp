@@ -112,7 +112,7 @@ dd{margin-left:0}
 .removeOnSave{display:none}
 }
 </style>
-<meta name="description" content="This document introduces a new format for mobile application, named MiniApp, which is a very popular hybrid solution relying on Web technologies but also integrates with capabilities of Native Apps.">
+<meta name="description" content="This document introduces a new format for mobile applications, named MiniApp, which is a very popular hybrid solution relying on Web technologies but also integrates with capabilities of the native apps.">
 <style>
 var{position:relative;cursor:pointer}
 var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
@@ -334,7 +334,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   </div>
     <section id="abstract" class="introductory"><h2>Abstract</h2>
         <p>
-        This document introduces a new format for mobile application, named MiniApp, which is a very popular hybrid solution relying on Web technologies but also integrates with capabilities of Native Apps.
+        This document introduces a new format for mobile applications, named MiniApp, which is a very popular hybrid solution relying on Web technologies but also integrates with capabilities of the native apps.
         </p>
     </section>
     <section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this
@@ -372,8 +372,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   </p><p>
                   This document is governed by the
                   <a id="w3c_process_revision" href="https://www.w3.org/2021/Process-20211102/">2 November 2021 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#problems"><bdi class="secno">1.1 </bdi>Problems</a></li><li class="tocline"><a class="tocxref" href="#what-is-miniapp"><bdi class="secno">1.2 </bdi>What is MiniApp?</a></li><li class="tocline"><a class="tocxref" href="#gap-between-miniapps-and-pwa"><bdi class="secno">1.3 </bdi>Gap between MiniApps and PWA</a></li><li class="tocline"><a class="tocxref" href="#case-studies"><bdi class="secno">1.4 </bdi>Case studies</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#case-1-shared-bicycle-service"><bdi class="secno">1.4.1 </bdi>Case 1: Shared Bicycle Service</a></li><li class="tocline"><a class="tocxref" href="#case-2-ar-zoo"><bdi class="secno">1.4.2 </bdi>Case 2: AR Zoo</a></li><li class="tocline"><a class="tocxref" href="#case-3-miniapp-for-vehicle"><bdi class="secno">1.4.3 </bdi>Case 3: MiniApp for Vehicle</a></li><li class="tocline"><a class="tocxref" href="#case-4-miniapp-for-iot"><bdi class="secno">1.4.4 </bdi>Case 4: MiniApp for IoT</a></li><li class="tocline"><a class="tocxref" href="#case-5-miniapp-for-tv"><bdi class="secno">1.4.5 </bdi>Case 5: MiniApp for TV</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#miniapp-overview"><bdi class="secno">2. </bdi>MiniApp Overview</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#core-features"><bdi class="secno">2.1 </bdi>Core Features</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#separate-the-view-layer-from-the-logic-layer"><bdi class="secno">2.1.1 </bdi>Separate the View Layer from the Logic Layer</a></li><li class="tocline"><a class="tocxref" href="#api_and_component"><bdi class="secno">2.1.2 </bdi>Rich APIs and Components</a></li><li class="tocline"><a class="tocxref" href="#constructor"><bdi class="secno">2.1.3 </bdi>MiniApp Constructor</a></li><li class="tocline"><a class="tocxref" href="#miniapp-widgets"><bdi class="secno">2.1.4 </bdi>MiniApp Widgets</a></li><li class="tocline"><a class="tocxref" href="#single-instance-multi-entries"><bdi class="secno">2.1.5 </bdi>Single-Instance, Multi-Entries</a></li><li class="tocline"><a class="tocxref" href="#performance-and-user-experience"><bdi class="secno">2.1.6 </bdi>Performance and User Experience</a></li><li class="tocline"><a class="tocxref" href="#login"><bdi class="secno">2.1.7 </bdi>Login</a></li><li class="tocline"><a class="tocxref" href="#subpackaging"><bdi class="secno">2.1.8 </bdi>Subpackaging</a></li><li class="tocline"><a class="tocxref" href="#add-ons"><bdi class="secno">2.1.9 </bdi>Add-ons
-                  </a></li></ol></li><li class="tocline"><a class="tocxref" href="#miniapp-market"><bdi class="secno">2.2 </bdi>MiniApp Market</a></li></ol></li><li class="tocline"><a class="tocxref" href="#working-with-the-web"><bdi class="secno">3. </bdi>Working with the Web</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#application-lifecycle"><bdi class="secno">3.1 </bdi>Application Lifecycle</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#hybrid-rendering"><bdi class="secno">3.1.1 </bdi>Hybrid Rendering</a></li><li class="tocline"><a class="tocxref" href="#transition-animation"><bdi class="secno">3.1.2 </bdi>Transition Animation</a></li><li class="tocline"><a class="tocxref" href="#standardise-the-package-constructor-of-miniapp"><bdi class="secno">3.1.3 </bdi>Standardise the Package Constructor of MiniApp</a></li><li class="tocline"><a class="tocxref" href="#standardise-the-navigation-to-a-miniapp-page"><bdi class="secno">3.1.4 </bdi>Standardise the navigation to a MiniApp page</a></li><li class="tocline"><a class="tocxref" href="#miniapp-widgets-0"><bdi class="secno">3.1.5 </bdi>MiniApp Widgets</a></li></ol></li><li class="tocline"><a class="tocxref" href="#performance-and-tuning"><bdi class="secno">3.2 </bdi>Performance and Tuning</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#define-an-event-of-time-to-interactive-in-miniapp"><bdi class="secno">3.2.1 </bdi>Define an event of time to interactive in MiniApp</a></li></ol></li><li class="tocline"><a class="tocxref" href="#graphics-and-media"><bdi class="secno">3.3 </bdi>Graphics and Media</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#x3d-model-element"><bdi class="secno">3.3.1 </bdi>3D Model Element</a></li><li class="tocline"><a class="tocxref" href="#face-tracking"><bdi class="secno">3.3.2 </bdi>Face Tracking</a></li><li class="tocline"><a class="tocxref" href="#hand-gestures-tracking-and-recognition"><bdi class="secno">3.3.3 </bdi>Hand gestures tracking and recognition</a></li><li class="tocline"><a class="tocxref" href="#low-level-ar-apis-based-on-arcore-and-arkit"><bdi class="secno">3.3.4 </bdi>Low level AR APIs based on ARCore and ARKit</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#current-standards-work-the-wg-work"><bdi class="secno">4. </bdi>Current standards work, the WG work</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#lifecycle"><bdi class="secno">4.1 </bdi>Lifecycle</a></li><li class="tocline"><a class="tocxref" href="#manifest"><bdi class="secno">4.2 </bdi>Manifest</a></li><li class="tocline"><a class="tocxref" href="#packaging"><bdi class="secno">4.3 </bdi>Packaging</a></li><li class="tocline"><a class="tocxref" href="#addressing"><bdi class="secno">4.4 </bdi>Addressing</a></li><li class="tocline"><a class="tocxref" href="#widget"><bdi class="secno">4.5 </bdi>Widget</a></li><li class="tocline"><a class="tocxref" href="#implementation-converting-tools"><bdi class="secno">4.6 </bdi>Implementation, converting tools</a></li></ol></li><li class="tocline"><a class="tocxref" href="#new-ideas-incubated-the-cg-work"><bdi class="secno">5. </bdi>New ideas incubated, the CG work</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ui-components"><bdi class="secno">5.1 </bdi>UI components</a></li><li class="tocline"><a class="tocxref" href="#miniapps-for-iot"><bdi class="secno">5.2 </bdi>MiniApps for IoT</a></li></ol></li><li class="tocline"><a class="tocxref" href="#security-and-privacy-consideration"><bdi class="secno">6. </bdi>Security and Privacy Consideration</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#capability-authentication"><bdi class="secno">6.1 </bdi>Capability authentication</a></li><li class="tocline"><a class="tocxref" href="#user-authorization"><bdi class="secno">6.2 </bdi>
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#problems"><bdi class="secno">1.1 </bdi>Problems</a></li><li class="tocline"><a class="tocxref" href="#what-is-miniapp"><bdi class="secno">1.2 </bdi>What is MiniApp?</a></li><li class="tocline"><a class="tocxref" href="#gap-between-miniapps-and-pwa"><bdi class="secno">1.3 </bdi>Gap between MiniApps and PWA</a></li><li class="tocline"><a class="tocxref" href="#case-studies"><bdi class="secno">1.4 </bdi>Case studies</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#case-1-shared-bicycle-service"><bdi class="secno">1.4.1 </bdi>Case 1: Shared Bicycle Service</a></li><li class="tocline"><a class="tocxref" href="#case-2-ar-zoo"><bdi class="secno">1.4.2 </bdi>Case 2: AR Zoo</a></li><li class="tocline"><a class="tocxref" href="#case-3-miniapp-for-vehicle"><bdi class="secno">1.4.3 </bdi>Case 3: MiniApp for Vehicle</a></li><li class="tocline"><a class="tocxref" href="#case-4-miniapp-for-iot"><bdi class="secno">1.4.4 </bdi>Case 4: MiniApp for IoT</a></li><li class="tocline"><a class="tocxref" href="#case-5-miniapp-for-tv"><bdi class="secno">1.4.5 </bdi>Case 5: MiniApp for TV</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#miniapp-overview"><bdi class="secno">2. </bdi>MiniApp Overview</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#core-features"><bdi class="secno">2.1 </bdi>Core Features</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#separate-the-view-layer-from-the-logic-layer"><bdi class="secno">2.1.1 </bdi>Separate the view layer from the logic layer</a></li><li class="tocline"><a class="tocxref" href="#api_and_component"><bdi class="secno">2.1.2 </bdi>Rich APIs and Components</a></li><li class="tocline"><a class="tocxref" href="#constructor"><bdi class="secno">2.1.3 </bdi>MiniApp Constructor</a></li><li class="tocline"><a class="tocxref" href="#miniapp-widgets"><bdi class="secno">2.1.4 </bdi>MiniApp Widgets</a></li><li class="tocline"><a class="tocxref" href="#single-instance-multi-entries"><bdi class="secno">2.1.5 </bdi>Single-Instance, Multi-Entries</a></li><li class="tocline"><a class="tocxref" href="#performance-and-user-experience"><bdi class="secno">2.1.6 </bdi>Performance and User Experience</a></li><li class="tocline"><a class="tocxref" href="#login"><bdi class="secno">2.1.7 </bdi>Login</a></li><li class="tocline"><a class="tocxref" href="#subpackaging"><bdi class="secno">2.1.8 </bdi>Subpackaging</a></li><li class="tocline"><a class="tocxref" href="#add-ons"><bdi class="secno">2.1.9 </bdi>Add-ons
+                  </a></li></ol></li><li class="tocline"><a class="tocxref" href="#miniapp-market"><bdi class="secno">2.2 </bdi>MiniApp Market</a></li></ol></li><li class="tocline"><a class="tocxref" href="#working-with-the-web"><bdi class="secno">3. </bdi>Working with the Web</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#application-lifecycle"><bdi class="secno">3.1 </bdi>Application Lifecycle</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#hybrid-rendering"><bdi class="secno">3.1.1 </bdi>Hybrid Rendering</a></li><li class="tocline"><a class="tocxref" href="#transition-animation"><bdi class="secno">3.1.2 </bdi>Transition Animation</a></li><li class="tocline"><a class="tocxref" href="#standardise-the-package-constructor-of-miniapp"><bdi class="secno">3.1.3 </bdi>Standardise the Package Constructor of MiniApp</a></li><li class="tocline"><a class="tocxref" href="#standardise-the-navigation-to-a-miniapp-page"><bdi class="secno">3.1.4 </bdi>Standardise the navigation to a MiniApp page</a></li><li class="tocline"><a class="tocxref" href="#miniapp-widgets-0"><bdi class="secno">3.1.5 </bdi>MiniApp Widgets</a></li></ol></li><li class="tocline"><a class="tocxref" href="#performance-and-tuning"><bdi class="secno">3.2 </bdi>Performance and Tuning</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#define-an-event-for-time-to-interactive-in-miniapp"><bdi class="secno">3.2.1 </bdi>Define an event for "time to interactive" in MiniApp</a></li></ol></li><li class="tocline"><a class="tocxref" href="#graphics-and-media"><bdi class="secno">3.3 </bdi>Graphics and Media</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#x3d-model-element"><bdi class="secno">3.3.1 </bdi>3D Model Element</a></li><li class="tocline"><a class="tocxref" href="#face-tracking"><bdi class="secno">3.3.2 </bdi>Face Tracking</a></li><li class="tocline"><a class="tocxref" href="#hand-gestures-tracking-and-recognition"><bdi class="secno">3.3.3 </bdi>Hand gestures tracking and recognition</a></li><li class="tocline"><a class="tocxref" href="#low-level-ar-apis-based-on-arcore-and-arkit"><bdi class="secno">3.3.4 </bdi>Low level AR APIs based on ARCore and ARKit</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#current-standards-work-the-wg-work"><bdi class="secno">4. </bdi>Current standards work; the WG work</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#lifecycle"><bdi class="secno">4.1 </bdi>Lifecycle</a></li><li class="tocline"><a class="tocxref" href="#manifest"><bdi class="secno">4.2 </bdi>Manifest</a></li><li class="tocline"><a class="tocxref" href="#packaging"><bdi class="secno">4.3 </bdi>Packaging</a></li><li class="tocline"><a class="tocxref" href="#addressing"><bdi class="secno">4.4 </bdi>Addressing</a></li><li class="tocline"><a class="tocxref" href="#widget"><bdi class="secno">4.5 </bdi>Widget</a></li><li class="tocline"><a class="tocxref" href="#implementation-converting-tools"><bdi class="secno">4.6 </bdi>Implementation, converting tools</a></li></ol></li><li class="tocline"><a class="tocxref" href="#new-ideas-incubated-the-cg-work"><bdi class="secno">5. </bdi>New ideas incubated; the CG work</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ui-components"><bdi class="secno">5.1 </bdi>UI components</a></li><li class="tocline"><a class="tocxref" href="#miniapps-for-iot"><bdi class="secno">5.2 </bdi>MiniApps for IoT</a></li></ol></li><li class="tocline"><a class="tocxref" href="#security-and-privacy-consideration"><bdi class="secno">6. </bdi>Security and Privacy Consideration</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#capability-authentication"><bdi class="secno">6.1 </bdi>Capability authentication</a></li><li class="tocline"><a class="tocxref" href="#user-authorization"><bdi class="secno">6.2 </bdi>
                       User Authorization
                     </a></li><li class="tocline"><a class="tocxref" href="#miniapp-audit-review"><bdi class="secno">6.3 </bdi>
                       MiniApp Audit Review
@@ -389,52 +389,52 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         
         <section id="problems"><div class="header-wrapper"><h3 id="x1-1-problems"><bdi class="secno">1.1 </bdi>Problems</h3><a class="self-link" href="#problems" aria-label="Permalink for Section 1.1"></a></div>
             
-            <p>Native Apps are well received in our daily life, but there are still many things that can be done better for users.</p>
+            <p>Native apps are well received in our daily life, but there are still many things that can be done better for users.</p>
             <ul>
                 <li>
-                    <p>Before a user get the service from a native app, he/she often has to go through the process to download -&gt; install -&gt; register the app.</p>
-                    <p>User can only keep a limited number of Native Apps on their phone due to constraint of storage capability.</p>
-                    <p>It's not easy to share data between different Native apps.</p>
+                    <p>Before users get the service from a native app, they often have to go through the process of downloading -&gt; installing -&gt; registering the app.</p>
+                    <p>Users can only keep a limited number of native apps on their phones due to the constraints of storage capability.</p>
+                    <p>It's not easy to share data between different native apps.</p>
                 </li>
                 <li>
-                    <p>To work on a Native App, developers may need to learn a few new programming languages.</p>
-                    <p>To provide the same service with Native Apps, developers may need to maintain duplicate products for different platforms.</p>
+                    <p>To work on a native app, developers may need to learn a few new programming languages.</p>
+                    <p>To provide the same service as native apps, developers may need to maintain duplicate products for different platforms.</p>
                 </li>
             </ul>
-            <p>The Web is an ideal platform to avoid these problems, but by far, it's still imperfect.</p>
+            <p>The Web is an ideal platform to avoid these problems, but it's still imperfect by far.</p>
             <ul>
                 <li>
-                    <p>Compared to the Native, it isn't easy to take advantage of the capabilities provided by the system. </p>
-                    <p>Also, it's usually difficult to design a Web application whose performance can actually match or surpass a similar Native app.</p>
+                    <p>Compared to the native, it isn't easy to take advantage of the capabilities provided by the system. </p>
+                    <p>Also, it's usually difficult to design a Web application whose performance can actually match or surpass a similar native app.</p>
                 </li>
                 <li>
-                    <p>On a mobile device, users obtain services or contents outside the browser very frequently, naturally, they would like all their applications to be consistent on user accounts, login status and user interaction across the whole system.</p>
-                    <p>Moreover, sometimes users may want to share some data with an application if they really trust it, but for a few frequently requested information, such as personal mobile number of the current device, or the contact list, there isn't a good way for the users to give permits on the Web.</p>
+                    <p>On a mobile device, users frequently obtain services or contents outside the browser; naturally, they would like all their applications to be consistent on user accounts, login status, and user interaction across the whole system.</p>
+                    <p>Moreover, sometimes users may want to share some data with an application if they really trust it. Still, for a few frequently requested information, such as the personal mobile number of the current device, or the contact list, there isn't a good way for the users to give permits on the Web.</p>
                 </li>
             </ul>
         </section>
         <section id="what-is-miniapp"><div class="header-wrapper"><h3 id="x1-2-what-is-miniapp"><bdi class="secno">1.2 </bdi>What is MiniApp?</h3><a class="self-link" href="#what-is-miniapp" aria-label="Permalink for Section 1.2"></a></div>
             
-                <p>MiniApp is a new format of mobile application, a hybrid solution which relies on Web technologies (especially CSS and JavaScript) but also integrates with capabilities of Native Apps.</p>
-                <p>A <dfn id="dfn-super-app" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">super app</dfn> is a software platform that hosts and supports other applications (i.e., MiniApps), enabling their execution through the use of the platform's resources.</p>
-                <p>MiniApps got popular from their usage on a few super apps, as it was born with a few characters that help to fill the gap of the Web and the Native.</p>
+                <p>MiniApp is a new mobile application format, a hybrid solution that relies on Web technologies (especially CSS and JavaScript) and integrates with the capabilities of native apps.</p>
+                <p>A <dfn data-plurals="super apps" id="dfn-super-app" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">super app</dfn> is a software platform that hosts and supports other applications (i.e., MiniApps), enabling their execution by using the platform's resources.</p>
+                <p>MiniApps got popular from their usage on a few <a href="#dfn-super-app" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-super-app-1">super apps</a>, as it was born with a few characters that helped fill the gap between the Web and the native.</p>
                 <ul>
                     <li>It's free of installation.</li>
-                    <li>Multiple webviews to improve performance.</li>
-                    <li>It provides a few mechanisms to get access to OS capabilities or data through the Native.</li>
+                    <li>Multiple WebViews to improve performance.</li>
+                    <li>It provides a few mechanisms to access OS capabilities or data through the native.</li>
                     <li>The content is usually more trustworthy because the app needs to be validated by the platform.</li>
-                    <li>A miniapp can be distributed to multiple MiniApp platforms (the Web, a Native App, even the OS). These platforms also provide entry to the miniapp to ensure it can be easily discovered by the users.</li>
+                    <li>A MiniApp can be distributed to multiple MiniApp platforms (the Web, a native app, even the OS). These platforms also provide entry to the MiniApp to ensure the users can easily discover it.</li>
                 </ul>
             </section>
             <section id="gap-between-miniapps-and-pwa"><div class="header-wrapper"><h3 id="x1-3-gap-between-miniapps-and-pwa"><bdi class="secno">1.3 </bdi>Gap between MiniApps and PWA</h3><a class="self-link" href="#gap-between-miniapps-and-pwa" aria-label="Permalink for Section 1.3"></a></div>
                 
-                <p>MiniApps are <em>not</em> aimed to replace PWA, or the Web, or the Native.</p>
+                <p>MiniApps are <em>not</em> aimed to replace PWA, the Web, or the native apps.</p>
 <p>MiniApps and PWAs are composed of the same resources (i.e., scripts, markup-language-based documents, stylesheets, multimedia, etc.). The type of documents and their coding languages are similar, but MiniApps implement specific dialects and built-in services that are not standard. </p>
 <p>Apart from the format, MiniApp's resources are usually packed in a self-contained physical structure that enables a flexible distribution from app marketplaces to offline exchange. </p>
-<p>The main difference between PWAs and MiniApps is the execution environment. MiniApp user agents are super-apps or platforms implemented on the operating system, while PWA user agents are usually web browsers.  </p>
-<p>Although both technologies have similar APIs and services, there is a significant gap between the API specifications in each application type. PWAs rely on standard Web APIs while MiniApps implement non-standard APIs to maximize the platform's capabilities, such as device-specific features and vendor-exclusive services.  </p>
+<p>The main difference between PWAs and MiniApps is the execution environment. MiniApp user agents are <a href="#dfn-super-app" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-super-app-2">super apps</a> or platforms implemented on the operating system, while PWA user agents are usually Web browsers.  </p>
+<p>Although both technologies have similar APIs and services, there is a significant gap between the API specifications in each application type. PWAs rely on standard Web APIs, while MiniApps implement non-standard APIs to maximize the platform's capabilities, such as device-specific features and vendor-exclusive services.  </p>
 <p>MiniApp vendors define similar UI (User Interface) elements that do not always have a direct equivalent in HTML. </p>
-<p>Depending on the implementation, a MiniApp user agent could be an operating system, a super-app, or any other hosting platform, based on different and various rendering engines and WebViews. The architecture of a MiniApp user agent differs from PWA user agents, as we can see in the following picture.</p>
+<p>Depending on the implementation, a MiniApp user agent could be an operating system, a <a href="#dfn-super-app" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-super-app-3">super app</a>, or any other hosting platform based on different and various rendering engines and WebViews. The architecture of a MiniApp user agent differs from PWA user agents, as we can see in the following picture.</p>
 
 <figure id="fig-the-architecture-of-miniapps-and-pwa">
   <img alt="The architecture of MiniApps and PWA" src="images/miniapp_pwa.svg" width="800">
@@ -444,7 +444,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 </figure>
 
 <p>
-  The main differences between them can be summarized as the following table.
+  The main differences between them can be summarized in the following table.
 </p>
 
 <table>
@@ -472,14 +472,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       <td>Yes. Different package formats per vendor.</td>
     </tr>
     <tr>
-      <td>Needs to host files on web server</td>
+      <td>Needs to host files on Web server</td>
       <td>Yes </td>
       <td>No</td>
     </tr>
     <tr>
       <td>Installation-free usage</td>
       <td>Yes, running in the browser.</td>
-      <td>Running in a <a href="#dfn-super-app" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-super-app-1">super app</a> or on the OS.</td>
+      <td>Running in a <a href="#dfn-super-app" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-super-app-4">super app</a> or on the OS.</td>
     </tr>
     <tr>
       <td>Installation with standalone icon</td>
@@ -499,14 +499,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                 
                 <section id="case-1-shared-bicycle-service"><div class="header-wrapper"><h4 id="x1-4-1-case-1-shared-bicycle-service"><bdi class="secno">1.4.1 </bdi>Case 1: Shared Bicycle Service</h4><a class="self-link" href="#case-1-shared-bicycle-service" aria-label="Permalink for Section 1.4.1"></a></div>
                     
-                    <p>The popularization of MiniApps helps to make the shared bike a seamless service instead of a cumbersome application.</p>
+                    <p>The popularization of MiniApps helps make the shared bike a seamless service instead of a cumbersome application.</p>
                     <div class="two-cols">
                     <ul>
-                        <li>User chooses any of the miniapp platforms on their mobile device, which, is usually a <a href="#dfn-super-app" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-super-app-2">super app</a> that he/she already logined;</li>
-                        <li>User scans the QR-code label attached on a shared bicycle within the <a href="#dfn-super-app" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-super-app-3">super app</a>;</li>
-                        <li>The hosted-app will automatically navigate to the shared bicycle miniapp and unlocks the bicycle instantly;</li>
-                        <li>Upon arrival, user locks the bike on the miniapp;</li>
-                        <li>Transaction completes, a message of the payment detail is sent to the user.</li>
+                        <li>A user chooses any of the MiniApp platforms on their mobile device, which is usually a <a href="#dfn-super-app" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-super-app-5">super app</a> that they already logged in to;</li>
+                        <li>A user scans the QR-code label attached to a shared bicycle within the <a href="#dfn-super-app" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-super-app-6">super app</a>;</li>
+                        <li>The hosted app will automatically navigate to the shared bicycle MiniApp and unlocks the bicycle instantly;</li>
+                        <li>Upon arrival, the user locks the bike on the MiniApp;</li>
+                        <li>The transaction completes, and a message of the payment detail is sent to the user.</li>
                     </ul>
                     <figure id="fig-shared-bicycle-service-with-miniapp">
                       <img alt="Shared Bicycle Service" src="images/shared_bike.png" width="200">
@@ -515,28 +515,28 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                       </span></figcaption>
                     </figure>
                     </div>
-                    <p>For users, miniapps can bring convenient from a few perspectives:</p>
+                    <p>For users, MiniApps can bring convenience from a few perspectives:</p>
                     <table>
                       <tbody><tr>
                         <th></th>
-                        <th>the Web</th> 
-                        <th>Native App</th>
+                        <th>The Web</th> 
+                        <th>Native app</th>
                         <th>MiniApp</th> 
                       </tr>
                       <tr>
-                        <td>Download/Install</td>
+                        <td>Download/install</td>
                         <td>No</td> 
                         <td>Yes</td>
                         <td>No</td> 
                       </tr>
                       <tr>
-                        <td>Verified/Trusted</td>
+                        <td>Verified/trusted</td>
                         <td>No</td> 
                         <td>Yes</td>
                         <td>Yes</td>
                       </tr>
                       <tr>
-                        <td>Login/Register</td>
+                        <td>Login/register</td>
                         <td>Yes</td> 
                         <td>Yes</td>
                         <td>User permission</td>
@@ -545,7 +545,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                         <td>Payment</td>
                         <td>Send a payment request</td> 
                         <td>Register a credit card or navigate to another app</td>
-                        <td>Complete within the hosted-app</td>
+                        <td>Complete within the hosted app</td>
                       </tr>
                     </tbody></table>
 
@@ -553,75 +553,75 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
                 <section id="case-2-ar-zoo"><div class="header-wrapper"><h4 id="x1-4-2-case-2-ar-zoo"><bdi class="secno">1.4.2 </bdi>Case 2: AR Zoo</h4><a class="self-link" href="#case-2-ar-zoo" aria-label="Permalink for Section 1.4.2"></a></div>
                     
-                    <p>MiniApp developers can simply use HTML/CSS/JavaScript as the programming language, but MiniApp is more flexible so it excels at quick development of complex features in daily work.</p>
-                    <p>This MiniApp tries to build an AR zoo with AI technologies to recognise the animals. Developers can easily do that by adding a few components or APIs that provide access to the native capabilities or advance features, f.ex., Image Recognition, AR 3D Animal models rendering, a speech API to for speech synthesis, AR navigation provided by the map SDK.</p>
-                    <p>MiniApps can be discovered by the search engines, by the MiniApp store in the hosted-app or by QR-code.
+                    <p>MiniApp developers can simply use HTML/CSS/JavaScript as the programming language, but MiniApp is more flexible, so it excels at quickly developing complex features in daily work.</p>
+                    <p>This MiniApp tries to build an AR zoo with AI technologies to recognize the animals. Developers can easily do that by adding a few components or APIs that provide access to the native capabilities or advanced features (e.g., image recognition, AR 3D animal-model rendering, a speech API for speech synthesis, and AR navigation provided by the map SDK).</p>
+                    <p>MiniApps can be discovered by the search engines, by search engines, MiniApp stores in the hosted app, or QR codes.
                     </p><figure id="fig-ar-zoo-miniapp">
                       <img alt="AR zoo" src="images/ar_zoo.png" width="600">
                       <figcaption>Figure <bdi class="figno">3</bdi> <span class="fig-title">
                         AR Zoo MiniApp
                       </span></figcaption>
                     </figure>
-                    <p>For the developers, the incentive to work on miniapps is very obvious.</p>
+                    <p>For the developers, the incentive to work on MiniApps is very obvious.</p>
                     <table>
                       <tbody><tr>
                         <th></th>
-                        <th>the Web</th> 
-                        <th>Native App</th>
+                        <th>The Web</th> 
+                        <th>Native app</th>
                         <th>MiniApp</th> 
                       </tr>
                       <tr>
                         <td>Discoverability</td>
-                        <td>Search Engine</td> 
-                        <td>App Store</td>
-                        <td>Multiple: search engines + MiniApp store in the hosted-apps + QR-code</td> 
+                        <td>Search engine</td> 
+                        <td>Marketplace</td>
+                        <td>Multiple: search engines + MiniApp store in the hosted apps + QR code</td> 
                       </tr>
                       <tr>
                         <td>Verified/Trusted</td>
                         <td>Still exploring</td> 
-                        <td>by Native App stores</td>
-                        <td>by host App platforms</td>
+                        <td>By native app marketplaces</td>
+                        <td>By host app platforms</td>
                       </tr>
                       <tr>
                         <td>Deploy/Reload</td>
-                        <td>load/reload the webpage</td> 
-                        <td>installed/reinstalled</td>
-                        <td>load/reload as it's using a JS engine</td>
+                        <td>Load/reload the webpage</td> 
+                        <td>Installed/reinstalled</td>
+                        <td>Load/reload as it's using a JavaScript engine</td>
                       </tr>
                       <tr>
                         <td>Programming Language</td>
                         <td>Web programming language</td> 
-                        <td>new/multi languages: iOS and Android at least</td>
+                        <td>New/multi languages: iOS and Android, at least</td>
                         <td>Web programming language</td>
                       </tr>
                       <tr>
                         <td>APIs/Components (AR, Image Recognition, Geolocation, Speech API)</td>
-                        <td>very basic</td> 
-                        <td>complex for web developers</td>
-                        <td>very simple high-level APIs and components</td>
+                        <td>Very basic</td> 
+                        <td>Complex for Web developers</td>
+                        <td>Very simple high-level APIs and components</td>
                       </tr>
                     </tbody></table>
                 </section>
 
                 <section id="case-3-miniapp-for-vehicle"><div class="header-wrapper"><h4 id="x1-4-3-case-3-miniapp-for-vehicle"><bdi class="secno">1.4.3 </bdi>Case 3: MiniApp for Vehicle</h4><a class="self-link" href="#case-3-miniapp-for-vehicle" aria-label="Permalink for Section 1.4.3"></a></div>
                     
-                    <p>One of the goals of MiniApp to connect information and services across different platforms, so it's ideal for IoT applications such as Smart Automotive, voice-control speaker and Smart TV.</p>
-                    <p>Nowadays, it's possible to convert some MiniApps to adapt the vehicle screen and system, also, a few MiniApp vendors have built a MiniApp platform specially design for the vehicle system, to help distribute or upgrade applications to various of car model. This brings millions of Web developers to the Automotive application ecosystem.</p>
-                    <p>These Automotive miniapps can service many user scenarios, including gas filling, car washing, Electronic Toll Collection, insurance, restaurant reservation, or entertainment. For example, when the system detects the remaining fuel is less than 20%, it can recommend to the owner a Gas Pumping MiniApp. The user can get the information of the nearest gas station and head there to complete the gas pumping including the payment within MiniApp, "refueling without getting off the vehicle".</p>
+                    <p>One of the goals of MiniApp is to connect information and services across different platforms, so it's ideal for IoT applications such as Smart Automotive, voice-control speakers, and Smart TV.</p>
+                    <p>Nowadays, it's possible to convert some MiniApps to adapt the vehicle screen and system. Also, a few MiniApp vendors have built a MiniApp platform specially designed for the vehicle system to help distribute or upgrade applications to various car models. This brings millions of Web developers to the Automotive application ecosystem.</p>
+                    <p>These Automotive MiniApps can service many user scenarios, including gas filling, car washing, electronic toll collection, insurance, restaurant reservation, or entertainment. For example, when the system detects the remaining fuel is less than 20%, it can recommend to the owner a Gas Pumping MiniApp. The user can get the information of the nearest gas station and head there to complete the gas pumping, including the payment within MiniApp, "refueling without getting off the vehicle".</p>
                     <figure id="fig-miniapp-for-smart-car-gas-pumping-app">
                       <img alt="smart car" src="images/smart_cars.png" width="600">
                       <figcaption>Figure <bdi class="figno">4</bdi> <span class="fig-title">
-                        MiniApp for Smart Car(Gas Pumping App)
+                        MiniApp for smart car (gas pumping app)
                       </span></figcaption>
                     </figure>
             </section>
 
             <section id="case-4-miniapp-for-iot"><div class="header-wrapper"><h4 id="x1-4-4-case-4-miniapp-for-iot"><bdi class="secno">1.4.4 </bdi>Case 4: MiniApp for IoT</h4><a class="self-link" href="#case-4-miniapp-for-iot" aria-label="Permalink for Section 1.4.4"></a></div>
               
-              <p>IoT device is becoming another carrier running MiniApps. MiniApp for IoT intends to enable interoperability across multiple IoT device platforms and IoT operating systems. Rather than having to deal with the difference across the multiple IoT device platforms and IoT operating systems, by introducing MiniApps for IoT, developers only need to focus on the application development on IoT devices.</p>
+              <p>IoT device is becoming another carrier running MiniApps. MiniApp for IoT intends to enable interoperability across multiple IoT device platforms and operating systems. Rather than dealing with the difference across the multiple IoT device platforms and IoT operating systems, by introducing MiniApps for IoT, developers only need to focus on the application development on IoT devices.</p>
 
-              <p>One example is HVAC (heating, ventilating, and air-conditioning)
-                application switch panel which has a screen and several physical buttons. In this case, by introducing MiniApp for IoT, the switch panel’s screen UI can be designed and developed using Web technologies, to display the HVAC information. For example, the target temperature value inputted by the physical and the measured real-time temperature value can be displayed.</p>
+              <p>One example is the HVAC (heating, ventilating, and air-conditioning)
+                application switch panel, which has a screen and several physical buttons. In this case, by introducing MiniApp for IoT, the switch panel’s screen UI can be designed and developed using Web technologies to display the HVAC information. For example, the target temperature value inputted by the physical and the measured real-time temperature value can be displayed.</p>
               <figure id="fig-iot-miniapp-running-on-hvac-application-switch-panel-having-a-screen-and-several-physical-buttons">
                 <img alt="IoT MiniApp" src="images/hvac.png" width="300">
                 <figcaption>Figure <bdi class="figno">5</bdi> <span class="fig-title">
@@ -630,20 +630,20 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               </figure>
 
               <p>
-                Another example is smart speakers with a touch screen. In this case, by introducing MiniApp for IoT, the smart speaker’s touch screen UI can be designed and developed using Web technologies, to play music and video, to control the IoT devices at home, to do online shopping.
+                Another example is smart speakers with a touch screen. In this case, by introducing MiniApp for IoT, the smart speaker’s touch screen UI can be designed and developed using Web technologies to play music and video, control the IoT devices at home, and shop online.
               </p>
 
-              <figure id="fig-iot-miniapp-running-on-smart-speaker-with-a-touch-screen">
+              <figure id="fig-iot-miniapp-running-on-a-smart-speaker-with-a-touch-screen">
                 <img alt="IoT MiniApp on smart speaker" src="images/smart_speaker.png" width="300">
                 <figcaption>Figure <bdi class="figno">6</bdi> <span class="fig-title">
-                  IoT MiniApp running on smart speaker with a touch screen
+                  IoT MiniApp running on a smart speaker with a touch screen
                 </span></figcaption>
               </figure>
       </section>
 
       <section id="case-5-miniapp-for-tv"><div class="header-wrapper"><h4 id="x1-4-5-case-5-miniapp-for-tv"><bdi class="secno">1.4.5 </bdi>Case 5: MiniApp for TV</h4><a class="self-link" href="#case-5-miniapp-for-tv" aria-label="Permalink for Section 1.4.5"></a></div>
         
-        <p>Unlike MiniApps running on mobile phones where user interaction depends on the touch screen, the user interaction of MiniApps running on TV switches to TV remote panel keyboard plus TV screen focus.
+        <p>Unlike MiniApps running on mobile phones, where user interaction depends on the touch screen, the user interaction of MiniApps running on TV switches to the TV remote panel keyboard plus TV screen focus.
         </p>
 
         <p>With MiniApp for TV, users can buy merchandise on TV through E-commerce MiniApp.</p>
@@ -672,69 +672,69 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                 
                 <section id="core-features"><div class="header-wrapper"><h3 id="x2-1-core-features"><bdi class="secno">2.1 </bdi>Core Features</h3><a class="self-link" href="#core-features" aria-label="Permalink for Section 2.1"></a></div>
                     
-                    <section id="separate-the-view-layer-from-the-logic-layer"><div class="header-wrapper"><h4 id="x2-1-1-separate-the-view-layer-from-the-logic-layer"><bdi class="secno">2.1.1 </bdi>Separate the View Layer from the Logic Layer</h4><a class="self-link" href="#separate-the-view-layer-from-the-logic-layer" aria-label="Permalink for Section 2.1.1"></a></div>
+                    <section id="separate-the-view-layer-from-the-logic-layer"><div class="header-wrapper"><h4 id="x2-1-1-separate-the-view-layer-from-the-logic-layer"><bdi class="secno">2.1.1 </bdi>Separate the view layer from the logic layer</h4><a class="self-link" href="#separate-the-view-layer-from-the-logic-layer" aria-label="Permalink for Section 2.1.1"></a></div>
                         
-                        <p>In a miniapp, the view layer is usually separated from the logic layer.</p>
-                        <figure id="fig-general-architecture-of-miniapp">
-                          <img alt="logic layer and view layer" src="images/logic_view.png" width="400">
+                        <p>In a MiniApp, the view layer is usually separated from the logic layer.</p>
+                        <figure id="fig-general-architecture-of-miniapps">
+                          <img alt="Logic layer and view layer" src="images/logic_view.png" width="400">
                           <figcaption>Figure <bdi class="figno">9</bdi> <span class="fig-title">
-                            General Architecture of MiniApp
+                            General architecture of MiniApps
                           </span></figcaption>
                         </figure>
-                        <p>The View Layer is responsible for rendering MiniApp pages, including Web components rendering and native components rendering, which can be considered as hybrid rendering. For example, Web components rendering can be handled by WebView, but some of the Web components rendering aren't supported by WebView or have performance limitation, MiniApp also relies on some native components, such as map, video, etc.</p>
-                        <p>Logic Layer is implemented with JS Worker. The Worker is responsible for MiniApp’s event processing, API calling and lifecycle management.</p>
-                        <p>Extended native capabilities usually come from the hosting Native App or OS, including payment, file processing, scanning, phone call, etc. These capabilities are called through certain APIs. When a Mini App calls a native API, it transfers the API calling to Extended Native Capabilities for further processing via JS Bridge, and obtains the result from Extended Native Capabilities via JS Bridge.</p>
+                        <p>The view layer is responsible for rendering MiniApp pages, including Web components and native components display, which can be considered hybrid rendering. For example, some Web components might not be supported by the WebView or have performance limitations, so MiniApp also relies on native components such as map, video, etc.</p>
+                        <p>The logic layer is implemented with JavaScript Workers. A worker is responsible for MiniApp’s event processing, API calls, and lifecycle management.</p>
+                        <p>Extended native capabilities usually come from the hosting native app or OS, including payment, file processing, image scanning, phone calls, etc. These features are called through specific APIs. When a MiniApp calls a native API, it transfers the API call to extended native capabilities for further processing via a JavaScript Bridge. It obtains the result from the extended native capabilities via the JavaScript Bridge.</p>
                         <figure id="fig-data-flow-of-miniapp-when-an-api-is-called">
                           <img alt="data flow of MiniApp when an API is called" src="images/data_flow.png" width="600">
                           <figcaption>Figure <bdi class="figno">10</bdi> <span class="fig-title">
                             Data flow of MiniApp when an API is called
                           </span></figcaption>
                         </figure>
-                        <p>Worker establishes connection for each Render, transferring the need-to-be-rendered data to render for further processing.</p>
-                        <p>If an event is triggered by a component in a MiniApp page, this page’s Render will send the event to worker for further processing. At the same time, the Render will wait for the data sent from worker to re-render the MiniApp page.</p>
-                        <p>The rendering can be considered as stateless, and all the states will be stored in the worker.</p>
-                        <p>The benefits of separating the View Layer and the Logic Layer include:</p>
+                        <p>The worker establishes a connection for each Render, transferring the need-to-be-rendered data to the Render for further processing.</p>
+                        <p>If an event is triggered by a component in a MiniApp page, this page’s Render will send the event to the worker for further processing. At the same time, the Render will wait for the data sent from the worker to re-render the MiniApp page.</p>
+                        <p>The rendering can be considered stateless, and all the states will be stored in the worker.</p>
+                        <p>The benefits of separating the view layer and the logic layer include:</p>
                         <ul>
                             <li>Very handy for data sharing and interaction among multiple MiniApp pages.</li>
-                            <li>Having the same context within a lifecycle of MiniApp can provide a similar coding experience for those developers coming from native app developement background.</li>
-                            <li>Separation and parallel implementation of Render and JS worker can prevent the situation where a JS execution impacts or slows down the page rendering, which can help enhance the performance of rendering.</li>
+                            <li>Having the same context within the lifecycle of MiniApp can provide a similar coding experience for those developers coming from native app development background.</li>
+                            <li>Separation and parallel implementation of render and JavaScript worker can prevent the situation where a JavaScript execution impacts or slows down the page rendering, which can help enhance the rendering performance.</li>
                         </ul>
                     </section>
                     <section id="api_and_component"><div class="header-wrapper"><h4 id="x2-1-2-rich-apis-and-components"><bdi class="secno">2.1.2 </bdi>Rich APIs and Components</h4><a class="self-link" href="#api_and_component" aria-label="Permalink for Section 2.1.2"></a></div>
                         
-                        <p>MiniApp platform provides many components to help developers build a fancy UI, including basic components like View, Form, Image, and high-level component like Maps.</p>
-                        <p>MiniApp venders also offer a number of APIs for developers to get access to capabilities of both the Web and the native, including basic APIs such as UI display APIs, Image API, and those advanced ones like Account API, Map API, Payment API.</p>
-                        <p>APIs usually work together with components. When user clicks certain component on a MiniApp page, it will call the related API to complete user’s interaction and refresh the current MiniApp page if needed.</p>
+                        <p>MiniApp platform provides many components to help developers build a fancy UI, including essential components like <code>view</code>, <code>form</code>, <code>image</code>, and high-level components like maps.</p>
+                        <p>MiniApp vendors also offer many APIs for developers to access both the Web and the native capabilities, including basic interfaces such as UI display APIs, image processing API, and those advanced ones like user account API, map API, and payment API.</p>
+                        <p>APIs usually work together with components. When a user clicks a certain component on a MiniApp page, it will call the related API to complete the user’s interaction and refresh the current MiniApp page if needed.</p>
                     </section>
                     <section id="constructor"><div class="header-wrapper"><h4 id="x2-1-3-miniapp-constructor"><bdi class="secno">2.1.3 </bdi>MiniApp Constructor</h4><a class="self-link" href="#constructor" aria-label="Permalink for Section 2.1.3"></a></div>
                         
-                        <p>In order to obtain similar user experiences to native apps, MiniApp resources are usually packaged together. After downloading and installing a MiniApp package, all static page templates/CSS/JavaScript files need to present app pages already exist on users' machines. These resources are always available without any redundant downloads until next update.</p>
-                        <p>A MiniApp package is a compressed format (e.g. zip) archive, including:</p>
+                        <p>In order to obtain similar user experiences as in native apps, MiniApp resources are usually packaged together. After downloading and installing a MiniApp package, all the static resources (i.e., page templates, CSS, JavaScript files, and other documents) required by the MiniApp persist on the users' devices. These resources are always available without any redundant downloads until the next update.</p>
+                        <p>A MiniApp package is a compressed ZIP archive, including:</p>
                             <ul>
-                                <li>one configuration document, located at the root directory of the package. The config file should include:
+                                <li>A configuration document located in the root directory of the package. The config file should include:
                                     <ul>
-                                        <li>general description of the entire MiniApp.</li>
-                                        <li>description of pages and their corresponding paths, for the purpose of page locating and opening.</li>
+                                        <li>the general description of the entire MiniApp; and</li>
+                                        <li>the description of the pages, including their corresponding paths and configuration, for page setup and opening.</li>
                                     </ul></li>
-                                    <li>one app-level logic file, containing JavaScript codes, deals with app-level lifecycle callbacks.</li>
-                                    <li>one or multi page files, containing templates codes for page structure, CSS codes for page style, and JavaScript codes for page logic.</li>
-                                    <li>support digital signature for validation.</li>
+                                    <li>One app-level logic file containing a script to deal with app-level lifecycle callbacks.</li>
+                                    <li>One or several files, containing templates code for page structure, CSS stylesheets for page styling, and JavaScript codes for the page logic.</li>
+                                    <li>Digital signature support for integrity validation.</li>
                             </ul>
-                            <p>For the purpose of locating a specific MiniApp while searching and executing, a MiniApp must have a package name or an ID on the platform. An icon is also required for user recognization.</p>
+                            <p>For the purpose of locating a specific MiniApp while searching and executing, a MiniApp must have a package name or an identifier on the platform. An icon is also required for user recognition.</p>
                     </section>
                     <section id="miniapp-widgets"><div class="header-wrapper"><h4 id="x2-1-4-miniapp-widgets"><bdi class="secno">2.1.4 </bdi>MiniApp Widgets</h4><a class="self-link" href="#miniapp-widgets" aria-label="Permalink for Section 2.1.4"></a></div>
                         
-                        <p>In addition to being presented in the form of an MiniApp page, MiniApp can also be displayed in the form of information fragment, that is, a MiniApp widget. In this form, developers can put their service and/or content to various host scenarios, called host environment, such as assistants, search page, etc.. This feature connects services of the MiniApp with the scenario, providing users with more convenience.</p>
-                        <p>For example, when a user purchases a train ticket for trip, the MiniApp widget on <a href="#term.smart-assistant">smart assistant</a> shows the train's latest status immediately. The user can click on this widget and jump to a full-screen MiniApp page for more detailed information.</p>
-                        <figure id="fig-widget-from-home-screen-to-miniapp">
-                          <img alt="Widget from home screen to MiniApp" src="images/widget.png" width="600">
+                        <p>In addition to MiniApp pages, MiniApps can also be displayed as information fragments or MiniApp widgets. In this form, developers can put their service and/or content to various host scenarios, called host environments (e.g., assistants, global search of the device, etc.). This feature connects the services and content of the MiniApp with the concrete scenario, providing users with more convenience.</p>
+                        <p>For example, when a user purchases a train ticket for a trip, the MiniApp widget on the <a href="#term.smart-assistant">smart assistant</a> shows the train's latest status immediately. The user can click on this widget and jump to a full-screen MiniApp page for more detailed information.</p>
+                        <figure id="fig-widget-from-the-home-screen-to-a-miniapp">
+                          <img alt="Widget from the home screen to a MiniApp" src="images/widget.png" width="600">
                           <figcaption>Figure <bdi class="figno">11</bdi> <span class="fig-title">
-                            Widget from home screen to MiniApp
+                            Widget from the home screen to a MiniApp
                           </span></figcaption>
                         </figure>
-                        <p>Same as MiniApp page, widget is also described by URI scheme. The host environment specifies the MiniApp package and the corresponding widget to be loaded through URI path, and passes data to the widget through URI query params. After the widget is loaded, it is displayed and rendered in the host environment. Data from the host and widget, as well as data from different widgets are isolated to ensure security and independence.</p>
+                        <p>Like in a MiniApp page, a widget is also described by URI scheme. The host environment specifies the MiniApp package and the corresponding widget to be loaded through its URI path and passes data to the widget through URI query parameters. After the widget is loaded, it is displayed and rendered in the host environment. Data from the host and widget, as well as data from different widgets are isolated to ensure security and independence.</p>
 
-                        <p>In many scenarios, a widget can open a MiniApp page for more complicated operations. In such cases, widgets often need to share data with its corresponding MiniApp, e.g. maintain a consistent login status. Therefore, the data of the widget and the MiniApp can be accessed from each side. In other word, MiniApp widget and page have same data access rights.</p>
+                        <p>In many scenarios, a widget can open a MiniApp page for more complicated operations. In such cases, widgets often need to share data with their corresponding MiniApp (e.g., maintain a consistent login status). Therefore, the data of the widget and the MiniApp can be accessed from each side. In other words, the MiniApp widget and the page have same data access rights.</p>
 
                         <figure id="fig-miniapp-widget-interaction">
                           <img alt="widget interaction" src="images/widget_interaction.png" width="600">
@@ -743,23 +743,23 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                           </span></figcaption>
                         </figure>
 
-                        <p>One of the goals of the widget is to let the user forget the traditional app concept and truly meet the user's needs in the form of service. So in addition to all app invocation paths, widgets can also be triggered by different methods on different scenarios, such as text keywords, voice analysis, picture recognition, scan code, event intent.</p>
+                        <p>One of the goals of the widget is to let the user forget the traditional app concept and truly meet the user's needs in the form of service. So, in addition to all app invocation paths, widgets can also be triggered by different methods in different scenarios, such as text keywords, voice analysis, picture recognition, scan code, and event intent.</p>
                         <p>Note: Widget is implemented by Quick App in China market.</p>
                     </section>
                     <section id="single-instance-multi-entries"><div class="header-wrapper"><h4 id="x2-1-5-single-instance-multi-entries"><bdi class="secno">2.1.5 </bdi>Single-Instance, Multi-Entries</h4><a class="self-link" href="#single-instance-multi-entries" aria-label="Permalink for Section 2.1.5"></a></div>
                         
-                        <p>There are multiple entrances to discover, open and access MiniApps. Unlike Web in multi WebView, only one instance will be created for the same MiniApp, so MiniApp keeps its status and data in a consistent manner globally. For example, after one user opens and logs in a MiniApp through the entrance of QR code for the first time, the user will remain logged in next time when the user returns from another entrance like MiniApp store.</p>
-                        <p>The entries for MiniApps include, but not limit to:</p>
+                        <p>There are multiple entrances to discover, open and access MiniApps. Unlike the Web content in multi WebViews, only one instance will be created for the same MiniApp, so MiniApp keeps its status and data in a consistent manner globally. For example, after one user opens and logs in to a MiniApp through the entrance of a QR code for the first time, the user will remain logged in the next time when the user returns from another entry like a MiniApp store.</p>
+                        <p>The entries for MiniApps include, but are not limited to:</p>
                         <ul>
-                            <li>MiniApp store</li>
-                            <li>Search Engine</li>
-                            <li>Smart Assistant</li>
+                            <li>MiniApp marketplace</li>
+                            <li>Search engine</li>
+                            <li>Smart assistant</li>
                             <li>QR code</li>
                             <li>SMS/text</li>
-                            <li>Physical Object(with AI)</li>
+                            <li>Physical object (with AI)</li>
                             <li>Browser</li>
-                            <li>Calender items</li>
-                            <li>Voice message(with AI)</li>
+                            <li>Calendar items</li>
+                            <li>Voice message (with AI)</li>
                         </ul>  
                     </section>
                     <section id="performance-and-user-experience"><div class="header-wrapper"><h4 id="x2-1-6-performance-and-user-experience"><bdi class="secno">2.1.6 </bdi>Performance and User Experience</h4><a class="self-link" href="#performance-and-user-experience" aria-label="Permalink for Section 2.1.6"></a></div>
@@ -767,24 +767,24 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                         <p>MiniApps try to improve their performance and user experience with a few mechanisms that have been proved to be effective through practice.
                         </p><dl>                            
                                 <dt>Packaging</dt>
-                                <dd><p>With <a href="#constructor">MiniApp's constructor</a>, user only needs to download the package when the MiniApp is first opened, and then the static resources(pages/JavaScript/CSS) in the MiniApp needn't be downloaded again, so that the loading and jumping of the following pages can be more quickly responded. This feature improves user operation experience and save network traffic.</p>
-                                <p>Meanwhile, the MiniApp has a pre-download mechanism, which can download the MiniApp packages in advance, or pre-downloads separately for the first page, and perform streaming decompression in parallel during download to minimize the time-consuming of MiniApp startup phase and balance the loss of the first page performance when openning first time.</p>
+                                <dd><p>With <a href="#constructor">MiniApp's constructor</a>, a user only needs to download the package when the MiniApp is first opened, and then the static resources (e.g, pages, scripts, and CSS) in the MiniApp needn't be downloaded again, so that the loading and jumping of the following pages are more efficient. This feature improves user experience and saves network traffic.</p>
+                                <p>Meanwhile, the MiniApp has a pre-download mechanism, which can download the MiniApp packages in advance, or pre-downloads separately for the first page, and perform streaming decompression in parallel during download to minimize the time-consuming of MiniApp startup phase and balance the loss of the first page performance when opening first time.</p>
                             </dd>
                                 <dt>Multiple Rendering Views</dt>
-                            <dd><p>The MiniApp uses native page stack management between render views, and the page switching is driving by native code. Therefore, the gesture operation in the page, the switching between pages can achieve the exactly same smooth experience as Native.</p>
-                                <p>Because of the isolation of View layer and Logic layer, the View layer can be rendered independently. Without being blocked by JavaScript logic code, the rendering speed of the page can be greatly improved.</p>
+                            <dd><p>The MiniApp uses native page stack management between render views, and the page switching is driven by native code. Therefore, the gesture operation in the page, the switching between pages can achieve the exact same smooth experience as native.</p>
+                                <p>Because of the isolation of the view and logic layers, the view layer can be rendered independently. Without being blocked by JavaScript logic code, the rendering speed of the page can be greatly improved.</p>
                             </dd>
                                 <dt>Pre-built and reuse of runtime environments</dt>
                             <dd>
-                                <p>MiniApp's runtime environment is usually pre-built before launching a mini-app, thus reducing the time to launch a MiniApp. Pre-built content includes rendering views, static resources, developer defined prefetch requests, and MiniApps runtime container. After a MiniApp is activated, it will take over the pre-built rendering view, then we continue to pre-built a new render view into the cache pool for the next one. There is a limit on render view quantity, when any render view gets closed or the quantity limit is  exceeded, the oldest opened render view will be destroyed. When the MiniApp application exit, the runtime will be destroyed and the application environment and resources can be reused.</p>
+                                <p>MiniApp's runtime environment is usually pre-built before launching a mini-app, thus reducing the time to launch a MiniApp. Pre-built content includes rendering views, static resources, developer-defined prefetch requests, and MiniApps runtime container. After a MiniApp is activated, it will take over the pre-built rendering view, and then we will continue to pre-build a new render view into the cache pool for the next one. There is a limit on render view quantity. When any render view gets closed or the quantity limit is exceeded, the oldest opened render view will be destroyed. When the MiniApp application exits, the runtime is destroyed, and the application environment and resources can be reused.</p>
                             </dd>
                                 <dt>Pre-defined Component and API</dt>
                             <dd>
-                                <p>MiniApp platforms provides very rich <a href="#api_and_component">components and APIs</a>, these components and APIs are usually well designed and able to help ensure the performance of the general work from developers.</p>
+                                <p>MiniApp platforms provide very rich <a href="#api_and_component">components and APIs</a>. These components and APIs are usually well designed to meet the developers' performance requirements.</p>
                             </dd>
                                 <dt>JavaScript framework presets and hot reload</dt>
                             <dd>
-                                <p>MiniApp's runtime environment contains two major parts, the basic capabilities provided by Native code, and a framework, include developer API and some components, implemented by JavaScript. The JavaScript framework is built in native Apps, and will be loaded into the MiniApp runtime environment in advance before executing MiniApp. The JavaScript framework can be hot reloaded (reload during usage), which brings lots of possibilities to improve performance.</p>
+                                <p>MiniApp's runtime environment contains two major parts, the basic capabilities provided by native code and a framework, including developer API and some components implemented by JavaScript. The JavaScript framework is built in native apps and will be loaded into the MiniApp runtime environment in advance before executing the MiniApp. The JavaScript framework can be hot reloaded (reload during usage), which brings lots of possibilities to improve performance.</p>
                             </dd>
                         </dl>
                     </section>
@@ -795,7 +795,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                         The MiniApp platforms provide a variety of ways for a user to log in to the MiniApp. If the user has already logged in to the platform with identity authentication, the login information of the platform can be shared with MiniApp, quickly realizing the interoperability of MiniApp’s own account system and the platform account system, which makes the access process of the MiniApp more smooth.
                       </p>
                       <p>
-                        For example, the traditional login process with SMS verification is more time-consuming, users need to manually enter their cell phone number first, and then enter the verification code after receiving the SMS to log in. The advantage of MiniApp is that developers can use the components / APIs provided by the platform to obtain users' cell phone numbers securely and conveniently, prompting the user to authorize one-click login process with their cell phone numbers, which makes the entire process simple for the user and reduces the cost of obtaining user information for developers.
+                        For example, the traditional login process with SMS verification is more time-consuming; users need to manually enter their cell phone number first and then enter the verification code after receiving the SMS to log in. The advantage of MiniApp is that developers can use the components / APIs provided by the platform to obtain users' cell phone numbers securely and conveniently, prompting the user to authorize a one-click login process with their cell phone numbers, which makes the entire process simple for the user and reduces the cost of obtaining user information for developers.
                       </p>
                       <figure id="fig-sign-in-to-a-miniapp">
                         <img alt="Sign in to a MiniApp" src="images/login.png" width="300">
@@ -808,22 +808,22 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                   <section id="subpackaging"><div class="header-wrapper"><h4 id="x2-1-8-subpackaging"><bdi class="secno">2.1.8 </bdi>Subpackaging</h4><a class="self-link" href="#subpackaging" aria-label="Permalink for Section 2.1.8"></a></div>
                     
 <p>MiniApp subpackaging is a build mechanism for improving the MiniApp package development process. It helps developers divide different business modules into different subpackages.</p>
-<p>For developers: a MiniApp has the main package by default, it contains the startup page files and public resources. Subpackage is a building type that flexibly way divided the developer's business modules. Users can open special pages after loading different sub-packages on demand.</p>
-<p>For users: when the user starts the MiniApp, the main package will be downloaded by default and the page in the main package will be launched. If the user needs to open a page in the subpackage, the MiniApp Runtime will start to download and load the subpackage and start the subpackage page.</p>
+<p>For developers: a MiniApp has the main package by default; it contains the startup page files and public resources. Subpackage is a building type that flexibly divides the developer's business modules. Users can open special pages after loading different sub-packages on demand.</p>
+<p>For users: when the user starts the MiniApp, the main package will be downloaded by default, and the page in the main package will be launched. If the user needs to open a page in the subpackage, the MiniApp Runtime will start to download and load the subpackage and start the subpackage page.</p>
 <p>Through such a subpackage building mechanism is better to decouple and collaborate when multiple teams develop together. When users use the MiniApps, the subpackaging mechanism can improve the loading speed of the MiniApp homepage, load subpackages on demand, and optimize the user experience.</p>
                 </section>
 
                 <section id="add-ons"><div class="header-wrapper"><h4 id="x2-1-9-add-ons"><bdi class="secno">2.1.9 </bdi>Add-ons
                   </h4><a class="self-link" href="#add-ons" aria-label="Permalink for Section 2.1.9"></a></div>
                   
-                  <p>In a MiniApp, an add-on / extension is an encapsulated module that adds a specific feature to an existing MiniApp, and it could be a component, a JavaScript module, or a page. The add-on / extension can be only executed in a MiniApp instead of running separately. Developers can develop add-on / extension just like a MiniApp, and upload it to the MiniApp platform for other MiniApps to reuse.</p>
-                  <p>MiniApp supports add-on / extension to:</p>
+                  <p>In a MiniApp, an add-on/extension is an encapsulated module that adds a specific feature to an existing MiniApp, and it could be a component, a JavaScript module, or a page. The add-on/extension can only be executed in a MiniApp instead of running separately. Developers can develop an add-on/extension just like a MiniApp, and upload it to the MiniApp platform for other MiniApps to reuse.</p>
+                  <p>MiniApp supports add-on/extensions to:</p>
                   <ul>
                   <li>reduce development costs by code reuse and help developers easily add new features</li>
-                  <li>update functionality automatically without awareness of developers</li>
+                  <li>update functionality automatically without the awareness of developers</li>
                   <li>reduce the package size of MiniApps by not loading unused functions</li>
                   </ul>
-                  <p>The add-on / extension mechanism lowers the barriers of developing MiniApps and brings more developers to the MiniApp ecosystem.</p>
+                  <p>The add-on/extension mechanism lowers the barriers to developing MiniApps and brings more developers to the MiniApp ecosystem.</p>
               </section>
                 </section>
                 <section id="miniapp-market"><div class="header-wrapper"><h3 id="x2-2-miniapp-market"><bdi class="secno">2.2 </bdi>MiniApp Market</h3><a class="self-link" href="#miniapp-market" aria-label="Permalink for Section 2.2"></a></div>
@@ -832,27 +832,27 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                     <dl>
                         <dt>Alipay Mini Program</dt>
                         <dd>
-                            <p>Alipay Mini Program runs on top of Alipay Native App, which is a hybrid solution of Web and Native. Alipay Mini Program relies on Web technologies as CSS and JavaScript. Meanwhile, it integrates the functionalities of Alipay Native App as payment, credit service, face authentication, etc.</p>
-                            <p>Now there have been more than 1,000,000 Mini Programs running on Alipay Native App and 230 million DAU (Daily Active User). The user scenarios include retails, transportation, medical services, etc.</p>
+                            <p>Alipay Mini Program runs on top of Alipay native app, which is a hybrid solution of Web and native. Alipay Mini Program relies on Web technologies like CSS and JavaScript. Meanwhile, it integrates the functionalities of Alipay native app as payment, credit service, face authentication, etc.</p>
+                            <p>More than 1 million Mini Programs are running on Alipay native app, with 230 million DAU (Daily Active User). The user scenarios include retail, transportation, medical services, etc.</p>
                         </dd>
                         <dt>Baidu Smart Mini Program</dt>
                         <dd>
-                            <p>Baidu Smart Mini Program refers to an open ecological product that intelligently connects people to information and services, which based on Baidu APP and other partners’ platforms. Through Baidu’s AI abilities, and by understanding all contents in Smart Mini Programs, we connect user and Smart Mini Program accurately. With Baidu’s search and information flow dual engine,  users can achieve an APP-like experience within Smart Mini Programs. As of July 2019, we have 150,000+ Smart Mini Programs and 270 million MAU.</p>
-                            <p>Baidu Smart Mini Program is open-sourced within our open source alliance, which has more than 30 cooperators, covered super APPs, mobile OS, car OS, voice-control speakers and TV.</p>
+                            <p>Baidu Smart Mini Program refers to an open ecological product that intelligently connects people to information and services based on the Baidu app and other partners’ platforms. Through Baidu’s AI abilities and understanding of all contents in Smart Mini Programs, Baidu accurately connects users and Smart Mini Programs. With Baidu’s search and information flow dual engine, users can achieve an app-like experience within Smart Mini Programs. As of July 2019, there are over 150,000 Smart Mini Programs and 270 million MAU.</p>
+                            <p>Baidu Smart Mini Program is open-sourced within our open source alliance, with more than 30 cooperators, covering <a href="#dfn-super-app" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-super-app-7">super apps</a>, mobile OS, car OS, voice-control speakers, and TV.</p>
                         </dd>
-                        <dt>Quick Apps (Quick App Alliance including Xiaomi and Huawei)</dt>
+                        <dt>Quick Apps (Quick App Alliance, including Xiaomi and Huawei)</dt>
                         <dd>
-                            <p>Quick App is a MiniApp standard developed by 12 top mobile phone manufacturers in the Quick App Alliance, covering over 200 million MAU. Developers can achieve one-time development and run on all hardware vendors' platforms. Quick Apps, which are deeply integrated in the operating system, can be obtained  in multiple scenarios of the mobile phone system, with just one click. By introducing a native rendering path, an effective combination of front-end development and native performance experience is achieved.</p>
-                            <p>Quick Apps can run in two forms: Quick App page form like native app page and a widget form that presents information in the scene. The two are adapted to different user needs, connecting the system and the MiniApp into a whole in multiple forms.</p>
+                            <p>Quick App is a MiniApp standard developed by 12 top mobile phone manufacturers in the Quick App Alliance, covering over 200 million MAU. Developers can achieve one-time development and run on all hardware vendors' platforms. Quick Apps, which are deeply integrated into the operating system, can be obtained in multiple scenarios of the mobile phone system with just one click. By introducing a native rendering path, an effective combination of front-end development and native performance experience is achieved.</p>
+                            <p>Quick Apps can run in two forms: Quick App page form, like native app page, and a widget form that presents information in the scene. The two are adapted to different user needs, connecting the system and the MiniApp into a whole in multiple scenarios.</p>
                         </dd>
                         <dt>360 PC MiniApp</dt>
                         <dd>
-                            <p>MiniApps on PC is still in an early exploration stage. 360 PC MiniApp is a light application running in their PC browser. Compared to the traditional webpages, it's served with more functionalities and easier interaction with the PC operation system.</p>
-                            <p>PC miniapps are only available to those validated as an enterprise account, most of the features are under tough regulations, so that they can be considered as highly trusted web contents.</p>
+                            <p>MiniApps on PC is still in an early exploration stage. 360 PC MiniApp is a light application running in their PC browser. Compared to the traditional webpages, it's served with more functionalities and easier interaction with the PC operating system.</p>
+                            <p>PC MiniApps are only available to those validated as an enterprise account. Most of the features are under strict regulations so that they can be considered highly trusted Web content.</p>
                         </dd>
                         <dt>PWAs</dt>
                         <dd>
-                            <p>PWAs are the latest term to summarize modern web applications. As a counterpart of native apps, a PWAs app looks and feels like a native app, and can be installed to home screen / launcher / start menu; it can send push notification to re-engage user; it can be used when offline and behaves under poor network condition; it works with devices of wide ranging capabilities and it's still evolving to works with new capabilities defined by open web standards; payment can be made by user inside PWAs apps; and PWAs apps are search-engine-friendly and work perfectly with hyper-links. PWAs are successful on both the technical aspect and business aspect (widely adopted by many web sites, esp. consumer facing ones).</p>
+                            <p>PWAs are the latest term to summarize modern Web applications. As a counterpart of native apps, a PWA looks and feels like a native app and can be installed on the device home screen/launcher/start menu; it can send push notifications to re-engage users; it can be used when offline and behaves under poor network conditions; it works with devices of wide-ranging capabilities, and it's still evolving to works with new capabilities defined by open Web standards; payments can be made by user inside PWAs apps; and PWAs apps are search-engine-friendly, working perfectly with hyperlinks. PWAs are successful in technical and business aspects (widely adopted by many websites, especially in consumer-facing ones).</p>
                         </dd>
                     </dl>
                 </section> 
@@ -864,19 +864,19 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                 
             <section id="hybrid-rendering"><div class="header-wrapper"><h4 id="x3-1-1-hybrid-rendering"><bdi class="secno">3.1.1 </bdi>Hybrid Rendering</h4><a class="self-link" href="#hybrid-rendering" aria-label="Permalink for Section 3.1.1"></a></div>
                 
-                <p>MiniApp is a hybrid solution of Web rendering and Native rendering. It'd be great if there is a good way to combine the rendering results from the Web and from the Native.</p>
+                <p>MiniApp is a hybrid solution of Web rendering and native rendering. It'd be great if there is a good way to combine the rendering results from the Web and the native.</p>
                 <figure id="fig-rendering-results-coming-from-both-the-web-and-the-native">
-                    <img alt="Rendering results coming from both the Web and the Native" src="images/rendering.png" width="600">
+                    <img alt="Rendering results coming from both the Web and the native" src="images/rendering.png" width="600">
                     <figcaption>Figure <bdi class="figno">14</bdi> <span class="fig-title">
-                        Rendering results coming from both the Web and the Native
+                        Rendering results coming from both the Web and the native
                     </span></figcaption>
                 </figure>
-                <p>Proposal: Mini App needs a standardized API to help integrate the native rendering result into Web rendering result.</p>
+                <p>Proposal: MiniApp needs a standardized API to help integrate the native rendering result into the Web rendering outcome.</p>
             </section>
             <section id="transition-animation"><div class="header-wrapper"><h4 id="x3-1-2-transition-animation"><bdi class="secno">3.1.2 </bdi>Transition Animation</h4><a class="self-link" href="#transition-animation" aria-label="Permalink for Section 3.1.2"></a></div>
             
-                <p>MiniApp would like to provide transition animation during page switching so that users can have similar experience as when they are using a Native App, but it's almost impossible to do that now.</p>
-                <p>Proposal: Mini App needs an API to call add transition animation during MiniApp page switching.</p>
+                <p>MiniApp would like to provide transition animation during page switching so that users can have a similar experience as when they are using a native app, but it's almost impossible to do that now.</p>
+                <p>Proposal: MiniApp needs an API to add transition animations during MiniApp page switching.</p>
             </section>
             <section id="standardise-the-package-constructor-of-miniapp"><div class="header-wrapper"><h4 id="x3-1-3-standardise-the-package-constructor-of-miniapp"><bdi class="secno">3.1.3 </bdi>Standardise the Package Constructor of MiniApp</h4><a class="self-link" href="#standardise-the-package-constructor-of-miniapp" aria-label="Permalink for Section 3.1.3"></a></div>
             
@@ -890,19 +890,19 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             </section>
             <section id="miniapp-widgets-0"><div class="header-wrapper"><h4 id="x3-1-5-miniapp-widgets"><bdi class="secno">3.1.5 </bdi>MiniApp Widgets</h4><a class="self-link" href="#miniapp-widgets-0" aria-label="Permalink for Section 3.1.5"></a></div>
             
-                <p>Like Android widgets or apple dashboard, users can directly get information and/or finish their task by a MiniApp widget without opening any web or app pages. A MiniApp widget can be displayed in an environment outside of web browsers, such as desktop or dashboard.</p>
+                <p>Like Android widgets or Apple dashboard, users can directly get information and/or finish their task with a MiniApp widget without opening any Web or app pages. A MiniApp widget can be displayed in an environment outside of Web browsers, such as on desktops or dashboards.</p>
                 <p>Proposal:</p>
                     <ul>
-                        <li>A MiniApp widget can be displayed within a host environment, which could be either webview or a native app page. The host environment loads a widget with its corresponding URI path, which describes a package and widget page.</li>
-                        <li>A MiniApp widget can access local data or data from server.  Meanwhile, a MiniApp widget can communicate with MiniApp in the same package.</li>
-                        <li>A MiniApp widget should be interactive, meaning that it should be responsive to any user behaviors/interactions. A MiniApp widget should have the ability to open a web or app page.</li>
+                        <li>A MiniApp widget can be displayed within a host environment, either a WebView or a native app page. The host environment loads a widget with its corresponding URI path, which describes a package and widget page.</li>
+                        <li>A MiniApp widget can access local data or data from a server.  Meanwhile, a MiniApp widget can communicate with MiniApp in the same package.</li>
+                        <li>A MiniApp widget should be interactive, meaning that it should be responsive to any user behaviors/interactions. A MiniApp widget should have the ability to open a Web or app page.</li>
                     </ul>
             </section>
             </section>
 
             <section id="performance-and-tuning"><div class="header-wrapper"><h3 id="x3-2-performance-and-tuning"><bdi class="secno">3.2 </bdi>Performance and Tuning</h3><a class="self-link" href="#performance-and-tuning" aria-label="Permalink for Section 3.2"></a></div>
                 
-            <section id="define-an-event-of-time-to-interactive-in-miniapp"><div class="header-wrapper"><h4 id="x3-2-1-define-an-event-of-time-to-interactive-in-miniapp"><bdi class="secno">3.2.1 </bdi>Define an event of time to interactive in MiniApp</h4><a class="self-link" href="#define-an-event-of-time-to-interactive-in-miniapp" aria-label="Permalink for Section 3.2.1"></a></div>
+            <section id="define-an-event-for-time-to-interactive-in-miniapp"><div class="header-wrapper"><h4 id="x3-2-1-define-an-event-for-time-to-interactive-in-miniapp"><bdi class="secno">3.2.1 </bdi>Define an event for "time to interactive" in MiniApp</h4><a class="self-link" href="#define-an-event-for-time-to-interactive-in-miniapp" aria-label="Permalink for Section 3.2.1"></a></div>
                 
                 <p>MiniApp needs to know when the MiniApp page Time to Interactive (TTI) has been completed.</p>
                 <p>Proposal: A standardized event to notify that the MiniApp page Time to Interactive has been completed.</p>
@@ -913,16 +913,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                 
             <section id="x3d-model-element"><div class="header-wrapper"><h4 id="x3-3-1-3d-model-element"><bdi class="secno">3.3.1 </bdi>3D Model Element</h4><a class="self-link" href="#x3d-model-element" aria-label="Permalink for Section 3.3.1"></a></div>
                 
-                <p>3D models become more and more popular thanks to its rich details, and combined with AR, it will provide a much better user experience than 2D.  The business cases might include online shopping, advertisement, education, etc. However, the current web lacks a standard and convenient way to deal with 3D model.  In this document, we propose to define a HTML tag to directly handle 3D model, similar to the way we handle audio, video, image with corresponding HTML tags:</p>
+                <p>3D models have become more and more popular thanks to their rich details. Combined with AR, they will provide a better user experience than 2D. The business cases might include online shopping, advertisement, education, etc. However, the current Web lacks a standard and convenient way to deal with 3D models. In this document, we propose to define an HTML tag to directly handle 3D models, similar to the way we handle audio, video, and image with corresponding HTML tags:</p>
                     <ul>
                         <li>360 view
-                            <p>User can view a 3D model from different angles via gestures. And the 3D model can be zoom in/out as well. It can be viewed in full screen, or it can be embedded in a HTML page, shown together w/ other HTML contents.</p>
+                            <p>Users can view a 3D model from different angles via gestures. And the 3D model can be zoomed in/out as well. It can be viewed on full screen or embedded in an webpage, shown together w/ other HTML contents.</p>
                         </li>
                         <li>View with AR
-                            <p>User can place the 3D model in the real world environment with camera.  User can specify different locations to place the model.</p>
+                            <p>Users can place the 3D model in the real world with the camera. Users can specify different locations to place the model.</p>
                         </li>
                     </ul>
-                <p>Proposal: A <code>&lt;xmodel&gt;</code> Element to specify a 3D model on the web and to power interactive 3D contents with AR.</p>
+                <p>Proposal: A <code>&lt;xmodel&gt;</code> element to specify a 3D model on the Web and power interactive 3D contents with AR.</p>
             </section>
 
             <section id="face-tracking"><div class="header-wrapper"><h4 id="x3-3-2-face-tracking"><bdi class="secno">3.3.2 </bdi>Face Tracking</h4><a class="self-link" href="#face-tracking" aria-label="Permalink for Section 3.3.2"></a></div>
@@ -931,15 +931,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                 <dl>
                         <dt>Face Effects in Live Video</dt>
                         <dd>
-                            Add effects on the face in live video. These effects include full-screen filter, face reshape and makeup, 2d sticker, 3d headdress, etc. Most of these effects depend heavily on the real-time face tracking from video source.
+                            Add effects on the face in live video. These effects include a full-screen filter, face reshape and makeup, 2D sticker, 3D headdress, etc. Most of these effects depend heavily on real-time face tracking from a video source.
                         </dd>
                         <dt>Gaming</dt>
                         <dd>
-                            Game developers can design game strategies based on the tracked face. Like triggering a specific game logic when the eye is blinked, or check if the dropping fruit is in the opened mouth.
+                            Game developers can design game strategies based on the tracked face, like triggering a specific game logic when the eye blinks or checking if the dropping fruit is in the opened mouth.
                           </dd>
                         <dt>Virtual Makeup</dt>
                         <dd>
-                          Let users try lipsticks, eye shadows, glasses, hats on the product page to help them make the decision.
+                          Let users try lipsticks, eye shadows, glasses, and hats on the product page to help them decide.
                         </dd>
                 </dl><p>Proposal: A Face Tracking API use a video element as input and updates face tracking output every frame, which includes:
                     </p><ul>
@@ -949,28 +949,28 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                         </li>
                         <li>Normalized (x, y) landmarks points
                         </li>
-                        <li>ace geometry data including vertices, normals, texture coordinates
+                        <li>Face geometry data including vertices, normals, texture coordinates
                         </li>
                     </ul>
             </section>
 
             <section id="hand-gestures-tracking-and-recognition"><div class="header-wrapper"><h4 id="x3-3-3-hand-gestures-tracking-and-recognition"><bdi class="secno">3.3.3 </bdi>Hand gestures tracking and recognition</h4><a class="self-link" href="#hand-gestures-tracking-and-recognition" aria-label="Permalink for Section 3.3.3"></a></div>
                 
-                <p>Hand gestures can be used in video effect and AR/VR games scenario which can make apps more impressive and interactive.</p>
-                <p>Proposal: A high-level API to track hands movement, get hands outline.</p>
+                <p>Hand gestures can be used in video effects and AR/VR game scenarios to make apps more impressive and interactive.</p>
+                <p>Proposal: A high-level API to track hand movement and get the hands outline.</p>
             </section>
 
             <section id="low-level-ar-apis-based-on-arcore-and-arkit"><div class="header-wrapper"><h4 id="x3-3-4-low-level-ar-apis-based-on-arcore-and-arkit"><bdi class="secno">3.3.4 </bdi>Low level AR APIs based on ARCore and ARKit</h4><a class="self-link" href="#low-level-ar-apis-based-on-arcore-and-arkit" aria-label="Permalink for Section 3.3.4"></a></div>
               
-              <p>There are a few AR APIs in MiniApps we would migrate to the Web, as they help to provide better AR experience in gaming, 3d model preview, interactive ads.</p>
-              <p>Proposal: Provide low-level AR APIs based on ARCore and ARKit, which includes:</p>
+              <p>There are a few AR APIs in MiniApps we would migrate to the Web, as they help provide a better AR experience in gaming, 3D model preview, and interactive ads.</p>
+              <p>Proposal: Provide low-level AR APIs based on ARCore and ARKit, which include:</p>
               <dl>
               <dt>Camera view matrix for world tracking</dt>
-              <dd>Provide the 4x4 view matrix of the spatial location and orientation of the mobile phone, which can be used to update the camera matrix in their 3D virtual world in real time by developers. Thereby the position of the real world can be correlated with the position of the object in the virtual world.</dd>
+              <dd>Provide the 4x4 view matrix of the spatial location and orientation of the mobile phone, which can be used to update the camera matrix in their 3D virtual world in real-time by developers. Thereby the position of the real world can be correlated with the position of the object in the virtual world.</dd>
               <dt>Plane detection and tracking</dt>
-              <dd>Detect planes in the real world and track these planes in real-time. Provide the 4x4 transform matrix which represents the center position and orientation of each plane. It can be used for placing 3D virtual object on the ground/desktop.</dd>
+              <dd>Detect planes in the real world and track these planes in real-time. Provide the 4x4 transform matrix, which represents the center position and orientation of each plane. It can be used for placing 3D virtual objects on the ground/desktop.</dd>
               <dt>Anchor</dt>
-              <dd>Anchor defines a fixed position and orientation in the real world. Developers can create an anchor from a 4x4 transform matrix, which can be got by hit test. This matrix will be updated each frame to ensure that the virtual object corresponding to the matrix can be fixed in one position and direction in the real scene.</dd>
+              <dd>Anchor defines a fixed position and orientation in the real-world. Developers can create an anchor from a 4x4 transform matrix, which can be got by hit test. This matrix will be updated each frame to ensure that the virtual object corresponding to the matrix can be fixed in one position and direction in the real scene.</dd>
               <dt>Hit test</dt>
               <dd>Get a 4x4 transform matrix representing a position and orientation in the real world space corresponding to the screen position to implement functions such as clicking and placing virtual objects.</dd>
               </dl>
@@ -984,15 +984,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         </section>
         </section>
 
-        <section id="current-standards-work-the-wg-work"><div class="header-wrapper"><h2 id="x4-current-standards-work-the-wg-work"><bdi class="secno">4. </bdi>Current standards work, the WG work</h2><a class="self-link" href="#current-standards-work-the-wg-work" aria-label="Permalink for Section 4."></a></div>
+        <section id="current-standards-work-the-wg-work"><div class="header-wrapper"><h2 id="x4-current-standards-work-the-wg-work"><bdi class="secno">4. </bdi>Current standards work; the WG work</h2><a class="self-link" href="#current-standards-work-the-wg-work" aria-label="Permalink for Section 4."></a></div>
           
           <section id="lifecycle"><div class="header-wrapper"><h3 id="x4-1-lifecycle"><bdi class="secno">4.1 </bdi>Lifecycle</h3><a class="self-link" href="#lifecycle" aria-label="Permalink for Section 4.1"></a></div>
             
-            <p>[<cite><a class="bibref" data-link-type="biblio" href="#bib-miniapp-lifecycle" title="MiniApp Lifecycle">MINIAPP-LIFECYCLE</a></cite>] defines the MiniApp lifecycle events and the process to manage MiniApp and each page's lifecycle. Implementing this specification enables the user agent to manage the lifecycle events of both the global application lifecycle and the page lifecycle.</p>
+            <p>[<cite><a class="bibref" data-link-type="biblio" href="#bib-miniapp-lifecycle" title="MiniApp Lifecycle">MINIAPP-LIFECYCLE</a></cite>] defines the MiniApp lifecycle events and the process of managing MiniApp and each page's lifecycle. Implementing this specification enables the user agent to manage the lifecycle events of both the global application lifecycle and the page lifecycle.</p>
 
-            <p>As described in <a href="#separate-the-view-layer-from-the-logic-layer" data-matched-text="[[[#separate-the-view-layer-from-the-logic-layer]]]" class="sec-ref"><bdi class="secno">2.1.1 </bdi>Separate the View Layer from the Logic Layer</a>, in a MiniApp, the View layer is separated from the Logic layer. The View layer is responsible for rendering MiniApp pages, including Web rendering and native rendering, which can be considered as hybrid rendering. The Logic layer is implemented with JavaScript Worker. The Logic layer is responsible for MiniApp’s event processing, API calling, and lifecycle management.</p>
+            <p>As described in <a href="#separate-the-view-layer-from-the-logic-layer" data-matched-text="[[[#separate-the-view-layer-from-the-logic-layer]]]" class="sec-ref"><bdi class="secno">2.1.1 </bdi>Separate the view layer from the logic layer</a>, in a MiniApp, the view layer is separated from the logic layer. The view layer is responsible for rendering MiniApp pages, including Web rendering and native rendering, which can be considered hybrid rendering. The logic layer is implemented with JavaScript Worker. The logic layer is responsible for MiniApp’s event processing, API calls, and lifecycle management.</p>
 
-            <p>MiniApp lifecycle mechanism provides a means to manage MiniApp's View layer and Logic layer through the MiniApp global application lifecycle events and MiniApp page lifecycle events. Developing MiniApp with knowledge of the MiniApp global application lifecycle states and MiniApp page lifecycle states can lead to improved user experiences. MiniApp lifecycle includes a set of events, with which MiniApp can choose to alter its behavior based on its state.</p>
+            <p>MiniApp lifecycle mechanism provides a means to manage MiniApp's view layer and logic layer through the MiniApp global application lifecycle events and MiniApp page lifecycle events. Developing MiniApp with knowledge of the MiniApp global application lifecycle states and MiniApp page lifecycle states can lead to improved user experiences. MiniApp lifecycle includes a set of events, with which MiniApp can choose to alter its behavior based on its state.</p>
           </section>
 
           <section id="manifest"><div class="header-wrapper"><h3 id="x4-2-manifest"><bdi class="secno">4.2 </bdi>Manifest</h3><a class="self-link" href="#manifest" aria-label="Permalink for Section 4.2"></a></div>
@@ -1015,28 +1015,27 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
           <section id="addressing"><div class="header-wrapper"><h3 id="x4-4-addressing"><bdi class="secno">4.4 </bdi>Addressing</h3><a class="self-link" href="#addressing" aria-label="Permalink for Section 4.4"></a></div>
             
-            <p>[<cite><a class="bibref" data-link-type="biblio" href="#bib-miniapp-addressing" title="MiniApp Addressing">MINIAPP-ADDRESSING</a></cite>] is a Note defines a standard MiniApp protocol for accessing MiniApps. It aims to solve the problem that currently, each MiniApp vendor has its own way to describe a MiniApp resource, and uses very different methods to obtain the MiniApp package, which makes it very difficult to access MiniApps across platforms and difficult to reach a unified understanding from both user and developer perspectives.</p>
-            <p>The document refers to mobile deep linking technology and defines two ways to access MiniApp, one with the HTTPS protocol and the other with a custom protocol. In addition, MiniApp Addressing defines the syntax of MiniApp URIs, including uri-prefix for cross-environment access, uri-infix "miniapp" for MiniApps, and id and version to uniquely identify a MiniApp.</p>
+            <p>[<cite><a class="bibref" data-link-type="biblio" href="#bib-miniapp-addressing" title="MiniApp Addressing">MINIAPP-ADDRESSING</a></cite>] is a Note that defines a standard MiniApp protocol for accessing MiniApps. It aims to solve the problem that currently, each MiniApp vendor has its own way of describing a MiniApp resource and uses very different methods to obtain the MiniApp package, which makes it very difficult to access MiniApps across platforms and difficult to reach a unified understanding from both user and developer perspectives.</p>
+            <p>The document refers to mobile deep linking technology and defines two ways to access MiniApp, one with the HTTPS protocol and the other with a custom protocol. In addition, MiniApp Addressing defines the syntax of MiniApp URIs, including uri-prefix for cross-environment access, uri-infix <code>"miniapp"</code> for MiniApps, and identifier and version to uniquely identify a MiniApp.</p>
             <p>MiniApp Addressing also describes how the user agent obtains the corresponding mini-app package based on MiniApp URI, as well as some error handling, and gives an example procedure for downloading MiniApp packages over the network. </p>
-            <p></p>
           </section>
 
           <section id="widget"><div class="header-wrapper"><h3 id="x4-5-widget"><bdi class="secno">4.5 </bdi>Widget</h3><a class="self-link" href="#widget" aria-label="Permalink for Section 4.5"></a></div>
             
-            <p>MiniApp Widget is a special form of MiniApp Page. Same as a page, a widget runs in a host environment that is called the User Agent. Unlike a page, a widget can occupy a certain area instead of the entire screen. The [<cite><a class="bibref" data-link-type="biblio" href="#bib-miniapp-widget-req" title="MiniApp Widget Requirements">MINIAPP-WIDGET-REQ</a></cite>] document describes the initial design considerations for developing a MiniApp Widget, including user agent, packaging, manifest, addressing, lifecyle, UI components, API, and communication between MiniApp and MiniApp Widget etc. The detailed Widget Specification will be described in a separate document, which will describe the detailed technical requirement and capabilities of User Agent. For example, the potential dependencies of Widget running environment, the potential changes of API and UI Components brought by Widget, new features bright by Widget such as requirement of communication between MiniApp and MiniApp Widget. Both User Agent developers and Widget developers can refer to the Widget Specification for technical development.
+            <p>MiniApp Widget is a special form of MiniApp Page. Same as a page, a widget runs in a host environment that is called the MiniApp user agent. Unlike a MiniApp page, a widget can occupy a certain area instead of the entire screen. The [<cite><a class="bibref" data-link-type="biblio" href="#bib-miniapp-widget-req" title="MiniApp Widget Requirements">MINIAPP-WIDGET-REQ</a></cite>] document describes the initial design considerations for developing a MiniApp Widget, including user agent, packaging, manifest, addressing, lifecycle, UI components, API, and communication between MiniApp and MiniApp Widget etc. The detailed Widget specification will be described in a separate document, which will describe the detailed technical requirement and capabilities of user agent. For example, the potential dependencies of widget running environment, the potential changes of API and UI Components brought by Widget, and new features bright by Widget such as the requirement of communication between MiniApp and MiniApp Widget. Both user agent developers and widget developers can refer to the Widget specification for technical development.
             </p>
           </section>
 
           <section id="implementation-converting-tools"><div class="header-wrapper"><h3 id="x4-6-implementation-converting-tools"><bdi class="secno">4.6 </bdi>Implementation, converting tools</h3><a class="self-link" href="#implementation-converting-tools" aria-label="Permalink for Section 4.6"></a></div>
             
-            <p>In 2021, the Working Group published two documents, [<cite><a class="bibref" data-link-type="biblio" href="#bib-miniapp-manifest" title="MiniApp Manifest">MINIAPP-MANIFEST</a></cite>] and [<cite><a class="bibref" data-link-type="biblio" href="#bib-miniapp-lifecycle" title="MiniApp Lifecycle">MINIAPP-LIFECYCLE</a></cite>]. Meanwhile, various vendors have some pre-standard implementations. To verify the feasibility of the standards, and to be compatible with pre-standard implementations, the working group developed a tool for converting MiniApp standard Manifest to different pre-standard manifest files, such as Baidu's <code>App.json</code> and HarmonyOS FA's <code>config.json</code>. And in a 2021 TPAC breakout session, the working group demonstrated a demo of the tool.</p>
+            <p>In 2021, the Working Group published two documents, [<cite><a class="bibref" data-link-type="biblio" href="#bib-miniapp-manifest" title="MiniApp Manifest">MINIAPP-MANIFEST</a></cite>] and [<cite><a class="bibref" data-link-type="biblio" href="#bib-miniapp-lifecycle" title="MiniApp Lifecycle">MINIAPP-LIFECYCLE</a></cite>]. Meanwhile, various vendors have some pre-standard implementations. To verify the feasibility of the standards and be compatible with pre-standard implementations, the working group developed a tool for converting MiniApp standard Manifest to different pre-standard manifest files, such as Baidu's <code>App.json</code> and HarmonyOS FA's <code>config.json</code>. And in a 2021 TPAC breakout session, the working group demonstrated a demo of the tool.</p>
             <p>As the standards and pre-deployment progress, the working group plans to refine the tools to support a complete, standardized development approach that may include Packaging, Addressing, Lifecycle, UI components, and APIs.
             </p>
           </section>
 
         </section>
 
-        <section id="new-ideas-incubated-the-cg-work"><div class="header-wrapper"><h2 id="x5-new-ideas-incubated-the-cg-work"><bdi class="secno">5. </bdi>New ideas incubated, the CG work</h2><a class="self-link" href="#new-ideas-incubated-the-cg-work" aria-label="Permalink for Section 5."></a></div>
+        <section id="new-ideas-incubated-the-cg-work"><div class="header-wrapper"><h2 id="x5-new-ideas-incubated-the-cg-work"><bdi class="secno">5. </bdi>New ideas incubated; the CG work</h2><a class="self-link" href="#new-ideas-incubated-the-cg-work" aria-label="Permalink for Section 5."></a></div>
           
           <section id="ui-components"><div class="header-wrapper"><h3 id="x5-1-ui-components"><bdi class="secno">5.1 </bdi>UI components</h3><a class="self-link" href="#ui-components" aria-label="Permalink for Section 5.1"></a></div>
             
@@ -1050,7 +1049,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             
             <p><a href="https://w3c.github.io/miniapp-iot">MiniApp for IoT</a> describes the use cases of MiniApp for IoT. Derived from the use cases, this specification defines the architecture of MiniApp for IoT. How to reuse and extend the MiniApp Packaging and MiniApp Lifecycle is specified. Also, several APIs are specified for MiniApp APIs for IoT.</p>
 
-            <p>MiniApp for IoT shares similar architecture of MiniApp running on the cell phone and PC. But since IoT device has different hardware capabilities, MiniApp for IoT has its unique features, including:</p>
+            <p>MiniApp for IoT has a similar architecture to MiniApps running on cell phones and PCs. But since IoT device has different hardware capabilities, MiniApp for IoT has its unique features, including:</p>
 
             <ul>
             <li>MiniApp Packaging for IoT</li>
@@ -1062,8 +1061,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
           <section id="security-and-privacy-consideration"><div class="header-wrapper"><h2 id="x6-security-and-privacy-consideration"><bdi class="secno">6. </bdi>Security and Privacy Consideration</h2><a class="self-link" href="#security-and-privacy-consideration" aria-label="Permalink for Section 6."></a></div>
                 
-                <p>MiniApp utilizes HTTPs to support secure connection. Multiple MiniApps within same host environment are independent with each other.</p>
-                <p>User interactions within MiniApp needs different level of user permissions:
+                <p>MiniApp utilizes HTTPS to support secure connections. Multiple MiniApps within the same host environment are independent of each other.</p>
+                <p>User interactions within MiniApp need a different level of user permissions:
                 </p>
                 <table>
                       <tbody><tr>
@@ -1071,13 +1070,13 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                         <th>User Interactions</th>
                       </tr>
                       <tr>
-                        <td>default(no extra action needed)</td>
+                        <td>Default (no extra action needed)</td>
                         <td>Page sharing, clipboard, vibration, compass, motion sensors, map, screen brightness, screen capture, battery status</td> 
                       </tr><tr>
-                        <td>permission on first-time usage</td>
+                        <td>Permission on first-time usage</td>
                         <td>Geolocation, camera(qr code), network status, Bluetooth, NFC</td> 
                       </tr><tr>
-                        <td>permission on every usage</td>
+                        <td>Permission on every usage</td>
                         <td>Contacts, file-apis, add to home screen, photo picker, phone call</td> 
                       </tr><tr>
                         <td>Validate with token</td>
@@ -1086,7 +1085,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                         <td>Callback/messaging</td>
                         <td>Password-free Payment</td> 
                       </tr><tr>
-                        <td>request password</td>
+                        <td>Request password</td>
                         <td>Payment</td> 
                       </tr>
                     </tbody>
@@ -1098,7 +1097,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                   <section id="capability-authentication"><div class="header-wrapper"><h3 id="x6-1-capability-authentication"><bdi class="secno">6.1 </bdi>Capability authentication</h3><a class="self-link" href="#capability-authentication" aria-label="Permalink for Section 6.1"></a></div>
                     
                     <p>
-                      For capabilities with high privacy risks, MiniApp requires developers to apply for permission to use such capabilities on the MiniApp Developer Platform. The application includes application reason, a detailed description of the usage scenario, and the demo of usage. Then the platform will review applications according to the MiniApp usage requirements.  Only approved MiniApps are allowed to invoke such interfaces. For example, the ability to obtain the user's mobile phone number is one of the capabilities with high security risks. 
+                      For capabilities with high privacy risks, MiniApp requires developers to apply for permission to use such features on the MiniApp developer platform. The application includes the rationale, a detailed description of the usage scenario, and the demo of usage. Then the platform will review applications according to the MiniApp usage requirements.  Only approved MiniApps are allowed to invoke such interfaces. For example, the ability to obtain the user's mobile phone number is one of the capabilities with high-security risks. 
                     </p>
                   </section>
 
@@ -1107,12 +1106,12 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                     </h3><a class="self-link" href="#user-authorization" aria-label="Permalink for Section 6.2"></a></div>
                     
                     <p>
-                      For interfaces involving user privacy, the user's authorization must be required.  MiniApp classifies these sensible interfaces into several authorization <dfn id="dfn-scopes" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">scopes</dfn> such as <em>location</em>, <em>album</em>, <em>address</em>, <em>camera</em>, <em>calendar</em>, and so on. For example, a window will be popped up like below when the MiniApp tries to invoke the camera capability but users don't authorize it and users would understand that such privacy-related capability is actually being protected.  Meanwhile, MiniApps hosted by different super apps might have some different privacy authorization <a href="#dfn-scopes" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-scopes-1">scopes</a> based on the usage characteristics and usage scenarios of each <a href="#dfn-super-app" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-super-app-4">super app</a>.
+                      For interfaces involving user privacy, the user's authorization must be required.  MiniApp classifies these sensible interfaces into several authorization <dfn id="dfn-scopes" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">scopes</dfn> such as <em>location</em>, <em>album</em>, <em>address</em>, <em>camera</em>, <em>calendar</em>, etc. For example, a window will be popped up (see figure below) when the MiniApp tries to invoke the camera capability but users don't authorize it. Thus, users understand that such privacy-related feature is protected. Meanwhile, MiniApps hosted by different <a href="#dfn-super-app" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-super-app-8">super apps</a> might have some different privacy authorization <a href="#dfn-scopes" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-scopes-1">scopes</a> based on the usage characteristics and usage scenarios of each <a href="#dfn-super-app" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-super-app-9">super app</a>.
                     </p>
                     <figure id="fig-user-authorization">
                       <img alt="User Authorization" src="images/user_authorization.png" width="400">
                       <figcaption>Figure <bdi class="figno">16</bdi> <span class="fig-title">
-                        User Authorization
+                        User authorization
                       </span></figcaption>
                     </figure>
                   </section>
@@ -1122,7 +1121,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                     </h3><a class="self-link" href="#miniapp-audit-review" aria-label="Permalink for Section 6.3"></a></div>
                     
                     <p>
-                      All MiniApps packages will be reviewed by MiniApp platforms before publishing. Developers must follow MiniApp Platform Operation Terms because the platform is the only way for them to publish a new version MiniApp. There are many aspects of platform auditing such as data collection, data use, data security and geographic location.
+                      MiniApp packages will be reviewed by MiniApp platforms before publishing. Developers must follow MiniApp Platform Operation Terms because the platform is the only way for them to publish a new version MiniApp. There are many aspects of platform auditing, such as data collection, data use, data security, and geographic location.
                     </p>
                   </section>
 
@@ -1131,10 +1130,10 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                     </h3><a class="self-link" href="#domain-check" aria-label="Permalink for Section 6.4"></a></div>
                     
                     <p>
-                      For some container components where could render an online web page like <code>&lt;web-view&gt;</code>, MiniApp has limitations to the URL opened by the component. Only the domain configured in the MiniApp Management Center can be accessed in <code>&lt;web-view&gt;</code>. Also, if the component contains an <code>&lt;iframe&gt;</code>, the URL opened by the iframe should also be configured in the MiniApp Management Center. In this way, MiniApp platform can have stronger control over the dynamic pages opened by the MiniApp.
+                      For some container components, like <code>&lt;web-view&gt;</code>, that could render online webpages, MiniApp user agents may limit the URLs accessed by the component. Only the domain configured in the MiniApp Management Center can be accessed in <code>&lt;web-view&gt;</code>. Also, if the component contains an <code>&lt;iframe&gt;</code>, the URL opened by the <code>iframe</code> should also be configured in the MiniApp Management Center. In this way, MiniApp platforms can have more robust control over the dynamic pages opened by the MiniApp.
                     </p>
                     <p>
-                      Similarly, the MiniApp framework verifies the legitimacy of asynchronous request address.
+                      Similarly, the MiniApp framework verifies the legitimacy of the asynchronous request address.
                     </p>
                     <p>
                       For example, for URLs launched by request, download, upload, etc., their domain must belong to the domain configured in the MiniApp Management Center, and their protocols must be HTTPS protocols to ensure the security of data transmission.
@@ -1149,14 +1148,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               </p>
               <section id="broader-web-community-discussions-on-miniapp"><div class="header-wrapper"><h3 id="x7-1-broader-web-community-discussions-on-miniapp"><bdi class="secno">7.1 </bdi>Broader Web Community Discussions on MiniApp</h3><a class="self-link" href="#broader-web-community-discussions-on-miniapp" aria-label="Permalink for Section 7.1"></a></div>
                 
-                <p>The first global Web community discussion on MiniApp standardization was during <a href="https://www.w3.org/2019/09/TPAC/">TPAC 2019</a> in Fukuoka. A <a href="https://www.w3.org/2019/09/18-miniapp-minutes.html">breakout session</a> was organized during which MiniApp vendors introduced MiniApp technologies and the necessity for MiniApp standards. The participants discussed the possible directions for MiniApp standardizing such as packaging, manifest, lifecycle, and widget. Special efforts were made to avoid the overlapping between MiniApp standards and the current Web standards efforts, and enhance the interoperability between MiniApp platforms and the Web, and between different MiniApp platforms. The <a href="https://www.w3.org/community/miniapps/">MiniApps Ecosystem Community Group</a> was launched right after this discussion and the incubation of MiniApp specifications started.</p>
+                <p>The first global Web community discussion on MiniApp standardization was during <a href="https://www.w3.org/2019/09/TPAC/">TPAC 2019</a> in Fukuoka. A <a href="https://www.w3.org/2019/09/18-miniapp-minutes.html">breakout session</a> was organized during which MiniApp vendors introduced MiniApp technologies and the necessity for MiniApp standards. The participants discussed the possible directions for MiniApp standardizing, such as packaging, manifest, lifecycle, and widget. Special efforts were made to avoid the overlapping between MiniApp standards and the current Web standards efforts and enhance the interoperability between MiniApp platforms and the Web and between different MiniApp platforms. The <a href="https://www.w3.org/community/miniapps/">MiniApps Ecosystem Community Group</a> was launched right after this discussion, and the incubation of MiniApp specifications started.</p>
                 <p>During virtual <a href="https://www.w3.org/2020/10/TPAC/">TPAC 2020</a>, there was a breakout session titled <i><a href="https://www.w3.org/2020/10/28-miniappslearnings-minutes.html">Learning from Mini Apps</a></i> at the event. In this breakout session, experts discussed the abstract form of a MiniApp and the powerful features that MiniApps can have. Also, the session shared how one could build a MiniApp via various development tools. Then there was an open discussion focused on what Web developers can learn from MiniApp and their developer experience. </p>
               </section>
 
               <section id="miniapp-in-cjk"><div class="header-wrapper"><h3 id="x7-2-miniapp-in-cjk"><bdi class="secno">7.2 </bdi>MiniApp in CJK</h3><a class="self-link" href="#miniapp-in-cjk" aria-label="Permalink for Section 7.2"></a></div>
                 
                 <p>
-                  MiniApp product forms and technologies in Asian markets share lots of similarities. To gather the global community, especially the Chinese, Japanese and Korean participants, to communicate around the MiniApp ecosystem in each area and discuss the future of standardization effort on MiniApps, <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/2021/miniapps/">MiniApps Working Group</a> and <a href="https://www.w3.org/community/miniapps/">MiniApps Ecosystem Community Group</a> organized <a href="https://www.w3.org/2021/03/miniapp-cjk/index.html">the 1st CJK Meeting on MiniApps</a> in April 2021. About 90 participants from over 30 organizations joined the discussion and exchanged ideas about MiniApp ecosystems, technical architecture, frameworks and MiniApps in new scenarios such as MiniApp for vehicles. Rough conclusion about the discussion is that as the development of MiniApp standards go on well in the MiniApps Working Group, it’s time to start the horizontal review of security, privacy, accessibility as well as internationalization of MiniApp standards; also, leveraging IoT technologies in MiniApp can be a very promising direction for the for MiniApp in new scenarios and there will be good opportunity for the global MiniApp community to cooperate on the related standardization work. 
+                  MiniApp product forms and technologies in Asian markets share lots of similarities. To gather the global community, especially the Chinese, Japanese and Korean participants, to communicate around the MiniApp ecosystem in each area and discuss the future of standardization efforts on MiniApps, <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/2021/miniapps/">MiniApps Working Group</a>, and <a href="https://www.w3.org/community/miniapps/">MiniApps Ecosystem Community Group</a> organized <a href="https://www.w3.org/2021/03/miniapp-cjk/index.html">the 1st CJK Meeting on MiniApps</a> in April 2021. About 90 participants from over 30 organizations joined the discussion and exchanged ideas about MiniApp ecosystems, technical architecture, frameworks and MiniApps in new scenarios such as MiniApp for vehicles. A rough conclusion about the discussion is that as the development of MiniApp standards go on well in the MiniApps Working Group, it’s time to start the horizontal review of security, privacy, accessibility as well as internationalization of MiniApp standards; also, leveraging IoT technologies in MiniApp can be a very promising direction for the for MiniApp in new scenarios and there will be good opportunity for the global MiniApp community to cooperate on the related standardization work. 
                 </p>
               </section>
 
@@ -1170,27 +1169,27 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
             <section id="way-forward-in-w3c"><div class="header-wrapper"><h2 id="x8-way-forward-in-w3c"><bdi class="secno">8. </bdi>Way Forward in <abbr title="World Wide Web Consortium">W3C</abbr></h2><a class="self-link" href="#way-forward-in-w3c" aria-label="Permalink for Section 8."></a></div>
                 
-                <p>To meet the use cases and requirements of MiniApps, make the Web standards better support the MiniApp, and explore innovation of user agent and  enrich the Web, we hope to set up a group and include the following work in <abbr title="World Wide Web Consortium">W3C</abbr>:</p><ul>
-                        <li>coordinate the MiniApp related standardization in <abbr title="World Wide Web Consortium">W3C</abbr> as well as to collaborate with other related <abbr title="World Wide Web Consortium">W3C</abbr> groups.
+                <p>To meet the use cases and requirements of MiniApps, make the Web standards better support the MiniApp, explore the innovation of user agents, and enrich the Web, we hope to set up a group and include the following work in <abbr title="World Wide Web Consortium">W3C</abbr>:</p><ul>
+                        <li>Coordinate the MiniApp-related standardization in <abbr title="World Wide Web Consortium">W3C</abbr> as well as to collaborate with other related <abbr title="World Wide Web Consortium">W3C</abbr> groups.
                         </li>
-                        <li>horizontal review (security, privacy, i18n and a11y).
+                        <li>Horizontal review (i.e., security, privacy, <abbr title="internationalization">i18n</abbr>, and <abbr title="accessibility">a11y</abbr>).
                         </li>
                     </ul>
 
-                    <p>In details, the following technical work shall be studied further:</p><ul>
-                        <li>draft a roadmap for MiniApp standards based on the use cases and requirements selected by the group.
+                    <p>In detail, the following technical work shall be studied further:</p><ul>
+                        <li>Draft a roadmap for MiniApp standards based on the use cases and requirements selected by the group.
                         </li>
-                        <li>develop specifications for  features among current vendors. Target features include but not limited to:
+                        <li>Develop specifications for features among current vendors. Target features include but are not limited to:
                             <ul>
-                        <li>package constructor</li>
+                        <li>Package constructor</li>
                         <li>MiniApp URI scheme</li>
-                        <li>hybrid rendering API</li>
-                        <li>3D model tag</li>
-                        <li>face tracking API </li>
+                        <li>Hybrid rendering API</li>
+                        <li>3D model element</li>
+                        <li>Face tracking API </li>
                         <li>Widget</li>
                     </ul>
                         </li>
-                        <li>design future Web APIs to be useful for both web and MiniApp environments.</li>
+                        <li>design future Web APIs to be useful for both Web and MiniApp environments.</li>
                     </ul>
                  <p>Note: the further gap between current MiniApp APIs and Web APIs will be analyzed in parallel.</p>
             </section>
@@ -1207,27 +1206,27 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                     </thead>
                       <tbody>
                       <tr id="term.mini-program">
-                        <td>小程序</td>
+                        <td lang="zh">小程序</td>
                         <td>Mini Program</td> 
-                        <td>One format of MiniApp running within Native Apps.</td> 
+                        <td>One format of MiniApp running within native apps.</td> 
                       </tr>
                       <tr id="term.quick-app">
-                        <td>快应用</td>
+                        <td lang="zh">快应用</td>
                         <td>Quick App</td>
                         <td>A MiniApp standard developed by 12 mobile phone manufacturers in Quick App alliances.</td> 
                       </tr>
                       <tr id="term.rendering-view">
-                        <td>渲染环境</td>
+                        <td lang="zh">渲染环境</td>
                         <td>rendering view</td>
                         <td>Native view or WebView.</td>
                       </tr>
                       <tr id="term.smart-assistant">
-                        <td>智能助理（负一屏）</td>
+                        <td lang="zh">智能助理（负一屏）</td>
                         <td>smart assistant</td> 
                         <td>A smart assistant to provide service for convenience, usually at left of the home screen.</td> 
                       </tr>
                       <tr id="term.hot-reload">
-                        <td>热更新</td>
+                        <td lang="zh">热更新</td>
                         <td>hot reload</td>
                         <td>No need to be re-installed when fixing or updating feature. In MiniApps, since a part of framework is implemented in JavaScript, MiniApp runtime can be hot reloaded.</td>
                       </tr>
@@ -1282,11 +1281,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-    <a href="#ref-for-dfn-super-app-1" title="§ 1.3 Gap between MiniApps and PWA">§ 1.3 Gap between MiniApps and PWA</a> 
+    <a href="#ref-for-dfn-super-app-1" title="§ 1.2 What is MiniApp?">§ 1.2 What is MiniApp?</a> 
   </li><li>
-    <a href="#ref-for-dfn-super-app-2" title="§ 1.4.1 Case 1: Shared Bicycle Service">§ 1.4.1 Case 1: Shared Bicycle Service</a> <a href="#ref-for-dfn-super-app-3" title="Reference 2">(2)</a> 
+    <a href="#ref-for-dfn-super-app-2" title="§ 1.3 Gap between MiniApps and PWA">§ 1.3 Gap between MiniApps and PWA</a> <a href="#ref-for-dfn-super-app-3" title="Reference 2">(2)</a> <a href="#ref-for-dfn-super-app-4" title="Reference 3">(3)</a> 
   </li><li>
-    <a href="#ref-for-dfn-super-app-4" title="§ 6.2 User Authorization">§ 6.2 User Authorization</a> 
+    <a href="#ref-for-dfn-super-app-5" title="§ 1.4.1 Case 1: Shared Bicycle Service">§ 1.4.1 Case 1: Shared Bicycle Service</a> <a href="#ref-for-dfn-super-app-6" title="Reference 2">(2)</a> 
+  </li><li>
+    <a href="#ref-for-dfn-super-app-7" title="§ 2.2 MiniApp Market">§ 2.2 MiniApp Market</a> 
+  </li><li>
+    <a href="#ref-for-dfn-super-app-8" title="§ 6.2 User Authorization">§ 6.2 User Authorization</a> <a href="#ref-for-dfn-super-app-9" title="Reference 2">(2)</a> 
   </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-scopes" aria-label="Links in this document to definition: scopes">
