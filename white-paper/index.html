@@ -187,72 +187,70 @@
             </section>
             <section>
                 <h2>Gap between MiniApps and PWA</h2>
-                <p>MiniApps are <em>not</em> aimed to replace PWA, the Web, or the native apps.</p>
-<p>MiniApps and PWAs are composed of the same resources (i.e., scripts, markup-language-based documents, stylesheets, multimedia, etc.). The type of documents and their coding languages are similar, but MiniApps implement specific dialects and built-in services that are not standard. </p>
-<p>Apart from the format, MiniApp's resources are usually packed in a self-contained physical structure that enables a flexible distribution from app marketplaces to offline exchange. </p>
-<p>The main difference between PWAs and MiniApps is the execution environment. MiniApp user agents are <a>super apps</a> or platforms implemented on the operating system, while PWA user agents are usually Web browsers.  </p>
-<p>Although both technologies have similar APIs and services, there is a significant gap between the API specifications in each application type. PWAs rely on standard Web APIs, while MiniApps implement non-standard APIs to maximize the platform's capabilities, such as device-specific features and vendor-exclusive services.  </p>
-<p>MiniApp vendors define similar UI (User Interface) elements that do not always have a direct equivalent in HTML. </p>
-<p>Depending on the implementation, a MiniApp user agent could be an operating system, a <a>super app</a>, or any other hosting platform based on different and various rendering engines and WebViews. The architecture of a MiniApp user agent differs from PWA user agents, as we can see in the following picture.</p>
+                <p>MiniApps are <em>not</em> aimed to replace Progressive Web Applications (PWA), native apps, or the Web.</p>
+                <p>In broad terms, one of the significant differences between these technologies is the execution environment. PWA may run in almost any web-enabled environment in a browser, while MiniApps are bound to specific platforms or <a>super apps</a>. Another essential difference is the distribution mechanisms, with MiniApps packed and self-contained and the PWA's resources distributed across the Web.</p>               
+                <p>Both technologies use similar programming and markup languages and CSS-based stylesheets in terms of coding. MiniApps implements dedicated domain-specific languages based on HTML subsets and specific mechanisms for data binding and event management, following the <abbr title="Model-view-viewmodel">MVVM</abbr> paradigm with Virtual DOM management. MiniApp vendors define similar UI (User Interface) elements that do not always have a direct equivalent in HTML.</p>
+                <p>In terms of services, PWA and MiniApp developers have access to APIs with the same purpose and equivalent features but do not follow the exact specifications.</p>
+                <p>MiniApp vendors define exclusive APIs oriented to the app release and distribution management through their channels. Other dedicated APIs are tied to concrete scenarios and the running platform -e.g., services to set up reminders using the device's native alarm and calendar features, perform phone calls and trigger performance warnings. Although both technologies have similar APIs and services, there is a significant gap between the API specifications in each application type. PWAs rely on standard Web APIs, while MiniApps implement non-standard APIs to maximize the platform's capabilities, such as device-specific features and vendor-exclusive services.</p>
+                <p>Depending on the implementation, a MiniApp user agent could be an operating system, a <a>super app</a>, or any other hosting platform based on different and various rendering engines and WebViews. The architecture of a MiniApp user agent differs from PWA user agents, as we can see in the following picture.</p>
 
-<figure>
-  <img alt="The architecture of MiniApps and PWA" src="images/miniapp_pwa.svg" width="800">
-  <figcaption>
-    The architecture of MiniApps and PWA
-  </figcaption>
-</figure>
+                <figure>
+                  <img alt="The architecture of MiniApps and PWA" src="images/miniapp_pwa.svg" width="800">
+                  <figcaption>
+                    The architecture of MiniApps and PWA
+                  </figcaption>
+                </figure>
 
-<p>
-  The main differences between them can be summarized in the following table.
-</p>
+                <p>
+                  The <a href="comparison.html">comparison table in the annex</a> identifies and highlights the differences between Progressive Web Applications (PWA) and various MiniApp implementations. Some of these differences are summarized in the following table.
+                </p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Feature</th>
-      <th>Progressive Web App</th>
-      <th>MiniApp</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Source code</td>
-      <td>Standard markup languages (HTML), stylesheets (CSS), and scripts (JavaScript). </td>
-      <td>Non-standard dialects of HTML, CSS and JavaScript</td>
-    </tr>
-    <tr>
-      <td>Deployed Format</td>
-      <td>Web resources (mainly: HTML, CSS, JavaScript code, and WebAssembly modules)</td>
-      <td>HTML, CSS, JavaScript, and other resources packed in a container. </td>
-    </tr>
-    <tr>
-      <td>Packaging</td>
-      <td>No. Resources linked on the Web.</td>
-      <td>Yes. Different package formats per vendor.</td>
-    </tr>
-    <tr>
-      <td>Needs to host files on Web server</td>
-      <td>Yes </td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>Installation-free usage</td>
-      <td>Yes, running in the browser.</td>
-      <td>Running in a <a>super app</a> or on the OS.</td>
-    </tr>
-    <tr>
-      <td>Installation with standalone icon</td>
-      <td>From the browser or app store (optional)</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>Services </td>
-      <td>Access to Web APIs</td>
-      <td>Access to non-standard Web APIs, including some system native APIs</td>
-    </tr>
-  </tbody>
-  </table>
-
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Feature</th>
+                      <th>Progressive Web App</th>
+                      <th>MiniApp</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Source code</td>
+                      <td>Standard markup languages (HTML), stylesheets (CSS), and scripts (JavaScript). </td>
+                      <td>Non-standard dialects of HTML, CSS and JavaScript</td>
+                    </tr>
+                    <tr>
+                      <td>Deployed Format</td>
+                      <td>Web resources (mainly: HTML, CSS, JavaScript code, and WebAssembly modules)</td>
+                      <td>HTML, CSS, JavaScript, and other resources packed in a ZIP container. </td>
+                    </tr>
+                    <tr>
+                      <td>Packaging</td>
+                      <td>No. Resources linked on the Web.</td>
+                      <td>Yes. Different package formats per vendor.</td>
+                    </tr>
+                    <tr>
+                      <td>Needs to host files on Web server</td>
+                      <td>Yes </td>
+                      <td>No</td>
+                    </tr>
+                    <tr>
+                      <td>Installation-free usage</td>
+                      <td>Yes, running in the browser.</td>
+                      <td>Running in a <a>super app</a> or on the OS.</td>
+                    </tr>
+                    <tr>
+                      <td>Installation with standalone icon</td>
+                      <td>From the browser or app marketplace (optional)</td>
+                      <td>No</td>
+                    </tr>
+                    <tr>
+                      <td>Services </td>
+                      <td>Access to Web APIs</td>
+                      <td>Access to non-standard Web APIs, including some system native APIs</td>
+                    </tr>
+                  </tbody>
+                  </table>
             </section>
             <section>
                 <h2>Case studies</h2>
