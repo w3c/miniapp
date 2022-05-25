@@ -260,8 +260,8 @@
           <td class="c5">
             <details>
               <summary>Native, WebView, V8</summary>
-              No Chromium layout engine but with V8 engine, more lightweight.<br /> Providing pure WebAPIs to app developers,
-              Web JS APIs are mapped from Android native APIs and part of standard WebAPIs.<br /> Template part (with HTML
+              No Chromium layout engine but with V8 engine, more lightweight.<br> Providing pure WebAPIs to app developers,
+              Web JS APIs are mapped from Android native APIs and part of standard WebAPIs.<br> Template part (with HTML
               tags) in `.ux` file mapping to single android native views and combined view components, provided native performance
               experiences. <br/> CSS subset: Mapping to attributes of Android View (e.g. `position`, `color`)
             </details>
@@ -275,7 +275,7 @@
           <td class="c7">
             <details>
               <summary>Native, WebView, V8</summary>
-              Rendering: Native+WebView<br /> Logic: V8/JavaScript Core
+              Rendering: Native+WebView<br> Logic: V8/JavaScript Core
             </details>
           </td>
         </tr>
@@ -318,7 +318,7 @@
             <details>
               <summary>Partial</summary>
               <ul>
-              <li>Android: The Trusted Web Activities on Android allows App Store integration. Additionally TWAs have access to Google Pay (Digital Goods API). Cons: Lack of PWA support in China App Stores on Android and PRC custom Android ROMs.</li>
+              <li>Android (Yes): The Trusted Web Activities on Android allows App Store integration. Additionally TWAs have access to Google Pay (Digital Goods API). Cons: Lack of PWA support in China App Stores on Android and PRC custom Android ROMs.</li>
               <li>Windows (Yes): The Microsoft Store on Windows is a trusted single location for customers to discover and install PWAs for their Windows PC.</li>
               <li>iOS (Yes): The <a href="https://www.pwabuilder.com/" title="PWABuilder">PWABuilder</a> supports to publish PWAs to the App Store and gain new iPhone and iPad users.</li>
               <li>Chrome OS:  Will even launch the PWA window on Chrome OS. Cons: Zero market share in China.</li>
@@ -509,7 +509,7 @@
           <td class="c4 yes">
             <details>
               <summary>Yes</summary>
-              `navigator.setAppBadge()`<br/>
+              `navigator.setAppBadge()`<br>
               <a href="https://github.com/w3c/badging/blob/main/docs/implementation.md">Badge implementation on host platforms</a>: Android 8.0 (Oreo) or higher, Windows 7 or higher, iOS has support for badging APIs, not currently supported on Chrome OS.
             </details>
           </td>
@@ -583,7 +583,7 @@
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>Template Message<br /> Customer Service Message</details>
+              <summary>Yes</summary>Template Message<br> Customer Service Message</details>
           </td>
         </tr>
         <tr class="r24">
@@ -614,7 +614,7 @@
           <td class="c4 yes">
             <details>
               <summary>Yes</summary>
-              `IdleDetector()`<br/>
+              `IdleDetector()`<br>
               Chrome 94 or higher on Android and desktop.
             </details>
           </td>
@@ -678,16 +678,19 @@
         <tr class="r29">
           <td class="c0">User
             Interaction</td>
-          <td class="c1">Navigation (History) API</td>
+          <td class="c1">Navigation (History) API<br>Shared Element Transitions</td>
           <td class="c2">
-             <a href="https://wicg.github.io/navigation-api/">Navigation API</a>
+             <a href="https://wicg.github.io/navigation-api/">Navigation API</a><br>
+             <a href="https://github.com/WICG/shared-element-transitions">Shared Element Transitions</a>
             </td>
           <td class="c3"><abbr title="Draft Community Group Report">DCGR</abbr></td>
           <td class="c4">
             <details>
               <summary>Yes</summary>
-              `navigation.navigate()`
-              The Navigation APIs is the MUCH improved version of <a href="https://html.spec.whatwg.org/multipage/history.html#the-history-interface">History API</a>. Supported on Chrome/Webview 102 or higher on Android and desktop.
+              `navigation.navigate()`<br><br>
+              The Navigation APIs is the MUCH improved version of <a href="https://html.spec.whatwg.org/multipage/history.html#the-history-interface">History API</a>. 
+              Supported on Chrome/Webview 102 or higher on Android and desktop.<br><br>
+              The Shared Element Transitions API is available in Chrome Canary as of version 101 behind a flag at chrome://flags/#document-transition
             </details>
           </td>
           <td class="c5">
@@ -774,8 +777,8 @@
           <td class="c4 partial">
             <details>
               <summary>Partial</summary>
-              `getNotifications()`<br/>
-              `showNotification()`<br/>
+              `getNotifications()`<br>
+              `showNotification()`<br>
               The Notification Triggers API allows you to schedule local notifications that don't require a network connection. It is <a href="https://web.dev/notification-triggers/">no longer pursued</a> 
               but the requirements of <a href="https://github.com/beverloo/notification-triggers/issues/8">recurring notification triggers</a> still exist.
             </details>
@@ -941,7 +944,7 @@
           <td class="c4 partial">
             <details>
               <summary>Partial</summary>
-              `avigator.bluetooth.requestLEScan()`<br/>
+              `avigator.bluetooth.requestLEScan()`<br>
               <a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/main/implementation-status.md#scanning-api">Partial development on Android and Mac</a> with flag required for Scanning API.
             </details>
           </td>
@@ -1458,7 +1461,7 @@
           <td class="c4 yes">
             <details>
               <summary>Yes</summary>
-              `navigator.contacts`<br/>
+              `navigator.contacts`<br>
               Available on Android (Chrome 80+)
             </details>
           </td>
@@ -1610,7 +1613,7 @@
           <td class="c4 yes">
             <details>
               <summary>Yes</summary>
-              `queryLocalFonts()`<br/>
+              `queryLocalFonts()`<br>
               Chrome 103 or higher
             </details>
           </td>
