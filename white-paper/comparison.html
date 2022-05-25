@@ -314,7 +314,17 @@
           <td class="c1">App store integration</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
-          <td class="c4 no">No</td>
+          <td class="c4 partial">
+            <details>
+              <summary>Partial</summary>
+              <ul>
+              <li>Android: The Trusted Web Activities on Android allows App Store integration. Additionally TWAs have access to Google Pay (Digital Goods API). Cons: Lack of PWA support in China App Stores on Android and PRC custom Android Roms.</li>
+              <li>Windows (Yes): The Microsoft Store on Windows is a trusted single location for customers to discover and install PWAs for their Windows PC.</li>
+              <li>iOS (Yes): The <a href="https://www.pwabuilder.com/" title="PWABuilder">PWABuilder</a> supports to publish PWAs to the App Store and gain new iPhone and iPad users.</li>
+              <li>Chrome OS:  Will even launch the PWA window on Chrome OS. Cons: Zero market share in China.</li>
+              </ul>
+            </details>
+          </td>
           <td class="c5">Yes</td>
           <td class="c6">
             <details>
@@ -496,7 +506,13 @@
           <td class="c1">Badging</td>
           <td class="c2"><a href="https://wicg.github.io/badging/">Badging API</a></td>
           <td class="c3"><abbr title="Community Group Report">CGR</abbr></td>
-          <td class="c4 partial"><abbr title="Unknown">?</abbr></td>
+          <td class="c4 yes">
+            <details>
+              <summary>Yes</summary>
+              `navigator.setAppBadge()`<br/>
+              <a href="https://github.com/w3c/badging/blob/main/docs/implementation.md">Badge implementation on host platforms</a>: Android 8.0 (Oreo) or higher, Windows 7 or higher, iOS has support for badging APIs, not currently supported on Chrome OS.
+            </details>
+          </td>
           <td class="c5 no">No</td>
           <td class="c6">
             <details>
@@ -595,7 +611,13 @@
           <td class="c2"><a href="https://wicg.github.io/idle-detection/">User Idle
               Detection</a></td>
           <td class="c3"><abbr title="Draft Community Group Report">DCGR</abbr></td>
-          <td class="c4 partial"><abbr>?</abbr></td>
+          <td class="c4 yes">
+            <details>
+              <summary>Yes</summary>
+              `IdleDetector()`<br/>
+              Chrome 94 or higher on Android and desktop.
+            </details>
+          </td>
           <td class="c5 no">No</td>
           <td class="c6 no">No</td>
           <td class="c7 no">No</td>
@@ -656,11 +678,18 @@
         <tr class="r29">
           <td class="c0">User
             Interaction</td>
-          <td class="c1">History API</td>
-          <td class="c2"><a href="https://html.spec.whatwg.org/multipage/history.html#the-history-interface"
-             >The `History` interface</a></td>
-          <td class="c3">Living Standard</td>
-          <td class="c4">Yes</td>
+          <td class="c1">Navigation (History) API</td>
+          <td class="c2">
+             <a href="https://wicg.github.io/navigation-api/">Navigation API</a>
+            </td>
+          <td class="c3"><abbr title="Draft Community Group Report">DCGR</abbr></td>
+          <td class="c4">
+            <details>
+              <summary>Yes</summary>
+              `navigation.navigate()`
+              The Navigation APIs is the MUCH improved version of <a href="https://html.spec.whatwg.org/multipage/history.html#the-history-interface">History API</a>. Supported on Chrome/Webview 102 or higher on Android and desktop.
+            </details>
+          </td>
           <td class="c5">
             <details>
               <summary>Yes</summary>`@system.router`</details>
@@ -701,7 +730,14 @@
           <td class="c1">Shake detection</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
-          <td class="c4 no">No</td>
+          <td class="c4 yes">
+            <details>
+            <summary>Yes</summary>
+             Can easily be implemented using
+             <a href="https://www.w3.org/TR/accelerometer/" title="Accelerometer">accelerometer</a>
+             and/or <a href="https://www.w3.org/TR/gyroscope/" title="Gyroscope">gyroscope</a>.
+            </details>
+            </td>
           <td class="c5 no">No</td>
           <td class="c6">
             <details>
@@ -735,7 +771,15 @@
           <td class="c1" title="Management of alarms in the device">Alarms</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
-          <td class="c4 no">No</td>
+          <td class="c4 partial">
+            <details>
+              <summary>Partial</summary>
+              `getNotifications()`<br/>
+              `showNotification()`<br/>
+              The Notification Triggers API allows you to schedule local notifications that don't require a network connection. It is <a href="https://web.dev/notification-triggers/">no longer pursued</a> 
+              but the requirements of <a href="https://github.com/beverloo/notification-triggers/issues/8">recurring notification triggers</a> still exist.
+            </details>
+          </td>
           <td class="c5">
             <details>
               <summary>Yes</summary>`@system.alarm`</details>
@@ -892,9 +936,15 @@
           <td class="c0">Network and
             Communications</td>
           <td class="c1">(<abbr title="Bluetooth Low Energy">BLE</abbr>) iBeacon</td>
-          <td class="c2">&nbsp;</td>
-          <td class="c3">&nbsp;</td>
-          <td class="c4 no">No</td>
+          <td class="c2"><a href="https://webbluetoothcg.github.io/web-bluetooth/scanning.html">Web Bluetooth Scanning</td>
+          <td class="c3"><abbr title="Draft Community Group Report">DCGR</abbr></td>
+          <td class="c4 partial">
+            <details>
+              <summary>Partial</summary>
+              `avigator.bluetooth.requestLEScan()`<br/>
+              <a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/main/implementation-status.md#scanning-api">Partial development on Android and Mac</a> with flag required for Scanning API.
+            </details>
+          </td>
           <td class="c5 no">No</td>
           <td class="c6">
             <details>
@@ -1344,9 +1394,14 @@
           <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">Screen Brightness Control</td>
-          <td class="c2">&nbsp;</td>
-          <td class="c3">&nbsp;</td>
-          <td class="c4 no">No</td>
+          <td class="c2"><a href="https://www.w3.org/TR/screen-wake-lock/">Screen Wake Lock API</a></td>
+          <td class="c3">WD</td>
+          <td class="c4 no">
+            <details>
+              <summary>No (WIP)</summary>
+              The <a href="https://github.com/w3c/screen-wake-lock/blob/gh-pages/brightness-mode-explainer.md">need to control screen brightness</a> is still in progress.
+            </details>
+          </td>
           <td class="c5">
             <details>
               <summary>Yes</summary>`@system.brightness`</details>
@@ -1400,7 +1455,13 @@
           <td class="c1">Contacts Management</td>
           <td class="c2"><a href="https://w3c.github.io/contact-api/spec/">Contact Picker API</a></td>
           <td class="c3">Proposal</td>
-          <td class="c4 partial"><abbr>?</abbr></td>
+          <td class="c4 yes">
+            <details>
+              <summary>Yes</summary>
+              `navigator.contacts`<br/>
+              Available on Android (Chrome 80+)
+            </details>
+          </td>
           <td class="c5">
             <details>
               <summary>Yes</summary>`@system.contact` (pick and list)</details>
@@ -1546,7 +1607,13 @@
           <td class="c2"><a href="https://wicg.github.io/local-font-access/">Local
               Font Access API</a></td>
           <td class="c3"><abbr>CGR</abbr></td>
-          <td class="c4 partial"><abbr>?</abbr></td>
+          <td class="c4 yes">
+            <details>
+              <summary>Yes</summary>
+              `queryLocalFonts()`<br/>
+              Chrome 103 or higher
+            </details>
+          </td>
           <td class="c5 no">No</td>
           <td class="c6 no">No</td>
           <td class="c7 no">No</td>
@@ -1766,11 +1833,18 @@
         <tr class="r91">
           <td class="c0">Security and
             Privacy</td>
-          <td class="c1">SMS OTP Retriever</td>
-          <td class="c2"><a href="https://discourse.wicg.io/t/sms-otp-retrieval/3499">SMS OTP
-              Retriever</a></td>
-          <td class="c3">Proposal</td>
-          <td class="c4 partial"><abbr>?</abbr></td>
+          <td class="c1">One-time Password (OTP)</td>
+          <td class="c2">
+            <a href="https://wicg.github.io/web-otp/">WebOTP</a>
+          </td>
+          <td class="c3"><abbr title="Draft Community Group Report">DCGR</abbr></td>
+          <td class="c4 yes">
+            <details>
+              <summary>Yes</summary>
+              `OTPCredential`<br>
+              Chrome 93 or higher
+            </details>
+          </td>
           <td class="c5">
             <details>
               <summary>Yes</summary>`@system.sms`</details>
@@ -1913,9 +1987,14 @@
             Privacy</td>
           <td class="c1">Fingerprint 
             Authentication</td>
-          <td class="c2">&nbsp;</td>
-          <td class="c3">&nbsp;</td>
-          <td class="c4 no">No</td>
+          <td class="c2"><a href="https://www.w3.org/TR/webauthn-2/" title="WebAuthn">WebAuthn</a></td>
+          <td class="c3">CR</td>
+          <td class="c4 yes">
+            <details>
+              <summary>Yes</summary>
+              Supported via <a href="https://www.w3.org/TR/webauthn-2/" title="WebAuthn">WebAuthn</a>. <a href="https://developers.google.com/codelabs/webauthn-reauth#0">Build your first WebAuthn app</a>
+            </details>
+          </td>
           <td class="c5 no">No</td>
           <td class="c6 no">No</td>
           <td class="c7 no">No</td>
@@ -1924,9 +2003,14 @@
           <td class="c0">Security and
             Privacy</td>
           <td class="c1">Face Authentication</td>
-          <td class="c2">&nbsp;</td>
-          <td class="c3">&nbsp;</td>
-          <td class="c4 no">No</td>
+          <td class="c2"><a href="https://www.w3.org/TR/webauthn-2/" title="WebAuthn">WebAuthn</a></td>
+          <td class="c3">CR</td>
+          <td class="c4 yes">
+            <details>
+              <summary>Yes</summary>
+              Supported via <a href="https://www.w3.org/TR/webauthn-2/" title="WebAuthn">WebAuthn</a>
+            </details>
+          </td>
           <td class="c5 no">No</td>
           <td class="c6">
             <details>
