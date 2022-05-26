@@ -192,7 +192,7 @@
           <th class="c1">Features</th>
           <th class="c2">W3C Spec</th>
           <th class="c3">Status</th>
-          <th class="c4">PWA.next</th>
+          <th class="c4">PWA.next (Chrome, Edge)</th>
           <th class="c5"><a href="https://www.quickapp.cn/">QuickApp (Xiaomi, Huawei)</a></th>
           <th class="c6"><a href="https://docs.alipay.com/mini/developer/">Alipay Mini Program</a>
           </th>
@@ -733,10 +733,10 @@
           <td class="c1">Shake detection</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
-          <td class="c4 yes">
+          <td class="c4 no">
             <details>
-            <summary>Yes</summary>
-             Can easily be implemented using
+            <summary>No</summary>
+             No Shake Detection API but it can easily be implemented using
              <a href="https://www.w3.org/TR/accelerometer/" title="Accelerometer">accelerometer</a>
              and/or <a href="https://www.w3.org/TR/gyroscope/" title="Gyroscope">gyroscope</a>.
             </details>
@@ -944,7 +944,7 @@
           <td class="c4 partial">
             <details>
               <summary>Partial</summary>
-              `avigator.bluetooth.requestLEScan()`<br>
+              `navigator.bluetooth.requestLEScan()`<br>
               <a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/main/implementation-status.md#scanning-api">Partial development on Android and Mac</a> with flag required for Scanning API.
             </details>
           </td>
