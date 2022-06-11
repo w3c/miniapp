@@ -192,11 +192,11 @@
           <th class="c1">Features</th>
           <th class="c2">W3C Spec</th>
           <th class="c3">Status</th>
-          <th class="c4">PWA.next</th>
-          <th class="c5"><a href="https://www.quickapp.cn/">QuickApp (Xiaomi, Huawei)</a></th>
-          <th class="c6"><a href="https://docs.alipay.com/mini/developer/">Alipay Mini Program</a>
+          <th class="c4">PWA.next (Chrome, Edge)</th>
+          <th class="c5"><a href="https://www.quickapp.cn/" rel="nofollow">QuickApp (Xiaomi, Huawei)</a></th>
+          <th class="c6"><a href="https://docs.alipay.com/mini/developer/" rel="nofollow">Alipay Mini Program</a>
           </th>
-          <th class="c7"><a href="https://smartprogram.baidu.com/developer/index.html">Baidu Smart Mini
+          <th class="c7"><a href="https://smartprogram.baidu.com/developer/index.html" rel="nofollow">Baidu Smart Mini
               Program</a></th>
         </tr>
       </thead>
@@ -260,10 +260,10 @@
           <td class="c5">
             <details>
               <summary>Native, WebView, V8</summary>
-              No Chromium layout engine but with V8 engine, more lightweight.<br /> Providing pure WebAPIs to app developers,
-              Web JS APIs are mapped from Android native APIs and part of standard WebAPIs.<br /> Template part (with HTML
-              tags) in `.ux` file mapping to single android native views and combined view components, provided native performance
-              experiences. <br/> CSS subset: Mapping to attributes of Android View (e.g. `position`, `color`)
+              No Chromium layout engine but with V8 engine, more lightweight.<br> Providing pure WebAPIs to app developers,
+              Web JS APIs are mapped from Android native APIs and part of standard WebAPIs.<br> Template part (with HTML
+              tags) in <code>.ux</code> file mapping to single android native views and combined view components, provided native performance
+              experiences. <br/> CSS subset: Mapping to attributes of Android View (e.g. <code>position</code>, <code>color</code>)
             </details>
           </td>
           <td class="c6">
@@ -275,7 +275,7 @@
           <td class="c7">
             <details>
               <summary>Native, WebView, V8</summary>
-              Rendering: Native+WebView<br /> Logic: V8/JavaScript Core
+              Rendering: Native+WebView<br> Logic: V8/JavaScript Core
             </details>
           </td>
         </tr>
@@ -284,10 +284,10 @@
           <td class="c1">Page</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
-          <td class="c4">`.html`, `.js`, `.css`</td>
-          <td class="c5">`.ux`, `.js`, `.css`</td>
-          <td class="c6">`.axml`, `.js`, `.acss`</td>
-          <td class="c7">`.swan`, `.js`, `.css`</td>
+          <td class="c4"><code>.html</code>, <code>.js</code>, <code>.css</code></td>
+          <td class="c5"><code>.ux</code>, <code>.js</code>, <code>.css</code></td>
+          <td class="c6"><code>.axml</code>, <code>.js</code>, <code>.acss</code></td>
+          <td class="c7"><code>.swan</code>, <code>.js</code>, <code>.css</code></td>
         </tr>
         <tr class="r8">
           <td class="c0">ES6</td>
@@ -314,7 +314,17 @@
           <td class="c1">App store integration</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
-          <td class="c4 no">No</td>
+          <td class="c4 partial">
+            <details>
+              <summary>Partial</summary>
+              <ul>
+              <li>Android (Yes): The Trusted Web Activities on Android allows App Store integration. Additionally TWAs have access to Google Pay (Digital Goods API). Cons: Lack of PWA support in China App Stores on Android and PRC custom Android ROMs.</li>
+              <li>Windows (Yes): The Microsoft Store on Windows is a trusted single location for customers to discover and install PWAs for their Windows PC.</li>
+              <li>iOS (Yes): The <a href="https://www.pwabuilder.com/" title="PWABuilder" rel="nofollow">PWABuilder</a> supports to publish PWAs to the App Store and gain new iPhone and iPad users.</li>
+              <li>Chrome OS:  Will even launch the PWA window on Chrome OS. Cons: Zero market share in China.</li>
+              </ul>
+            </details>
+          </td>
           <td class="c5">Yes</td>
           <td class="c6">
             <details>
@@ -400,13 +410,13 @@
           <td class="c5">
             <details>
               <summary>Yes</summary>
-              `@system.share`, `@service.share`
+              <code>@system.share</code>, <code>@service.share</code>
             </details>
           </td>
           <td class="c6">
             <details>
               <summary>Yes</summary>
-              `onShareAppMessage`
+              <code>onShareAppMessage</code>
             </details>
           </td>
           <td class="c7">Yes</td>
@@ -442,15 +452,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`manifest.json`</details>
+              <summary>Yes</summary><code>manifest.json</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`app.json`</details>
+              <summary>Yes</summary><code>app.json</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`app.json`</details>
+              <summary>Yes</summary><code>app.json</code></details>
           </td>
         </tr>
         <tr class="r18">
@@ -468,7 +478,7 @@
           <td class="c5">
             <details>
               <summary>Yes</summary>
-              `@system.app`
+              <code>@system.app</code>
             </details>
           </td>
           <td class="c6 no">No</td>
@@ -484,7 +494,7 @@
           <td class="c5">
             <details>
               <summary>Yes</summary>
-              manifest's `display.fullscreen`
+              manifest's <code>display.fullscreen</code>
             </details>
           </td>
           <td class="c6">Yes</td>
@@ -496,7 +506,13 @@
           <td class="c1">Badging</td>
           <td class="c2"><a href="https://wicg.github.io/badging/">Badging API</a></td>
           <td class="c3"><abbr title="Community Group Report">CGR</abbr></td>
-          <td class="c4 partial"><abbr title="Unknown">?</abbr></td>
+          <td class="c4 yes">
+            <details>
+              <summary>Yes</summary>
+              <code>navigator.setAppBadge()</code><br>
+              <a href="https://github.com/w3c/badging/blob/main/docs/implementation.md">Badge implementation on host platforms</a>: Android 8.0 (Oreo) or higher, Windows 7 or higher, iOS has support for badging APIs, not currently supported on Chrome OS.
+            </details>
+          </td>
           <td class="c5 no">No</td>
           <td class="c6">
             <details>
@@ -517,15 +533,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.prompt`</details>
+              <summary>Yes</summary><code>@system.prompt</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`popup` component</details>
+              <summary>Yes</summary><code>popup</code> component</details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`popup` component</details>
+              <summary>Yes</summary><code>popup</code> component</details>
           </td>
         </tr>
         <tr class="r22">
@@ -537,15 +553,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.vibrator`</details>
+              <summary>Yes</summary><code>@system.vibrator</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.vibrate`</details>
+              <summary>Yes</summary><code>my.vibrate</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.vibrateLong`, `swan.vibrateShort`</details>
+              <summary>Yes</summary><code>swan.vibrateLong</code>, <code>swan.vibrateShort</code></details>
           </td>
         </tr>
         <tr class="r23">
@@ -559,7 +575,7 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.notification`</details>
+              <summary>Yes</summary><code>@system.notification</code></details>
           </td>
           <td class="c6">
             <details>
@@ -567,7 +583,7 @@
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>Template Message<br /> Customer Service Message</details>
+              <summary>Yes</summary>Template Message<br> Customer Service Message</details>
           </td>
         </tr>
         <tr class="r24">
@@ -580,12 +596,12 @@
           <td class="c4">Yes</td>
           <td class="c5 partial">
             <details>
-              <summary>Partial</summary>`orientation` in Manifest</details>
+              <summary>Partial</summary><code>orientation</code> in Manifest</details>
           </td>
           <td class="c6 no">No</td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.onDeviceMotionChange</details>
+              <summary>Yes</summary><code>swan.onDeviceMotionChange</details>
           </td>
         </tr>
         <tr class="r25">
@@ -595,7 +611,13 @@
           <td class="c2"><a href="https://wicg.github.io/idle-detection/">User Idle
               Detection</a></td>
           <td class="c3"><abbr title="Draft Community Group Report">DCGR</abbr></td>
-          <td class="c4 partial"><abbr>?</abbr></td>
+          <td class="c4 yes">
+            <details>
+              <summary>Yes</summary>
+              <code>IdleDetector()</code><br>
+              Chrome 94 or higher on Android and desktop.
+            </details>
+          </td>
           <td class="c5 no">No</td>
           <td class="c6 no">No</td>
           <td class="c7 no">No</td>
@@ -609,15 +631,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`brightness.setKeepScreenOn`</details>
+              <summary>Yes</summary><code>brightness.setKeepScreenOn</code></details>
           </td>
           <td class="c6 partial">
             <details>
-              <summary>Partial</summary>only screen lock `my.setKeepScreenOn`</details>
+              <summary>Partial</summary>only screen lock <code>my.setKeepScreenOn</code></details>
           </td>
           <td class="c7 partial">
             <details>
-              <summary>Partial</summary>only screen lock `swan.setKeepScreenOn`</details>
+              <summary>Partial</summary>only screen lock <code>swan.setKeepScreenOn</code></details>
           </td>
         </tr>
         <tr class="r27">
@@ -630,15 +652,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.clipboard`</details>
+              <summary>Yes</summary><code>@system.clipboard</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.getClipboard`, `my.setClipboard`</details>
+              <summary>Yes</summary><code>my.getClipboard</code>, <code>my.setClipboard</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.setClipboardData`, `swan.getClipboardData`</details>
+              <summary>Yes</summary><code>swan.setClipboardData</code>, <code>swan.getClipboardData</code></details>
           </td>
         </tr>
         <tr class="r28">
@@ -656,22 +678,32 @@
         <tr class="r29">
           <td class="c0">User
             Interaction</td>
-          <td class="c1">History API</td>
-          <td class="c2"><a href="https://html.spec.whatwg.org/multipage/history.html#the-history-interface"
-             >The `History` interface</a></td>
-          <td class="c3">Living Standard</td>
-          <td class="c4">Yes</td>
+          <td class="c1">Navigation (History) API<br>Shared Element Transitions</td>
+          <td class="c2">
+             <a href="https://wicg.github.io/navigation-api/">Navigation API</a><br>
+             <a href="https://github.com/WICG/shared-element-transitions">Shared Element Transitions</a>
+            </td>
+          <td class="c3"><abbr title="Draft Community Group Report">DCGR</abbr></td>
+          <td class="c4">
+            <details>
+              <summary>Yes</summary>
+              <code>navigation.navigate()</code><br><br>
+              The Navigation APIs is the MUCH improved version of <a href="https://html.spec.whatwg.org/multipage/history.html#the-history-interface" rel="nofollow">History API</a>. 
+              Supported on Chrome/Webview 102 or higher on Android and desktop.<br><br>
+              The Shared Element Transitions API is available in Chrome Canary as of version 101 behind a flag at chrome://flags/#document-transition
+            </details>
+          </td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.router`</details>
+              <summary>Yes</summary><code>@system.router</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`navigator` component</details>
+              <summary>Yes</summary><code>navigator</code> component</details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`navigator` component</details>
+              <summary>Yes</summary><code>navigator</code> component</details>
           </td>
         </tr>
         <tr class="r30">
@@ -684,7 +716,7 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.barcode`</details>
+              <summary>Yes</summary><code>@system.barcode</code></details>
           </td>
           <td class="c6">
             <details>
@@ -692,7 +724,7 @@
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.scanCode`, `swan.ai.faceDetect`, `swan.ai.advancedGeneralIdentify`</details>
+              <summary>Yes</summary><code>swan.scanCode</code>, <code>swan.ai.faceDetect</code>, <code>swan.ai.advancedGeneralIdentify</code></details>
           </td>
         </tr>
         <tr class="r31">
@@ -701,11 +733,18 @@
           <td class="c1">Shake detection</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
-          <td class="c4 no">No</td>
+          <td class="c4 no">
+            <details>
+            <summary>No</summary>
+             No Shake Detection API but it can easily be implemented using
+             <a href="https://www.w3.org/TR/accelerometer/" title="Accelerometer">accelerometer</a>
+             and/or <a href="https://www.w3.org/TR/gyroscope/" title="Gyroscope">gyroscope</a>.
+            </details>
+            </td>
           <td class="c5 no">No</td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.watchShake`</details>
+              <summary>Yes</summary><code>my.watchShake</code></details>
           </td>
           <td class="c7 no">No</td>
         </tr>
@@ -718,15 +757,15 @@
           <td class="c4 no">No</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.screenshot`</details>
+              <summary>Yes</summary><code>@system.screenshot</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.onUserCaptureScreen`</details>
+              <summary>Yes</summary><code>my.onUserCaptureScreen</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.onUserCaptureScreen`</details>
+              <summary>Yes</summary><code>swan.onUserCaptureScreen</code></details>
           </td>
         </tr>
         <tr class="r33">
@@ -735,10 +774,18 @@
           <td class="c1" title="Management of alarms in the device">Alarms</td>
           <td class="c2">&nbsp;</td>
           <td class="c3">&nbsp;</td>
-          <td class="c4 no">No</td>
+          <td class="c4 partial">
+            <details>
+              <summary>Partial</summary>
+              <code>getNotifications()</code><br>
+              <code>showNotification()</code><br>
+              The Notification Triggers API allows you to schedule local notifications that don't require a network connection. It is <a href="https://web.dev/notification-triggers/" rel="nofollow">no longer pursued</a> 
+              but the requirements of <a href="https://github.com/beverloo/notification-triggers/issues/8" rel="nofollow">recurring notification triggers</a> still exist.
+            </details>
+          </td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.alarm`</details>
+              <summary>Yes</summary><code>@system.alarm</code></details>
           </td>
           <td class="c6 no">No</td>
           <td class="c7 no">No</td>
@@ -753,15 +800,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@service.pay` (WeChat + Alipay)</details>
+              <summary>Yes</summary><code>@service.pay</code> (WeChat + Alipay)</details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.tradePay`</details>
+              <summary>Yes</summary><code>my.tradePay</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.requestPolymerPayment`</details>
+              <summary>Yes</summary><code>swan.requestPolymerPayment</code></details>
           </td>
         </tr>
         <tr class="r35">
@@ -774,15 +821,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@service.pay` (WeChat + Alipay)</details>
+              <summary>Yes</summary><code>@service.pay</code> (WeChat + Alipay)</details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.tradePay`</details>
+              <summary>Yes</summary><code>my.tradePay</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.requestPolymerPayment`</details>
+              <summary>Yes</summary><code>swan.requestPolymerPayment</code></details>
           </td>
         </tr>
         <tr class="r36">
@@ -795,15 +842,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@service.pay` (WeChat + Alipay)</details>
+              <summary>Yes</summary><code>@service.pay</code> (WeChat + Alipay)</details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.tradePay`</details>
+              <summary>Yes</summary><code>my.tradePay</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.requestPolymerPayment`</details>
+              <summary>Yes</summary><code>swan.requestPolymerPayment</code></details>
           </td>
         </tr>
         <tr class="r37">
@@ -816,15 +863,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@service.pay` (WeChat + Alipay)</details>
+              <summary>Yes</summary><code>@service.pay</code> (WeChat + Alipay)</details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.tradePay`</details>
+              <summary>Yes</summary><code>my.tradePay</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.requestPolymerPayment`</details>
+              <summary>Yes</summary><code>swan.requestPolymerPayment</code></details>
           </td>
         </tr>
         <tr class="r38">
@@ -836,11 +883,11 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@service.push`</details>
+              <summary>Yes</summary><code>@service.push</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`alipay.open.app.mini.templatemessage.send`</details>
+              <summary>Yes</summary><code>alipay.open.app.mini.templatemessage.send</code></details>
           </td>
           <td class="c7">
             <details>
@@ -856,15 +903,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system fetch`</details>
+              <summary>Yes</summary><code>@system fetch</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.request`</details>
+              <summary>Yes</summary><code>my.request</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.request`</details>
+              <summary>Yes</summary><code>swan.request</code></details>
           </td>
         </tr>
         <tr class="r40">
@@ -877,28 +924,34 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>WebSocket (`@system.websocketfactory`)</details>
+              <summary>Yes</summary>WebSocket (<code>@system.websocketfactory</code>)</details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.connectSocket`</details>
+              <summary>Yes</summary><code>my.connectSocket</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`WebSocket`</details>
+              <summary>Yes</summary><code>WebSocket</code></details>
           </td>
         </tr>
         <tr class="r41">
           <td class="c0">Network and
             Communications</td>
           <td class="c1">(<abbr title="Bluetooth Low Energy">BLE</abbr>) iBeacon</td>
-          <td class="c2">&nbsp;</td>
-          <td class="c3">&nbsp;</td>
-          <td class="c4 no">No</td>
+          <td class="c2"><a href="https://webbluetoothcg.github.io/web-bluetooth/scanning.html">Web Bluetooth Scanning</td>
+          <td class="c3"><abbr title="Draft Community Group Report">DCGR</abbr></td>
+          <td class="c4 partial">
+            <details>
+              <summary>Partial</summary>
+              <code>navigator.bluetooth.requestLEScan()</code><br>
+              <a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/main/implementation-status.md#scanning-api">Partial development on Android and Mac</a> with flag required for Scanning API.
+            </details>
+          </td>
           <td class="c5 no">No</td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`<a href="https://opendocs.alipay.com/mini/006ll8">iBeacon</a>`</details>
+              <summary>Yes</summary><code><a href="https://opendocs.alipay.com/mini/006ll8">iBeacon</a><code></details>
           </td>
           <td class="c7 no">No</td>
         </tr>
@@ -912,7 +965,7 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.storage`</details>
+              <summary>Yes</summary><code>@system.storage</code></details>
           </td>
           <td class="c6">
             <details>
@@ -932,7 +985,7 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.file`</details>
+              <summary>Yes</summary><code>@system.file</code></details>
           </td>
           <td class="c6">
             <details>
@@ -954,7 +1007,7 @@
           <td class="c4 partial"><abbr>?</abbr></td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.file`, `@system.request`</details>
+              <summary>Yes</summary><code>@system.file</code>, <code>@system.request</code></details>
           </td>
           <td class="c6">
             <details>
@@ -997,37 +1050,37 @@
           <td class="c4 no">No</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.calendar`</details>
+              <summary>Yes</summary><code>@system.calendar</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`calendar` element</details>
+              <summary>Yes</summary><code>calendar</code> element</details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.addEventOnCalendar`</details>
+              <summary>Yes</summary><code>swan.addEventOnCalendar</code></details>
           </td>
         </tr>
         <tr class="r48">
           <td class="c0">Forms
           </td>
           <td class="c1">Date Picker</td>
-          <td class="c2">`input` <a href="https://html.spec.whatwg.org/multipage/input.html#date-state-(type%3Ddate)"
+          <td class="c2"><code>input</code> <a href="https://html.spec.whatwg.org/multipage/input.html#date-state-(type%3Ddate)"
              >date state</a>
           </td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`picker` element</details>
+              <summary>Yes</summary><code>picker</code> element</details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.datePicker`</details>
+              <summary>Yes</summary><code>my.datePicker</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`picker` component (`mode=date`)</details>
+              <summary>Yes</summary><code>picker</code> component (<code>mode=date</code>)</details>
           </td>
         </tr>
         <tr class="r49">
@@ -1040,24 +1093,24 @@
           <td class="c5 no">No</td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.chooseCity`</details>
+              <summary>Yes</summary><code>my.chooseCity</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`picker` element (`mode=region`)</details>
+              <summary>Yes</summary><code>picker</code> element (<code>mode=region</code>)</details>
           </td>
         </tr>
         <tr class="r50">
           <td class="c0">Forms
           </td>
           <td class="c1">Color Picker</td>
-          <td class="c2">`input` <a href="https://html.spec.whatwg.org/multipage/input.html#color-state-(type%3Dcolor)"
+          <td class="c2"><code>input</code> <a href="https://html.spec.whatwg.org/multipage/input.html#color-state-(type%3Dcolor)"
              >color state</a></td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`picker` element</details>
+              <summary>Yes</summary><code>picker</code> element</details>
           </td>
           <td class="c6 no">No</td>
           <td class="c7 no">No</td>
@@ -1072,7 +1125,7 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`sensor.subscribeLight`</details>
+              <summary>Yes</summary><code>sensor.subscribeLight</code></details>
           </td>
           <td class="c6 no">No</td>
           <td class="c7 no">No</td>
@@ -1086,7 +1139,7 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`sensor.subscribeProximity`</details>
+              <summary>Yes</summary><code>sensor.subscribeProximity</code></details>
           </td>
           <td class="c6 no">No</td>
           <td class="c7 no">No</td>
@@ -1101,15 +1154,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`sensor.subscribeCompass`</details>
+              <summary>Yes</summary><code>sensor.subscribeCompass</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.onCompassChange`, `offCompassChange`</details>
+              <summary>Yes</summary><code>my.onCompassChange</code>, <code>offCompassChange</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.onCompassChange`, `swan.startCompass`, `swan.stopCompass`</details>
+              <summary>Yes</summary><code>swan.onCompassChange</code>, <code>swan.startCompass</code>, <code>swan.stopCompass</code></details>
           </td>
         </tr>
         <tr class="r54">
@@ -1122,15 +1175,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`sensor.subscribeCompass`</details>
+              <summary>Yes</summary><code>sensor.subscribeCompass</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.onCompassChange`, `my.offCompassChange`</details>
+              <summary>Yes</summary><code>my.onCompassChange</code>, <code>my.offCompassChange</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.onCompassChange`, `swan.startCompass`, `swan.stopCompass`</details>
+              <summary>Yes</summary><code>swan.onCompassChange</code>, <code>swan.startCompass</code>, <code>swan.stopCompass</code></details>
           </td>
         </tr>
         <tr class="r55">
@@ -1142,15 +1195,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`sensor.subscribeCompass`</details>
+              <summary>Yes</summary><code>sensor.subscribeCompass</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.onCompassChange`, `my.offCompassChange`</details>
+              <summary>Yes</summary><code>my.onCompassChange</code>, <code>my.offCompassChange</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.onCompassChange`, `swan.startCompass`, `swan.stopCompass`</details>
+              <summary>Yes</summary><code>swan.onCompassChange</code>, <code>swan.startCompass</code>, </code>swan.stopCompass</code></details>
           </td>
         </tr>
         <tr class="r56">
@@ -1163,7 +1216,7 @@
           <td class="c5 no">No</td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.onGyroscopeChange`, `offGyroscopeChange`</details>
+              <summary>Yes</summary><code>my.onGyroscopeChange</code>, <code>offGyroscopeChange</code></details>
           </td>
           <td class="c7 no">No</td>
         </tr>
@@ -1176,15 +1229,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`sensor.subscribeAccelerometer`</details>
+              <summary>Yes</summary><code>sensor.subscribeAccelerometer</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.onAccelerometerChange`, `offAccelerometerChange`</details>
+              <summary>Yes</summary><code>my.onAccelerometerChange</code>, <code>offAccelerometerChange</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.onAccelerometerChange`, `swan.offAccelerometerChange`</details>
+              <summary>Yes</summary><code>swan.onAccelerometerChange</code>, <code>swan.offAccelerometerChange</code></details>
           </td>
         </tr>
         <tr class="r58">
@@ -1197,7 +1250,7 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.geolocation`</details>
+              <summary>Yes</summary><code>@system.geolocation</code></details>
           </td>
           <td class="c6">
             <details>
@@ -1205,7 +1258,7 @@
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.getLocation`, `swan.chooseLocation`, `swan.openLocation`</details>
+              <summary>Yes</summary><code>swan.getLocation</code>, <code>swan.chooseLocation</code>, <code>swan.openLocation</code></details>
           </td>
         </tr>
         <tr class="r59">
@@ -1217,7 +1270,7 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.sensor`</details>
+              <summary>Yes</summary><code>@system.sensor</code></details>
           </td>
           <td class="c6">Yes</td>
           <td class="c7">
@@ -1256,15 +1309,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.battery`</details>
+              <summary>Yes</summary><code>@system.battery</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.getSystemInfo`</details>
+              <summary>Yes</summary><code>my.getSystemInfo</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.getBatteryInfo`, `swan.getBatteryInfoSync`</details>
+              <summary>Yes</summary><code>swan.getBatteryInfo</code>, <code>swan.getBatteryInfoSync</code></details>
           </td>
         </tr>
         <tr class="r64">
@@ -1276,7 +1329,7 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.nfc`</details>
+              <summary>Yes</summary><code>@system.nfc</code></details>
           </td>
           <td class="c6 no">No</td>
           <td class="c7 no">No</td>
@@ -1291,7 +1344,7 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.bluetooth`</details>
+              <summary>Yes</summary><code>@system.bluetooth</code></details>
           </td>
           <td class="c6">
             <details>
@@ -1308,15 +1361,15 @@
           <td class="c4 no">No</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.device`</details>
+              <summary>Yes</summary><code>@system.device</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.getSystemInfo`</details>
+              <summary>Yes</summary><code>my.getSystemInfo</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.getSystemInfo`</details>
+              <summary>Yes</summary><code>swan.getSystemInfo</code></details>
           </td>
         </tr>
         <tr class="r67">
@@ -1329,35 +1382,40 @@
           <td class="c4 partial"><abbr>?</abbr></td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.network`</details>
+              <summary>Yes</summary><code>@system.network</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.getNetworkType`</details>
+              <summary>Yes</summary><code>my.getNetworkType</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.getNetworkType`</details>
+              <summary>Yes</summary><code>swan.getNetworkType</code></details>
           </td>
         </tr>
         <tr class="r68">
           <td class="c0">Sensors and Local Interactions
           </td>
           <td class="c1">Screen Brightness Control</td>
-          <td class="c2">&nbsp;</td>
-          <td class="c3">&nbsp;</td>
-          <td class="c4 no">No</td>
+          <td class="c2"><a href="https://www.w3.org/TR/screen-wake-lock/">Screen Wake Lock API</a></td>
+          <td class="c3">WD</td>
+          <td class="c4 no">
+            <details>
+              <summary>No (WIP)</summary>
+              The <a href="https://github.com/w3c/screen-wake-lock/blob/gh-pages/brightness-mode-explainer.md">need to control screen brightness</a> is still in progress.
+            </details>
+          </td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.brightness`</details>
+              <summary>Yes</summary><code>@system.brightness</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.setScreenBrightness`, `my.getScreenBrightness`</details>
+              <summary>Yes</summary><code>my.setScreenBrightness</code>, <code>my.getScreenBrightness</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.setScreenBrightness`, `swan.getScreenBrightness`</details>
+              <summary>Yes</summary><code>swan.setScreenBrightness</code>, <code>swan.getScreenBrightness</code></details>
           </td>
         </tr>
         <tr class="r69">
@@ -1369,7 +1427,7 @@
           <td class="c4 no">No</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.volume`</details>
+              <summary>Yes</summary><code>@system.volume</code></details>
           </td>
           <td class="c6 no">No</td>
           <td class="c7 no">No</td>
@@ -1383,7 +1441,7 @@
           <td class="c4 no">No</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.package`</details>
+              <summary>Yes</summary><code>@system.package</code></details>
           </td>
           <td class="c6">
             <details>
@@ -1400,18 +1458,24 @@
           <td class="c1">Contacts Management</td>
           <td class="c2"><a href="https://w3c.github.io/contact-api/spec/">Contact Picker API</a></td>
           <td class="c3">Proposal</td>
-          <td class="c4 partial"><abbr>?</abbr></td>
+          <td class="c4 yes">
+            <details>
+              <summary>Yes</summary>
+              <code>navigator.contacts</code><br>
+              Available on Android (Chrome 80+)
+            </details>
+          </td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.contact` (pick and list)</details>
+              <summary>Yes</summary><code>@system.contact</code> (pick and list)</details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.addPhoneContact`</details>
+              <summary>Yes</summary><code>my.addPhoneContact</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.addPhoneContact`</details>
+              <summary>Yes</summary><code>swan.addPhoneContact</code></details>
           </td>
         </tr>
         <tr class="r72">
@@ -1423,7 +1487,7 @@
           <td class="c4 no">No</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.sms`</details>
+              <summary>Yes</summary><code>@system.sms</code></details>
           </td>
           <td class="c6 no">No</td>
           <td class="c7 no">No</td>
@@ -1437,7 +1501,7 @@
           <td class="c4 no">No</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.wifi`</details>
+              <summary>Yes</summary><code>@system.wifi</code></details>
           </td>
           <td class="c6">
             <details>
@@ -1470,11 +1534,11 @@
           <td class="c5 no">No</td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.makePhoneCall`</details>
+              <summary>Yes</summary><code>my.makePhoneCall</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.makePhoneCall`</details>
+              <summary>Yes</summary><code>swan.makePhoneCall</code></details>
           </td>
         </tr>
         <tr class="r76">
@@ -1491,11 +1555,11 @@
           </td>
           <td class="c6 partial">
             <details>
-              <summary>Partial</summary>`my.openSetting`</details>
+              <summary>Partial</summary><code>my.openSetting</code></details>
           </td>
           <td class="c7 partial">
             <details>
-              <summary>Partial</summary>`swan.openSetting`</details>
+              <summary>Partial</summary><code>swan.openSetting</code></details>
           </td>
         </tr>
         <tr class="r77">
@@ -1512,31 +1576,31 @@
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.createAnimation`</details>
+              <summary>Yes</summary><code>my.createAnimation</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.createAnimation`</details>
+              <summary>Yes</summary><code>swan.createAnimation</code></details>
           </td>
         </tr>
         <tr class="r78">
           <td class="c0">Graphics and Layout: 
           </td>
           <td class="c1">Canvas</td>
-          <td class="c2">HTML <a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element">`canvas` element</a></td>
+          <td class="c2">HTML <a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element"><code>canvas</code> element</a></td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`canvas` element</details>
+              <summary>Yes</summary><code>canvas</code> element</details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`canvas` element</details>
+              <summary>Yes</summary><code>canvas</code> element</details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`canvas` element</details>
+              <summary>Yes</summary><code>canvas</code> element</details>
           </td>
         </tr>
         <tr class="r79">
@@ -1546,7 +1610,13 @@
           <td class="c2"><a href="https://wicg.github.io/local-font-access/">Local
               Font Access API</a></td>
           <td class="c3"><abbr>CGR</abbr></td>
-          <td class="c4 partial"><abbr>?</abbr></td>
+          <td class="c4 yes">
+            <details>
+              <summary>Yes</summary>
+              <code>queryLocalFonts()</code><br>
+              Chrome 103 or higher
+            </details>
+          </td>
           <td class="c5 no">No</td>
           <td class="c6 no">No</td>
           <td class="c7 no">No</td>
@@ -1560,15 +1630,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.record`</details>
+              <summary>Yes</summary><code>@system.record</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.getRecorderManager` (partially disabled)</details>
+              <summary>Yes</summary><code>my.getRecorderManager</code> (partially disabled)</details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`RecorderManager`</details>
+              <summary>Yes</summary><code>RecorderManager</code></details>
           </td>
         </tr>
         <tr class="r81">
@@ -1581,15 +1651,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.media`</details>
+              <summary>Yes</summary><code>@system.media</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.chooseImage`...</details>
+              <summary>Yes</summary><code>my.chooseImage</code>...</details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.chooseImage`...</details>
+              <summary>Yes</summary><code>swan.chooseImage</code>...</details>
           </td>
         </tr>
         <tr class="r82">
@@ -1601,15 +1671,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.media`</details>
+              <summary>Yes</summary><code>@system.media</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.chooseImage`...</details>
+              <summary>Yes</summary><code>my.chooseImage</code>...</details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.chooseImage`...</details>
+              <summary>Yes</summary><code>swan.chooseImage</code>...</details>
           </td>
         </tr>
         <tr class="r83">
@@ -1621,57 +1691,57 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.media`</details>
+              <summary>Yes</summary><code>@system.media</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.chooseImage`...</details>
+              <summary>Yes</summary><code>my.chooseImage</code>...</details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.chooseImage`...</details>
+              <summary>Yes</summary><code>swan.chooseImage</code>...</details>
           </td>
         </tr>
         <tr class="r84">
           <td class="c0">Media</td>
           <td class="c1">Audio</td>
           <td class="c2">HTML <a href="https://html.spec.whatwg.org/multipage/media.htmll#the-audio-element"
-             >`audio` element</a>
+             ><code>audio</code> element</a>
           </td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.audio`</details>
+              <summary>Yes</summary><code>@system.audio</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.createInnerAudioContext`</details>
+              <summary>Yes</summary><code>my.createInnerAudioContext</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`audio` element</details>
+              <summary>Yes</summary><code>audio</code> element</details>
           </td>
         </tr>
         <tr class="r85">
           <td class="c0">Media</td>
           <td class="c1">Video</td>
           <td class="c2">HTML <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element"
-             >`video` element</a>
+             ><code>video</code> element</a>
           </td>
           <td class="c3"><abbr>REC</abbr></td>
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`video` element</details>
+              <summary>Yes</summary><code>video</code> element</details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`video` element</details>
+              <summary>Yes</summary><code>video</code> element</details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`video` element</details>
+              <summary>Yes</summary><code>video</code> element</details>
           </td>
         </tr>
         <tr class="r86">
@@ -1682,7 +1752,7 @@
           <td class="c4 no">No</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.image`</details>
+              <summary>Yes</summary><code>@system.image</code></details>
           </td>
           <td class="c6 no">No</td>
           <td class="c7 no">No</td>
@@ -1695,15 +1765,15 @@
           <td class="c4 no">No</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`map` component</details>
+              <summary>Yes</summary><code>map</code> component</details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`map` component</details>
+              <summary>Yes</summary><code>map</code> component</details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`map` component</details>
+              <summary>Yes</summary><code>map</code> component</details>
           </td>
         </tr>
         <tr class="r88">
@@ -1715,11 +1785,11 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.cipher`</details>
+              <summary>Yes</summary><code>@system.cipher</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.rsa`</details>
+              <summary>Yes</summary><code>my.rsa</code></details>
           </td>
           <td class="c7 no">No</td>
         </tr>
@@ -1732,15 +1802,15 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@service.account`</details>
+              <summary>Yes</summary><code>@service.account</code></details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.getAuthCode`</details>
+              <summary>Yes</summary><code>my.getAuthCode</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.authorize`</details>
+              <summary>Yes</summary><code>swan.authorize</code></details>
           </td>
         </tr>
         <tr class="r90">
@@ -1752,28 +1822,35 @@
           <td class="c4">Yes</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>Manifest's `permissions` member</details>
+              <summary>Yes</summary>Manifest's <code>permissions</code> member</details>
           </td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>app.json `permission` member</details>
+              <summary>Yes</summary>app.json <code>permission</code> member</details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>app.json `permission` member</details>
+              <summary>Yes</summary>app.json <code>permission</code> member</details>
           </td>
         </tr>
         <tr class="r91">
           <td class="c0">Security and
             Privacy</td>
-          <td class="c1">SMS OTP Retriever</td>
-          <td class="c2"><a href="https://discourse.wicg.io/t/sms-otp-retrieval/3499">SMS OTP
-              Retriever</a></td>
-          <td class="c3">Proposal</td>
-          <td class="c4 partial"><abbr>?</abbr></td>
+          <td class="c1">One-time Password (OTP)</td>
+          <td class="c2">
+            <a href="https://wicg.github.io/web-otp/">WebOTP</a>
+          </td>
+          <td class="c3"><abbr title="Draft Community Group Report">DCGR</abbr></td>
+          <td class="c4 yes">
+            <details>
+              <summary>Yes</summary>
+              <code>OTPCredential</code><br>
+              Chrome 93 or higher
+            </details>
+          </td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@system.sms`</details>
+              <summary>Yes</summary><code>@system.sms</code></details>
           </td>
           <td class="c6 no">No</td>
           <td class="c7 no">No</td>
@@ -1799,7 +1876,7 @@
           <td class="c4 no">No</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@service.stats`</details>
+              <summary>Yes</summary><code>@service.stats</code></details>
           </td>
           <td class="c6 no">No</td>
           <td class="c7">
@@ -1816,12 +1893,12 @@
           <td class="c4 no">No</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@service.account`</details>
+              <summary>Yes</summary><code>@service.account</code></details>
           </td>
           <td class="c6 no">No</td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.getEnvInfoSync`</details>
+              <summary>Yes</summary><code>swan.getEnvInfoSync</code></details>
           </td>
         </tr>
         <tr class="r95">
@@ -1834,11 +1911,11 @@
           <td class="c5 no">No</td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.getAuthUserInfo`</details>
+              <summary>Yes</summary><code>my.getAuthUserInfo</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.getUserInfo`</details>
+              <summary>Yes</summary><code>swan.getUserInfo</code></details>
           </td>
         </tr>
         <tr class="r96">
@@ -1850,7 +1927,7 @@
           <td class="c4 no">No</td>
           <td class="c5">
             <details>
-              <summary>Yes</summary>`@service.qqaccount`, `@service.wxaccount`, `@service.wbaccount`</details>
+              <summary>Yes</summary><code>@service.qqaccount</code>, <code>@service.wxaccount</code>, <code>@service.wbaccount</code></details>
           </td>
           <td class="c6 no">No</td>
           <td class="c7 no">No</td>
@@ -1865,11 +1942,11 @@
           <td class="c5 no">No</td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.reportAnalytics`</details>
+              <summary>Yes</summary><code>my.reportAnalytics</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.reportAnalytics`</details>
+              <summary>Yes</summary><code>swan.reportAnalytics</code></details>
           </td>
         </tr>
         <tr class="r98">
@@ -1883,11 +1960,11 @@
           <td class="c5 no">No</td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.textRiskIdentification`</details>
+              <summary>Yes</summary><code>my.textRiskIdentification</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.ai.textReview`</details>
+              <summary>Yes</summary><code>swan.ai.textReview</code></details>
           </td>
         </tr>
         <tr class="r99">
@@ -1901,11 +1978,11 @@
           <td class="c5 no">No</td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.ap.imgRisk`</details>
+              <summary>Yes</summary><code>my.ap.imgRisk</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.ai.imageAudit`</details>
+              <summary>Yes</summary><code>swan.ai.imageAudit</code></details>
           </td>
         </tr>
         <tr class="r100">
@@ -1913,9 +1990,14 @@
             Privacy</td>
           <td class="c1">Fingerprint 
             Authentication</td>
-          <td class="c2">&nbsp;</td>
-          <td class="c3">&nbsp;</td>
-          <td class="c4 no">No</td>
+          <td class="c2"><a href="https://www.w3.org/TR/webauthn-2/" title="WebAuthn">WebAuthn</a></td>
+          <td class="c3">CR</td>
+          <td class="c4 yes">
+            <details>
+              <summary>Yes</summary>
+              Supported via <a href="https://www.w3.org/TR/webauthn-2/" title="WebAuthn">WebAuthn</a>. <a href="https://developers.google.com/codelabs/webauthn-reauth#0" rel="nofollow">Build your first WebAuthn app</a>
+            </details>
+          </td>
           <td class="c5 no">No</td>
           <td class="c6 no">No</td>
           <td class="c7 no">No</td>
@@ -1924,9 +2006,14 @@
           <td class="c0">Security and
             Privacy</td>
           <td class="c1">Face Authentication</td>
-          <td class="c2">&nbsp;</td>
-          <td class="c3">&nbsp;</td>
-          <td class="c4 no">No</td>
+          <td class="c2"><a href="https://www.w3.org/TR/webauthn-2/" title="WebAuthn">WebAuthn</a></td>
+          <td class="c3">CR</td>
+          <td class="c4 yes">
+            <details>
+              <summary>Yes</summary>
+              Supported via <a href="https://www.w3.org/TR/webauthn-2/" title="WebAuthn">WebAuthn</a>
+            </details>
+          </td>
           <td class="c5 no">No</td>
           <td class="c6">
             <details>
@@ -1934,7 +2021,7 @@
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.ai.faceMatch`</details>
+              <summary>Yes</summary><code>swan.ai.faceMatch</code></details>
           </td>
         </tr>
         <tr class="r102">
@@ -1946,11 +2033,11 @@
           <td class="c5 no">No</td>
           <td class="c6">
             <details>
-              <summary>Yes</summary>`my.onMemoryWarning`</details>
+              <summary>Yes</summary><code>my.onMemoryWarning</code></details>
           </td>
           <td class="c7">
             <details>
-              <summary>Yes</summary>`swan.onMemoryWarning`</details>
+              <summary>Yes</summary><code>swan.onMemoryWarning</code></details>
           </td>
         </tr>
       </tbody>
