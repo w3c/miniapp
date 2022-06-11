@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title class='group-data' data-query='group'>${name}</title>
-  <meta name="description" content="A group page">
+  <title>W3C MiniApps Working Group</title>
+  <meta name="description" content="W3C MiniApps Working Group">
   <link rel="preconnect" href="https://api.w3.org" />
   <link rel="preconnect" href="https://w3c.github.io" />
   <!--
@@ -347,23 +347,21 @@
 
 <body>
   <header class='group-data' data-query='group'>
-    <h1>${name}</h1>
+    <h1>MiniApps Working Group</h1>
     <nav>
       <ul>
         <li>
-          <a href="https://www.w3.org/2004/01/pp-impl/128558/join">Join</a>
+          <a href="https://www.w3.org/groups/wg/miniapps/join">Join</a>
         </li>
         <li>
           <a href="${active-charter.uri}">Charter</a>
         </li>
-        <div data-if="services.*[type=repository]">
-          <li data-query="services.*[type=repository]"><a href="${link}">${shortdesc}</a></li>
-        </div>
+          <li><a href="https://github.com/w3c/miniapp/">GitHub</a></li>
         <div data-if="services.*[type=lists]">
           <li data-query="services.*[type=lists]"><span data-if="::self[link=Archives/Public]"><a href="${link}">Mailing
                 list</a></span></li>
         </div>
-        <div data-if="services.*[type=chat]">
+        <!-- <div data-if="services.*[type=chat]">
           <li data-query="services.*[type=chat]"><a href="${link}">${shortdesc}</a></li>
         </div>
         <div data-if="services.*[type=wiki]">
@@ -371,7 +369,7 @@
         </div>
         <div data-if="services.*[type=blog]">
           <li data-query="services.*[type=blog]"><a href="${link}">Blog</a></li>
-        </div>
+        </div> -->
         <!-- <div data-if="services.*[type=twitter]">
           <li data-query="services.*[type=twitter]"><a href="${link}">Twitter</a></li>
         </div> -->
