@@ -4,6 +4,7 @@ This document contains links to meeting minutes of the CG.
 
 ## 2022
 
+* [23 June 2022 TeleConf](https://www.w3.org/2022/06/23-miniapp-minutes.html)
 * [17 March 2022 TeleConf](https://www.w3.org/2022/03/17-miniapp-minutes.html)
 * [17 February 2022 TeleConf](https://www.w3.org/2022/02/17-MiniApp-minutes.html)
 * [13 January 2022 TeleConf](https://www.w3.org/2022/01/13-miniapp-minutes.html)
