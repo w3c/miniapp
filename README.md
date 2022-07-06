@@ -7,6 +7,7 @@
 * [WG Charter](https://www.w3.org/2021/01/miniapps-wg-charter.html)
 * [WG Meeting Minutes](https://github.com/w3c/miniapp/blob/main/Meetings/WG.md)
 * [WG Calendar](https://www.w3.org/groups/wg/miniapps/calendar)
+* [WG Test Suites](https://github.com/w3c/miniapp-tests)
 
 ## MiniApps Ecosystem Community Group
 
