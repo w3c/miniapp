@@ -182,53 +182,75 @@
           The Working Group will deliver the following W3C normative
           specifications:
         </p>
-        <dl>
-          <dt>
-            MiniApp Manifest
-          </dt>
-          <dd>
-            <p>
-              This specification defines a JSON-based manifest document that enables developers to set up descriptive information, window styling, page routing, permissions, and other information of a MiniApp. The MiniApp Manifest specification will follow the recommendations of the <a href="https://w3ctag.github.io/design-principles/#extend-manifests">Web Platform Design Principles</a> to extend the <a href="https://www.w3.org/TR/appmanifest/">Web App Manifest</a>.
-            </p>
-            <p class="draft-status">
-              <b>Draft state:</b> <a href="https://w3c.github.io/miniapp/specs/manifest/">In progress in MiniApp CG</a>
-            </p>
-            <p>
-              <b>Adopted Draft</b>: <a href=
-              "https://w3c.github.io/miniapp/specs/manifest/">https://w3c.github.io/miniapp/specs/manifest/</a>
-            </p>
-          </dd>
-          <dt>
-            MiniApp Packaging
-          </dt>
-          <dd>
-            <p>
-             This specification defines the standardized MiniApp package structure and its construction method. The MiniApp package file includes all the application assets such as document templates, components, stylesheets, scripts, internationalization resources, security resources, and the manifest file. The MiniApps Working Group aims at defining a MiniApp package format to be processed by the various runtime environments.
-            </p>
-            <p class="draft-status">
-              <b>Draft state:</b> <a href="https://w3c.github.io/miniapp/specs/packaging/">In progress in MiniApp CG</a>
-            </p>
-            <p>
-              <b>Adopted Draft</b>: <a href=
-              "https://w3c.github.io/miniapp/specs/packaging/">https://w3c.github.io/miniapp/specs/packaging/</a>
-            </p>
-          </dd>
-          <dt>
-            MiniApp Lifecycle
-          </dt>
-          <dd>
-            <p>
-              This specification defines the MiniApp lifecycle events and the process that enables developers to manage the lifecycle events of both MiniApp application lifecycle and each MiniApp page's lifecycle. MiniApp application lifecycle includes a set of events, including application initialization, application running in foreground, application running in background. MiniApp page lifecycle includes a set of events, including page loading, page first rendering ready, page running in foreground, page running in background and page unloading. Whenever possible, the specification should provide a mapping to existing Web specifications such as <a href="https://www.w3.org/TR/service-workers/">Service Workers</a> and <a href="https://w3c.github.io/page-visibility/">Page Visibility</a>.
-            </p>
-            <p class="draft-status">
-              <b>Draft state:</b> <a href="https://w3c.github.io/miniapp/specs/lifecycle/">In progress in MiniApp CG</a>
-            </p>
-            <p>
-              <b>Adopted Draft</b>: <a href=
-              "https://w3c.github.io/miniapp/specs/lifecycle/">https://w3c.github.io/miniapp/specs/lifecycle/</a>
-            </p>
-          </dd>
-        </dl>
+<ul>
+  <li id='9978' class='spec'>
+    <a href='https://www.w3.org/TR/miniapp-manifest/' rel='versionof'>MiniApp Manifest</a>
+  </li>
+  <ul>
+    <li>
+      This specification is a registry of supplementary members for the <a href="https://www.w3.org/TR/appmanifest/">Web Application Manifest</a> and the <a href="https://www.w3.org/TR/manifest-app-info/">Web App Manifest - Application Information</a> specifications that provide additional metadata to an application manifest to describe <a href="https://www.w3.org/TR/miniapp-packaging/#dfn-miniapp">MiniApps</a>. This JSON-based manifest file enables developers to set up basic information of a MiniApp, like identification, human-readable description, versioning data, and styling information. The MiniApp manifest also configures the routing of the pages and widgets that are part of a MiniApp.
+    </li>
+    <li>Latest publication: <a href='https://www.w3.org/TR/2022/WD-miniapp-manifest-20220701/'>2022-07-01</a></li>
+    <li>Exclusion Draft:
+      <a
+        href='https://www.w3.org/TR/2021/WD-miniapp-manifest-20210511/'>https://www.w3.org/TR/2021/WD-miniapp-manifest-20210511/</a>
+    </li>
+    <li>associated <a href='https://www.w3.org/mid/cfe-8013-d6e8c13c0de9e8972011f66c01d30813495f53dd@w3.org'> Call for
+        Exclusion</a>
+      on 2021-05-11
+      ended on 2021-10-08
+    </li>
+    <li>Produced under Working Group Charter:
+      <a
+        href='https://www.w3.org/2021/01/miniapps-wg-charter.html'>https://www.w3.org/2021/01/miniapps-wg-charter.html</a>
+    </li>
+  </ul>
+  <li id='10077' class='spec'>
+    <a href='https://www.w3.org/TR/miniapp-packaging/' rel='versionof'>MiniApp Packaging</a>
+  </li>
+  <ul>
+    <li>
+      This specification defines semantics and conformance requirements for a <a href="https://www.w3.org/TR/miniapp-packaging/#dfn-package">MiniApp package</a>, and the structure of the single file container that holds the resources of a MiniApp, including a manifest file, static page templates, stylesheets, JavaScript documents, media files and other resources. Instances of the <a href="https://www.w3.org/TR/miniapp-packaging/#dfn-package">MiniApp package</a> are used for MiniApp distribution and execution on runtime environments (<a href="https://www.w3.org/TR/miniapp-packaging/#dfn-useragent">MiniApp user agent</a>).
+    </li>
+    <li>Latest publication: <a href='https://www.w3.org/TR/2022/WD-miniapp-packaging-20220729/'>2022-07-29</a></li>
+    <li>Exclusion Draft:
+      <a
+        href='https://www.w3.org/TR/2021/WD-miniapp-packaging-20211130/'>https://www.w3.org/TR/2021/WD-miniapp-packaging-20211130/</a>
+    </li>
+    <li>associated <a href='https://www.w3.org/mid/cfe-8919-cf15e06bcaf4d13617a5ff1705e406985fe66dd9@w3.org'> Call for
+        Exclusion</a>
+      on 2021-11-30
+      ended on 2022-04-29
+    </li>
+    <li>Produced under Working Group Charter:
+      <a
+        href='https://www.w3.org/2021/01/miniapps-wg-charter.html'>https://www.w3.org/2021/01/miniapps-wg-charter.html</a>
+    </li>
+  </ul>
+  <li id='10494' class='spec'>
+    <a href='https://www.w3.org/TR/miniapp-lifecycle/' rel='versionof'>MiniApp Lifecycle</a>
+  </li>
+  <ul>
+    <li>
+      This specification defines the MiniApp lifecycle events and the process to manage MiniApp and each page's lifecycle. Implementing this specification enables the user agent to manage the lifecycle events of both the global application lifecycle and the page lifecycle.
+    </li>
+    <li>Latest publication: <a href='https://www.w3.org/TR/2022/WD-miniapp-lifecycle-20220927/'>2022-09-27</a></li>
+    <li>Exclusion Draft:
+      <a
+        href='https://www.w3.org/TR/2021/WD-miniapp-lifecycle-20210615/'>https://www.w3.org/TR/2021/WD-miniapp-lifecycle-20210615/</a>
+    </li>
+    <li>associated <a href='https://www.w3.org/mid/cfe-8208-bc71a2b6fbcd316f94df57f362881bca4c62f6f9@w3.org'> Call for
+        Exclusion</a>
+      on 2021-06-15
+      ended on 2021-11-12
+    </li>
+    <li>Produced under Working Group Charter:
+      <a
+        href='https://www.w3.org/2021/01/miniapps-wg-charter.html'>https://www.w3.org/2021/01/miniapps-wg-charter.html</a>
+    </li>
+  </ul>
+</ul>
+
         <h3 id="add-new">
           New Recommendation-track deliverables
         </h3>
@@ -241,38 +263,27 @@
         <h3 id="other-deliverables">
           Other Deliverables
         </h3>
-        <dl>
-        <dt>
-            MiniApp Addressing
-          </dt>
-          <dd>
-            <p>
-              This document defines a MiniApp URI Deep Link solution that will work across various MiniApp platforms, with reference to existing URI standard work in W3C and related standard bodies.
-            </p>
-            <p class="draft-status">
-              <b>Draft state:</b> <a href="https://w3c.github.io/miniapp/specs/uri/">In progress in MiniApp CG</a>
-            </p>
-            <p>
-              <b>Adopted Draft</b>: <a href=
-              "https://w3c.github.io/miniapp/specs/uri/">https://w3c.github.io/miniapp/specs/uri/</a>
-            </p>
-          </dd>
-        <dt>
-          MiniApp Widget Requirements
-        </dt>
-        <dd>
-          <p>
-            This document describes the requirements for MiniApp widgets, a special form of MiniApp pages.
-          </p>
-          <p class="draft-status">
-            <b>Draft state:</b> <a href="https://w3c.github.io/miniapp/specs/widget-req/">In progress in MiniApp CG</a>
-          </p>
-          <p>
-            <b>Adopted Draft</b>: <a href=
-            "https://w3c.github.io/miniapp/specs/widget-req/">https://w3c.github.io/miniapp/specs/widget-req/</a>
-          </p>
-        </dd>
-      </dl>
+        <ul>
+          <li id="9977" class="spec">
+            <a href="https://www.w3.org/TR/mini-app-white-paper/" rel="versionof">MiniApp Standardization White Paper</a>
+          </li>
+          <ul>
+            <li>Latest publication: <a href="https://www.w3.org/TR/2022/DNOTE-mini-app-white-paper-20220701/">2022-07-01</a>
+            </li>
+          </ul>
+          <li id="9950" class="spec">
+            <a href="https://www.w3.org/TR/miniapp-addressing/" rel="versionof">MiniApp Addressing</a>
+          </li>
+          <ul>
+            <li>Latest publication: <a href="https://www.w3.org/TR/2022/DNOTE-miniapp-addressing-20220627/">2022-06-27</a></li>
+          </ul>
+          <li id="9656" class="spec">
+            <a href="https://www.w3.org/TR/miniapp-widget-req/" rel="versionof">MiniApp Widget Requirements</a>
+          </li>
+          <ul>
+            <li>Latest publication: <a href="https://www.w3.org/TR/2022/NOTE-miniapp-widget-req-20220424/">2022-04-24</a></li>
+          </ul>
+        </ul>
         <h3>
           Timeline
         </h3>
@@ -305,16 +316,16 @@
                 MiniApp Manifest
               </th>
               <td>
-                Q1 2021
+                <a href="https://www.w3.org/TR/2021/WD-miniapp-manifest-20210511/">Q2 2021</a>
               </td>
               <td>
-                Q4 2021
+                Q3 2023
               </td>
               <td>
-                Q3 2022
+                Q3 2024
               </td>
               <td>
-                Q4 2022
+                Q4 2024
               </td>
             </tr>
             <tr>
@@ -322,16 +333,16 @@
                 MiniApp Packaging
               </th>
               <td>
-                Q2 2021
+                <a href="https://www.w3.org/TR/2021/WD-miniapp-packaging-20211130/">Q4 2021</a>
               </td>
               <td>
-                Q4 2021
+                Q3 2023
               </td>
               <td>
-                Q3 2022
+                Q3 2024
               </td>
               <td>
-                Q4 2022
+                Q4 2024
               </td>
             </tr>
             <tr>
@@ -339,45 +350,16 @@
                 MiniApp Lifecycle
               </th>
               <td>
-                Q1 2021
+                <a href="https://www.w3.org/TR/2021/WD-miniapp-lifecycle-20210615/">Q2 2021</a>
               </td>
               <td>
-                Q4 2021
+                Q3 2023
               </td>
               <td>
-                Q3 2022
+                Q3 2024
               </td>
               <td>
-                Q4 2022
-              </td>
-            </tr>
-            <tr>
-              <th>
-                MiniApp Addressing
-              </th>
-              <td>
-                Q1 2021
-              </td>
-              <td>
-              </td>
-              <td>
-              </td>
-              <td>
-              </td>
-            </tr>
-
-            <tr>
-              <th>
-                Widget Requirement
-              </th>
-              <td>
-                Q1 2021
-              </td>
-              <td>
-              </td>
-              <td>
-              </td>
-              <td>
+                Q4 2024
               </td>
             </tr>
           </tbody>
@@ -450,7 +432,7 @@
             Security Working Group</a>
           </dt>
           <dd>
-            The Web Application Security Working Group is developing <a href="https://www.w3.org/TR/permissions/">an API to manage permissions</a>, which is related to this group's specifications, such as the <a href="https://w3c.github.io/miniapp/specs/manifest/#reqpermissions-member">permission information in the manifest</a>.
+            The Web Application Security Working Group is developing <a href="https://www.w3.org/TR/permissions/">an API to manage permissions</a>, which is related to this group's specifications, such as the <a href="https://www.w3.org/TR/miniapp-manifest/#req_permissions-member">permission information in the manifest</a>.
           </dd>
           <dt>
             <a href="https://www.w3.org/2019/webapps/">Web Applications Working Group</a>
@@ -719,7 +701,7 @@
       <p class="copyright">
         <a rel="license" href=
         "https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>©
-        2021 <a href="https://www.w3.org/"><abbr title=
+        2023 <a href="https://www.w3.org/"><abbr title=
         "World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href=
         "https://www.csail.mit.edu/"><abbr title=
         "Massachusetts Institute of Technology">MIT</abbr></a>, <a href=
