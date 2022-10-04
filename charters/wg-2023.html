@@ -30,10 +30,10 @@
     </style>
   </head>
   <body>
-    <div id="template">
+    <section id="template">
       <ul id="navbar">
         <li>
-          <a href="#mission">Mission</a>
+          <a href="#background">Background</a>
         </li>
         <li>
           <a href="#scope">Scope</a>
@@ -80,7 +80,7 @@
       </p>
 
       <div class="noprint">
-        <p class="join"><a href="https://www.w3.org/2004/01/pp-impl/128558/join">Join the MiniApps Working Group.</a></p>
+        <p class="join"><a href="https://www.w3.org/groups/wg/miniapps/join">Join the MiniApps Working Group.</a></p>
       </div>
 
          <p style="padding: 0.5ex; border: 1px solid green"> This proposed charter is available
@@ -90,6 +90,14 @@
           </p>
       <table class="summary-table">
         <tbody>
+          <tr id="Status">
+            <th>
+              Charter Status
+            </th>
+            <td>
+              See the <a href="https://www.w3.org/groups/wg/miniapps/charters">group status page</A> and <a href="#history">detailed change history</a>.
+            </td>
+          </tr>		
           <tr id="Duration">
             <th rowspan="1" colspan="1">
               End date
@@ -125,9 +133,9 @@
           </tr>
         </tbody>
       </table>
-      <div class="scope">
-        <h2 id="mission">
-          Mission
+      <section id="background" class="background">
+        <h2>
+          Background
         </h2>
         <p>
           MiniApp as a new form of mobile application, leveraging both Web technologies (especially CSS and JavaScript) as well as capabilities of native applications, is gaining more and more popularity in the globe. To enhance the interoperability between MiniApp platforms and the Web, and between different MiniApp platforms (applications or operating systems that are hosts to MiniApps), mainstream MiniApp vendors and related stakeholders have been working together in <a href="https://www.w3.org/2018/chinese-web-ig/">W3C Chinese Web Interest Group</a> since May 2019 and published a <a href="https://www.w3.org/TR/mini-app-white-paper/">MiniApp Standardization White Paper</a> in September 2019 as the initial standardization exploration for MiniApp technologies. As more global companies get interested in joining the MiniApp related discussion, the <a href="https://www.w3.org/community/miniapps/">MiniApps Ecosystem Community Group</a> was proposed and approved during TPAC 2019 so that the global Web community can join the discussion.</p>
@@ -136,9 +144,9 @@
           During the exploration phase, potential standard requirements have been identified due to the unique nature of MiniApp in comparison to the typical Web environment. Substantial research work and joint discussion with related W3C groups have been conducted to clarify the requirements and possible solutions for MiniApp standardization. For instance, the hosting platform may or may not be a browser, and the application construction may or may not be based on web resources. Therefore different but relevant technologies are used for UI configuration and rendering, resource packaging, and the API access to local system capabilities. Such cases have not been fully covered by existing Web standards such as <a href="https://github.com/WICG/webpackage">Web Packaging</a>, <a href="https://www.w3.org/TR/appmanifest/">Web App Manifest</a>, or Web APIs.
         </p>        
         <p>The MiniApps Working Group aims to harmonize the heterogeneous MiniApp ecosystem, enabling interoperability among the different MiniApp platforms, maximizing the convergence of MiniApps and the World Wide Web, reducing the development costs and facilitating the adoption of this technology.</p>    
-      </div>
-      <div class="scope">
-        <h2 id="scope">
+      </section>
+      <section id="scope" class="scope">
+        <h2>
           Scope
         </h2>
     <p>The work will be based on the specifications incubated in the MiniApps Ecosystem Community Group for MiniApp features, which include the following:</p>
@@ -157,9 +165,9 @@
           <li>Define any specification that overlaps the existing normative specifications for browser-based APIs without a concrete plan to work with existing working groups.</li>
           <li>Define changes to the existing HTML markup language and to the Document Object Model (DOM) specifications.</li>
         </ul>
-      </div>
-      <div class="deliverables">
-        <h2 id="deliverables">
+      </section>
+      <section id="deliverables" class="deliverables">
+        <h2>
           Deliverables
         </h2>
         <h3 id="rec-track">
@@ -373,9 +381,9 @@
           <em>Note: The actual production of some of the deliverables may
           follow a different timeline.</em>
         </p>
-      </div>
-      <div class="success-criteria">
-        <h2 id="success-criteria">
+      </section>
+      <section id="success-criteria" class="success-criteria">
+        <h2>
           Success Criteria
         </h2>
         <p>
@@ -393,9 +401,9 @@
         <p>
           APIs shall be demonstrated to be implementable securely before released.
         </p>
-      </div>
-      <div class="dependencies">
-        <h2 id="coordination">
+      </section>
+      <section id="coordination" class="dependencies">
+        <h2>
           Coordination
         </h2>
         <h3>
@@ -488,9 +496,9 @@
             </dd>
           </dl>
         </div>
-      </div>
-      <div class="participation">
-        <h2 id="participation">
+      </section>
+      <section id="participation" class="participation">
+        <h2>
           Participation
         </h2>
         <p>
@@ -531,9 +539,9 @@
           "https://www.w3.org/Consortium/cepc/">Code of Ethics and Professional
           Conduct</a>.
         </p>
-      </div>
-      <div class="communication">
-        <h2 id="communication">
+      </section>
+      <section id="communication" class="communication">
+        <h2>
           Communication
         </h2>
         <p>
@@ -566,16 +574,16 @@
           group, for Member-only discussions in special cases when a particular
           participant requests such a discussion.
         </p>
-      </div>
-      <div class="decisions">
-        <h2 id="decisions">
+      </section>
+      <section id="decisions" class="decisions">
+        <h2>
           Decision Policy
         </h2>
         <p>
           This group will seek to make decisions through consensus and due
           process, per the <a href=
           "https://www.w3.org/Consortium/Process/#Consensus">W3C Process
-          Document (section 3.3)</a>. Typically, an editor or other participant
+          Document (section 5.2.1, Consensus)</a>. Typically, an editor or other participant
           makes an initial proposal, which is then refined in discussion with
           members of the group and other reviewers, and consensus emerges with
           little formal voting being required.
@@ -605,28 +613,28 @@
         <p>
           This charter is written in accordance with the <a href=
           "https://www.w3.org/Consortium/Process/policies#Votes">W3C Process
-          Document (Section 3.4, Votes)</a>, and includes no voting procedures
+          Document (Section 5.2.3, Deciding by Vote)</a>, and includes no voting procedures
           beyond what the Process Document requires.
         </p>
-      </div>
-      <div class="patent">
-        <h2 id="patentpolicy">
+      </section>
+      <section id="patentpolicy" class="patent">
+        <h2>
           Patent Policy
         </h2>
         <p>
           This Working Group operates under the <a href=
           "https://www.w3.org/Consortium/Patent-Policy/">W3C Patent Policy</a>
           (15 September 2020). To promote the
-          widest adoption of Web standards, W3C seeks to issue Recommendations
+          widest adoption of Web standards, W3C seeks to issue Web specifications
           that can be implemented, according to this policy, on a Royalty-Free
           basis. For more information about disclosure obligations for this
           group, please see the <a href=
           "https://www.w3.org/2004/01/pp-impl/">W3C Patent Policy
           Implementation</a>.
         </p>
-      </div>
-      <div class="licensing">
-        <h2 id="licensing">
+      </section>
+      <section id="licensing" class="licensing">
+        <h2>
           Licensing
         </h2>
         <p>
@@ -634,16 +642,16 @@
           'https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document.html'>
           W3C Software and Document license</a> for all its deliverables.
         </p>
-      </div>
-      <div class="patent">
-        <h2 id="about">
+      </section>
+      <section id="about" class="about">
+        <h2>
           About this Charter
         </h2>
         <p>
           This charter for this Working Group has been created according to
           <a href=
-          "https://www.w3.org/Consortium/Process/groups#GAGeneral">section
-          5.2</a> of the <a href=
+          "https://www.w3.org/Consortium/Process/#GAGeneral">section
+          3.4</a> of the <a href=
           "https://www.w3.org/Consortium/Process">Process Document</a>. In the
           event of a conflict between this document or the provisions of any
           charter and the W3C Process, the W3C Process shall take precedence.
@@ -655,7 +663,7 @@
           The following table lists details of all changes from the initial
           charter, per the <a href=
           "https://www.w3.org/Consortium/Process/#CharterReview">W3C Process
-          Document (section 5.2.3)</a>:
+          Document (section 4.3, Advisory Committee Review of a Charter)</a>:
         </p>
         <table class="history">
           <tbody>
@@ -698,7 +706,7 @@
         <address>
           <a href="mailto:xfq@w3.org">Fuqiao Xue</a>
         </address>
-      </div>
+      </section>
       <p class="copyright">
         <a rel="license" href=
         "https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>©
