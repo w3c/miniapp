@@ -1,4 +1,4 @@
-# MiniApp Standardization
+# MiniApps Standardization
 
 This repository is being used for work in the MiniApps Working Group and the W3C MiniApps Ecosystem Community Group. Some documents are intended to become part of Recommendation-track documents, and are governed by the:
 

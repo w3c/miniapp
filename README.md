@@ -1,4 +1,4 @@
-# MiniApp Standardization
+# MiniApps Standardization
 
 ## MiniApps Working Group
 
