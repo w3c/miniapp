@@ -4,6 +4,7 @@ This document contains links to meeting minutes of the WG.
 
 ## 2022
 
+* [27 October 2022 TeleConf](https://www.w3.org/2022/10/27-miniapp-minutes.html)
 * [7 September 2022 TPAC China Hub F2F (in Chinese)](https://www.w3.org/2022/09/hangzhou/miniapps/report.html)
 * [25 August 2022 TeleConf](https://www.w3.org/2022/08/25-miniapp-minutes.html)
 * [28 July 2022 TeleConf](https://www.w3.org/2022/07/28-miniapp-minutes.html)
