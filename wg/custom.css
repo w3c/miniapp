@@ -95,6 +95,7 @@ header h1 {
     color: #0d1321;
     color: var(--heading-text);
     font-size: 1.7em;
+    letter-spacing: -.025em;
 }
 
 header p {
