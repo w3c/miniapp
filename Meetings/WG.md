@@ -2,6 +2,10 @@
 
 This document contains links to meeting minutes of the WG.
 
+## 2023
+
+* [23 March 2023 TeleConf](https://www.w3.org/2023/03/23-miniapp-minutes.html)
+
 ## 2022
 
 * [24 November 2022 TeleConf](https://www.w3.org/2022/11/24-miniapp-minutes.html)
