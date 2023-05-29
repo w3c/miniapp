@@ -102,7 +102,7 @@
             <td>
               See the <a href="https://www.w3.org/groups/wg/miniapps/charters">group status page</A> and <a href="#history">detailed change history</a>.
             </td>
-          </tr>		
+          </tr>
           <tr id="Duration">
             <th rowspan="1" colspan="1">
               End date
@@ -147,8 +147,8 @@
 
         <p>
           During the exploration phase, potential standard requirements have been identified due to the unique nature of MiniApp in comparison to the typical Web environment. Substantial research work and joint discussion with related W3C groups have been conducted to clarify the requirements and possible solutions for MiniApp standardization. For instance, the hosting platform may or may not be a browser, and the application construction may or may not be based on web resources. Therefore different but relevant technologies are used for UI configuration and rendering, resource packaging, and the API access to local system capabilities. Such cases have not been fully covered by existing Web standards such as <a href="https://github.com/WICG/webpackage">Web Packaging</a>, <a href="https://www.w3.org/TR/appmanifest/">Web App Manifest</a>, or Web APIs.
-        </p>        
-        <p>The MiniApps Working Group aims to harmonize the heterogeneous MiniApp ecosystem, enabling interoperability among the different MiniApp platforms, maximizing the convergence of MiniApps and the World Wide Web, reducing the development costs and facilitating the adoption of this technology.</p>    
+        </p>
+        <p>The MiniApps Working Group aims to harmonize the heterogeneous MiniApp ecosystem, enabling interoperability among the different MiniApp platforms, maximizing the convergence of MiniApps and the World Wide Web, reducing the development costs and facilitating the adoption of this technology.</p>
       </section>
       <section id="scope" class="scope">
         <h2>
@@ -156,7 +156,7 @@
         </h2>
     <p>The work will be based on the specifications incubated in the MiniApps Ecosystem Community Group for MiniApp features, which include the following:</p>
 <ol>
-    <li>Basic architecture and essential functions of MiniApp such as the Manifest, Packaging, Addressing, and Lifecycle, as indicated in the <a href="#deliverables">Deliverables</a> section; 
+    <li>Basic architecture and essential functions of MiniApp such as the Manifest, Packaging, Addressing, and Lifecycle, as indicated in the <a href="#deliverables">Deliverables</a> section;
     <li>MiniApp UI components (encapsulated reusable code for rendering a part of the UI), component-associated APIs, and a page layout template mechanism that would enhance the interoperability among different MiniApp platforms and the Web. Other components and APIs may be included by rechartering the WG scope as the incubation result from the MiniApp Community Group.
     <li>Coordination with other W3C efforts, especially security, privacy, accessibility, internationalization and other Webapp APIs including Progressive Web Apps, on the commonality of the Web.
 </ol>
@@ -182,87 +182,55 @@
           The Working Group will deliver the following W3C normative
           specifications:
         </p>
-<ul>
-  <li class='spec'>
+<dl>
+  <dt id='miniapp-addressing'>
     <a href='https://www.w3.org/TR/miniapp-addressing/'>MiniApp Addressing</a>
-  </li>
-  <ul>
-    <li>
+  </dt>
+  <dd>
+    <p>
       This specification defines how MiniApps are located, which is called MiniApp Addressing, including the specifications for specific MiniApp URI syntax components based on the URI specification, and the process to dereference the MiniApp URI. Implementing this specification enables the user agent to locate the resources of MiniApp.
-    </li>
-    <li>Latest publication: <a href='https://www.w3.org/TR/2022/DNOTE-miniapp-addressing-20220627/'>2022-06-27</a></li>
-    <li>Produced under Working Group Charter:
-      <a
-        href='https://www.w3.org/2021/01/miniapps-wg-charter.html'>https://www.w3.org/2021/01/miniapps-wg-charter.html</a>
-    </li>
-  </ul>
-  <li id='9978' class='spec'>
-    <a href='https://www.w3.org/TR/miniapp-manifest/' rel='versionof'>MiniApp Manifest</a>
-  </li>
-  <ul>
-    <li>
+    </p>
+    <p class="draft-status"><b>Draft state:</b> <a href="https://www.w3.org/TR/miniapp-addressing/">Group Draft Note</a></p>
+  </dd>
+  <dt id='miniapp-manifest'>
+    <a href='https://www.w3.org/TR/miniapp-manifest/'>MiniApp Manifest</a>
+  </dt>
+  <dd>
+    <p>
       This specification is a registry of supplementary members for the <a href="https://www.w3.org/TR/appmanifest/">Web Application Manifest</a> and the <a href="https://www.w3.org/TR/manifest-app-info/">Web App Manifest - Application Information</a> specifications that provide additional metadata to an application manifest to describe <a href="https://www.w3.org/TR/miniapp-packaging/#dfn-miniapp">MiniApps</a>. This JSON-based manifest file enables developers to set up basic information of a MiniApp, like identification, human-readable description, versioning data, and styling information. The MiniApp manifest also configures the routing of the pages and widgets that are part of a MiniApp.
-    </li>
-    <li>Latest publication: <a href='https://www.w3.org/TR/2022/WD-miniapp-manifest-20220701/'>2022-07-01</a></li>
-    <li>Exclusion Draft:
-      <a
-        href='https://www.w3.org/TR/2021/WD-miniapp-manifest-20210511/'>https://www.w3.org/TR/2021/WD-miniapp-manifest-20210511/</a>
-    </li>
-    <li>associated <a href='https://www.w3.org/mid/cfe-8013-d6e8c13c0de9e8972011f66c01d30813495f53dd@w3.org'> Call for
-        Exclusion</a>
-      on 2021-05-11
-      ended on 2021-10-08
-    </li>
-    <li>Produced under Working Group Charter:
-      <a
-        href='https://www.w3.org/2021/01/miniapps-wg-charter.html'>https://www.w3.org/2021/01/miniapps-wg-charter.html</a>
-    </li>
-  </ul>
-  <li id='10077' class='spec'>
-    <a href='https://www.w3.org/TR/miniapp-packaging/' rel='versionof'>MiniApp Packaging</a>
-  </li>
-  <ul>
-    <li>
+    </p>
+    <p class="draft-status"><b>Draft state:</b> <a href="https://www.w3.org/TR/miniapp-manifest/">Working Draft</a></p>
+    <p><b>Adopted Draft:</b> <a href='https://www.w3.org/TR/2022/WD-miniapp-manifest-20220701/'>2022-07-01</a></p>
+    <p><b>Exclusion Draft:</b> <a
+        href='https://www.w3.org/TR/2021/WD-miniapp-manifest-20210511/'>https://www.w3.org/TR/2021/WD-miniapp-manifest-20210511/</a></p>
+    <p><b>Exclusion Draft Charter:</b> <a
+      href='https://www.w3.org/2021/01/miniapps-wg-charter.html'>https://www.w3.org/2021/01/miniapps-wg-charter.html</a></p>
+  </dd>
+  <dt id='miniapp-packaging'>
+    <a href='https://www.w3.org/TR/miniapp-packaging/'>MiniApp Packaging</a>
+  </dt>
+  <dd>
+    <p>
       This specification defines semantics and conformance requirements for a <a href="https://www.w3.org/TR/miniapp-packaging/#dfn-package">MiniApp package</a>, and the structure of the single file container that holds the resources of a MiniApp, including a manifest file, static page templates, stylesheets, JavaScript documents, media files and other resources. Instances of the <a href="https://www.w3.org/TR/miniapp-packaging/#dfn-package">MiniApp package</a> are used for MiniApp distribution and execution on runtime environments (<a href="https://www.w3.org/TR/miniapp-packaging/#dfn-useragent">MiniApp user agent</a>).
-    </li>
-    <li>Latest publication: <a href='https://www.w3.org/TR/2022/WD-miniapp-packaging-20220729/'>2022-07-29</a></li>
-    <li>Exclusion Draft:
-      <a
-        href='https://www.w3.org/TR/2021/WD-miniapp-packaging-20211130/'>https://www.w3.org/TR/2021/WD-miniapp-packaging-20211130/</a>
-    </li>
-    <li>associated <a href='https://www.w3.org/mid/cfe-8919-cf15e06bcaf4d13617a5ff1705e406985fe66dd9@w3.org'> Call for
-        Exclusion</a>
-      on 2021-11-30
-      ended on 2022-04-29
-    </li>
-    <li>Produced under Working Group Charter:
-      <a
-        href='https://www.w3.org/2021/01/miniapps-wg-charter.html'>https://www.w3.org/2021/01/miniapps-wg-charter.html</a>
-    </li>
-  </ul>
-  <li id='10494' class='spec'>
-    <a href='https://www.w3.org/TR/miniapp-lifecycle/' rel='versionof'>MiniApp Lifecycle</a>
-  </li>
-  <ul>
-    <li>
+    </p>
+    <p class="draft-status"><b>Draft state:</b> <a href="https://www.w3.org/TR/miniapp-packaging/">Working Draft</a></p>
+    <p><b>Adopted Draft:</b> <a href='https://www.w3.org/TR/2022/WD-miniapp-packaging-20220729/'>2022-07-29</a></p>
+    <p><b>Exclusion Draft:</b> <a href='https://www.w3.org/TR/2021/WD-miniapp-packaging-20211130/'>https://www.w3.org/TR/2021/WD-miniapp-packaging-20211130/</a></p>
+    <p><b>Exclusion Draft Charter:</b> <a href='https://www.w3.org/2021/01/miniapps-wg-charter.html'>https://www.w3.org/2021/01/miniapps-wg-charter.html</a></p>
+  </dd>
+  <dt id='miniapp-lifecycle'>
+    <a href='https://www.w3.org/TR/miniapp-lifecycle/'>MiniApp Lifecycle</a>
+  </dt>
+  <dd>
+    <p>
       This specification defines the MiniApp lifecycle events and the process to manage MiniApp and each page's lifecycle. Implementing this specification enables the user agent to manage the lifecycle events of both the global application lifecycle and the page lifecycle.
-    </li>
-    <li>Latest publication: <a href='https://www.w3.org/TR/2022/WD-miniapp-lifecycle-20220927/'>2022-09-27</a></li>
-    <li>Exclusion Draft:
-      <a
-        href='https://www.w3.org/TR/2021/WD-miniapp-lifecycle-20210615/'>https://www.w3.org/TR/2021/WD-miniapp-lifecycle-20210615/</a>
-    </li>
-    <li>associated <a href='https://www.w3.org/mid/cfe-8208-bc71a2b6fbcd316f94df57f362881bca4c62f6f9@w3.org'> Call for
-        Exclusion</a>
-      on 2021-06-15
-      ended on 2021-11-12
-    </li>
-    <li>Produced under Working Group Charter:
-      <a
-        href='https://www.w3.org/2021/01/miniapps-wg-charter.html'>https://www.w3.org/2021/01/miniapps-wg-charter.html</a>
-    </li>
-  </ul>
-</ul>
+    </p>
+    <p class="draft-status"><b>Draft state:</b> <a href="https://www.w3.org/TR/miniapp-lifecycle/">Working Draft</a></p>
+    <p><b>Adopted Draft:</b> <a href='https://www.w3.org/TR/2021/WD-miniapp-lifecycle-20210615/'>https://www.w3.org/TR/2021/WD-miniapp-lifecycle-20210615/</a></p>
+    <p><b>Exclusion Draft:</b> <a href='https://www.w3.org/TR/2021/WD-miniapp-packaging-20211130/'>https://www.w3.org/TR/2021/WD-miniapp-packaging-20211130/</a></p>
+    <p><b>Exclusion Draft Charter:</b> <a href='https://www.w3.org/2021/01/miniapps-wg-charter.html'>https://www.w3.org/2021/01/miniapps-wg-charter.html</a></p>
+  </dd>
+</dl>
 
         <h3 id="add-new">
           New Recommendation-track deliverables
@@ -279,24 +247,24 @@
         <ul>
           <li id="9977" class="spec">
             <a href="https://www.w3.org/TR/mini-app-white-paper/" rel="versionof">MiniApp Standardization White Paper</a>
-          </li>
           <ul>
             <li>Latest publication: <a href="https://www.w3.org/TR/2022/DNOTE-mini-app-white-paper-20220701/">2022-07-01</a>
             </li>
           </ul>
-          <li id="9656" class="spec">
+        </li>
+        <li id="9656" class="spec">
             <a href="https://www.w3.org/TR/miniapp-widget-req/" rel="versionof">MiniApp Widget Requirements</a>
-          </li>
           <ul>
             <li>Latest publication: <a href="https://www.w3.org/TR/2022/NOTE-miniapp-widget-req-20220424/">2022-04-24</a></li>
           </ul>
-          <li class="spec">
+        </li>
+        <li class="spec">
             <a href="https://w3c.github.io/miniapp-components/">MiniApp Components</a>
-          </li>
           <ul>
             <li>Draft state: <a href="https://w3c.github.io/miniapp-components/">In progress in MiniApps CG</a></li>
           </ul>
-        </ul>
+        </li>
+       </ul>
         <h3>
           Timeline
         </h3>
@@ -403,22 +371,28 @@
         <h2>
           Success Criteria
         </h2>
-        <p>
-          To advance to Proposed Recommendation, each specification must have two independent implementations of all defined features.
-        </p>
-        <p>
-          Comprehensive test suites will be developed for each specification to ensure interoperability, and the group will create interoperability reports. The group will also maintain errata as required for the continued relevance and usefulness of the specifications it produces.
-        </p>
-        <p>
-          Each specification must contain a section on accessibility that describes the benefits and impacts, including ways specification features can be used to address them, and recommendations for maximizing accessibility in implementations.
-        </p>
-        <p>
-          Each specification must detail all known security and privacy implications for implementers, Web authors, and end users.
-        </p>
-        <p>
-          APIs shall be demonstrated to be implementable securely before released.
-        </p>
-      </section>
+        <!-- Testing and interop -->
+	  <p>In order to advance to <a href="https://www.w3.org/Consortium/Process/#RecsPR" title="Proposed Recommendation">Proposed Recommendation</a>, each normative specification is expected to have <a href="https://www.w3.org/Consortium/Process/#implementation-experience">at least two independent interoperable implementations</a> of every feature defined in the specification, where interoperability can be verified by passing open test suites, and two or more implementations interoperating with each other. In order to advance to Proposed Recommendation, each normative specification must have an open test suite of every feature defined in the specification.</p>
+
+	  <p>There should be testing plans for each specification, starting from the earliest drafts.</p>
+
+    <p> To promote interoperability, all changes made to specifications in Candidate Recommendation or to features that have deployed implementations should have tests.</p>
+
+    <!-- Horizontal review -->
+    <p>Each specification should contain sections detailing all known security and privacy implications for implementers, Web authors, and end users.</p>
+	  <p>Each specification should contain a section on accessibility that describes the benefits and impacts, including ways specification features can be used to address them, and
+		recommendations for maximising accessibility in implementations.</p>
+
+    <!-- Design principles -->
+    <p>This Working Group expects to follow the
+    TAG <a href="https://www.w3.org/TR/design-principles/">Web Platform Design Principles</a>.
+    </p>
+
+    <p>
+      APIs shall be demonstrated to be implementable securely before released.
+    </p>
+    </section>
+
       <section id="coordination" class="dependencies">
         <h2>
           Coordination
@@ -429,7 +403,7 @@
         <p>
           For all specifications, this Working Group will seek <a href=
           "https://www.w3.org/Guide/process/charter.html#horizontal-review">horizontal
-          review</a> for accessibility, internationalization, performance,
+          review</a> for accessibility, internationalization,
           privacy, and security with the relevant Working and Interest Groups,
           and with the <a href="https://www.w3.org/2001/tag/" title=
           "Technical Architecture Group">TAG</a>. The WG will seek input into accessibility user requirements.
@@ -735,24 +709,22 @@
       </section>
     </main>
 
-        <hr>
 
-        <footer>
-        <address>
-          <a href="mailto:xfq@w3.org">Fuqiao Xue</a>
-        </address>
-      <p class="copyright">
-        <a rel="license" href=
-        "https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>©
-        2023 <a href="https://www.w3.org/"><abbr title=
-        "World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href=
-        "https://www.csail.mit.edu/"><abbr title=
-        "Massachusetts Institute of Technology">MIT</abbr></a>, <a href=
-        "https://www.ercim.eu/"><abbr title=
-        "European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
-        <a href="https://www.keio.ac.jp/">Keio</a>, <a href=
-        "https://ev.buaa.edu.cn/">Beihang</a>), All Rights Reserved.
-      </p>
-    </footer>
+    <hr>
+<footer>
+  <address>
+    <a href="mailto:xfq@w3.org">Fuqiao Xue</a>
+  </address>
+
+  <p class="copyright">Copyright © 2023 <a href="https://www.w3.org/">World Wide Web Consortium</a>.<br>
+    <abbr title="World Wide Web Consortium">W3C</abbr><sup>®</sup>
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+    <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document"
+      title="W3C Software and Document Notice and License">permissive document license</a> rules apply.
+  </p>
+  <hr>
+  <p><a href="https://github.com/w3c/miniapp/blob/main/charters/wg-2023.html">Yes, it's on GitHub!</a></p>
+</footer>
   </body>
 </html>
