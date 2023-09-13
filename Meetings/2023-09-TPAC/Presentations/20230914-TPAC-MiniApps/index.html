@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+ <head>
+  <meta charset=UTF-8>
+  <meta content="width=device-width" name="viewport">
+  <title>MiniApps WG - F2F meeting</title>
+  <link rel="stylesheet" href="../Templates/slides.css">
+  <!-- To use the b6+ framework, include this: -->
+  <script src="../Templates/b6plus.js"></script>
+  <!-- To use the Shower framework, remove b6plus above and add these two: -->
+  <!--   <script src="../Templates/shower.js"></script>         -->
+  <!--   <script src="../Templates/iframe-fixup.js"></script>   -->
+ </head>
+ <body class="shower slide-up duration=105">
+
+
+  <!--=============================================================
+			    Example slides
+  ==============================================================-->
+
+  <!-- Remove this element if you don't want a progress bar: -->
+  <div class=progress></div>
+
+  <!-- Remove this element if you don't want the remaining time in
+       index mode and on the 2nd screen. If you keep it, you may want
+       to add the class "duration=n" on BODY, where n is the initial
+       number of minutes on the clock. Default is 30. -->
+  <div class=clock></div>
+
+  <!-- Alternative: Show also real time and elapsed time. -->
+  <!-- <div class=fullclock></div> -->
+
+  <!-- What a screen reader should say on leaving slide mode,
+       instead of the default ‘Stopped.’ -->
+  <div role=region aria-live=assertive>
+    Leaving presentation mode.
+  </div>
+
+  <section class="slide cover clear" id="start">
+   <h1>MiniApps <abbr title="Working Group">WG</abbr> <abbr title="Face To Face">F2F</abbr> meeting</h1>
+   <address>Martin Alvarez-Espinar</address>
+   <p>★ W3C TPAC 2023, Seville, 14 September ★</p>
+  </section>
+
+  <section class="slide" id="agenda">
+   <h2>Agenda</h2>
+   <ol>
+    <li>Welcome and administrivia</li>
+    <li>Current status of MiniApp specs</li>
+	<li>Implementation and testing of MiniApp specs</li>
+    <li>WG re-chartering</li>
+	<li>Open discussion on the direction of MiniApps</li>
+   </ol>
+  </section>
+  
+  
+  <section class="slide" id="welcome">
+   <h2>Welcome and administrivia</h2>
+   <ul>
+    <li>Scribe volunteer(s)?</li>
+    <li>Reminder: <a href="https://www.w3.org/Consortium/cepc/">W3C Code of Ethics and Professional Conduct</a></li>
+	<li>IRC Channel: #miniapp (<a href="https://irc.w3.org/?channels=%23miniapp">https://irc.w3.org/?channels=%23miniapp</a>) </li>
+	<li><code>q+</code> or raise hand for questions.</li>
+   </ul>
+  </section>
+  
+  <section class="slide" id="agenda-2">
+   <h2>Agenda</h2>
+   <ol>
+    <li>Welcome and administrivia</li>
+    <li><em>Current status of MiniApp specs</em></li>
+	<li>Implementation and testing of MiniApp specs</li>
+    <li>WG re-chartering</li>
+	<li>Open discussion on the direction of MiniApps</li>
+   </ol>
+  </section>
+  
+  <section class="slide black" id="roadmap">
+   <h2>MiniApp Activities</h2>
+   <img width=500 height=667
+	src="./img/roadmap.png"
+	alt="MiniApp WG Roadmap"
+	class="fit">
+  </section>
+  
+  <section class="slide" id="specs-manifest">
+   <h2>MiniApp Manifest</h2>
+   <p>To <strong>describe</strong> a MiniApp</p>
+   <ul>
+	<li><strong>Based on Web App Manifest</strong> (<code>extends</code>)</li>
+	<li>Information for user agents (super-app, OS) and publishers (icons, descriptions, versions…)</li>
+	<li>Runtime configuration (themes, colors, orientation…)</li>
+   </ul>
+   <h3>Status: <abbr title="Working Draft">WD</abbr></h3>
+   <ul>
+   	<li>Spec: <a href="https://www.w3.org/TR/miniapp-manifest/">https://www.w3.org/TR/miniapp-manifest/</a></li>
+	<li>Repo: <a href="https://github.com/w3c/miniapp-manifest">https://github.com/w3c/miniapp-manifest</a></li>  
+   </ul>
+  </section>
+
+  <section class="slide" id="manifest-open-i18n">
+   <h2>Manifest: Open Issues</h2>
+   <h3>Internationalization</h3>
+   <p class="note">Currently, MiniApps apply text localization techniques during the compilation stage</p>
+   <p>We must distribute texts in different languages and localize color schemes, icons, and images (good for marketplaces).</p>
+   <p>Expected <em>alignment with Web App Manifest</em></p>
+  </section>
+
+  <section class="slide" id="manifest-open-csp">
+   <h2>Manifest: Open Issues</h2>
+   <h3>Content Secure Policy to guarantee security in MiniApps</h3>
+   <p class="note">Currently, the standard CSP directives enable restricting the origin of resources through HTTP headers like default-src, connect-src, img-src, script-src, or font-src</p>
+   <ul>
+	<li>The system caches the MiniApp, and user agents do not always have access to HTTP headers.</li>
+	<li>We need to guarantee security and avoid content and scripts from non-trusted origins.</li>
+   </ul>
+  </section>
+
+  <section class="slide" id="manifest-open-csp-code">
+   <h2>Manifest: Open Issues</h2>
+   <h3>Content Secure Policy</h3>
+   <pre>{  
+  "name": “My App", ...
+  "content-security-policy" : 
+    {
+      "default-src": 
+         [ 
+           "trusted1.example.org", 
+           "trusted2.example.org" 
+         ], 
+    }
+}
+   </pre>
+   <p class="note"><a href="https://github.com/w3c/miniapp-manifest/issues/42">Proposal</a></p> 
+  </section>
+
+  <section class="slide" id="manifest-open-issues">
+   <h2>Manifest: Summary of Open Issues</h2>
+   <ul>
+	<li>Internationalization (<code>lang</code>, <code>dir</code>, <code>string</code>) <a href="https://github.com/w3c/miniapp-manifest/issues/4">#4</a></li>
+	<li>Alignment with <code>req_permissions</code> (<abbr title="Isolated Web Apps">IWA</abbr>'s <code>permissions_policy</code>) <a href="https://github.com/w3c/miniapp-manifest/issues/57">#57</a> </li>
+	<li>Content Security Policy <a href="https://github.com/w3c/miniapp-manifest/issues/42">#42</a></li>
+	<li>Alignment of <code>app_id</code> and Web App's <code>id</code> <a href="https://github.com/w3c/miniapp-manifest/issues/43">#43</a></li>
+   </ul>
+  </section>
+
+  <section class="slide" id="specs-lifecycle">
+   <h2>MiniApp Lifecycle</h2>
+   <p>Specific <strong>events</strong> and an interface for the MiniApp object and its pages</p>
+   <h3>MiniApp lifecycle:</h3>
+   <p><code>launched</code>, <code>shown</code>, <code>hidden</code>, <code>error</code>…</p>
+   <h3>Page lifecycle:</h3>
+   <p><code>loaded</code>, <code>ready</code>, <code>shown</code>, <code>hidden</code>, <code>unloaded</code></p>
+   <h3>Status: <abbr title="Working Draft">WD</abbr></h3>
+   <ul>
+   	<li>Spec: <a href="https://www.w3.org/TR/miniapp-lifecycle/">https://www.w3.org/TR/miniapp-lifecycle/</a></li>
+	<li>Repo: <a href="https://github.com/w3c/miniapp-lifecycle">https://github.com/w3c/miniapp-lifecycle</a></li>  
+   </ul>
+  </section>
+
+  <section class="slide" id="specs-addressing">
+   <h2>MiniApp Addressing</h2>
+   <h3>URIs for MiniApps</h3>   
+   <p class="note"><code>platform://miniapp/foo;version=1.0.1/pages/index?k=v#bar</code></p>
+   <p class="note"><code>https://platform.org/miniapp/foo;version=1.0.1/pages/index?k=v#bar</code></p>
+   <h3>Status: Group Draft Note</h3>
+   <ul>
+   	<li>Spec: <a href="https://www.w3.org/TR/miniapp-addressing/">https://www.w3.org/TR/miniapp-addressing/</a></li>
+	<li>Repo: <a href="https://github.com/w3c/miniapp-addressing">https://github.com/w3c/miniapp-addressing</a></li>  
+   </ul>
+  </section>
+
+  <section class="slide" id="specs-widgets">
+   <h2>MiniApp Widgets Requirements</h2>
+   <p>Scenarios and requirements for MiniApp Widgets (particular MiniApp pages)</p>
+   <p>Placed in a specific area of a device</p>
+   <h3>Status: Group Note</h3>
+   <ul>
+   	<li>Spec: <a href="https://www.w3.org/TR/miniapp-widget-req/">https://www.w3.org/TR/miniapp-widget-req/</a></li>
+	<li>Repo: <a href="https://github.com/w3c/miniapp-widget-req">https://github.com/w3c/miniapp-widget-req</a></li>  
+   </ul>
+  </section>
+
+  <section class="slide" id="specs-packaging">
+   <h2>MiniApp Packaging</h2>
+   <p>Logical and physical <strong>structure</strong> of a MiniApp</p>
+   <ul>
+	<li>Pages, components, styles,… </li>
+	<li>Packaging system, files, directories…</li>
+	<li>Digital signatures (developers, publishers…)</li>
+   </ul>
+   <h3>Status: <abbr title="Working Draft">WD</abbr></h3>
+   <ul>
+   	<li>Spec: <a href="https://www.w3.org/TR/miniapp-packaging/">https://www.w3.org/TR/miniapp-packaging/</a></li>
+	<li>Repo: <a href="https://github.com/w3c/miniapp-packaging">https://github.com/w3c/miniapp-packaging</a></li>  
+   </ul>
+  </section>
+
+  <section class="slide side right big" id="packaging-image">
+   <h2>Types of Resources</h2>
+   <img class="side" width=498 height=700
+	src="https://w3c.github.io/miniapp-packaging/images/miniapp-pages-components.svg"
+	alt="Breakout of components in miniapp package">
+   <p>Pages & Components</p>
+   <ul>
+	<li><strong>HTML</strong>: based on templates</li>
+	<li><strong>JS</strong>: ECMAScript profile</li>
+	<li><strong>CSS</strong>: CSS profiles</li>
+	<li>Resources for <strong>i18n</strong></li>
+   </ul>
+   <p><em>Based on Web Components</em>.</p>
+  </section>
+
+  <section class="slide side r" id="packaging-filesystem">
+   <h2>Packaging: File System</h2>
+   <img class="side" width=498 height=700
+	src="./img/filesystem.png"
+	alt="Filesystem structure of a miniapp package">
+   <ul>
+	<li>manifest.json</li>
+	<li>app.js, app.css</li>
+	<li>pages/</li>
+	<li>common/</li>
+	<li>i18n/</li>
+   </ul>
+  </section>
+
+  <section class="slide" id="packaging-open-issues">
+   <h2>Packaging: Summary of Open Issues</h2>
+   <ul>
+	<li>Sub-resources (<a href="https://github.com/w3c/miniapp-manifest/issues/19">manifest#19</a>), Streaming (<a href="https://github.com/w3c/miniapp-packaging/issues/42">#42</a>)</li>	
+   </ul>
+   <h3>TAG's Review</h3>
+   <ul>
+	<li>Preservation of the origin model</li>
+	<li>Secure context</li>
+	<li>Efficiency of ZIP container</li>
+   </ul>
+   <p class="note"><a href="https://github.com/w3c/miniapp/issues/195#issuecomment-1525435423">Proposal of solution</a>.</p>
+  </section>
+
+  <section class="slide" id="agenda-12">
+   <h2>Agenda</h2>
+   <ol>
+    <li>Welcome and administrivia</li>
+    <li>Current status of MiniApp specs</li>
+	<li><em>Implementation and testing of MiniApp specs</em></li>
+    <li>WG re-chartering</li>
+	<li>Open discussion on the direction of MiniApps</li>
+   </ol>
+  </section>
+
+  <section class="slide" id="testing">
+   <h2>Testing Specs</h2>
+   <p>Process and tools ready to be used</p>
+   <p class="note"><a href="https://github.com/w3c/miniapp-tests">https://github.com/w3c/miniapp-tests</a></p>
+  </section>
+
+  <section class="slide" id="implementations">
+   <h2>Implementations</h2>
+   <p class="shout">Status?</p>
+  </section>
+
+  <section class="slide" id="agenda-3">
+   <h2>Agenda</h2>
+   <ol>
+    <li>Welcome and administrivia</li>
+    <li>Current status of MiniApp specs</li>
+	<li>Implementation and testing of MiniApp specs</li>
+    <li><em>WG re-chartering</em></li>
+	<li>Open discussion on the direction of MiniApps</li>
+   </ol>
+  </section>
+
+  <section class="slide" id="recharter">
+   <h2>MiniApp WG Re-Charter</h2>
+   <ul>
+	<li><a href="https://www.w3.org/2002/09/wbs/33280/MiniApps-recharter/">https://www.w3.org/2002/09/wbs/33280/MiniApps-recharter/</a></li>
+	<li><a href="https://www.w3.org/2002/09/wbs/33280/MiniApps-recharter/results">Results</a></li>
+	<li>(Controversial :) <a href="https://w3c.github.io/miniapp-components/">MiniApp Components</a></li>
+   </ul>
+  </section>
+
+  <section class="slide" id="agenda-5">
+   <h2>Agenda</h2>
+   <ol>
+    <li>Welcome and administrivia</li>
+    <li>Current status of MiniApp specs</li>
+	<li>Implementation and testing of MiniApp specs</li>
+    <li>WG re-chartering</li>
+	<li><em>Open discussion on the direction of MiniApps</em></li>
+   </ol>
+  </section>
+  
+  <section class="slide" id="aob">
+   <h2>Open discussion</h2>
+   <ul>
+    <li>Implementations?</li>
+    <li><a href="https://github.com/WICG/isolated-web-apps/">Isolated Web Apps?</a></li>
+	<li>...</li>
+   </ul>
+  </section>
+  
+  
+  <footer class="long comment">
+   <address>Created 31 July 2023 by <a
+   href="mailto:bert@w3.org">Bert Bos</a>.
+   Last modified
+   $Date: 2023/08/30 13:07:27 $ by $Author: bbos $.</address>
+  </footer>
+ </body>
+</html>
