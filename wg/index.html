@@ -162,10 +162,8 @@
 
 
   <script type="module">
-    import { fetchGroup, setW3CKey } from 'https://w3c.github.io/gargantua/w3c.js';
+    import { fetchGroup } from 'https://w3c.github.io/gargantua/w3c.js';
     import jsonrender from 'https://w3c.github.io/gargantua/jsonrender.js';
-
-    setW3CKey(document.documentElement.getAttribute("data-apiary-key"));
 
     let gid = document.documentElement.getAttribute("data-gid");
 
