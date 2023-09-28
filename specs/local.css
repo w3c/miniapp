@@ -82,12 +82,6 @@ code {
   color: #a52a2a;
 }
 
-.uname {
-  text-transform: uppercase;
-  font-size: 85%;
-  letter-spacing: 0.03em;
-}
-
 #langSwitch {
   position: fixed;
   top: -14px;
