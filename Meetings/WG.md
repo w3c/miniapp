@@ -4,6 +4,7 @@ This document contains links to meeting minutes of the WG.
 
 ## 2023
 
+* [19 October 2023 TeleConf](https://www.w3.org/2023/10/19-miniapp-minutes.html)
 * [14 September 2023 in TPAC](https://www.w3.org/2023/09/14-miniapp-minutes.html)
 * [24 August 2023 TeleConf](https://www.w3.org/2023/08/24-miniapp-minutes.html)
 * [13 July 2023 TeleConf](https://www.w3.org/2023/07/13-miniapp-minutes.html)
