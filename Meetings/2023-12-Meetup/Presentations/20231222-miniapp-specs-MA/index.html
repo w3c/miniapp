@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+ <head>
+  <meta charset=UTF-8>
+  <meta content="width=device-width" name="viewport">
+  <title>Industry Meetup: W3C MiniApps Standardization and Implementation</title>
+  <link rel="stylesheet" href="slides.css">
+  <!-- To use the b6+ framework, include this: -->
+  <script src="../Templates/b6plus.js"></script>
+  <!-- To use the Shower framework, remove b6plus above and add these two: -->
+  <!--   <script src="../Templates/shower.js"></script>         -->
+  <!--   <script src="../Templates/iframe-fixup.js"></script>   -->
+ </head>
+ <body class="shower slide-up duration=105">
+
+
+  <!--=============================================================
+			    Example slides
+  ==============================================================-->
+
+  <!-- Remove this element if you don't want a progress bar: -->
+  <div class=progress></div>
+
+  <!-- Remove this element if you don't want the remaining time in
+       index mode and on the 2nd screen. If you keep it, you may want
+       to add the class "duration=n" on BODY, where n is the initial
+       number of minutes on the clock. Default is 30. -->
+  <div class=clock></div>
+
+  <!-- Alternative: Show also real time and elapsed time. -->
+  <!-- <div class=fullclock></div> -->
+
+  <!-- What a screen reader should say on leaving slide mode,
+       instead of the default ‘Stopped.’ -->
+  <div role=region aria-live=assertive>
+    Leaving presentation mode.
+  </div>
+
+  <section class="slide cover clear" id="start">
+   <h1>MiniApp Packaging, Manifest, and MiniApp Components</h1>
+   <h3>Industry Meetup: W3C MiniApps Standardization and Implementation</h3>
+   <address>Martin Alvarez-Espinar</address>
+   <p>Vision Hotel, Beijing (CN) - 22 <abbr title="December">Dec</abbr> 2023</p>
+  </section>
+
+  <section class="slide" id="agenda">
+   <h2>Contents</h2>
+   <p>Progress and Next-Steps of:</p>
+   <ol>
+    <li>MiniApp Packaging</li>
+    <li>MiniApp Manifest</li>
+	<li>Incubation of MiniApp Components</li>
+   </ol>
+  </section>
+  
+  <section class="slide" id="agenda-2">
+   <h2>Contents</h2>
+   <p>Progress and Next-Steps of:</p>
+   <ol>
+    <li><em>MiniApp Packaging</em></li>
+    <li>MiniApp Manifest</li>
+	<li>Incubation of MiniApp Components</li>
+   </ol>
+  </section>
+
+
+  <section class="slide" id="specs-packaging">
+   <h2>MiniApp Packaging</h2>
+   <p>Describes the logical and physical <strong>structure</strong> of a MiniApp</p>
+   <ul>
+	<li>Pages, components, styles,… </li>
+	<li>Packaging format, file-system, directories…</li>
+	<li>Digital signatures (for developer, publishers, others…)</li>
+   </ul>
+   <h3>Status: <abbr title="Working Draft">WD</abbr></h3>
+   <ul>
+   	<li>Spec: <a href="https://www.w3.org/TR/miniapp-packaging/">https://www.w3.org/TR/miniapp-packaging/</a></li>
+	<li>Repo: <a href="https://github.com/w3c/miniapp-packaging">https://github.com/w3c/miniapp-packaging</a></li>  
+   </ul>
+  </section>
+
+  <section class="slide side right big" id="packaging-image">
+   <h2>Types of Resources</h2>
+   <img class="side" width=498 height=700
+	src="https://w3c.github.io/miniapp-packaging/images/miniapp-pages-components.svg"
+	alt="Breakout of components in miniapp package">
+   <p>Pages &amp; Components</p>
+   <ul>
+	<li><strong>HTML</strong>: based on templates</li>
+	<li><strong>JS</strong>: ECMAScript profile</li>
+	<li><strong>CSS</strong>: CSS profile</li>
+	<li>Resources for <strong>i18n</strong></li>
+   </ul>
+   <p><em>Based on Web Components</em></p>
+  </section>
+
+  <section class="slide side r" id="packaging-filesystem">
+   <h2>File System</h2>
+   <img class="side" width=498 height=700
+	src="./img/filesystem.png"
+	alt="Filesystem structure of a miniapp package">
+   <p>Homogeneous structure:</p>
+   <ul>
+	<li><code>manifest.json</code>: metadata, setup</li>
+	<li><code>app.js</code>, <code>app.css</code>: global logic, styles</li>
+	<li><code>pages/</code>: page resources</li>
+	<li><code>common/</code>: shared media, script resources </li>
+	<li><code>i18n/</code>: localization of content</li>
+   </ul>
+  </section>
+
+  <section class="slide" id="packaging-open-issues">
+   <h2>Packaging: Open Issues</h2>
+   <h3>Security and efficiency concerns (TAG's Review):</h3>
+   <ol>
+	  <li>Preservation of the origin model
+      <ul>
+        <li>UA <code>SHOULD</code> use SSL/TSL for distribution</li>
+        <li>UA <code>SHOULD</code> keep track of the origin (save it in manifest?)</li>
+      </ul>
+	  </li>
+    <li>Secure context (integrity of the package)
+        <ul>
+          <li>Package <code>SHOULD</code> be hashed (integrity); </li>
+          <li>and <code>SHOULD</code> be signed (e.g, developer + distributor)</li>
+        </ul>    
+    </li>
+  	<li>Efficiency of ZIP container</li>
+   </ol>
+   <p class="note"><a href="https://github.com/w3c/miniapp-packaging/issues/64#issuecomment-1818561549">Ongoing discussion</a>.</p>
+  </section>
+
+  <section class="slide" id="agenda-3">
+   <h2>Contents</h2>
+   <p>Progress and Next-Steps of:</p>
+   <ol>
+    <li>MiniApp Packaging</li>
+    <li><em>MiniApp Manifest</em></li>
+	<li>Incubation of MiniApp Components</li>
+   </ol>
+  </section>
+
+  <section class="slide" id="specs-manifest">
+   <h2>MiniApp Manifest</h2>
+   <p>JSON document to <strong>describe</strong> a MiniApp</p>
+   <ul>
+	<li><strong>Based on Web App Manifest</strong> (<code>extends</code>)</li>
+	<li><strong>15 attributes</strong> with information for user agents (super-app, <abbr title="Operating System">OS</abbr>) and publishers (icons, descriptions, versions…)</li>
+	<li>Runtime configuration (themes, colors, orientation…)</li>
+   </ul>
+   <h3>Status: <abbr title="Working Draft">WD</abbr></h3>
+   <ul>
+   	<li>Spec: <a href="https://www.w3.org/TR/miniapp-manifest/">https://www.w3.org/TR/miniapp-manifest/</a></li>
+	<li>Repo: <a href="https://github.com/w3c/miniapp-manifest">https://github.com/w3c/miniapp-manifest</a></li>  
+   </ul>
+  </section>
+
+  <section class="slide" id="manifest-open-i18n">
+   <h2>Manifest Next: Internationalization</h2>
+   <h3>Localization of manifest members</h3>
+   <p class="note">Currently, MiniApps apply text localization techniques during the compilation stage</p>
+   <p>We must distribute texts in different languages and localize color schemes, icons, and images (good for marketplaces).</p>
+   <p>Expected <em>alignment with Web App Manifest</em> (<a href="https://github.com/w3c/manifest/pull/1101">working draft</a>)</p>
+  </section>
+
+  <section class="slide" id="manifest-open-csp">
+   <h2>Manifest Next: Content Security Policy (<abbr title="Content Security Policy">CSP</abbr>)</h2>
+   <h3>Increase security and integrity of MiniApps</h3>
+   <p class="note">Currently, the <a href="https://w3c.github.io/webappsec-csp/#csp-directives">standard CSP directives</a> enable restricting the origin of resources through HTTP headers like <code>default-src</code>, <code>connect-src</code>, <code>img-src</code>, <code>script-src</code>, or <code>font-src</code></p>
+   <ul>
+	<li>The system caches the MiniApp, and user agents do not always have access to HTTP headers.</li>
+	<li>We need to guarantee security and avoid content and scripts from non-trusted origins.</li>
+   </ul>
+  </section>
+
+  <section class="slide" id="manifest-open-csp-code">
+    <h2>Manifest Next: <abbr>CSP</abbr></h2>
+   <pre>"content-security-policy" : 
+    {
+      "default-src": 
+        [ 
+          "trusted1.example.org", 
+          "trusted2.example.org" 
+        ], 
+      "origin": "superapp-store.example.org" 
+    }
+   </pre>
+   <p class="note"><a href="https://github.com/w3c/miniapp-manifest/issues/42">Open discussion</a></p> 
+  </section>
+
+  <section class="slide" id="manifest-open-issues">
+   <h2>Manifest: Open Issues</h2>
+   <ul>
+	<li>Internationalization (<code>lang</code>, <code>dir</code>, <code>string</code>) <a href="https://github.com/w3c/miniapp-manifest/issues/4">#4</a></li>
+	<li>Alignment with <code>req_permissions</code> (<abbr title="Isolated Web Apps">IWA</abbr>'s <code>permissions_policy</code>) <a href="https://github.com/w3c/miniapp-manifest/issues/57">#57</a> </li>
+	<li>Content Security Policy (i.e., origin and trusted sources) <a href="https://github.com/w3c/miniapp-manifest/issues/42">#42</a></li>
+	<li>Alignment of <code>app_id</code> and Web App's <code>id</code> <a href="https://github.com/w3c/miniapp-manifest/issues/43">#43</a></li>
+   </ul>
+  </section>
+
+  <section class="slide" id="agenda-4">
+   <h2>Contents</h2>
+   <p>Progress and Next-Steps of:</p>
+   <ol>
+    <li>MiniApp Packaging</li>
+    <li>MiniApp Manifest</li>
+	<li><em>Incubation of MiniApp Components</em></li>
+   </ol>
+  </section>
+
+  <section class="slide" id="specs-components">
+   <h2>MiniApp Components</h2>
+   <p>To MiniApp Pages (based on different MiniApp implementations)</p>
+   <ul>
+	<li>How to declare, reuse, access components</li>
+    <li>Templating, content interpolation, styling, scripting...</li> 
+    <li><em>Built-in components</em> (i.e., <code>&lt;image&gt;</code>, <code>&lt;ad&gt;</code>, <code>&lt;map&gt;</code>)</li>
+   </ul>
+   <h3>Status: Draft Community Group Report</h3>
+   <ul>
+   	<li>Spec: <a href="https://w3c.github.io/miniapp-components/">https://w3c.github.io/miniapp-components/</a></li>
+	<li>Repo: <a href="https://github.com/w3c/miniapp-components/">https://github.com/w3c/miniapp-components/</a></li>  
+   </ul>
+  </section>
+  
+  <section class="slide" id="final">
+   <h2>Thank you!</h2>
+   <p class="shout">Questions?</p>
+   <hr>
+   <ul>
+    <li>Martin Alvarez-Espinar (<a href="mailto:martin.alvarez.espinar@huawei.com">martin.alvarez.espinar@huawei.com</a>)</li>
+	  <li><a href="https://w3c.github.io/miniapp-tests/contributing">Guide for contributors</a></li>
+   </ul>
+  </section>
+
+  <footer class="long comment">
+   <address>Created on 21 Dec by <a
+   href="mailto:martin.alvarez.espinar@huawei.com">Martin Alvarez-Espinar</a>.
+   </address>
+  </footer>
+ </body>
+</html>
