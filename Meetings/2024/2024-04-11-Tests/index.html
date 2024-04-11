@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+ <head>
+  <meta charset=UTF-8>
+  <meta content="width=device-width" name="viewport">
+  <title>MiniApp Testing - WG Meeting 11 Apr</title>
+  <link rel="stylesheet" href="slides.css">
+  <!-- To use the b6+ framework, include this: -->
+  <script src="../Templates/b6plus.js"></script>
+  <!-- To use the Shower framework, remove b6plus above and add these two: -->
+  <!--   <script src="../Templates/shower.js"></script>         -->
+  <!--   <script src="../Templates/iframe-fixup.js"></script>   -->
+ </head>
+ <body class="shower slide-up duration=105">
+
+
+  <!--=============================================================
+			    Example slides
+  ==============================================================-->
+
+  <!-- Remove this element if you don't want a progress bar: -->
+  <div class=progress></div>
+
+  <!-- Remove this element if you don't want the remaining time in
+       index mode and on the 2nd screen. If you keep it, you may want
+       to add the class "duration=n" on BODY, where n is the initial
+       number of minutes on the clock. Default is 30. -->
+  <div class=clock></div>
+
+  <!-- Alternative: Show also real time and elapsed time. -->
+  <!-- <div class=fullclock></div> -->
+
+  <!-- What a screen reader should say on leaving slide mode,
+       instead of the default ‘Stopped.’ -->
+  <div role=region aria-live=assertive>
+    Leaving presentation mode.
+  </div>
+
+  <section class="slide cover clear" id="start">
+   <h1>MiniApp Testing</h1>
+   <h3>MiniApps WG Meeting 11 Apr</h3>
+   <address>Martin Alvarez-Espinar</address>
+  </section>
+
+  <section class="slide side left" id="components">
+   <h2>Resources?</h2>
+   <ul>
+     <li><code>home.css</code>: CSS profile ✅</li>
+     <li><code>.js</code>
+      <ul>
+        <li>Standard ECMAScript (e.g., <code>import...</code>) ✅</li>
+        <li>Limited execution (e.g., <code>eval()</code>) ✅</li>
+        <li>DOM access? <small>(e.g., <code>.getElementById()</code>, <code>document</code>, event handlers)</small> ⚠️</li>
+      </ul>
+     <li><code>.html</code> ❓️️️ ⚠️
+     <ul>
+       <li>Standard HTML (element subset?) ✅</li>
+       <li>New HTML/DOM spec ❓</li>
+     </ul>
+     </li>
+   </ul>
+   <figure class="side" >
+      <img src="img/directory.png" alt="Structure of a miniapp directory" width="100"/>
+      <figcaption><small><a href="https://github.com/w3c/miniapp-tests/tree/main/tests/pkg-css-global-support">Structure of a MiniApp</a></small></figcaption>
+   </figure>
+  </section>
+
+  <section class="slide" id="why">
+   <h2>Why testing (specifications)?</h2>
+   <h3>Testing every feature in each specification as soon as possible</h3>
+   <blockquote cite="https://www.w3.org/2023/10/miniapps-wg-charter.html#success-criteria">
+    <h4>Success Criteria</h4>
+     <p>[...] In order to advance to Proposed Recommendation, <em>each normative specification must have an open test suite of every feature</em> defined in the specification.</p>
+     <p>There should be testing plans for each specification, <em>starting from the earliest drafts</em>.</p>
+    <footer>Extracted from the <cite>MiniApp WG Charter</cite></footer>
+   </blockquote>
+  </section>
+
+  <section class="slide side right big" id="test-structure">
+   <h2>Metadata of a test</h2>
+   <figure class="side" >
+    <img src="img/tests-web.png" alt="Screenshot of the test suite description" width=450 />
+    <figcaption><small><a href="https://w3c.github.io/miniapp-tests/#sec-packaging-data">https://w3c.github.io/miniapp-tests/</a></small></figcaption>
+   </figure>
+   <ul>
+	  <li>Spec (<code>pkg</code>, <code>mnf</code>, <code>lcy</code>)</li>
+	  <li>Unique ID</li>
+  	<li><code>MUST</code>, <code>MAY</code> or <code>SHOULD</code></li>
+    <li>Title, description</li>
+    <li>Link(s) to the spec(s)</li>
+    <li>Link to reports</li>
+   </ul>
+   <p><small><em><code>test.jsonld</code></em> within app code</small></p> 
+  </section>
+
+  <section class="slide" id="example-spec">
+   <h2><small>[example]</small> 1) the spec reference</h2>
+   <h3>Let's test a Manifest feature</h3> 
+   <blockquote>
+     <h4>6.2 background_color member</h4>
+      <p>The <code>background_color</code> member is a string that specifies the background color of the window that contains a MiniApp.</p>
+      <p>This member supports <a href="https://www.w3.org/TR/css-color-4/#sRGB-space">sRGB</a> colors, and it is equivalent to the application manifest's <code>background_color</code>.</p>
+      <footer><a href="https://www.w3.org/TR/miniapp-manifest/#background_color-member">https://www.w3.org/TR/miniapp-manifest/#background_color-member</a></footer>
+   </blockquote>  
+  </section>
+
+  <section class="slide" id="example-the-metadata">
+   <h2>2) the test description</h2>
+   <pre style="font-size: x-small">{
+  [...]  <strong style="color: greenyellow">// this is test.jsonld</strong>
+  "@type": "earl:TestCase",
+  "dc:coverage": <strong style="color:yellow">"Manifest"</strong>,
+  "dc:identifier": "<strong style="color:yellow">mnf-window-background-color</strong>",
+  "dcterms:conformsTo": "must",
+  "dc:date": "2022-07-11",
+  "dc:title": "Window background color set",
+  "dc:description": "The window's background member is set to #00FF00, 
+                     so the app page must have a green background.",
+  "dcterms:isReferencedBy": [
+    <strong style="color:yellow">"https://www.w3.org/TR/miniapp-manifest/#background_color-member"</strong>
+  ],
+  "dcterms:rights": "https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document",
+  "dcterms:rightsHolder": "https://www.w3.org",
+  "dc:creator": [ "Martin Alvarez"],
+}   </pre>
+  </section>
+
+  <section class="slide side right big" id="example-the-code">
+   <h2>3) the code</h2>
+   <figure class="side" >
+    <img src="img/example-code.png" alt="Screenshot of the Github repository with a directory that contains the files for a test with the manifest.json opened. The manifest includes the declaration of backgound color to green as part of the test" width=450 />
+    <figcaption><small><a href="https://github.com/w3c/miniapp-tests/blob/main/tests/mnf-window-background-color/">https://github.com/w3c/miniapp-tests/tests/mnf-window-background-color/</a></small></figcaption>
+   </figure>
+   <ul>
+    <li>Tests in <code>/tests</code></li>
+    <li>MiniApp code in <code>/{ID}/src</code></li>
+	  <li>Test description in <code>/{ID}/test.json</code></li>
+    <li>Script to pack MiniApp as <code>/{ID}.ma</code></li>
+   </ul>
+  </section>
+
+  <section class="slide" id="test-howto">
+   <h2>How to test it</h2>
+    <div class="columns two" >
+      <ol>
+        <li>Get the MiniApp to test (e.g., <code style="font-size: x-small">mnf-window-background-color.ma</code>)</li>
+        <li>Load it in the user agent (your implementation)</li>
+        <li>Annotate the result -></li>
+        <li>Upload to <code>/reports</code></li>
+        <li>[A <abbr title="Github">GH</abbr> action will generate the human-readable report]</li>
+      </ol>
+      <pre style="font-size: x-small">
+{
+  "name": "ACME Mini Programs",
+  "ref": "https://example.org/",
+  "variant" : "iOS",
+  "tests": {
+    <strong style="color:yellow">"mnf-window-background-color": true</strong>,
+    "mnf-window-fullscreen-default": true,
+    "mnf-window-fullscreen-true": false,
+    "mnf-window-orientation-default": true,
+    "mnf-window-orientation-landscape": true,
+    "mnf-window-orientation-portrait": false,
+    "pkg-pages-same-filenames": true,
+    "pkg-root-app-css-empty": true        
+  }
+}</pre>
+   </div>
+  </section>
+
+  <section class="slide" id="tools">
+   <h2>Methodology &amp; tools are ready</h2>
+   <h3>We can start testing right now!</h3>
+   <ul>
+    <li>Repository (test suite, instructions, and tools): <a href="https://github.com/w3c/miniapp-tests/">w3c/miniapp-tests</a></li>
+    <li>Test Suite: <a href="https://w3c.github.io/miniapp-tests/#sec-packaging-data">https://w3c.github.io/miniapp-tests</a> </li>
+	  <li>Implementation reports: <a href="https://w3c.github.io/miniapp-tests/results">https://w3c.github.io/miniapp-tests/results</a></li>
+    <li>How to start: <a href="https://w3c.github.io/miniapp-tests/contributing">https://w3c.github.io/miniapp-tests/contributing</a></li>
+   </ul>
+  </section>
+  
+  <section class="slide" id="final">
+   <h2>Thank you!</h2>
+   <p class="shout">Questions?</p>
+   <hr>
+   <ul>
+    <li>Martin Alvarez-Espinar (<a href="mailto:martin.alvarez.espinar@huawei.com">martin.alvarez.espinar@huawei.com</a>)</li>
+	  <li><a href="https://w3c.github.io/miniapp-tests/contributing">Guide for contributors</a></li>
+   </ul>
+  </section>
+  
+  <footer class="long comment">
+   <address>Created on 10 Apr 2024 by <a
+   href="mailto:martin.alvarez.espinar@huawei.com">Martin Alvarez-Espinar</a>.
+   </address>
+  </footer>
+ </body>
+</html>
