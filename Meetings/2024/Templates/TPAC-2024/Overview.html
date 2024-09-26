@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+ <head>
+  <meta charset=UTF-8>
+  <meta content="width=device-width" name="viewport">
+  <title>%%Title%%</title>
+  <link rel="stylesheet" href="../Templates/slides.css">
+  <!-- To use the b6+ framework, include this: -->
+  <script src="../Templates/b6plus.js"></script>
+  <!-- To use the Shower framework, remove b6plus above and add these two: -->
+  <!--   <script src="../Templates/shower.js"></script>         -->
+  <!--   <script src="../Templates/iframe-fixup.js"></script>   -->
+ </head>
+ <body class="shower fade-in duration=15">
+
+  <section class="long comment">
+   <p>This is a template for slides for <a
+   href="https://www.w3.org/2024/09/TPAC/">TPAC 2024</a>.</p>
+
+   <p><strong>Author(s)</strong><br>
+    The <strong><a href="Overview.html#manual" >user manual</a></strong> at the
+   end has setup information and instructions.<br>
+    To write slides, look at the slides in this
+   template.</p>
+
+   <!-- For b6plus: -->
+   <p><strong>Reader(s)</strong><br>
+    To start the slide show,
+   press ‘A’. Return to the index with ‘A’ or ‘Esc’. On a
+   touch screen, use a 3-finger touch. Double click to
+   open a specific slide. In slide mode, press ‘?’ (question mark) to
+   get a list of available commands.</p>
+
+   <!-- For Shower: -->
+   <!-- <p><strong>To start the slide show,</strong> press Shift+F5
+   (Command+Enter on Mac).
+   Return to the index by pressing ‘Esc’. You can also click to
+   open a specific slide.</p> -->
+
+   <p><strong>If it doesn't work:</strong> Slide mode requires a
+   recent browser with JavaScript. If you are using the <a
+   href="https://noscript.net/" >‘NoScript’</a> add-on (Firefox or the
+   Tor Browser), or changed the <a
+   href="https://support.google.com/chrome/answer/114662?hl=en&amp;co=GENIE.Platform=Desktop"
+   >‘site settings’</a> (Chrome, Vivaldi, Opera, Brave and some other
+   browsers), or the ‘permissions for this site’ (Edge), you may have
+   to explicitly allow JavaScript on these slides. Internet Explorer
+   is not supported.</p>
+  </section>
+
+  <!--=============================================================
+			    Example slides
+  ==============================================================-->
+
+  <!-- Remove this element if you don't want a progress bar: -->
+  <div class=progress></div>
+
+  <!-- Remove this element if you don't want the remaining time in
+       index mode and on the 2nd screen. If you keep it, you may want
+       to add the class "duration=n" on BODY, where n is the initial
+       number of minutes on the clock. Default is 30. -->
+  <div class=clock></div>
+
+  <!-- Alternative: Show also real time and elapsed time. -->
+  <!-- <div class=fullclock></div> -->
+
+  <!-- What a screen reader should say on leaving slide mode,
+       instead of the default ‘Stopped.’ -->
+  <div role=region aria-live=assertive>
+    Leaving slide mode.
+  </div>
+
+
+  <section class="slide cover clear">
+   <h1>%%Title%%</h1>
+   <address>%%Author%%</address>
+   <p>TPAC 2024<br>
+     Anaheim CA, USA<br>
+     hybrid meeting<br>
+     23–27 SEPTEMBER 2024</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes for slide 1 can be put here.</p>
+  </section>
+
+
+  <section class="slide" id="lists">
+   <h2>Lists</h2>
+   <h3>This is an H3</h3>
+   <ol>
+    <li>Potatoes</li>
+    <li>Onions and olives</li>
+   </ol>
+   <h3>Another H3</h3>
+   <ul>
+    <li>North pole</li>
+    <li>East pole</li>
+   </ul>
+  </section>
+
+  <section class=comment>
+   <p>Notes for slide 2 can be put here.</p>
+  </section>
+
+
+  <section class="slide slide-in">
+   <h2>Lists with icons</h2>
+   <ul class=with-icons>
+    <li><span>♪</span> North pole</li>
+    <li><span>🍉</span> East pole</li>
+    <li><img src="../Templates/piechart.png" alt="pie chart"> Metro pole</li>
+    <li><img src="../Templates/w3c-white-blue-circle.svg" alt="W3C"> Straw pole</li>
+    <li><span>🐥</span> Pole tree</li>
+   </ul>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+  <section class="slide">
+   <h2>Some elements</h2>
+   <p>Words can be given a <strong>strong emphasis</strong>, which
+   makes them appear in bold</p>
+   <p>The <em>normal emphasis</em> has a highlighter effect.</p>
+   <p>Code looks like this: <code>if (a) return b;</code></p>
+   <p>This link goes to <a href="#lists">slide 2</a></p>
+   <p class="note">This is an example of a note, in a smaller font</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide">
+   <h2>Incremental display (1/3)</h2>
+   <div class=columns>
+    <div>
+     <p>Unfold (default style)</p>
+     <ul>
+      <li>This item is shown right away</li>
+      <li class="next">This one appears on a key press</li>
+      <li class="next">The 2nd key press reveals this</li>
+      <li class="next">And then this</li>
+     </ul>
+    </div>
+    <div>
+     <p>Fade in (<code>class=emerge</code>)</p>
+     <ul class=emerge>
+      <li>This item is shown right away</li>
+      <li class="next">This one appears on a key press</li>
+      <li class="next">The 2nd key press reveals this</li>
+      <li class="next">And then this</li>
+     </ul>
+    </div>
+   </div>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide cut-in">
+   <h2>Incremental display (2/3)</h2>
+   <div class=columns>
+    <div>
+     <p>Quick<br> (<code>class=quick</code>)</p>
+     <ul class=quick>
+      <li class="next">This one appears on a key press</li>
+      <li class="next">The 2nd key press reveals this</li>
+      <li class="next">And then this</li>
+     </ul>
+    </div>
+    <div>
+     <p>Fade in + red items<br> (<code>class="emerge strong"</code>)</p>
+     <ul class="emerge strong">
+      <li class="next">This one appears on a key press</li>
+      <li class="next">The 2nd key press reveals this</li>
+      <li class="next">And then this</li>
+     </ul>
+    </div>
+   </div>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide">
+   <h2>Incremental display (3/3)</h2>
+   <div class=columns>
+    <div>
+     <p>Quick + greeked<br> (<code>class="quick greeked"</code>)</p>
+     <ul class="quick greeked">
+      <li class="next">The first item</li>
+      <li class="next">Another item</li>
+      <li class="next">The third item</li>
+     </ul>
+    </div>
+    <div>
+     <p>Fade in + red + dim (<code>class= "emerge strong dim"</code>)</p>
+     <ul class="emerge strong dim">
+      <li class="next">This one appears on a key press</li>
+      <li class="next">The 2nd key press reveals this</li>
+      <li class="next">And then this</li>
+     </ul>
+    </div>
+   </div>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide">
+   <h2>Elements updated in-place</h2>
+   <p>Combining class=incremental with class=in-place
+     yields elements that are displayed one by one, with each one
+     replacing the previous. Example:
+   <ol class="incremental in-place">
+     <li>First element
+     <li>The second replaces the first<br>
+       until it itself is replaced
+     <li>The third replaces the second.
+   </ol>
+   <p class=note>(class=overlay is an alias for class=incremental.)
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide side">
+   <h2>An image on the side</h2>
+   <img class="side" width=498 height=575
+	src="https://www.w3.org/Talks/2017/0520-CSS-Sud-Web/CSS_color_tree3t"
+	alt="[Picture of a stylized tree with colorful, square leaves]">
+   <p>It seems the famous ‘lorem ipsum’ is based on a text by Cicero,
+   but with the lines mixed up. On a Cicero by the text, it seems the
+   ‘ipsum lorem’ is famous based with lines but mixed up.</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide side r">
+   <h2>An image on the side</h2>
+   <img class="side" width=498 height=575
+	src="https://www.w3.org/Talks/2017/0520-CSS-Sud-Web/CSS_color_tree3t"
+	alt="[Picture of a stylized tree with colorful, square
+	     leaves]">
+   <p>And again, with class <code>slide side right</code>.</p>
+   <p>It seems the famous ‘lorem ipsum’ is based on a text by Cicero,
+   but with the lines mixed up. On a Cicero by the text, it seems the
+   ‘ipsum lorem’ is famous based with lines but mixed up.</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide side clear">
+   <h2>A ‘bleeding’ image</h2>
+   <img class="side cover" width=550 height=451
+	src="https://www.w3.org/2018/Talks/TPAC-2018/ceo-update/diversity.jpg"
+	alt="[Top view of four pairs of hand holding each other crosswise]">
+   <p>Adding class <code>cover</code> to the image makes it stretch to
+   the edges of the slide.</p>
+   <p class=note>Hint: Add class=clear on the slide to omit the banner
+   and slide number.</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide side right">
+   <h2>A ‘bleeding’ image</h2>
+   <img class="side cover" width=550 height=451
+	src="https://www.w3.org/2018/Talks/TPAC-2018/ceo-update/diversity.jpg"
+	alt="[Top view of four pairs of hand holding each other crosswise]">
+   <p>And also on the right side…</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide side big">
+   <h2>A big image on the side</h2>
+   <img class="side" width=498 height=575
+	src="https://www.w3.org/Talks/2017/0520-CSS-Sud-Web/CSS_color_tree3t"
+	alt="[Picture of a stylized tree with colorful, square leaves]">
+   <p>It seems the famous ‘lorem ipsum’ is based on a text by Cicero,
+   but with the lines mixed up. On a Cicero by the text, it seems the
+   ‘ipsum lorem’ is famous based with lines but mixed up.</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide side right big">
+   <h2>A big image on the side</h2>
+   <img class="side" width=498 height=575
+	src="https://www.w3.org/Talks/2017/0520-CSS-Sud-Web/CSS_color_tree3t"
+	alt="[Picture of a stylized tree with colorful, square leaves]">
+   <p>And again, with class ‘slide side right big’.</p>
+   <p>It seems the famous ‘lorem ipsum’ is based on a text by Cicero,
+   but with the lines mixed up…</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide side big clear">
+   <h2>A big, ‘bleeding’ image</h2>
+   <img class="side cover" width=550 height=451
+	src="https://www.w3.org/2018/Talks/TPAC-2018/ceo-update/diversity.jpg"
+	alt="[Top view of four pairs of hand holding each other crosswise]">
+   <p>It seems the famous ‘lorem ipsum’ is based on a text by Cicero,
+   but with the lines mixed up. On a Cicero by the text, it seems the
+   ‘ipsum lorem’ is famous based with lines but mixed up.</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide side right big">
+   <h2>A big, ‘bleeding’ image</h2>
+   <img class="side cover" width=550 height=451
+	src="https://www.w3.org/2018/Talks/TPAC-2018/ceo-update/diversity.jpg"
+	alt="[Top view of four pairs of hand holding each other crosswise]">
+   <p>And on the right side…</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide" id="figures">
+   <h2>A figure</h2>
+   <details>
+    <summary>
+     <img src="../Templates/piechart.png" alt="pie chart" height=405>
+    </summary>
+    <p>The description of the pie chart, here as a table:
+    <table class=striped>
+     <thead>
+      <tr><th>Name <th>Percentage
+     <tbody>
+      <tr><td>Andy <td>16%
+      <tr><td>Chloe <td>21%
+      <tr><td>Daniel <td>13%
+      <tr><td>Grace <td>20%
+      <tr><td>Sophia <td>30%
+    </table>
+   </details>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide" id="columns">
+   <h2>In columns</h2>
+   <div class="columns">
+    <section>
+     <h3>Title</h3>
+     <p>Children of an element with a class of <code>columns</code> are
+      distributed over two columns</p>
+    </section>
+    <section>
+     <h3>Title</h3>
+     <p>This is the second child, which goes into the right
+      column</p>
+    </section>
+    <section>
+     <h3>Title</h3>
+     <p>And this is the third one. Left column again.</p>
+    </section>
+    <p>Etc.</p>
+   </div>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide" id="place">
+   <div class="place t l"><strong>place t l</strong></div>
+   <div class="place t"><strong>place t</strong></div>
+   <div class="place t r"><strong>place t r</strong></div>
+   <div class="place l">Here is something for the left
+   side, with class <strong>place l</strong></div>
+   <div class="place">class <strong>place</strong> puts an element
+   centered in a 3×3 grid</div>
+   <div class="place r"><strong>place r</strong></div>
+   <div class="place b l"><strong>place b l</strong></div>
+   <div class="place b"><strong>place b</strong></div>
+   <div class="place b r">combine <strong>place</strong> with
+   <strong>top</strong> (or <strong>t</strong>),
+   <strong>right</strong> (or <strong>r</strong>),
+   <strong>bottom</strong> (or <strong>b</strong>) and
+   <strong>left</strong> (or <strong>l</strong>)</div>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide">
+   <h2>Numbered lines of code</h2>
+   <pre class="numbered">
+Lines in a PRE can be numbered
+                       (automatically)
+  * Give the PRE a class of "numbered"
+  * Works for up to 20 lines
+                       (depending on font size)
+  six
+   seven
+   eight
+    nine
+    ten
+  eleven</pre>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide">
+    <h2>Striped tables</h2>
+    <table class="striped">
+      <tr><td>row 1</td><td>has no background</td></tr>
+      <tr><td>row 2</td><td>has a gray background</td></tr>
+      <tr><td>row 3</td><td>has no background</td></tr>
+      <tr><td>row 4</td><td>has a gray background</td></tr>
+      <tr><td>etc.</td><td></td></tr>
+      <tr><td>etc.</td><td></td></tr>
+    </table>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide lightmode">
+   <h2>Image overlay: cover</h2>
+   <!-- Photo by AleRimoldi, source: https://commons.wikimedia.org/wiki/File:Statue_de_Gutenberg_%C3%A0_Strasbourg.jpg -->
+   <img width=500 height=667
+	src="../Templates/gutenberg_f9f9f9.jpg"
+	alt="Image: Statue of Gutenberg"
+	class="cover">
+   <p class="place bottom right">Careful, some images make the text hard to
+   read!</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide lightmode">
+   <h2>Image overlay: fit</h2>
+   <!-- Photo by AleRimoldi, source: https://commons.wikimedia.org/wiki/File:Statue_de_Gutenberg_%C3%A0_Strasbourg.jpg -->
+   <img width=500 height=667
+	src="../Templates/gutenberg_f9f9f9.jpg"
+	alt="Image: Statue of Gutenberg"
+	class="fit">
+   <p class="place l">Careful, some images make the text
+   hard to read!</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide darkmode">
+    <h2>White text</h2>
+    <img width=505 height=353
+	 src="https://www.w3.org/2020/Talks/ac-slides/template/coast.jpg"
+	 class="cover" style="object-position: 94% 100%"
+	 alt="[photo with a beach, cliffs, buildings, dark clouds and a surfer]" >
+    <ul>
+      <li>Use a class of <code>slide darkmode</code> for
+      white-on-black</li>
+      <li>Useful for text on a dark background</li>
+    </ul>
+    <p class="note">(Photo <a
+    href="https://unsplash.com/photos/XBbX5PYOvC0/info" >‘Surfer and
+    the stormy sea’</a> by <a href="https://unsplash.com/@xavifuji"
+    >Xavier Nohet</a>)</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide">
+   <h2>Shout and grow!</h2>
+   <p>Shout:</p>
+   <p class="shout">Takahashi method!</p>
+   <p>Shout &amp; Grow:</p>
+   <p class="shout grow">Animated</p>
+   <p class="grow">Grow: Don't use this too often!</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide">
+   <h2>Slide transitions</h2>
+   <p>The style sheet predefines several transitions: fade-in, slide-in,
+   move-left, etc.</p>
+   <p>A transition can be set globally, applying to all slides; or
+   locally, applying only to the transition between this slide and the
+   next.</p>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide">
+   <h2>Convert to PDF</h2>
+
+   <div class="columns">
+    <div>
+     <p>Print in <em>portrait</em> mode to get:
+     <ul>
+      <li>multiple slides per page
+      <li>notes between the slides
+     </ul>
+     <div style="border: thin solid; padding: 0.6em 0.6em 0">
+      <p>📃︎ Try it! [W3C team only]</p>
+      <p><a href="Overview.html,pdf" title="slides + notes"
+       >A4</a>
+       or <a href="Overview.html,pdfl" title="slides + nodes"
+       >Letter</a></p>
+     </div>
+    </div>
+    <div>
+     <p>Print in <em>landscape</em> mode to get:</p>
+     <ul>
+      <li>one slide = one page
+      <li>no notes
+     </ul>
+     <div style="border: thin solid; padding: 0.6em 0.6em 0">
+      <p>📃︎  Try it! [W3C team only]</p>
+      <p><a href="Overview.html,pdf?size=A4+landscape" >PDF
+       slides</a></p>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <section class="slide final">
+   <h2>Conclusion</h2>
+   <ol>
+    <li>Making slides is easy</li>
+    <li>Questions?</li>
+   </ol>
+  </section>
+
+  <section class=comment>
+   <p>Notes.</p>
+  </section>
+
+
+  <!--=============================================================
+			     User manual
+  ==============================================================-->
+
+  <section class="long comment" id="manual">
+    <!-- toc -->
+
+   <h1>User manual</h1>
+
+   <h2 id="setting-up">Setting up your slides</h2>
+
+   <p>This is a template for slides for <a
+   href="https://www.w3.org/2024/09/TPAC/" >TPAC 2024</a>. It uses either
+   the <a href="http://shwr.me/" >Shower</a> script (version 3.2) or
+   the <a href="https://www.w3.org/Talks/Tools/b6plus/" >b6+</a>
+   script for the presentation and has a style sheet based on the TPAC
+   2024 visual style. (To enable Shower, uncomment the
+   <strong>script</strong> tag in the HTML source.)</p>
+
+   <p>All slides have to be online before</p>
+
+   <ul>
+    <li>@@ August, for slides for the Intro session</li>
+    <li>@@ September, for slides for the AC days</li>
+   </ul>
+
+   <p>If you cannot put them
+   online yourself, you can download a zip (see below) with everything
+   needed to develop slides offline and ask <a
+   href="mailto:bert@w3.org">Bert</a> for help uploading the
+   slides once they are ready.</p>
+
+   <h3>Developing slides online (W3C team)</h3>
+
+   <p>Writing slides <strong>online</strong> (with JigEdit, WebDav or
+   CVS) is only available to the W3C team. Make a directory under <a
+   href="https://www.w3.org/2024/Talks/TPAC/"
+   >https://www.w3.org/2024/Talks/TPAC/</a>. Copy the <a
+   href="https://www.w3.org/2024/Talks/TPAC/Templates/Overview.html"
+   >Overview.html</a> from <a
+   href="https://www.w3.org/2024/Talks/TPAC/Templates/"
+   >https://www.w3.org/2024/Talks/TPAC/Templates/</a> into your
+   directory and edit the content, or just use it as an example.</p>
+
+   <h3>Developing slides offline</h3>
+
+   <p>If you develop your slides <strong>offline</strong> (or plan to
+   present them without a network), then download this <a
+   href="https://www.w3.org/2024/Talks/TPAC/Templates/TPAC-2024-slides-template.zip"
+   >zip file</a>. Unpacking it creates the following directories and
+   files:</p>
+
+   <ul class="tree">
+     <li><code><strong>TPAC-2024/</strong></code><br>
+      │</li>
+     <li> └─ <code><strong>Templates/</strong></code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/Overview.html"
+     >Overview.html</a> (this file)</code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/shower.js"
+     >shower.js</a> (a JavaScript file)</code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/iframe-fixup.js"
+     >iframe-fixup.js</a> (a JavaScript file)</code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/b6plus.js"
+     >b6plus.js</a> (a JavaScript file)</code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/slides.css"
+     >slides.css</a> (a CSS file)</code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/linen.png"
+     >linen.png</a> (a PNG image)</code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/side-banner.svg"
+     >side-banner.svg</a> (an SVG image)</code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/side-banner-dark.svg"
+     >side-banner-dark.svg</a> (an SVG image)</code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/gutenberg_f9f9f9.jpg"
+     >gutenberg_f9f9f9.jpg</a> (a JPEG image)</code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/piechart.png"
+     >piechart.png</a> (a PNG image)</code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/w3c-white-blue-circle.svg"
+     >w3c-white-blue-circle.svg</a> (an SVG image)</code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/Lato-Bold.woff"
+     >Lato-Bold.woff</a> (a Web font)</code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/Lato-BoldItalic.woff"
+     >Lato-BoldItalic.woff</a> (a Web font)</code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/Lato-Italic.woff"
+     >Lato-Italic.woff</a> (a Web font)</code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/Lato-Regular.woff"
+     >Lato-Regular.woff</a> (a Web font)</code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/Montserrat-Bold.woff"
+     >Montserrat-Bold.woff</a> (a Web font)</code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/Montserrat-BoldItalic.woff"
+     >Montserrat-BoldItalic.woff</a> (a Web font)</code><br>
+          │</li>
+     <li>     ├─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/Montserrat-Black.woff"
+     >Montserrat-Black.woff</a> (a Web font)</code><br>
+          │</li>
+     <li>     └─ <code><a
+     href="https://www.w3.org/2024/Talks/TPAC/Templates/Montserrat-BlackItalic.woff"
+     >Montserrat-BlackItalic.woff</a> (a Web font)</code></li>
+   </ul>
+
+   <p>Make a directory for your own slides under
+   <strong>TPAC-2024</strong>. You can copy the
+   <strong>Overview.html</strong> file there as a starting point, or
+   just use it as an example. If you make any images, put them in that
+   directory as well.</p>
+
+   <p>If you are able to upload your slides, put your directory with
+   all that it contains under <a
+   href="https://www.w3.org/2024/Talks/TPAC/"
+   >https://www.w3.org/2024/Talks/TPAC/</a>. There is no need to
+   upload the <strong>Templates</strong> directory. It is is already
+   there.</p>
+
+   <h2 id="features">Writing slides</h2>
+
+   <h3>Slides</h3>
+
+   <p>Each slide is a <strong>section</strong> element with a class of
+   <strong>slide</strong>:</p>
+
+   <pre>&lt;section class="slide">
+  ... slide content here...
+&lt;/section></pre>
+
+   <p>Inside the slides, use normal HTML elements (<strong>p, ul,
+   em,</strong> etc.).</p>
+
+   <h3>Speaker notes or comments</h3>
+
+   <p>You can add additional text, such as speaker notes or
+   explanations, between the slides. They will be visible in index
+   mode but not in slide mode. Use elements with a class
+   of <strong>comment</strong>:</p>
+
+   <pre>&lt;section class="comment">
+  ... text here...
+&lt;/section></pre>
+
+   <h3>Slide numbers</h3>
+
+   <p>If a slide should <em>not</em> have a slide number and an image banner,
+   add the class <strong>clear</strong>:</p>
+
+   <pre>&lt;section class="slide clear">
+  ... slide content here...
+&lt;/section></pre>
+
+   <p>On <a href="#title-slides">title slides</a>
+   and <a href="#final-slides">final slides</a> (see below), this only
+   removes the number, not the banner.</p>
+
+   <p>Adding the class <strong>clear</strong> on
+   the <strong>body</strong> element omits the slide number and the
+   side banner from <em>all</em> slides.
+
+   <h3 id="title-slides">Title slides (cover slides)</h3>
+
+   <p>For cover slides (the title slide or separator slides between
+   parts of a presentation), add a class <strong>cover</strong>. You
+   can combine <strong>cover</strong> and <strong>clear</strong>.
+   E.g.:</p>
+
+   <pre>&lt;section class="slide cover clear">
+  &lt;h1>My presentations&lt;h1>
+  &lt;address>Peter W. Slidemaker&lt;/address>
+&lt;/section></pre>
+
+   <h3 id="final-slides">Final slide</h3>
+
+   <p>The class <strong>final</strong> is meant for a last slide,
+   e.g., for conclusions or thanks (but it may be used elsewhere,
+   too):</p>
+
+   <pre>&lt;section class="slide final clear">
+  &lt;h2>Conclusions&lt;h2>
+  …
+&lt;/section></pre>
+
+   <h3 id=side-image>Illustrations on the left or right</h3>
+
+   <p>Slides with narrower text and an illustration on the left or
+   right can be made by adding the class <strong>side</strong> to the
+   slide. Inside the slide there should be exactly one element that
+   also has a class of <strong>side</strong> (an image or some other
+   element). Two sizes are possible: normal (about 1/3 of the slide)
+   and big (about 2/3 of the slide).</p>
+
+   <p>To put an image on the left:</p>
+
+   <pre>&lt;section class="slide side">
+  &lt;img src="..." alt="..." class="side">
+  ... slide content here...
+&lt;/section></pre>
+
+   <p>To put the image on the right instead, add class <strong>right</strong>
+   (which may be abbreviated to <strong>r</strong>):</p>
+
+   <pre>&lt;section class="slide side <b>r</b>">
+  &lt;img src="..." alt="..." class="side">
+  ... slide content here...
+&lt;/section></pre>
+
+   <p>Add class <strong>big</strong> to the slide for a bigger image.
+   To put the image on the left:</p>
+
+   <pre>&lt;section class="slide side <b>big</b>">
+  &lt;img src="..." alt="..." class="side">
+  ... slide content here...
+&lt;/section></pre>
+
+   <p>And on the right:</p>
+
+   <pre>&lt;section class="slide side <b>r</b> big">
+  &lt;img src="..." alt="..." class="side">
+  ... slide content here...
+&lt;/section></pre>
+
+   <p>The image can be stretched to the edges of the slide by adding a
+   class <strong>cover</strong>. The image is not deformed. It is
+   scaled to be big enough to cover the image area and then either the
+   sides are cropped (if it is too wide) or the top and
+   bottom<sup><a href="#note2">*</a></sup>.</p>
+
+   <pre>&lt;section class="slide side big">
+  &lt;img src="..." alt="..." class="side <b>cover</b>">
+  ... slide content here...
+&lt;/section></pre>
+
+   <p>How big should images be? It actually depends on the size of the
+   screen on which the slide is displayed. An image with too few
+   pixels becomes blurry, but a big image takes long to load. It is
+   actually possible to make images in several sizes and let the
+   browser download the best one for the current screen, but that is
+   too long to explain here. (Check out the <strong>picture</strong>
+   element of HTML.) As a compromise, let's assume the slides are
+   displayed full-screen on an <abbr title="High Definition">HD</abbr>
+   projector (or an HDTV).</p>
+
+   <p>An HD projector has 1920×1080 pixels. A side image on such a
+   screen occupies a space of 982 pixels high and 463 pixels wide (or
+   986 pixels wide with class <b>big</b>). So that leads to the
+   following cases:</p>
+
+   <ol>
+     <li>A normal side image (without <b>big</b> and
+     without <b>cover</b>): Make an image that is 463 pixels wide and
+     no more than 982 pixels high; or an image that is 982 pixels high
+     and no more than 463 pixels wide.</li>
+
+     <li>A <b>big</b> side image (without <b>cover</b>): Make an image
+     that is 986 pixels wide and no more than 982 pixels high; or an
+     image that is 982 pixels high and no more than 986 pixels
+     wide.</li>
+
+     <li>A normal side image with <b>cover</b> (without <b>big</b>):
+     Make an image that is exactly 463×982 pixels.</li>
+
+     <li>A <b>big</b> side image with <b>cover</b>: Make an image that
+     is exactly 986×982 pixels.</li>
+   </ol>
+
+   <p>But note that for many non-critical images, especially photos,
+   it doesn't matter if they are a bit blurry. You can often make
+   images half as wide and half as high without ill effects.</p>
+
+   <p class="note" id="note2">*) Note for advanced users: It is
+   possible to indicate which sides should be cropped: add an
+   attribute like <strong>style="object-position: 20% 60%"</strong> to
+   indicate that, of the amount to be cropped from the sides, 20%
+   should be cropped on the left and the remaining 80% on the right;
+   and of the amount to be cropped from the top and bottom, 60% should
+   come from the top and the remaining 40% from the bottom.  Thus,
+   e.g., ‘0% 100%’ says never to crop anything from the left (0%) if
+   the image is too wide, and only to crop from the top (100%) if the
+   image is too tall. (The default corresponds to ‘50% 50%’, i.e.,
+   crop equal amounts from both sides.)</p>
+
+   <h3>Figures</h3>
+
+   <p>When information is in the form of an image (a diagram, a chart,
+   a screenshot, etc.), put it inside a <strong>figure</strong>
+   element. Add a <strong>figcaption</strong> if needed.</p>
+
+   <pre>&lt;figure&gt;&lt;img src="..." alt="..."&gt;&lt;figure&gt;</pre>
+
+   <p>If the image is not accessible, use a <strong>details</strong>
+   element instead and add a description, like this:</p>
+
+   <pre>&lt;details&gt;
+ &lt;summary&gt;&lt;img src="..." alt="..."&gt;&lt;/summary&gt;
+ ... the same data as in the image, but as text...
+&lt;/details&gt;</pre>
+
+   <p>The description becomes visible when the user clicks on the
+   image. (The <a href="#figures">slide above</a> shows an image of a
+   pie chart that is described by a table with the same data.)</p>
+
+   <h3>Automatic slide shows</h3>
+
+   <p><em>This feature is only available with the Shower script, not with
+   b6+.</em></p>
+
+   <p>Slides can be made to advance automatically after a given time,
+   by setting a <strong>data-timing</strong> attribute on them with a
+   value of <var>MM:SS</var> (minutes and seconds). E.g.,</p>
+
+   <pre>&lt;section class="slide" data-timing="1:03"></pre>
+
+   <p>This slide will remain on screen no longer than 1 minute and 3
+   seconds, after which the next slide will be shown.</p>
+
+   <h3>Progress bar</h3>
+
+   <p>If you want a progress bar during the slide presentation, add an
+   empty <strong>div</strong> with a class
+   of <strong>progress</strong>. It can be put before the first slide
+   or after the last, but there should be at most one such element in
+   the file:</p>
+
+   <pre>&lt;div class="progress">&lt;/div></pre>
+
+   <p>The progress bar will show as a thin red line along the top of
+   the slides. Its length increases from zero on the first slide to
+   100% on the last.</p>
+
+   <p>B6+ also sets a custom style
+   variable <strong>--progress</strong> with a value between 0 and 1
+   on the <strong>body</strong>. This may be useful if you write your
+   own style rules for a progress indicator.</p>
+
+   <h3 id=incremental-display>Incremental display</h3>
+
+   <p>To progressively reveal elements on a slide, put a class
+   of <strong>next</strong> on all elements that should not be visible
+   right away. They will become visible one by one as you press the
+   space bar or an arrow key. E.g.:</p>
+
+   <pre>&lt;ul>
+  &lt;li>This item is visible when the slide appears
+  &lt;li class="next">This item is not immediately visible
+  &lt;li class="next">This is the third item to appear
+&lt;/ul>
+&lt;p class="next">This is the last element to appear</pre>
+
+   <p>By default, each new element appears with a short animation as
+   if it unfolds from left to right. Two alternative animations are
+   available: <strong>emerge</strong> makes the elements fade in
+   and <strong>quick</strong> omits the animation. The class can be
+   set on each incremental element:</p>
+
+   <pre>&lt;li class="next emerge">...</pre>
+
+   <p>or on an ancestor, e.g.:</p>
+
+   <pre>&lt;ul class="emerge">
+  &lt;li class="next">...</pre>
+
+   <p>Three optional modifiers change how elements look before, after
+   or while they are the currently active
+   element: <strong>Strong</strong> makes the currently active element
+   red. <strong>Greeked</strong> replaces the elements that are not
+   yet visible by a gray bar. (Useful to show how many elements are
+   still invisible.) And <strong>dim</strong> grays out the elements
+   that are no longer the active element.</p>
+
+   <p>Like the animation, these modifiers can be set on the
+   incremental element itself or on an ancestor. The modifiers can
+   also be combined, e.g.:</p>
+
+   <pre>&lt;ul class="emerge strong dim">
+  &lt;li class="next">...</pre>
+
+   <h3>Two columns</h3>
+
+   <p>To put elements side by side in two columns, make an element
+   (a <strong>div, ul</strong> or any other element) with
+   class <strong>columns</strong>. The first child of that element
+   will be put in the left column, the second child in the right
+   column. If there are more children, the third will be in the left
+   column again, the fourth in the right, etc.</p>
+
+   <pre>&lt;ul class="columns">
+  &lt;li>First goes on the left&lt;/li>
+  &lt;li>Second goes on the right&lt;/li>
+&lt;/ul></pre>
+
+   <h3>Small text</h3>
+
+   <p>Less important text can be shown in a smaller font by giving it
+   a class of <strong>note</strong>:</p>
+
+   <pre>&lt;p class="note">Note that this is harder to read&lt;/p></pre>
+
+   <h3>Extra big text: shout</h3>
+
+   <p>To make text extra big, give it a class
+   of <strong>shout</strong>, e.g.:</p>
+
+   <pre>&lt;p class=shout>Hurray!</pre>
+
+   <p>(Sometimes this is referred to as
+   the <a href="https://en.wikipedia.org/wiki/Takahashi_method"
+   >‘Takahashi method’</a>: Instead of sentences or graphics, a slide
+   only contains one or two keywords. The narrative comes from the
+   speaker.)</p>
+
+   <h3>Animated text: grow</h3>
+
+   <p>To draw extra attention to some text or an image, it can be
+   animated. Adding a class of <strong>grow</strong> to it will make
+   it appear slowly. It will start small and one second after the
+   slide appears it will begin to grow and reach its normal size three
+   seconds later.</p>
+
+   <pre>&lt;p class=grow&gt;See?</pre>
+
+   <h3>Automatic line numbering</h3>
+
+   <p>Pre-formatted text (in a <strong>pre</strong>) can be given line
+   numbers by adding the class <strong>numbered</strong>:</p>
+
+   <pre>&lt;pre class="numbered"></pre>
+
+   <p>No more than 20 lines will be numbered. (In the normal font
+   size, a slide fits 13 lines.)</p>
+
+   <h3>Lists with icons</h3>
+
+   <p>To replace the list bullets with icons, emojis, or images, make
+   a <strong>ul</strong> with a class of <strong>with-icons</strong>.
+   The first element of each <strong>li</strong> will be used instead
+   of the list bullet.</p>
+
+   <pre>&lt;ul class=with-icons>
+ &lt;li>&lt;span>♪&lt;/span> North pole&lt;/li>
+ &lt;li>&lt;img src="../Icons/toc.png" alt="toc button"> Metro pole&lt;/li>
+&lt;/ul></pre>
+
+   <h3>3×3 Grid</h3>
+
+   <p>It is possible to treat the slide as a 3×3 grid and put elements
+   in the four corners, in the middle of each edge, or in the center
+   of the slide. This is done by giving the elements a class
+   of <strong>place</strong>. On its own, <strong>place</strong> puts
+   the element in the center. By adding classes <strong>top, right,
+   bottom</strong> and <strong>left</strong> the element can be placed
+   in one of the eight other positions.</p>
+
+   <pre>&lt;div class="place">Put this in the center&lt;/div>
+&lt;div class="place bottom">Put this bottom center&lt;/div>
+&lt;div class="place top right">In the top right&lt;/div></pre>
+
+   <p>The direction classes can also be abbreviated to <strong>t, r,
+   b</strong> and <strong>l</strong>.</p>
+
+   <h3>Image overlays (background images)</h3>
+
+   <p>To put an image behind the text of a slide, use
+   an <strong>img</strong> with a class of <strong>cover</strong>:</p>
+
+   <pre>&lt;img class="cover" src="..." alt="..."></pre>
+
+   <p>The image will be stretched to fill the whole of the text area.
+   If the image doesn't fit exactly (wrong aspect ratio), the image
+   will be cropped.</p>
+
+   <p>With a class of <strong>fit</strong> instead
+   of <strong>cover</strong>, the image will be scaled but without
+   cropping. Instead there may be white bands on the sides or
+   above/below the image, if it doesn't fit exactly.</p>
+
+   <pre>&lt;img class="fit" src="..." alt="..."></pre>
+
+   <p>This works both for normal slides and title slides (slides with
+   a class of <strong>cover</strong>). The logo on the right is not
+   obscured by the image.</p>
+
+   <p>As explained above (see <a href="#side-image">‘Illustrations on
+   the left or right’</a>), the optimal size of an image depends on
+   the screen the slide is shown on. But as a compromise, you can
+   assume the common case of an HD projector, i.e., 1920×1080
+   pixels. The optimal image for <strong>cover</strong> is an image of
+   exactly that size. The optimal image for <strong>fit</strong> is an
+   image that is either 1920 pixels wide and at most 1080 pixels high,
+   or an image that is exactly 1080 pixels high and at most 1920
+   pixels wide.</p>
+
+   <p>It is advisable to add a class of <strong>darkmode</strong>
+   or <strong>lightmode</strong> to a slide with an image overlay. See
+   the next section.</p>
+
+   <h3 id=darkmode>Forcing white text or black text</h3>
+
+   <p>The colors of the slides depend on whether ‘dark mode’ is in
+   effect in the operating system: black text on a white background if
+   dark mode is off and white on black if it is on. But when text is
+   overlaid on an image, it may be better to force the text to always
+   be white (if the image is dark) or black (on a lighter image). You
+   do that by setting a class on the slide:
+   <strong>darkmode</strong> (for white-on-black) or
+   <strong>lightmode</strong> (for white-on-black). E.g.:</p>
+
+   <pre>&lt;section class="slide darkmode"></pre>
+
+   <p>Other colors (titles, list bullets, links, etc.) also
+   become fixed on such slides.</p>
+
+   <h3>Slide transitions</h3>
+
+   <p>By default, each slide just replaces the previous one, but there
+   are several predefined slide transitions. You can set a transition
+   on the <strong>body</strong> element to apply it to all slides:</p>
+
+   <pre>&lt;body class="shower fade-in"&gt;</pre>
+
+   <p>Or you can set it on individual slides, to apply only to the
+   transition between that slide and the next. (I.e., it doesn't
+   determine how the slide appears, but how
+   it <em>disappears.</em>)</p>
+
+   <pre>&lt;section class="slide wipe-left"&gt;</pre>
+
+   <p>You can set both a global transition and local ones. The global
+   transition applies to slides that do not have an explicit
+   transition set locally.</p>
+
+   <dl>
+    <dt>fade-in</dt>
+    <dd>The new slide appears faint at first and gets more opaque
+    until it completely obscures the previous slide.</dd>
+
+    <dt>slide-in</dt>
+    <dd>The new slide moves in from the left, while the previous slide
+    moves back to the left.</dd>
+
+    <dt>slide-out</dt>
+    <dd>The current slide moves out to the left, revealing the new
+    slide.</dd>
+
+    <dt>move-left</dt>
+    <dd>The new slides move in from the right while the old slide
+    moves out to the left.</dd>
+
+    <dt>slide-up</dt>
+    <dd>The old slide moves up, revealing the new slide.</dd>
+
+    <dt>move-up</dt>
+    <dd>The old slide moves up and the new slide moves in from the
+    bottom.</dd>
+
+    <dt>flip-up</dt>
+    <dd>A 3D effect: the bottom of the old slide is lifted up and the
+    slide is turned over to reveal the new slide on its back
+    side.</dd>
+
+    <dt>flip-left</dt>
+    <dd>Another 3D effect, but in this case the right side of the
+    slide is lifted up and the slide is flipped over to the left,
+    revealing the new slide on the back side.</dd>
+
+    <dt>center-out</dt>
+    <dd>A small circle appears in the middle of the old slide that
+    reveals the new slide. The circle grows until it covers the whole
+    slide.</dd>
+
+    <dt>wipe-left</dt>
+    <dd>The new slide moves in from the right, until it covers the old
+    slide.</dd>
+
+    <dt>zigzag-left</dt>
+    <dd>A zigzag pattern moves in from the right. To the left is the
+    old slide, to the right the new one.</dd>
+
+    <dt>zigzag-right</dt>
+    <dd>A zigzag pattern moves in from the left. To the left is the
+    new slide, to the right the old one.</dd>
+
+    <dt>cut-in</dt>
+    <dd>The new slide moves in from the top left and covers the old
+    slide.</dd>
+   </dl>
+
+   <h3>Watermark overlay</h3>
+
+   <p>You can make a ‘watermark’, a text or an image that is overlaid
+   on every slide, by making an element with a class
+   of <strong>watermark</strong>. It can be placed before or after the
+   slides.</p>
+
+   <pre>&lt;p class=watermark&gt;&lt;strong&gt;DRAFT!&lt;/strong&gt;</pre>
+
+   <p>By default, the watermark is slightly rotated and placed in the
+   center of each slide. Any text will be red.</p>
+
+   <h3>Accessibility</h3>
+
+   <p>When you present while using a screen reader, you cannot use the
+   screen reader's usual keystrokes to navigate, only
+   the <a href="#keystrokes">keystrokes defined by the b6+ script</a>.
+   However, the screen reader will speak each slide as soon as it
+   appears. The script creates an element with
+   attributes <strong>role=region</strong>
+   and <strong>aria-live=assertive</strong> for that purpose.</p>
+
+   <p>When you leave slide mode, the screen reader will say ‘stopped’.
+   To make it say something else (e.g., because you want a different
+   language than English), create an element with role=region and
+   aria-live=assertive yourself and put the text to speak in it.
+   E.g.:</p>
+
+   <pre>&lt;div role="region" aria-live="assertive"&gt;
+  <span lang=fr>Terminé.</span>
+&lt;/div&gt;</pre>
+
+   <h3>Exporting to PDF</h3>
+
+   <p>The slides can be exported to PDF (or printed) in two ways:
+   multiple slides per page with comments interleaved, or one slide
+   per page without any comments. The latter may be useful to create a
+   PDF suitable for presenting, when it is not possible to use an HTML
+   browser.</p>
+
+   <dl>
+    <dt>portrait</dt> <dd>When printing in portrait mode, the output
+    will contain as many slides per page as will fit and the comments
+    are printed between the slides. This corresponds to viewing the
+    slides in index mode.</dd>
+
+    <dt>landscape</dt> <dd>When the output is in landscape mode, each
+    page consists of one slide, without page margins, and without the
+    comments between the slides.</dd>
+   </dl>
+
+   <p>Note: In landscape mode, the style sheet tries to set the size
+   of the output page to exactly the size of a slide, but not all user
+   agents that produce PDF respect that. (And, obviously, a printer is
+   limited to the available paper.) There may be some black margin to
+   the right and below each slide. Prince does respect the size. W3C
+   team can also use the ",pdfui" tool online.</p>
+
+   <h2 id="presenting">Presenting</h2>
+
+   <h3 id="keystrokes">Mouse gestures and keystrokes</h3>
+
+   <p>To present the slides, load them into a browser that supports
+   JavaScript and CSS and then either click the play (▶) button, press
+   the <strong>A</strong> key, double-click on a slide or touch the
+   screen with three fingers (on certain devices).</p>
+
+   <p>If you are using Shower instead of b6+, press
+   <strong>Shift+F5</strong> (<strong>Command+Enter</strong> on Mac)
+   or click on a slide.</p>
+
+   <p>Navigate though the slides by clicking the left mouse button,
+   pressing the spacebar, the arrow keys or Page-up/Page-Down. The
+   Home and End keys jump to the first, resp. last
+   slide. <strong>F1</strong> or <strong>F</strong> toggles full
+   screen mode. The <strong>? (question mark)</strong> key shows a
+   list of available commands.</p>
+
+   <p>To exit the presentation, press the <strong>A</strong> key or
+   the <strong>Esc</strong> key.</p>
+
+   <p>For more keys, see the documentation for
+   <a href="https://www.w3.org/Talks/Tools/b6plus/#navigation" >keys
+   &amp; gestures in b6+</a> or
+   <a href="https://github.com/shower/shower/blob/main/docs/shortcuts.md"
+   >keyboard shortcuts in Shower</a>.</p>
+
+   <h3>Dark mode</h3>
+
+   <p>While in slide mode, you can press the <strong>D</strong> (only
+   with b6+) key to switch between black-on-white and white-on-black.
+   (This temporarily adds or removes the <strong>darkmode</strong>
+   class on <strong>body</strong>, see <a href="#darkmode" >‘Forcing
+   white text or black text’</a>.) When the computer is already in
+   dark mode, the key has no effect.</p>
+
+   <h3 id="second-window">Using two screens or two windows</h3>
+
+   <p>B6+ (but not Shower) can show the slides in a second window. The
+   first window can then be used to control the slide show and view
+   notes and next slides. If you have two screens that can show
+   different content (e.g., your computer's screen and a projector),
+   you can thus present the slides on one screen, and see the current
+   and next slides, and any notes, on the other.</p>
+
+   <p>Open the second window by pressing the <strong>2</strong> key,
+   or the <strong>⧉</strong> button in index mode.</p>
+
+   <h3 id="clocks">Clocks to show remaining time</h3>
+
+   <p>When using a second screen, it is possible to show clocks on
+   that screen with the remaining time, the time used so far, and the
+   real (wall clock) time. (The clocks are normally only shown on
+   the second screen, but they can be included in slides or overlaid
+   on slides, with suitable CSS rules.)</p>
+
+   <p>By default, the clocks will count down from 30 minutes and show
+   a warning 5 minutes before the end. (In the style used
+   for this document, the clock turns from green to orange.) You can
+   set different times with the following classes:</p>
+
+   <dl>
+    <dt>duration=...</dt>
+    <dd>
+     <p>To set the duration to, e.g., 45 minutes,
+     add <code>duration=45</code> to the class attribute of
+     the <strong>body</strong>. Example:</p>
+
+     <pre>&lt;body class="duration=45"&gt;</pre>
+    </dd>
+
+    <dt>warn=...</dt>
+    <dd>
+     <p>To set the warning to, e.g., one minute, put this in the class
+     of the <strong>body</strong>:</p>
+
+     <pre>&lt;body class="warn=1"&gt;</pre>
+    </dd>
+   </dl>
+
+   <p>B6+ has two kinds of clocks built-in, but also provides
+   primitive elements with which to build your own clock.</p>
+
+   <p>To get one of the built-in clocks, make an empty element with a
+   class of either <strong>fullclock</strong>
+   or <strong>clock</strong>. The former will display the real
+   (wall clock) time, the number of minutes so far, the number of
+   minutes left, a small ‘pie-chart’ showing the proportion of time
+   used, and four buttons: subtract one minute, add one minute, pause
+   the clock, and reset the clock. The simple clock will display the
+   pie chart and the four buttons (somewhat smaller) and the remaining
+   minutes.</p>
+
+   <p>When you make your own clock, you can make use of the following
+   classes and attributes:</p>
+
+   <dl>
+    <dt>hours-real, minutes-real, seconds-real</dt>
+    <dd>
+     <p>B6+ will fill all elements with a class
+     of <strong>hours-real</strong> with the current hour (wall-clock
+     time) and keep them up to date. The hour will always be two
+     digits and use a 24-hour clock: <strong>00</strong>
+     to <strong>23</strong>.</p>
+
+     <p>Similarly, all elements with a class
+     of <strong>minutes-real</strong> or <strong>seconds-real</strong>
+     will contain the current minutes or seconds, respectively, also
+     always as two digits, <strong>00</strong> to <strong>59</strong>.
+     E.g.:</p>
+
+     <pre>&lt;b class=hours-real&gt;00&lt;/b&gt;:&lt;b class=minutes-real&gt;00&lt;/b&gt;</pre>
+    </dd>
+
+    <dt>hours-used, minutes-used, seconds-used</dt>
+    <dd>
+     <p>Elements with these classes will contain the time since the
+     slides where loaded (or since the clock was reset,
+     see <strong>timereset</strong> below). E.g.:</p>
+
+     <pre>&lt;b class=minutes-used&gt;00&lt;/b&gt;'&lt;b class=seconds-used&gt;00&lt;/b&gt;"</pre>
+    </dd>
+
+    <dt>hours-remaining, minutes-remaining, seconds-remaining</dt>
+    <dd>
+     <p>Ditto, but for the time still remaining. If the used time
+     exceeds the duration, these times will be shown as 00.</p>
+    </dd>
+
+    <dt>timeinc, timedec</dt>
+    <dd>
+     <p>An element with a class of <strong>timeinc</strong> will act as
+     a button that increments the duration, and thus the remaining
+     time, by one minute. <strong>timedec</strong> decrements the
+     duration by one minute. E.g.:</p>
+
+     <pre>&lt;button class=timeinc&gt;+1 min&lt;/button&gt;
+&lt;button class=timedec&gt;−1 min&lt;/button&gt;</pre>
+    </dd>
+
+    <dt>timepause</dt>
+    <dd>
+     <p>An element with this class acts as a toggle to pause &amp;
+     resume the clocks. When the clocks are paused, the used time does
+     not progress and the remaining time does not diminish. (The real
+     time clocks continue, of course.) When the element is clicked
+     again, the clocks resume. E.g.:</p>
+
+     <pre>&lt;button class=timepause>pause&lt;/button&gt;</pre>
+    </dd>
+
+    <dt>timereset</dt>
+    <dd>
+     <p>An element with this class acts as a button to restart the
+     clocks, i.e., to set the used time to zero. Example:</p>
+
+     <pre>&lt;button class=timereset>reset&lt;/button&gt;</pre>
+    </dd>
+   </dl>
+
+   <p>In addition to setting the time in elements with the classes
+   mentioned above, b6+ also updates the style property, the class and
+   a data- attribute on the <strong>body</strong>. This is useful for
+   style rules to change the styles of elements based on the progress
+   of the slide show. In particular, b6+ sets the following:</p>
+
+   <dl>
+    <dt>--time-factor</dt>
+    <dd>This custom style property on the body will be set to a value
+    between 0.0 and 1.0, representing what fraction of the duration
+    has been used.</dd>
+
+    <dt>data-time-factor</dt>
+    <dd>This attribute on <strong>body</strong> will be set to the
+    percentage of the duration already used. This will be a whole
+    number with two digits between 00 and 99, or 100.</dd>
+
+    <dt>time-warning</dt>
+    <dd>When the remaining time is less than the warn time, b6+ will
+    add this class to the classes on <strong>body</strong>.</dd>
+   </dl>
+
+   <h3 id="full">Starting in slide mode</h3>
+
+   <p>Add ‘?full’ at the end of the URL (but before any fragment ID)
+   to open the slides in slide mode instead of index mode.</p>
+
+   <p>To open in slide mode at a specific slide, add ‘?full’ and the
+   ID or the number of the slide,
+   e.g., <a href="?full#place">Overview.html?full#place</a>
+   or <a href="?full#19">Overview.html?full#19</a>.</p>
+
+   <h3 id="hidemouse">Hiding the mouse pointer</h3>
+
+   <p>When you don't want the mouse pointer to remain on the screen in
+   slide mode, add the class <strong>hidemouse</strong> on
+   the <strong>body</strong> element. If the mouse does not move for
+   5 seconds, the pointer is made invisible. It comes back as soon as
+   the mouse is moved.</p>
+
+   <pre>&lt;body class="hidemouse"&gt;</pre>
+
+   <p>You can also set a different timeout in seconds. E.g, to set a
+   short timeout of 1.5 seconds:</p>
+
+   <pre>&lt;body class="hidemouse=1.5"&gt;</pre>
+
+   <h3 id="noclick">Ignore mouse clicks</h3>
+
+   <p>Normally, a mouse click anywhere on a slide (other than on a
+   hyperlink or form element) has the effect of advancing to the next
+   slide or incremental element. If you don't want that, add the
+   class <strong>noclick</strong> on the <strong>body</strong>
+   element.</p>
+
+   <pre>&lt;body class="noclick"&gt;</pre>
+
+   <p>The
+   complete <a href="https://www.w3.org/Talks/Tools/b6plus/#navigation"
+   >list of key strokes and gestures</a> is in
+   the <a href="https://www.w3.org/Talks/Tools/b6plus/" >b6+
+   documentation,</a> which also shows what else b6+ can do.</p>
+
+   <h2 id="embedding">Embedding slides in other documents</h2>
+
+   <p>You can embed a single slide in another document with the help
+   of an <code>&lt;object&gt;</code> or <code>&lt;iframe&gt;</code>
+   element. To avoid that a keypress or click
+   accidentally changes the slide, you can disable navigation
+   and index mode: add ‘?full&amp;static’ at the
+   end of the URL, followed by ‘#’ and the ID or number of the desired
+   slide. E.g.:</p>
+
+   <pre>&lt;object data="Overview.html?full&amp;static#18">...&lt;/object></pre>
+
+   <p>or</p>
+
+   <pre>&lt;iframe src="Overview.html?full&amp;static#18">&lt;/iframe></pre>
+
+   <p>Adding ‘?static’ on its own to the URL is also possible: It
+   shows all slides in index mode and disables switching to slide
+   mode.</p>
+
+   <h2>Speaking guidelines</h2>
+
+   <p>The page <a
+   href="https://www.w3.org/2024/09/TPAC/speaking.html"
+   >‘Speaking guidelines’</a> of the TPAC 2024 site contains
+   recommendations for presenters.</p>
+  </section>
+
+  <footer class="long comment">
+   <address>Template created 11 December 2023 by <a
+   href="mailto:bert@w3.org">Bert Bos</a>.
+   This file last modified
+   $Date: 2024/08/28 13:13:24 $ by $Author: coralie $.</address>
+  </footer>
+ </body>
+</html>
+<!-- Local Variables: -->
+<!-- sgml-basic-offset: 1 -->
+<!-- End: -->

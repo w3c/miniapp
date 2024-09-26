@@ -1,0 +1,1022 @@
+/* Style for the slides for TPAC 2024, to be used together with the
+   Shower script or the b6+ script. For usage instructions, see
+   https://www.w3.org/2024/Talks/TPAC/Templates/Overview.html
+
+   TODO: Styles for blockquotes?
+
+   TODO: Provide a fallback for side images for UAs that do not
+   implement 'object-fit'?
+
+   TODO: .greeked is visually hidden, but assistive technology still
+   sees it and speaks it. Can that be fixed? ('speak: never' has no
+   effect.)
+
+   Layout of a slide:
+
+   +-------+---------------------------------------+
+   | LOGO  |                   2em                 |
+   |       |   +-------------------------------+   |
+   |       |   |                               |   |  ^
+   |       |   |                               |   |  |
+   |  4em  |2em|                               |2em| 23em
+   |       |   |                               |   |  |
+   |       |   |                               |   |  v
+   |       |   +-------------------------------+   |
+   |       |                   1em               nr|
+   +-------+---------------------------------------+
+
+   A = 16/9         = aspect ratio
+   N = 23           = height in em (i.e., 21 lines + 2 x 1 em padding)
+   L = 4            = logo width in em
+   H = 86/120.31532 = logo aspect ratio (width/height)
+   w = N*A          = width of slide in em
+
+   Created: 6 February 2024 (based on
+   https://www.w3.org/Talks/Tools/Shower3-2/humaaans.css)
+
+   Author: Bert Bos <bert@w3.org>
+
+   Copyright © 2024 World Wide Web Consortium (W3C Inc, European
+   Research Consortium for Informatics and Mathematics, Keio
+   University, Beihang). All Rights Reserved. This work is distributed
+   under the W3C® Software License[1] in the hope that it will be
+   useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+   of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+   [1] http://www.w3.org/Consortium/Legal/copyright-software
+*/
+
+@font-face {
+  font-family: My Lato;
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(Lato-Italic.woff2) format("woff2"),
+    url(Lato-Italic.woff) format("woff");
+  src: local(Lato Italic), local(Lato-Italic),
+    url(Lato-Italic.woff2) format("woff2"),
+    url(Lato-Italic.woff) format("woff")}
+
+@font-face {
+  font-family: My Lato;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(Lato-Regular.woff2) format("woff2"),
+    url(Lato-Regular.woff) format("woff");
+  src: local(Lato Regular), local(Lato-Regular),
+    url(Lato-Regular.woff2) format("woff2"),
+    url(Lato-Regular.woff) format("woff")}
+
+@font-face {
+    font-family: My Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-display: swap;
+    src: url(Lato-Bold.woff2) format("woff2"),
+	 url(Lato-Bold.woff) format("woff");
+    src: local(Lato Bold), local(Lato-Bold),
+	 url(Lato-Bold.woff2) format("woff2"),
+	 url(Lato-Bold.woff) format("woff");
+}
+@font-face {
+    font-family: My Lato;
+    font-style: italic;
+    font-weight: bold;
+    font-display: swap;
+    src: url(Lato-BoldItalic.woff2) format("woff2"),
+	 url(Lato-BoldItalic.woff) format("woff");
+    src: local(Lato Bold Italic), local(Lato-BoldItalic),
+	 url(Lato-BoldItalic.woff2) format("woff2"),
+	 url(Lato-BoldItalic.woff) format("woff");
+}
+@font-face {
+  font-family: My Montserrat;
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(Montserrat-BlackItalic.woff2) format("woff2"),
+       url(Montserrat-BlackItalic.woff) format("woff");
+  src: local(Montserrat Black Italic), local(Montserrat-BlackItalic),
+       url(Montserrat-BlackItalic.woff2) format("woff2"),
+       url(Montserrat-BlackItalic.woff) format("woff");
+}
+@font-face {
+  font-family: My Montserrat;
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(Montserrat-Black.woff2) format("woff2"),
+       url(Montserrat-Black.woff) format("woff");
+  src: local(Montserrat Black), local(Montserrat-Black),
+       url(Montserrat-Black.woff2) format("woff2"),
+       url(Montserrat-Black.woff) format("woff");
+}
+
+@font-face {
+  font-family: My Montserrat;
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src: url(Montserrat-BoldItalic.woff2) format("woff2"),
+       url(Montserrat-BoldItalic.woff) format("woff");
+  src: local(Montserrat BoldItalic), local(Montserrat-BoldItalic),
+       url(Montserrat-BoldItalic.woff2) format("woff2"),
+       url(Montserrat-BoldItalic.woff) format("woff");
+}
+
+@font-face {
+  font-family: My Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url(Montserrat-Bold.woff2) format("woff2"),
+       url(Montserrat-Bold.woff) format("woff");
+  src: local(Montserrat Bold), local(Montserrat-Bold),
+       url(Montserrat-Bold.woff2) format("woff2"),
+       url(Montserrat-Bold.woff) format("woff");
+}
+
+
+/* Common layout independent of slide mode */
+html {font: 400 1em/1.3 My Lato, Carlito, Calibri, Open Sans, Helvetica Neue,
+    Helvetica, Arial, Liberation Sans, Noto Emoji, Noto Sans Symbols,
+    sans-serif;
+  color-scheme: only light dark; /* only = disable Chromium's heuristics. */
+  background: none; /* Make sure the background of body gets used */
+  font-size-adjust: 0.506 /* Lato Regular */; letter-spacing: 0.02em}
+body {background: url(linen.png) #595b60; counter-reset: slide;
+  margin: 0.5em 2em 9em; color: white}
+b {font-weight: bold}
+dt {font-weight: bold}
+dd {margin: 0}
+h4 {font-size: 1.2em; margin: 0.5em 0}
+.slide p, .slide ul, .slide ol, .slide pre, .slide blockquote, .slide li {
+  margin: 0 0 0.6em 0}
+.slide h1, .slide h2, .slide address {margin: 0 0 1rem 0;
+  color: hsl(27,68%,50%);
+  font: 700 2em/1.1 My Montserrat, Arial Black, Myriad Pro, Roboto, sans-serif;
+  font-size-adjust: 0.542}
+.slide address {color: hsl(356,67%,40%); font-size: 1.4em}
+.slide address :link, .slide address :visited {color: inherit}
+.slide h3 {font-size: 1.1em; color: hsl(356,67%,40%);
+  margin: 0.8em 0 0.48em 0}
+.full, .slide, .comment {width: 40.889em; /*= w */ height: 23em; /*= N */}
+.slide {color: black; box-shadow: 0 2px 3px #000;
+  line-height: 1.6;
+  word-break: normal; overflow-wrap: normal; letter-spacing: normal;
+  padding: 2em 2em 1em 6em /*= L + 2 */;
+  position: relative;
+  box-sizing: border-box; z-index: 0; display: inline-block;
+  margin: 4em 2em 0 0; vertical-align: bottom; counter-increment: slide;
+  text-shadow: 0 -1px #fff, 1px 0 #fff, 0 1px #fff, -1px 0 #fff,
+    -0.7px -0.7px #fff, 0.7px -0.7px #fff, 0.7px 0.7px #fff, -0.7px 0.7px #fff;
+  background: hsl(0,0%,98%)}
+.slide:target {outline: lime solid 0.5em; outline-offset: 1em}
+.slide h3 a {color: inherit}
+.watermark {color: red; font-size: 400%}
+
+/* EM elements get a highlighter-like background */
+.slide em {font-style: normal; padding-left: 0.1em; padding-right: 0.1em;
+  text-shadow: none; background:  hsl(62,100%,50%)}
+
+/* Lists have less indent than the default. */
+.slide li {margin-left: 1em}
+.slide ol, .slide ul {padding: 0}
+.slide li ul, .slide li ol, .slide li li {margin-top: 0.1em; margin-bottom: 0.2em}
+
+/* Own counter, because FF & Safari don't apply text-shadow to the default. */
+.slide ol {counter-reset: ol; list-style: none}
+.slide ol > li {counter-increment: ol}
+.slide ol > li::before {/*float: left;*/ display: inline-block; width: 2em;
+  margin-left: -2em; text-align: right; content: counter(ol) ".\A0"}
+.slide ol > li > p:first-child {display: inline}
+.slide ol[start="2"] {counter-reset: ol 1}
+.slide ol[start="3"] {counter-reset: ol 2}
+.slide ol[start="4"] {counter-reset: ol 3}
+.slide ol[start="5"] {counter-reset: ol 4}
+.slide ol[start="6"] {counter-reset: ol 5}
+.slide ol[start="7"] {counter-reset: ol 6}
+.slide ol[start] {counter-reset: ol calc(attr(start integer) - 1)}
+
+/* Lists with icons or small images instead of bullets. The first
+   child of each LI becomes a list bullet. */
+ul.with-icons > li {margin-left: 1.5em; list-style: none}
+ul.with-icons > li > *:first-child {display: inline-block;
+  margin: 0 0.5em 0 -1.5em; width: 1em}
+
+/* Slides with an image on the left (.side) or right (.side.right) one third */
+.slide.side {padding-left: 15.867em /*= L + 1 + (w - L - 4) * 30% + 1 */}
+.slide.side.right, .slide.side.r {padding-left: 6em /*= L + 2 */;
+  padding-right: 12.867em; /*= 2 + (w - L - 4) * 30% + 1 */}
+.side .side {position: absolute; top: 3em /* top margin + a bit */;
+  left: 5em /*= L + 1 */; height: 20em /*= N - 3 */; object-fit: contain;
+  width: 9.8667em /*= (w - L - 4) * 30% */}
+.side .side.cover {object-fit: cover; top: 0; left: 0; height: 23em /*= N */;
+  width: 14.867em /*= (w - L - 4) * 30% + L + 1 */}
+.side.right .side, .side.r .side {
+  left: 29.022em /*= w - 2 - (w - L - 4) * 30% */}
+.side.right .side.cover, .side.r .side.cover {
+  width: 11.867em /*= (w - L - 4) * 30% + 2 */}
+
+/* Slides with a big, square image on the left or right */
+.slide.side.big {padding-left: 26em /*= L + 1 + (N - 3) + 1 */}
+.slide.side.right.big, .slide.side.r.big {padding-left: 6em /*= L + 2 */;
+  padding-right: 22em /*= 1 + (N - 3) + 1 */}
+.side.big .side {top: 2em; left: 5em /*= L + 1 */;
+  height: 20em /*= N - 3 */; width: 20em /*= N - 3 */}
+.side.big.right .side, .side.big.r .side {left: 19.889em /*= w - 1 - (N - 3) */}
+.side.big .side.cover {object-fit: cover; top: 0; left: 0;
+  height: 23em /*= N */; width: 25em /*= L + 1 + (N - 3) */}
+.side.big.right .side.cover, .side.big.r .side.cover {
+  left: 19.889em /*= w - 1 - (N - 3) */; width: 21em /*= (N - 3) + 1 */}
+
+/* Cover pages */
+.slide.cover {background: bottom left / 16.356em /*= w * 40% */ auto no-repeat
+    url(banner.webp) hsl(0,0%,98%);
+  padding: 2em 2em 1em 17.356em /*= w * 40% + 1 */}
+.slide.cover h1 {}
+.slide.cover address {}
+.slide.cover p {line-height: 1.2; color: #6b6b6b}
+.slide.cover p::first-line {/*font-size: 2em*/}
+
+/* Last page */
+.slide.final {}
+
+/* Notes in a smaller font */
+.slide .note {font-size: 70%}
+
+/* Miscellaneous styles */
+.num {font-variant-numeric: oldstyle-nums tabular-nums diagonal-fractions}
+.slide code, .slide pre {font-family: Andale Mono, Courier, monospace;
+  text-shadow: none}
+.slide code {background: #eee; padding: 0.1em 0.3em; border-radius: 0.3em}
+sub, sup {line-height: 0.5}
+.slide pre {padding: 0 0.2em; background: black; color: hsl(120,100%,70%);
+  text-shadow: none}
+
+/* Explicit placement on a 3x3 grid */
+.place {position: absolute; box-sizing: border-box;
+  max-width: 25.181%; /*= (w - L - 6) / 3 / w */
+  top: 52.174% /*= (2 + (N - 3) / 2) / N */;
+  left: 54.891%; /*= (L + 2 + (w - L - 4) / 2) / w */
+  transform: translate(-50%, -50%); text-align: center}
+.place.t, .place.top {top: 8.6957% /*= 2 / N */; transform: translate(-50%,0)}
+.place.b, .place.bottom {top: auto; bottom: 4.3478% /*= 1 / N */;
+  transform: translate(-50%,0)}
+.place.l, .place.left {left: 14.674%; /*= (L + 2) / w */
+  transform: translate(0,-50%); text-align: left}
+.place.r, .place.right {left: auto; right: 4.8913% /*= 2 / w */;
+  transform: translate(0,-50%); text-align: right}
+.place.t.l, .place.top.left, .place.t.r, .place.top.right, .place.b.l,
+.place.bottom.left, .place.b.r, .place.bottom.right {transform: none}
+
+/* Numbered lines in a PRE */
+pre.numbered {padding-left: 2em; overflow-y: hidden; position: relative}
+pre.numbered::before {color: #aaa; text-align: right; white-space: pre-line;
+  text-shadow: none;
+  content: "1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9\A 10\A 11\A 12\A 13\A 14\A 15\A 16\A 17\A 18\A 19\A 20";
+  position: absolute; top: 0; left: 0; width: 1.2em; font-family: serif;
+  border-right: thin solid; padding-right: 0.2em}
+
+/* Full-size image overlays */
+img.cover, img.fit {position: absolute; z-index: -1; top: 0; left: 0;
+  width: 100%; height: 100%; object-fit: cover; padding: 0}
+img.fit {object-fit: contain}
+
+/* Side banner, and slide number in lower left corner, in a dark circle. */
+.slide::after {content: counter(slide); color: white; position: absolute;
+  left: 0; top: 0; bottom: 0; width: 4em /*= L */;
+  padding: 21em /*= N - 2 */ 0 1em 0; text-shadow: none;
+  text-align: center; font: bold 1em/1 My Montserrat, sans-serif;
+  background: 50% 20.725em /*= N - 2 - (1.55 - 1)/2 */ / auto 1.55em no-repeat
+    url(data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%202%202%22><circle%20cx=%221%22%20cy=%221%22%20r=%221%22%20fill=%22%23000%22/></svg>),
+    50% 50% / 100% auto no-repeat url(side-banner.webp)}
+.slide.cover::after {}
+.slide.final::after {}
+.clear .slide::after, .slide.clear::after {content: none}
+
+/* Two columns, and alternate elements in the left and right column */
+.slide .columns > * {box-sizing: border-box; margin-top: 0; margin-bottom: 0;
+  width: 47.134% /*= (w - L - 4)/2/(w - L - 2) */; float: right}
+.slide .columns > *:nth-child(odd) {clear: both; float: left}
+.slide .columns {overflow: hidden; line-height: 1.5 /* Reduced from 1.6 */}
+.slide .columns > * > *:first-child {margin-top: 0}
+.slide .columns > * > *:last-child {margin-bottom: 0}
+@supports (display: grid) {
+  .slide .columns {overflow: visible; display: grid; grid: "a  b" / 1fr 1fr;
+    grid-gap: 0.6em 2em; justify-items: normal}
+  .slide .columns > * {width: auto}
+}
+@supports not (display: grid) {
+  /* If grid is not supported and the column is a list, remove the margin */
+  .slide .columns > li {margin-left: 0; list-style-position: inside}
+  .slide .columns > *:nth-child(n+3) {margin-top: 0.6em} /* gap between rows */
+}
+
+/* A list as a tree structure with box-drawing characters */
+.tree {list-style: none; font: 1em/1 monospace;
+  white-space: nowrap; padding: 0.2em 0; overflow: auto}
+.tree li::before {content: none}
+.tree code {background: none; padding: 0;
+  font-family: My Lato, Carlito, Calibri, Open Sans,
+    Helvetica Neue, Helvetica, Arial, Liberation Sans, sans-serif}
+.comment .tree code {font-family: serif}
+
+/* A trick that may be useful for people who insist on putting a lot
+   of text on a slide: class "compact" can
+   be set on a list or other container and removes the top and bottom
+   margin from list items and paragraphs inside that container. */
+.slide .compact li, .slide .compact p {margin-top: 0; margin-bottom: 0}
+
+/* Striped tables */
+table {margin: 0 0 0.6em}
+table.striped {border-collapse: collapse; margin-bottom:0.48em; width: 100%}
+table.striped td, table.striped th {padding: 0.15em 0.3em; font-size: 0.93em; text-align: left}
+table.striped tr:nth-child(2n+2) {background: #EEE; text-shadow: none}
+
+/* Takahashi method (very big text, very few words) */
+.shout {font-size: 390%; line-height: 1.1}
+p.shout {margin: 0.25em 0}
+
+/* Figures, and images with collapsed descriptions  */
+img {max-width: 100%;}
+figure {text-align: center; margin: 0 0 0.6em 0}
+figure img:not(.cover):not(.fit), summary img {display: block;
+  margin: 0 auto 0.6em auto;
+  max-height: 15.6em /*= N - 2 - 1.1 * 2 - 0.6 * 2 - 2 */}
+.slide summary {list-style: none} /* Hide the triangle */
+.slide summary::-webkit-details-marker {display: none} /* Ditto webkit/blink */
+.slide [open] summary img {max-height: 4em}
+.slide summary {outline: none}
+.slide summary::before {content: "⊖"; float: left; width: 0.9em;
+  margin-left: -1.1em; text-align: left; line-height: 0.9}
+.slide [open] > summary::before {content: "⊕"}
+.slide summary:focus::before {outline: thin solid blue;
+  outline: thin solid invert}
+
+/* Keyboard keys */
+kbd {font-weight: bold; speak-as: spell-out}
+
+/* The progress element is normally empty */
+.progress {display: inline}
+
+/* Notes between the slides */
+.comment {background: black; color: white; padding: 1em;
+  font-family: Times New Roman, Times, serif; box-sizing: border-box;
+  display: inline-block; border-radius: 0.5em; margin: 4em 2em 0 0;
+  box-shadow: 0 2px 3px #000; vertical-align: bottom; overflow: auto}
+.comment :link, .comment :visited {color: inherit; text-decoration: underline}
+.comment pre {margin-left: 1em; font-family: Helvetica, sans-serif}
+.comment :first-child {margin-top: 0}
+.comment dd, .comment ul, .comment ol {padding-left: 1em; margin-left: 0}
+.comment dd {margin-bottom: 1em}
+.comment h1, .comment h2, .comment h3, .comment h4, .comment h5, .comment h6 {
+  break-after: avoid}
+.slide ~ .comment::before {content: "notes for slide " counter(slide);
+  display: block;
+  text-align: center; font-size: small; font-variant: small-caps;
+  border-bottom: thin solid; padding-bottom: 0.3em; margin-bottom: 1em}
+
+/* Long comments */
+.comment.long {/*columns: 25em; column-rule: thin solid; column-gap: 2em;
+  widows: 2; orphans: 2; width: auto;*/ height: auto; display: block;
+  border-radius: 0; overflow: auto;
+  background: white; color: black}
+.comment.long:before {content: none}
+
+/* Layout in slide mode (when body has class=full) */
+.full {transform: scale(var(--shower-full-scale))} /* For Shower 3.1/3.2 */
+.full, .full .slide {position: absolute; overflow: hidden}
+.full {top: 50%; left: 50%; background: black;
+  margin: -11.5em /*= -N/2 */ 0 0 -20.444em /*= -w/2 */}
+.full .slide {visibility: hidden; top: 0; left: 0; margin: 0}
+.full .slide.active {visibility: visible}
+.full .comment {display: none}
+.full .slide:target {outline: none}
+
+.full .progress {position: absolute; bottom: 0; left: 0; height: 1px;
+  background: linear-gradient(to right, hsla(0,100%,50%,0),hsla(0,100%,50%,1));
+  z-index: 1}
+@media not screen and (prefers-reduced-motion: reduce) {
+  /* Experimental media query, see
+     https://www.w3.org/TR/2020/WD-mediaqueries-5-20200731/ */
+  .full .progress {transition: 0.5s}
+}
+
+.full .watermark {position: absolute; top: 50%; left: 50%; z-index: 1;
+  margin: 0; transform: translate(-50%, -50%) rotate(-29deg)}
+
+/* Incremental display with elements replacing each other. In index
+   mode, the elements are side by side with a scroll bar to reach them
+   (and scroll snap to make scrolling easier). In slide mode, all
+   items are in the first slot, but at most one of them is visible. */
+.incremental.in-place, .overlay.in-place {display: grid; grid: "a" / 100%;
+  gap: 2em; grid-auto-columns: 100%; grid-auto-flow: column;
+  overflow: auto; scrollbar-width: thin; scroll-snap-type: x mandatory}
+.incremental.in-place > *, .overlay.in-place > * {scroll-snap-align: end}
+.full .incremental.in-place > *, .full .overlay.in-place > * {grid-area: a}
+.full .incremental.in-place > .visited:not(.active):not(:last-child),
+.full .overlay.in-place > .visited:not(.active):not(:last-child) {
+  visibility: hidden}
+
+/* Reveal elements one by one. (incremental/overlay only works with b6+) */
+.full .incremental > :not(.active):not(.visited),
+.full .overlay > :not(.active):not(.visited),
+.full .next:not(.active):not(.visited) {visibility: hidden}
+
+/* With class=greeked, elements aren't hidden, but shown as gray bars */
+.full .incremental > .greeked:not(.active):not(.visited),
+.full .incremental.greeked > :not(.active):not(.visited),
+.full .greeked .incremental > :not(.active):not(.visited),
+.full.greeked .incremental > :not(.active):not(.visited),
+.full .overlay > .greeked:not(.active):not(.visited),
+.full .overlay.greeked > :not(.active):not(.visited),
+.full .greeked .overlay > :not(.active):not(.visited),
+.full.greeked .overlay > :not(.active):not(.visited),
+.full .next.greeked:not(.active):not(.visited),
+.full .greeked .next:not(.active):not(.visited),
+.full.greeked .next:not(.active):not(.visited) {visibility: inherit;
+  text-shadow: none; background: hsl(0,0%,50%); color: transparent;
+  speak: never}
+
+/* With class=strong, the currently active element is red. */
+.full .incremental .active.strong, .full .overlay .active.strong,
+.full .incremental.strong .active, .full .overlay.strong .active,
+.full .strong .incremental .active, .full .strong .overlay .active,
+.full.strong .incremental .active, .full.strong .overlay .active,
+.full .strong .next.active, .full .next.active.strong,
+.full.strong .next.active {color: hsl(356,75%,53%)}
+
+/* With class=dim, elements that are no longer active are grayed out. */
+.full .incremental > .visited.dim,
+.full .incremental.dim > .visited,
+.full .dim .incremental > .visited,
+.full.dim .incremental > .visited,
+.full .overlay > .visited.dim,
+.full .overlay.dim > .visited,
+.full .dim .overlay > .visited,
+.full.dim .overlay > .visited,
+.full .next.visited.dim,
+.full .dim .next.visited,
+.full.dim .next.visited {opacity: 0.3}
+
+/* Animate the active element when it appears. By default, the element
+   is progressively revealed, starting from the left. Setting
+   class=emerge instead causes the element to go from transparent to
+   opaque. And class=quick omits the animation. The class can be set
+   on the element itself or on any ancestor, including on BODY. .*/
+@media not screen and (prefers-reduced-motion: reduce) {
+  /* Experimental media query, see
+     https://www.w3.org/TR/2020/WD-mediaqueries-5-20200731/ */
+  .full .incremental > .active, .full .overlay > .active,
+  .full .next.active {animation: unfold 1s}
+  .full .incremental > .active.emerge, .full .overlay > .active.emerge,
+  .full .incremental.emerge > .active, .full .overlay.emerge > .active,
+  .full .emerge .incremental > .active, .full .emerge .overlay > .active,
+  .full.emerge .incremental > .active, .full.emerge .overlay > .active,
+  .full .emerge .next.active, .full .next.active.emerge,
+  .full.emerge .next.active {animation: fade-in 0.5s}
+  .full .incremental .active.quick, .full .overlay .active.quick,
+  .full .incremental.quick .active, .full .overlay.quick .active,
+  .full.quick .incremental .active, .full.quick .overlay .active,
+  .full .quick .incremental .active, .full .quick .overlay .active,
+  .full .quick .next.active, .full .next.active.quick,
+  .full.quick .next.active {animation: none}
+}
+
+@keyframes unfold {
+  from {clip-path: inset(0% 100% 0% -100%)}
+  to {clip-path: inset(0% 0% 0% -100%)}
+}
+
+/* Animation of a slowly growing element */
+@media not screen and (prefers-reduced-motion: reduce) {
+  /* Experimental media query, see
+     https://www.w3.org/TR/2020/WD-mediaqueries-5-20200731/ */
+  .full .grow {transition: 3s 1s ease-in-out transform;
+    position: relative; transform: scale(0.1); transform-origin: 0 50%}
+  .active .grow {transform: scale(1)}
+}
+
+/* Transitions between slides */
+@media not screen and (prefers-reduced-motion: reduce) {
+  /* Experimental media query, see
+     https://www.w3.org/TR/2020/WD-mediaqueries-5-20200731/ */
+
+  .full .slide.active ~ .visited {animation: none} /* Moving backwards */
+
+  /* Transition: fade-in */
+  .full .slide.fade-in.visited,
+  .fade-in .slide.visited {animation: delay 1s 1}
+  .full .slide.fade-in + .active,
+  .full .slide.fade-in + .comment + .active,
+  .fade-in .slide.active {animation: fade-in 1s 1}
+  @keyframes delay {
+    from {visibility: visible}
+    to {visibility: visible}
+  }
+  @keyframes fade-in {
+    from {opacity: 0}
+    to {opacity: 1}
+  }
+
+  /* Transition: slide-in */
+  .full .slide.slide-in.visited,
+  .slide-in .slide.visited {animation: leftout 1s 1}
+  .full .slide.slide-in + .active,
+  .full .slide.slide-in + .comment + .active,
+  .slide-in .slide.active {animation: leftin 1s 1}
+  @keyframes leftout {
+    from {transform: translate(0%, 0); visibility: visible; z-index: 1}
+    to {transform: translate(-100%, 0); visibility: visible; z-index: 1}
+  }
+  @keyframes leftin {
+    from {transform: translate(-100%, 0); visibility: visible}
+    to {transform: translate(0%, 0); visibility: visible}
+  }
+
+  /* Transition: slide-out */
+  .full .slide.slide-out.visited,
+  .slide-out .slide.visited {animation: leftout 1s 1}
+  .full .slide.slide-out + .active,
+  .full .slide.slide-out + .comment + .active,
+  .slide-out .slide.active {animation: do-nothing 1s 1}
+  @keyframes do-nothing {
+    from {z-index: 0}
+    to {z-index: 0}
+  }
+
+  /* Transition: move-left */
+  .full .slide.move-left.visited,
+  .move-left .slide.visited {animation: leftout 1s 1}
+  .full .slide.move-left + .active,
+  .full .slide.move-left + .comment + .active,
+  .move-left .slide.active {animation: rightin 1s 1}
+  @keyframes rightin {
+    from {transform: translate(100%, 0); visibility: visible}
+    to {transform: translate(0%, 0); visibility: visible}
+  }
+
+  /* Transition: slide-up */
+  .full .slide.slide-up.visited,
+  .slide-up .slide.visited {animation: topout ease-in 1s 1}
+  .full .slide.slide-up + .active,
+  .full .slide.slide-up + .comment + .active,
+  .slide-up .slide.active {animation: do-nothing ease-in 1s 1}
+  @keyframes topout {
+    from {transform: translate(0, 0%); visibility: visible; z-index: 1}
+    80% {opacity: 1.0}
+    to {transform: translate(0, -100%); visibility: visible; opacity: 0.0;
+      z-index: 1}
+  }
+  /* Transition: move-up */
+  .full .slide.move-up.visited,
+  .move-up .slide.visited {animation: topout ease-in 1s 1}
+  .full .slide.move-up + .active,
+  .full .slide.move-up + .comment + .active,
+  .move-up .slide.active {animation: bottomin ease-in 1s 1}
+  @keyframes bottomin {
+    from {transform: translate(0, 100%); visibility: visible}
+    to {transform: translate(0, 0%); visibility: visible}
+  }
+
+  /* Transition: flip-up */
+  .full {perspective: 1000px; perspective: 1000}
+  .full .slide.flip-up.visited,
+  .flip-up .slide.visited {animation: turn-down 1s 1 ease-in}
+  .full .slide.flip-up + .active,
+  .full .slide.flip-up + .comment + .active,
+  .flip-up .slide.active {animation: turn-up 1s 1 ease-out}
+  @keyframes turn-down {
+    from {transform: rotateX(0deg); visibility: visible}
+    50%, to {transform: rotateX(90deg); visibility: hidden}
+  }
+  @keyframes turn-up {
+    from, 50% {transform: rotateX(-90deg); visibility: visible}
+    to {transform: rotateX(0deg); visibility: visible}
+  }
+
+  /* Transition: flip-left */
+  .full .slide.flip-left.visited,
+  .flip-left .slide.visited {animation: flip-left1 1s 1 ease-in}
+  .full .slide.flip-left + .active,
+  .full .slide.flip-left + .comment + .active,
+  .flip-left .slide.active {animation: flip-left2 1s 1 ease-out}
+  @keyframes flip-left1 {
+    from {transform: rotateY(0deg); visibility: visible}
+    50%, to {transform: rotateY(-90deg); visibility: hidden}
+  }
+  @keyframes flip-left2 {
+    from, 50% {transform: rotateY(90deg); visibility: visible}
+    to {transform: rotateY(0deg); visibility: visible}
+  }
+
+  /* Transition: center-out */
+  .full .slide.center-out.visited,
+  .center-out .slide.visited {animation: gray 1s 1}
+  .full .slide.center-out + .active,
+  .full .slide.center-out + .comment + .active,
+  .center-out .slide.active {animation: center-out 1s 1}
+  @keyframes gray {
+    from, to {opacity: 0.5; visibility: visible}
+  }
+  @keyframes center-out {
+    from {clip-path: circle(0)}
+    to {clip-path: circle(100%)}
+  }
+
+  /* Transition: wipe-left */
+  .full .slide.wipe-left.visited,
+  .wipe-left .slide.visited {animation: gray 1s 1}
+  .full .slide.wipe-left + .active,
+  .full .slide.wipe-left + .comment + .active,
+  .wipe-left .slide.active {animation: rightin 1s 1}
+
+  /* Transition: zigzag-left */
+  .full .slide.zigzag-left.visited,
+  .zigzag-left .slide.visited {animation: gray 1s 1}
+  .full .slide.zigzag-left + .active,
+  .full .slide.zigzag-left + .comment + .active,
+  .zigzag-left .slide.active {animation: zigzag-left 1s 1}
+  @keyframes zigzag-left {
+    from {clip-path:
+      polygon(120% 0%, 120% 0%, 100% 30%, 120% 60%, 110% 100%, 120% 100%)}
+    to   {clip-path:
+      polygon(120% 0%,   0% 0%, -20% 30%,   0% 60%, -10% 100%, 120% 100%)}
+  }
+
+  /* Transition: zigzag-right */
+  .full .slide.zigzag-right.visited,
+  .zigzag-right .slide.visited {animation: gray 1s 1}
+  .full .slide.zigzag-right + .active,
+  .full .slide.zigzag-right + .comment + .active,
+  .zigzag-right .slide.active {animation: zigzag-right 1s 1}
+  @keyframes zigzag-right {
+    from {clip-path:
+      polygon(-20% 0%,  -20% 0%, 0% 30%,  -20% 60%, -10% 100%, -20% 100%)}
+    to   {clip-path:
+      polygon(-20% 0%, 100% 0%, 120% 30%, 100% 60%, 110% 100%, -20% 100%)}
+  }
+
+  /* Transition: cut-in */
+  .full .slide.cut-in.visited,
+  .cut-in .slide.visited {animation: gray 1s 1}
+  .full .slide.cut-in + .active,
+  .full .slide.cut-in + .comment + .active,
+  .cut-in .slide.active {animation: cut-in 1s 1}
+  @keyframes cut-in {
+    from {transform: translate(-100%, -100%)}
+    to {transform: translate(0%, 0%)}
+  }
+
+} /* End of @media not screen and (prefers-reduced-motion: reduce) */
+
+/* A section with aria-live=assertive, which should be spoken, but not
+   displayed. (b6+ adds this style by itself, but Shower relies on the
+   style sheet setting it.)*/
+[role=region][aria-live=assertive] {position: absolute; top: 0; left: 0;
+  clip: rect(0 0 0 0); clip-path: rect(0 0 0 0)}
+
+/* Trick: If the viewport is exactly w x h or 1.2w x 1.2h,
+   it means the slides are
+   being shown inside an iframe of that size. Hide everything except
+   the targeted slide in that case and omit the black background,
+   which would otherwise be visible around the rounded corner of the
+   slide. (When JavaScript is on, adding ?full to the end of the slide
+   URL, e.g., ".../myslides.html?full#intro", has a similar effect and
+   doesn't require the iframe to be this exact size.) */
+@media (min-width: 40.839em /*= w - 0.05 */) and
+    (max-width: 40.939em /*= w + 0.05 */) and
+    (min-height: 22.95em /*= N - 0.05 */) and
+    (max-height: 23.05em /*= N + 0.05 */),
+    (min-width: 49.017em /*= 1.2 * w - 0.05 */) and
+    (max-width: 49.117em /*= 1.2 * w + 0.05 */) and
+    (min-height: 27.55em /*= 1.2 * N - 0.05 */) and
+    (max-height: 27.65em /*= 1.2 * N + 0.05 */) {
+  html {font-size: calc(100vh / 23)}
+  body {margin: 0; overflow: hidden}
+  body, body.full {background: transparent}
+  body > *, .slide, .comment, .comment.long {display: none}
+  .slide {box-shadow: none; margin: 0}
+  .slide:target {display: block; outline: none}
+}
+
+/* class=framed is used to indicate the slides are inside an iframe. */
+body.framed {background: transparent}
+body.framed .slide {box-shadow: none}
+body.framed .progress {display: none}
+
+/* When BODY has class has-2nd-window, it means the window is a
+   preview window (b6+ only). Show only the clock, the navigation
+   buttons, the current slide and the next slide, and the comments for
+   the current slide. The current slide occupies 3/5th of the width,
+   the next slide 2/5th. */
+.has-2nd-window {
+  margin: 0.5rem; height: calc(100vh - 1rem); display: grid;
+  grid: "current next    next"  auto
+	"notes   notes   notes" 1fr
+	"buttons buttons clock" auto
+	/ auto 1fr auto;
+  gap: 0.5rem}
+.has-2nd-window .clock, .has-2nd-window .fullclock {
+  position: relative; grid-area: clock; align-self: start; margin: 0;
+  right: 0; top: 0; border: thin solid; box-shadow: none}
+.has-2nd-window .b6-ui {
+  grid-area: buttons; margin: 0; top: 0;
+  border: thin solid; position: static; border-radius: 0.5rem;
+  background: none; color: #ddd; padding: 0; box-shadow: none}
+.has-2nd-window .slide, .has-2nd-window .comment {
+  position: absolute; left: -100%; clip-path: rect(0 0 0 0); margin: 0}
+.has-2nd-window .slide {
+  font-size: calc((100vw - 2rem - 17px) / 68.148 /*= 5/3 * w */)}
+.has-2nd-window .slide.slide.slide.slide {animation: none}
+.has-2nd-window .comment {
+  height: 0; background: none; color: inherit; box-shadow: none;
+  font-size: x-large}
+.has-2nd-window .slide ~ .comment::before {
+  content: "[" counter(slide) " of " counter(numslides) "]";
+  text-align: left; border-bottom: none; padding-bottom: 0}
+.has-2nd-window .slide.active {
+  position: relative; left: 0; clip-path: none; grid-area: current}
+.has-2nd-window .slide.active + .comment {
+  position: relative; left: 0; clip-path: none; height: auto;
+  grid-area: notes; width: auto}
+.has-2nd-window .slide.active + .slide,
+.has-2nd-window .slide.active + .comment + .slide {
+  position: relative; left: 0; clip-path: none;
+  grid-area: next; align-self: center;
+  font-size: calc((100vw - 2rem - 17px) / 102.22 /*= 5/2 * w */)}
+.has-2nd-window .slide:target {outline: none}
+
+/* Outline elements on the second window that are incrementally
+   displayed on the first window (b6+) */
+.has-2nd-window .slide.active .incremental > *,
+.has-2nd-window .slide.active .overlay > *,
+.has-2nd-window .slide.active .next {outline: thin dashed red}
+
+/* Style for clocks on the second window or in index mode. */
+body {--time-factor: 0} /* Make sure it is defined, will be set by b6+ */
+.fullclock, .clock {position: fixed; z-index: 1; top: 0.5em; right: 0.5em;
+  background: linear-gradient(hsl(120,90%,20%),
+    hsl(120,80%,25%), hsl(120,90%,19%)); color: #fff; border-radius: 0.5em;
+  box-shadow: 0 2px 3px #000; text-align: center; width: fit-content}
+.fullclock:empty, .clock:empty {display: none} /* Shower doesn't make clocks */
+.fullclock {padding: 0.3em; display: grid; justify-items: center; gap: 0.1em;
+  grid: "x   y   z" auto
+  	"a   b   d" auto
+        "f   c   e" auto
+	"h   c   g" auto
+	/ 1fr 1fr 1fr}
+.fullclock time:nth-of-type(1) {grid-area: a; color: #9F9}
+.fullclock time:nth-of-type(2) {grid-area: b}
+.fullclock time:nth-of-type(3) {grid-area: d}
+.fullclock .timepause {grid-area: g}
+.fullclock .timeinc {grid-area: e}
+.fullclock .timedec {grid-area: f}
+.fullclock .timereset {grid-area: h}
+.fullclock i:nth-of-type(1) {grid-area: x}
+.fullclock i:nth-of-type(2) {grid-area: y}
+.fullclock i:nth-of-type(3) {grid-area: z}
+.fullclock > span {grid-area: c}
+.fullclock time {padding: 0 0.3em}
+.fullclock time b {font-family: OCR A Std, Orator Std, monospace;
+  font-size: 1.2em}
+.fullclock i {font-size: 70%; font-style: normal; color: #9F9}
+.fullclock button {width: 100%; font: 80%/1 Noto Sans Symbols, sans-serif}
+/* The span is made into a pie chart that shows the fraction of time used. */
+.fullclock > span, .clock > span {display: inline-block;
+  width: 3.5em; height: 3.5em; border-radius: 50%; background: #FFF;
+  background: conic-gradient(
+      #000 calc(var(--time-factor) * 360deg),
+      #FFF calc(var(--time-factor) * 360deg),
+      #FFF 360deg), #FFF}
+@supports not (background: conic-gradient(
+		   #000 calc(var(--time-factor) * 360deg),
+		   #FFF calc(var(--time-factor) * 360deg),
+		   #FFF 360deg), #FFF) {
+  /* If pie chart not possible, show a clock hand that turns */
+  .fullclock > span, .clock > span {position: relative; background: #FFF}
+  .fullclock > span > span, .clock > span > span {height: 2px;
+    width: 50%; background: #000; position: absolute; top: calc(50% - 1px);
+    left: 50%; transform-origin: 0 1px;
+    transform: rotate(calc(var(--time-factor) * 360deg - 90deg))}
+}
+.clock {padding: 0.3em; display: grid; justify-items: center; gap: 0.1em;
+  grid: "a   a   a   a" auto
+        "c   c   e   f" auto
+	"c   c   g   h" auto
+       / 1fr 1fr 1fr 1fr}
+.clock time {grid-area: a; padding: 0 0.3em}
+.clock .timepause {grid-area: g}
+.clock .timedec {grid-area: e}
+.clock .timeinc {grid-area: f}
+.clock .timereset {grid-area: h}
+.clock > span {grid-area: c}
+.clock time b {font-family: OCR A Std, Orator Std, monospace;
+  font-size: 1.2em}
+.clock button {width: 100%; font: 80%/1 Noto Sans Symbols, sans-serif}
+
+/* When time is nearly up, make the clock orange. */
+body.time-warning .fullclock, body.time-warning .clock {background:
+  linear-gradient(hsl(33,100%,37%), hsl(33,90%,42%), hsl(33,100%,36%))}
+/* When time is up, make the clock red. */
+body[data-time-factor="100"] .fullclock,
+body[data-time-factor="100"] .clock {background:
+  linear-gradient(hsl(0,100%,47%), hsl(0,90%,55%), hsl(0,100%,46%))}
+
+/* Make the clock blue when it is paused. */
+body.paused .fullclock, body.paused .clock {
+  background: linear-gradient(hsl(240,85%,55%), hsl(240,80%,60%),
+    hsl(240,85%,54%))}
+body:not(.paused) .timepause :nth-child(1) {display: none}
+body.paused .timepause :nth-child(2) {display: none}
+body.paused .timepause {opacity: 0.6}
+
+/* A div with class=ui generated by b6+, containing play, help and
+   other buttons. */
+.b6-ui {position: fixed; bottom: 0; left: 0; right: 0; z-index: 1;
+  background: hsl(205,100%,20%); color: white; display: flex; flex-wrap: wrap;
+  padding: 0.2em; gap: 0.5em 0; justify-content: center;
+  box-shadow: 0 0 4px #111}
+.b6-ui button {flex: 7.5em 0.03; background: none; color: inherit;
+  border: none; padding: 0.5em}
+.b6-ui button:hover {background: hsla(0,0%,0%,0.15)}
+@media (min-width: 68em) {
+  .b6-ui span {display: block; line-height: 1.2}
+  .b6-ui span:first-child {font-size: 200%}
+}
+
+/* White-on-black pages, when the user has selected dark mode in the OS */
+@media (prefers-color-scheme: dark) {
+  body {background: linear-gradient(#0005,#0005), url(linen.png)
+    #595b60; color: #eee}
+  .slide {color: white; background-color: black;
+    text-shadow: 0 -1px #000, 1px 0 #000, 0 1px #000, -1px 0 #000,
+      -0.7px -0.7px #000, 0.7px -0.7px #000, 0.7px 0.7px #000,
+      -0.7px 0.7px #000}
+  .slide::after {
+    background-image: url(data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%202%202%22><circle%20cx=%221%22%20cy=%221%22%20r=%221%22%20fill=%22%23000%22/></svg>),
+      url(side-banner-dark.webp)}
+  .slide.cover {background-color: black; background-image:
+    url(banner-dark.webp)}
+  .slide.cover p {color: #ccc}
+  .slide.final {}
+  .slide.final::after {}
+  .slide address {color: hsl(356,90%,60%)}
+   address :link,  address :visited {color: inherit}
+  .slide ul > li::before, .slide code {background: #333}
+  .slide :link {color: inherit;
+    background: hsla(240,100%,20%,0.3)}
+  .slide :visited {color: inherit;
+    background: hsla(270,100%,20%,0.3)}
+  .slide :link, .slide :visited {padding: 0.1em 0.3em;
+    border-radius: 0.3em}
+  .slide em {background: hsl(322,100%,40%)}
+  .slide h3 {color: hsl(62,100%,60%)}
+  table.striped tr:nth-child(2n+2) {background: #333}
+  .comment.long {background: #111; color: #eee}
+}
+
+/* To tell the b6plus.js script that this style sheet supports class
+   darkmode on BODY, set a special property on an element with class
+   "has-darkmode". */
+.has-darkmode {--has-darkmode: 1}
+
+/* White-on-black pages, with class=darkmode on body or on a slide.
+   Same colors as for 'prefers-color-scheme: dark' above, except that
+   the colors of form elements do not change. (They are set by the UA
+   style sheet.) */
+body.darkmode {
+  background: linear-gradient(#0005, #0005), url(linen.png)
+    #595b60; color: #eee}
+.darkmode.full {background: black}
+.darkmode.slide, .darkmode .slide {color: white; background-color: black;
+  text-shadow: 0 -1px #000, 1px 0 #000, 0 1px #000, -1px 0 #000,
+    -0.7px -0.7px #000, 0.7px -0.7px #000, 0.7px 0.7px #000, -0.7px 0.7px #000}
+.darkmode.slide::after, .darkmode .slide::after {
+  background-image: url(data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%202%202%22><circle%20cx=%221%22%20cy=%221%22%20r=%221%22%20fill=%22%23000%22/></svg>),
+    url(side-banner-dark.webp)}
+.darkmode.cover, .darkmode .cover {background-image:
+  url(banner-dark.webp)}
+.darkmode.cover p, .darkmode .cover p {color: #ccc}
+.darkmode.final, .darkmode .final {}
+.darkmode.final::after, .darkmode .final::after {}
+.darkmode.slide address, .darkmode .slide address {color: hsl(356,90%,60%)}
+.darkmode address :link, .darkmode address :visited {color: inherit}
+.darkmode.slide ul > li::before, .darkmode.slide code,
+.darkmode .slide ul > li::before, .darkmode .slide code {background: #333}
+.darkmode.slide :link, .darkmode .slide :link {color: inherit;
+  background: hsla(240,100%,20%,0.3)}
+.darkmode.slide :visited, .darkmode .slide :visited {color: inherit;
+  background: hsla(270,100%,20%,0.3)}
+.darkmode.slide :link, .darkmode.slide :visited,
+.darkmode .slide :link, .darkmode .slide :visited {padding: 0.1em 0.3em;
+  border-radius: 0.3em}
+.darkmode.slide em, .darkmode .slide em {background: hsl(322,100%,40%)}
+.darkmode.slide h3, .darkmode .slide h3 {color: hsl(62,100%,60%)}
+.darkmode.slide table.striped tr:nth-child(2n+2),
+.darkmode .slide table.striped tr:nth-child(2n+2) {background: #333}
+.darkmode .comment.long {background: #111; color: #eee}
+
+/* Black-on-white in case class=lightmode was set on the slide or on body */
+body.lightmode {background: url(linen.png) #595b60; color: white}
+.lightmode.slide, .lightmode .slide:not(.darkmode) {color: black;
+  background-color: hsl(0,0%,98%);
+  text-shadow: 0 -1px #fff, 1px 0 #fff, 0 1px #fff, -1px 0 #fff,
+    -0.7px -0.7px #fff, 0.7px -0.7px #fff, 0.7px 0.7px #fff, -0.7px 0.7px #fff}
+.lightmode.slide::after, .lightmode .slide:not(.darkmode)::after {
+  background-image: url(data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%202%202%22><circle%20cx=%221%22%20cy=%221%22%20r=%221%22%20fill=%22%23000%22/></svg>),
+    url(side-banner.webp)}
+.lightmode.cover, .lightmode .cover:not(.darkmode) {
+  background-image: url(banner.webp)}
+.lightmode.cover p, .lightmode .cover:not(.darkmode) p {color: #6b6b6b}
+.lightmode.final, .lightmode .final:not(.darkmode) {}
+.lightmode.final::after, .lightmode .final:not(.darkmode)::after {}
+.lightmode.slide address, .lightmode .slide:not(.darkmode) address {
+  color: hsl(356,67%,40%)}
+.lightmode.slide address :link, .lightmode.slide address :visited,
+.lightmode .slide:not(.darkmode) address :link,
+.lightmode .slide:not(.darkmode) address :visited {color: inherit}
+.lightmode.slide ul > li::before, .lightmode.slide code,
+.lightmode .slide:not(.darkmode) ul > li::before,
+.lightmode .slide:not(.darkmode) code {background: #eee}
+.lightmode.slide :link, .lightmode .slide:not(.darkmode) :link {
+  color: #00e; color: linktext; background: none}
+.lightmode.slide :visited, .lightmode .slide:not(.darkmode) :visited {
+  color: #609; color: visitedtext; background: none}
+.lightmode.slide :link, .lightmode.slide :visited,
+.lightmode .slide:not(.darkmode) :link,
+.lightmode .slide:not(.darkmode) :visited {padding: initial;
+  border-radius: initial}
+.lightmode.slide em, .lightmode .slide:not(.darkmode) em {
+  background: hsl(62,100%,50%)}
+.lightmode.slide table.striped tr:nth-child(2n+2),
+.lightmode .slide:not(.darkmode) table.striped tr:nth-child(2n+2) {
+  background: #EEE}
+.lightmode .comment.long {background: white; color: black}
+
+/* Printing. */
+@page {
+  margin: 1cm;
+  @bottom {content: counter(page)}
+}
+@media print {
+  html {font-size: 10pt}
+  body {background: none; color: black; margin: 0; columns: 40.889em /*= w */;
+    column-gap: 4em; column-rule: 0.2pt solid}
+  .slide {border: 0.2pt solid black; margin: 2em auto; display: block;
+    overflow: hidden; break-inside: avoid; box-shadow: none}
+  .comment {background: none; color: black; padding: 0;
+    columns: 25em; column-rule: thin solid; column-gap: 2em;
+    widows: 2; orphans: 2; width: auto; height: auto; display: block;
+    border-radius: 0; overflow: auto;
+    margin: 2em 1em 2em 0; box-shadow: none}
+  .slide ~ .comment::before {content: none}
+  .slide summary::before {content: none}
+  .slide details {visibility: hidden}
+  .slide summary {visibility: visible}
+  [role=region][aria-live=assertive], .b6-ui, .clock, .fullclock {display: none}
+}
+
+/* Output to PDF (trick).
+
+   To output to PDF, print the slides to PDF while selecting a
+   landscape paper size, e.g. A4 landscape or Letter landscape.
+
+   This style sheet assumes that, when the output is in landscape
+   mode, the goal is to export one slide per page, without margins,
+   and omitting the comments between the slides. (On the other hand,
+   to output multiple slides per page and interleave the comments,
+   choose a page size in portrait mode.)
+
+   Note: Not all user agents respect the 'size' property to set the
+   size of the output. If they don't, there will be some margin
+   to the right and below each slide. Prince respects the property.
+   E.g, to make myslides.pdf from myslides.html:
+
+     prince --page-size=landscape myslides.html
+
+   W3C team can also use the ",pdfui" tool online.
+*/
+@media print and (orientation: landscape) {
+  html {font-size: 7mm}
+  .comment, .comment.long {display: none}
+  .slide {margin: 0; page-break-after: always; box-shadow: none; border: none}
+
+  @page {
+    size: 286.22mm /*= 7 * w */ 161mm /*= 7 * N */;
+    margin: 0;
+    @bottom {content: none}
+  }
+}
+@media print and (orientation: landscape) and (min-width: 11in) {
+  /* Letter-size paper */
+  html {font-size: 0.26902in /*= 11 / w */}
+  @page {size: 11in 6.1875in /*= 11 / A */}
+}
+@media print and (orientation: landscape) and (min-width: 296mm) {
+  /* A4-size paper */
+  html {font-size: 7.2636mm /*= 297 / w */}
+  @page {size: 297mm 167.06mm /*= 297 / A */}
+}
