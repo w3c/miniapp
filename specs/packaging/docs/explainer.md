@@ -1,0 +1,1 @@
+Moved to https://github.com/w3c/miniapp-packaging/blob/main/docs/explainer.md

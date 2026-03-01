@@ -1,0 +1,1 @@
+Moved to https://github.com/w3c/miniapp-addressing/blob/main/docs/explainer.md

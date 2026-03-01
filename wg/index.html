@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" data-apiary-key="139gp1tp6l28gkooo4880s8wwo08cos" data-gid='128558'>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>W3C MiniApps Working Group</title>
+  <meta name="description" content="W3C MiniApps Working Group">
+  <link rel="preconnect" href="https://api.w3.org" />
+  <link rel="preconnect" href="https://w3c.github.io" />
+  <link rel="stylesheet" href="./custom.css" /> 
+  <!--
+    To get your own API key, go to https://www.w3.org/users/myprofile/apikeys
+  -->
+</head>
+
+<body>
+  <header class='group-data' data-query='group'>
+    <!-- <div id="n_W3Clogo"><a href="https://www.w3.org/"><img src="https://www.w3.org/Icons/w3c_home" alt="W3C" style="border:0; height:48px; width:72px;"></a></div> -->
+    <h1 style="margin-left: 5px;">MiniApps Working Group</h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="https://www.w3.org/groups/wg/miniapps/join">Join</a>
+        </li>
+        <li>
+          <a href="${active-charter.uri}">Charter</a>
+        </li>
+          <li><a href="https://github.com/w3c/miniapp/">GitHub</a></li>
+        <div data-if="services.*[type=lists]">
+          <li data-query="services.*[type=lists]"><span data-if="::self[link=Archives/Public]"><a href="${link}">Mailing
+                list</a></span></li>
+        </div>
+        <!-- <div data-if="services.*[type=chat]">
+          <li data-query="services.*[type=chat]"><a href="${link}">${shortdesc}</a></li>
+        </div>
+        <div data-if="services.*[type=wiki]">
+          <li data-query="services.*[type=wiki]"><a href="${link}">Wiki</a></li>
+        </div>
+        <div data-if="services.*[type=blog]">
+          <li data-query="services.*[type=blog]"><a href="${link}">Blog</a></li>
+        </div> -->
+        <!-- <div data-if="services.*[type=twitter]">
+          <li data-query="services.*[type=twitter]"><a href="${link}">Twitter</a></li>
+        </div> -->
+      </ul>
+    </nav>
+  </header>
+  <main class='group-data' data-query='group'>
+    <section id="mission">
+      <h2>Mission</h2>
+      <p>${description}</p>
+    </section>
+    <section id="specs">
+      <h2>Specs</h2>
+      <div data-if="specifications.*[latest-status!=Retired]">
+        <dl id="specList" data-query="specifications.*[latest-status!=Retired]">
+          <div id='${shortname}'>
+            <dt><a href='${shortlink}'>${title}</a> - <span class='status'>${latest-status}</span></dt>
+            <dd>${description}</dd>
+          </div>
+        </dl>
+        <p>Group hasn't produced or inherited any specifications.</p>
+      </div>
+    </section>
+    <section id="repos">
+      <h2>Repos</h2>
+      <div data-if="repositories.*">
+        <dl id="repoList" data-query="repositories">
+          <div id='${owner.login}-${name}'>
+            <dt><a href="https://github.com/${owner.login}/${name}/">${owner.login}/${name}</a>
+              <span data-if='w3c.repo-type'><span class='type'>(${w3c.repo-type})</span></span></dt>
+            <dd>
+              <p>${description}</p>
+            </dd>
+          </div>
+        </dl>
+        <p>Group has no repositories.</p>
+      </div>
+    </section>
+    <section id="events">
+      <!-- <h2>Face-to-face meetings</h2>
+      <div data-if="events.*">
+        <dl id="eventList" data-query="events">
+          <div>
+            <dt><a href="${href}">${summary}</a></dt>
+            <dd>
+              <p>${location} - ${start} to ${end}</p>
+            </dd>
+          </div>
+        </dl>
+        <p>Group has no face-to-face meetings scheduled.</p>
+      </div> -->
+      <h2>Meetings</h2>
+      <div>
+        <dl>
+          <div>
+            <dt><a href="https://www.w3.org/groups/wg/miniapps/calendar">Calendar</a></dt>
+            <dd>
+              <p>Next meeting: June 30, 2022</p>
+            </dd>
+          </div>
+        </dl>
+        <p><a href="https://github.com/w3c/miniapp/blob/main/Meetings/WG.md">See previous minutes on GitHub.</a></p>
+        <!-- <p>See previous minutes on <a href="https://github.com/w3c/miniapp/blob/main/Meetings/WG.md">GitHub</a>.</p> -->
+        <!-- <p>Group has no meetings scheduled.</p> -->
+      </div>
+    </section>
+    <section id="Contacts">
+      <h2>Contacts</h2>
+      <dl>
+        <dt>Chairs:</dt>
+        <dd id="chairs">
+          <div data-if="chairs.*"><span data-query="chairs">
+              <span data-if="connected-accounts.*[service=github]">
+                <a href="${connected-accounts.*[service=github].href}">${name}</a>
+                <span>${name}</span></span>,
+            </span></div>
+        </dd>
+        <dt>Team contacts:</dt>
+        <dd id="team-contacts">
+          <div data-if="team-contacts.*"><span data-query="team-contacts">
+              <span data-if="connected-accounts.*[service=github]">
+                <a href="${connected-accounts.*[service=github].href}">${name}</a>
+                <span>${name}</span></span>,
+              </span></div>
+        </dd>
+      </dl>
+    </section>
+    <section>
+      <h2>Members</h2>
+      <ul id="participations" data-query="participations.*[individual=false]">
+        <li>${title}</li>
+      </ul>
+    </section>
+    <div data-if="participations.*[invited-expert=true]">
+      <section>
+        <h2>Invited Experts</h2>
+        <ul id="participations" data-query="participations.*[invited-expert=true]">
+          <li>${title}</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class='group-data' data-query='group'>
+    <nav>
+      <ul>
+        <li>
+          <a href="https://www.w3.org/Consortium/cepc/">Code of conduct</a>
+        </li>
+        <li>
+          <a href="https://www.w3.org/Consortium/membership">Membership</a>
+        </li>
+        <li><a href="https://www.w3.org/Consortium/">About W3C</a></li>
+        <li>
+          <a href="${join}">Join (Member only)</a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+
+
+  <script type="module">
+    import { fetchGroup, setW3CKey } from 'https://w3c.github.io/gargantua/w3c.js';
+    import jsonrender from 'https://w3c.github.io/gargantua/jsonrender.js';
+
+    setW3CKey(document.documentElement.getAttribute("data-apiary-key"));
+
+    let gid = document.documentElement.getAttribute("data-gid");
+
+    (function () {
+      let ngid = (new URL(document.location)).searchParams.get("gid");
+      if (!ngid) {
+        const matches = document.location.toString().match(new RegExp("([0-9]+)", "g"));
+        if (matches.length > 0) {
+          const last = matches[matches.length - 1];
+          if (last.length > 4)
+            ngid = last;
+        }
+      }
+      if (ngid) gid = ngid;
+      fetchGroup(gid).then(group => {
+        let elts = document.querySelectorAll("*.group-data");
+        for (let element of elts) jsonrender({ group: group }, element);
+      });
+    })();
+
+  </script>
+
+</body>
+
+</html>
